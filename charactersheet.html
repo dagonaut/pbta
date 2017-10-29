@@ -1,0 +1,232 @@
+
+	<style>
+		.attr{
+			width: 50px;
+		    height: 56px;
+		    border: solid black 1px;
+		    font-size: 24px;
+		    padding-left: 5px;
+		}
+		.attr-box{
+			width:80px;
+			height:80px;
+			margin-bottom:5px;
+			border:solid black 1px;
+		}
+		.attr-container{
+			padding:5px;			
+		}
+		.attr-name{
+			padding-left:3px;
+			border:solid black 1px;			
+			font-weight: bold;
+		}
+		.attr-bonus{
+			display: inline-block;
+		    padding-left: 5px;
+		    border: solid black 1px;
+		    height: 56px;
+		    width: 28px;
+		    line-height: 60px;
+		}
+		.sheet{
+			width:800px;
+		}
+		.value{
+			padding:11px;
+			font-size:24px;
+		}
+		.hp-container{
+			
+		}
+		.move-trigger{
+			font-weight: bold;
+		}
+		.gear input{
+			padding:0px;
+			border:none;
+			border-bottom:1px solid black;
+		}
+		textarea{
+			width:340px;
+
+		}
+		textarea.notes{
+			min-height:400px;
+		}
+		h1{font-size:20px;}
+        h2{font-size:18px;}
+        h3{font-size:14px;}
+        h4{font-size:12px;}
+		.move-trigger{
+			font-weight:bold;
+			color:#a52c1c; /* reddish */
+		}
+		h2.move{
+			margin:0px;
+			font-size:16px;	
+		}
+		.move:hover{
+			cursor: pointer;
+		}
+		.move-container{
+
+		}
+		.remove{
+			border:none;
+			background:none;
+		}
+		.name-container label{float:left;}
+		.name-container input{border:none;padding:0;padding-left:3px;border-bottom:1px solid black;float:left;}
+	</style>
+
+
+	<div class="container-fluid sheet">
+					<button style="margin-left:-100px;" ng-click="updateCharacter(characterData)">SAVE</button>
+		<div class="row">
+			<!-- Left Column -->
+			<div class="col-md-6">
+				<div class="row name-container">
+					<label>Name: </label><input class="col-xs-5" type="text" ng-model="characterData.name" />
+					<label>Class: </label><input class="col-xs-3" type="text" ng-model="characterData.class" />
+				</div>
+				<div class="row">
+					<div class="col-sm-3">
+						<div><strong>Level: </strong></div><input class="attr" type="number" ng-model="characterData.level" />
+					</div>
+					<div class="col-sm-3">
+						<div><strong>XP: </strong></div> <input class="attr" type="number" ng-model="characterData.xp" />
+					</div>
+					<div class="col-sm-4">
+						<div><strong>Next: </strong><small> (7+ level)</small></div><div class="value">{{characterData.level + 7}}</div>
+					</div>
+				</div>
+				<div class="row">
+					<div><strong>Look:</strong></div>
+					<textarea ng-model="characterData.look"></textarea>
+				</div>
+				<div class="row">
+					<div><strong>Alignment: </strong></div>
+					<textarea ng-model="characterData.alignment"></textarea>
+					<div>Bonds: </div>
+					<textarea type="text" ng-model="characterData.bonds"></textarea>
+					<div>Moves: </div>
+					<div ng-repeat="move in allMoves" ng-show="move.type == 'starting'">
+						<div class="move-container">
+							<h2 class="move">{{move.name}}</h2>
+							<div class="move-description" ng-hide="dungeonMove.hide">						
+								<p><span class="move-trigger">{{move.trigger}}</span>{{move.description}}</p>
+							</div>
+						</div>
+					</div>
+					Advanced Moves <span ng-click="showMoves()">show</span>
+					<!-- Moves List Template -->
+					<div ng-show="movesOpen">
+						<div ng-repeat="move in allMoves" ng-hide="move.type == 'starting'">
+							<input type="checkbox" id="moveid_{{move.id}}" /><span>{{move.name}}</span><br />
+						</div>
+					</div>
+					<div ng-repeat="move in allMoves" ng-show="move.type == 'advanced'">
+						<div class="move-container" ng-show="characterData.moves.indexOf(move.id) !== -1">
+							<h2 class="move">{{move.id}} - {{move.name}}</h2>
+							<div class="move-description" ng-hide="dungeonMove.hide">						
+								<p><span class="move-trigger">{{move.trigger}}</span>{{move.description}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Right Column -->
+			<div class="col-md-6">
+				<div class="row hp-container">
+					<div class="col-sm-3">
+						<div>Damage: </div>
+						<div class="value">{{characterData.damage}}</div>
+					</div>
+					<div class="col-sm-3">
+						<div>HP: </div>
+						<input class="attr" type="number" ng-model="characterData.hp" />
+					</div>
+					<div class="col-sm-3">
+						<div>Max: </div>
+						<div class="value">{{characterData.basehp + characterData.con}}</div>
+					</div>
+					<div class="col-sm-3">
+						<div>Armor: </div>
+						<input class="attr" type="number" ng-model="characterData.armor" />
+					</div>
+				</div>
+				<div class="attr-container">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="attr-box">
+								<div class="attr-name">STR </div>
+								<input class="attr" type="number" ng-model="characterData.str" ng-change="setModifiers();" /><div class="attr-bonus">{{attrModifiers.str}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">DEX </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.dex" /><div class="attr-bonus">{{attrModifiers.dex}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">CON </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.con" /><div class="attr-bonus">{{attrModifiers.con}}</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">INT </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.int" /><div class="attr-bonus">{{attrModifiers.int}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">WIS </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.wis" /><div class="attr-bonus">{{attrModifiers.wis}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">CHA </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.cha" /><div class="attr-bonus">{{attrModifiers.cha}}</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 gear">
+							<div class="row">
+							<div class="col-xs-6">Gear: </div>
+							<div class="col-xs-6 text-right">Max load: {{(attrModifiers.str + 9)|number:0}}</div>
+
+							<div class="col-xs-8">Name</div>
+							<div class="col-xs-2">Tags</div>							
+							<div class="col-xs-2">Weight</div>
+							</div>
+							<fieldset  data-ng-repeat="g in gear track by $index">
+								<input class="col-xs-8" type="text" ng-model="g.name" />
+								<input class="col-xs-3" type="text" ng-model="g.tags" />
+								<div class="col-xs-1">
+									<input style="float:left;width:8px;border-bottom:none;" type="text" ng-model="g.weight" />
+									<button style="" class="remove" ng-click="removeChoice(g.id)">X</button>
+								</div>
+							</fieldset>
+							<button class="addfields" ng-click="addNewChoice()">Add gear</button>
+							<!-- For debug
+							<div id="choicesDisplay">
+								{{ gear }}
+							</div>
+							-->
+							<div>Notes</div>
+							<textarea class="notes" type="textarea" ng-model="characterData.notes"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+

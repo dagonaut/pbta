@@ -1,0 +1,30 @@
+
+	<header>
+        <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header navbar-right">
+                <a class="navbar-brand" href="/"><span style="text-decoration:line-through;">Dungeon</span> Steam World Character Sheets</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-left">
+                <li><a ui-sref="auth.paul" ui-sref-active="active">Paul</a></li>
+                <li><a ui-sref="auth.sean" ui-sref-active="active">Sean</a></li>
+                <li><a ui-sref="auth.brett" ui-sref-active="active">Brett</a></li>
+                <li><a ui-sref="test" ui-sref-active="active">Test</a></li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <div id="main">
+    {{viewMessage}}
+    
+    <ui-view>
+        {{viewMessage}}
+    </ui-view>
+            
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+
+    </div>
