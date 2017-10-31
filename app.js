@@ -58,7 +58,7 @@
 		var characterState = {
 			name: 'auth.character',
 			url: '/cs',
-			templateUrl: 'characterSheet.html',
+			templateUrl: 'charactersheet.html',
 			controller: 'CharacterSheet'
 		};
 		
@@ -71,7 +71,7 @@
 		
 		var homeState = {
 			name: 'home',
-			url: '/',
+			url: '',
 			templateUrl: 'reference.html',
 			controller: 'ReferenceController'
 		};
@@ -97,8 +97,9 @@
 			console.log('app.run.$transition.onStart');
 			console.log(trans.$to().name);
 			var Auth = trans.injector().get('Auth');
-			var cookies = JSON.parse(getCookie("globals"));
+			var cookies = getCookie("globals");
 			if(cookies !== ""){
+				cookies = JSON.parse(cookies);
 				Auth.SetCredentials(cookies.currentUser.username, cookies.currentUser.Password, cookies.currentUser);
 				Auth.setUser(cookies.currentUser.id)
 				//$rootScope.userData = cookies.currentUser;
