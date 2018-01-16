@@ -134,6 +134,9 @@
 	
 	// Authentication Service
 	app.factory('Auth', ['Base64', '$http', '$cookies', '$rootScope', '$timeout', function(Base64, $http, $cookies, $rootScope, $timeout){
+		//Private Properties
+		var api = 'http://16watt.com/dev/pbta/api/api.php/';
+		
 		// Set factory return object
 		var Auth = {};
 		
@@ -164,7 +167,7 @@
 			
 			/* Use this for real authentication
 			----------------------------------------------*/
-			$http.get('./api/api.php/tbl_Users/username/"' + username + '"').then(
+			$http.get(api + 'tbl_Users/username/"' + username + '"').then(
 				function(response){						
 					response.success = (password === response.data.Password)
 					callback(response);
@@ -295,6 +298,9 @@
 	});
 	
 	app.controller('LoginController', ['$scope', '$rootScope', '$location', '$http', 'Auth', function ($scope, $rootScope, $location, $http, Auth) {
+		//Private Properties
+		var api = 'http://16watt.com/dev/pbta/api/api.php/';
+				
 		$scope.userData = {};
 		
 		// reset login status
@@ -327,7 +333,7 @@
 			if(exists == false){
 				var passwordHash = md5(user.Password);
 				var method = 'POST';			
-				var url = '/api/api.php/tbl_Users/';
+				var url = api + 'tbl_Users/';
 				var config = {
 					method: method,
 					url: url,
@@ -354,7 +360,7 @@
 			
 		}
 		function checkExisting(user){
-			$http.get('./api/api.php/tbl_Users/username/"' + user.username + '"').then(
+			$http.get(api + 'tbl_Users/username/"' + user.username + '"').then(
 				function(response){
 					if(response.data.username === user.username){
 						return true;
@@ -375,8 +381,11 @@
 	}]);
 	
 	app.controller('CharacterSheet', ['$rootScope','$scope','$http','$q','$state','$stateParams','$location', function($rootScope, $scope, $http, $q, $state, $stateParams, $location){
+		//Private Properties
+		var api = 'http://16watt.com/dev/pbta/api/api.php/';
+		
 		$scope.user = getUser();
-		$scope.characterData = getCharacterData();
+		$scope.characterData = {};
 		$scope.attrModifiers = { "str": 0, "dex": 0, "con": 0, "int": 0, "wis": 0, "cha": 0};
 		$scope.allMoves = []; //getCharacterMoves();
 		$scope.gear = [{id: 0}, {id: 1}];
@@ -392,6 +401,7 @@
 		function init(){
 			console.log($scope.user);
 			console.log($rootScope.userData);
+			$scope.characterData = getCharacterData($rootScope.userData.id);
 		}
 		
 		function getUser(){
@@ -417,7 +427,7 @@
 			characterData.moves = getSelectedMoves();
 			var method = 'POST';
 			//var key = 'id';
-			var url = './api/api.php/tbl_Characters/';
+			var url = api + 'tbl_Characters/';
 			if(characterData.id){
 				method = 'PUT';
 				url = url + characterData.id;
@@ -463,8 +473,8 @@
 			
 		}
 		
-		function getCharacterData(){
-			$http.get('./api/api.php/tbl_Characters/createdby/' + $rootScope.userData.id).then(
+		function getCharacterData(userId){
+			$http.get(api + 'tbl_Characters/createdby/' + userId).then(
 				function(response){
 					$scope.characterData = response.data;
 					if($scope.characterData.gear){
@@ -505,7 +515,7 @@
 		function getCharacterMoves(){
 			var config = {
 				method: 'GET',
-				url: './api/api.php/tbl_Moves/class/"' + $scope.characterData.class + '"'
+				url: api + 'tbl_Moves/class/"' + $scope.characterData.class + '"'
 			};
 			$http(config).then(
 				function(response){
@@ -600,6 +610,8 @@
 	}]); 
 	
 	app.controller('ReferenceController', ['$rootScope','$scope','$http','$q','$sce', function($rootScope, $scope, $http, $q, $sce){
+		//Private Properties
+		var api = 'http://16watt.com/dev/pbta/api/api.php/';
 		
 		//Scope Properties
 		$scope.allMoves = getAllMoves();
@@ -614,7 +626,7 @@
 		function getAllMoves(){
 			var config = {
 				method: 'GET',
-				url: './api/api.php/tbl_Moves/'
+				url: api + 'tbl_Moves/'
 			};
 			$http(config).then(
 				function(response){
@@ -631,7 +643,7 @@
 		function getAllTags(){
 			var config = {
 				method: 'GET',
-				url: './api/api.php/tbl_Tags/'
+				url:  api + 'tbl_Tags/'
 			};
 			$http(config).then(
 				function(response){
@@ -651,7 +663,7 @@
 		function getAllMonsters(){
 			var config = {
 				method: 'GET',
-				url: './api/api.php/tbl_Monsters/'
+				url:  api + 'tbl_Monsters/'
 			};
 			$http(config).then(
 				function(response){
@@ -671,7 +683,7 @@
 		$scope.updateFront = function(front){
 			var config = {
 				method: 'POST',
-				url: 'http://16watt.com/pbta/api.php/tbl_Fronts/',
+				url:  api + 'tbl_Fronts/',
 				data: {
 					type: front.type,
 					cast: front.cast,
@@ -705,7 +717,7 @@
 		$scope.updateMonster = function(monster){
 			var config = {
 				method: 'POST',
-				url: './api/api.php/tbl_Monsters/',
+				url:  api + 'tbl_Monsters/',
 				data: {
 					name: monster.name,
 					category: monster.category,
@@ -736,7 +748,7 @@
 		$scope.updateMove = function(move){
 			var config = {
 				method: 'POST',
-				url: 'http://16watt.com/pbta/api.php/tbl_Moves/',
+				url:  api + 'tbl_Moves/',
 				data: {
 					type: move.type,
 					name: move.name,
@@ -760,7 +772,7 @@
 		$scope.updateTag = function(tag){
 			var config = {
 				method: 'POST',
-				url: 'http://16watt.com/pbta/api.php/tbl_Tags/',
+				url:  api + 'tbl_Tags/',
 				data: {
 					name: tag.name,
 					description: tag.description,
@@ -804,7 +816,7 @@
 		function getNameAPI(id){
 			var config = {
 				method: 'GET',
-				url: './api/api.php/tbl_Names/id/' + id
+				url:  api + 'tbl_Names/id/' + id
 			};
 			
 			$http(config).then(
