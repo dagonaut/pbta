@@ -285,7 +285,7 @@
 			}
 		};
 	});
-	
+	// Login Controller
 	app.controller('LoginController', ['$scope', '$rootScope', '$cookies', '$location', '$http', 'Auth', function ($scope, $rootScope, $cookies, $location, $http, Auth) {
 		//Private Properties
 		var api = 'http://16watt.com/dev/pbta/api/api.php/';
@@ -383,17 +383,17 @@
 			)
 		}
 	}]);
-	
+	// Test Controller
 	app.controller('TestController', ['$rootScope','$scope','$http','$q','$state','$stateParams','$location', function($rootScope, $scope, $http, $q, $state, $stateParams, $location){
 		$scope.testText = 'Test text from $scope.testText';
 		$scope.url = $location.path();
 	}]);
-	
+	// Character Sheet Controller
 	app.controller('CharacterSheet', ['$rootScope','$scope','$http','$q','$state','$stateParams','$location', function($rootScope, $scope, $http, $q, $state, $stateParams, $location){
 		//Private Properties
 		var api = 'http://16watt.com/dev/pbta/api/api.php/';
 		
-		$scope.user = $rootScope.userData.id;
+		$scope.user = {};
 		$scope.characterData = {};
 		$scope.attrModifiers = { "str": 0, "dex": 0, "con": 0, "int": 0, "wis": 0, "cha": 0};
 		$scope.allMoves = []; //getCharacterMoves();
@@ -408,6 +408,7 @@
 		init();
 		
 		function init(){
+			console.log(dookie);
 			console.log($scope.user);
 			console.log($rootScope.userData);
 			$scope.characterData = getCharacterData($rootScope.userData.id);
@@ -463,7 +464,7 @@
 					notes: characterData.notes,
 					createdby: $scope.user
 				}
-			}
+			};
 			$http(config).then(characterSuccess, characterFailure);
 			
 			function characterSuccess(response){
@@ -473,7 +474,7 @@
 				console.log(error);
 			}
 			
-		}
+		};
 		
 		function getCharacterData(userId){
 			$http.get(api + 'tbl_Characters/createdby/' + userId).then(
@@ -610,7 +611,7 @@
 		}
 		
 	}]); 
-	
+	// Reference Sheet Controller
 	app.controller('ReferenceController', ['$rootScope','$scope','$http','$q','$sce', function($rootScope, $scope, $http, $q, $sce){
 		//Private Properties
 		var api = 'http://16watt.com/dev/pbta/api/api.php/';
@@ -841,4 +842,23 @@
 	}]);
 	
 	//end app.controller
+
+	// Additional App functions / variables
+    var rootID = GetUser();
+
+    GetUser.$inject = ['$cookies', 'Auth'];
+    function GetUser($cookies, Auth){
+        if (Auth.isLoggedIn()){
+            $scope.userData = $rootScope.userData;
+            $scope.isLoggedIn = true;
+        } else if ($cookies.getObject('id')) {
+            Auth.setUser($cookies.getObject('id'));
+            Auth.AutoLogin($cookies.getObject('id'), function(response){
+                $scope.isLoggedIn = true;
+                $scope.userData = $rootScope.userData;
+            });
+        } else {
+            console.log("base GetUser failed; not logged in, no cookie.");
+        }
+    }
 })(); //end iffy
