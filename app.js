@@ -384,7 +384,7 @@
 		//Private Properties
 		var api = 'http://16watt.com/dev/pbta/api/api.php/';
 		
-		$scope.user = getUser();
+		$scope.user = $rootScope.userData.id;
 		$scope.characterData = {};
 		$scope.attrModifiers = { "str": 0, "dex": 0, "con": 0, "int": 0, "wis": 0, "cha": 0};
 		$scope.allMoves = []; //getCharacterMoves();
@@ -459,7 +459,7 @@
 					moves: characterData.moves,
 					gear: characterData.gear,
 					notes: characterData.notes,
-					createdby: 1
+					createdby: $scope.user
 				}
 			}
 			$http(config).then(characterSuccess, characterFailure);
