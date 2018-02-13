@@ -1,38 +1,16 @@
 (function() {
 	'use strict';
 	var app = angular.module('pbta_resources', ['ui.router', 'ngCookies', 'ngSanitize']);
-	var dookie = {};
+
 	//States
 	app.config(function($stateProvider) {
 		//Set the state variables
-		
-		var paulState = {
-			name: 'auth.paul',
-			url: '/paul',
-			templateUrl: 'charactersheet.html',
-			controller: 'CharacterSheet'
-		};
-		
-		var seanState = {
-			name: 'auth.sean',
-			url: '/sean',
-			templateUrl: 'charactersheet.html',
-			controller: 'CharacterSheet'
-		};
-		
-		var brettState = {
-			name: 'auth.brett',
-			url: '/brett',
-			templateUrl: 'charactersheet.html',
-			controller: 'CharacterSheet'
-		};
-		
+
 		var testState = {
 			name: 'test',
 			url: '/test',
 			templateUrl: 'test.html',
-			controller: 'TestController',
-			data: 4
+			controller: 'TestController'
 		};
 		
 		var loginState = {
@@ -77,9 +55,6 @@
 		};
 		
 		//Set the states
-		$stateProvider.state(paulState);
-		$stateProvider.state(seanState);
-		$stateProvider.state(brettState);
 		$stateProvider.state(testState);
 		$stateProvider.state(loginState);
 		$stateProvider.state(authState);
@@ -169,14 +144,14 @@
 			----------------------------------------------*/
 			$http.get(api + 'tbl_Users/username/"' + username + '"').then(
 				function(response){						
-					response.success = (password === response.data.Password)
+					response.success = (password === response.data.Password);
 					callback(response);
 					Auth.setUser(response.data.id);
 				},
 				function(error){
 					console.log(error);
 				}
-			)
+			);
 			/*
 			$http.post('./api.php/tbl_Users', { username: username, password: password })
 			.success(function (response) {
@@ -184,6 +159,20 @@
 				callback(response);
 			});
 			*/		
+		};
+
+		Auth.AutoLogin = function(userId, callback){
+            $http.get(api + 'tbl_Users/id/"' + userId + '"').then(
+                function(response){
+              		$rootScope.userData = response.data;
+                    Auth.setUser(response.data.id);
+                    response.success = true;
+                    callback(response);
+                },
+                function(error){
+                    console.log(error);
+                }
+            );
 		};
 		
 		Auth.SetCredentials = function (username, password, user) {
@@ -199,13 +188,13 @@
 			var now = new Date(),
 			// this will set the expiration to 12 months
 			exp = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());
-			$cookies.putObject('globals', $rootScope.globals, {expires: exp});
+			$cookies.putObject('id', $rootScope.userData.id, {expires: exp});
 		};
 		
 		Auth.ClearCredentials = function () {
 			$rootScope.globals = {};
 			$rootScope.userData = {};
-			$cookies.remove('globals');
+			$cookies.remove('id');
 			$http.defaults.headers.common.Authorization = 'Basic ';
 		};
 		
@@ -297,12 +286,32 @@
 		};
 	});
 	
-	app.controller('LoginController', ['$scope', '$rootScope', '$location', '$http', 'Auth', function ($scope, $rootScope, $location, $http, Auth) {
+	app.controller('LoginController', ['$scope', '$rootScope', '$cookies', '$location', '$http', 'Auth', function ($scope, $rootScope, $cookies, $location, $http, Auth) {
 		//Private Properties
 		var api = 'http://16watt.com/dev/pbta/api/api.php/';
 				
 		$scope.userData = {};
-		
+		$scope.isLoggedIn = false;
+		init();
+
+		// Determine if we're logged in or have a cookie to auto login
+		function init(){
+			if (Auth.isLoggedIn()){
+				$scope.userData = $rootScope.userData;
+				$scope.isLoggedIn = true;
+			} else if ($cookies.getObject('id')) {
+				Auth.setUser($cookies.getObject('id'));
+				Auth.AutoLogin($cookies.getObject('id'), function(response){
+                    console.log("rootscope 303: " + $rootScope.userData);
+                    $scope.isLoggedIn = true;
+                    $scope.userData = $rootScope.userData;
+                    $location.path('/cs');
+				});
+			} else {
+				console.log("ln 291: You don't have a cookie.")
+			}
+		}
+
 		// reset login status
 		//Auth.ClearCredentials();
 		
@@ -324,7 +333,7 @@
 		$scope.logout = function() {
 			Auth.ClearCredentials();
 			$location.path('/login');
-		}
+		};
 		
 		
 		$scope.register = function(user){
@@ -347,7 +356,7 @@
 						DateCreated: new Date().toISOString().slice(0,10),
 						DateUpdated: new Date().toISOString().slice(0,10)
 					}
-				}
+				};
 				$http(config).then(userSuccess, userFailure);
 			}
 			function userSuccess(response){
@@ -358,7 +367,7 @@
 				console.log(error);
 			}
 			
-		}
+		};
 		function checkExisting(user){
 			$http.get(api + 'tbl_Users/username/"' + user.username + '"').then(
 				function(response){
