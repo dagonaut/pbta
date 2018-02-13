@@ -404,13 +404,6 @@
 			$scope.characterData = getCharacterData($rootScope.userData.id);
 		}
 		
-		function getUser(){
-			if($location.path() === '/paul'){ return 1; }
-			if($location.path() === '/sean'){ return 2; }
-			if($location.path() === '/brett'){ return 3; }
-			if($location.path() === '/test'){ return 4; }
-		}
-		
 		$scope.addNewChoice = function() {
 			var newItemNo = $scope.gear.length;
 			$scope.gear.push({'id':newItemNo});
