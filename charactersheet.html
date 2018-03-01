@@ -86,7 +86,15 @@
 		<div class="row">
 			<!-- Left Column -->
 			<div class="col-md-6">
-				<div class="row name-container">
+				<div class="row">
+					<label>Game: </label>
+					<select>
+						<option value="1">Dungeon World</option>
+						<option value="2">Steam World</option>
+						<option value="3">Spirit of '77'</option>
+					</select>
+				</div>
+				<div class="row name-container">					
 					<label>Name: </label><input class="col-xs-5" type="text" ng-model="characterData.name" />
 					<label>Class: </label><input class="col-xs-3" type="text" ng-model="characterData.class" />
 				</div>
@@ -156,6 +164,7 @@
 						<input class="attr" type="number" ng-model="characterData.armor" />
 					</div>
 				</div>
+				<!-- Attributes -->
 				<div class="attr-container">
 					<div class="row">
 						<div class="col-sm-4">
@@ -197,6 +206,12 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<em>16 (+2), 15(+1), 13(+1), 12(0), 9(0), 8(-1)</em>
+						</div>
+					</div>
+					<!-- Gear/Notes -->
 					<div class="row">
 						<div class="col-md-12 gear">
 							<div class="row">

@@ -7,7 +7,7 @@
 		//Set the state variables
 
 		var testState = {
-			name: 'test',
+			name: 'auth.test',
 			url: '/test',
 			templateUrl: 'test.html',
 			controller: 'TestController'
@@ -41,7 +41,7 @@
 		};
 		
 		var referenceState = {
-			name: 'reference',
+			name: 'auth.reference',
 			url: '/reference',
 			templateUrl: 'reference.html',
 			controller: 'ReferenceController'
@@ -286,7 +286,7 @@
 		};
 	});
 	// Login Controller
-	app.controller('LoginController', ['$scope', '$rootScope', '$cookies', '$location', '$http', 'Auth', function ($scope, $rootScope, $cookies, $location, $http, Auth) {
+	app.controller('LoginController', ['$scope', '$rootScope', '$cookies', '$location', '$http', '$q', 'Auth', function ($scope, $rootScope, $cookies, $location, $http, $q, Auth) {
 		//Private Properties
 		var api = 'http://16watt.com/dev/pbta/api/api.php/';
 				
@@ -337,6 +337,7 @@
 		
 		
 		$scope.register = function(user){
+			console.log("Registering");
 			// Check for existing user
 			var exists = checkExisting(user);
 			if(exists == false){
@@ -369,9 +370,11 @@
 			
 		};
 		function checkExisting(user){
-			$http.get(api + 'tbl_Users/username/"' + user.username + '"').then(
+			var deferred = $q.defer();
+			$http.get(api + 'tbl_Users/username/"' + user.username + '"').then(				
 				function(response){
-					if(response.data.username === user.username){
+					
+					if(typeof response.data.username !== "undefined" && response.data.username === user.username){
 						return true;
 					} else {
 						return false;
@@ -408,7 +411,7 @@
 		init();
 		
 		function init(){
-			console.log(dookie);
+			
 			console.log($scope.user);
 			console.log($rootScope.userData);
 			$scope.characterData = getCharacterData($rootScope.userData.id);
@@ -462,7 +465,7 @@
 					moves: characterData.moves,
 					gear: characterData.gear,
 					notes: characterData.notes,
-					createdby: $scope.user
+					createdby: $rootScope.userData.id
 				}
 			};
 			$http(config).then(characterSuccess, characterFailure);
