@@ -3,91 +3,87 @@
 	var app = angular.module('pbta_resources', ['ui.router', 'ngCookies', 'ngSanitize']);
 
 	//States
-	app.config(function($stateProvider) {
+	app.config(function($stateProvider, $urlRouterProvider) {
 		//Set the state variables
 
-		var testState = {
-			name: 'auth.test',
-			url: '/test',
-			templateUrl: 'test.html',
-			controller: 'TestController'
-		};
-		
-		var loginState = {
-			name: 'login',
-			url: '/login',
-			templateUrl: 'login.html',
-			controller: 'LoginController'		  	  	
-		};
-		
-		var registerState = {
-			name: 'register',
-			url: '/register',
-			templateUrl: 'register.html',
-			controller: 'LoginController'		  	  	
-		};
-		
-		var authState = {
-			name: 'auth',
-			templateUrl: 'wrapper.html'
-			
-		};
-		
-		var characterState = {
-			name: 'auth.character',
-			url: '/cs',
-			templateUrl: 'charactersheet.html',
-			controller: 'CharacterSheet'
-		};
-		
-		var referenceState = {
-			name: 'auth.reference',
-			url: '/reference',
-			templateUrl: 'reference.html',
-			controller: 'ReferenceController'
-		};
-		
-		var homeState = {
-			name: 'home',
-			url: '',
-			templateUrl: 'reference.html',
-			controller: 'ReferenceController'
-		};
-		
-		//Set the states
-		$stateProvider.state(testState);
-		$stateProvider.state(loginState);
-		$stateProvider.state(authState);
-		$stateProvider.state(characterState);
-		$stateProvider.state(registerState);
-		$stateProvider.state(referenceState);
-		$stateProvider.state(homeState);
+		$urlRouterProvider.otherwise(''); //Instead of 404
+
+		$stateProvider
+			.state('auth.test', {
+				url: '/test',
+				templateUrl: 'test.html',
+				controller: 'TestController',
+				controllerAs: 'vm'
+			})
+			.state('login',{
+				url: '/login',
+				templateUrl: 'login.html',
+				controller: 'LoginController',
+				controllerAs: 'vm'
+			})
+			.state('register',{
+				url: '/register',
+				templateUrl: 'register.html',
+				controller: 'LoginController',
+				controllerAs: 'vm'
+			})
+			.state('auth',{
+				templateUrl: 'wrapper.html'				
+			})
+			.state('auth.character',{
+				url: '/cs',
+				templateUrl: 'charactersheet.html',
+				controller: 'CharacterSheet',
+				controllerAs: 'vm'
+			})
+			.state('auth.reference',{
+				url: '/reference',
+				templateUrl: 'reference.html',
+				controller: 'ReferenceController',
+				controllerAs: 'vm'
+			})
+			.state('home',{
+				url: '',
+				templateUrl: 'reference.html',
+				controller: 'ReferenceController',
+				controllerAs: 'vm'
+			});	
 	});
 	
 	//Run transitions
-	app.run(function($transitions) {
-		console.log("app.run");
-		
+	app.run(function($transitions) {		
 		$transitions.onStart({ to: 'auth.**' }, function(trans) {
-			console.log('app.run.$transition.onStart');
-			console.log(trans.$to().name);
+			//console.log('app.run.$transition.onStart');
+			//console.log(trans.$to().name);
 			var Auth = trans.injector().get('Auth');
-			var cookies = getCookie("globals");
-			if(cookies !== ""){
-				cookies = JSON.parse(cookies);
-				Auth.SetCredentials(cookies.currentUser.username, cookies.currentUser.Password, cookies.currentUser);
-				Auth.setUser(cookies.currentUser.id)
-				//$rootScope.userData = cookies.currentUser;
-				//$location.path('/cs');
-			}
-			if (!Auth.isLoggedIn()) {
+			if(Auth.checkUser()){
+				trans.$to();
+			} else {
 				console.log('Deny');
-				// User isn't authenticated. Redirect to a new Target State
-				return trans.router.stateService.target('login');
-			} else { 
-				console.log("else"); 
-				trans.$to(); 
+				return trans.router.stateService.target('login');				
 			}
+			
+			/*
+			var userId = getCookie("id");
+			if(!Auth.checkUser()){
+				if(userId !== ""){
+					//cookies = JSON.parse(cookies);
+					//Auth.SetCredentials(cookies.currentUser.username, cookies.currentUser.Password, cookies.currentUser);
+					console.log("Cookie sets user")
+					Auth.setUser(userId);
+					trans.$to();
+					//$rootScope.userData = cookies.currentUser;
+					//$location.path('/cs');
+				}
+				else {
+					console.log('Deny');
+					// User isn't authenticated. Redirect to a new Target State
+					return trans.router.stateService.target('login');
+				}				
+			} else {
+				trans.$to();
+			}
+			*/
 		});
 		
 		function getCookie(cname) {
@@ -106,9 +102,62 @@
 			return "";
 		}
 	});
-	
+	// User Service
+	app.factory('UserService', ['$http', '$cookies', '$rootScope', '$timeout', '$q', function($http, $cookies, $rootScope, $timeout, $q){
+		var api = 'http://16watt.com/dev/pbta/api/api.php/';
+		var table = 'tbl_Users/';
+		
+		var UserService = {};
+
+		UserService.GetAll = GetAll;
+        UserService.GetById = GetById;
+        UserService.GetByUsername = GetByUsername;
+		/*
+		UserService.Create = Create;
+        UserService.Update = Update;
+		UserService.Delete = Delete;
+		*/
+		return UserService;
+		
+		function GetAll() {
+            return $http.get(api + table).then(handleSuccess, handleError('Error getting all users'));
+        }
+
+        function GetById(id) {
+            return $http.get(api + table + '/id/' + id).then(handleSuccess, handleError('Error getting user by id'));
+        }
+
+        function GetByUsername(username) {
+            return $http.get(api + table + '/username/' + username).then(handleSuccess, handleError('Error getting user by username'));
+        }
+		/*
+        function Create(user) {
+            return $http.post(api + table + user).then(handleSuccess, handleError('Error creating user'));
+        }
+
+        function Update(user) {
+            return $http.put(api + table + user.id, user).then(handleSuccess, handleError('Error updating user'));
+        }
+
+        function Delete(id) {
+            return $http.delete(api + table + id).then(handleSuccess, handleError('Error deleting user'));
+        }
+		*/
+        // private functions
+
+        function handleSuccess(res) {
+            return res.data;
+        }
+
+        function handleError(error) {
+            return function () {
+                return { success: false, message: error };
+            };
+        }
+
+	}]);
 	// Authentication Service
-	app.factory('Auth', ['Base64', '$http', '$cookies', '$rootScope', '$timeout', function(Base64, $http, $cookies, $rootScope, $timeout){
+	app.factory('Auth', ['Base64', '$http', '$cookies', '$rootScope', '$timeout', '$q', function(Base64, $http, $cookies, $rootScope, $timeout, $q){
 		//Private Properties
 		var api = 'http://16watt.com/dev/pbta/api/api.php/';
 		
@@ -120,6 +169,38 @@
 		Auth.setUser = function(aUser){
 			user = aUser;
 		};
+
+		Auth.checkUser = function(){
+			if(typeof $rootScope.userData !== 'undefined'){
+				return true;
+			} else {
+				//Not logged in, check for cookie
+				var userId = $cookies.getObject('id');
+				if (typeof userId !== 'undefined'){
+					//We have a cookie, let's log this sucka in
+					Auth.AutoLogin(userId, function(response){
+						console.log("Logging in " + $rootScope.userData.username + " from cookie");						
+					
+					});										
+					return true;
+				} else {
+					return false;
+				}				
+			}
+			/*
+			if(typeof user === "undefined"){
+				if(typeof $cookies.getObject('id') !== 'undefined'){
+					Auth.AutoLogin($cookies.getObject('id'));
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				Auth.AutoLogin($cookies.getObject('id'));
+				return true;
+			}
+			*/
+		}
 		
 		Auth.isLoggedIn = function(){
 			return(user) ? user : false;
@@ -199,8 +280,7 @@
 		};
 		
 		return Auth;
-	}]);
-	
+	}]);	
 	// Base64 Requirement for Auth
 	app.factory('Base64', function () {
 		/* jshint ignore:start */
@@ -285,6 +365,7 @@
 			}
 		};
 	});
+	/*
 	// Login Controller
 	app.controller('LoginController', ['$scope', '$rootScope', '$cookies', '$location', '$http', '$q', 'Auth', function ($scope, $rootScope, $cookies, $location, $http, $q, Auth) {
 		//Private Properties
@@ -386,13 +467,9 @@
 			)
 		}
 	}]);
-	// Test Controller
-	app.controller('TestController', ['$rootScope','$scope','$http','$q','$state','$stateParams','$location', function($rootScope, $scope, $http, $q, $state, $stateParams, $location){
-		$scope.testText = 'Test text from $scope.testText';
-		$scope.url = $location.path();
-	}]);
+	*/
 	// Character Sheet Controller
-	app.controller('CharacterSheet', ['$rootScope','$scope','$http','$q','$state','$stateParams','$location', function($rootScope, $scope, $http, $q, $state, $stateParams, $location){
+	app.controller('CharacterSheet', ['$rootScope','$scope','$http','$q','$state','$stateParams','$location', 'Auth', function($rootScope, $scope, $http, $q, $state, $stateParams, $location, Auth){
 		//Private Properties
 		var api = 'http://16watt.com/dev/pbta/api/api.php/';
 		
@@ -414,6 +491,11 @@
 			
 			console.log($scope.user);
 			console.log($rootScope.userData);
+			if (typeof $rootScope.userData === "undefined"){
+				if(!Auth.checkUser()){
+					$location.path('/login');
+				}
+			}
 			$scope.characterData = getCharacterData($rootScope.userData.id);
 		}
 		
@@ -614,6 +696,7 @@
 		}
 		
 	}]); 
+	/*
 	// Reference Sheet Controller
 	app.controller('ReferenceController', ['$rootScope','$scope','$http','$q','$sce', function($rootScope, $scope, $http, $q, $sce){
 		//Private Properties
@@ -843,11 +926,12 @@
 		
 		
 	}]);
-	
+	*/
 	//end app.controller
 
 	// Additional App functions / variables
-    var rootID = GetUser();
+	/*
+	var rootID = GetUser();
 
     GetUser.$inject = ['$cookies', 'Auth'];
     function GetUser($cookies, Auth){
@@ -863,5 +947,6 @@
         } else {
             console.log("base GetUser failed; not logged in, no cookie.");
         }
-    }
+	}
+	*/
 })(); //end iffy
