@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	var app = angular.module('pbta_resources', ['ui.router', 'ngCookies', 'ngSanitize']);
+	var app = angular.module('pbta_resources', ['ui.router', 'ngCookies', 'ngSanitize', 'checklist-model']);
 
 	//States
 	app.config(function($stateProvider, $urlRouterProvider) {
@@ -201,14 +201,13 @@
 		//Scope Methods
 		$scope.attrBonus = attrBonus;
 		$scope.setModifiers = setModifiers;
-		$scope.showMoves = showMoves;
+		$scope.showMoves = showMoves;		
 		
 		init();
 		
-		function init(){
-			
-			console.log($scope.user);
-			console.log($rootScope.userData);
+		function init(){			
+			//console.log($scope.user);
+			//console.log($rootScope.userData);
 			if (typeof $rootScope.userData === "undefined"){
 				if(!Auth.checkUser()){
 					$location.path('/login');
@@ -233,7 +232,7 @@
 		$scope.updateCharacter = function(characterData){
 			//Grab the Gear array (maybe just put it in the data object below)
 			characterData.gear = JSON.stringify($scope.gear);
-			characterData.moves = getSelectedMoves();
+			characterData.moves = $scope.characterData.moves.toString();
 			var method = 'POST';
 			//var key = 'id';
 			var url = api + 'tbl_Characters/';
@@ -292,7 +291,7 @@
 					if($scope.characterData.moves == null){ $scope.characterData.moves = []; }
 					getCharacterMoves();
 					getBaseDamage();
-					setModifiers();
+					setModifiers();					
 				},
 				function(error){
 					console.log(error);
@@ -341,10 +340,6 @@
 					console.log(error);
 				}
 			);		
-		}
-		
-		function getSelectedMoves(){
-			
 		}
 		
 		function setModifiers(){

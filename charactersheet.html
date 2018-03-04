@@ -127,16 +127,20 @@
 							</div>
 						</div>
 					</div>
-					Advanced Moves <span ng-click="showMoves()">show</span>
+					Advanced Moves
 					<!-- Moves List Template -->
-					<div ng-show="movesOpen">
+					<!-- <div ng-show="movesOpen">
 						<div ng-repeat="move in allMoves" ng-hide="move.type == 'starting'">
 							<input type="checkbox" id="moveid_{{move.id}}" /><span>{{move.name}}</span><br />
 						</div>
-					</div>
-					<div ng-repeat="move in allMoves" ng-show="move.type == 'advanced'">
-						<div class="move-container" ng-show="characterData.moves.indexOf(move.id) !== -1">
-							<h2 class="move">{{move.id}} - {{move.name}}</h2>
+					</div> -->
+					<div ng-repeat="move in allMoves" ng-show="move.type == 'advanced' || move.type == 'expert'">
+						<div class="move-container">
+							<h2 class="move">
+								<input type="checkbox" 
+										ng-checked="{{characterData.moves.indexOf(move.id) > -1}}"
+										checklist-model="characterData.moves"
+										checklist-value="move.id">{{move.name}}</h2>
 							<div class="move-description" ng-hide="dungeonMove.hide">						
 								<p><span class="move-trigger">{{move.trigger}}</span>{{move.description}}</p>
 							</div>
