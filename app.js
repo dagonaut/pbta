@@ -187,7 +187,7 @@
 		};
 	});
 	// Character Sheet Controller
-	app.controller('CharacterSheet', ['$rootScope','$scope','$http','$q','$state','$stateParams','$location', 'Auth', function($rootScope, $scope, $http, $q, $state, $stateParams, $location, Auth){
+	app.controller('CharacterSheet', ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', 'Auth', function($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, Auth){
 		//Private Properties
 		var api = 'http://16watt.com/dev/pbta/api/api.php/';
 		
@@ -212,9 +212,12 @@
 			if (typeof $rootScope.userData === "undefined"){
 				if(!Auth.checkUser()){
 					$location.path('/login');
+				} else {
+					$scope.characterData = getCharacterData($cookies.getObject('id'));					
 				}
+			} else {
+				$scope.characterData = getCharacterData($rootScope.userData.id);
 			}
-			$scope.characterData = getCharacterData($rootScope.userData.id);
 		}
 		
 		$scope.addNewChoice = function() {
