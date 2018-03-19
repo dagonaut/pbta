@@ -1,252 +1,249 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Spirit of 77 Character Sheet Template</title>
-    <link rel="stylesheet" href="inc/bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" />
-    <script type="application/javascript" src="inc/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-    <style>
-        body{font-family:'Courier New';}
-        input{height:17px;border:none;padding:0px;margin:0px;}
-        .character_sheet_container{margin-left:10px;margin-top:20px;}
-        .role_character_info{height:400px; margin-bottom:5px; border-bottom:1px black solid;}
-        .role_character_attributes{height:700px; border:1px black solid;}
-        .role_character_moves{height:700px; border:1px black solid;}
-        .role_character_input{height:40px;border-top:1px solid black;border-left:1px solid black;border-right:1px solid black;border-bottom:none;}
-        .polaroid{position:relative;right:80px;height:370px;width:350px;border:1px black solid;transform:rotate(7deg);z-index:5;background:rgba(255, 255, 255, 1);}
-        .role_attribute_value{border:1px solid black;height:50px;width:100px;margin:auto;font-size:34px;text-align:center;}
-        .role_attribute_name{font-size:34px;text-align:center;}
-        .border{border:1px solid black;}
-        .role_character_attribute{
-            position:relative;
-        }
-        .role_character_attribute:before{
-            content:"";
-            position:absolute;
-            top:0;
-            left:25px;
-            width:160px;
-            height:120px;
-            opacity:.3;
-            background:url('img/fingerprint-2.png') no-repeat;
-            background-size:cover;
-            border:1px black solid;
-        }
-        .paperclip{
-            position: absolute;
-            top: -26px;
-            left: 92px;
-            width: 56px;
-            height: 100px;
-        }
-        .section_header{background-color:#000;color:#fff;}
-        .section_header_name{font-size:30px;}
-    </style>
-</head>
-<body>
-    <div class="character_sheet_container container-fluid">
-        <div class="row">
-            <!-- Left Column: ROLE -->
-            <div class="col-lg-6">
-                <!-- Character Info and Picture -->
-                <div class="row">
-                    <!-- Role Character Info -->
-                    <div class="col-md-9 role_character_info">
 
-                        <!-- Role Sheet header -->
-                        <div class="row">
-                            <div class="col-xs-12" style="height:119px;"></div>
-                        </div>
-                        <!-- Role Character Information -->
-                        <div class="row">
-                            <input class="col-xs-9 role_character_input"></input>
-                        </div>
-                        <div class="row role_character_input ">
-                            <div class="col-xs-12">
-                                <div class="row" style="height:19px;">
-                                    <div class="col-xs-5"><span>Last</span></div>
-                                    <div class="col-xs-4"><span>First</span></div>
-                                    <div class="col-xs-3"><span>Middle</span></div>
-                                </div>
-                                <div class="row">
-                                    <input class="col-xs-5"></input>
-                                    <input class="col-xs-4"></input>
-                                    <input class="col-xs-3"></input>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row role_character_input">
-                            <div class="col-xs-12">
-                            <div class="row" style="height:19px;">
-                                <div class="col-xs-12"><span>Known Aliases</span></div>
-                            </div>
-                            <div class="row">
-                                <input class="col-xs-12"></input>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="row role_character_input">
-                            <div class="col-xs-12">
-                            <div class="row" style="height:19px;">
-                                <div class="col-xs-3"><span>D.O.B.</span></div>
-                                <div class="col-xs-3"><span>Place of Birth</span></div>
-                                <div class="col-xs-3"><span>Marital Status</span></div>
-                                <div class="col-xs-3"><span>S.S.N.</span></div>
-                            </div>
-                            <div class="row">
-                                <input class="col-xs-3"></input>
-                                <input class="col-xs-3"></input>
-                                <input class="col-xs-3"></input>
-                                <input class="col-xs-3"></input>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="row role_character_input">
-                            <div class="col-xs-12">
-                            <div class="row" style="height:19px;">
-                                <div class="col-xs-2"><span>Gender</span></div>
-                                <div class="col-xs-2"><span>Height</span></div>
-                                <div class="col-xs-2"><span>Weight</span></div>
-                                <div class="col-xs-3"><span>Eyes</span></div>
-                                <div class="col-xs-2"><span>Hair</span></div>
-                            </div>
-                            <div class="row">
-                                <input class="col-xs-2"></input>
-                                <input class="col-xs-2"></input>
-                                <input class="col-xs-2"></input>
-                                <input class="col-xs-3"></input>
-                                <input class="col-xs-2"></input>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="row role_character_input">
-                            <div class="col-xs-12">
-                            <div class="row" style="height:19px;">
-                                <div class="col-xs-11"><span>Distinguishing Characteristics</span></div>
-                            </div>
-                            <div class="row">
-                                <input class="col-xs-11"></input>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="row role_character_input">
-                            <div class="col-xs-12">
-                            <div class="row" style="height:19px;">
-                                <div class="col-xs-2"><span>Address</span></div>
-                                <div class="col-xs-2"><span>City</span></div>
-                                <div class="col-xs-2"><span>State</span></div>
-                                <div class="col-xs-3"><span>Zip</span></div>
-                                <div class="col-xs-2"><span>Phone</span></div>
-                            </div>
-                            <div class="row">
-                                <input class="col-xs-3"></input>
-                                <input class="col-xs-2"></input>
-                                <input class="col-xs-2"></input>
-                                <input class="col-xs-2"></input>
-                                <input class="col-xs-2"></input>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
+	<style>
+		.attr{
+			width: 50px;
+		    height: 56px;
+		    border: solid black 1px;
+		    font-size: 24px;
+		    padding-left: 5px;
+		}
+		.attr-box{
+			width:80px;
+			height:80px;
+			margin-bottom:5px;
+			border:solid black 1px;
+		}
+		.attr-container{
+			padding:5px;			
+		}
+		.attr-name{
+			padding-left:3px;
+			border:solid black 1px;			
+			font-weight: bold;
+		}
+		.attr-bonus{
+			display: inline-block;
+		    padding-left: 5px;
+		    border: solid black 1px;
+		    height: 56px;
+		    width: 28px;
+		    line-height: 60px;
+		}
+		.sheet{
+			width:800px;
+		}
+		.value{
+			padding:11px;
+			font-size:24px;
+		}
+		.hp-container{
+			
+		}
+		.move-trigger{
+			font-weight: bold;
+		}
+		.gear input{
+			padding:0px;
+			border:none;
+			border-bottom:1px solid black;
+		}
+		textarea{
+			width:340px;
 
-                    <!-- Picture -->
-                    <div class="col-md-3">
-                        <div class="polaroid">
-                            <div style="height:270px;width:330px;border:1px black solid;margin:10px auto;">
-                                <img class="paperclip" src="img/paperclip.png" />
-                                <!-- <img src="http://www.thesmokinggun.com/sites/default/files/imagecache/670xX/photos/ricflairmug1.jpg" width="328" height="268"> -->
-                                <img src="img/lucha-mask.png" width="328" height="268">
-                            </div>
-                            <div style="font-family:'Courier New';font-size:45px;text-align:center;">
+		}
+		textarea.notes{
+			min-height:400px;
+		}
+		h1{font-size:20px;}
+        h2{font-size:18px;}
+        h3{font-size:14px;}
+        h4{font-size:12px;}
+		.move-trigger{
+			font-weight:bold;
+			color:#a52c1c; /* reddish */
+		}
+		h2.move{
+			margin:0px;
+			font-size:16px;	
+		}
+		.move:hover{
+			cursor: pointer;
+		}
+		.move-container{
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Character Attributes and Role Moves -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="role_character_attributes">
-                            <div class="role_character_attribute">
-                                <div class="role_attribute_value">+3</div>
-                                <div class="role_attribute_name">MIGHT</div>
-                                <!-- -->
-                                <div class="col-xs-1"></div>
-                                <div class="col-xs-7">Broke Down</div>
-                                <div class="col-xs-2"><input type="checkbox" /></div>
-                                <div class="col-xs-2"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="role_character_moves">
-                            <div class="role_moves_header" style="background-color:#000;color:#fff;">
-                                <div class="" style="font-size:30px;">ROLE MOVES</div>
-                            </div>
-                            <div class="row role_moves">
-                                <div class="col-md-6">
-                                    <p>You get:  Gang: (See Chapter 3 - Characters for more details about creating your gang)  Warchief: Your gang will follow you under normal circumstances, but there may be times you need to command your gang to stick their necks out, based on your words alone. When you try to impose your will on your gang, roll +Might. •	On a 10+, all three: •	On a 7–9, choose one: •	They do what you want. •	They don’t fight back over it. •	You don’t have to make an example of one of them. On a 6 or less, someone in your gang may make a dedicated bid to replace you for Alpha. Choose 1  One for the Team:  When you or your gang would take damage, you can transfer 1-harm dealt to you to the gang itself or transfer one harm dealt to your gang to you.  Plan On a Napkin:  When you make a plan of attack and explain it to the rest of your team, roll +Brains. •	On a 10+, hold 3. •	On 7-9, hold 1. While executing the plan, you can spend 1 hold to allow a member of your team roll with Something Extra on any move.</p>
+		}
+		.remove{
+			border:none;
+			background:none;
+		}
+		.name-container label{float:left;}
+		.name-container input{border:none;padding:0;padding-left:3px;border-bottom:1px solid black;float:left;}
+	</style>
 
-                                </div>
-                                <div class="col-md-6">
-                                    <p> Colors: When you encounter another Bopper, influential street figure or other gang member, roll +Smooth. •	On a 10+ they recognize your colors, and you say what they’ve heard about you. (roll with Something Extra when dealing with them for the rest of the Scene). •	On a 7-9, they recognize you, the DJ will say something truthful that they know about you.  Marked Territory: When you enter into a new part of the city, you have the option of marking the territory with your gang’s emblem. When you return to that part of the city, roll with Something Extra on all rolls while in this part of the city. This lasts for as long as your graffiti remains visible, DJ’s discretion.  Semper Fi: Your gang is more loyal than most. When in your presence your gang will always fight to the last man. When your gang takes action in your absence, they remain intact at 4-harm instead of 3-harm.  Home Field Advantage: When you prepare to to defend yourself in a rumble that takes place on your home turf, roll +Smooth: •	On a 10+, pick two of the following results: •	On a 7-9, pick one: •	Your gang brings reinforcements, increase the size of your gang by one level (Small becomes Medium, Medium becomes Large). •	Your gang digs into its weapon cache, adding +1 harm to attacks. •	Your gang fortifies it’s position, providing +1 armor. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Right Column: STORY -->
-            <div class="col-lg-6" style="height:1080px;">
-                <!-- Story Header and Type -->
-                <div class="row" style="height:100px;">
 
-                </div>
-                <!-- Story Moves -->
-                <div class="row">
-                    <div class="section_header">
-                        <div class="section_header_name">STORY MOVES</div>
-                    </div>
-                    <div class="" style="height:500px;">
+	<div class="container-fluid sheet">
+					<button style="margin-left:-100px;" ng-click="updateCharacter(characterData)">SAVE</button>
+		<div class="row">
+			<!-- Left Column -->
+			<div class="col-md-6">
+				<div class="row">
+					<label>Game: </label>
+					<select>						
+						<option value="3">Spirit of '77'</option>
+					</select>
+				</div>
+				<div class="row name-container">					
+					<label>Name: </label><input class="col-xs-5" type="text" ng-model="characterData.name" />
+					<label>Class: </label><input class="col-xs-3" type="text" ng-model="characterData.class" />
+				</div>
+				<div class="row">
+					<div class="col-sm-3">
+						<div><strong>Level: </strong></div><input class="attr" type="number" ng-model="characterData.level" />
+					</div>
+					<div class="col-sm-3">
+						<div><strong>XP: </strong></div> <input class="attr" type="number" ng-model="characterData.xp" />
+					</div>
+					<div class="col-sm-4">
+						<div><strong>Next: </strong><small> (7+ level)</small></div><div class="value">{{characterData.level + 7}}</div>
+					</div>
+				</div>
+				<div class="row">
+					<div><strong>Look:</strong></div>
+					<textarea ng-model="characterData.look"></textarea>
+				</div>
+				<div class="row">
+					<div><strong>Alignment: </strong></div>
+					<textarea ng-model="characterData.alignment"></textarea>
+					<div>Bonds: </div>
+					<textarea type="text" ng-model="characterData.bonds"></textarea>
+					<div>Moves: </div>
+					<div ng-repeat="move in allMoves" ng-show="move.type == 'starting'">
+						<div class="move-container">
+							<h2 class="move">{{move.name}}</h2>
+							<div class="move-description" ng-hide="dungeonMove.hide">						
+								<p><span class="move-trigger">{{move.trigger}}</span>{{move.description}}</p>
+							</div>
+						</div>
+					</div>
+					Advanced Moves
+					<!-- Moves List Template -->
+					<!-- <div ng-show="movesOpen">
+						<div ng-repeat="move in allMoves" ng-hide="move.type == 'starting'">
+							<input type="checkbox" id="moveid_{{move.id}}" /><span>{{move.name}}</span><br />
+						</div>
+					</div> -->
+					<div ng-repeat="move in allMoves" ng-show="move.type == 'advanced' || move.type == 'expert'">
+						<div class="move-container">
+							<h2 class="move">
+								<input type="checkbox" 
+										ng-checked="{{characterData.moves.indexOf(move.id) > -1}}"
+										checklist-model="characterData.moves"
+										checklist-value="move.id">{{move.name}}</h2>
+							<div class="move-description" ng-hide="dungeonMove.hide">						
+								<p><span class="move-trigger">{{move.trigger}}</span>{{move.description}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Right Column -->
+			<div class="col-md-6">
+				<div class="row hp-container">
+					<div class="col-sm-3">
+						<div>Damage: </div>
+						<div class="value">{{characterData.damage}}</div>
+					</div>
+					<div class="col-sm-3">
+						<div>HP: </div>
+						<input class="attr" type="number" ng-model="characterData.hp" />
+					</div>
+					<div class="col-sm-3">
+						<div>Max: </div>
+						<div class="value">{{characterData.basehp + characterData.con}}</div>
+					</div>
+					<div class="col-sm-3">
+						<div>Armor: </div>
+						<input class="attr" type="number" ng-model="characterData.armor" />
+					</div>
+				</div>
+				<!-- Attributes -->
+				<div class="attr-container">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="attr-box">
+								<div class="attr-name">STR </div>
+								<input class="attr" type="number" ng-model="characterData.str" ng-change="setModifiers();" /><div class="attr-bonus">{{attrModifiers.str}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">DEX </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.dex" /><div class="attr-bonus">{{attrModifiers.dex}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">CON </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.con" /><div class="attr-bonus">{{attrModifiers.con}}</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">INT </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.int" /><div class="attr-bonus">{{attrModifiers.int}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">WIS </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.wis" /><div class="attr-bonus">{{attrModifiers.wis}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">CHA </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.cha" /><div class="attr-bonus">{{attrModifiers.cha}}</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<em>16 (+2), 15(+1), 13(+1), 12(0), 9(0), 8(-1)</em>
+						</div>
+					</div>
+					<!-- Gear/Notes -->
+					<div class="row">
+						<div class="col-md-12 gear">
+							<div class="row">
+							<div class="col-xs-6">Gear: </div>
+							<div class="col-xs-6 text-right">Max load: {{(attrModifiers.str + 9)|number:0}}</div>
 
-                    </div>
-                </div>
-                <!-- Gear and Thangs -->
-                <div class="row">
-                    <div class="section_header">
-                        <div class="section_header_name">GEAR AND THANGS</div>
-                    </div>
-                    <div class="" style="height:100px;">
+							<div class="col-xs-8">Name</div>
+							<div class="col-xs-2">Tags</div>							
+							<div class="col-xs-2">Weight</div>
+							</div>
+							<fieldset  data-ng-repeat="g in gear track by $index">
+								<input class="col-xs-8" type="text" ng-model="g.name" />
+								<input class="col-xs-3" type="text" ng-model="g.tags" />
+								<div class="col-xs-1">
+									<input style="float:left;width:8px;border-bottom:none;" type="text" ng-model="g.weight" />
+									<button style="" class="remove" ng-click="removeChoice(g.id)">X</button>
+								</div>
+							</fieldset>
+							<button class="addfields" ng-click="addNewChoice()">Add gear</button>
+							<!-- For debug
+							<div id="choicesDisplay">
+								{{ gear }}
+							</div>
+							-->
+							<div>Notes</div>
+							<textarea class="notes" type="textarea" ng-model="characterData.notes"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-                    </div>
-                </div>
-                <!-- Buzz, Harm, Hooks -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Buzz -->
-                        <div class="row" style="height:100px;">
-                            <div class="section_header">
-                                <div class="section_header_name">BUZZ</div>
-                            </div>
-                        </div>
-                        <!-- Hooks Moves -->
-                        <div class="row" style="height:200px;">
-                            <div class="section_header">
-                                <div class="section_header_name">HOOKS</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <!-- Harm -->
-                        <div class="" style="height:300px;">
-                            <div class="section_header">
-                                <div class="section_header_name">HOOKS</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
