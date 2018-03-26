@@ -36,6 +36,12 @@
 				controller: 'CharacterSheet',
 				controllerAs: 'vm'
 			})
+			.state('so77',{
+				url: '/so77',
+				templateUrl: 'so77.html',
+				controller: 'so77Controller',
+				controllerAs: 'vm'
+			})			
 			.state('auth.reference',{
 				url: '/reference',
 				templateUrl: 'reference.html',
@@ -53,7 +59,7 @@
 	//Run transitions
 	app.run(function($transitions) {		
 		$transitions.onStart({ to: 'auth.**' }, function(trans) {
-			//console.log('app.run.$transition.onStart');
+			console.log('app.run.$transition.onStart');
 			//console.log(trans.$to().name);
 			var Auth = trans.injector().get('Auth');
 			if(Auth.checkUser()){

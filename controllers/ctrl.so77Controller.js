@@ -1,0 +1,174 @@
+(function(){
+    'use strict';
+
+    angular
+        .module('pbta_resources')
+        .controller('so77Controller', so77Controller);
+        
+        so77Controller.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', 'Auth'];
+        function so77Controller($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, Auth){
+            //Private Properties
+            var vm = this;
+            var api = 'http://16watt.com/dev/pbta/api/api.php/';
+            
+            vm.user = 1;
+            vm.characterData = {};
+            vm.allMoves = []; //getCharacterMoves();
+            vm.roles = [{name:'The Bopper'}, {name:'The Good Ole Boy'}, {name:'The Honey Pot'}, {name:'The Rocker'},{name:'The Sleuth'},{name:'The Tough Guy'},{name:'The Vigilante'}];
+            vm.stories = [{name:'The All-Star'}, {name:'Ex-con'}, {name:'Former Badge'}, {name:'Glam'},{name:'Humble Beginnings'},{name:'Kung-Fu'},{name:'One Bad Mother'},{name:'War Vet'},{name:'X-Tech'}];
+            vm.attributes = {might: 0, hustle: 0, smooth: 0, brains: 0, soul: 0};
+            vm.allMoves = [{id:0,name:"tacos"},{id:1,name:"nachos"},{id:2,name:"machos"},{id:3,name:"honchos"},{id:4,name:"yarblockos"}];
+            //vm.allMoves = [0,1,2,3,4];
+            vm.moves = [];
+            
+            //Scope Methods
+            //vm.attrBonus = attrBonus;
+            //vm.setModifiers = setModifiers;
+            //vm.showMoves = showMoves;		
+            
+            //Scope Functions
+            vm.updateCharacter = updateCharacter;
+            vm.updateMoves = updateMoves;
+
+            init();
+            
+            function init(){
+                console.log('init');
+                getCharacterData(vm.user);
+                /*
+                if (typeof $rootScope.userData === "undefined"){
+                    if(!Auth.checkUser()){
+                        $location.path('/login');
+                    } else {
+                        $scope.characterData = getCharacterData($cookies.getObject('id'));					
+                    }
+                } else {
+                    $scope.characterData = getCharacterData($rootScope.userData.id);
+                }
+                */
+            }
+            
+            function updateMoves(moveId){
+                var i = vm.characterData.moves.indexOf(moveId);
+                if (i > -1){
+                    vm.characterData.moves.splice(i, 1);
+                } else {
+                    vm.characterData.moves.push(moveId);
+                }
+            };     
+
+            function updateCharacter(characterData){
+                console.log('updateCharacter');
+                console.log(characterData);
+                console.log(vm.attributes);
+                console.log(JSON.stringify(vm.attributes));
+                //Grab the Gear array (maybe just put it in the data object below)
+                vm.attibutes = JSON.stringify(vm.attributes);
+                characterData.moves = vm.characterData.moves.join(',');
+                var method = 'POST';
+                characterData.id = 1;
+                characterData.gameid = 3;
+                characterData.createdby = 1;
+                //var key = 'id';
+                var url = api + 'tbl_so77_Characters/';
+                if(characterData.id){
+                    method = 'PUT';
+                    url = url + characterData.id;
+                }
+                var config = {
+                    method: method,
+                    url: url,
+                    data: {
+                        id: characterData.id,
+                        gameid: characterData.gameid,
+                        name: characterData.name,
+                        role: characterData.role,
+                        story: characterData.story,
+                        level: characterData.level,
+                        xp: characterData.xp,
+                        look: characterData.look,
+                        alignment: characterData.alignment,
+                        damage: characterData.damage,
+                        harm: characterData.harm,
+                        hooks: characterData.hooks,
+                        moves: characterData.moves,
+                        gear: characterData.gear,
+                        notes: characterData.notes,
+                        createdby: characterData.createdby,
+                        attributes: characterData.attributes,
+                        heat: characterData.heat,
+                        buzz: characterData.buzz,
+                        might: characterData.might,
+                        hustle: characterData.hustle,
+                        smooth: characterData.smooth,
+                        brains: characterData.brains,
+                        soul: characterData.soul,
+                    }
+                };
+                $http(config).then(characterSuccess, characterFailure);
+                
+                function characterSuccess(response){
+                    console.log(response);
+                }
+                function characterFailure(error){
+                    console.log(error);
+                }
+                
+            };
+            
+            function getCharacterData(userId){
+                console.log('getCharacter');
+                $http.get(api + 'tbl_so77_Characters/createdby/' + userId).then(
+                    function(response){
+                        console.log(response);
+                        vm.characterData = response.data;
+                        vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]"); //To keep it as integers not strings
+                        
+                        //if(vm.characterData.moves == null){ vm.moves = []; }
+                        //getCharacterMoves();
+                        //getBaseDamage();
+                        //setModifiers();					
+                    },
+                    function(error){
+                        console.log(error);
+                    }
+                )
+            }
+            
+            function getCharacterMoves(){
+                var config = {
+                    method: 'GET',
+                    url: api + 'tbl_Moves/class/"' + $scope.characterData.class + '"'
+                };
+                $http(config).then(
+                    function(response){
+                        var moves = [];
+                        for(var i = 0; i < response.data.length; i++){
+                            moves.push(response.data[i]); 
+                        }
+                        $scope.allMoves = moves;
+                    },
+                    function(error){
+                        console.log(error);
+                    }
+                );		
+            }
+            
+            function setModifiers(){
+                if(vm.characterData.attributes != null){
+                    vm.characterData.attibutes = JSON.parse(vm.characterData.attributes);
+                    console.log(vm.characterData.attributes); 
+                } else {
+                    // set blank object
+                    vm.characterData.attributes = {
+                        might: 0,
+                        hustle: 0,
+                        smooth: 0,
+                        brains: 0,
+                        soul: 0
+                    }
+                    console.log(vm.characterData.attributes);
+                }
+            }
+        }
+})();
