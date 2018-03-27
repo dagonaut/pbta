@@ -101,44 +101,52 @@
 
 
 	<div class="container-fluid sheet">
-		<button ng-click="vm.updateCharacter(vm.characterData)">SAVE</button>
 		<div class="row">
-			<label>Name</label><input type="text" ng-model="vm.characterData.name" /><br />
-			<label>Role</label>
-			<select ng-model="vm.characterData.role">
-				<option ng-repeat="role in vm.roles" value="{{role.name}}" ng-selected="vm.characterDate.role">{{role.name}}</option>
-			</select><br />
-			<label>Story</label>
-			<select ng-model="vm.characterData.story">
-				<option ng-repeat="story in vm.stories" value="{{story.name}}" ng-selected="vm.characterDate.story">{{story.name}}</option>
-			</select><br /><br />
-			<label>Level</label><input type="text" ng-model="vm.characterData.level" /><br />
-			<label>XP</label><input type="text" ng-model="vm.characterData.xp" /><br />
-			<label>Look</label><input type="text" ng-model="vm.characterData.look" /><br />
-			<label>Alignment</label><input type="text" ng-model="vm.characterData.alignment" /><br />
-			<label>Hooks</label><input type="text" ng-model="vm.characterData.hooks" /><br />
-			<label>Buzz</label><input type="text" ng-model="vm.characterData.buzz" /><br />
-			<label>Harm</label><input type="text" ng-model="vm.characterData.harm" /><br />
-			<label>Might</label><input type="text" ng-model="vm.characterData.might" /><br />
-			<label>Hustle</label><input type="text" ng-model="vm.characterData.hustle" /><br />
-			<label>Smooth</label><input type="text" ng-model="vm.characterData.smooth" /><br />
-			<label>Brains</label><input type="text" ng-model="vm.characterData.brains" /><br />
-			<label>Soul</label><input type="text" ng-model="vm.characterData.soul" /><br />			
-		</div>
-		<div class="row">
-			<div>
-				<label ng-repeat="move in vm.allMoves">
-					<input
-					  id="move_{{move.id}}"
-					  type="checkbox"					  
-					  value="{{move.id}}"
-					  ng-checked="vm.characterData.moves.indexOf(move.id) > -1"
-					  ng-click="vm.updateMoves(move.id)"					  
-					> {{move}}
-				  </label>
+			<div class="col-md-6">
+				<button ng-click="vm.updateCharacter(vm.characterData)">SAVE</button>
+				<div class="row">
+					<label>Name</label><input type="text" ng-model="vm.characterData.name" /><br />
+					<label>Role</label>
+					<select ng-model="vm.characterData.role">
+						<option ng-repeat="role in vm.roles" value="{{role.name}}" ng-selected="vm.characterDate.role" ng-change="vm.setRoleDescription()">{{role.name}}</option>
+					</select><br />
+					<label>Story</label>
+					<select ng-model="vm.characterData.story">
+						<option ng-repeat="story in vm.stories" value="{{story.name}}" ng-selected="vm.characterDate.story">{{story.name}}</option>
+					</select><br /><br />
+					<label>Level</label><input type="text" ng-model="vm.characterData.level" /><br />
+					<label>XP</label><input type="text" ng-model="vm.characterData.xp" /><br />
+					<label>Look</label><input type="text" ng-model="vm.characterData.look" /><br />
+					<label>Alignment</label><input type="text" ng-model="vm.characterData.alignment" /><br />
+					<label>Hooks</label><input type="text" ng-model="vm.characterData.hooks" /><br />
+					<label>Buzz</label><input type="text" ng-model="vm.characterData.buzz" /><br />
+					<label>Harm</label><input type="text" ng-model="vm.characterData.harm" /><br />
+					<label>Might</label><input type="text" ng-model="vm.characterData.might" /><br />
+					<label>Hustle</label><input type="text" ng-model="vm.characterData.hustle" /><br />
+					<label>Smooth</label><input type="text" ng-model="vm.characterData.smooth" /><br />
+					<label>Brains</label><input type="text" ng-model="vm.characterData.brains" /><br />
+					<label>Soul</label><input type="text" ng-model="vm.characterData.soul" /><br />			
+				</div>
+				<div class="row">
+					<div>
+						<label ng-repeat="move in vm.allMoves">
+							<input
+							id="move_{{move.id}}"
+							type="checkbox"					  
+							value="{{move.id}}"
+							ng-checked="vm.characterData.moves.indexOf(move.id) > -1"
+							ng-click="vm.updateMoves(move.id)"					  
+							> {{move}}
+						</label>
+					</div>
+					<div>{{vm.characterData.moves}}</div>
+				</div>
 			</div>
-			<div>{{vm.characterData.moves}}</div>
+			<div class="cold-md-6">
+				{{vm.roleDescription}}
+			</div>
 		</div>
+		
 		<script>/*
 		<div class="row">
 			<!-- Left Column -->

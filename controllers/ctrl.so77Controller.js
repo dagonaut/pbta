@@ -20,6 +20,7 @@
             vm.allMoves = [{id:0,name:"tacos"},{id:1,name:"nachos"},{id:2,name:"machos"},{id:3,name:"honchos"},{id:4,name:"yarblockos"}];
             //vm.allMoves = [0,1,2,3,4];
             vm.moves = [];
+            vm.roleDescription = '';
             
             //Scope Methods
             //vm.attrBonus = attrBonus;
@@ -29,6 +30,7 @@
             //Scope Functions
             vm.updateCharacter = updateCharacter;
             vm.updateMoves = updateMoves;
+            vm.setRoleDescription = setRoleDescription;
 
             init();
             
@@ -48,6 +50,43 @@
                 */
             }
             
+            function setRoleDescription(){
+                var file = "";
+                switch(vm.characterData.role) {
+                    case "The Bopper":
+                        file = "so77-BopperMoves.html"
+                        break;
+                    case "The Bopper":
+                        file = "so77-GoodOldBoyMoves.html"
+                        break;
+                    case "The Bopper":
+                        file = "so77-HoneyPotMoves.html"
+                        break;
+                    case "The Bopper":
+                        file = "so77-RockerMoves.html"
+                        break;
+                    case "The Bopper":
+                        file = "so77-SleuthMoves.html"
+                        break;
+                    case "The Bopper":
+                        file = "so77-ToughGuyMoves.html"
+                        break;
+                    case "The Bopper":
+                        file = "so77-VigilanteMoves.html"
+                        break;                    
+                    default:
+                        file = "so77-BopperMoves.html"
+                }
+                $.get(file).then(roleSuccess, roleFailure);
+                function roleSuccess(response){
+                    console.log(response);
+                    vm.roleDescription = response.data;
+                }
+                function roleFailure(error){
+                    console.log(error);
+                }
+            }
+
             function updateMoves(moveId){
                 var i = vm.characterData.moves.indexOf(moveId);
                 if (i > -1){
@@ -123,7 +162,7 @@
                         console.log(response);
                         vm.characterData = response.data;
                         vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]"); //To keep it as integers not strings
-                        
+                        setRoleDescription();
                         //if(vm.characterData.moves == null){ vm.moves = []; }
                         //getCharacterMoves();
                         //getBaseDamage();
