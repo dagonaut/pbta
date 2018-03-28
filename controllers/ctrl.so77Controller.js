@@ -5,8 +5,8 @@
         .module('pbta_resources')
         .controller('so77Controller', so77Controller);
         
-        so77Controller.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', 'Auth'];
-        function so77Controller($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, Auth){
+        so77Controller.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth'];
+        function so77Controller($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth){
             //Private Properties
             var vm = this;
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
@@ -14,13 +14,13 @@
             vm.user = 1;
             vm.characterData = {};
             vm.allMoves = []; //getCharacterMoves();
-            vm.roles = [{name:'The Bopper'}, {name:'The Good Ole Boy'}, {name:'The Honey Pot'}, {name:'The Rocker'},{name:'The Sleuth'},{name:'The Tough Guy'},{name:'The Vigilante'}];
+            vm.roles = [{name:'The Bopper'}, {name:'The Good Old Boy'}, {name:'The Honey Pot'}, {name:'The Rocker'},{name:'The Sleuth'},{name:'The Tough Guy'},{name:'The Vigilante'}];
             vm.stories = [{name:'The All-Star'}, {name:'Ex-con'}, {name:'Former Badge'}, {name:'Glam'},{name:'Humble Beginnings'},{name:'Kung-Fu'},{name:'One Bad Mother'},{name:'War Vet'},{name:'X-Tech'}];
             vm.attributes = {might: 0, hustle: 0, smooth: 0, brains: 0, soul: 0};
             vm.allMoves = [{id:0,name:"tacos"},{id:1,name:"nachos"},{id:2,name:"machos"},{id:3,name:"honchos"},{id:4,name:"yarblockos"}];
             //vm.allMoves = [0,1,2,3,4];
             vm.moves = [];
-            vm.roleDescription = '';
+            vm.roleDescription = "Tacos";
             
             //Scope Methods
             //vm.attrBonus = attrBonus;
@@ -54,33 +54,32 @@
                 var file = "";
                 switch(vm.characterData.role) {
                     case "The Bopper":
-                        file = "so77-BopperMoves.html"
+                        file = "./static/so77-BopperMoves.html"
                         break;
-                    case "The Bopper":
-                        file = "so77-GoodOldBoyMoves.html"
+                    case "The Good Old Boy":
+                        file = "./static/so77-GoodOldBoyMoves.html"
                         break;
-                    case "The Bopper":
-                        file = "so77-HoneyPotMoves.html"
+                    case "The Honey Pot":
+                        file = "./static/so77-HoneyPotMoves.html"
                         break;
-                    case "The Bopper":
-                        file = "so77-RockerMoves.html"
+                    case "The Rocker":
+                        file = "./static/so77-RockerMoves.html"
                         break;
-                    case "The Bopper":
-                        file = "so77-SleuthMoves.html"
+                    case "The Sleuth":
+                        file = "./static/so77-SleuthMoves.html"
                         break;
-                    case "The Bopper":
-                        file = "so77-ToughGuyMoves.html"
+                    case "The Tough Guy":
+                        file = "./static/so77-ToughGuyMoves.html"
                         break;
-                    case "The Bopper":
-                        file = "so77-VigilanteMoves.html"
+                    case "The Vigilante":
+                        file = "./static/so77-VigilanteMoves.html"
                         break;                    
                     default:
-                        file = "so77-BopperMoves.html"
+                        file = "./static/so77-BopperMoves.html"
                 }
                 $.get(file).then(roleSuccess, roleFailure);
                 function roleSuccess(response){
-                    console.log(response);
-                    vm.roleDescription = response.data;
+                    $scope.$apply(function(){vm.roleDescription = response});
                 }
                 function roleFailure(error){
                     console.log(error);
@@ -162,7 +161,7 @@
                         console.log(response);
                         vm.characterData = response.data;
                         vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]"); //To keep it as integers not strings
-                        setRoleDescription();
+                        setRoleDescription(vm.characterData.role);
                         //if(vm.characterData.moves == null){ vm.moves = []; }
                         //getCharacterMoves();
                         //getBaseDamage();

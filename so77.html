@@ -107,8 +107,8 @@
 				<div class="row">
 					<label>Name</label><input type="text" ng-model="vm.characterData.name" /><br />
 					<label>Role</label>
-					<select ng-model="vm.characterData.role">
-						<option ng-repeat="role in vm.roles" value="{{role.name}}" ng-selected="vm.characterDate.role" ng-change="vm.setRoleDescription()">{{role.name}}</option>
+					<select ng-model="vm.characterData.role" ng-change="vm.setRoleDescription()">
+						<option ng-repeat="role in vm.roles" value="{{role.name}}" ng-selected="vm.characterDate.role">{{role.name}}</option>
 					</select><br />
 					<label>Story</label>
 					<select ng-model="vm.characterData.story">
@@ -142,8 +142,10 @@
 					<div>{{vm.characterData.moves}}</div>
 				</div>
 			</div>
-			<div class="cold-md-6">
-				{{vm.roleDescription}}
+			<div class="col-md-6">
+				<div ng-bind-html="vm.roleDescription">
+					
+				</div>
 			</div>
 		</div>
 		
