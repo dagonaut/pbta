@@ -15,12 +15,13 @@
             vm.characterData = {};
             vm.allMoves = []; //getCharacterMoves();
             vm.roles = [{name:'The Bopper'}, {name:'The Good Old Boy'}, {name:'The Honey Pot'}, {name:'The Rocker'},{name:'The Sleuth'},{name:'The Tough Guy'},{name:'The Vigilante'}];
-            vm.stories = [{name:'The All-Star'}, {name:'Ex-con'}, {name:'Former Badge'}, {name:'Glam'},{name:'Humble Beginnings'},{name:'Kung-Fu'},{name:'One Bad Mother'},{name:'War Vet'},{name:'X-Tech'}];
+            vm.stories = [{name:'The All-Star'}, {name:'Ex-Con'}, {name:'Former Badge'}, {name:'Glam'},{name:'Humble Beginnings'},{name:'Kung-Fu'},{name:'One Bad Mother'},{name:'War Vet'},{name:'X-Tech'}];
             vm.attributes = {might: 0, hustle: 0, smooth: 0, brains: 0, soul: 0};
             vm.allMoves = [{id:0,name:"tacos"},{id:1,name:"nachos"},{id:2,name:"machos"},{id:3,name:"honchos"},{id:4,name:"yarblockos"}];
             //vm.allMoves = [0,1,2,3,4];
             vm.moves = [];
             vm.roleDescription = "Tacos";
+            vm.storyDescription = "Story";
             
             //Scope Methods
             //vm.attrBonus = attrBonus;
@@ -31,6 +32,7 @@
             vm.updateCharacter = updateCharacter;
             vm.updateMoves = updateMoves;
             vm.setRoleDescription = setRoleDescription;
+            vm.setStoryDescription = setStoryDescription;
 
             init();
             
@@ -82,6 +84,48 @@
                     $scope.$apply(function(){vm.roleDescription = response});
                 }
                 function roleFailure(error){
+                    console.log(error);
+                }
+            }
+
+            function setStoryDescription(){
+                var file = "";
+                switch(vm.characterData.story) {
+                    case "The All-Star":
+                        file = "./static/so77-AllStar.html"
+                        break;
+                    case "Ex-Con":
+                        file = "./static/so77-ExCon.html"
+                        break;
+                    case "Former Badge":
+                        file = "./static/so77-FormerBadge.html"
+                        break;
+                    case "Glam":
+                        file = "./static/so77-Glam.html"
+                        break;
+                    case "Humble Beginnings":
+                        file = "./static/so77-HumbleBeginning.html"
+                        break;
+                    case "Kung-Fu":
+                        file = "./static/so77-KungFu.html"
+                        break;
+                    case "One Bad Mother":
+                        file = "./static/so77-OneBadMother.html"
+                        break;  
+                    case "War Vet":
+                        file = "./static/so77-WarVet.html"
+                        break;  
+                    case "X-Tech":
+                        file = "./static/so77-XTech.html"
+                        break;                    
+                    default:
+                        file = "./static/so77-BopperMoves.html"
+                }
+                $.get(file).then(storySuccess, storyFailure);
+                function storySuccess(response){
+                    $scope.$apply(function(){vm.storyDescription = response});
+                }
+                function storyFailure(error){
                     console.log(error);
                 }
             }
@@ -162,6 +206,7 @@
                         vm.characterData = response.data;
                         vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]"); //To keep it as integers not strings
                         setRoleDescription(vm.characterData.role);
+                        setStoryDescription(vm.characterData.story);
                         //if(vm.characterData.moves == null){ vm.moves = []; }
                         //getCharacterMoves();
                         //getBaseDamage();

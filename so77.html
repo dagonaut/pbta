@@ -100,9 +100,9 @@
 	</style>
 
 
-	<div class="container-fluid sheet">
+	<div class="container-fluid sheet" style="width:97%;">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<button ng-click="vm.updateCharacter(vm.characterData)">SAVE</button>
 				<div class="row">
 					<label>Name</label><input type="text" ng-model="vm.characterData.name" /><br />
@@ -111,7 +111,7 @@
 						<option ng-repeat="role in vm.roles" value="{{role.name}}" ng-selected="vm.characterDate.role">{{role.name}}</option>
 					</select><br />
 					<label>Story</label>
-					<select ng-model="vm.characterData.story">
+					<select ng-model="vm.characterData.story" ng-change="vm.setStoryDescription()">
 						<option ng-repeat="story in vm.stories" value="{{story.name}}" ng-selected="vm.characterDate.story">{{story.name}}</option>
 					</select><br /><br />
 					<label>Level</label><input type="text" ng-model="vm.characterData.level" /><br />
@@ -142,10 +142,13 @@
 					<div>{{vm.characterData.moves}}</div>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<div ng-bind-html="vm.roleDescription">
 					
 				</div>
+			</div>
+			<div class="col-md-4">
+				<div ng-bind-html="vm.storyDescription"></div>
 			</div>
 		</div>
 		
