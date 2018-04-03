@@ -17,8 +17,9 @@
             vm.roles = [{name:'The Bopper'}, {name:'The Good Old Boy'}, {name:'The Honey Pot'}, {name:'The Rocker'},{name:'The Sleuth'},{name:'The Tough Guy'},{name:'The Vigilante'}];
             vm.stories = [{name:'The All-Star'}, {name:'Ex-Con'}, {name:'Former Badge'}, {name:'Glam'},{name:'Humble Beginnings'},{name:'Kung-Fu'},{name:'One Bad Mother'},{name:'War Vet'},{name:'X-Tech'}];
             vm.attributes = {might: 0, hustle: 0, smooth: 0, brains: 0, soul: 0};
-            vm.allMoves = [{id:0,name:"tacos"},{id:1,name:"nachos"},{id:2,name:"machos"},{id:3,name:"honchos"},{id:4,name:"yarblockos"}];
+            //vm.allMoves = [{id:0,name:"tacos"},{id:1,name:"nachos"},{id:2,name:"machos"},{id:3,name:"honchos"},{id:4,name:"yarblockos"}];
             //vm.allMoves = [0,1,2,3,4];
+            vm.allMoves = getAllMoves();
             vm.moves = [];
             vm.roleDescription = "Tacos";
             vm.storyDescription = "Story";
@@ -128,6 +129,29 @@
                 function storyFailure(error){
                     console.log(error);
                 }
+            }
+
+            function getAllMoves(){
+                var gameid = 3;
+                var config = {
+                    method: 'GET',
+                    url: api + 'tbl_Moves/gameid/"' + gameid + '"'
+                };
+                $http(config).then(
+                    function(response){
+                        var moves = [];
+                        for(var i = 0; i < response.data.length; i++){
+                            moves.push(response.data[i]); 
+                        }
+                        vm.allMoves = moves;
+                        console.log(moves);
+                        //console.log($scope.allMoves);
+                        
+                    },
+                    function(error){
+                        console.log(error);
+                    }
+                );		
             }
 
             function updateMoves(moveId){
