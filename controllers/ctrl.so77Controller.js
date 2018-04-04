@@ -172,9 +172,9 @@
                 vm.attibutes = JSON.stringify(vm.attributes);
                 characterData.moves = vm.characterData.moves.join(',');
                 var method = 'POST';
-                characterData.id = 1;
+                //characterData.id = 1;
                 characterData.gameid = 3;
-                characterData.createdby = 1;
+                //characterData.createdby = 1;
                 //var key = 'id';
                 var url = api + 'tbl_so77_Characters/';
                 if(characterData.id){

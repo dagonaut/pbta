@@ -30,13 +30,13 @@
                 } else if ($cookies.getObject('id')) {
                     Auth.setUser($cookies.getObject('id'));
                     Auth.AutoLogin($cookies.getObject('id'), function(response){
-                        console.log("rootscope 303: " + $rootScope.userData);
+                        console.log("LoginController: rootScope: " + $rootScope.userData);
                         vm.isLoggedIn = true;
                         vm.userData = $rootScope.userData;
                         $location.path('/cs');
                     });
                 } else {
-                    console.log("ln 291: You don't have a cookie.")
+                    console.log("LoginController: You don't have a cookie.")
                 }
             };		
 		
@@ -47,7 +47,7 @@
                     if(response.success) {
                         Auth.SetCredentials($scope.username, $scope.passwordHash, response.data);
                         vm.userData = response.data;
-                        $location.path('/cs');
+                        $location.path('/so77');
                     } else {
                         $scope.error = response.message;
                         $scope.dataLoading = false;
