@@ -127,35 +127,6 @@
 					<label>Brains</label><input type="text" ng-model="vm.characterData.brains" /><br />
 					<label>Soul</label><input type="text" ng-model="vm.characterData.soul" /><br />			
 				</div>
-				<div class="row">
-					<h3>Story Moves:</h3>
-					<div>
-						<label ng-repeat="move in vm.allMoves" ng-show="move.class == vm.characterData.role">
-							<input
-							id="move_{{move.id}}"
-							type="checkbox"					  
-							value="{{move.id}}"
-							ng-checked="vm.characterData.moves.indexOf(move.id) > -1"
-							ng-click="vm.updateMoves(move.id)"
-												  
-							>{{move.name}}: <span ng-bind-html="move.description"></span>
-						</label>
-					</div>
-				</div>
-				<div class="row">
-					<h3>Role Moves:</h3>
-					<div>
-						<label ng-repeat="move in vm.allMoves" ng-show="move.class == vm.characterData.story">
-							<input
-							id="move_{{move.id}}"
-							type="checkbox"					  
-							value="{{move.id}}"
-							ng-checked="vm.characterData.moves.indexOf(move.id) > -1"
-							ng-click="vm.updateMoves(move.id)"					  
-							>{{move.name}}: <span ng-bind-html="move.description"></span>							
-						</label>
-					</div>
-				</div>
 				<div>{{vm.characterData.moves}}</div>
 					<!-- <div class="row">
 					<div>
@@ -172,12 +143,39 @@
 					<div>{{vm.characterData.moves}}</div>
 				</div> -->
 			</div>
-			<div class="col-md-4">
-				<div ng-bind-html="vm.roleDescription">
-					
+			<div class="col-md-4">	
+				<div class="row">
+					<h3>Role Moves:</h3>
+					<div>
+						<div ng-repeat="move in vm.allMoves" ng-show="move.class == vm.characterData.role">
+							<input
+							id="move_{{move.id}}"
+							type="checkbox"					  
+							value="{{move.id}}"
+							ng-checked="vm.characterData.moves.indexOf(move.id) > -1"
+							ng-click="vm.updateMoves(move.id)"
+													
+							><span style="font-weight:bold;margin-left:5px;">{{move.name}}:</span> <span style="font-weight:none;" ng-bind-html="move.description"></span>
+						</div>
+					</div>
 				</div>
+				<div ng-bind-html="vm.roleDescription"></div>			
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4">				
+				<div class="row">
+					<h3>Story Moves:</h3>
+					<div>
+						<div ng-repeat="move in vm.allMoves" ng-show="move.class == vm.characterData.story">
+							<input
+							id="move_{{move.id}}"
+							type="checkbox"					  
+							value="{{move.id}}"
+							ng-checked="vm.characterData.moves.indexOf(move.id) > -1"
+							ng-click="vm.updateMoves(move.id)"					  
+							><span style="font-weight:bold;margin-left:5px;">{{move.name}}:</span> <span style="font-weight:none;" ng-bind-html="move.description"></span>							
+						</div>
+					</div>					
+				</div>
 				<div ng-bind-html="vm.storyDescription"></div>
 			</div>
 		</div>
