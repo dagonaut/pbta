@@ -39,18 +39,18 @@
             
             function init(){
                 console.log('init');
-                getCharacterData(vm.user);
-                /*
+                //getCharacterData(vm.user);
+                
                 if (typeof $rootScope.userData === "undefined"){
                     if(!Auth.checkUser()){
                         $location.path('/login');
                     } else {
-                        $scope.characterData = getCharacterData($cookies.getObject('id'));					
+                        vm.characterData = getCharacterData($cookies.getObject('id'));					
                     }
                 } else {
-                    $scope.characterData = getCharacterData($rootScope.userData.id);
+                    vm.characterData = getCharacterData($rootScope.userData.id);
                 }
-                */
+                
             }
             
             function setRoleDescription(){

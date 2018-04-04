@@ -36,7 +36,7 @@
 				controller: 'CharacterSheet',
 				controllerAs: 'vm'
 			})
-			.state('so77',{
+			.state('auth.so77',{
 				url: '/so77',
 				templateUrl: 'so77.html',
 				controller: 'so77Controller',
