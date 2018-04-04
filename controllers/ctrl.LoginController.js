@@ -33,7 +33,7 @@
                         console.log("LoginController: rootScope: " + $rootScope.userData);
                         vm.isLoggedIn = true;
                         vm.userData = $rootScope.userData;
-                        $location.path('/cs');
+                        $location.path('/so77');
                     });
                 } else {
                     console.log("LoginController: You don't have a cookie.")
