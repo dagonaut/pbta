@@ -97,6 +97,16 @@
 		}
 		.name-container label{float:left;}
 		.name-container input{border:none;padding:0;padding-left:3px;border-bottom:1px solid black;float:left;}
+
+		.box{
+			width:50px;
+			height:50px;
+			font-size:20px;
+		}
+
+		.cursor{
+			cursor: pointer;
+		}
 	</style>
 
 
@@ -109,25 +119,49 @@
 					<label>Role</label>
 					<select ng-model="vm.characterData.role" ng-change="vm.setRoleDescription()">
 						<option ng-repeat="role in vm.roles" value="{{role.name}}" ng-selected="vm.characterDate.role">{{role.name}}</option>
-					</select><br />
+					</select>
 					<label>Story</label>
 					<select ng-model="vm.characterData.story" ng-change="vm.setStoryDescription()">
 						<option ng-repeat="story in vm.stories" value="{{story.name}}" ng-selected="vm.characterDate.story">{{story.name}}</option>
 					</select><br /><br />
-					<label>Level</label><input type="text" ng-model="vm.characterData.level" /><br />
-					<label>XP</label><input type="text" ng-model="vm.characterData.xp" /><br />
+				</div>
+				<div class="row">
+					<label>Level</label><input class="box" type="number" ng-model="vm.characterData.level" />
+					<label>XP</label><input class="box" type="number" ng-model="vm.characterData.xp" />
+					<label>Next:</label>{{ 5 + vm.characterData.level}}
+				</div>
+				<div class="row">
 					<label>Look</label><input type="text" ng-model="vm.characterData.look" /><br />
-					<label>Alignment</label><input type="text" ng-model="vm.characterData.alignment" /><br />
 					<label>Hooks</label><input type="text" ng-model="vm.characterData.hooks" /><br />
 					<label>Buzz</label><input type="text" ng-model="vm.characterData.buzz" /><br />
-					<label>Harm</label><input type="text" ng-model="vm.characterData.harm" /><br />
-					<label>Might</label><input type="text" ng-model="vm.characterData.might" /><br />
-					<label>Hustle</label><input type="text" ng-model="vm.characterData.hustle" /><br />
-					<label>Smooth</label><input type="text" ng-model="vm.characterData.smooth" /><br />
-					<label>Brains</label><input type="text" ng-model="vm.characterData.brains" /><br />
-					<label>Soul</label><input type="text" ng-model="vm.characterData.soul" /><br />			
+				</div>
+				<div class="row">
+					<div class="col-xs-2">
+						<label>Might</label><br /><input class="box" type="number" ng-model="vm.characterData.might" />
+					</div>
+					<div class="col-xs-2">
+						<label>Hustle</label><br /><input class="box" type="number" ng-model="vm.characterData.hustle" />
+					</div>
+					<div class="col-xs-2">
+						<label>Smooth</label><br /><input class="box" type="number" ng-model="vm.characterData.smooth" />
+					</div>
+					<div class="col-xs-2">
+						<label>Brains</label><br /><input class="box" type="number" ng-model="vm.characterData.brains" />
+					</div>
+					<div class="col-xs-2">
+						<label>Soul</label><br /><input class="box" type="number" ng-model="vm.characterData.soul" />			
+					</div>
+				</div>
+				<div class="row">
+					<label>Gear & Thangs</label><br /><textarea class="text-box" type="text" ng-model="vm.characterData.gear"></textarea><br />					
+					<label>Notes</label><br /><textarea class="text-box" type="text" ng-model="vm.characterData.notes"></textarea><br />					
+				</div>
+				<div class="row">
+					<label>Harm</label><input class="box" type="number" ng-model="vm.characterData.harm" /><br />
 				</div>
 				<div>{{vm.characterData.moves}}</div>
+				<div class="cursor" ng-click="vm.setVisible('thangs')">Toggle Thangs</div>
+				<div ng-bind-html="vm.thangsDescription" ng-show="vm.visible.thangs"></div>
 					<!-- <div class="row">
 					<div>
 						<label ng-repeat="move in vm.allMoves">
@@ -143,7 +177,7 @@
 					<div>{{vm.characterData.moves}}</div>
 				</div> -->
 			</div>
-			<div class="col-md-4">	
+			<div class="col-md-3">	
 				<div class="row">
 					<h3>Role Moves:</h3>
 					<div>
@@ -159,9 +193,10 @@
 						</div>
 					</div>
 				</div>
-				<div ng-bind-html="vm.roleDescription"></div>			
+				<div class="cursor" ng-click="vm.setVisible('role')">Toggle Role Text</div>
+				<div ng-bind-html="vm.roleDescription" ng-show="vm.visible.role"></div>			
 			</div>
-			<div class="col-md-4">				
+			<div class="col-md-3">				
 				<div class="row">
 					<h3>Story Moves:</h3>
 					<div>
@@ -176,7 +211,8 @@
 						</div>
 					</div>					
 				</div>
-				<div ng-bind-html="vm.storyDescription"></div>
+				<div class="cursor" ng-click="vm.setVisible('story')">Toggle Story Text</div>
+				<div ng-bind-html="vm.storyDescription" ng-show="vm.visible.story"></div>
 			</div>
 		</div>
 		

@@ -23,6 +23,8 @@
             vm.moves = [];
             vm.roleDescription = "Tacos";
             vm.storyDescription = "Story";
+            vm.thangsDescription = "Thangs"
+            vm.visible = { story: false, role: false, thangs: false };
             
             //Scope Methods
             //vm.attrBonus = attrBonus;
@@ -34,11 +36,13 @@
             vm.updateMoves = updateMoves;
             vm.setRoleDescription = setRoleDescription;
             vm.setStoryDescription = setStoryDescription;
+            vm.setVisible = setVisible;
 
             init();
             
             function init(){
                 console.log('init');
+                setThangsDescription();
                 //getCharacterData(vm.user);
                 
                 if (typeof $rootScope.userData === "undefined"){
@@ -127,6 +131,17 @@
                     $scope.$apply(function(){vm.storyDescription = response});
                 }
                 function storyFailure(error){
+                    console.log(error);
+                }
+            }
+
+            function setThangsDescription(){
+                var file = "./static/so77-thangs.html";                
+                $.get(file).then(thangsSuccess, thangsFailure);
+                function thangsSuccess(response){
+                    $scope.$apply(function(){vm.thangsDescription = response});
+                }
+                function thangsFailure(error){
                     console.log(error);
                 }
             }
@@ -242,6 +257,10 @@
                 )
             }
             
+            function setVisible(section){
+                vm.visible[section] = !vm.visible[section];
+            }
+
             function getCharacterMoves(){
                 var config = {
                     method: 'GET',
