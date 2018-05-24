@@ -20,7 +20,35 @@
             $scope.surName = "";
             $scope.addGrimPortent = addGrimPortent();
             $scope.grimPortents = [];
+            $scope.allCharacters = [];
+            // Custom / Hardcoded
+            $scope.brett = {};
+            $scope.paul = {};
+
+            init();
+
+            function init(){
+                getAllCharacters();
+            }
             
+            function getAllCharacters(){
+                var config = {
+                    method: 'GET',
+                    url: api + 'tbl_so77_Characters/'
+                };
+                $http(config).then(
+                    function(response){
+                        $scope.allCharacters = response.data;
+                        //Hard coded
+                        $scope.paul = response.data[0];
+                        $scope.brett = response.data[1];
+                        console.log($scope.allCharacters);				
+                    },
+                    function(error){
+                        console.log(error);
+                    }
+                );
+            }
             
             function getAllMoves(){
                 var config = {

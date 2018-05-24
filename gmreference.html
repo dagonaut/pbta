@@ -1,0 +1,140 @@
+
+    <style>
+		body{padding:5px;}
+        h1,h2,h3,h4,h5,p,div,ul,li{margin:0;padding:0;}
+        ul{margin-left:16px;}
+        h1{font-size:20px;}
+        h2{font-size:18px;border-top:1px solid #222;}
+        h3{font-size:14px;}
+        h4{font-size:12px;}
+		.move-trigger{
+			font-weight:bold;
+		}
+		h2.move{
+			font-size:16px;			
+		}
+		.move:hover{
+			cursor: pointer;
+		}
+    </style>
+	
+	<div class="fluid-container">
+		<div class="row">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-10">
+			</div>
+		</div>
+		<div class="row">
+			<!-- character -->
+			<div class="col-lg-3">
+				<h1>{{paul.name}}</h1>
+				Role: {{paul.role}}<br />
+				Story: {{paul.story}}<br />
+				Level: {{paul.level}}<br />
+				XP: {{paul.xp}}<br />
+				Hook: {{paul.hooks}}<br />
+				Buzz: {{paul.buzz}}<br />
+				Thang: {{paul.thang}}<br />
+				Might: {{paul.might}}<br />
+				Hustle: {{paul.hustle}}<br />
+				Smooth: {{paul.smooth}}<br />
+				Brains: {{paul.brains}}<br />
+				Soul: {{paul.soul}}<br />
+				Harm: {{paul.harm}}<br />
+				Moves: {{paul.moves}}<br />
+				Gear: {{paul.gear}}<br />
+			</div>
+			
+			<div class="col-lg-3">
+				<!-- Customs -->
+				<div>
+					<h1>{{brett.name}}</h1>
+					Role: {{brett.role}}<br />
+					Story: {{brett.story}}<br />
+					Level: {{brett.level}}<br />
+					XP: {{brett.xp}}<br />
+					Hook: {{brett.hooks}}<br />
+					Buzz: {{brett.buzz}}<br />
+					Thang: {{brett.thang}}<br />
+					Might: {{brett.might}}<br />
+					Hustle: {{brett.hustle}}<br />
+					Smooth: {{brett.smooth}}<br />
+					Brains: {{brett.brains}}<br />
+					Soul: {{brett.soul}}<br />
+					Harm: {{brett.harm}}<br />
+					Moves: {{brett.moves}}<br />
+					Gear: {{brett.gear}}<br />
+				</div>
+			</div>
+			<div class="col-lg-3">				
+					<h2>Name Generator</h2>
+					<button ng-click="getName('M');">Male</button>
+					<button ng-click="getName('F');">Female</button>
+					<span style="font-size:18px;">{{ firstName }} {{ surName }}</span>
+				<h2 style="color:blue;">Basic Moves</h2>
+				<div ng-repeat="basicMove in allMoves" ng-show="basicMove.type == 'Basic'">
+					<div>
+						<h2 class="move" ng-click="basicMove.hide = !basicMove.hide">{{basicMove.name}}</h2>
+						<div class="move-description" ng-hide="basicMove.hide">
+							<span ng-hide="basicMove.type == 'GM' || gmMove == 'Dungeon'">
+							When you <span class="move-trigger">{{basicMove.trigger}}</span>
+							</span>
+							<span ng-bind-html="basicMove.description"></span>
+						</div>
+					</div>
+				</div>
+				<h2 style="color:blue;">Special Moves</h2>
+				<div ng-repeat="specialMove in allMoves" ng-show="specialMove.type == 'Special'">
+					<div>
+						<h2 class="move" ng-click="specialMove.hide = !specialMove.hide">{{specialMove.name}}</h2>
+						<div class="move-description" ng-hide="specialMove.hide">
+							<span ng-hide="specialMove.type == 'GM' || gmMove == 'Dungeon'">
+							When you <span class="move-trigger">{{specialMove.trigger}}</span>
+							</span>
+							<span ng-bind-html="specialMove.description"></span>
+						</div>
+					</div>
+				</div>
+				<h2 style="color:blue;">GM Moves</h2>
+				<div ng-repeat="gmMove in allMoves" ng-show="gmMove.type == 'GM'">
+					<div>
+						<h2 class="move" ng-click="gmMove.hide = !gmMove.hide">{{gmMove.name}}</h2>
+						<div class="move-description" ng-hide="gmMove.hide">
+							<span ng-hide="gmMove.type == 'GM' || gmMove == 'Dungeon'">
+							When you <span class="move-trigger">{{gmMove.trigger}}</span>
+							</span>
+							<span ng-bind-html="gmMove.description"></span>
+						</div>
+					</div>
+				</div>
+				<h2 style="color:blue;">Dungeon Moves</h2>
+				<div ng-repeat="dungeonMove in allMoves" ng-show="dungeonMove.type == 'Dungeon'">
+					<div>
+						<h2 class="move" ng-click="dungeonMove.hide = !dungeonMove.hide">{{dungeonMove.name}}</h2>
+						<div class="move-description" ng-hide="dungeonMove.hide">
+							<span ng-hide="gmMove.type == 'GM' || gmMove == 'Dungeon'">
+							When you <span class="move-trigger">{{dungeonMove.trigger}}</span>
+							</span>
+							<span ng-bind-html="dungeonMove.description"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div ng-repeat="tag in allTags">
+					<div>
+						<h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+						<div class="move-description" ng-hide="tag.hide">
+							<span>
+								{{tag.category}}
+							</span>
+							<span>
+								{{tag.description}}
+							</span>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>  
+

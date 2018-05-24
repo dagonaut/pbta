@@ -47,6 +47,12 @@
 				templateUrl: 'reference.html',
 				controller: 'ReferenceController',
 				controllerAs: 'vm'
+			})			
+			.state('auth.gmreference',{
+				url: '/gmreference',
+				templateUrl: 'gmreference.html',
+				controller: 'ReferenceController',
+				controllerAs: 'vm'
 			})
 			.state('home',{
 				url: '',
