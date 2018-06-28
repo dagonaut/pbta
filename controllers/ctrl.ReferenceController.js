@@ -16,6 +16,7 @@
             $scope.allMoves = getAllMoves();
             $scope.allMonsters = getAllMonsters();
             $scope.allTags = getAllTags();
+            $scope.spiritMoves = [];
             $scope.firstName = "";
             $scope.surName = "";
             $scope.addGrimPortent = addGrimPortent();
@@ -58,6 +59,11 @@
                 $http(config).then(
                     function(response){
                         $scope.allMoves = response.data;
+                        for(let i = 0; i < response.data.length; i++){
+                            if(response.data[i].gameid == 3){
+                                $scope.spiritMoves.push(response.data[i]);
+                            }
+                        }
                         hideAll();
                         console.log($scope.allMoves);				
                     },

@@ -43,6 +43,9 @@
 				Harm: {{paul.harm}}<br />
 				Moves: {{paul.moves}}<br />
 				Gear: {{paul.gear}}<br />
+				<div ng-repeat="move in spiritMoves">
+					<div ng-hide="paul.moves.indexOf(move.id) === -1 && (move.class !== paul.story || move.class !== paul.role)">{{move.name}}</div>
+				</div>
 			</div>
 			
 			<div class="col-lg-3">
