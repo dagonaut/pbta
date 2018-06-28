@@ -40,11 +40,13 @@
 				Smooth: {{paul.smooth}}<br />
 				Brains: {{paul.brains}}<br />
 				Soul: {{paul.soul}}<br />
-				Harm: {{paul.harm}}<br />
-				Moves: {{paul.moves}}<br />
+				Harm: {{paul.harm}}<br />				
 				Gear: {{paul.gear}}<br />
-				<div ng-repeat="move in spiritMoves">
-					<div ng-hide="paul.moves.indexOf(move.id) === -1 && (move.class !== paul.story || move.class !== paul.role)">{{move.name}}</div>
+				Moves:<br />
+				<div ng-repeat="move in spiritMoves" ng-if="move.class === paul.story || move.class === paul.role">
+					<div ng-hide="paul.moves.indexOf(move.id) === -1">
+						<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
+					</div>
 				</div>
 			</div>
 			
@@ -67,7 +69,13 @@
 					Harm: {{brett.harm}}<br />
 					Moves: {{brett.moves}}<br />
 					Gear: {{brett.gear}}<br />
-				</div>
+					Moves:<br />
+					<div ng-repeat="move in spiritMoves" ng-if="move.class === brett.story || move.class === brett.role">
+						<div ng-hide="brett.moves.indexOf(move.id) === -1">
+							<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
+						</div>
+					</div>
+				</div>	
 			</div>
 			<div class="col-lg-3">				
 					<h2>Name Generator</h2>
