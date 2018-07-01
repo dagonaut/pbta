@@ -9,5 +9,35 @@
     <a ng-click="vm.getUser()">Get User Test</a>
     {{vm.testText}}
     {{vm.url}}
+    <style>
+    .harm_marker{
+        float:left;
+        height:25px;
+        text-align: right;
+        border:1px solid black;
+        border-radius: 5px;
+        transform: skew(-20deg);
+        cursor: pointer;
+
+    }
+    .harm_marker.lrg{
+        width:100px;
+    }
+    .harm_marker.sm{
+        width:45px;
+    }
+    .harm_container .active{
+        background-color:indianred;
+    }
+    </style>
+    <div class="harm_container">
+        <div class="harm_marker lrg" ng-class="vm.harm[0]" ng-click="vm.markHarm(0)">1500</div>
+        <div class="harm_marker lrg" ng-class="vm.harm[1]" ng-click="vm.markHarm(1)">1800</div>
+        <div class="harm_marker lrg" ng-class="vm.harm[2]" ng-click="vm.markHarm(2)">2100</div>
+        <div class="harm_marker sm" ng-class="vm.harm[3]" ng-click="vm.markHarm(3)">2200</div>
+        <div class="harm_marker sm" ng-class="vm.harm[4]" ng-click="vm.markHarm(4)">2300</div>
+        <div class="harm_marker sm" ng-class="vm.harm[5]" ng-click="vm.markHarm(5)">0000</div>
+        <a href ng-click="vm.clearHarm()" style="margin-left:3px;">Clear</a>
+    </div>
 </body>
 </html>
