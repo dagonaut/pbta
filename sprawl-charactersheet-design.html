@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Sprawl Character Sheet Template</title>
+    <link rel="stylesheet" href="inc/bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" />
+    <script type="application/javascript" src="inc/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style>
+    .harm_marker{
+        float:left;
+        height:25px;
+        text-align: right;
+        border:1px solid black;
+        border-radius: 5px;
+        transform: skew(-20deg);
+        cursor: pointer;
+
+    }
+    .harm_marker.lrg{
+        width:100px;
+    }
+    .harm_marker.sm{
+        width:45px;
+    }
+    .harm_container .active{
+        background-color:indianred;
+    }
+    .attributes_container{
+
+    }
+    .attributes_container input{
+        position: absolute;
+        top: 15px;
+        left: 26px;
+        width: 48px;
+        height: 49px;
+        font-size: 32px;
+        border: none;
+        z-index: 7; 
+    }
+    .meat_input{
+               
+    }
+    .hexagons_container{
+        
+    }
+    .hexagon {
+        position: relative;
+        width: 70px; 
+        height: 40.41px;
+        margin: 20.21px 0;
+        border-left: solid 2px #333333;
+        border-right: solid 2px #333333;
+        transform:rotate(90deg);
+        z-index:5;
+    }
+
+    .hexagon:before,
+    .hexagon:after {
+        content: "";
+        position: absolute;
+        z-index: 5;
+        width: 49.50px;
+        height: 49.50px;
+        -webkit-transform: scaleY(0.5774) rotate(-45deg);
+        -ms-transform: scaleY(0.5774) rotate(-45deg);
+        transform: scaleY(0.5774) rotate(-45deg);
+        background-color: white;
+        left: 8.2513px;
+    }
+
+    .hexagon:before {
+        top: -24.7487px;
+        border-top: solid 2.8284px #333333;
+        border-right: solid 2.8284px #333333;
+    }
+
+    .hexagon:after {
+        bottom: -24.7487px;
+        border-bottom: solid 2.8284px #333333;
+        border-left: solid 2.8284px #333333;
+    }
+    .hexagon.cred{border-left:dotted 2px #777;border-right:dotted 2px #777;}
+    .hexagon.cred:before{border-top:dotted 2.8284px #777;border-right:dotted 2.8284px #777;}
+    .hexagon.cred:after{border-bottom:dotted 2.8284px #777;border-left:dotted 2.8284px #777;}
+    .attributes_right{
+        text-align:right;
+    }
+    .attribute_container{
+        height:69px;
+        margin-top:2px;
+    }
+    .attribute_name{        
+        font-size:16px;
+        font-weight:bold;
+    }
+    .attribute_line{
+        width:196px;
+        height:1px;
+        background-color:black;
+    }
+    .attribute_line_right{        
+        height:1px;
+        background-color:black;
+        margin-left:-129px;
+        width:231px;
+        z-index:0;
+    }
+    .attribute_description{
+        font-size:11px;
+    }
+    .attribute_example{
+        font-size:9px;
+    }
+    </style>
+        
+</head>
+<body>
+    <div class="container_fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="harm_container">
+                    <div class="harm_marker lrg" ng-class="vm.harm[0]" ng-click="vm.markHarm(0)">1500</div>
+                    <div class="harm_marker lrg" ng-class="vm.harm[1]" ng-click="vm.markHarm(1)">1800</div>
+                    <div class="harm_marker lrg" ng-class="vm.harm[2]" ng-click="vm.markHarm(2)">2100</div>
+                    <div class="harm_marker sm" ng-class="vm.harm[3]" ng-click="vm.markHarm(3)">2200</div>
+                    <div class="harm_marker sm" ng-class="vm.harm[4]" ng-click="vm.markHarm(4)">2300</div>
+                    <div class="harm_marker sm" ng-class="vm.harm[5]" ng-click="vm.markHarm(5)">0000</div>
+                    <a href ng-click="vm.clearHarm()" style="margin-left:3px;">Clear</a>
+                </div>
+                <div class="attributes_container row">
+                    <div class="col-sm-3">
+                        <div class="attributes_left">
+                            <div class="attribute_container">
+                                <div class="attribute_name">::MEAT</div>
+                                <div class="attribute_line"></div>
+                                <div class="attribute_description">Physical Stuff</div>
+                                <div class="attribute_example">MOVE, MOVE, MOVE</div>
+                            </div>
+                            <div class="attribute_container">
+                                <div class="attribute_name">::MIND</div>
+                                <div class="attribute_line"></div>
+                                <div class="attribute_description">Brain Stuff</div>
+                                <div class="attribute_example">MOVE, MOVE, MOVE</div>
+                            </div>
+                            <div class="attribute_container">
+                                <div class="attribute_name">::SYNTH</div>
+                                <div class="attribute_line"></div>
+                                <div class="attribute_description">Computer Stuff</div>
+                                <div class="attribute_example">MOVE, MOVE, MOVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="hexagons_container">
+                            <!-- MEAT -->
+                            <div class="hexagon"></div>
+                            <input class="input_meat" type="number" />
+                            <!-- EDGE -->
+                            <div class="hexagon" style="top:-61px;left:126px;"></div>
+                            <input class="input_edge" type="number" style="left:152px;" />
+                            <!-- COOL -->
+                            <div class="hexagon" style="top: -85px;left: 63px;"></div>
+                            <input class="input_cool" type="number" style="top:52px;left:89px;" />
+                            <!-- MIND -->
+                            <div class="hexagon" style="top:-110px;"></div>
+                            <input type="number" style="top:87px;" />
+                            <!-- SYNTH -->
+                            <div class="hexagon" style="top:-135px;left:63px;" ></div>                            
+                            <input type="number" style="top:122px;left:89px" />
+                            <!-- STYLE -->
+                            <div class="hexagon" style="top:-159px;left:126px;"></div>                            
+                            <input type="number" style="top:158px;left:152px;" />
+                            <!-- CRED -->
+                            <div class="hexagon cred" style="top: -184px;left: 189px;"></div>
+                            <input type="number" style="top: 193px;left: 215px;"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="attributes_right">
+                            <div class="attribute_container">
+                                <div class="attribute_name">::EDGE</div>
+                                <div class="attribute_line_right"></div>
+                                <div class="attribute_description">Physical Stuff</div>
+                                <div class="attribute_example">MOVE, MOVE, MOVE</div>
+                            </div>
+                            <div class="attribute_container">
+                                <div class="attribute_name">::COOL</div>
+                                <div class="attribute_line_right"></div>
+                                <div class="attribute_description">Brain Stuff</div>
+                                <div class="attribute_example">MOVE, MOVE, MOVE</div>
+                            </div>
+                            <div class="attribute_container">
+                                <div class="attribute_name">::STYLE</div>
+                                <div class="attribute_line_right"></div>
+                                <div class="attribute_description">Computer Stuff</div>
+                                <div class="attribute_example">MOVE, MOVE, MOVE</div>
+                            </div>
+                            <div class="attribute_container">
+                                    <div class="attribute_name">::CRED</div>
+                                    <div class="attribute_line_right"></div>
+                                    <div class="attribute_description">C.R.E.A.M.</div>
+                                    <div class="attribute_example">MOVE, MOVE, MOVE</div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
