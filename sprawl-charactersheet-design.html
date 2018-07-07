@@ -112,6 +112,12 @@
     .attribute_example{
         font-size:9px;
     }
+    .stat{}
+    .stat label{font-size:24px;}
+    .stat input{width:50px;height:50px;font-size:24px;border:3px double blue}
+    .stat .description{}
+    .stat .example{}
+    
     </style>
         
 </head>
@@ -128,6 +134,7 @@
                     <div class="harm_marker sm" ng-class="vm.harm[5]" ng-click="vm.markHarm(5)">0000</div>
                     <a href ng-click="vm.clearHarm()" style="margin-left:3px;">Clear</a>
                 </div>
+                <!-- Complicated Non-reponsive HEX format -->
                 <div class="attributes_container row">
                     <div class="col-sm-3">
                         <div class="attributes_left">
@@ -205,7 +212,49 @@
                         </div>
                     </div>
                 </div>
+                <!-- Attributes Functional-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="stat">
+                            <label>MEAT</label>
+                            <input type="number" />                        
+                            <span class="description">Physical Stuff</span>
+                            <span class="examples">MOVE, MOVE, MOVE</span>
+                        </div>
+                        <div class="stat">
+                            <label>EDGE</label>
+                            <input type="number" />                        
+                            <span class="description">Physical Stuff</span>
+                            <span class="examples">MOVE, MOVE, MOVE</span>
+                        </div>
+                        <div class="stat">
+                            <label>COOL</label>
+                            <input type="number" />                        
+                            <span class="description">Physical Stuff</span>
+                            <span class="examples">MOVE, MOVE, MOVE</span>
+                        </div>
+                        <div class="stat">
+                            <label>BRAINS</label>
+                            <input type="number" />                        
+                            <span class="description">Physical Stuff</span>
+                            <span class="examples">MOVE, MOVE, MOVE</span>
+                        </div>
+                        <div class="stat">
+                            <label>SYNTH</label>
+                            <input type="number" />                        
+                            <span class="description">Physical Stuff</span>
+                            <span class="examples">MOVE, MOVE, MOVE</span>
+                        </div>
+                        <div class="stat">
+                            <label>STYLE</label>
+                            <input type="number" />                        
+                            <span class="description">Physical Stuff</span>
+                            <span class="examples">MOVE, MOVE, MOVE</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
             <div class="col-sm-4"></div>
             <div class="col-sm-4"></div>
         </div>
