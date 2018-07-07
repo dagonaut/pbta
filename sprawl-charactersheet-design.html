@@ -113,11 +113,19 @@
         font-size:9px;
     }
     .stat{}
-    .stat label{font-size:24px;}
+    .stat label{width:100px;font-size:24px;}
     .stat input{width:50px;height:50px;font-size:24px;border:3px double blue}
-    .stat .description{}
-    .stat .example{}
+    .stat .description{color:#aaaaaa;}
+    .stat .examples{font-size:11px;font-weight:bold;color:#666666;}
     
+    .stat-name{
+        font-size:24px;
+        font-weight:bold;
+    }
+    .directives_container textarea{
+        width:400px;
+        height:95px;
+    }
     </style>
         
 </head>
@@ -125,7 +133,16 @@
     <div class="container_fluid">
         <div class="row">
             <div class="col-sm-4">
-                <div class="harm_container">
+                <!-- Name / Look -->
+                <div class="name-look_container row">
+                    <div class="col-sm-12">
+
+                            <label>Name: </label><input class="name" type="text" />
+                            <label>Look: </label><input class="look" type="text" />
+                    </div>
+                </div>
+                <!-- Harm -->
+                <div class="harm_container row">
                     <div class="harm_marker lrg" ng-class="vm.harm[0]" ng-click="vm.markHarm(0)">1500</div>
                     <div class="harm_marker lrg" ng-class="vm.harm[1]" ng-click="vm.markHarm(1)">1800</div>
                     <div class="harm_marker lrg" ng-class="vm.harm[2]" ng-click="vm.markHarm(2)">2100</div>
@@ -135,7 +152,7 @@
                     <a href ng-click="vm.clearHarm()" style="margin-left:3px;">Clear</a>
                 </div>
                 <!-- Complicated Non-reponsive HEX format -->
-                <div class="attributes_container row">
+                <div class="attributes_container row hide">
                     <div class="col-sm-3">
                         <div class="attributes_left">
                             <div class="attribute_container">
@@ -216,42 +233,82 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="stat">
-                            <label>MEAT</label>
-                            <input type="number" />                        
-                            <span class="description">Physical Stuff</span>
-                            <span class="examples">MOVE, MOVE, MOVE</span>
+                            <label>::MEAT</label>
+                            <input type="number" />
+                            <div style="display:inline-block;">                        
+                                <div class="description">physical non-cyberware stuff</div>
+                                <div class="examples">MIX IT UP · AQUIRE AGRICULTURAL PROPERTY</div>
+                            </div>
                         </div>
                         <div class="stat">
-                            <label>EDGE</label>
+                            <label>::EDGE</label>
                             <input type="number" />                        
-                            <span class="description">Physical Stuff</span>
-                            <span class="examples">MOVE, MOVE, MOVE</span>
+                            <div style="display:inline-block;">                        
+                                <div class="description">street smarts, general badassness</div>
+                                <div class="examples">ASSESS · PLAY HARDBALL GET THE JOB · HACKING: MELT ICE</div>
+                            </div>
                         </div>
                         <div class="stat">
-                            <label>COOL</label>
+                            <label>::COOL</label>
                             <input type="number" />                        
-                            <span class="description">Physical Stuff</span>
-                            <span class="examples">MOVE, MOVE, MOVE</span>
+                            <div style="display:inline-block;">                        
+                                <div class="description">stay frosty</div>
+                                <div class="examples">ACT UNDER PRESSURE APPLY FIRST AID · HACKING: JACK OUT</div>
+                            </div>
                         </div>
                         <div class="stat">
-                            <label>BRAINS</label>
+                            <label>::MIND</label>
                             <input type="number" />                        
-                            <span class="description">Physical Stuff</span>
-                            <span class="examples">MOVE, MOVE, MOVE</span>
+                            <div style="display:inline-block;">                        
+                                <div class="description">look at the brain on brad</div>
+                                <div class="examples">RESEARCH · HACKING: COMPROMISE SECURITY</div>
+                            </div>
                         </div>
                         <div class="stat">
-                            <label>SYNTH</label>
+                            <label>::SYNTH</label>
                             <input type="number" />                        
-                            <span class="description">Physical Stuff</span>
-                            <span class="examples">MOVE, MOVE, MOVE</span>
+                            <div style="display:inline-block;">                        
+                                <div class="description">interface with tech</div>
+                                <div class="examples">HACKING: LOGIN · HACKING: MANIPULATE SYSTEMS</div>
+                            </div>
                         </div>
                         <div class="stat">
-                            <label>STYLE</label>
+                            <label>::STYLE</label>
                             <input type="number" />                        
-                            <span class="description">Physical Stuff</span>
-                            <span class="examples">MOVE, MOVE, MOVE</span>
+                            <div style="display:inline-block;">                        
+                                <div class="description">chrisma uniqueness nerve talent</div>
+                                <div class="examples">FAST TALK · HIT THE STREET</div>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <!-- Directives -->
+                <div class="directives_container row">
+                    <textarea type="textbox" class="directives">
+                            <ul>
+                                    <li>Illustrious: When your desire for fame draws unwanted attention to the mission, mark experience. </li>
+                                    <li>Intimate: When you put your friend ________________ ahead of the mission, mark experience.</li>
+                                    <li>Rejected: When your former membership of _________________ hinders the mission, mark experience. </li>
+                                    <li>Vengeful: When you harm _______________ or their interests, mark experience. </li>
+                                </ul>
+                    </textarea>
+                    <div class="class_directives">
+                        <ul>
+                            <li>Illustrious: When your desire for fame draws unwanted attention to the mission, mark experience. </li>
+                            <li>Intimate: When you put your friend ________________ ahead of the mission, mark experience.</li>
+                            <li>Rejected: When your former membership of _________________ hinders the mission, mark experience. </li>
+                            <li>Vengeful: When you harm _______________ or their interests, mark experience. </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Links -->
+                <div class="links_container row">
+
+                </div>
+                <!-- Contacts -->
+                <div class="contacts_container row">
+
                 </div>
             </div>
             
