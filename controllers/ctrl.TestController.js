@@ -28,20 +28,6 @@
                 });
             }
 
-            // Harm meter
-            vm.harm = ["","","","","",""]; // THe Harm array represents the 15,18,21,22,23,00 of the harm bar
-            vm.markHarm = markHarm;
-            vm.clearHarm = clearHarm;
-            function markHarm(position){
-                clearHarm();
-                for(var i = 0; i < vm.harm.length; i++){
-                    if (i <= position){
-                        vm.harm[i] = "active";
-                    }
-                }
-            }
-            function clearHarm(){
-                vm.harm = ["","","","","",""];  
-            }
+            
         }
 })();

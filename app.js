@@ -53,6 +53,12 @@
 				templateUrl: 'gmreference.html',
 				controller: 'ReferenceController',
 				controllerAs: 'vm'
+			})		
+			.state('sprawl',{
+				url: '/sprawl',
+				templateUrl: 'sprawl.html',
+				controller: 'Sprawl',
+				controllerAs: 'vm'
 			})
 			.state('home',{
 				url: '',

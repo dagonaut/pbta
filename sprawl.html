@@ -6,9 +6,17 @@
     <link rel="stylesheet" href="inc/bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" />
     <script type="application/javascript" src="inc/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <style>
+        h4{
+            font-size: 20px;
+            border-bottom: 2px #0472CE solid;
+            text-align: right;
+            font-weight: bold;
+            color: #0472CE;
+        }
     .harm_marker{
         float:left;
         height:25px;
+        margin-left:5px;
         text-align: right;
         border:1px solid black;
         border-radius: 5px;
@@ -114,7 +122,7 @@
     }
     .stat{}
     .stat label{width:100px;font-size:24px;}
-    .stat input{width:50px;height:50px;font-size:24px;border:3px double blue}
+    .stat input{width:50px;height:50px;font-size:24px;border:3px double #0472CE;}
     .stat .description{color:#aaaaaa;}
     .stat .examples{font-size:11px;font-weight:bold;color:#666666;}
     
@@ -136,20 +144,22 @@
                 <!-- Name / Look -->
                 <div class="name-look_container row">
                     <div class="col-sm-12">
-
-                            <label>Name: </label><input class="name" type="text" />
-                            <label>Look: </label><input class="look" type="text" />
+                        <label>Name: </label><input class="name" type="text" />
+                        <label>Look: </label><input class="look" type="text" />
                     </div>
                 </div>
                 <!-- Harm -->
                 <div class="harm_container row">
-                    <div class="harm_marker lrg" ng-class="vm.harm[0]" ng-click="vm.markHarm(0)">1500</div>
-                    <div class="harm_marker lrg" ng-class="vm.harm[1]" ng-click="vm.markHarm(1)">1800</div>
-                    <div class="harm_marker lrg" ng-class="vm.harm[2]" ng-click="vm.markHarm(2)">2100</div>
-                    <div class="harm_marker sm" ng-class="vm.harm[3]" ng-click="vm.markHarm(3)">2200</div>
-                    <div class="harm_marker sm" ng-class="vm.harm[4]" ng-click="vm.markHarm(4)">2300</div>
-                    <div class="harm_marker sm" ng-class="vm.harm[5]" ng-click="vm.markHarm(5)">0000</div>
-                    <a href ng-click="vm.clearHarm()" style="margin-left:3px;">Clear</a>
+                    <div class="col-sm-12">
+                        <h4>HARM</h4>
+                        <div class="harm_marker lrg" ng-class="vm.harm[0]" ng-click="vm.markHarm(0)">1500</div>
+                        <div class="harm_marker lrg" ng-class="vm.harm[1]" ng-click="vm.markHarm(1)">1800</div>
+                        <div class="harm_marker lrg" ng-class="vm.harm[2]" ng-click="vm.markHarm(2)">2100</div>
+                        <div class="harm_marker sm" ng-class="vm.harm[3]" ng-click="vm.markHarm(3)">2200</div>
+                        <div class="harm_marker sm" ng-class="vm.harm[4]" ng-click="vm.markHarm(4)">2300</div>
+                        <div class="harm_marker sm" ng-class="vm.harm[5]" ng-click="vm.markHarm(5)">0000</div>
+                        <a href ng-click="vm.clearHarm()" style="margin-left:3px;">Clear</a>
+                    </div>
                 </div>
                 <!-- Complicated Non-reponsive HEX format -->
                 <div class="attributes_container row hide">
@@ -232,6 +242,7 @@
                 <!-- Attributes Functional-->
                 <div class="row">
                     <div class="col-md-12">
+                        <h4>STATS</h4>
                         <div class="stat">
                             <label>::MEAT</label>
                             <input type="number" />
@@ -284,36 +295,61 @@
                 </div>
                 <!-- Directives -->
                 <div class="directives_container row">
-                    <textarea type="textbox" class="directives">
+                    <div class="col-md-12">
+                        <h4>DIRECTIVES</h4>
+                        <textarea type="textbox" class="directives">                        
+                        </textarea>
+                        <div class="class_directives">
                             <ul>
-                                    <li>Illustrious: When your desire for fame draws unwanted attention to the mission, mark experience. </li>
-                                    <li>Intimate: When you put your friend ________________ ahead of the mission, mark experience.</li>
-                                    <li>Rejected: When your former membership of _________________ hinders the mission, mark experience. </li>
-                                    <li>Vengeful: When you harm _______________ or their interests, mark experience. </li>
-                                </ul>
-                    </textarea>
-                    <div class="class_directives">
-                        <ul>
-                            <li>Illustrious: When your desire for fame draws unwanted attention to the mission, mark experience. </li>
-                            <li>Intimate: When you put your friend ________________ ahead of the mission, mark experience.</li>
-                            <li>Rejected: When your former membership of _________________ hinders the mission, mark experience. </li>
-                            <li>Vengeful: When you harm _______________ or their interests, mark experience. </li>
-                        </ul>
+                                <li>Illustrious: When your desire for fame draws unwanted attention to the mission, mark experience. </li>
+                                <li>Intimate: When you put your friend ________________ ahead of the mission, mark experience.</li>
+                                <li>Rejected: When your former membership of _________________ hinders the mission, mark experience. </li>
+                                <li>Vengeful: When you harm _______________ or their interests, mark experience. </li>
+                            </ul>
+                        </div>
                     </div>
-
                 </div>
                 <!-- Links -->
                 <div class="links_container row">
+                    <div class="col-md-12">
+                        <h4>LINKS</h4>
+                    </div>
+                    
 
                 </div>
                 <!-- Contacts -->
                 <div class="contacts_container row">
-
+                    <div class="col-md-12">
+                        <h4>CONTACTS</h4>
+                    </div>
                 </div>
             </div>
             
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="moves_container row">
+                    <div class="col-md-12">
+                        <h4>MOVES</h4>
+                    </div>
+                </div>
+                <div class="cyberware_container row">
+                    <div class="col-md-12">
+                        <h4>CYBERWARE</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Column 3-->
+            <div class="col-sm-4">
+                <div class="gear_container row">
+                    <div class="col-md-12">
+                        <h4>GEAR</h4>
+                    </div>
+                </div>
+                <div class="advancement_container row">
+                    <div class="col-md-12">
+                        <h4>ADVANCEMENT</h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
