@@ -13,6 +13,7 @@
             
             //Scope Properties
             vm.harm = ["","","","","",""]; // THe Harm array represents the 15,18,21,22,23,00 of the harm bar
+            vm.directives = directives();
             
             //Scope Methods	
             vm.markHarm = markHarm;
@@ -36,5 +37,21 @@
             function clearHarm(){
                 vm.harm = ["","","","","",""];  
             }
+
+            function directives(){
+                return "<ul style='width:300px;'><li>Illustrious: When your desire for fame draws unwanted attention to the mission, mark experience. </li> <li>Intimate: When you put your friend ________________ ahead of the mission, mark experience.</li>                <li>Rejected: When your former membership of _________________ hinders the mission, mark experience. </li>                <li>Vengeful: When you harm _______________ or their interests, mark experience. </li>                    </ul>";
+                
+                
+                // {
+                //     "Fixer":
+                //     [
+                //         {"Illustrious": "When your desire for fame draws unwanted attention to the mission, mark experience." },
+                //         {"Intimate": "When you put your friend ________________ ahead of the mission, mark experience."},
+                //         {"Rejected": "When your former membership of _________________ hinders the mission, mark experience."},
+                //         {"Vengeful": "When you harm _______________ or their interests, mark experience." }
+                //     ]
+                // }
+            }
         }
 })();
+

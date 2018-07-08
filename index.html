@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html ng-app="pbta_resources">
 <head>
+        <script type="text/javascript" src="./inc/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="./inc/angular.min.js"></script>
         <script type="text/javascript" src="./inc/angular-ui-router.min.js"></script>
         <script type="text/javascript" src="./inc/angular-cookies.js"></script>
-        <script type="text/javascript" src="./inc/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="./inc/md5.min.js"></script>
         <script type="text/javascript" src="./inc/checklist-model.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
     	<script type="text/javascript" src="app.js"></script>
     	<script type="text/javascript" src="./inc/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    	<script type="text/javascript" src="./inc/bootstrap-3.3.7-dist/js/bootstrap-tooltip.js"></script>
+    	<script type="text/javascript" src="./inc/misc.js"></script>
         <link rel="stylesheet" type="text/css" href="inc/bootstrap-3.3.7-dist/css/bootstrap.css" />
         <script type="text/javascript" src="./services/svc.AuthService.js"></script>
         <script type="text/javascript" src="./services/svc.UserService.js"></script>
@@ -18,6 +20,9 @@
         <script type="text/javascript" src="./controllers/ctrl.ReferenceController.js"></script>
         <script type="text/javascript" src="./controllers/ctrl.so77Controller.js"></script>
         <script type="text/javascript" src="./controllers/ctrl.Sprawl.js"></script>
+
+
+        
 </head>
 <body ng-controller="LoginController as vm">
 	<a ng-click="vm.logout()" style="cursor:pointer;">{{vm.isLoggedIn ? "Log Out" : "Log In"}}</a>

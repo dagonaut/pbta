@@ -123,6 +123,7 @@
     .stat{}
     .stat label{width:100px;font-size:24px;}
     .stat input{width:50px;height:50px;font-size:24px;border:3px double #0472CE;}
+    .stat input.link{width:250px;height:20px;font-size:14px;border:none;border-bottom:1px solid black;}
     .stat .description{color:#aaaaaa;}
     .stat .examples{font-size:11px;font-weight:bold;color:#666666;}
     
@@ -131,10 +132,17 @@
         font-weight:bold;
     }
     .directives_container textarea{
-        width:400px;
+        float:left;
+        width:375px;
         height:95px;
+        padding:0px;
+    }
+    /* Bootstrap override */
+    .popover{
+        max-width: 400px;
     }
     </style>
+    
         
 </head>
 <body>
@@ -145,7 +153,7 @@
                 <div class="name-look_container row">
                     <div class="col-sm-12">
                         <label>Name: </label><input class="name" type="text" />
-                        <label>Look: </label><input class="look" type="text" />
+                        <label>Look: </label><input class="look" type="text" />                          
                     </div>
                 </div>
                 <!-- Harm -->
@@ -297,22 +305,22 @@
                 <div class="directives_container row">
                     <div class="col-md-12">
                         <h4>DIRECTIVES</h4>
-                        <textarea type="textbox" class="directives">                        
-                        </textarea>
-                        <div class="class_directives">
-                            <ul>
-                                <li>Illustrious: When your desire for fame draws unwanted attention to the mission, mark experience. </li>
-                                <li>Intimate: When you put your friend ________________ ahead of the mission, mark experience.</li>
-                                <li>Rejected: When your former membership of _________________ hinders the mission, mark experience. </li>
-                                <li>Vengeful: When you harm _______________ or their interests, mark experience. </li>
-                            </ul>
-                        </div>
+                        <textarea type="textbox" class="directives"></textarea>
+                        <a style="display:inline-block;" tabindex="0" class="btn btn-sm btn-info" role="button" data-toggle="popover"  
+                        title="Choose 2:" data-html="true" data-content="{{vm.directives}}">Show Directives</a>                           
                     </div>
                 </div>
                 <!-- Links -->
                 <div class="links_container row">
                     <div class="col-md-12">
                         <h4>LINKS</h4>
+
+                        <div class="stat">                            
+                            <input type="number" />
+                            <div style="display:inline-block;">                        
+                                <input class="link" type="text" />
+                            </div>
+                        </div>
                     </div>
                     
 
@@ -352,6 +360,10 @@
             </div>
         </div>
     </div>
-    
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
 </body>
 </html>
