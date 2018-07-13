@@ -5,8 +5,8 @@
         .module('pbta_resources')
         .controller('Sprawl', sprawl);
         
-        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService'];
-        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService){
+        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService'];
+        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService){
             //Private Properties
             var vm = this;
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
@@ -19,10 +19,32 @@
             vm.markHarm = markHarm;
             vm.clearHarm = clearHarm;
 
+            //Clock related
+            vm.clocks = getClocksByUserId(2);
+            vm.createClock = createClock;
+
             init();
             
             function init(){
-                   
+                console.log(vm.clocks);
+            }
+
+            function createClock(){
+                var newClock = {
+                    type: '',
+                    name: '',
+                    gameid: 4,
+                    createdby: 2
+                }
+                ClockService.Create(newClock);
+                getClocksByUserId(2);
+                console.log(vm.clocks);
+            }
+
+            function getClocksByUserId(id){
+                ClockService.GetByUserId(2).then(function(data){
+                    vm.clocks = data;
+                });
             }
             
             function markHarm(position){

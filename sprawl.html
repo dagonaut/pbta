@@ -357,6 +357,25 @@
                         <h4>ADVANCEMENT</h4>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>COUNT THESE CLOCKS...</h4>
+                        <div class="btn btn-alert" ng-click="vm.createClock()"></div>
+                        <div ng-repeat="clock in vm.clocks">
+                            <div>{{clock.id}}</div>
+                            <div>{{clock.name}}</div>
+                            <div>{{clock.type}}</div>
+                            <div>{{clock.position}}</div>
+                            <div>{{clock.createdby}}</div>
+                            <div>{{clock.gameid}}</div>
+                        </div>
+                        <form novalidate class="simple-form">
+                            <label>Name: <input type="text" ng-model="clock.name" /></label><br />
+                            <label>Description: <input type="text" ng-model="clock.type" /></label><br />                            
+                            <input type="submit" ng-click="updateTag(tag)" value="Save Tag" />
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
