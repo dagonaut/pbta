@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <style>
+            .hex{
+                width:35.35px;
+                height:50px;
+                background-color:blueviolet;
+            }
+            .hex::after{
+                content: '';
+                left: 43px;
+                position: absolute;
+                border-left: 25px solid blueviolet;                
+                border-top: 25px solid transparent;
+                border-bottom: 25px solid transparent;
+            }
+            .hex::before{
+                content: '';
+                
+                position: absolute;
+                border-right: 25px solid blueviolet;                
+                border-top: 25px solid transparent;
+                border-bottom: 25px solid transparent;
+            }
+        </style>
+    </head>
+    <body style="padding:100px;">
+        <div class="hex"></div>
+    </body>
+</html>

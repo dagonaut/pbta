@@ -10,6 +10,7 @@
             //Private Properties
             var vm = this;
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
+            var userId = $rootScope.userData.id;
             
             //Scope Properties
             vm.harm = ["","","","","",""]; // THe Harm array represents the 15,18,21,22,23,00 of the harm bar
@@ -20,8 +21,9 @@
             vm.clearHarm = clearHarm;
 
             //Clock related
-            vm.clocks = getClocksByUserId(2);
+            vm.clocks = getClocksByUserId(userId);
             vm.createClock = createClock;
+            vm.deleteClock = deleteClock;
 
             init();
             
@@ -34,15 +36,20 @@
                     type: '',
                     name: '',
                     gameid: 4,
-                    createdby: 2
+                    createdby: userId
                 }
                 ClockService.Create(newClock);
                 getClocksByUserId(2);
                 console.log(vm.clocks);
             }
 
+            function deleteClock(clockId){
+                ClockService.Delete(clockId);
+                getClocksByUserId(userId);
+            }
+
             function getClocksByUserId(id){
-                ClockService.GetByUserId(2).then(function(data){
+                ClockService.GetByUserId(userId).then(function(data){
                     vm.clocks = data;
                 });
             }

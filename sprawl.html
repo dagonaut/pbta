@@ -368,6 +368,7 @@
                             <div>{{clock.position}}</div>
                             <div>{{clock.createdby}}</div>
                             <div>{{clock.gameid}}</div>
+                            <a href ng-click="vm.deleteClock(clock.id)">Delete</a>
                         </div>
                         <form novalidate class="simple-form">
                             <label>Name: <input type="text" ng-model="clock.name" /></label><br />
