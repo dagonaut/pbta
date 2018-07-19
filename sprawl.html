@@ -153,7 +153,12 @@
                 <div class="name-look_container row">
                     <div class="col-sm-12">
                         <label>Name: </label><input class="name" type="text" />
-                        <label>Look: </label><input class="look" type="text" />                          
+                        <label>Look: </label><input class="look" type="text" />
+                        <div>
+                            <select ng-model="vm.class" ng-change="vm.getClassMoves(vm.class)">
+                                <option ng-repeat="class in vm.classes" value="{{class.name}}" ng-selected="vm.class">{{class.name}}</option>
+                            </select>                          
+                        </div>
                     </div>
                 </div>
                 <!-- Harm -->
@@ -332,11 +337,18 @@
                     </div>
                 </div>
             </div>
-            
+            <!-- Column 2-->
             <div class="col-sm-4">
+                <!-- Moves -->
                 <div class="moves_container row">
                     <div class="col-md-12">
                         <h4>MOVES</h4>
+                        <div ng-repeat="move in vm.classMoves">
+                            <div>
+                                <strong>{{move.name}}:</strong>
+                                <span data-ng-bind-html="move.description"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="cyberware_container row">

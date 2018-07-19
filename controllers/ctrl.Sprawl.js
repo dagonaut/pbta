@@ -5,8 +5,8 @@
         .module('pbta_resources')
         .controller('Sprawl', sprawl);
         
-        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService'];
-        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService){
+        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService','MoveService'];
+        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService){
             //Private Properties
             var vm = this;
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
@@ -15,6 +15,9 @@
             //Scope Properties
             vm.harm = ["","","","","",""]; // THe Harm array represents the 15,18,21,22,23,00 of the harm bar
             vm.directives = directives();
+            vm.classes = [{name:'driver'}, {name:'fixer'}, {name:'hacker'}, {name:'hunter'},{name:'infiltrator'},{name:'killer'},{name:'pusher'},{name:'reporter'},{name:'soldier'},{name:'tech'}];
+            vm.class = "driver";
+            vm.classMoves = getClassMoves(vm.class);
             
             //Scope Methods	
             vm.markHarm = markHarm;
@@ -24,6 +27,7 @@
             vm.clocks = getClocksByUserId(userId);
             vm.createClock = createClock;
             vm.deleteClock = deleteClock;
+            vm.getClassMoves = getClassMoves;
 
             init();
             
@@ -31,6 +35,7 @@
                 console.log(vm.clocks);
             }
 
+            // Clocks
             function createClock(){
                 var newClock = {
                     type: '',
@@ -53,7 +58,17 @@
                     vm.clocks = data;
                 });
             }
+
+            // Moves
+            function getClassMoves(c){
+                MoveService.GetByClass(c).then(function(data){
+                    vm.classMoves = data;
+                    console.log(vm.classMoves);
+
+                });
+            }
             
+            // Harm
             function markHarm(position){
                 clearHarm();
                 for(var i = 0; i < vm.harm.length; i++){
@@ -67,6 +82,7 @@
                 vm.harm = ["","","","","",""];  
             }
 
+            // Directives
             function directives(){
                 return "<ul style='width:300px;'><li>Illustrious: When your desire for fame draws unwanted attention to the mission, mark experience. </li> <li>Intimate: When you put your friend ________________ ahead of the mission, mark experience.</li>                <li>Rejected: When your former membership of _________________ hinders the mission, mark experience. </li>                <li>Vengeful: When you harm _______________ or their interests, mark experience. </li>                    </ul>";
                 
