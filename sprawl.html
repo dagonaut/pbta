@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="inc/bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" />
     <script type="application/javascript" src="inc/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <style>
+        h2{font-size:16px;margin:0;border-bottom:1px solid #0472CE;cursor:pointer;}
+
         h4{
             font-size: 20px;
             border-bottom: 2px #0472CE solid;
@@ -147,6 +149,26 @@
 </head>
 <body>
     <div class="container_fluid">
+        <!-- Reference -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="moves_container row">
+                    <div class="col-md-12">
+                        <h4>BASIC MOVES</h4>
+                        <div ng-repeat="move in vm.sprawlMoves" ng-show="move.type === 'Basic'">
+                            <div>
+                                <h2 class="move" ng-click="move.hide = !move.hide">{{move.name}}</h2>
+                                <div class="move-description" ng-hide="move.hide">                                    
+                                    <span class="move-trigger"><strong>{{move.trigger}}</strong></span>
+                                    <span ng-bind-html="move.description"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Character Sheet -->
         <div class="row">
             <div class="col-sm-4">
                 <!-- Name / Look -->

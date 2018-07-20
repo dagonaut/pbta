@@ -18,6 +18,7 @@
             vm.classes = [{name:'driver'}, {name:'fixer'}, {name:'hacker'}, {name:'hunter'},{name:'infiltrator'},{name:'killer'},{name:'pusher'},{name:'reporter'},{name:'soldier'},{name:'tech'}];
             vm.class = "driver";
             vm.classMoves = getClassMoves(vm.class);
+            vm.sprawlMoves = getSprawlMoves(4);
             
             //Scope Methods	
             vm.markHarm = markHarm;
@@ -66,6 +67,19 @@
                     console.log(vm.classMoves);
 
                 });
+            }
+
+            function getSprawlMoves(id){
+                MoveService.GetByGameId(id).then(function(data){
+                    vm.sprawlMoves = data;
+                    hideAll();
+                });
+            }
+
+            function hideAll(){
+                for(var i = 0; i < vm.sprawlMoves.length; i++){
+                    vm.sprawlMoves[i]["hide"] = true;
+                }
             }
             
             // Harm
