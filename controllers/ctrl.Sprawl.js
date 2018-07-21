@@ -5,8 +5,8 @@
         .module('pbta_resources')
         .controller('Sprawl', sprawl);
         
-        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService','MoveService'];
-        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService){
+        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService','MoveService','TagService'];
+        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService, TagService){
             //Private Properties
             var vm = this;
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
@@ -19,6 +19,7 @@
             vm.class = "driver";
             vm.classMoves = getClassMoves(vm.class);
             vm.sprawlMoves = getSprawlMoves(4);
+            vm.allTags = getAllTags(4);
             
             //Scope Methods	
             vm.markHarm = markHarm;
@@ -29,6 +30,7 @@
             vm.createClock = createClock;
             vm.deleteClock = deleteClock;
             vm.getClassMoves = getClassMoves;
+            vm.getAllTags = getAllTags;
 
             init();
             
@@ -80,6 +82,23 @@
                 for(var i = 0; i < vm.sprawlMoves.length; i++){
                     vm.sprawlMoves[i]["hide"] = true;
                 }
+            }
+
+            // Tags
+            function getAllTags(gameid){
+                TagService.GetByGameId(gameid).then(
+                    function(data){
+                        vm.allTags = data;
+                        
+                        for(var i = 0; i < vm.allTags.length; i++){
+                            vm.allTags[i]["hide"] = true;
+                        }
+                        console.log(vm.allTags);
+                    },
+                    function(error){
+                        console.log(error);
+                    }
+                );
             }
             
             // Harm

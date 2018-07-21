@@ -166,6 +166,54 @@
                         </div>
                     </div>
                 </div>
+                <div class="moves_container row">
+                    <div class="col-md-12">
+                        <h4>GM MOVES</h4>
+                        <div ng-repeat="move in vm.sprawlMoves" ng-show="move.type === 'GM'">
+                            <div>
+                                <h2 class="move" ng-click="move.hide = !move.hide">{{move.name}}</h2>
+                                <div class="move-description" ng-hide="move.hide">                                    
+                                    <span class="move-trigger"><strong>{{move.trigger}}</strong></span>
+                                    <span ng-bind-html="move.description"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4>TAGS</h4>
+                <div ng-repeat="tag in vm.allTags">
+                    <div>
+                        <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+                        <div class="move-description" ng-hide="tag.hide">
+                            <span>
+                                {{tag.category}}
+                            </span>
+                            <span>
+                                {{tag.description}}
+                            </span>							
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="col-md-4">
+                <h4>COUNT THESE CLOCKS... BYOTCH</h4>
+                <div class="btn btn-alert" ng-click="vm.createClock()"></div>
+                <div ng-repeat="clock in vm.clocks">
+                    <div>{{clock.id}}</div>
+                    <div>{{clock.name}}</div>
+                    <div>{{clock.type}}</div>
+                    <div>{{clock.position}}</div>
+                    <div>{{clock.createdby}}</div>
+                    <div>{{clock.gameid}}</div>
+                    <a href ng-click="vm.deleteClock(clock.id)">Delete</a>
+                </div>
+                <form novalidate class="simple-form">
+                    <label>Name: <input type="text" ng-model="clock.name" /></label><br />
+                    <label>Description: <input type="text" ng-model="clock.type" /></label><br />                            
+                    <input type="submit" ng-click="updateTag(tag)" value="Save Tag" />
+                </form>
             </div>
         </div>
         <!-- Character Sheet -->
@@ -393,22 +441,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h4>COUNT THESE CLOCKS...</h4>
-                        <div class="btn btn-alert" ng-click="vm.createClock()"></div>
-                        <div ng-repeat="clock in vm.clocks">
-                            <div>{{clock.id}}</div>
-                            <div>{{clock.name}}</div>
-                            <div>{{clock.type}}</div>
-                            <div>{{clock.position}}</div>
-                            <div>{{clock.createdby}}</div>
-                            <div>{{clock.gameid}}</div>
-                            <a href ng-click="vm.deleteClock(clock.id)">Delete</a>
-                        </div>
-                        <form novalidate class="simple-form">
-                            <label>Name: <input type="text" ng-model="clock.name" /></label><br />
-                            <label>Description: <input type="text" ng-model="clock.type" /></label><br />                            
-                            <input type="submit" ng-click="updateTag(tag)" value="Save Tag" />
-                        </form>
+                        
                     </div>
                 </div>
             </div>
