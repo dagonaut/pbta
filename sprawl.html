@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="inc/bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" />
     <script type="application/javascript" src="inc/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <style>
+        body{padding:0 5px;}
         h2{font-size:16px;margin:0;border-bottom:1px solid #0472CE;cursor:pointer;}
 
         h4{
@@ -27,7 +28,7 @@
 
     }
     .harm_marker.lrg{
-        width:100px;
+        width:80px;
     }
     .harm_marker.sm{
         width:45px;
@@ -143,6 +144,11 @@
     .popover{
         max-width: 400px;
     }
+    .reference_section{
+        margin-bottom:5px;
+        padding-bottom:5px;
+        border-bottom:3px solid #0472CE;
+    }
     </style>
     
         
@@ -150,7 +156,7 @@
 <body>
     <div class="container_fluid">
         <!-- Reference -->
-        <div class="row">
+        <div class="reference_section row">
             <div class="col-md-4">
                 <div class="moves_container row">
                     <div class="col-md-12">
@@ -188,7 +194,7 @@
                         <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
                         <div class="move-description" ng-hide="tag.hide">
                             <span>
-                                {{tag.category}}
+                                [{{tag.category}}]
                             </span>
                             <span>
                                 {{tag.description}}
@@ -217,20 +223,23 @@
             </div>
         </div>
         <!-- Character Sheet -->
-        <div class="row">
-            <div class="col-sm-4">
+        <div class="character_header row">
+            <div class="col-md-12">
                 <!-- Name / Look -->
                 <div class="name-look_container row">
                     <div class="col-sm-12">
                         <label>Name: </label><input class="name" type="text" />
-                        <label>Look: </label><input class="look" type="text" />
-                        <div>
-                            <select ng-model="vm.class" ng-change="vm.getClassMoves(vm.class)">
-                                <option ng-repeat="class in vm.classes" value="{{class.name}}" ng-selected="vm.class">{{class.name}}</option>
-                            </select>                          
-                        </div>
+                        <label>Look: </label><input class="look" type="text" />                    
+                        <select ng-model="vm.class" ng-change="vm.getClassMoves(vm.class)">
+                            <option ng-repeat="class in vm.classes" value="{{class.name}}" ng-selected="vm.class">{{class.name}}</option>
+                        </select>                                              
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Column 1-->
+            <div class="col-sm-4">                
                 <!-- Harm -->
                 <div class="harm_container row">
                     <div class="col-sm-12">
@@ -409,6 +418,12 @@
             </div>
             <!-- Column 2-->
             <div class="col-sm-4">
+                <!-- Advancement -->
+                <div class="advancement_container row">
+                    <div class="col-md-12">
+                        <h4>ADVANCEMENT</h4>
+                    </div>
+                </div>
                 <!-- Moves -->
                 <div class="moves_container row">
                     <div class="col-md-12">
@@ -421,27 +436,19 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- Column 3-->
+            <div class="col-sm-4">
+                <!-- Cyberware -->
                 <div class="cyberware_container row">
                     <div class="col-md-12">
                         <h4>CYBERWARE</h4>
                     </div>
                 </div>
-            </div>
-            <!-- Column 3-->
-            <div class="col-sm-4">
+                <!-- Gear -->
                 <div class="gear_container row">
                     <div class="col-md-12">
                         <h4>GEAR</h4>
-                    </div>
-                </div>
-                <div class="advancement_container row">
-                    <div class="col-md-12">
-                        <h4>ADVANCEMENT</h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@
             //Private Properties
             var vm = this;
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
-            var userId = $rootScope.userData.id;
+            var userId = ($rootScope.userData.id || 2);
             
             //Scope Properties
             vm.harm = ["","","","","",""]; // THe Harm array represents the 15,18,21,22,23,00 of the harm bar
