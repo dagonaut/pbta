@@ -20,6 +20,7 @@
             vm.classMoves = getClassMoves(vm.class);
             vm.sprawlMoves = getSprawlMoves(4);
             vm.allTags = getAllTags(4);
+            vm.allDirectives = getAllDirectives();
             
             //Scope Methods	
             vm.markHarm = markHarm;
@@ -116,20 +117,38 @@
             }
 
             // Directives
-            function directives(){
-                return "<ul style='width:300px;'><li>Illustrious: When your desire for fame draws unwanted attention to the mission, mark experience. </li> <li>Intimate: When you put your friend ________________ ahead of the mission, mark experience.</li>                <li>Rejected: When your former membership of _________________ hinders the mission, mark experience. </li>                <li>Vengeful: When you harm _______________ or their interests, mark experience. </li>                    </ul>";
-                
-                
-                // {
-                //     "Fixer":
-                //     [
-                //         {"Illustrious": "When your desire for fame draws unwanted attention to the mission, mark experience." },
-                //         {"Intimate": "When you put your friend ________________ ahead of the mission, mark experience."},
-                //         {"Rejected": "When your former membership of _________________ hinders the mission, mark experience."},
-                //         {"Vengeful": "When you harm _______________ or their interests, mark experience." }
-                //     ]
-                // }
+            function getAllDirectives(){
+                DirectiveService.getAll().then(function(data){
+                    vm.AllDirectives = data
+                });
             }
+            function directives(){
+                return "<ul style='width:300px;'><li>Illustrious: When your desire for fame draws unwanted attention to the mission, mark experience. </li> <li>Intimate: When you put your friend ________________ ahead of the mission, mark experience.</li>                <li>Rejected: When your former membership of _________________ hinders the mission, mark experience. </li>                <li>Vengeful: When you harm _______________ or their interests, mark experience. </li>                    </ul>";               
+            }
+            vm.directivesByClass = [
+                {Driver: [1,2,3,4]},
+                {Fixer: [5,6,7,8]},
+                {Hacker: [5,1,7,9]},
+                {Hunter: [10,11,12,4]},
+                {Infiltrator: [2,6,7,13]},
+                {Killer: [14,15,8,7]},
+                {Pusher: [16,6,3,13]},
+                {Reporter: [11,7,9,4]},
+                {Soldier: [12,10,17,6]},
+                {Tech: [14,7,8,9]}
+            ];
+            vm.ClassData = {
+                Driver: {directives:[1,2,3,4], cyberware:[]},
+                Fixer: {directives:[5,6,7,8], cyberware:[]},
+                Hacker: {directives:[5,1,7,9], cyberware:[]},
+                Hunter: {directives:[10,11,12,4], cyberware:[]},
+                Infiltrator: {directives:[2,6,7,13], cyberware:[]},
+                Killer: {directives:[14,15,8,7], cyberware:[]},
+                Pusher: {directives:[16,6,3,13], cyberware:[]},
+                Reporter: {directives:[11,7,9,4], cyberware:[]},
+                Soldier: {directives:[12,10,17,6], cyberware:[]},
+                Tech: {directives:[14,7,8,9], cyberware:[]}
+            };
         }
 })();
 
