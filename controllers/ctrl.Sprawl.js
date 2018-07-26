@@ -138,16 +138,16 @@
                 {Tech: [14,7,8,9]}
             ];
             vm.ClassData = {
-                Driver: {directives:[1,2,3,4], cyberware:[]},
-                Fixer: {directives:[5,6,7,8], cyberware:[]},
-                Hacker: {directives:[5,1,7,9], cyberware:[]},
-                Hunter: {directives:[10,11,12,4], cyberware:[]},
-                Infiltrator: {directives:[2,6,7,13], cyberware:[]},
-                Killer: {directives:[14,15,8,7], cyberware:[]},
-                Pusher: {directives:[16,6,3,13], cyberware:[]},
-                Reporter: {directives:[11,7,9,4], cyberware:[]},
-                Soldier: {directives:[12,10,17,6], cyberware:[]},
-                Tech: {directives:[14,7,8,9], cyberware:[]}
+                Driver: {directives:[1,2,3,4], cyberware:[9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                Fixer: {directives:[5,6,7,8], cyberware:[1,3,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                Hacker: {directives:[5,1,7,9], cyberware:[9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                Hunter: {directives:[10,11,12,4], cyberware:[1,2,11,12], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                Infiltrator: {directives:[2,6,7,13], cyberware:[1,2,9,10,11], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                Killer: {directives:[14,15,8,7], cyberware:[1,4,6,7,8,9,10], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                Pusher: {directives:[16,6,3,13], cyberware:[1,3,7,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                Reporter: {directives:[11,7,9,4], cyberware:[1,2,3,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                Soldier: {directives:[12,10,17,6], cyberware:[1,3,9,11,12], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                Tech: {directives:[14,7,8,9], cyberware:[1,3,4,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}}
             };
         }
 })();

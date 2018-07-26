@@ -154,7 +154,7 @@
         
 </head>
 <body>
-    <div class="container_fluid">
+    <div class="container-fluid">
         <!-- Reference -->
         <div class="reference_section row">
             <div class="col-md-4">
@@ -237,9 +237,9 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="character_sheet row">
             <!-- Column 1-->
-            <div class="col-sm-4">                
+            <div class="col-md-4">                
                 <!-- Harm -->
                 <div class="harm_container row">
                     <div class="col-sm-12">
@@ -335,50 +335,52 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h4>STATS</h4>
-                        <div class="stat">
-                            <label>::MEAT</label>
-                            <input type="number" />
-                            <div style="display:inline-block;">                        
+                        <div class="row stat">
+                            <label class="col-sm-4">::MEAT</label>
+                            <input class="col-sm-2" type="number" />
+                            <div class="col-sm-6">                        
                                 <div class="description">physical non-cyberware stuff</div>
                                 <div class="examples">MIX IT UP · AQUIRE AGRICULTURAL PROPERTY</div>
                             </div>
                         </div>
-                        <div class="stat">
-                            <label>::EDGE</label>
-                            <input type="number" />                        
-                            <div style="display:inline-block;">                        
+                        <div class="row stat">
+                            <label class="col-sm-4">::EDGE</label>
+                            <input class="col-sm-2" type="number" />                        
+                            <div class="col-sm-6">                        
                                 <div class="description">street smarts, general badassness</div>
                                 <div class="examples">ASSESS · PLAY HARDBALL GET THE JOB · HACKING: MELT ICE</div>
                             </div>
                         </div>
-                        <div class="stat">
-                            <label>::COOL</label>
-                            <input type="number" />                        
-                            <div style="display:inline-block;">                        
+                        <div class="row stat">
+                            <div class="col-sm-5">
+                                <label>::COOL</label>
+                                <input type="number" />                        
+                            </div>
+                            <div class="col-sm-7">                        
                                 <div class="description">stay frosty</div>
-                                <div class="examples">ACT UNDER PRESSURE APPLY FIRST AID · HACKING: JACK OUT</div>
+                                <div class="examples">ACT UNDER PRESSURE · APPLY FIRST AID · HACKING: JACK OUT</div>
                             </div>
                         </div>
-                        <div class="stat">
-                            <label>::MIND</label>
-                            <input type="number" />                        
-                            <div style="display:inline-block;">                        
+                        <div class="row stat">
+                            <label class="col-sm-4">::MIND</label>
+                            <input class="col-sm-2" type="number" />                        
+                            <div class="col-sm-6">                        
                                 <div class="description">look at the brain on brad</div>
                                 <div class="examples">RESEARCH · HACKING: COMPROMISE SECURITY</div>
                             </div>
                         </div>
-                        <div class="stat">
-                            <label>::SYNTH</label>
-                            <input type="number" />                        
-                            <div style="display:inline-block;">                        
+                        <div class="row stat">
+                            <label class="col-sm-4">::SYNTH</label>
+                            <input class="col-sm-2" type="number" />                        
+                            <div class="col-sm-6">                        
                                 <div class="description">interface with tech</div>
                                 <div class="examples">HACKING: LOGIN · HACKING: MANIPULATE SYSTEMS</div>
                             </div>
                         </div>
-                        <div class="stat">
-                            <label>::STYLE</label>
-                            <input type="number" />                        
-                            <div style="display:inline-block;">                        
+                        <div class="row stat">
+                            <label class="col-sm-4">::STYLE</label>
+                            <input class="col-sm-2" type="number" />                        
+                            <div class="col-sm-6">                        
                                 <div class="description">chrisma uniqueness nerve talent</div>
                                 <div class="examples">FAST TALK · HIT THE STREET</div>
                             </div>
@@ -417,7 +419,7 @@
                 </div>
             </div>
             <!-- Column 2-->
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <!-- Advancement -->
                 <div class="advancement_container row">
                     <div class="col-md-12">
@@ -438,7 +440,7 @@
                 </div>
             </div>
             <!-- Column 3-->
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <!-- Cyberware -->
                 <div class="cyberware_container row">
                     <div class="col-md-12">
