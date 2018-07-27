@@ -392,7 +392,7 @@
                     <div class="col-md-12">
                         <h4>DIRECTIVES</h4>
                         <textarea type="textbox" class="directives"></textarea>
-                        <a style="display:inline-block;" tabindex="0" class="btn btn-sm btn-info" role="button" data-toggle="popover"  
+                        <a id="popover-content-directives" style="display:inline-block;" tabindex="0" class="btn btn-sm btn-info" role="button" data-toggle="popover"  
                         title="Choose 2:" data-html="true" data-content="{{vm.directives}}">Show Directives</a>                           
                     </div>
                 </div>
@@ -456,9 +456,18 @@
             </div>
         </div>
     </div>
+    <div id="popover-content-directives" class="hide">Tacos.</div>
     <script type="text/javascript">
         $(function () {
-            $('[data-toggle="popover"]').popover();
+            $('[data-toggle="popover"]').each(function(){
+                $(this).popover({
+                    html:true,
+                    content: function() {
+                        var id = $(this).attr('id')
+                        return $('#popover-content-' + id).html();
+                    }
+                });
+            });
         });
     </script>
 </body>

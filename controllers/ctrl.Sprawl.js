@@ -5,8 +5,8 @@
         .module('pbta_resources')
         .controller('Sprawl', sprawl);
         
-        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService','MoveService','TagService'];
-        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService, TagService){
+        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService','MoveService','TagService', 'DirectiveService'];
+        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService, TagService, DirectiveService){
             //Private Properties
             var vm = this;
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
@@ -17,10 +17,11 @@
             vm.directives = directives();
             vm.classes = [{name:'driver'}, {name:'fixer'}, {name:'hacker'}, {name:'hunter'},{name:'infiltrator'},{name:'killer'},{name:'pusher'},{name:'reporter'},{name:'soldier'},{name:'tech'}];
             vm.class = "driver";
+            vm.allDirectives = getAllDirectives();
             vm.classMoves = getClassMoves(vm.class);
             vm.sprawlMoves = getSprawlMoves(4);
             vm.allTags = getAllTags(4);
-            vm.allDirectives = getAllDirectives();
+            vm.directivesHtml = "";
             
             //Scope Methods	
             vm.markHarm = markHarm;
@@ -36,6 +37,7 @@
             init();
             
             function init(){
+                buildDirectiveHtml();
                 console.log(vm.clocks);
             }
 
@@ -68,7 +70,6 @@
                 MoveService.GetByClass(c).then(function(data){
                     vm.classMoves = data;
                     console.log(vm.classMoves);
-
                 });
             }
 
@@ -118,12 +119,25 @@
 
             // Directives
             function getAllDirectives(){
-                DirectiveService.getAll().then(function(data){
-                    vm.AllDirectives = data
+                DirectiveService.GetAll().then(function(data){
+                    vm.allDirectives = data;
+                    console.log(vm.allDirectives);
                 });
             }
             function directives(){
                 return "<ul style='width:300px;'><li>Illustrious: When your desire for fame draws unwanted attention to the mission, mark experience. </li> <li>Intimate: When you put your friend ________________ ahead of the mission, mark experience.</li>                <li>Rejected: When your former membership of _________________ hinders the mission, mark experience. </li>                <li>Vengeful: When you harm _______________ or their interests, mark experience. </li>                    </ul>";               
+            }
+
+            function buildDirectiveHtml(){
+                vm.directivesHtml = "<ul style='width:300px;'>";
+                for(let i = 0; i < vm.classData[vm.class].directives.length; i++){
+                    let directive = vm.allDirectives.find(x => x.id === vm.classData[vm.class].directives[i]);
+                    //let directive = vm.allDirectives.filter(obj => { return obj.id === vm.classData[vm.class].directives[i] });
+                    vm.directives += "<li>" + directive.name + ": " + directive.description + "</li>";
+                }
+                vm.directivesHtml += "</ul>";
+                console.log(vm.directivesHtml);
+
             }
             vm.directivesByClass = [
                 {Driver: [1,2,3,4]},
@@ -137,17 +151,17 @@
                 {Soldier: [12,10,17,6]},
                 {Tech: [14,7,8,9]}
             ];
-            vm.ClassData = {
-                Driver: {directives:[1,2,3,4], cyberware:[9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
-                Fixer: {directives:[5,6,7,8], cyberware:[1,3,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
-                Hacker: {directives:[5,1,7,9], cyberware:[9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
-                Hunter: {directives:[10,11,12,4], cyberware:[1,2,11,12], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
-                Infiltrator: {directives:[2,6,7,13], cyberware:[1,2,9,10,11], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
-                Killer: {directives:[14,15,8,7], cyberware:[1,4,6,7,8,9,10], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
-                Pusher: {directives:[16,6,3,13], cyberware:[1,3,7,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
-                Reporter: {directives:[11,7,9,4], cyberware:[1,2,3,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
-                Soldier: {directives:[12,10,17,6], cyberware:[1,3,9,11,12], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
-                Tech: {directives:[14,7,8,9], cyberware:[1,3,4,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}}
+            vm.classData = {
+                driver: {directives:[1,2,3,4], cyberware:[9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                fixer: {directives:[5,6,7,8], cyberware:[1,3,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                hacker: {directives:[5,1,7,9], cyberware:[9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                hunter: {directives:[10,11,12,4], cyberware:[1,2,11,12], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                infiltrator: {directives:[2,6,7,13], cyberware:[1,2,9,10,11], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                killer: {directives:[14,15,8,7], cyberware:[1,4,6,7,8,9,10], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                pusher: {directives:[16,6,3,13], cyberware:[1,3,7,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                reporter: {directives:[11,7,9,4], cyberware:[1,2,3,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                soldier: {directives:[12,10,17,6], cyberware:[1,3,9,11,12], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
+                tech: {directives:[14,7,8,9], cyberware:[1,3,4,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}}
             };
         }
 })();
