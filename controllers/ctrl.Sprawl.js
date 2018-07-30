@@ -129,14 +129,14 @@
             }
 
             function buildDirectiveHtml(){
-                vm.directivesHtml = "<ul style='width:300px;'>";
-                for(let i = 0; i < vm.classData[vm.class].directives.length; i++){
-                    let directive = vm.allDirectives.find(x => x.id === vm.classData[vm.class].directives[i]);
-                    //let directive = vm.allDirectives.filter(obj => { return obj.id === vm.classData[vm.class].directives[i] });
-                    vm.directives += "<li>" + directive.name + ": " + directive.description + "</li>";
-                }
-                vm.directivesHtml += "</ul>";
-                console.log(vm.directivesHtml);
+                // vm.directivesHtml = "<ul style='width:300px;'>";
+                // for(let i = 0; i < vm.classData[vm.class].directives.length; i++){
+                //     let directive = vm.allDirectives.find(x => x.id === vm.classData[vm.class].directives[i]);
+                //     //let directive = vm.allDirectives.filter(obj => { return obj.id === vm.classData[vm.class].directives[i] });
+                //     vm.directives += "<li>" + directive.name + ": " + directive.description + "</li>";
+                // }
+                // vm.directivesHtml += "</ul>";
+                // console.log(vm.directivesHtml);
 
             }
             vm.directivesByClass = [
