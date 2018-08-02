@@ -174,6 +174,20 @@
                 </div>
                 <div class="moves_container row">
                     <div class="col-md-12">
+                        <h4>MATRIX MOVES</h4>
+                        <div ng-repeat="move in vm.sprawlMoves" ng-show="move.type === 'matrix'">
+                            <div>
+                                <h2 class="move" ng-click="move.hide = !move.hide">{{move.name}}</h2>
+                                <div class="move-description" ng-hide="move.hide">                                    
+                                    <span class="move-trigger"><strong>{{move.trigger}}</strong></span>
+                                    <span ng-bind-html="move.description"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="moves_container row">
+                    <div class="col-md-12">
                         <h4>GM MOVES</h4>
                         <div ng-repeat="move in vm.sprawlMoves" ng-show="move.type === 'GM'">
                             <div>
@@ -336,17 +350,21 @@
                     <div class="col-md-12">
                         <h4>STATS</h4>
                         <div class="row stat">
-                            <label class="col-sm-4">::MEAT</label>
-                            <input class="col-sm-2" type="number" />
-                            <div class="col-sm-6">                        
+                            <div class="col-sm-5">
+                                <label>::MEAT</label>
+                                <input type="number" />
+                            </div>
+                            <div class="col-sm-7">                        
                                 <div class="description">physical non-cyberware stuff</div>
                                 <div class="examples">MIX IT UP · AQUIRE AGRICULTURAL PROPERTY</div>
                             </div>
                         </div>
                         <div class="row stat">
-                            <label class="col-sm-4">::EDGE</label>
-                            <input class="col-sm-2" type="number" />                        
-                            <div class="col-sm-6">                        
+                            <div class="col-sm-5">
+                                <label>::EDGE</label>
+                                <input type="number" />                        
+                            </div>
+                            <div class="col-sm-7">                        
                                 <div class="description">street smarts, general badassness</div>
                                 <div class="examples">ASSESS · PLAY HARDBALL GET THE JOB · HACKING: MELT ICE</div>
                             </div>
@@ -362,25 +380,31 @@
                             </div>
                         </div>
                         <div class="row stat">
-                            <label class="col-sm-4">::MIND</label>
-                            <input class="col-sm-2" type="number" />                        
-                            <div class="col-sm-6">                        
+                            <div class="col-sm-5">
+                                <label>::MIND</label>
+                                <input type="number" />                        
+                            </div>
+                            <div class="col-sm-7">                        
                                 <div class="description">look at the brain on brad</div>
                                 <div class="examples">RESEARCH · HACKING: COMPROMISE SECURITY</div>
                             </div>
                         </div>
                         <div class="row stat">
-                            <label class="col-sm-4">::SYNTH</label>
-                            <input class="col-sm-2" type="number" />                        
-                            <div class="col-sm-6">                        
+                            <div class="col-sm-5">                            
+                                <label>::SYNTH</label>                            
+                                <input type="number" />   
+                            </div>                     
+                            <div class="col-sm-7">                        
                                 <div class="description">interface with tech</div>
                                 <div class="examples">HACKING: LOGIN · HACKING: MANIPULATE SYSTEMS</div>
                             </div>
-                        </div>
+                        </div>                        
                         <div class="row stat">
-                            <label class="col-sm-4">::STYLE</label>
-                            <input class="col-sm-2" type="number" />                        
-                            <div class="col-sm-6">                        
+                            <div class="col-sm-5">
+                                <label>::STYLE</label>                            
+                                <input type="number" />   
+                            </div>                     
+                            <div class="col-sm-7">                        
                                 <div class="description">chrisma uniqueness nerve talent</div>
                                 <div class="examples">FAST TALK · HIT THE STREET</div>
                             </div>
