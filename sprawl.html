@@ -238,16 +238,28 @@
         </div>
         <!-- Character Sheet -->
         <div class="character_header row">
-            <div class="col-md-12">
+            <div class="col-md-5">
                 <!-- Name / Look -->
                 <div class="name-look_container row">
                     <div class="col-sm-12">
-                        <label>Name: </label><input class="name" type="text" />
-                        <label>Look: </label><input class="look" type="text" />                    
+                        <label>Name: </label><input class="name" type="text" ng-model="vm.characterData.name" />
+                        <label>Look: </label><input class="look" type="text" ng-model="vm.characterData.look" />                    
                         <select ng-model="vm.class" ng-change="vm.getClassMoves(vm.class)">
-                            <option ng-repeat="class in vm.classes" value="{{class.name}}" ng-selected="vm.class">{{class.name}}</option>
+                            <option ng-repeat="class in vm.classes" value="{{class.name}}" ng-selected="{{class.name == vm.class}}">{{class.name}}</option>
                         </select>                                              
                     </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="stat">
+                    <label>XP:</label>
+                    <input type="number" ng-model="vm.characterData.xp" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="stat">
+                    <label>CRED:</label>
+                    <input type="number" ng-model="vm.characterData.cred" />
                 </div>
             </div>
         </div>
@@ -352,7 +364,7 @@
                         <div class="row stat">
                             <div class="col-sm-5">
                                 <label>::MEAT</label>
-                                <input type="number" />
+                                <input type="number" ng-model="vm.characterData.meat" />
                             </div>
                             <div class="col-sm-7">                        
                                 <div class="description">physical non-cyberware stuff</div>
@@ -362,7 +374,7 @@
                         <div class="row stat">
                             <div class="col-sm-5">
                                 <label>::EDGE</label>
-                                <input type="number" />                        
+                                <input type="number" ng-model="vm.characterData.edge" />                        
                             </div>
                             <div class="col-sm-7">                        
                                 <div class="description">street smarts, general badassness</div>
@@ -372,17 +384,17 @@
                         <div class="row stat">
                             <div class="col-sm-5">
                                 <label>::COOL</label>
-                                <input type="number" />                        
+                                <input type="number" ng-model="vm.characterData.cool" />                        
                             </div>
                             <div class="col-sm-7">                        
-                                <div class="description">stay frosty</div>
+                                <div class="description">don't let em see you sweat</div>
                                 <div class="examples">ACT UNDER PRESSURE · APPLY FIRST AID · HACKING: JACK OUT</div>
                             </div>
                         </div>
                         <div class="row stat">
                             <div class="col-sm-5">
                                 <label>::MIND</label>
-                                <input type="number" />                        
+                                <input type="number" ng-model="vm.characterData.mind" />                        
                             </div>
                             <div class="col-sm-7">                        
                                 <div class="description">look at the brain on brad</div>
@@ -392,7 +404,7 @@
                         <div class="row stat">
                             <div class="col-sm-5">                            
                                 <label>::SYNTH</label>                            
-                                <input type="number" />   
+                                <input type="number" ng-model="vm.characterData.synth" />   
                             </div>                     
                             <div class="col-sm-7">                        
                                 <div class="description">interface with tech</div>
@@ -402,7 +414,7 @@
                         <div class="row stat">
                             <div class="col-sm-5">
                                 <label>::STYLE</label>                            
-                                <input type="number" />   
+                                <input type="number" ng-model="vm.characterData.style" />   
                             </div>                     
                             <div class="col-sm-7">                        
                                 <div class="description">chrisma uniqueness nerve talent</div>
@@ -415,7 +427,7 @@
                 <div class="directives_container row">
                     <div class="col-md-12">
                         <h4>DIRECTIVES</h4>
-                        <textarea type="textbox" class="directives"></textarea>
+                        <textarea type="textbox" class="directives" ng-model="vm.characterData.directives"></textarea>
                         <a id="popover-content-directives" style="display:inline-block;" tabindex="0" class="btn btn-sm btn-info" role="button" data-toggle="popover"  
                         title="Choose 2:" data-html="true" data-content="{{vm.directives}}">Show Directives</a>                           
                     </div>
@@ -469,6 +481,10 @@
                 <div class="cyberware_container row">
                     <div class="col-md-12">
                         <h4>CYBERWARE</h4>
+                        <div ng-repeat="cyberware in vm.allCyberware" ng-hide="vm.classData[vm.class].cyberware.indexOf(cyberware.id) === -1">
+                            <span><strong>{{cyberware.name}}</strong></span>
+                            <span ng-bind-html="cyberware.description"></span>
+                        </div>
                     </div>
                 </div>
                 <!-- Gear -->

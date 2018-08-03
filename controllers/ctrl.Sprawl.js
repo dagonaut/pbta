@@ -5,12 +5,12 @@
         .module('pbta_resources')
         .controller('Sprawl', sprawl);
         
-        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService','MoveService','TagService', 'DirectiveService'];
-        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService, TagService, DirectiveService){
+        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService','MoveService','TagService', 'DirectiveService', 'CyberwareService', 'SprawlCharacterService'];
+        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService, TagService, DirectiveService, CyberwareService, SprawlCharacterService){
             //Private Properties
             var vm = this;
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
-            var userId = ($rootScope.userData.id || 2);
+            var userId =  2;
             
             //Scope Properties
             vm.harm = ["","","","","",""]; // THe Harm array represents the 15,18,21,22,23,00 of the harm bar
@@ -21,6 +21,8 @@
             vm.classMoves = getClassMoves(vm.class);
             vm.sprawlMoves = getSprawlMoves(4);
             vm.allTags = getAllTags(4);
+            vm.allCyberware = getAllCyberware();
+            vm.characterData = {};
             vm.directivesHtml = "";
             
             //Scope Methods	
@@ -69,7 +71,6 @@
             function getClassMoves(c){
                 MoveService.GetByClass(c).then(function(data){
                     vm.classMoves = data;
-                    console.log(vm.classMoves);
                 });
             }
 
@@ -95,10 +96,8 @@
                         for(var i = 0; i < vm.allTags.length; i++){
                             vm.allTags[i]["hide"] = true;
                         }
-                        console.log(vm.allTags);
                     },
                     function(error){
-                        console.log(error);
                     }
                 );
             }
@@ -117,11 +116,17 @@
                 vm.harm = ["","","","","",""];  
             }
 
+            // Cyberware
+            function getAllCyberware(){
+                CyberwareService.GetAll().then(function(data){
+                    vm.allCyberware = data;
+                });
+            }
+
             // Directives
             function getAllDirectives(){
                 DirectiveService.GetAll().then(function(data){
                     vm.allDirectives = data;
-                    console.log(vm.allDirectives);
                 });
             }
             function directives(){
@@ -163,6 +168,27 @@
                 soldier: {directives:[12,10,17,6], cyberware:[1,3,9,11,12], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}},
                 tech: {directives:[14,7,8,9], cyberware:[1,3,4,9], names:[], look:{eyes:[],face:[],body:[],skin:[],wear:[]}}
             };
+
+            var fixer = {
+                name: "HUSTLING",
+                description: "You have people who work for you in various ways. You start with 2-crew and two jobs from the list below. Between missions, choose a number of those jobs equal to or less than your current crew, describe what each job is, and roll EDGE: 10+: you profit from each of your jobs; 7-9: one of them is a Disaster and you Profit from the rest;  6-: everything’s FUBAR. The MC will make a move based on the Disaster for each job.                Choose two:",
+                items:[
+                    {
+                        name: "Surveillance:", 
+                        description: "You have a small network of informants who report on events; you then sell that information.",
+                        profit: "gain [intel]",
+                        disaster: "someone acts on bad info"
+                    },
+                    { name: "Debt collection:", description: "You have a few burly looking fuckers who collect outstanding debts.", profit: "gain [gear].", disaster: "someone’s out of pocket."},
+                    { name: "Petty theft:", description: "You have a small crew who perform minor local robberies.", profit: "gain [gear].", disaster: "they robbed the wrong guy."},
+                    { name: "Deliveries:", description: "People hire you to transport things and you have a driver who takes care of that.", profit: "gain 1 Cred.", disaster: "the delivery never arrives."},
+                    { name: "Brokering deals:", description: "You arrange for the right people to meet each other.", profit: "gain 1 Cred.", disaster: "the deal that you arranged goes wrong."},
+                    { name: "Technical work:", description: "You have a couple of techs whom you supply with work.", profit: "gain [gear].", disaster: "something bad happens to someone else’s property."},
+                    { name: "Pimping:", description: "You manage a small stable of physical or virtual sex workers.", profit: "gain [intel].", disaster: "something goes wrong with a customer."},
+                    { name: "Addictive Substances:", description: "You manage a small lab producing either drugs or simstim chips.", profit: "gain [intel].", disaster: "something goes wrong for a user or for the lab itself."}
+                ]
+            }
+            
         }
 })();
 

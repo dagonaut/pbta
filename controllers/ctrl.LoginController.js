@@ -33,7 +33,7 @@
                         console.log("LoginController: rootScope: " + $rootScope.userData);
                         vm.isLoggedIn = true;
                         vm.userData = $rootScope.userData;
-                        $location.path('/so77');
+                        $location.path('/sprawl');
                     });
                 } else {
                     console.log("LoginController: You don't have a cookie.")
@@ -47,7 +47,7 @@
                     if(response.success) {
                         Auth.SetCredentials($scope.username, $scope.passwordHash, response.data);
                         vm.userData = response.data;
-                        $location.path('/so77');
+                        $location.path('/sprawl');
                     } else {
                         $scope.error = response.message;
                         $scope.dataLoading = false;
