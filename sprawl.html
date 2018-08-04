@@ -150,13 +150,11 @@
         border-bottom:3px solid #0472CE;
     }
     </style>
-    
-        
 </head>
 <body>
     <div class="container-fluid">
         <!-- Reference -->
-        <div class="reference_section row">
+        <div class="reference_section row hide">
             <div class="col-md-4">
                 <div class="moves_container row">
                     <div class="col-md-12">
@@ -453,6 +451,11 @@
                         <h4>CONTACTS</h4>
                     </div>
                 </div>
+                <div class="class_container row">
+                    <div class="col-md-12">                        
+                        <div ng-bind-html="vm.classData[vm.class].classSpecific"></div>
+                    </div>
+                </div>
             </div>
             <!-- Column 2-->
             <div class="col-md-4">
@@ -460,6 +463,13 @@
                 <div class="advancement_container row">
                     <div class="col-md-12">
                         <h4>ADVANCEMENT</h4>
+                        <div ng-repeat="adv in vm.characterData.advancements" ng-show="adv.type === 'basic'">
+                            <input type="checkbox" checked="adv.selected" ng-model="adv.selected" /><span>{{adv.description}}</span>
+                        </div>
+                        <div style="color:cyan;font-weight:bold;">/* after 5 advancements */</div>
+                        <div ng-repeat="adv in vm.characterData.advancements" ng-show="adv.type === 'advanced'">
+                            <input type="checkbox" checked="adv.selected" ng-model="adv.selected" /><span>{{adv.description}}</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Moves -->
@@ -491,6 +501,7 @@
                 <div class="gear_container row">
                     <div class="col-md-12">
                         <h4>GEAR</h4>
+                        <div ng-bind-html="vm.classData[vm.class].gear"></div>
                     </div>
                 </div>
             </div>
