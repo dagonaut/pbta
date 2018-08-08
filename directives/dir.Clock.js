@@ -3,22 +3,15 @@
 
     angular
         .module('pbta_resources')
-        .directive('Clock', clock);
-        
-        clock.$inject = ['$rootScope','$scope','ClockService'];
-        function clock($rootScope, $scope, ClockService){
-            //Private Properties
-            let _template = '<div>Tacos</div>';
-
+        .directive('clock', clock);
+                
+        function clock(){
             return{
-                restrict: 'E',
-                template = _template,
+                restrict: 'E',                
+                templateUrl: "/directives/dir.Clock.html",
                 scope: {
-
-                },
-                controller: Controller,
-                controllerAs: 'vm',
-                bindToController: true
+                    nombre: '='                    
+                }
             };
         }
     })();
