@@ -215,25 +215,26 @@
                     </div>
                 </div>                
             </div>
-            <div class="col-md-4">
-                <h4>Directive</h4>
-                <clock nomnbre="ZSJ" position="2"></clock>
+            <div class="col-md-4">                
                 <h4>COUNT THESE CLOCKS... BYOTCH</h4>
-                <div class="btn btn-alert" ng-click="vm.createClock()"></div>
+                <div class="btn btn-warning" ng-click="vm.showClockEdit = true;">Create Clock</div>
+                <form novalidate class="simple-form" ng-show="vm.showClockEdit">
+                    <label>Name: <input type="text" ng-model="clock.name" /></label><br />
+                    <label>Description: <input type="text" ng-model="clock.type" /></label><br />                                                
+                    <input type="submit" ng-click="vm.createClock(clock)" value="Save Clock" />
+                </form>
                 <div ng-repeat="clock in vm.clocks">
-                    <div>{{clock.id}}</div>
+                    <clock nomnbre="clock.name" position="clock.position"></clock>
+                    
+                    <!-- <div>{{clock.id}}</div>
                     <div>{{clock.name}}</div>
                     <div>{{clock.type}}</div>
                     <div>{{clock.position}}</div>
                     <div>{{clock.createdby}}</div>
-                    <div>{{clock.gameid}}</div>
+                    <div>{{clock.gameid}}</div> -->
                     <a href ng-click="vm.deleteClock(clock.id)">Delete</a>
                 </div>
-                <form novalidate class="simple-form">
-                    <label>Name: <input type="text" ng-model="clock.name" /></label><br />
-                    <label>Description: <input type="text" ng-model="clock.type" /></label><br />                            
-                    <input type="submit" ng-click="updateTag(tag)" value="Save Tag" />
-                </form>
+                
             </div>
         </div>
         <!-- Character Sheet -->

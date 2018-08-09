@@ -24,6 +24,7 @@
             vm.allCyberware = getAllCyberware();
             vm.characterData = {};
             vm.directivesHtml = "";
+            vm.showClockEdit = false;
 
             vm.classData = {
                 "driver": {"directives":[1,2,3,4], "cyberware":[9], "gear":"<strong>Custom cyber-linked vehicle (as described below)</strong> <br /><strong>Choose one weapon:</strong><ul> <li>Automatic shotgun (3-harm close/near loud messy autofire) <li>Heavy pistol (3-harm close/near loud) <li>Machette (3-harm hand) </ul><strong>Choose one:</strong><ul> <li>Armour jacket (1-armour) <li>Synth leathers (0-armour, +discreet, subtract 1 when rolling the harm move <li>Trauma Derms (allows you to apply first aid to characters at 2100 or less harm) </ul>","names": ["Aziz","Cartman","Cowboy","Demon","Frank","Furiosa","Luka","Max","Roadkill","Roo","Rook","Squirrel","Tower","an animal name","a violent name","a cocky name"], "look": { "eyes": ["laughing","cool","hard","cold","distant","artificial"], "face": ["blank","thin","covered","attractive","decorated","rugged"], "body": ["toned","lithe","compact","scarred","augmented","flabby","unfit"], "wear": ["flashy","formal","casual","utility","scrounge","vintage","leathers","military","corporate"],"skin":["artificial","asian or south asian","black","decorated","hispanic/latino","indigenous","middle eastern","white","________"]},"classSpecific": "<h4>VEHICLES</h4><strong>Choose a Frame:</strong> motorcycle, car, hovercraft, boat, vectored-thrust panzer, fixed-wing aircraft, helicopter, amphibious <br /><strong>Choose a Design:</strong> racing, recreational, passenger transport, cargo, military, luxury, civilian,  commercial, courier <br /><strong>Choose a Profile:</strong> <br />» Power+2, Looks+1, Weakness+1; 1-Armour <br />» Power+2, Looks+2, Weakness+1; 0-Armour <br />» Power+1, Looks+2, Weakness+1; 1-Armour <br />» Power+2, Looks+1, Weakness+2; 2-Armour <br /><i>For each point of Power, choose a strength; For each point of Looks, choose a look; For each point of Weakness, choose a weakness. </i><br />» <strong>Strengths:</strong> fast, quiet, rugged, aggressive, huge, off-road, responsive, uncomplaining, capacious, workhorse, easily repaired. <br />» <strong>Looks:</strong>sleek, vintage, pristine, powerful, luxurious, flashy, muscular, quirky, pretty, garish, armoured, armed, nondescript. <br />» <strong>Weaknesses:</strong> slow, fragile, sloppy, lazy, cramped, picky, guzzler, unreliable, loud <br />If your vehicle has Power+2, it may mount one weapon system; Military vehicles may mount an additional weapon system. <br />» <strong>Weapons:</strong> Machine guns (3-harm near/far area loud messy autofire),  grenade launchers (4-harm near/far area loud messy), missile launcher (5-harm far area messy breach), autocannon (4-harm near/far area messy breach) <br />When you’ve finished creating your vehicle, name it. ________________________________ _______ <br />Arrow, Bianca, Christine, Hobbes, Jeeves, Lucifer, Lucky, Mamma, Needle, Ninja, R.H.I.N.O.,  Shit Box, Silver, The Other Car, Thumbalina, Vanguard, a technical name, a task-oriented name,  an anthropomorphic name, a gendered name, an animal name<h4>DRONES</h4><strong>Choose a Motive style:</strong>  rotor, fixed-wing, quadruped, octoped, tracked, wheeled, aquatic, amphibious, submarine.<br /> <strong>Choose a Frame:</strong><ul> <li>Tiny (insect-sized): +small, +fragile, +stealthy, pick one sensor   <li>Small (rat- to cat-sized): choose one strength, one sensor, one weakness, and one other from any category   <li>Medium (dog-sized): choose one strength, one sensor, one weakness, and two others from any category   <li>Large (bear-sized): +obvious, choose two strengths, one sensor, one weakness and two others from any category  </ul><strong> Strengths:</strong> fast, rugged, off-road, responsive, uncomplaining, easily repaired, stealthy, tight encryption, autonomous, robot arm, armed, satellite relay. <br /><strong>Sensors:</strong> magnification, medical, thermographic, jamming,  image enhancement, analysis software, sonar. <br /><strong>Weaknesses:</strong> slow, fragile, unreliable, loud, loose encryption, obvious. <br /><strong>Armed:</strong> a weapon can be mounted on the drone. The weapon’s size is determined by the size of the frame. <br />A small drone can mount a gun dealing 2- or s-harm with a range tag of close or less and without the autofire tag.<br />A medium drone can mount a gun dealing up to 3-harm with a range tag of near or less.<br /> A large drone can mount a gun dealing up to 5-harm."},
@@ -58,21 +59,24 @@
             }
 
             // Clocks
-            function createClock(){
+            function createClock(clock){
                 var newClock = {
-                    type: '',
-                    name: '',
+                    type: clock.type,
+                    name: clock.name,
                     gameid: 4,
                     createdby: userId
                 }
-                ClockService.Create(newClock);
-                getClocksByUserId(2);
-                console.log(vm.clocks);
+                ClockService.Create(newClock).then(function(data){
+                    vm.showClockEdit = false;
+                    getClocksByUserId(2);
+                });                
             }
 
             function deleteClock(clockId){
-                ClockService.Delete(clockId);
-                getClocksByUserId(userId);
+                ClockService.Delete(clockId).then(function(data){
+                    console.log("Deleted? " + clockId);
+                    getClocksByUserId(userId);
+                });
             }
 
             function getClocksByUserId(id){

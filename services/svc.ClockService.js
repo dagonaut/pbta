@@ -61,7 +61,8 @@
 
         function Delete(id) {
             config.method = "DELETE";
-            config.url = config.url + id
+            config.url = config.url + "/" + id
+            console.log(config);
             return $http(config).then(handleSuccess, handleError('Error deleting Clock'));
         }
 		
