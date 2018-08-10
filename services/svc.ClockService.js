@@ -56,13 +56,13 @@
         function Update(clock) {
             config.method = "PUT"
             config.data = clock;
+            config.url = config.url + "/" + clock.id            
             return $http(config).then(handleSuccess, handleError('Error updating Clock'));
         }
 
         function Delete(id) {
             config.method = "DELETE";
             config.url = config.url + "/" + id
-            console.log(config);
             return $http(config).then(handleSuccess, handleError('Error deleting Clock'));
         }
 		

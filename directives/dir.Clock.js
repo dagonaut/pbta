@@ -4,44 +4,50 @@
     angular
         .module('pbta_resources')
         .directive('clock', clock);
-                
-        function clock(){
+        
+        function clock(ClockService){
             return{
                 restrict: 'E',                
                 templateUrl: "./directives/dir.Clock.html",
                 scope: {
-                    clockObj: '=',
-                    position: '=',
-                    nomnbre: '='                 
+                    clockObj: '=',                                  
                 },
                 link: link
             };            
             function link($scope, element, attr){
                 //let vm = this;
-                console.log($scope.nomnbre);
-                //$scope.nomnbre = $scope.clockObj.name;
-                //$scope.position = $scope.clockObj.position;
+                console.log("clockobj", $scope.clockObj);
+                $scope.name = $scope.clockObj.name;
+                $scope.position = $scope.clockObj.position;
                 $scope.clock = ["","","","","",""];
-                $scope.taco = 'Goat';
                 $scope.markClock = markClock;
                 $scope.clearClock = clearClock;
+                $scope.saveClock = saveClock;
                 
                 init();
 
                 function init(){
-                    console.log($scope.position);
                     markClock($scope.position);
                 }
 
                 // Clock functions
                 function markClock(position){
+                    $scope.clockObj.position = position;
                     clearClock();
-                    for(var i = 0; i < $scope.clock.length; i++){
-                        if (i <= position){
-                            $scope.clock[i] = "active";
+                    if(position != null){
+                        for(var i = 0; i < $scope.clock.length; i++){
+                            if (i <= position){
+                                $scope.clock[i] = "active";
+                            }
                         }
                     }
-                    console.log($scope.clock);
+                }
+
+                function saveClock(){
+                    console.log("trying to update", $scope.clockObj);
+                    ClockService.Update($scope.clockObj).then(function(data){
+                        console.log("updated");                    
+                    });
                 }
 
                 function clearClock(){

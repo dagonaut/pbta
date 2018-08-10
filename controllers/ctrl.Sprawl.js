@@ -79,6 +79,8 @@
                 });
             }
 
+            
+
             function getClocksByUserId(id){
                 ClockService.GetByUserId(userId).then(function(data){
                     vm.clocks = data;

@@ -224,7 +224,7 @@
                     <input type="submit" ng-click="vm.createClock(clock)" value="Save Clock" />
                 </form>
                 <div ng-repeat="clock in vm.clocks">
-                    <clock nomnbre="clock.name" position="clock.position"></clock>
+                    <clock clock-obj="clock"></clock>
                     
                     <!-- <div>{{clock.id}}</div>
                     <div>{{clock.name}}</div>
@@ -232,7 +232,7 @@
                     <div>{{clock.position}}</div>
                     <div>{{clock.createdby}}</div>
                     <div>{{clock.gameid}}</div> -->
-                    <a href ng-click="vm.deleteClock(clock.id)">Delete</a>
+                    <a href ng-click="vm.deleteClock(clock.id)">Delete</a>                    
                 </div>
                 
             </div>
