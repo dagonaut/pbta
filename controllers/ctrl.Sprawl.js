@@ -49,13 +49,12 @@
             vm.deleteClock = deleteClock;
             vm.getClassMoves = getClassMoves;
             vm.getAllTags = getAllTags;
+            vm.getClocksByUserId = getClocksByUserId;
 
             init();
             
             function init(){
                 buildDirectiveHtml();
-                console.log(vm.clocks);
-                console.log(vm.classData);
             }
 
             // Clocks
@@ -77,9 +76,7 @@
                     console.log("Deleted? " + clockId);
                     getClocksByUserId(userId);
                 });
-            }
-
-            
+            }            
 
             function getClocksByUserId(id){
                 ClockService.GetByUserId(userId).then(function(data){

@@ -10,19 +10,22 @@
                 restrict: 'E',                
                 templateUrl: "./directives/dir.Clock.html",
                 scope: {
-                    clockObj: '=',                                  
+                    clockObj: '=',
+                    onDelete: '&'                                  
                 },
                 link: link
             };            
             function link($scope, element, attr){
                 //let vm = this;
-                console.log("clockobj", $scope.clockObj);
                 $scope.name = $scope.clockObj.name;
                 $scope.position = $scope.clockObj.position;
+                $scope.type = $scope.clockObj.type;
                 $scope.clock = ["","","","","",""];
                 $scope.markClock = markClock;
                 $scope.clearClock = clearClock;
+                $scope.deleteClock = deleteClock;
                 $scope.saveClock = saveClock;
+                $scope.edit = false;
                 
                 init();
 
@@ -45,10 +48,20 @@
 
                 function saveClock(){
                     console.log("trying to update", $scope.clockObj);
+                    $scope.clockObj.name = $scope.name;
+                    $scope.clockObj.type = $scope.type;
                     ClockService.Update($scope.clockObj).then(function(data){
                         console.log("updated");                    
                     });
                 }
+
+                function deleteClock(clockId){
+                    ClockService.Delete(clockId).then(function(data){
+                        console.log("Deleted? " + clockId);
+                        $scope.onDelete();
+                    });
+                    
+                }     
 
                 function clearClock(){
                     $scope.clock = ["","","","","",""];  

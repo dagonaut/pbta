@@ -1,6 +1,11 @@
 <div class="harm_container row">
     <div class="col-sm-12">
-        <h4>{{name}}</h4>
+        <a href ng-click="edit = !edit" style="position:relative;top:32px;">edit</a>
+        <a href ng-click="deleteClock(clockObj.id)" style="position:relative;top:32px;">delete</a>
+        <h4 ng-show="!edit">{{name}}</h4>
+        <h4 ng-show="edit"><input type="text" ng-model="name" value="{{name}}" /></h4>
+        <p ng-show="!edit">{{type}}</p>
+        <p ng-show="edit"><input type="text" ng-model="type" value="{{type}}" /></p>
         <div class="harm_marker lrg" ng-class="clock[0]" ng-click="markClock(0)">1500</div>
         <div class="harm_marker lrg" ng-class="clock[1]" ng-click="markClock(1)">1800</div>
         <div class="harm_marker lrg" ng-class="clock[2]" ng-click="markClock(2)">2100</div>
