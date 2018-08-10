@@ -149,6 +149,10 @@
         padding-bottom:5px;
         border-bottom:3px solid #0472CE;
     }
+    .btn-sprawl{
+        background-color:#0472CE;
+        color:#fff;
+    }
     </style>
 </head>
 <body>
@@ -216,23 +220,15 @@
                 </div>                
             </div>
             <div class="col-md-4">                
-                <h4>COUNT THESE CLOCKS... BYOTCH</h4>
-                <div class="btn btn-warning" ng-click="vm.showClockEdit = true;">Create Clock</div>
+                <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Clock</div>
+                <h4>COUNT THESE CLOCKS... BYOTCH</h4>                
                 <form novalidate class="simple-form" ng-show="vm.showClockEdit">
                     <label>Name: <input type="text" ng-model="clock.name" /></label><br />
                     <label>Description: <input type="text" ng-model="clock.type" /></label><br />                                                
                     <input type="submit" ng-click="vm.createClock(clock)" value="Save Clock" />
                 </form>
                 <div ng-repeat="clock in vm.clocks">
-                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>
-                    
-                    <!-- <div>{{clock.id}}</div>
-                    <div>{{clock.name}}</div>
-                    <div>{{clock.type}}</div>
-                    <div>{{clock.position}}</div>
-                    <div>{{clock.createdby}}</div>
-                    <div>{{clock.gameid}}</div> -->
-                    <a href ng-click="vm.deleteClock(clock.id)">Delete</a>                    
+                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>                                    
                 </div>
                 
             </div>
@@ -430,7 +426,7 @@
                         <h4>DIRECTIVES</h4>
                         <textarea type="textbox" class="directives" ng-model="vm.characterData.directives"></textarea>
                         <a id="popover-content-directives" style="display:inline-block;" tabindex="0" class="btn btn-sm btn-info" role="button" data-toggle="popover"  
-                        title="Choose 2:" data-html="true" data-content="{{vm.directives}}">Show Directives</a>                           
+                        title="Choose 2:" data-html="true" data-content="{{vm.directives}}"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>                           
                     </div>
                 </div>
                 <!-- Links -->
@@ -503,8 +499,11 @@
                 <!-- Gear -->
                 <div class="gear_container row">
                     <div class="col-md-12">
-                        <h4>GEAR</h4>
-                        <div ng-bind-html="vm.classData[vm.class].gear"></div>
+                        <a id="popover-content-directives" style="display:inline-block;" tabindex="0" class="btn btn-sm btn-info pull-left" 
+                        role="button" data-toggle="popover"  data-placement="left"
+                        title="Gear:" data-html="true" data-content="{{vm.classData[vm.class].gear}}"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>                           
+                        <h4>GEAR</h4>                        
+                        <textarea type="textbox" class="directives" style="width:99%;height:300px;" ng-model="vm.characterData.directives"></textarea>
                     </div>
                 </div>
             </div>

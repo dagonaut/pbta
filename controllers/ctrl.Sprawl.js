@@ -68,6 +68,8 @@
                 ClockService.Create(newClock).then(function(data){
                     vm.showClockEdit = false;
                     getClocksByUserId(2);
+                    clock.name = "";
+                    clock.type = "";
                 });                
             }
 
