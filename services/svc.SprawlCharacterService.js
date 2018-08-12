@@ -8,7 +8,7 @@
     SprawlCharacterService.$inject = ['$http', '$cookies', '$rootScope', '$timeout', '$q'];
     function SprawlCharacterService($http, $cookies, $rootScope, $timeout, $q) {
         var api = 'http://16watt.com/dev/pbta/api/api.php/';
-		var table = 'tbl_SprawlCharacter';
+		var table = 'tbl_sprawl_Characters';
 		var config = {
             method: 'GET',
             url: api + table,
@@ -51,12 +51,13 @@
         function Update(SprawlCharacter) {
             config.method = "PUT"
             config.data = SprawlCharacter;
+            config.url = config.url + "/" + SprawlCharacter.id
             return $http(config).then(handleSuccess, handleError('Error updating SprawlCharacter'));
         }
 
         function Delete(id) {
             config.method = "DELETE";
-            config.url = config.url + id
+            config.url = config.url + "/" + id
             return $http(config).then(handleSuccess, handleError('Error deleting SprawlCharacter'));
         }
 		

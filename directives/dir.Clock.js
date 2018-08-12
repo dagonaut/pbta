@@ -11,7 +11,8 @@
                 templateUrl: "./directives/dir.Clock.html",
                 scope: {
                     clockObj: '=',
-                    onDelete: '&'                                  
+                    onDelete: '&',
+                    onSave: '&'                                  
                 },
                 link: link
             };            
@@ -51,7 +52,8 @@
                     $scope.clockObj.name = $scope.name;
                     $scope.clockObj.type = $scope.type;
                     ClockService.Update($scope.clockObj).then(function(data){
-                        console.log("updated");                    
+                        console.log("updated"); 
+                        $scope.edit = false;                 
                     });
                 }
 
@@ -64,7 +66,8 @@
                 }     
 
                 function clearClock(){
-                    $scope.clock = ["","","","","",""];  
+                    $scope.clock = ["","","","","",""];
+                    $scope.clockObj.position = null;  
                 }
             }
         }
