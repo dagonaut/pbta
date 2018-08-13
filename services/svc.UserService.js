@@ -14,12 +14,11 @@
 
 		UserService.GetAll = GetAll;
         UserService.GetById = GetById;
-        UserService.GetByUsername = GetByUsername;
-		/*
+        UserService.GetByUsername = GetByUsername;		
 		UserService.Create = Create;
         UserService.Update = Update;
 		UserService.Delete = Delete;
-		*/
+		
 		return UserService;
 
         function GetAll() {
@@ -33,7 +32,7 @@
         function GetByUsername(username) {
             return $http.get(api + table + '/username/' + username).then(handleSuccess, handleError('Error getting user by username'));
         }
-		/*
+		
         function Create(user) {
             return $http.post(api + table + user).then(handleSuccess, handleError('Error creating user'));
         }
@@ -45,7 +44,7 @@
         function Delete(id) {
             return $http.delete(api + table + id).then(handleSuccess, handleError('Error deleting user'));
         }
-		*/
+		
         // private functions
 
         function handleSuccess(res) {
