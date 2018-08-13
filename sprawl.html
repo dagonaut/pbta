@@ -16,6 +16,7 @@
             font-weight: bold;
             color: #0472CE;
         }
+        .strong{font-weight:bold;}
     .harm_marker{
         float:left;
         height:25px;
@@ -229,7 +230,7 @@
             </div>
             <div class="col-md-4">                
                 <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Clock</div>
-                <h4>COUNT THESE CLOCKS... BYOTCH</h4>                
+                <h4>CLOCKS</h4>                
                 <form novalidate class="simple-form" ng-show="vm.showClockEdit">
                     <label>Name: <input type="text" ng-model="clock.name" /></label><br />
                     <label>Description: <input type="text" ng-model="clock.type" /></label><br />                                                
@@ -265,6 +266,7 @@
             </div>
             <div class="col-md-2">
                 <div class="btn btn-lg btn-primary" ng-click="vm.saveCharacter();">{{vm.create}}</div>
+                <a class="btn btn-lg btn-danger" ng-confirm-click="You sure?" confirmed-click="vm.deleteDude();">Delete</a>
             </div>
             <div class="col-md-2">
                 <div class="stat">
@@ -532,9 +534,13 @@
                 <!-- Cyberware -->
                 <div class="cyberware_container row">
                     <div class="col-md-12">
-                        <a href ng-click="vm.showCyberware();" class="menu-toggle pull-left glyphicon" ng-class="vm.showAllCyberware ? 'glyphicon-menu-down' : 'glyphicon-menu-up'";></a>
+                        <div class="menu-toggle pull-left">
+                            <a href ng-click="vm.showCyberware('mine');" ng-class="vm.visibility.cyberware === 'mine' ? 'strong' : ''">mine</a> | 
+                            <a href ng-click="vm.showCyberware('class');" ng-class="vm.visibility.cyberware === 'class' ? 'strong' : ''">{{vm.class}}</a> | 
+                            <a href ng-click="vm.showCyberware('all');" ng-class="vm.visibility.cyberware === 'all' ? 'strong' : ''">all</a>
+                        </div>
                         <h4>CYBERWARE</h4>
-                        <div ng-repeat="cyberware in vm.allCyberware" ng-hide="vm.classData[vm.class].cyberware.indexOf(cyberware.id) === -1">
+                        <div ng-repeat="cyberware in vm.allCyberware" ng-show="vm.filterCyberware(cyberware.id);">
                             <input
                             id="cyberware_{{cyberware.id}}"                             
                             type="checkbox" 

@@ -12,23 +12,6 @@
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
             var userId =  2;
             
-            //Scope Properties
-            vm.harm = ["","","","","",""]; // THe Harm array represents the 15,18,21,22,23,00 of the harm bar
-            vm.class = "driver";
-            vm.allDirectives = getAllDirectives();
-            vm.classMoves = getClassMoves(vm.class);            
-            vm.allCyberware = getAllCyberware();
-            vm.characterData = { advancements:[], moves:[], cyberware:[], links:[{ "value": 0, "name": ""}] };
-            vm.showAllCyberware = true;
-            vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save';
-            vm.dudes = getDudes(userId);
-            vm.visibility = { advancement: true, cyberware: true, }
-
-            // Refernce properties
-            vm.sprawlMoves = getSprawlMoves(4);
-            vm.allTags = getAllTags(4);
-            vm.showClockEdit = false;
-
             // Static JSON Objects
             vm.classes = [{name:'driver'}, {name:'fixer'}, {name:'hacker'}, {name:'hunter'},{name:'infiltrator'},{name:'killer'},{name:'pusher'},{name:'reporter'},{name:'soldier'},{name:'tech'}];
             vm.classData = {
@@ -62,7 +45,26 @@
                 {"id":15,"type":"advanced","description":"retire your character to safety. [req 20cred]"},
                 {"id":16,"type":"advanced","description":"make a second character."}
             ];
+            vm.characterDefaults = { advancements:[], moves:[], cyberware:[], links:[{ "value": 0, "name": ""}], cred: 5 };
 
+            //Scope Properties
+            vm.harm = ["","","","","",""]; // THe Harm array represents the 15,18,21,22,23,00 of the harm bar
+            vm.class = "driver";
+            vm.allDirectives = getAllDirectives();
+            vm.classMoves = getClassMoves(vm.class);            
+            vm.allCyberware = getAllCyberware();
+            vm.characterData = vm.characterDefaults;
+            vm.showAllCyberware = true;
+            vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save';
+            vm.dudes = getDudes(userId);
+            vm.visibility = { advancement: true, cyberware: 'class', }
+
+            // Refernce properties
+            vm.sprawlMoves = getSprawlMoves(4);
+            vm.allTags = getAllTags(4);
+            vm.showClockEdit = false;
+
+           
             vm.nameLookHTML = setNameLookHTML();
             
             //Scope Methods	
@@ -70,10 +72,12 @@
             vm.clearHarm = clearHarm;
             vm.saveCharacter = saveCharacter;
             vm.loadDude = loadDude;
+            vm.deleteDude = deleteDude;
             vm.updateAdvancements = updateAdvancements;
             vm.updateMoves = updateMoves;
             vm.updateCyberware = updateCyberware;
             vm.showCyberware = showCyberware;
+            vm.filterCyberware = filterCyberware;
             vm.addLink = addLink;
             vm.removeLink = removeLink;
 
@@ -129,6 +133,16 @@
                 vm.create = "Save";
 
                 //vm.characterData.advancements = JSON.parse("[" + vm.characterData.advancements + "]");
+            }
+
+            function deleteDude(){
+                alert("Dude deleteion attempted");
+                SprawlCharacterService.Delete(vm.characterData.id).then(function(data){
+                    console.log("Dude " + vm.characterData.id + " deleted");
+                    vm.characterData = vm.characterDefaults;
+                    vm.class = "driver";
+                    vm.dudes = getDudes(userId);
+                })
             }
 
             // Advancements
@@ -250,9 +264,32 @@
                     vm.characterData.cyberware.push(cyberwareId);
                 }
             }
-            function showCyberware(){
-                vm.showAllCyberware = !vm.showAllCyberware;
+            function showCyberware(type){
+                vm.visibility.cyberware = type;
 
+            }
+            function filterCyberware(id){
+                switch(vm.visibility.cyberware) {
+                    case 'all':
+                        return true;
+                        break;
+                    case 'mine':
+                        if(vm.characterData.cyberware.indexOf(id) != -1){ 
+                            return true; 
+                        } else {
+                            return false;
+                        }                        
+                        break;
+                    case 'class':
+                        if(vm.classData[vm.class].cyberware.indexOf(id) != -1){ 
+                            return true;
+                        } else {
+                            return false;
+                        }
+                        break;
+                    default:
+                        if(vm.classData[vm.class].cyberware.indexOf(id) != -1){ return true; }  else { return false; }                      
+                }
             }
 
             // Name / Look
