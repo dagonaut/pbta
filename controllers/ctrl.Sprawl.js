@@ -45,7 +45,7 @@
                 {"id":15,"type":"advanced","description":"retire your character to safety. [req 20cred]"},
                 {"id":16,"type":"advanced","description":"make a second character."}
             ];
-            vm.characterDefaults = { advancements:[], moves:[], cyberware:[], links:[{ "value": 0, "name": ""}], cred: 5 };
+            vm.characterDefaults = { advancements:[], moves:[], cyberware:[], links:[{ "id": 0, "value": 0, "name": ""}], cred: 5 };
 
             //Scope Properties
             vm.harm = ["","","","","",""]; // THe Harm array represents the 15,18,21,22,23,00 of the harm bar
@@ -97,6 +97,7 @@
             // Character load/save/etc
             function saveCharacter(){
                 // Update the model
+                console.log(vm.characterData);
                 vm.characterData.class = vm.class;                
                 vm.characterData.createdby = userId;
                 vm.characterData.advancements = vm.characterData.advancements.join(',');
