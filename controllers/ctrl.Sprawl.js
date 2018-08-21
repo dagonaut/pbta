@@ -108,7 +108,7 @@
                 // New / Create
                 if(typeof vm.characterData.id === 'undefined'){
                     SprawlCharacterService.Create(vm.characterData).then(function(data){
-                        console.log(data);
+                        loadDude(data);
                     });
                 } else {
                     // Update
@@ -125,13 +125,18 @@
             }
 
             function loadDude(dude){
-                vm.characterData = JSON.parse(dude);
-                vm.class = vm.characterData.class;
-                vm.characterData.advancements = JSON.parse("[" + vm.characterData.advancements + "]");
-                vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]");
-                vm.characterData.cyberware = JSON.parse("[" + vm.characterData.cyberware + "]");
-                vm.characterData.links = JSON.parse(vm.characterData.links);
-                vm.create = "Save";
+                let d = JSON.parse(dude);
+                // When loading a dude, make sure we get the latest from the DB.
+                SprawlCharacterService.GetById(dude.id).then(function(data){
+                    vm.characterData = data;
+                    vm.class = vm.characterData.class;
+                    vm.characterData.advancements = JSON.parse("[" + vm.characterData.advancements + "]");
+                    vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]");
+                    vm.characterData.cyberware = JSON.parse("[" + vm.characterData.cyberware + "]");
+                    vm.characterData.links = JSON.parse(vm.characterData.links);
+                    vm.create = "Save";
+                });
+                
 
                 //vm.characterData.advancements = JSON.parse("[" + vm.characterData.advancements + "]");
             }
