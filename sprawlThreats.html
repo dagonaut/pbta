@@ -179,11 +179,11 @@
     <div class="container-fluid">
         <!-- Threats -->
         <div class="threats_section row">
+            <!-- Threat Moves HTML only -->
             <div class="col-md-4">
-                <!-- Threat Moves HTML only -->
                 <div class="row">
-                <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Threat</div>
-                <h4>THREATS</h4>
+                    <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Threat</div>
+                    <h4>THREATS</h4>
                     <h5>GROUP MOVES:</h5>
                 </div>
                 <div class="row">
@@ -211,18 +211,18 @@
                 <div class="row">
                     <div class="col-sm-6">
                         » Reflect the decay of society and its structures
-                » Display the conflict between humanity and technology, meat and chrome
-                » Display the excess in The Sprawl
-                » Make an offer with strings attached
-                » Attack from an unexpected angle
-                » Attack from the front 
+                        » Display the conflict between humanity and technology, meat and chrome
+                        » Display the excess in The Sprawl
+                        » Make an offer with strings attached
+                        » Attack from an unexpected angle
+                        » Attack from the front 
                     </div>
                     <div class="col-sm-6">
                         » Threaten someone or something with violence or exposure
-                » Steal something or seize someone
-                » Stage a loud diversion
-                » Insult or offend a person or organization
-                » Seek corporate patronage
+                        » Steal something or seize someone
+                        » Stage a loud diversion
+                        » Insult or offend a person or organization
+                        » Seek corporate patronage
                     </div>
                 </div>
                 <div class="row">
@@ -242,10 +242,10 @@
                         » Show criminal activity in the background</div>
                     <div class="col-sm-6">
                         » Entangle someone in intrigue, violence, or bureaucracy<br />
-                » Highlight desperation or kill someone’s dream<br />
-                » Reveal corporate callousness <br />
-                » Spotlight the fracture, breakdown or abscence of society<br />
-                » Surrender to corporate influence
+                        » Highlight desperation or kill someone’s dream<br />
+                        » Reveal corporate callousness <br />
+                        » Spotlight the fracture, breakdown or abscence of society<br />
+                        » Surrender to corporate influence
                     </div>
                 </div>
                 <div class="row">
@@ -259,17 +259,17 @@
                 <div class="row">
                     <div class="col-sm-6">
                         » Reveal a conflict in society<br />
-                » Reveal neglect in society<br />
-                » Reveal corporate callousness<br />
-                » Reveal excess in society<br />
-                » Force someone to seek help<br />
-                » Isolate someone or something
+                        » Reveal neglect in society<br />
+                        » Reveal corporate callousness<br />
+                        » Reveal excess in society<br />
+                        » Force someone to seek help<br />
+                        » Isolate someone or something
                     </div>
                     <div class="col-sm-6">
                         » Conceal the truth<br />
-                » Provoke accusations<br />
-                » Force destructive or futile action <br />
-                » Prevent action
+                        » Provoke accusations<br />
+                        » Force destructive or futile action <br />
+                        » Prevent action
                     </div>
                 </div>
                 <div class="row">
@@ -278,6 +278,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Threat clocks / Entities -->
             <div class="col-md-8">                
                 <form novalidate class="simple-form" ng-show="vm.showClockEdit">
                     <label>Name: <input type="text" ng-model="clock.name" /></label><br />
@@ -286,14 +287,15 @@
                     <label>Goal: <textarea type="text" ng-model="clock.goal"></textarea></label><br />                                                
                     <input type="submit" ng-click="vm.createClock(clock)" value="Save Threat" />
                 </form>
-                <div ng-repeat="clock in vm.clocks" ng-if="clock.type !== 'mission' && clock.type !== 'corporation'">
-                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" class="pull-left"></clock>                                    
+                <div ng-repeat="clock in vm.clocks" ng-if="clock.type !== 'mission' && clock.type !== 'corporation'" style="width:50%;" class="pull-left">
+                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>                                    
                 </div>
                 
             </div>
         </div>
         <!-- Corporations -->
         <div class="corporation_section row">
+            <!-- Corp Moves -->
             <div class="col-md-4">
                 <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Corporation</div>
                 <h4>CORPORATIONS</h4>                
@@ -313,7 +315,7 @@
                 » Implant a cortex bomb<br />
                 » Deploy technology (drones, tracers, uploaders)
             </div>
-            
+            <!-- Corp Clocks / Entities -->
             <div class="col-md-8">               
                 <form novalidate class="simple-form" ng-show="vm.showClockEdit">
                     <label>Name: <input type="text" ng-model="clock.name" /></label><br />
@@ -322,8 +324,8 @@
                     <label>Goal: <textarea type="text" ng-model="clock.goal"></textarea></label><br />                                                
                     <input type="submit" ng-click="vm.createClock(clock)" value="Save Corporation" />
                 </form>
-                <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'corporation'">
-                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" class="pull-left"></clock>                                    
+                <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'corporation'" style="width:50%;" class="pull-left">
+                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>                                    
                 </div>
             </div>
         </div>
