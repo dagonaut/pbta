@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Sprawl Character Sheet Template</title>
+    <link rel="stylesheet" href="inc/bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" />
+    <script type="application/javascript" src="inc/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style>
+        body{padding:0 5px;}
+        h2{font-size:16px;margin:0;border-bottom:1px solid #0472CE;cursor:pointer;}
+
+        h4{
+            font-size: 20px;
+            border-bottom: 2px #0472CE solid;
+            text-align: right;
+            font-weight: bold;
+            color: #0472CE;
+        }
+        .strong{font-weight:bold;}
+    .harm_marker{
+        float:left;
+        height:25px;
+        margin-left:5px;
+        text-align: right;
+        border:1px solid black;
+        border-radius: 5px;
+        transform: skew(-20deg);
+        cursor: pointer;
+
+    }
+    .harm_marker.lrg{
+        width:80px;
+    }
+    .harm_marker.sm{
+        width:45px;
+    }
+    .harm_container .active{
+        background-color:indianred;
+    }
+    .attributes_container{
+
+    }
+    .attributes_container input{
+        position: absolute;
+        top: 15px;
+        left: 26px;
+        width: 48px;
+        height: 49px;
+        font-size: 32px;
+        border: none;
+        z-index: 7; 
+    }
+    .meat_input{
+               
+    }
+    .hexagons_container{
+        
+    }
+    .hexagon {
+        position: relative;
+        width: 70px; 
+        height: 40.41px;
+        margin: 20.21px 0;
+        border-left: solid 2px #333333;
+        border-right: solid 2px #333333;
+        transform:rotate(90deg);
+        z-index:5;
+    }
+
+    .hexagon:before,
+    .hexagon:after {
+        content: "";
+        position: absolute;
+        z-index: 5;
+        width: 49.50px;
+        height: 49.50px;
+        -webkit-transform: scaleY(0.5774) rotate(-45deg);
+        -ms-transform: scaleY(0.5774) rotate(-45deg);
+        transform: scaleY(0.5774) rotate(-45deg);
+        background-color: white;
+        left: 8.2513px;
+    }
+
+    .hexagon:before {
+        top: -24.7487px;
+        border-top: solid 2.8284px #333333;
+        border-right: solid 2.8284px #333333;
+    }
+
+    .hexagon:after {
+        bottom: -24.7487px;
+        border-bottom: solid 2.8284px #333333;
+        border-left: solid 2.8284px #333333;
+    }
+    .hexagon.cred{border-left:dotted 2px #777;border-right:dotted 2px #777;}
+    .hexagon.cred:before{border-top:dotted 2.8284px #777;border-right:dotted 2.8284px #777;}
+    .hexagon.cred:after{border-bottom:dotted 2.8284px #777;border-left:dotted 2.8284px #777;}
+    .attributes_right{
+        text-align:right;
+    }
+    .attribute_container{
+        height:69px;
+        margin-top:2px;
+    }
+    .attribute_name{        
+        font-size:16px;
+        font-weight:bold;
+    }
+    .attribute_line{
+        width:196px;
+        height:1px;
+        background-color:black;
+    }
+    .attribute_line_right{        
+        height:1px;
+        background-color:black;
+        margin-left:-129px;
+        width:231px;
+        z-index:0;
+    }
+    .attribute_description{
+        font-size:11px;
+    }
+    .attribute_example{
+        font-size:9px;
+    }
+    .stat{}
+    .stat label{width:100px;font-size:24px;}
+    .stat input{width:50px;height:50px;font-size:24px;border:3px double #0472CE;}
+    .stat input.link{width:250px;height:20px;font-size:14px;border:none;border-bottom:1px solid black;}
+    .stat .description{color:#aaaaaa;}
+    .stat .examples{font-size:11px;font-weight:bold;color:#666666;}
+    
+    .stat-name{
+        font-size:24px;
+        font-weight:bold;
+    }
+    .directives_container textarea{
+        float:left;
+        width:98%;
+        height:95px;
+        padding:0px;
+    }
+    /* Bootstrap override */
+    .popover{
+        max-width: 400px;
+    }
+    .reference_section{
+        margin-bottom:5px;
+        padding-bottom:5px;
+        border-bottom:3px solid #0472CE;
+    }
+    .sprawl{
+        color:#0472CE;
+    }
+    .btn-sprawl{
+        background-color:#0472CE;
+        color:#fff;
+    }
+    .menu-toggle{
+        margin-top:14px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    a:hover, a:focus{
+        text-decoration: none;
+    }
+    h5{
+        border-bottom:1px solid #000;
+    }
+    .corporation_section{
+        border-top:2px solid #0472CE;
+        margin-top:5px;
+        padding-top:5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Threats -->
+        <div class="threats_section row">
+            <div class="col-md-4">
+                <!-- Threat Moves HTML only -->
+                <div class="row">
+                <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Threat</div>
+                <h4>THREATS</h4>
+                    <h5>GROUP MOVES:</h5>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        » Attack suddenly, directly, & hard<br />
+                        » Buy out allies or assets<br />
+                        » Seize someone or something<br />
+                        » Claim territory by force or intrigue<br />
+                        » Destroy someone or something
+                    </div>
+                    <div class="col-sm-6">
+                        » Threaten to expose someone or something<br />
+                        » Make demands<br />
+                        » Bide their time and do legwork <br />
+                        » Probe for weakness<br />
+                        » Seek corporate patronage
+                    </div>
+                </div>
+                <div class="row">
+                    Group Goals: to possess, to overthrow, to terrorise, to destroy, to dominate.
+                </div>
+                <div class="row">
+                    <h5>LONER MOVES:</h5>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        » Reflect the decay of society and its structures
+                » Display the conflict between humanity and technology, meat and chrome
+                » Display the excess in The Sprawl
+                » Make an offer with strings attached
+                » Attack from an unexpected angle
+                » Attack from the front 
+                    </div>
+                    <div class="col-sm-6">
+                        » Threaten someone or something with violence or exposure
+                » Steal something or seize someone
+                » Stage a loud diversion
+                » Insult or offend a person or organization
+                » Seek corporate patronage
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        Loner Goals: to corrupt, to manipulate, to misdirect, to steal, to murder.
+
+                    </div>
+                </div>
+                <div class="row">
+                    <h5>PLACE MOVES:</h5>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        » Keep someone out, keep someone in<br />
+                        » Demonstrate separation from the surrounding environment<br />
+                        » Show internal cohesion<br />
+                        » Show criminal activity in the background</div>
+                    <div class="col-sm-6">
+                        » Entangle someone in intrigue, violence, or bureaucracy<br />
+                » Highlight desperation or kill someone’s dream<br />
+                » Reveal corporate callousness <br />
+                » Spotlight the fracture, breakdown or abscence of society<br />
+                » Surrender to corporate influence
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        Place Goals: to trap, to breed, to frustrate, to consume, to isolate.
+                    </div>
+                </div>
+                <div class="row">
+                    <h5>HEADLINE MOVES:</h5>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        » Reveal a conflict in society<br />
+                » Reveal neglect in society<br />
+                » Reveal corporate callousness<br />
+                » Reveal excess in society<br />
+                » Force someone to seek help<br />
+                » Isolate someone or something
+                    </div>
+                    <div class="col-sm-6">
+                        » Conceal the truth<br />
+                » Provoke accusations<br />
+                » Force destructive or futile action <br />
+                » Prevent action
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        Headline Goals: to poison, to expose, to explode, to impoverish, to implicate
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-4">                
+                <form novalidate class="simple-form" ng-show="vm.showClockEdit">
+                    <label>Name: <input type="text" ng-model="clock.name" /></label><br />
+                    <label>Type: <input type="text" ng-model="clock.type" /></label><br />                                                
+                    <label>Description: <textarea type="text" ng-model="clock.description"></textarea></label><br />                                                
+                    <label>Goal: <textarea type="text" ng-model="clock.goal"></textarea></label><br />                                                
+                    <input type="submit" ng-click="vm.createClock(clock)" value="Save Threat" />
+                </form>
+                <div ng-repeat="clock in vm.clocks" ng-if="clock.type !== 'mission' && clock.type !== 'corporation'">
+                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>                                    
+                </div>
+                
+            </div>
+        </div>
+        <!-- Corporations -->
+        <div class="corporation_section row">
+            <div class="col-md-4">
+                <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Corporation</div>
+                <h4>CORPORATIONS</h4>                
+                <div>Corporations maximise profit and minimise expenses </div>
+                <div>Corporations deny responsibility and suppress dissent </div>
+                <div>Corporations exploit technology and humanity to the limits of both</div>
+
+                <h5>CORPORATION MOVES</h5>
+                » Send a subtle message<br />
+                » Send a violent message<br />
+                » Terminate a problem<br />
+                » Throw money at a problem<br />
+                » Hire disposable assets<br />
+                » Deploy permanent assets<br />
+                » Buy out smaller operators<br />
+                » Make life difficult for someone<br />
+                » Implant a cortex bomb<br />
+                » Deploy technology (drones, tracers, uploaders)
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">               
+                    <form novalidate class="simple-form" ng-show="vm.showClockEdit">
+                        <label>Name: <input type="text" ng-model="clock.name" /></label><br />
+                        <label>Type: <input type="text" ng-model="clock.type" /></label><br />                                                
+                        <label>Description: <textarea type="text" ng-model="clock.description"></textarea></label><br />                                                
+                        <label>Goal: <textarea type="text" ng-model="clock.goal"></textarea></label><br />                                                
+                        <input type="submit" ng-click="vm.createClock(clock)" value="Save Corporation" />
+                    </form>
+                    <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'corporation'">
+                        <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>                                    
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div id="popover-content-directives" class="hide">Tacos.</div>
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="popover"]').each(function(){
+                $(this).popover({
+                    html:true,
+                    content: function() {
+                        var id = $(this).attr('id')
+                        return $('#popover-content-' + id).html();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

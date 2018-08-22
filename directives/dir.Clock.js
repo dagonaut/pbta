@@ -21,6 +21,8 @@
                 $scope.name = $scope.clockObj.name;
                 $scope.position = $scope.clockObj.position;
                 $scope.type = $scope.clockObj.type;
+                $scope.description = $scope.clockObj.description;
+                $scope.goal = $scope.clockObj.goal;
                 $scope.clock = ["","","","","",""];
                 $scope.markClock = markClock;
                 $scope.clearClock = clearClock;

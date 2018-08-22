@@ -54,9 +54,15 @@
 				controller: 'ReferenceController',
 				controllerAs: 'vm'
 			})		
-			.state('sprawl',{
+			.state('auth.sprawl',{
 				url: '/sprawl',
 				templateUrl: 'sprawl.html',
+				controller: 'Sprawl',
+				controllerAs: 'vm'
+			})		
+			.state('auth.threats',{
+				url: '/threats',
+				templateUrl: 'sprawlThreats.html',
 				controller: 'Sprawl',
 				controllerAs: 'vm'
 			})
