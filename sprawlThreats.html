@@ -278,10 +278,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                
-            </div>
-            <div class="col-md-4">                
+            <div class="col-md-8">                
                 <form novalidate class="simple-form" ng-show="vm.showClockEdit">
                     <label>Name: <input type="text" ng-model="clock.name" /></label><br />
                     <label>Type: <input type="text" ng-model="clock.type" /></label><br />                                                
@@ -290,7 +287,7 @@
                     <input type="submit" ng-click="vm.createClock(clock)" value="Save Threat" />
                 </form>
                 <div ng-repeat="clock in vm.clocks" ng-if="clock.type !== 'mission' && clock.type !== 'corporation'">
-                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>                                    
+                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" class="pull-left"></clock>                                    
                 </div>
                 
             </div>
@@ -316,18 +313,18 @@
                 » Implant a cortex bomb<br />
                 » Deploy technology (drones, tracers, uploaders)
             </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4">               
-                    <form novalidate class="simple-form" ng-show="vm.showClockEdit">
-                        <label>Name: <input type="text" ng-model="clock.name" /></label><br />
-                        <label>Type: <input type="text" ng-model="clock.type" /></label><br />                                                
-                        <label>Description: <textarea type="text" ng-model="clock.description"></textarea></label><br />                                                
-                        <label>Goal: <textarea type="text" ng-model="clock.goal"></textarea></label><br />                                                
-                        <input type="submit" ng-click="vm.createClock(clock)" value="Save Corporation" />
-                    </form>
-                    <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'corporation'">
-                        <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>                                    
-                    </div>
+            
+            <div class="col-md-8">               
+                <form novalidate class="simple-form" ng-show="vm.showClockEdit">
+                    <label>Name: <input type="text" ng-model="clock.name" /></label><br />
+                    <label>Type: <input type="text" ng-model="clock.type" /></label><br />                                                
+                    <label>Description: <textarea type="text" ng-model="clock.description"></textarea></label><br />                                                
+                    <label>Goal: <textarea type="text" ng-model="clock.goal"></textarea></label><br />                                                
+                    <input type="submit" ng-click="vm.createClock(clock)" value="Save Corporation" />
+                </form>
+                <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'corporation'">
+                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" class="pull-left"></clock>                                    
+                </div>
             </div>
         </div>
     </div>
