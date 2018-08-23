@@ -1,13 +1,24 @@
 (function() {
 	'use strict';
-	var app = angular.module('pbta_resources', ['ui.router', 'ngCookies', 'ngSanitize', 'checklist-model']);
+	var app = angular.module('pbta_resources', ['ui.router', 'ui.bootstrap', 'ngCookies', 'ngSanitize', 'checklist-model']);
 
 	//States
 	app.config(function($stateProvider, $urlRouterProvider) {
 		//Set the state variables
 
 		$urlRouterProvider.otherwise(''); //Instead of 404
-
+		
+		/*
+		$stateProvider.state('root', {            
+            abstract: true,
+            resolve: {
+                initApp: initApp,
+                state: ['$state', function ($state) {
+                    return $state;
+                }]
+            }
+        });
+		*/
 		$stateProvider
 			.state('auth.test', {
 				url: '/test',
@@ -53,10 +64,63 @@
 				templateUrl: 'gmreference.html',
 				controller: 'ReferenceController',
 				controllerAs: 'vm'
-			})		
+			})					
+			.state('auth.sprawl',{
+				url: '/sprawl',	
+				stateName: 'Sprawl',			
+				views: {	
+					'sprawl@auth.sprawl':{
+						templateUrl: 'sprawl.html',
+						controller: 'Sprawl as vm'
+					},			
+					'sprawl.charactersheet@auth.sprawl': {
+						templateUrl: 'sprawlCharactersheet.html',
+						controller: 'Sprawl as vm'
+					},
+					'sprawl.reference@auth.sprawl': {
+						templateUrl: 'sprawlReference.html',
+						controller: 'Sprawl as vm'
+					},
+					'sprawl.threats@auth.sprawl': {
+						templateUrl: 'sprawlThreats.html',
+						controller: 'Sprawl as vm'
+					},
+				}
+			})
+			/*
+			.state('auth.sprawl.detail',{
+				//stateName: 'Sprawl',
+				views: {				
+					'sprawl.charactersheet@auth.sprawl.detail': {
+						templateUrl: 'sprawlCharactersheet.html',
+						controller: 'Sprawl as vm'
+					},
+					'sprawl.reference@auth.sprawl.detail': {
+						templateUrl: 'sprawlReference.html',
+						controller: 'Sprawl as vm'
+					},
+					'sprawl.threats@auth.sprawl.detail': {
+						templateUrl: 'sprawlThreats.html',
+						controller: 'Sprawl as vm'
+					},
+				}
+			})	
+						
 			.state('auth.sprawl',{
 				url: '/sprawl',
 				templateUrl: 'sprawl.html',
+				controller: 'Sprawl',
+				controllerAs: 'vm'
+			})			
+			.state('auth.sprawlcharactersheet',{
+				url: '/sprawlcharactersheet',
+				templateUrl: 'sprawlCharactersheet.html',
+				controller: 'Sprawl',
+				controllerAs: 'vm'
+			})			
+			.state('auth.sprawlreference',{
+				url: '/sprawlreference',
+				templateUrl: 'sprawlReference.html',
 				controller: 'Sprawl',
 				controllerAs: 'vm'
 			})		
@@ -66,6 +130,7 @@
 				controller: 'Sprawl',
 				controllerAs: 'vm'
 			})
+			*/
 			.state('home',{
 				url: '',
 				templateUrl: 'reference.html',

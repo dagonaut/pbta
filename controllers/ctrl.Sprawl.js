@@ -12,6 +12,12 @@
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
             var userId =  2;
             
+            vm.tabs = {
+                charactersheet: { index: 0, heading: 'Character Sheet'},
+                reference: { index: 1, heading: 'Reference'},
+                threats: { index: 2, heading: 'Threats'},
+            };
+
             // Static JSON Objects
             vm.classes = [{name:'driver'}, {name:'fixer'}, {name:'hacker'}, {name:'hunter'},{name:'infiltrator'},{name:'killer'},{name:'pusher'},{name:'reporter'},{name:'soldier'},{name:'tech'}];
             vm.classData = {

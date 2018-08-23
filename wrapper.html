@@ -17,7 +17,8 @@
                 <li><a ui-sref="auth.reference" ui-sref-active="active">Reference Sheet</a></li>
                 <li><a ui-sref="auth.gmreference" ui-sref-active="active">GM Reference</a></li>
                 -->
-                <li><a ui-sref="auth.sprawl" ui-sref-active="active">Character Sheets</a></li>
+                <li><a ui-sref="auth.sprawlcharactersheet" ui-sref-active="active">Character Sheets</a></li>
+                <li><a ui-sref="auth.sprawlreference" ui-sref-active="active">Reference</a></li>
                 <li><a ui-sref="auth.threats" ui-sref-active="active">Threats</a></li>
             </ul>
         </div>
@@ -26,6 +27,17 @@
 
     <!-- MAIN CONTENT AND INJECTED VIEWS -->
     <div id="main">
+            <uib-tabset active="active">
+                <uib-tab index="vm.tabs.charactersheet.index" heading="{{::vm.tabs.charactersheet.heading}}">
+                    <div ui-view="sprawl.charactersheet"></div>
+                </uib-tab>
+                <uib-tab index="vm.tabs.reference.index" heading="{{::vm.tabs.reference.heading}}">
+                    <div ui-view="sprawl.reference"></div>
+                </uib-tab>
+                <uib-tab index="vm.tabs.threats.index" heading="{{::vm.tabs.threats.heading}}">
+                    <div ui-view="sprawl.threats"></div>
+                </uib-tab>
+            </uib-tabset>
     {{viewMessage}}
     
     <ui-view>
