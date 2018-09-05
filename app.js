@@ -3,7 +3,7 @@
 	var app = angular.module('pbta_resources', ['ui.router', 'ui.bootstrap', 'ngCookies', 'ngSanitize', 'checklist-model']);
 
 	//States
-	app.config(function($stateProvider, $urlRouterProvider) {
+	app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		//Set the state variables
 
 		$urlRouterProvider.otherwise(''); //Instead of 404
@@ -137,6 +137,9 @@
 				controller: 'ReferenceController',
 				controllerAs: 'vm'
 			});	
+
+			// To remove #! from URL
+			$locationProvider.html5Mode(true);
 	});
 	
 	//Run transitions
