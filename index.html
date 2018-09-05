@@ -37,12 +37,11 @@
 	<a ng-click="vm.logout()" style="cursor:pointer;">{{vm.isLoggedIn ? "Log Out" : "Log In"}}</a>
 
     <!-- MAIN CONTENT AND INJECTED VIEWS -->
-    <div id="main">
-    {{viewMessage}}
+    <div>    
     
-    <ui-view>
-        {{viewMessage}}
-    </ui-view>
+        <ui-view>
+            
+        </ui-view>
             
         <!-- angular templating -->
         <!-- this is where content will be injected -->

@@ -69,19 +69,19 @@
 				url: '/sprawl',	
 				stateName: 'Sprawl',			
 				views: {	
-					'sprawl@auth.sprawl':{
+					'sprawl':{
 						templateUrl: 'sprawl.html',
 						controller: 'Sprawl as vm'
 					},			
-					'sprawl.charactersheet@auth.sprawl': {
+					'charactersheet@auth.sprawl': {
 						templateUrl: 'sprawlCharactersheet.html',
 						controller: 'Sprawl as vm'
 					},
-					'sprawl.reference@auth.sprawl': {
+					'reference@auth.sprawl': {
 						templateUrl: 'sprawlReference.html',
 						controller: 'Sprawl as vm'
 					},
-					'sprawl.threats@auth.sprawl': {
+					'threats@auth.sprawl': {
 						templateUrl: 'sprawlThreats.html',
 						controller: 'Sprawl as vm'
 					},
