@@ -140,6 +140,7 @@
 
 			// To remove #! from URL
 			$locationProvider.html5Mode(true);
+			$locationProvider.hashPrefix('');
 	});
 	
 	//Run transitions
