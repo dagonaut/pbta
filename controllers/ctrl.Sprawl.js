@@ -10,7 +10,7 @@
             //Private Properties
             var vm = this;
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
-            var userId =  2;
+            var userId =  $cookies.getObject('id');
             
             vm.tabs = {
                 charactersheet: { index: 0, heading: 'Character Sheet'},
@@ -134,7 +134,7 @@
             function loadDude(dude){
                 let d = JSON.parse(dude);
                 // When loading a dude, make sure we get the latest from the DB.
-                SprawlCharacterService.GetById(dude.id).then(function(data){
+                SprawlCharacterService.GetById(d.id).then(function(data){
                     vm.characterData = data;
                     vm.class = vm.characterData.class;
                     vm.characterData.advancements = JSON.parse("[" + vm.characterData.advancements + "]");

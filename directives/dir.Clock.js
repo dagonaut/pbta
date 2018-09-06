@@ -38,7 +38,6 @@
 
                 // Clock functions
                 function markClock(position){
-                    $scope.clockObj.position = position;
                     clearClock();
                     if(position != null){
                         for(var i = 0; i < $scope.clock.length; i++){
@@ -47,6 +46,7 @@
                             }
                         }
                     }
+                    $scope.clockObj.position = position;
                 }
 
                 function saveClock(){
