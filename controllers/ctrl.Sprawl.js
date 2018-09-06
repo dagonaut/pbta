@@ -98,7 +98,6 @@
             init();
             
             function init(){
-                console.log(vm.allDirectives);
             }
 
             // Character load/save/etc
