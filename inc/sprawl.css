@@ -178,6 +178,11 @@ a:hover, a:focus{
     max-width: 400px;
 }
 
+/* Character Sheet */
+.character_header{
+    margin-top:5px;
+}
+
 /* Reference Sheet */
 .reference_section{
     margin-bottom:5px;

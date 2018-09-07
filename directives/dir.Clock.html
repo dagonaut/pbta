@@ -2,10 +2,10 @@
     <div class="col-sm-12">
         <a href ng-click="edit = !edit" style="position:relative;top:32px;">edit</a>
         <a href ng-click="deleteClock(clockObj.id)" style="position:relative;top:32px;">delete</a>
-        <h4 ng-show="!edit">{{name}}</h4>
-        <h4 ng-show="edit"><input type="text" ng-model="name" value="{{name}}" /></h4>
-        <p ng-show="!edit">{{type}}</p>
-        <p ng-show="edit"><input type="text" ng-model="type" value="{{type}}" /></p>
+        <h4 ng-show="!edit">{{clockObj.name}}</h4>
+        <h4 ng-show="edit"><input type="text" ng-model="clockObj.name" value="{{clockObj.name}}" /></h4>
+        <p ng-show="!edit">{{clockObj.type}}</p>
+        <p ng-show="edit"><input type="text" ng-model="clockObj.type" value="{{clockObj.type}}" /></p>
         <div class="harm_marker lrg" ng-class="clock[0]" ng-click="markClock(0)">1500</div>
         <div class="harm_marker lrg" ng-class="clock[1]" ng-click="markClock(1)">1800</div>
         <div class="harm_marker lrg" ng-class="clock[2]" ng-click="markClock(2)">2100</div>
@@ -17,11 +17,11 @@
         <div class="row" ng-if="type !== 'mission'">
             <div class="col-sm-12">
                 <strong>Description:</strong><br />
-                <p ng-show="!edit">{{description}}</p>
-                <p ng-show="edit"><textarea type="text" ng-model="description" value="{{description}}" style="width:95%;"></textarea></p>
+                <p ng-show="!edit">{{clockObj.description}}</p>
+                <p ng-show="edit"><textarea type="text" ng-model="clockObj.description" value="{{clockObj.description}}" style="width:95%;"></textarea></p>
                 <strong>Goal:</strong><br />
-                <p ng-show="!edit">{{goal}}</p>
-                <p ng-show="edit"><textarea type="text" ng-model="goal" value="{{goal}}" style="width:95%;"></textarea></p>
+                <p ng-show="!edit">{{clockObj.goal}}</p>
+                <p ng-show="edit"><textarea type="text" ng-model="clockObj.goal" value="{{clockObj.goal}}" style="width:95%;"></textarea></p>
             </div>
         </div>
     </div>
