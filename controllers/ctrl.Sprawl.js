@@ -9,7 +9,6 @@
         function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService, TagService, DirectiveService, CyberwareService, SprawlCharacterService){
             //Private Properties
             var vm = this;
-            var api = 'http://16watt.com/dev/pbta/api/api.php/';
             var userId =  $cookies.getObject('id');
             
             vm.tabs = {
@@ -52,7 +51,7 @@
                 {"id":15,"type":"advanced","description":"retire your character to safety. [req 20cred]"},
                 {"id":16,"type":"advanced","description":"make a second character."}
             ];
-            vm.characterDefaults = { advancements:[], moves:[], cyberware:[], links:[{ "id": 0, "value": 0, "name": ""}], cred: 5 };
+            let _characterDefaults = { advancements:[], moves:[], cyberware:[], links:[{ "id": 0, "value": 0, "name": ""}], cred: 5 };
 
             //Scope Properties
             vm.harm = ["","","","","",""]; // THe Harm array represents the 15,18,21,22,23,00 of the harm bar
@@ -60,7 +59,7 @@
             vm.allDirectives = getAllDirectives();
             vm.classMoves = getClassMoves(vm.class);            
             vm.allCyberware = getAllCyberware();
-            vm.characterData = vm.characterDefaults;
+            vm.characterData = angular.copy(_characterDefaults);
             vm.showAllCyberware = true;
             vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save';
             vm.dudes = getDudes(userId);
@@ -80,6 +79,7 @@
             vm.saveCharacter = saveCharacter;
             vm.loadDude = loadDude;
             vm.deleteDude = deleteDude;
+            vm.clearDude = clearDude;
             vm.updateAdvancements = updateAdvancements;
             vm.updateMoves = updateMoves;
             vm.updateCyberware = updateCyberware;
@@ -87,6 +87,8 @@
             vm.filterCyberware = filterCyberware;
             vm.addLink = addLink;
             vm.removeLink = removeLink;
+
+            //Scope Events
 
             // Reference Sheet methods
             vm.clocks = getClocksByUserId(userId);
@@ -152,10 +154,17 @@
                 alert("Dude deleteion attempted");
                 SprawlCharacterService.Delete(vm.characterData.id).then(function(data){
                     console.log("Dude " + vm.characterData.id + " deleted");
-                    vm.characterData = vm.characterDefaults;
+                    vm.characterData = _characterDefaults;
                     vm.class = "driver";
                     vm.dudes = getDudes(userId);
                 })
+            }
+
+            function clearDude(){
+                // Clear it all
+                vm.characterData = {};
+                // Put back the defaults
+                vm.characterData = _characterDefaults;
             }
 
             // Advancements
@@ -172,11 +181,10 @@
                 let link = {"value":0,"name":""}
                 vm.characterData.links.push(link);
             }
-
             function removeLink(index){
                 vm.characterData.links.splice(index, 1);
             }
-
+            
             // Clocks
             function createClock(clock){
                 var newClock = {
@@ -209,7 +217,6 @@
                     vm.clocks = data;
                 });
             }
-
             // Moves
             function updateMoves(moveId){
                 if(vm.characterData.moves.indexOf(moveId) > -1){
@@ -239,7 +246,6 @@
                     vm.sprawlMoves[i]["hide"] = true;
                 }
             }
-
             // Tags
             function getAllTags(gameid){
                 TagService.GetByGameId(gameid).then(

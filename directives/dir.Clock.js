@@ -50,9 +50,7 @@
                 }
 
                 function saveClock(){
-                    console.log("trying to update", $scope.clockObj);
-                    $scope.clockObj.name = $scope.name;
-                    $scope.clockObj.type = $scope.type;
+                    console.log("trying to update", $scope.clockObj);                    
                     ClockService.Update($scope.clockObj).then(function(data){
                         console.log("updated"); 
                         $scope.edit = false;                 

@@ -8,6 +8,7 @@
                     <option ng-repeat="dude in vm.dudes" value="{{dude}}" ng-selected="dude.id === vm.characterData.id">{{dude.name}} -- {{dude.class}}</option>
                 </select>
                 <div class="btn btn-sm btn-sprawl" ng-click="vm.loadDude(vm.currentDude);">Load Dude</div>
+                <div class="btn btn-sm btn-sprawl" ng-confirm-click="You sure? All progress will be lost." confirmed-click="vm.clearDude();">Reset</div>
             </div>
             <!-- Name / Look -->
             <div class="name-look_container row">
