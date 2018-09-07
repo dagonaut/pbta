@@ -16,6 +16,7 @@
                 charactersheet: { index: 0, heading: 'Character Sheet'},
                 reference: { index: 1, heading: 'Reference'},
                 threats: { index: 2, heading: 'Threats'},
+                log: { index: 3, heading: 'Log'}
             };
 
             // Static JSON Objects

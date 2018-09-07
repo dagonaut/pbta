@@ -85,6 +85,10 @@
 						templateUrl: 'sprawlThreats.html',
 						controller: 'Sprawl as vm'
 					},
+					'log@auth.sprawl': {
+						templateUrl: 'sprawlLog.html',
+						controller: 'Sprawl as vm'
+					},
 				}
 			})
 			/*

@@ -192,3 +192,11 @@ a:hover, a:focus{
     margin-top:5px;
     padding-top:5px;
 }
+
+/* Log */
+.log_container{}
+
+.log_container .left_nav{
+    height:100px;
+    border-right:2px solid #0472CE;
+}
