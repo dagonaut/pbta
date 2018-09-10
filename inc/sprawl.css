@@ -199,9 +199,21 @@ a:hover, a:focus{
 }
 
 /* Log */
-.log_container{}
+.log_container{
+    font-family: Courier;
+    color:green;
+    background:#000;
+}
 
 .log_container .left_nav{
     height:100px;
     border-right:2px solid #0472CE;
+}
+.log_container .terminal{
+    width:400px;
+    height:400px;
+    color:green;
+    background:#000;
+    border: 3px double #CCCCCC;
+    padding: 10px;
 }
