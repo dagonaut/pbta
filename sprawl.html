@@ -10,10 +10,10 @@
         <uib-tab index="vm.tabs.threats.index" heading="{{::vm.tabs.threats.heading}}">
             <div ui-view="threats"></div>
         </uib-tab>
-        <uib-tab index="vm.tabs.log.index" heading="{{::vm.tabs.log.heading}}">
+        <uib-tab index="vm.tabs.log.index" heading="{{::vm.tabs.log.heading}}" ng-if="vm.isMC">
             <div ui-view="log"></div>
         </uib-tab>
-        <uib-tab index="vm.tabs.mc.index" heading="{{::vm.tabs.mc.heading}}">
+        <uib-tab index="vm.tabs.mc.index" heading="{{::vm.tabs.mc.heading}}" ng-if="vm.isMC">
             <div ui-view="mc"></div>
         </uib-tab>
     </uib-tabset>
