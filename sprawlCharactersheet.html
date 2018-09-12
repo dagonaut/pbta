@@ -1,11 +1,11 @@
 
-<div class="container-fluid">        
+<form id="charSheet" name="charSheet" class="container-fluid">        
     <!-- Character Sheet -->
     <div class="character_header row">
         <div class="col-md-5">
             <div class="">
                 <select ng-model="vm.currentDude">                        
-                    <option ng-repeat="dude in vm.dudes" value="{{dude}}" ng-selected="dude.id === vm.characterData.id">{{dude.name}} -- {{dude.class}}</option>
+                    <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId" value="{{dude}}" ng-selected="dude.id === vm.characterData.id">{{dude.name}} -- {{dude.class}}</option>
                 </select>
                 <div class="btn btn-sm btn-sprawl" ng-click="vm.loadDude(vm.currentDude);">Load Dude</div>
                 <div class="btn btn-sm btn-sprawl" ng-confirm-click="You sure? All progress will be lost." confirmed-click="vm.clearDude();">Reset</div>
@@ -324,7 +324,7 @@
             </div>
         </div>
     </div>
-</div>
+</form>
 <script type="text/javascript">
     $(function () {
         $('[data-toggle="popover"]').each(function(){

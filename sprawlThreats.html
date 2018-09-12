@@ -1,7 +1,33 @@
 <div class="container-fluid">
-    <!-- Corporations -->
+    <div class="row">
+        <h3>MISSION</h3>
+        <div class="col-lg-12">
+            <div style="margin:auto;">
+                <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'mission'" class="pull-left" style="width:33%;">
+                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="row">
+        <h3>CORPORATIONS</h4>
+        <div class="col-lg-12">
+            <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'corporation'" class="pull-left" style="width:33%;">
+                <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>
+            </div>
+        </div>        
+    </div>
+    <div class="row">
+        <h3>THREATS</h3>
+        <div class="col-lg-12">
+            <div ng-repeat="clock in vm.clocks" ng-if="clock.type !== 'mission' && clock.type !== 'corporation'" class="pull-left" style="width:33%;">
+                <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>
+            </div>
+        </div>        
+    </div>
+    <!-- Corporations 
     <div class="corporation_section row">
-        <!-- Corp Moves -->
+        <!-- Corp Moves 
         <div class="col-md-4">
             <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;" ng-if="vm.isMC">Create
                 Corporation</div>
@@ -22,7 +48,7 @@
             » Implant a cortex bomb<br />
             » Deploy technology (drones, tracers, uploaders)
         </div>
-        <!-- Corp Clocks / Entities -->
+        <!-- Corp Clocks / Entities 
         <div class="col-md-8">
             <form novalidate class="simple-form" ng-show="vm.showClockEdit">
                 <label>Name: <input type="text" ng-model="clock.name" /></label><br />
@@ -36,9 +62,9 @@
             </div>
         </div>
     </div>
-    <!-- Threats -->
+    <!-- Threats 
     <div class="threats_section row">
-        <!-- Threat Moves HTML only -->
+        <!-- Threat Moves HTML only 
         <div class="col-md-4">
             <div class="row">
                 <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;" ng-if="vm.isMC">Create
@@ -138,7 +164,7 @@
                 </div>
             </div>
         </div>
-        <!-- Threat clocks / Entities -->
+        <!-- Threat clocks / Entities 
         <div class="col-md-8">
             <form novalidate class="simple-form" ng-show="vm.showClockEdit">
                 <label>Name: <input type="text" ng-model="clock.name" /></label><br />
@@ -154,6 +180,7 @@
 
         </div>
     </div>
+-->
 </div>
 <script type="text/javascript">
     $(function () {

@@ -4,7 +4,7 @@
         <a href ng-click="deleteClock(clockObj.id)" style="position:relative;top:32px;" ng-if="mc">delete</a>
         <h4 ng-show="!edit">{{clockObj.name}}</h4>
         <h4 ng-show="edit"><input type="text" ng-model="clockObj.name" value="{{clockObj.name}}" /></h4>
-        <p ng-show="!edit">{{clockObj.type}}</p>
+        <p ng-show="!edit" ng-if="mc">{{clockObj.type}}</p>
         <p ng-show="edit"><input type="text" ng-model="clockObj.type" value="{{clockObj.type}}" /></p>
         <div class="harm_marker lrg" ng-class="clock[0]" ng-click="mc ? markClock(0) : ''">1500</div>
         <div class="harm_marker lrg" ng-class="clock[1]" ng-click="mc ? markClock(1) : ''">1800</div>

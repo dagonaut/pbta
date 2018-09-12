@@ -13,6 +13,11 @@ h2{
     border-bottom:1px solid #0472CE;
     cursor:pointer;
 }
+h3{
+    font-size:20px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
 h4{
     font-size: 20px;
     border-bottom: 2px #0472CE solid;

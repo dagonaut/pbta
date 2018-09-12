@@ -131,7 +131,31 @@
         </div>
         <!-- Characters -->
         <div class="col-md-4">
-
+            <div ng-repeat="position in [0,1,2,3]">
+                <select ng-model="vm.mcDudes[position]" ng-change="vm.loadMCDude(position);">                        
+                    <option ng-repeat="dude in vm.dudes" value="{{dude}}">{{dude.name}} -- {{dude.class}}</option>
+                </select>
+                <div>{{vm.mcDudes[position].name}} -- {{vm.mcDudes[position].class}}</div>
+                <div class="harm"></div>
+                <div class="pull-left">
+                    <strong>Mt: </strong> {{vm.mcDudes[position].meat}} 
+                </div>
+                <div class="pull-left">
+                    <strong>E: </strong> {{vm.mcDudes[position].edge}} 
+                </div>
+                <div class="pull-left">
+                    <strong>C: </strong> {{vm.mcDudes[position].cool}} 
+                </div>
+                <div class="pull-left">
+                    <strong>Md: </strong> {{vm.mcDudes[position].mind}} 
+                </div>
+                <div class="pull-left">
+                    <strong>St: </strong> {{vm.mcDudes[position].style}} 
+                </div>
+                <div class="pull-left">
+                    <strong>Sn: </strong>: </strong> {{vm.mcDudes[position].synth}} 
+                </div>
+            </div>
         </div>
         <!-- Clocks -->
         <div class="col-md-4">

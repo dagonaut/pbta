@@ -9,7 +9,7 @@
         function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService, TagService, DirectiveService, CyberwareService, SprawlCharacterService){
             //Private Properties
             let vm = this;
-            var userId =  $cookies.getObject('id');
+            let userId =  $cookies.getObject('id');
             let _classDataFile = './static/sprawl-ClassData.json';
             
             vm.tabs = {
@@ -67,8 +67,9 @@
             vm.characterData = angular.copy(_characterDefaults);
             vm.showAllCyberware = true;
             vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save';
-
+            vm.userId = userId;
             vm.dudes = [];
+            vm.mcDudes = [{}];
             vm.visibility = { advancement: true, cyberware: 'class' }
             vm.isMC = userId === 2;
 
@@ -94,6 +95,7 @@
             vm.filterCyberware = filterCyberware;
             vm.addLink = addLink;
             vm.removeLink = removeLink;
+            vm.loadMCDude = loadMCDude;
 
             // Scope Events
 
@@ -108,10 +110,10 @@
             init();
             
             function init(){
-                getDudes(userId);
+                getDudes();
             }
 
-            //#region Character load/save/etc
+            //#region Dude / Character load/save/etc
             function saveCharacter(){
                 // Update the model
                 console.log(vm.characterData);
@@ -135,8 +137,8 @@
                 }
             }
 
-            function getDudes(userId){
-                SprawlCharacterService.GetByUserId(userId).then(function(data){    
+            function getDudes(){
+                SprawlCharacterService.GetAll().then(function(data){    
                     if(Array.isArray(data)){
                         vm.dudes = data;
                     } else {
@@ -157,9 +159,19 @@
                     vm.characterData.links = JSON.parse(vm.characterData.links);
                     vm.create = "Save";
                 });
-                
+            }
 
-                //vm.characterData.advancements = JSON.parse("[" + vm.characterData.advancements + "]");
+            function loadMCDude(position){
+                console.log('mcdude');
+                let d = JSON.parse(vm.mcDudes[position]);
+                // When loading a dude, make sure we get the latest from the DB.
+                SprawlCharacterService.GetById(d.id).then(function(data){
+                    vm.mcDudes[position] = data;
+                    //vm.mcDudes[position].advancements = JSON.parse("[" + vm.characterData.advancements + "]");
+                    //vm.mcDudes[position].moves = JSON.parse("[" + vm.characterData.moves + "]");
+                    //vm.mcDudes[position].cyberware = JSON.parse("[" + vm.characterData.cyberware + "]");
+                    //vm.mcDudes[position].links = JSON.parse(vm.characterData.links);                    
+                });
             }
 
             function deleteDude(){
@@ -168,15 +180,15 @@
                     console.log("Dude " + vm.characterData.id + " deleted");
                     vm.characterData = _characterDefaults;
                     vm.class = "driver";
-                    vm.dudes = getDudes(userId);
+                    vm.dudes = getDudes();
                 })
             }
 
             function clearDude(){
                 // Clear it all
                 vm.characterData = {};
-                // Put back the defaults
-                vm.characterData = _characterDefaults;
+                vm.characterData = angular.copy(_characterDefaults);                
+                $scope.$apply();
             }
 
             function getClassData(){
