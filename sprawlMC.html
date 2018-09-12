@@ -18,7 +18,7 @@
                 <input type="submit" ng-click="vm.createClock(clock)" value="Save Corporation" />
             </form>
             <div ng-repeat="clock in vm.clocks">
-                <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>
+                <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" on-save="vm.getClocksByUserId(2)"></clock>
             </div>
         </div>
     </div>

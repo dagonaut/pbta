@@ -53,7 +53,8 @@
                     console.log("trying to update", $scope.clockObj);                    
                     ClockService.Update($scope.clockObj).then(function(data){
                         console.log("updated"); 
-                        $scope.edit = false;                 
+                        $scope.edit = false;
+                        $scope.onSave();                 
                     });
                 }
 
