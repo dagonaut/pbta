@@ -1,5 +1,41 @@
 
     <div class="container-fluid">
+        <!-- Corporations -->
+        <div class="corporation_section row">
+            <!-- Corp Moves -->
+            <div class="col-md-4" ng-if="vm.isMC">
+                <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Corporation</div>
+                <h4>CORPORATIONS</h4>                
+                <div>Corporations maximise profit and minimise expenses </div>
+                <div>Corporations deny responsibility and suppress dissent </div>
+                <div>Corporations exploit technology and humanity to the limits of both</div>
+
+                <h5>CORPORATION MOVES</h5>
+                » Send a subtle message<br />
+                » Send a violent message<br />
+                » Terminate a problem<br />
+                » Throw money at a problem<br />
+                » Hire disposable assets<br />
+                » Deploy permanent assets<br />
+                » Buy out smaller operators<br />
+                » Make life difficult for someone<br />
+                » Implant a cortex bomb<br />
+                » Deploy technology (drones, tracers, uploaders)
+            </div>
+            <!-- Corp Clocks / Entities -->
+            <div class="col-md-8">               
+                <form novalidate class="simple-form" ng-show="vm.showClockEdit">
+                    <label>Name: <input type="text" ng-model="clock.name" /></label><br />
+                    <label>Type: <input type="text" ng-model="clock.type" /></label><br />                                                
+                    <label>Description: <textarea type="text" ng-model="clock.description"></textarea></label><br />                                                
+                    <label>Goal: <textarea type="text" ng-model="clock.goal"></textarea></label><br />                                                
+                    <input type="submit" ng-click="vm.createClock(clock)" value="Save Corporation" />
+                </form>
+                <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'corporation'" style="width:50%;" class="pull-left">
+                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>                                    
+                </div>
+            </div>
+        </div>
         <!-- Threats -->
         <div class="threats_section row">
             <!-- Threat Moves HTML only -->
@@ -114,42 +150,6 @@
                     <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>                                    
                 </div>
                 
-            </div>
-        </div>
-        <!-- Corporations -->
-        <div class="corporation_section row">
-            <!-- Corp Moves -->
-            <div class="col-md-4">
-                <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Corporation</div>
-                <h4>CORPORATIONS</h4>                
-                <div>Corporations maximise profit and minimise expenses </div>
-                <div>Corporations deny responsibility and suppress dissent </div>
-                <div>Corporations exploit technology and humanity to the limits of both</div>
-
-                <h5>CORPORATION MOVES</h5>
-                » Send a subtle message<br />
-                » Send a violent message<br />
-                » Terminate a problem<br />
-                » Throw money at a problem<br />
-                » Hire disposable assets<br />
-                » Deploy permanent assets<br />
-                » Buy out smaller operators<br />
-                » Make life difficult for someone<br />
-                » Implant a cortex bomb<br />
-                » Deploy technology (drones, tracers, uploaders)
-            </div>
-            <!-- Corp Clocks / Entities -->
-            <div class="col-md-8">               
-                <form novalidate class="simple-form" ng-show="vm.showClockEdit">
-                    <label>Name: <input type="text" ng-model="clock.name" /></label><br />
-                    <label>Type: <input type="text" ng-model="clock.type" /></label><br />                                                
-                    <label>Description: <textarea type="text" ng-model="clock.description"></textarea></label><br />                                                
-                    <label>Goal: <textarea type="text" ng-model="clock.goal"></textarea></label><br />                                                
-                    <input type="submit" ng-click="vm.createClock(clock)" value="Save Corporation" />
-                </form>
-                <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'corporation'" style="width:50%;" class="pull-left">
-                    <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>                                    
-                </div>
             </div>
         </div>
     </div>

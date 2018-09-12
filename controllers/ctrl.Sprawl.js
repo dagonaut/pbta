@@ -67,8 +67,10 @@
             vm.characterData = angular.copy(_characterDefaults);
             vm.showAllCyberware = true;
             vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save';
+
             vm.dudes = [];
-            vm.visibility = { advancement: true, cyberware: 'class', }
+            vm.visibility = { advancement: true, cyberware: 'class' }
+            vm.isMC = userId === 2;
 
             // Refernce properties
             vm.sprawlMoves = getSprawlMoves(4);
