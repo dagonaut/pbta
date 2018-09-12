@@ -9,14 +9,15 @@
         function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService, TagService, DirectiveService, CyberwareService, SprawlCharacterService){
             //Private Properties
             let vm = this;
-            let userId =  $cookies.getObject('id');
+            var userId =  $cookies.getObject('id');
             let _classDataFile = './static/sprawl-ClassData.json';
             
             vm.tabs = {
                 charactersheet: { index: 0, heading: 'Character Sheet'},
                 reference: { index: 1, heading: 'Reference'},
                 threats: { index: 2, heading: 'Threats'},
-                log: { index: 3, heading: 'Log'}
+                log: { index: 3, heading: 'Log'},
+                mc: { index: 4, heading: 'MC'}
             };
 
             // Static JSON Objects
@@ -66,7 +67,7 @@
             vm.characterData = angular.copy(_characterDefaults);
             vm.showAllCyberware = true;
             vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save';
-            vm.dudes = getDudes(userId);
+            vm.dudes = [];
             vm.visibility = { advancement: true, cyberware: 'class', }
 
             // Refernce properties
@@ -105,6 +106,7 @@
             init();
             
             function init(){
+                getDudes(userId);
             }
 
             // Character load/save/etc
@@ -132,8 +134,12 @@
             }
 
             function getDudes(userId){
-                SprawlCharacterService.GetByUserId(userId).then(function(data){
-                    vm.dudes = data;
+                SprawlCharacterService.GetByUserId(userId).then(function(data){    
+                    if(Array.isArray(data)){
+                        vm.dudes = data;
+                    } else {
+                        vm.dudes.push(data);
+                    }
                 });
             }
 

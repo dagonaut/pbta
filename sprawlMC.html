@@ -1,0 +1,39 @@
+
+<div class="container-fluid">        
+    <!-- MC Sheet -->
+    <div class="row">
+        <!-- Characters -->
+        <div class="col-md-8">
+
+        </div>
+        <!-- Clocks -->
+        <div class="col-md-4">
+            <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Clock</div>
+            <h4>CLOCKS</h4>  
+            <form novalidate class="simple-form" ng-show="vm.showClockEdit">
+                <label>Name: <input type="text" ng-model="clock.name" /></label><br />
+                <label>Type: <input type="text" ng-model="clock.type" /></label><br />                                                
+                <label>Description: <textarea type="text" ng-model="clock.description"></textarea></label><br />                                                
+                <label>Goal: <textarea type="text" ng-model="clock.goal"></textarea></label><br />                                                
+                <input type="submit" ng-click="vm.createClock(clock)" value="Save Corporation" />
+            </form>
+            <div ng-repeat="clock in vm.clocks">
+                <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="popover"]').each(function(){
+            $(this).popover({
+                html:true,
+                content: function() {
+                    var id = $(this).attr('id')
+                    return $('#popover-content-' + id).html();
+                }
+            });
+        });
+    });
+</script>
+
