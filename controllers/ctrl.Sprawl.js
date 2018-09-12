@@ -80,7 +80,7 @@
            
             vm.nameLookHTML = setNameLookHTML();
             
-            //Scope Methods	
+            // Scope Methods	
             vm.markHarm = markHarm;
             vm.clearHarm = clearHarm;
             vm.saveCharacter = saveCharacter;
@@ -95,10 +95,10 @@
             vm.addLink = addLink;
             vm.removeLink = removeLink;
 
-            //Scope Events
+            // Scope Events
 
             // Reference Sheet methods
-            vm.clocks = getClocksByUserId(userId);
+            vm.clocks = getClocksByUserId(2);
             vm.createClock = createClock;
             vm.deleteClock = deleteClock;
             vm.getClassMoves = getClassMoves;
@@ -111,7 +111,7 @@
                 getDudes(userId);
             }
 
-            // Character load/save/etc
+            //#region Character load/save/etc
             function saveCharacter(){
                 // Update the model
                 console.log(vm.characterData);
@@ -189,8 +189,9 @@
                     console.log(error);
                 }
             }
+            //#endregion
 
-            // Advancements
+            //#region Advancements
             function updateAdvancements(advId){
                 if(vm.characterData.advancements.indexOf(advId) > -1){
                     vm.characterData.advancements.splice(advId, 1);
@@ -198,8 +199,9 @@
                     vm.characterData.advancements.push(advId);
                 }
             }
+            //#endregion
 
-            // Links
+            //#region Links
             function addLink(){
                 let link = {"value":0,"name":""}
                 vm.characterData.links.push(link);
@@ -207,8 +209,9 @@
             function removeLink(index){
                 vm.characterData.links.splice(index, 1);
             }
+            //#endregion
             
-            // Clocks
+            //#region Clocks
             function createClock(clock){
                 var newClock = {
                     type: clock.type,
@@ -236,12 +239,14 @@
             }            
 
             function getClocksByUserId(id){
-                ClockService.GetByUserId(userId).then(function(data){
+                ClockService.GetByUserId(2).then(function(data){
                     vm.clocks = data;
                     console.log('getting clocks');
                 });
             }
-            // Moves
+            //#endregion
+
+            //#region Moves
             function updateMoves(moveId){
                 if(vm.characterData.moves.indexOf(moveId) > -1){
                     vm.characterData.moves.splice(moveId, 1);
@@ -270,7 +275,9 @@
                     vm.sprawlMoves[i]["hide"] = true;
                 }
             }
-            // Tags
+            //#endregion
+
+            //#region Tags
             function getAllTags(gameid){
                 TagService.GetByGameId(gameid).then(
                     function(data){
@@ -284,8 +291,9 @@
                     }
                 );
             }
+            //#endregion
             
-            // Harm
+            //#region Harm
             function markHarm(position){
                 clearHarm();
                 for(var i = 0; i < vm.harm.length; i++){
@@ -298,8 +306,9 @@
             function clearHarm(){
                 vm.harm = ["","","","","",""];  
             }
+            //#endregion
 
-            // Cyberware
+            //#region Cyberware
             function getAllCyberware(){
                 CyberwareService.GetAll().then(function(data){
                     vm.allCyberware = data;
@@ -339,8 +348,9 @@
                         if(vm.classData[vm.class].cyberware.indexOf(id) != -1){ return true; }  else { return false; }                      
                 }
             }
+            //#endregion
 
-            // Name / Look
+            //#region Name / Look
             function setNameLookHTML(){
                 let HTML = "<div><strong>Names:</strong> ";
                 for(let i = 0; i < vm.classData[vm.class].names.length; i++){ HTML += vm.classData[vm.class].names[i] + (i === vm.classData[vm.class].names.length - 1 ? " " : ", ");}
@@ -365,8 +375,9 @@
                 vm.classData[vm.class].look.skin.forEach(function(a){ HTML += a + ",";});
                 */
             }
+            //#endregion
 
-            // Directives
+            //#region Directives
             function getAllDirectives(){
                 DirectiveService.GetAll().then(function(data){
                     vm.allDirectives = data;
@@ -380,6 +391,7 @@
                     vm.directives = html;
                 });
             }
+            //#endregion
             
             /*
             var taco = classSpecific: {

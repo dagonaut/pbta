@@ -1,19 +1,19 @@
 <div class="harm_container row" style="width:99%;">
     <div class="col-sm-12">
-        <a href ng-click="edit = !edit" style="position:relative;top:32px;">edit</a>
-        <a href ng-click="deleteClock(clockObj.id)" style="position:relative;top:32px;">delete</a>
+        <a href ng-click="edit = !edit" style="position:relative;top:32px;" ng-if="mc">edit</a>
+        <a href ng-click="deleteClock(clockObj.id)" style="position:relative;top:32px;" ng-if="mc">delete</a>
         <h4 ng-show="!edit">{{clockObj.name}}</h4>
         <h4 ng-show="edit"><input type="text" ng-model="clockObj.name" value="{{clockObj.name}}" /></h4>
         <p ng-show="!edit">{{clockObj.type}}</p>
         <p ng-show="edit"><input type="text" ng-model="clockObj.type" value="{{clockObj.type}}" /></p>
-        <div class="harm_marker lrg" ng-class="clock[0]" ng-click="markClock(0)">1500</div>
-        <div class="harm_marker lrg" ng-class="clock[1]" ng-click="markClock(1)">1800</div>
-        <div class="harm_marker lrg" ng-class="clock[2]" ng-click="markClock(2)">2100</div>
-        <div class="harm_marker sm" ng-class="clock[3]" ng-click="markClock(3)">2200</div>
-        <div class="harm_marker sm" ng-class="clock[4]" ng-click="markClock(4)">2300</div>
-        <div class="harm_marker sm" ng-class="clock[5]" ng-click="markClock(5)">0000</div>
-        <a href ng-click="clearClock()" style="margin-left:3px;">Clear</a>
-        <a href ng-click="saveClock()" style="margin-left:3px;">Save</a>
+        <div class="harm_marker lrg" ng-class="clock[0]" ng-click="mc ? markClock(0) : ''">1500</div>
+        <div class="harm_marker lrg" ng-class="clock[1]" ng-click="mc ? markClock(1) : ''">1800</div>
+        <div class="harm_marker lrg" ng-class="clock[2]" ng-click="mc ? markClock(2) : ''">2100</div>
+        <div class="harm_marker sm" ng-class="clock[3]" ng-click="mc ? markClock(3) : ''">2200</div>
+        <div class="harm_marker sm" ng-class="clock[4]" ng-click="mc ? markClock(4) : ''">2300</div>
+        <div class="harm_marker sm" ng-class="clock[5]" ng-click="mc ? markClock(5) : ''">0000</div>
+        <a href ng-click="clearClock()" style="margin-left:3px;" ng-if="mc">Clear</a>
+        <a href ng-click="saveClock()" style="margin-left:3px;" ng-if="mc">Save</a>
         <div class="row" ng-if="type !== 'mission'">
             <div class="col-sm-12">
                 <strong>Description:</strong><br />

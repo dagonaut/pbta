@@ -62,7 +62,7 @@
             </div>                
         </div>
         <div class="col-md-4">                
-            <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Clock</div>
+            <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;" ng-if="vm.isMC">Create Clock</div>
             <h4>CLOCKS</h4>                
             <form novalidate class="simple-form" ng-show="vm.showClockEdit">
                 <label>Name: <input type="text" ng-model="clock.name" /></label><br />
@@ -70,7 +70,7 @@
                 <input type="submit" ng-click="vm.createClock(clock)" value="Save Clock" />
             </form>
             <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'mission'">
-                <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)"></clock>                                    
+                <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"</clock>                                    
             </div>                
         </div>
     </div>        

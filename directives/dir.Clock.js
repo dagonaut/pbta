@@ -10,6 +10,7 @@
                 restrict: 'E',                
                 templateUrl: "./directives/dir.Clock.html",
                 scope: {
+                    mc: '=',
                     clockObj: '=',
                     onDelete: '&',
                     onSave: '&'                                  
@@ -37,7 +38,7 @@
                 }
 
                 // Clock functions
-                function markClock(position){
+                function markClock(position){                    
                     clearClock();
                     if(position != null){
                         for(var i = 0; i < $scope.clock.length; i++){
