@@ -163,15 +163,16 @@
 
             function loadMCDude(position){
                 console.log('mcdude');
-                let d = JSON.parse(vm.mcDudes[position]);
+                //let d = JSON.parse(vm.mcDudes[position]);
+                vm.mcDudes[position] = JSON.parse(vm.mcDudes[position]);
                 // When loading a dude, make sure we get the latest from the DB.
-                SprawlCharacterService.GetById(d.id).then(function(data){
-                    vm.mcDudes[position] = data;
+                //SprawlCharacterService.GetById(d.id).then(function(data){
+                  //  vm.mcDudes[position] = data;
                     //vm.mcDudes[position].advancements = JSON.parse("[" + vm.characterData.advancements + "]");
                     //vm.mcDudes[position].moves = JSON.parse("[" + vm.characterData.moves + "]");
                     //vm.mcDudes[position].cyberware = JSON.parse("[" + vm.characterData.cyberware + "]");
                     //vm.mcDudes[position].links = JSON.parse(vm.characterData.links);                    
-                });
+                //});
             }
 
             function deleteDude(){

@@ -222,3 +222,8 @@ a:hover, a:focus{
     border: 3px double #CCCCCC;
     padding: 10px;
 }
+
+/* MC Tab */
+.mc-stat{
+    margin-left:5px;
+}
