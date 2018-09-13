@@ -35,20 +35,7 @@
 				} else {
 					return false;
 				}				
-			}
-			/*
-			if(typeof user === "undefined"){
-				if(typeof $cookies.getObject('id') !== 'undefined'){
-					Auth.AutoLogin($cookies.getObject('id'));
-					return true;
-				} else {
-					return false;
-				}
-			} else {
-				Auth.AutoLogin($cookies.getObject('id'));
-				return true;
-			}
-			*/
+			}			
 		}
 		
 		Auth.isLoggedIn = function(){
@@ -66,13 +53,6 @@
 					console.log(error);
 				}
 			);
-			/*
-			$http.post('./api.php/tbl_Users', { username: username, password: password })
-			.success(function (response) {
-				console.log("user success");
-				callback(response);
-			});
-			*/		
 		};
 
 		Auth.AutoLogin = function(userId, callback){
