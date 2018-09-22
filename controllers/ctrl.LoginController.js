@@ -47,7 +47,9 @@
                     if(response.success) {
                         Auth.SetCredentials($scope.username, $scope.passwordHash, response.data);
                         vm.userData = response.data;
-                        $location.path('/sprawl');
+                        vm.isLoggedIn = true;
+                        //$scope.$apply();
+                        $location.path('/sprawl');                        
                     } else {
                         $scope.error = response.message;
                         $scope.dataLoading = false;
@@ -63,35 +65,7 @@
             function register(user){
                 console.log("Registering");
                 // Check for existing user
-                var exists = checkExisting(user);
-                if(exists == false){
-                    var passwordHash = md5(user.Password);
-                    var method = 'POST';			
-                    var url = api + 'tbl_Users/';
-                    var config = {
-                        method: method,
-                        url: url,
-                        data: {
-                            id: user.id,
-                            username: user.username,
-                            FirstName: user.FirstName,
-                            LastName: user.LastName,
-                            EmailAddress: user.EmailAddress,
-                            Password: passwordHash,
-                            DateCreated: new Date().toISOString().slice(0,10),
-                            DateUpdated: new Date().toISOString().slice(0,10)
-                        }
-                    };
-                    $http(config).then(userSuccess, userFailure);
-                }
-                function userSuccess(response){
-                    console.log(response);
-                    $location.path('/login');
-                }
-                function userFailure(error){
-                    console.log(error);
-                }
-                
+                checkExisting(user);
             };
             
             function checkExisting(user){
@@ -100,9 +74,10 @@
                     function(response){
                         
                         if(typeof response.data.username !== "undefined" && response.data.username === user.username){
-                            return true;
+                            // Give feedback
                         } else {
-                            return false;
+                            createUser(user);
+                            
                         }					
                     },
                     function(error){
@@ -110,5 +85,33 @@
                     }
                 )
             };
+
+            function createUser(user){
+                var passwordHash = md5(user.Password);
+                var method = 'POST';			
+                var url = api + 'tbl_Users/';
+                var config = {
+                    method: method,
+                    url: url,
+                    data: {
+                        id: user.id,
+                        username: user.username,
+                        FirstName: user.FirstName,
+                        LastName: user.LastName,
+                        EmailAddress: user.EmailAddress,
+                        Password: passwordHash,
+                        DateCreated: new Date().toISOString().slice(0,10),
+                        DateUpdated: new Date().toISOString().slice(0,10)
+                    }                                
+                };
+                $http(config).then(userSuccess, userFailure);
+    
+                function userSuccess(response){
+                    console.log("you did it", response);
+                }
+                function userFailure(error){
+                    console.log(error);
+                }
+            }
         }
 })();
