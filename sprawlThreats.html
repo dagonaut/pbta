@@ -1,13 +1,33 @@
 <div class="container-fluid">
     <div class="row">
+        <div class="col-xs-1">
             <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;" ng-if="vm.isMC">Create</div>
-            <form novalidate class="simple-form" ng-show="vm.showClockEdit">
+        </div>
+        <div class="col-xs-5">
+            <form novalidate class="row simple-form" ng-show="vm.showClockEdit">
+                <!-- <div class="col-xs-3">
+                    <strong>Name:</strong><br />
+                    <strong>Type:</strong><br />
+                    <strong>Description:</strong><br />
+                    <strong>Goal:</strong>
+                </div>
+                <div class="col-xs-9">
+                    <input type="text" ng-model="clock.name" /><br />
+                    <input type="text" ng-model="clock.type" /><br />
+                    <textarea type="text" ng-model="clock.description"></textarea><br />
+                    <textarea type="text" ng-model="clock.goal"></textarea><br />
+                    <input type="submit" ng-click="vm.createClock(clock)" value="Save Threat" />
+                </div> -->
                 <label>Name: <input type="text" ng-model="clock.name" /></label><br />
                 <label>Type: <input type="text" ng-model="clock.type" /></label><br />
                 <label>Description: <textarea type="text" ng-model="clock.description"></textarea></label><br />
                 <label>Goal: <textarea type="text" ng-model="clock.goal"></textarea></label><br />
                 <input type="submit" ng-click="vm.createClock(clock)" value="Save Threat" />
             </form>
+        </div>
+        <div class="col-xs-6">
+            <!-- fill empty space -->
+        </div>
     </div>
     <div class="row">
         <h3>MISSION</h3>

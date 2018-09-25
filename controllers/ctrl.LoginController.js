@@ -50,7 +50,7 @@
                         vm.userData = response.data;
                         vm.isLoggedIn = true;
                         //$scope.$apply();
-                        //$location.path('/sprawl');                        
+                        $location.path('/sprawl');                        
                     } else {
                         $scope.error = response.message;
                         $scope.dataLoading = false;
