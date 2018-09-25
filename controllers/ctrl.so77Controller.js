@@ -41,7 +41,7 @@
             init();
             
             function init(){
-                console.log('init');
+                //console.log('init');
                 setThangsDescription();
                 //getCharacterData(vm.user);
                 
@@ -159,7 +159,7 @@
                             moves.push(response.data[i]); 
                         }
                         vm.allMoves = moves;
-                        console.log(moves);
+                        //console.log(moves);
                         //console.log($scope.allMoves);
                         
                     },
@@ -179,10 +179,10 @@
             };     
 
             function updateCharacter(characterData){
-                console.log('updateCharacter');
-                console.log(characterData);
-                console.log(vm.attributes);
-                console.log(JSON.stringify(vm.attributes));
+                //console.log('updateCharacter');
+                //console.log(characterData);
+                //console.log(vm.attributes);
+                //console.log(JSON.stringify(vm.attributes));
                 //Grab the Gear array (maybe just put it in the data object below)
                 vm.attibutes = JSON.stringify(vm.attributes);
                 characterData.moves = vm.characterData.moves.join(',');
@@ -229,7 +229,7 @@
                 $http(config).then(characterSuccess, characterFailure);
                 
                 function characterSuccess(response){
-                    console.log(response);
+                    //console.log(response);
                 }
                 function characterFailure(error){
                     console.log(error);
@@ -238,10 +238,10 @@
             };
             
             function getCharacterData(userId){
-                console.log('getCharacter');
+                //console.log('getCharacter');
                 $http.get(api + 'tbl_so77_Characters/createdby/' + userId).then(
                     function(response){
-                        console.log(response);
+                        //console.log(response);
                         vm.characterData = response.data;
                         vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]"); //To keep it as integers not strings
                         setRoleDescription(vm.characterData.role);
@@ -283,7 +283,7 @@
             function setModifiers(){
                 if(vm.characterData.attributes != null){
                     vm.characterData.attibutes = JSON.parse(vm.characterData.attributes);
-                    console.log(vm.characterData.attributes); 
+                    //console.log(vm.characterData.attributes); 
                 } else {
                     // set blank object
                     vm.characterData.attributes = {
@@ -293,7 +293,7 @@
                         brains: 0,
                         soul: 0
                     }
-                    console.log(vm.characterData.attributes);
+                    //console.log(vm.characterData.attributes);
                 }
             }
         }

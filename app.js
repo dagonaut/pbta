@@ -28,19 +28,23 @@
 				controllerAs: 'vm'
 			})
 			.state('auth',{
-				templateUrl: 'wrapper.html'				
+				templateUrl: 'wrapper.html'								
 			})
-			.state('auth.character',{
+			.state('auth.dw',{
 				url: '/cs',
-				templateUrl: 'charactersheet.html',
-				controller: 'CharacterSheet',
-				controllerAs: 'vm'
+				views: { 'cs' : {
+					templateUrl: 'charactersheet.html',
+					controller: 'DungeonWorld as vm'}
+				}
 			})
 			.state('auth.so77',{
 				url: '/so77',
-				templateUrl: 'so77.html',
-				controller: 'so77Controller',
-				controllerAs: 'vm'
+				views: {
+					'so77': {
+						templateUrl: 'so77.html',
+						controller: 'so77Controller as vm',
+					}
+				}
 			})			
 			.state('auth.reference',{
 				url: '/reference',

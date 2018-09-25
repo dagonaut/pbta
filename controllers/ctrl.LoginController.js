@@ -13,6 +13,7 @@
             //Scope Properties
             vm.userData = {};
             vm.isLoggedIn = false;
+            vm.taco = "PSYCH";
 
             //Scope Methods
             vm.login = login;
@@ -33,7 +34,7 @@
                         console.log("LoginController: rootScope: " + $rootScope.userData);
                         vm.isLoggedIn = true;
                         vm.userData = $rootScope.userData;
-                        $location.path('/sprawl');
+                        //$location.path('/sprawl');
                     });
                 } else {
                     console.log("LoginController: You don't have a cookie.")
@@ -49,7 +50,7 @@
                         vm.userData = response.data;
                         vm.isLoggedIn = true;
                         //$scope.$apply();
-                        $location.path('/sprawl');                        
+                        //$location.path('/sprawl');                        
                     } else {
                         $scope.error = response.message;
                         $scope.dataLoading = false;
