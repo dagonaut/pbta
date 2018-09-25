@@ -31,13 +31,21 @@
                     <strong>CRED: </strong> {{vm.mcDudes[position].cred}}
                 </div>
                 <br />
+                <h3>Moves</h3>
                 <div class="mc-moves">
-                    <div ng-repeat="move in vm.sprawlMoves" nf-ig="vm.mcDudes[position].moves.indexOf(move.id) > -1">
-                        {{move}} |
+                    <div ng-repeat="move in vm.sprawlMoves" ng-if="vm.mcDudes[position].moves.indexOf(move.id) > -1">
+                        <strong>{{move.name}}</strong> - {{move.description}}
                     </div>
                 </div>
-                <div class="mc-cyberware"></div>
-                <div class=""></div>
+                <h3>Cyberware</h3>
+                <div class="mc-cyberware">
+                    <div ng-repeat="cyberware in vm.allCyberware" ng-if="vm.mcDudes[position].cyberware.indexOf(cyberware.id) > -1">
+                        <strong>{{cyberware.name}}</strong> - {{cyberware.description}}
+                    </div>
+                </div>
+                <div class="mc-gear">
+                    {{vm.mcDudes[position].gear}}
+                </div>
             </div>
         </div>        
         <!-- Clocks -->
