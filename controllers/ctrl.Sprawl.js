@@ -127,7 +127,7 @@
                 // New / Create
                 if(typeof vm.characterData.id === 'undefined'){
                     SprawlCharacterService.Create(vm.characterData).then(function(data){
-                        loadDude(data);
+                        loadDude('{"id":' + data + '}');
                     });
                 } else {
                     // Update
@@ -141,6 +141,7 @@
                 SprawlCharacterService.GetAll().then(function(data){    
                     if(Array.isArray(data)){
                         vm.dudes = data;
+                        $scope.$apply();
                     } else {
                         vm.dudes.push(data);
                     }
@@ -176,7 +177,7 @@
             }
 
             function deleteDude(){
-                alert("Dude deleteion attempted");
+                //alert("Dude deleteion attempted");
                 SprawlCharacterService.Delete(vm.characterData.id).then(function(data){
                     console.log("Dude " + vm.characterData.id + " deleted");
                     vm.characterData = _characterDefaults;

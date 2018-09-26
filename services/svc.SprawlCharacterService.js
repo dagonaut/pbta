@@ -30,7 +30,8 @@
         }
 
         function GetById(id) {
-            config.url = config.url + '/id/' + id;
+            config.method = 'GET'
+            config.url = api + table + '/id/' + id;
             return $http(config).then(handleSuccess, handleError('Error getting SprawlCharacter by id'));
         }
 
@@ -51,13 +52,13 @@
         function Update(SprawlCharacter) {
             config.method = "PUT"
             config.data = SprawlCharacter;
-            config.url = config.url + "/" + SprawlCharacter.id
+            config.url = api + table + "/" + SprawlCharacter.id
             return $http(config).then(handleSuccess, handleError('Error updating SprawlCharacter'));
         }
 
         function Delete(id) {
             config.method = "DELETE";
-            config.url = config.url + "/" + id
+            config.url = api + table + "/" + id
             return $http(config).then(handleSuccess, handleError('Error deleting SprawlCharacter'));
         }
 		
