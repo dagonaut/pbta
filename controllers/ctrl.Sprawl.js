@@ -78,6 +78,9 @@
             vm.allTags = getAllTags(4);
             vm.showClockEdit = false;
 
+            // Threat properties
+            vm.intel = $cookies.getObject('intel') || 0;
+            vm.gear = $cookies.getObject('gear') || 0;
            
             vm.nameLookHTML = setNameLookHTML();
             
@@ -98,6 +101,8 @@
             vm.loadMCDude = loadMCDude;
 
             // Scope Events
+            vm.setIntel = setIntel;
+            vm.setGear = setGear;
 
             // Reference Sheet methods
             vm.clocks = getClocksByUserId(2);
@@ -219,7 +224,7 @@
             }
             //#endregion
             
-            //#region Clocks
+            //#region Threats / Mission / Clocks
             function createClock(clock){
                 var newClock = {
                     type: clock.type,
@@ -251,6 +256,14 @@
                     vm.clocks = data;
                     console.log('getting clocks');
                 });
+            }
+
+            function setIntel(){
+                $cookies.putObject('intel', vm.intel);
+            }
+
+            function setGear(){
+                $cookies.putObject('gear', vm.gear);
             }
             //#endregion
 

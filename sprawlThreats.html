@@ -31,13 +31,21 @@
     </div>
     <div class="row">
         <h3>MISSION</h3>
-        <div class="col-lg-12">
+        <div class="col-lg-8">
             <div style="margin:auto;">
-                <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'mission'" class="pull-left" style="width:33%;">
+                <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'mission'" class="pull-left" style="width:50%;">
                     <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>
                 </div>
             </div>
         </div>        
+        <div class="col-lg-2 stat" style="margin-top:50px;">
+            <label>::INTEL</label>
+            <input type="number" ng-change="vm.setIntel();" ng-model="vm.intel" />
+        </div>
+        <div class="col-lg-2 stat" style="margin-top:50px;">
+            <label>::GEAR</label>
+            <input type="number" ng-change="vm.setGear();" ng-model="vm.gear" />            
+        </div>
     </div>
     <div class="row">
         <h3>CORPORATIONS</h4>
