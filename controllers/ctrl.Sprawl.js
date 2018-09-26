@@ -131,8 +131,10 @@
                     });
                 } else {
                     // Update
-                    SprawlCharacterService.Update(vm.characterData).then(function(data){
+                    SprawlCharacterService.Update(vm.characterData).then(function(data){                        
                         console.log(data);
+                        // reload the dude to reset arrays/objects
+                        loadDude('{"id":' + vm.characterData.id + '}');
                     });
                 }
             }
@@ -141,7 +143,7 @@
                 SprawlCharacterService.GetAll().then(function(data){    
                     if(Array.isArray(data)){
                         vm.dudes = data;
-                        $scope.$apply();
+                        //$scope.$apply();
                     } else {
                         vm.dudes.push(data);
                     }
@@ -154,6 +156,7 @@
                 SprawlCharacterService.GetById(d.id).then(function(data){
                     vm.characterData = data;
                     vm.class = vm.characterData.class;
+                    markHarm(vm.characterData.harm);
                     vm.characterData.advancements = JSON.parse("[" + vm.characterData.advancements + "]");
                     vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]");
                     vm.characterData.cyberware = JSON.parse("[" + vm.characterData.cyberware + "]");
@@ -163,17 +166,8 @@
             }
 
             function loadMCDude(position){
-                console.log('mcdude');
-                //let d = JSON.parse(vm.mcDudes[position]);
-                vm.mcDudes[position] = JSON.parse(vm.mcDudes[position]);
-                // When loading a dude, make sure we get the latest from the DB.
-                //SprawlCharacterService.GetById(d.id).then(function(data){
-                  //  vm.mcDudes[position] = data;
-                    //vm.mcDudes[position].advancements = JSON.parse("[" + vm.characterData.advancements + "]");
-                    //vm.mcDudes[position].moves = JSON.parse("[" + vm.characterData.moves + "]");
-                    //vm.mcDudes[position].cyberware = JSON.parse("[" + vm.characterData.cyberware + "]");
-                    //vm.mcDudes[position].links = JSON.parse(vm.characterData.links);                    
-                //});
+                // Grab the dude from the JSON.
+                vm.mcDudes[position] = JSON.parse(vm.mcDudes[position]);                
             }
 
             function deleteDude(){
@@ -309,7 +303,9 @@
             
             //#region Harm
             function markHarm(position){
+                if(position === null){ return; }
                 clearHarm();
+                vm.characterData.harm = position;
                 for(var i = 0; i < vm.harm.length; i++){
                     if (i <= position){
                         vm.harm[i] = "active";
@@ -318,6 +314,7 @@
             }
 
             function clearHarm(){
+                vm.characterData.harm = null;
                 vm.harm = ["","","","","",""];  
             }
             //#endregion
@@ -379,15 +376,7 @@
                 HTML += "<br /><strong>Skin:</strong> ";
                 for(let i = 0; i < vm.classData[vm.class].look.skin.length; i++){ HTML += vm.classData[vm.class].look.skin[i] + (i === vm.classData[vm.class].look.skin.length - 1 ? " " : ", ");}
                 HTML += "</div>";
-                return HTML;
-                /*
-                vm.classData[vm.class].name.forEach(function(a){ HTML += a + ",";});
-                vm.classData[vm.class].look.eyes.forEach(function(a){ HTML += a + ",";});
-                vm.classData[vm.class].look.face.forEach(function(a){ HTML += a + ",";});
-                vm.classData[vm.class].look.body.forEach(function(a){ HTML += a + ",";});
-                vm.classData[vm.class].look.wear.forEach(function(a){ HTML += a + ",";});
-                vm.classData[vm.class].look.skin.forEach(function(a){ HTML += a + ",";});
-                */
+                return HTML;                
             }
             //#endregion
 

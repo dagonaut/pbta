@@ -217,7 +217,7 @@
                 <div class="col-md-12">
                 <a href class="glyphicon glyphicon-plus pull-left menu-toggle" ng-click="vm.addLink();"></a>
                     <h4>LINKS</h4>
-                    <div ng-repeat="link in vm.characterData.links">
+                    <div ng-repeat="link in vm.characterData.links track by $index">
                         <div class="stat">                            
                             <input type="number" ng-model="link.value" />
                             <div style="display:inline-block;">                        

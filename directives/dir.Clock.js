@@ -29,6 +29,7 @@
                 $scope.clearClock = clearClock;
                 $scope.deleteClock = deleteClock;
                 $scope.saveClock = saveClock;
+                $scope.toggleEdit = toggleEdit;
                 $scope.edit = false;
                 
                 init();
@@ -70,6 +71,10 @@
                 function clearClock(){
                     $scope.clock = ["","","","","",""];
                     $scope.clockObj.position = null;  
+                }
+
+                function toggleEdit(){
+                    $scope.edit = !$scope.edit;
                 }
             }
         }

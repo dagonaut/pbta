@@ -1,6 +1,6 @@
 <div class="harm_container row" style="width:99%;">
     <div class="col-sm-12">
-        <a href ng-click="edit = !edit" style="position:relative;top:32px;" ng-if="mc">edit</a>
+        <a href ng-click="toggleEdit()" style="position:relative;top:32px;" ng-if="mc">edit</a>
         <a href ng-click="deleteClock(clockObj.id)" style="position:relative;top:32px;" ng-if="mc">delete</a>
         <h4 ng-show="!edit">{{clockObj.name}}</h4>
         <h4 ng-show="edit"><input type="text" ng-model="clockObj.name" value="{{clockObj.name}}" /></h4>
