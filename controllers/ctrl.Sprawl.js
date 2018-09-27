@@ -148,7 +148,6 @@
                 SprawlCharacterService.GetAll().then(function(data){    
                     if(Array.isArray(data)){
                         vm.dudes = data;
-                        //$scope.$apply();
                     } else {
                         vm.dudes.push(data);
                     }
