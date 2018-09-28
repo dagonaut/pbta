@@ -160,6 +160,7 @@
                 SprawlCharacterService.GetById(d.id).then(function(data){
                     vm.characterData = data;
                     vm.class = vm.characterData.class;
+                    getClassMoves(vm.class);
                     markHarm(vm.characterData.harm);
                     vm.characterData.advancements = JSON.parse("[" + vm.characterData.advancements + "]");
                     vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]");
