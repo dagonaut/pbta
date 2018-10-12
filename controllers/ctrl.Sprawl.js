@@ -269,8 +269,9 @@
 
             //#region Moves
             function updateMoves(moveId){
-                if(vm.characterData.moves.indexOf(moveId) > -1){
-                    vm.characterData.moves.splice(moveId, 1);
+                let index = vm.characterData.moves.indexOf(moveId);
+                if( index > -1){
+                    vm.characterData.moves.splice(index, 1);
                 } else {
                     vm.characterData.moves.push(moveId);
                 }
