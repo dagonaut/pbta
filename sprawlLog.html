@@ -1,19 +1,22 @@
-<div class="container-fluid log_container">
+<div class="container-fluid">
     <!-- Logs -->
     <div class="row">
         <div class="col-md-2 left_nav">
 
         </div>
-        <!-- <div class="col-md-10">
+        <div class="col-md-6">
             <div class="input_section row">
                 <div class="col-md-12">
                     <textarea class="terminal" ng-model="vm.log"></textarea>
                 </div>
             </div>
-        </div> -->
-        <div class="col-md-6"></div>
+        </div>
         <div class="col-md-4">
-            <hold></hold>
+            <a href class="glyphicon glyphicon-plus pull-left menu-toggle" ng-click="vm.addHold();"></a>
+            <h4>Hold and Shit</h4>
+            <div ng-repeat="hold in vm.holds">
+                <hold hold-obj="hold" on-delete="vm.getHolds();"></hold>
+            </div>
         </div>
     </div>
 </div>

@@ -37,7 +37,15 @@
                     <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>
                 </div>
             </div>
-        </div>        
+        </div>
+        <div class="col-lg-4">
+            <a href class="glyphicon glyphicon-plus pull-left menu-toggle" ng-click="vm.addHold();"></a>
+            <h4>Hold and Shit</h4>
+            <div ng-repeat="hold in vm.holds">
+                <hold hold-obj="hold" on-delete="vm.getHolds();"></hold>
+            </div>
+        </div>
+        <!--        
         <div class="col-lg-2 stat" style="margin-top:50px;">
             <label>::INTEL</label>
             <input type="number" ng-change="vm.setIntel();" ng-model="vm.intel" />
@@ -46,6 +54,7 @@
             <label>::GEAR</label>
             <input type="number" ng-change="vm.setGear();" ng-model="vm.gear" />            
         </div>
+        -->
     </div>
     <div class="row">
         <h3>CORPORATIONS</h4>

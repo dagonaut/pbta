@@ -5,8 +5,8 @@
         .module('pbta_resources')
         .controller('Sprawl', sprawl);
         
-        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService','MoveService','TagService', 'DirectiveService', 'CyberwareService', 'SprawlCharacterService'];
-        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService, TagService, DirectiveService, CyberwareService, SprawlCharacterService){
+        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService','MoveService','TagService', 'DirectiveService', 'CyberwareService', 'SprawlCharacterService', 'HoldService'];
+        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService, TagService, DirectiveService, CyberwareService, SprawlCharacterService, HoldService){
             //Private Properties
             let vm = this;
             let userId =  $cookies.getObject('id');
@@ -69,6 +69,7 @@
             vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save';
             vm.userId = userId;
             vm.dudes = [];
+            vm.holds = getHolds();
             vm.mcDudes = [{}];
             vm.visibility = { advancement: true, cyberware: 'class' }
             vm.isMC = userId === 2;
@@ -99,6 +100,8 @@
             vm.addLink = addLink;
             vm.removeLink = removeLink;
             vm.loadMCDude = loadMCDude;
+            vm.getHolds = getHolds;
+            vm.addHold = addHold;
 
             // Scope Events
             vm.setIntel = setIntel;
@@ -222,6 +225,27 @@
             function removeLink(index){
                 vm.characterData.links.splice(index, 1);
             }
+            //#endregion
+
+            //#region Hold
+            function getHolds(){
+                HoldService.GetAll().then(function(data){
+                    vm.holds = data;
+                    console.log(vm.holds);
+                });
+            }
+            function addHold(){
+                let newHold = {
+                    type: 'user',
+                    name: 'new hold',
+                    value: 0,
+                    createdby: 1
+                };
+                HoldService.Create(newHold).then(function(data){
+                    getHolds();
+                })
+            }
+
             //#endregion
             
             //#region Threats / Mission / Clocks

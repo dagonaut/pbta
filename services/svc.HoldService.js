@@ -26,7 +26,9 @@
 		HoldService.Delete = Delete;
 		return HoldService;
 
-        function GetAll() {            
+        function GetAll() {
+            config.method = 'GET';  
+            config.url = api + table;          
             return $http(config).then(handleSuccess, handleError('Error getting all Holds'));
         }
 
@@ -56,13 +58,13 @@
         function Update(Hold) {
             config.method = "PUT"
             config.data = Hold;
-            config.url = config.url + "/" + Hold.id            
+            config.url = api + table + "/" + Hold.id            
             return $http(config).then(handleSuccess, handleError('Error updating Hold'));
         }
 
         function Delete(id) {
             config.method = "DELETE";
-            config.url = config.url + "/" + id
+            config.url = api + table + "/" + id
             return $http(config).then(handleSuccess, handleError('Error deleting Hold'));
         }
 		

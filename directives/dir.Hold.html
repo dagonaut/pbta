@@ -1,9 +1,9 @@
-<div class="harm_container row" style="width:99%;">
+<div class="harm_container pull-left" style="width:50%;">
     <div class="col-md-12"> 
         <div class="stat">            
-            <input class="link" type="text" ng-model="hold.name" />            
-            <input type="number" ng-model="hold.value" />
-            <a href ng-click="vm.removeHold();" class="glyphicon glyphicon-remove"></a>
+            <input class="link" type="text" ng-model="hold.name" ng-change="updateHold();" style="width:145px;" />            
+            <input type="number" ng-model="hold.value" ng-change="updateHold();" />
+            <a href ng-click="deleteHold(hold.id);" class="glyphicon glyphicon-remove"></a>
         </div>
     </div>  
     
