@@ -5,8 +5,8 @@
         .module('pbta_resources')
         .controller('Sprawl', sprawl);
         
-        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce','Auth','UserService','ClockService','MoveService','TagService', 'DirectiveService', 'CyberwareService', 'SprawlCharacterService', 'HoldService'];
-        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth, UserService, ClockService, MoveService, TagService, DirectiveService, CyberwareService, SprawlCharacterService, HoldService){
+        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce', '$filter','Auth','UserService','ClockService','MoveService','TagService', 'DirectiveService', 'CyberwareService', 'SprawlCharacterService', 'HoldService'];
+        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, $filter, Auth, UserService, ClockService, MoveService, TagService, DirectiveService, CyberwareService, SprawlCharacterService, HoldService){
             //Private Properties
             let vm = this;
             let userId =  $cookies.getObject('id');
@@ -87,6 +87,7 @@
 
             // Log properties
             vm.logs = getLogEntries();
+            vm.currentLog = {};
             
             // Scope Methods	
             vm.markHarm = markHarm;
@@ -117,6 +118,11 @@
             vm.getClassMoves = getClassMoves;
             vm.getAllTags = getAllTags;
             vm.getClocksByUserId = getClocksByUserId;            
+
+            // Log methods
+            vm.updateLogEntry = updateLogEntry;
+            vm.addLogEntry = addLogEntry;
+            vm.selectLog = selectLog;
 
             init();
             
@@ -440,10 +446,11 @@
             //#region Log
             function getLogEntries(){
                 let config = {                    
-                    url: "http://16watt.com/dev/pbta/api/api.php/tbl_Logs"
+                    url: "http://16watt.com/dev/pbta/api/api.php/tbl_Log"
                 }
                 $http.get(config.url).then(function(data){
-                    vm.logs = data;
+                    console.log(data);
+                    vm.logs = data.data;
                 },
                 function(err){
                     console.log(err);
@@ -451,12 +458,10 @@
             }
 
             function updateLogEntry(){
-                let entry = {
-                    text: vm.log
-                }
+                vm.currentLog.date                
                 let config = {
-                    url: 'http://16watt.com/dev/pbta/api/api.php/tbl_Logs',
-                    data: entry,
+                    url: 'http://16watt.com/dev/pbta/api/api.php/tbl_Log/' + vm.currentLog.id,
+                    data: vm.currentLog,
                     method: 'PUT'
                 }
                 $http(config).then(function(data){
@@ -468,9 +473,38 @@
             }
 
             function addLogEntry(){
-
+                let newEntry = {
+                    name: 'New Entry',
+                    text: 'New Entry',
+                    datecreated: $filter('date')(new Date(), "yyyy-MM-dd HH:mm:ss"),
+                    gameid: 4,
+                    createdby: 1
+                }
+                let config = {
+                    url: 'http://16watt.com/dev/pbta/api/api.php/tbl_Log/',
+                    data: newEntry,
+                    method: 'POST'
+                }
+                $http(config).then(function(data){
+                    getLogEntries();
+                },
+                function(err){
+                    console.log(err);
+                });
             }
-            //#endRegion
+
+            function selectLog(logId){
+                let config = {                    
+                    url: "http://16watt.com/dev/pbta/api/api.php/tbl_Log/id/" + logId
+                }
+                $http.get(config.url).then(function(data){
+                    vm.currentLog = data.data;
+                },
+                function(err){
+                    console.log(err);
+                }); 
+            }
+            //#endregion
 
             /*
             var taco = classSpecific: {

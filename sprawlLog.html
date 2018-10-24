@@ -2,12 +2,17 @@
     <!-- Logs -->
     <div class="row">
         <div class="col-md-2 left_nav">
-
+            <div class="" ng-repeat="log in vm.logs | orderBy: '-datecreated'">
+                <a href ng-click="vm.selectLog(log.id)">{{log.datecreated.substring(0,10)}}::{{log.name}}</a>
+            </div>
         </div>
         <div class="col-md-6">
-            <div class="input_section row">
+            <div class="input_section row" style="padding-top:3px;">
                 <div class="col-md-12">
-                    <textarea class="terminal" ng-model="vm.log"></textarea>
+                    <input class="pull-left" ng-model="vm.currentLog.name" />
+                    <div class="btn btn-primary pull-left" style="margin:0px 5px;" ng-click="vm.updateLogEntry();">Save</div>
+                    <div class="btn btn-danger pull-left" ng-click="vm.addLogEntry();">New</div>
+                    <textarea class="terminal" ng-model="vm.currentLog.text"></textarea>
                 </div>
             </div>
         </div>
