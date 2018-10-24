@@ -84,6 +84,9 @@
             vm.gear = $cookies.getObject('gear') || 0;
            
             vm.nameLookHTML = setNameLookHTML();
+
+            // Log properties
+            vm.logs = getLogEntries();
             
             // Scope Methods	
             vm.markHarm = markHarm;
@@ -434,6 +437,41 @@
             }
             //#endregion
             
+            //#region Log
+            function getLogEntries(){
+                let config = {                    
+                    url: "http://16watt.com/dev/pbta/api/api.php/tbl_Logs"
+                }
+                $http.get(config.url).then(function(data){
+                    vm.logs = data;
+                },
+                function(err){
+                    console.log(err);
+                });
+            }
+
+            function updateLogEntry(){
+                let entry = {
+                    text: vm.log
+                }
+                let config = {
+                    url: 'http://16watt.com/dev/pbta/api/api.php/tbl_Logs',
+                    data: entry,
+                    method: 'PUT'
+                }
+                $http(config).then(function(data){
+                    console.log(data);
+                },
+                function(err){
+                    console.log(err);
+                });
+            }
+
+            function addLogEntry(){
+
+            }
+            //#endRegion
+
             /*
             var taco = classSpecific: {
                 name: "HUSTLING",
