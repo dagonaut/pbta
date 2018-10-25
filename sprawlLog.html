@@ -9,10 +9,10 @@
         <div class="col-md-6">
             <div class="input_section row" style="padding-top:3px;">
                 <div class="col-md-12">
-                    <input class="pull-left" ng-model="vm.currentLog.name" />
-                    <div class="btn btn-primary pull-left" style="margin:0px 5px;" ng-click="vm.updateLogEntry();">Save</div>
-                    <div class="btn btn-danger pull-left" ng-click="vm.addLogEntry();">New</div>
-                    <textarea class="terminal" ng-model="vm.currentLog.text"></textarea>
+                    <input class="pull-left" ng-model="vm.currentLog.name" ng-disabled="!vm.isMC" />
+                    <div class="btn btn-primary pull-left" style="margin:0px 5px;" ng-click="vm.updateLogEntry();" ng-if="vm.isMC">Save</div>
+                    <div class="btn btn-danger pull-left" ng-click="vm.addLogEntry();" ng-if="vm.isMC">New</div>
+                    <textarea class="terminal" ng-model="vm.currentLog.text" ng-disabled="!vm.isMC"></textarea>
                 </div>
             </div>
         </div>
