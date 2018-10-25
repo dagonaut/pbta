@@ -11,7 +11,8 @@
                 templateUrl: "./directives/dir.hold.html",
                 scope: {
                     holdObj: "<",
-                    onDelete: "&"                            
+                    onDelete: "&",
+                    mc: "="                            
                 },
                 link: link
             };            

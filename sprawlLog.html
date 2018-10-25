@@ -17,10 +17,10 @@
             </div>
         </div>
         <div class="col-md-4">
-            <a href class="glyphicon glyphicon-plus pull-left menu-toggle" ng-click="vm.addHold();"></a>
+            <a href class="glyphicon glyphicon-plus pull-left menu-toggle" ng-click="vm.addHold();" ng-if="vm.isMC"></a>
             <h4>Hold and Shit</h4>
             <div ng-repeat="hold in vm.holds">
-                <hold hold-obj="hold" on-delete="vm.getHolds();"></hold>
+                <hold hold-obj="hold" on-delete="vm.getHolds();" mc="vm.isMC"></hold>
             </div>
         </div>
     </div>
