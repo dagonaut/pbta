@@ -1,19 +1,19 @@
 
 <div class="container-fluid">          
     <uib-tabset active="active">
-        <uib-tab index="vm.tabs.charactersheet.index" heading="{{::vm.tabs.charactersheet.heading}}">
+        <uib-tab index="vm.tabs.charactersheet.index" heading="{{::vm.tabs.charactersheet.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="charactersheet"></div>
         </uib-tab>
-        <uib-tab index="vm.tabs.reference.index" heading="{{::vm.tabs.reference.heading}}">
+        <uib-tab index="vm.tabs.reference.index" heading="{{::vm.tabs.reference.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="reference"></div>
         </uib-tab>
-        <uib-tab index="vm.tabs.threats.index" heading="{{::vm.tabs.threats.heading}}">
+        <uib-tab index="vm.tabs.threats.index" heading="{{::vm.tabs.threats.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="threats"></div>
         </uib-tab>
-        <uib-tab index="vm.tabs.log.index" heading="{{::vm.tabs.log.heading}}">
+        <uib-tab index="vm.tabs.log.index" heading="{{::vm.tabs.log.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="log"></div>
         </uib-tab>
-        <uib-tab index="vm.tabs.mc.index" heading="{{::vm.tabs.mc.heading}}" ng-if="vm.isMC">
+        <uib-tab index="vm.tabs.mc.index" heading="{{::vm.tabs.mc.heading}}" ng-if="vm.isMC" ng-click="vm.onTabChange()">
             <div ui-view="mc"></div>
         </uib-tab>
     </uib-tabset>

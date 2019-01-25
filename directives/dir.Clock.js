@@ -18,7 +18,7 @@
                 link: link
             };            
             function link($scope, element, attr){
-                //let vm = this;
+                //let vm = this;                 
                 $scope.name = $scope.clockObj.name;
                 $scope.position = $scope.clockObj.position;
                 $scope.type = $scope.clockObj.type;
@@ -32,6 +32,12 @@
                 $scope.toggleEdit = toggleEdit;
                 $scope.edit = false;
                 
+                // Watches
+                $scope.$on('clock-update', function(evt, clocks){
+                    let updatedClock = clocks.find(object => object.id === $scope.clockObj.id);
+                    markClock(updatedClock.position);
+                }, true);
+
                 init();
 
                 function init(){
@@ -52,20 +58,16 @@
                 }
 
                 function saveClock(){
-                    console.log("trying to update", $scope.clockObj);                    
                     ClockService.Update($scope.clockObj).then(function(data){
-                        console.log("updated"); 
                         $scope.edit = false;
-                        $scope.onSave();                 
+                        $scope.onDelete();                 
                     });
                 }
 
                 function deleteClock(clockId){
                     ClockService.Delete(clockId).then(function(data){
-                        console.log("Deleted? " + clockId);
                         $scope.onDelete();
-                    });
-                    
+                    });                    
                 }     
 
                 function clearClock(){

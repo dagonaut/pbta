@@ -69,7 +69,7 @@
             vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save';
             vm.userId = userId;
             vm.dudes = [];
-            vm.holds = getHolds();
+            vm.holds = [];
             vm.mcDudes = [{}];
             vm.visibility = { advancement: true, cyberware: 'class' }
             vm.isMC = userId === 2;
@@ -106,13 +106,14 @@
             vm.loadMCDude = loadMCDude;
             vm.getHolds = getHolds;
             vm.addHold = addHold;
+            vm.onTabChange = onTabChange;
 
             // Scope Events
             vm.setIntel = setIntel;
             vm.setGear = setGear;
 
             // Reference Sheet methods
-            vm.clocks = getClocksByUserId(2);
+            vm.clocks = [];
             vm.createClock = createClock;
             vm.deleteClock = deleteClock;
             vm.getClassMoves = getClassMoves;
@@ -128,7 +129,16 @@
             
             function init(){
                 getDudes();
+                getHolds();
+                getClocksByUserId(2);
             }
+
+            //#region Tabs
+            function onTabChange(){
+                getHolds();
+                getClocksByUserId(2);
+            }
+            //#endregion
 
             //#region Dude / Character load/save/etc
             function saveCharacter(){
@@ -240,7 +250,7 @@
             function getHolds(){
                 HoldService.GetAll().then(function(data){
                     vm.holds = data;
-                    console.log(vm.holds);
+                    $scope.$broadcast('hold-update', vm.holds);
                 });
             }
             function addHold(){
@@ -287,7 +297,8 @@
             function getClocksByUserId(id){
                 ClockService.GetByUserId(2).then(function(data){
                     vm.clocks = data;
-                    console.log('getting clocks');
+                    $scope.$broadcast('clock-update', vm.clocks);
+
                 });
             }
 
@@ -449,7 +460,6 @@
                     url: "http://16watt.com/dev/pbta/api/api.php/tbl_Log"
                 }
                 $http.get(config.url).then(function(data){
-                    console.log(data);
                     vm.logs = data.data;
                 },
                 function(err){

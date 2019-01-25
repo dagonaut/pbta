@@ -15,33 +15,36 @@
                     mc: "="                            
                 },
                 link: link
-            };            
-            function link($scope, element, attr){
-                
+            };
+
+            function link($scope, element, attr){               
 
                 //methods
                 $scope.deleteHold = deleteHold; 
                 $scope.updateHold = updateHold; 
                 
+                //watches
+                $scope.$on('hold-update', function(evt, holds){
+                    let updatedHold = holds.find(object => object.id === $scope.hold.id);
+                    $scope.hold = updatedHold;
+                }, true);
+
                 init();
 
                 function init(){
                     $scope.hold = $scope.holdObj;
-                    console.log("HOLD!");
                 }
 
                 function deleteHold(id){
                     HoldService.Delete(id).then(function(data){
-                        console.log("Deleted? " + id);
                         $scope.onDelete();
                     });                    
                 }
                 
                 function updateHold(){
-                    console.log($scope.hold);
                     HoldService.Update($scope.hold).then(function(data){
-                        console.log(data);
-                    });
+                        $scope.onDelete();
+                    });                    
                 }
             }
         }
