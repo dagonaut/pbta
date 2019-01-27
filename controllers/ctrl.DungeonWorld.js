@@ -7,9 +7,47 @@
 
     DungeonWorld.$inject = ['$rootScope', '$scope', '$http', '$q', '$state', '$stateParams', '$location', '$cookies', 'Auth'];
     function DungeonWorld($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, Auth) {
+        
+        
         //Private Properties
-        var api = 'http://16watt.com/dev/pbta/api/api.php/';
+        let vm = this;
+        let api = 'http://16watt.com/dev/pbta/api/api.php/';
+        
+        //Debug variables
+        window.bug = {
+            vm: vm,
+            scope: $scope,
+            rootScope: $rootScope
+        }
 
+        //Static
+        vm.attributes = {
+            "18": "+3",
+            "17": "+2",
+            "16": "+2",
+            "15": "+1",
+            "14": "+1",
+            "13": "+1",
+            "12": "0",
+            "11": "0",
+            "10": "0",
+            "9": "0",
+            "8": "-1",
+            "7": "-1",
+            "6": "-1",
+            "5": "-2",
+            "4": "-2",
+            "3": "-3",
+            "2": "-3",
+            "1": "-3"
+        };
+
+        //Scope Properties
+        vm.tabs = {
+            charactersheet: { index: 0, heading: 'Character Sheet'},
+            reference: { index: 1, heading: 'Reference'},
+            log: { index: 2, heading: 'Log'},
+        };
         $scope.user = {};
         $scope.characterData = {};
         $scope.attrModifiers = { "str": 0, "dex": 0, "con": 0, "int": 0, "wis": 0, "cha": 0 };

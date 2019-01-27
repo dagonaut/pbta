@@ -7,7 +7,7 @@
 
         ReferenceController.$inject = ['$rootScope','$scope','$http','$q','$sce'];
         function ReferenceController($rootScope, $scope, $http, $q, $sce){
-            //var vm = this;
+            let vm = this;
 
             //Private Properties
             var api = 'http://16watt.com/dev/pbta/api/api.php/';
@@ -54,7 +54,7 @@
             function getAllMoves(){
                 var config = {
                     method: 'GET',
-                    url: api + 'tbl_Moves/'
+                    url: api + 'tbl_Moves/gameid/1'
                 };
                 $http(config).then(
                     function(response){
@@ -65,7 +65,6 @@
                             }
                         }
                         hideAll();
-                        console.log($scope.allMoves);				
                     },
                     function(error){
                         console.log(error);
@@ -76,7 +75,7 @@
             function getAllTags(){
                 var config = {
                     method: 'GET',
-                    url:  api + 'tbl_Tags/'
+                    url:  api + 'tbl_Tags/gameid/1'
                 };
                 $http(config).then(
                     function(response){
@@ -85,7 +84,6 @@
                         for(var i = 0; i < $scope.allTags.length; i++){
                             $scope.allTags[i]["hide"] = true;
                         }
-                        console.log($scope.allTags);
                     },
                     function(error){
                         console.log(error);

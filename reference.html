@@ -79,34 +79,6 @@
 				</div>
 			</div>
 			<div class="col-lg-3">
-			</div>
-			<div class="col-lg-3">
-				<select>
-					<option value="1">Dungeon/Steam World</option>
-					<option value="3">Spirit of '77</option>
-				</select>
-				<h2>Name Generator</h2>
-				<button ng-click="getName('M');">Male</button>
-				<button ng-click="getName('F');">Female</button>
-				<span style="font-size:18px;">{{ firstName }} {{ surName }}</span>
-				<!-- Customs -->
-				<h2 style="color:blue;">Custom Monsters</h2>
-				<div ng-repeat="monster in allMonsters" ng-show="monster.createdby == '1'" style="display:none;">
-					<div>
-						<h2 class="move" ng-click="monster.hide = !monster.hide">{{monster.name}}</h2>
-						<div class="move-description" ng-hide="monster.hide">
-							<span>HP: {{monster.hp}}</span> <span>Armor: {{monster.armor}}</span><br />
-							<span>Attack: {{monster.attack}}</span> <span>{{monster.weapontags}}</span><br /> 
-							<span>Special Quality: {{monster.specialquality}}</span><br />
-							<p>{{monster.description}}</p>
-							<span>{{monster.instinct}}</span>
-							<div>{{monster.monstertags}}</div>
-							<div>{{monster.moves}}</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3">
 				<h2 style="color:blue;">Basic Moves</h2>
 				<div ng-repeat="basicMove in allMoves" ng-show="basicMove.type == 'Basic'">
 					<div>
@@ -131,6 +103,25 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="col-lg-3">
+				
+				<!-- Customs -->
+				<!-- <h2 style="color:blue;">Custom Monsters</h2>
+				<div ng-repeat="monster in allMonsters" ng-show="monster.createdby == '1'" style="display:none;">
+					<div>
+						<h2 class="move" ng-click="monster.hide = !monster.hide">{{monster.name}}</h2>
+						<div class="move-description" ng-hide="monster.hide">
+							<span>HP: {{monster.hp}}</span> <span>Armor: {{monster.armor}}</span><br />
+							<span>Attack: {{monster.attack}}</span> <span>{{monster.weapontags}}</span><br /> 
+							<span>Special Quality: {{monster.specialquality}}</span><br />
+							<p>{{monster.description}}</p>
+							<span>{{monster.instinct}}</span>
+							<div>{{monster.monstertags}}</div>
+							<div>{{monster.moves}}</div>
+						</div>
+					</div>
+				</div> -->
 				<h2 style="color:blue;">GM Moves</h2>
 				<div ng-repeat="gmMove in allMoves" ng-show="gmMove.type == 'GM'">
 					<div>
@@ -156,7 +147,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-4">
+				<h2>Name Generator</h2>
+				<button ng-click="getName('M');">Male</button>
+				<button ng-click="getName('F');">Female</button>
+				<span style="font-size:18px;">{{ firstName }} {{ surName }}</span>
+				
+				<h2>Hold</h2>
+				
+			</div>
+			<div class="col-lg-2">
 				<div ng-repeat="tag in allTags">
 					<div>
 						<h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>

@@ -31,7 +31,6 @@
                 } else if ($cookies.getObject('id')) {
                     Auth.setUser($cookies.getObject('id'));
                     Auth.AutoLogin($cookies.getObject('id'), function(response){
-                        console.log("LoginController: rootScope: " + $rootScope.userData);
                         vm.isLoggedIn = true;
                         vm.userData = $rootScope.userData;
                         //$location.path('/sprawl');
@@ -49,7 +48,6 @@
                         Auth.SetCredentials($scope.username, $scope.passwordHash, response.data);
                         vm.userData = response.data;
                         vm.isLoggedIn = true;
-                        //$scope.$apply();
                         $location.path('/sprawl');                        
                     } else {
                         $scope.error = response.message;

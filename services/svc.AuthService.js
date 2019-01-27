@@ -28,8 +28,7 @@
 				if (typeof userId !== 'undefined'){
 					//We have a cookie, let's log this sucka in
 					Auth.AutoLogin(userId, function(response){
-						console.log("Logging in " + $rootScope.userData.username + " from cookie");						
-					
+						//console.log("Logging in " + $rootScope.userData.username + " from cookie");
 					});										
 					return true;
 				} else {
