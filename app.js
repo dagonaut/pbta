@@ -48,7 +48,7 @@
 					},
 					'log@auth.dw': {
 						templateUrl: 'dwCharactersheet.html',
-						controller: 'DungeonWorld as vm'
+						controller: 'DungeonWorld2 as vm'
 					}
 				}
 			})		
