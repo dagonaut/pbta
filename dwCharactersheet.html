@@ -87,7 +87,8 @@
             </div>            
         </div>        
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
+        <!-- Moves -->
         <div class="row">
             <div class="col-md-12">
                 <strong>Starting Moves</strong>
@@ -105,7 +106,20 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        
+    <div class="col-md-2">
+        <!-- Gear -->
+        <div class="row">
+            <div class="col-md-12">                
+                {{vm.static.classes[vm.class].starting_gear}}                
+            </div>
+        </div>
+        <div class="row">
+            <div ng-repeat="choice in vm.static.classes[vm.class].gear_choices">
+                {{choice.label}}
+                <div ng-repeat="item in choice.list">
+                    {{item}}
+                </div>
+            </div>
+        </div>
     </div>
 </div>
