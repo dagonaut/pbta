@@ -13,8 +13,14 @@
     }
 </style>
 <div class="container-fluid">
+    <!-- VITALS: Name, Look, Class -->
     <div class="row">
         <div class="col-md-12">
+            <div class="vitals">
+                <label>Character Name:</label><input type="text" ng-model="vm.characterData.name" />
+                <label>Player Name:</label><input type="text" ng-model="vm.characterData.playername" />
+                <label>Look:</label><input type="text" ng-model="vm.characterData.look" />
+            </div>
             <div>
                 <select ng-model="vm.class" ng-change="vm.selectClass(vm.class)">
                     <option ng-repeat="class in vm.static.classes_list" value="{{class.key}}">{{class.name}}</option>
@@ -22,102 +28,117 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <!-- Stats -->
-        <div class="row stats">
-            <div class="col-md-12">
-                <div class="row stat">
-                    <div class="col-sm-6">
-                        <label>STR</label>
-                        <input type="number" ng-model="vm.characterData.str" />
-                        <span class="modifier">{{vm.attributes[vm.characterData.str]}}</span>
-                    </div>                  
-                    <div class="col-sm-6">
-                        <label>INT</label>
-                        <input type="number" ng-model="vm.characterData.int" />
-                        <span class="modifier">{{vm.attributes[vm.characterData.int]}}</span>
-                    </div>                    
-                </div>
-                <div class="row stat">
-                    <div class="col-sm-6">
-                        <label>DEX</label>
-                        <input type="number" ng-model="vm.characterData.dex" />
-                        <span class="modifier">{{vm.attributes[vm.characterData.dex]}}</span>
-                    </div>                  
-                    <div class="col-sm-6">
-                        <label>WIS</label>
-                        <input type="number" ng-model="vm.characterData.wis" />
-                        <span class="modifier">{{vm.attributes[vm.characterData.wis]}}</span>
-                    </div>                    
-                </div>
-                <div class="row stat">
-                    <div class="col-sm-6">
-                        <label>CON</label>
-                        <input type="number" ng-model="vm.characterData.con" />
-                        <span class="modifier">{{vm.attributes[vm.characterData.con]}}</span>
-                    </div>                  
-                    <div class="col-sm-6">
-                        <label>CHA</label>
-                        <input type="number" ng-model="vm.characterData.cha" />
-                        <span class="modifier">{{vm.attributes[vm.characterData.cha]}}</span>
-                    </div>                    
-                </div>
-                <div class="row stat">
-                    <div class="col-sm-6">
-                        <label>HP</label>
-                        <input type="number" ng-model="vm.characterData.hp" />
-                        <span class="modifier">({{vm.characterData.maxhp}})</span>
+    <div class="row">
+        <!-- STATS / RACE / ALIGNMENT-->
+        <div class="col-md-3">
+            <!-- Stats -->
+            <div class="row stats">
+                <div class="col-md-12">
+                    <div class="row stat">
+                        <div class="col-sm-6">
+                            <label>STR</label>
+                            <input type="number" ng-model="vm.characterData.str" />
+                            <span class="modifier">{{vm.attributes[vm.characterData.str]}}</span>
+                        </div>                  
+                        <div class="col-sm-6">
+                            <label>INT</label>
+                            <input type="number" ng-model="vm.characterData.int" />
+                            <span class="modifier">{{vm.attributes[vm.characterData.int]}}</span>
+                        </div>                    
                     </div>
-                    <div class="col-sm-6">
-                        <label>Armor</label>
-                        <input type="number" ng-model="vm.characterData.armor" />                        
+                    <div class="row stat">
+                        <div class="col-sm-6">
+                            <label>DEX</label>
+                            <input type="number" ng-model="vm.characterData.dex" />
+                            <span class="modifier">{{vm.attributes[vm.characterData.dex]}}</span>
+                        </div>                  
+                        <div class="col-sm-6">
+                            <label>WIS</label>
+                            <input type="number" ng-model="vm.characterData.wis" />
+                            <span class="modifier">{{vm.attributes[vm.characterData.wis]}}</span>
+                        </div>                    
                     </div>
-                </div>
-                <div class="row stat">
-                    <div class="col-sm-6">
-                        <label>XP</label>
-                        <input type="number" ng-model="vm.characterData.xp" />
-                        <span class="modifier">({{vm.characterData.nextLevel}})</span>
+                    <div class="row stat">
+                        <div class="col-sm-6">
+                            <label>CON</label>
+                            <input type="number" ng-model="vm.characterData.con" />
+                            <span class="modifier">{{vm.attributes[vm.characterData.con]}}</span>
+                        </div>                  
+                        <div class="col-sm-6">
+                            <label>CHA</label>
+                            <input type="number" ng-model="vm.characterData.cha" />
+                            <span class="modifier">{{vm.attributes[vm.characterData.cha]}}</span>
+                        </div>                    
                     </div>
-                    <div class="col-sm-6">
-                        <label>???</label>
-                        <input type="number" ng-model="vm.characterData.armor" />                        
+                    <div class="row stat">
+                        <div class="col-sm-6">
+                            <label>HP</label>
+                            <input type="number" ng-model="vm.characterData.hp" />
+                            <span class="modifier">({{vm.characterData.maxhp}})</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Armor</label>
+                            <input type="number" ng-model="vm.characterData.armor" />                        
+                        </div>
                     </div>
+                    <div class="row stat">
+                        <div class="col-sm-6">
+                            <label>XP</label>
+                            <input type="number" ng-model="vm.characterData.xp" />
+                            <span class="modifier">({{vm.characterData.nextLevel}})</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>???</label>
+                            <input type="number" ng-model="vm.characterData.armor" />                        
+                        </div>
+                    </div>
+                </div>            
+            </div>
+            <!-- Race -->
+            <div class="row race">
+                <div ng-repeat="race in vm.races">
+                    {{race.name}}: {{race.description}}
                 </div>
-            </div>            
-        </div>        
-    </div>
-    <div class="col-md-2">
-        <!-- Moves -->
-        <div class="row">
-            <div class="col-md-12">
-                <strong>Starting Moves</strong>
-                <div class="row" ng-repeat="starting_move in vm.static.classes[vm.class].starting_moves">
-                    {{starting_move.name}}
-                </div>
-                <strong>Advanced Moves</strong>
-                <div class="row" ng-repeat="advanced1_move in vm.static.classes[vm.class].advanced_moves_1">
-                    {{advanced1_move.name}}
-                </div>
-                <strong>Expert Moves (lev 6+)</strong>
-                <div class="row" ng-repeat="advanced2_move in vm.static.classes[vm.class].advanced_moves_2">
-                    {{advanced2_move.name}}
+            </div>
+            <!-- Alignment -->
+            <div class="row alignment">
+                <div ng-repeat="alignment in vm.alignments">
+                    {{alignment.name}}: {{alignment.description}}
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-2">
-        <!-- Gear -->
-        <div class="row">
-            <div class="col-md-12">                
-                {{vm.static.classes[vm.class].starting_gear}}                
+        <div class="col-md-2">
+            <!-- Moves -->
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>Starting Moves</strong>
+                    <div class="row" ng-repeat="starting_move in vm.static.classes[vm.class].starting_moves">
+                        {{starting_move.name}}
+                    </div>
+                    <strong>Advanced Moves</strong>
+                    <div class="row" ng-repeat="advanced1_move in vm.static.classes[vm.class].advanced_moves_1">
+                        {{advanced1_move.name}}
+                    </div>
+                    <strong>Expert Moves (lev 6+)</strong>
+                    <div class="row" ng-repeat="advanced2_move in vm.static.classes[vm.class].advanced_moves_2">
+                        {{advanced2_move.name}}
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div ng-repeat="choice in vm.static.classes[vm.class].gear_choices">
-                {{choice.label}}
-                <div ng-repeat="item in choice.list">
-                    {{item}}
+        <div class="col-md-2">
+            <!-- Gear -->
+            <div class="row">
+                <div class="col-md-12">                
+                    {{vm.static.classes[vm.class].starting_gear}}                
+                </div>
+            </div>
+            <div class="row">
+                <div ng-repeat="choice in vm.static.classes[vm.class].gear_choices">
+                    {{choice.label}}
+                    <div ng-repeat="item in choice.list">
+                        {{item}}
+                    </div>
                 </div>
             </div>
         </div>
