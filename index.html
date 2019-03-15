@@ -19,6 +19,7 @@
         <script type="text/javascript" src="./services/svc.HoldService.js"></script>
         <script type="text/javascript" src="./services/svc.CyberwareService.js"></script>
         <script type="text/javascript" src="./services/svc.DirectiveService.js"></script>
+        <script type="text/javascript" src="./services/svc.DWCharacterService.js"></script>
         <script type="text/javascript" src="./services/svc.MoveService.js"></script>
         <script type="text/javascript" src="./services/svc.SprawlCharacterService.js"></script>
         <script type="text/javascript" src="./services/svc.TagService.js"></script>
@@ -33,25 +34,22 @@
         <script type="text/javascript" src="./controllers/ctrl.so77Controller.js"></script>
         <script type="text/javascript" src="./controllers/ctrl.Sprawl.js"></script>
         <link rel="stylesheet" type="text/css" href="inc/sprawl.css" />
-        
-        <!-- Removes the #! from the URL -->
-
-
-        
 </head>
 <body ng-controller="LoginController as vm">
-	<a ng-click="vm.logout()" style="cursor:pointer;">{{vm.isLoggedIn ? "Log Out" : "Log In"}}</a>
+    <a ng-click="vm.logout()" style="cursor:pointer;">{{vm.isLoggedIn ? "Log Out" : "Log In"}}</a>
+    <a class="pull-right" href="/">
+        <span ui-sref="auth.dw">Dungeon/Steam World</span> 
+        <span ui-sref="auth.so77" style="text-decoration:line-through;">Spirit of '77</span> 
+        <span ui-sref="auth.sprawl" style="color:#0472CE;">SPRAWL</span> Character Sheets
+    </a>
 
     <!-- MAIN CONTENT AND INJECTED VIEWS -->
     <div>    
     
-        <ui-view>
-        </ui-view>
-            
+        <ui-view></ui-view>            
         <!-- angular templating -->
         <!-- this is where content will be injected -->
 
     </div>
-
 </body>
 </html>

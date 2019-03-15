@@ -5,11 +5,14 @@
         .module('pbta_resources')
         .controller('DungeonWorld2', DungeonWorld2);
 
-    DungeonWorld2.$inject = ['$rootScope', '$scope', '$http', '$q', '$state', '$stateParams', '$location', '$cookies', 'Auth'];
-    function DungeonWorld2($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, Auth) {
+    DungeonWorld2.$inject = ['$rootScope', '$scope', '$http', 'DWCharacterService'];
+    function DungeonWorld2($rootScope, $scope, $http, DWCharacterService) {
         //Private Properties
         let vm = this;
         let api = 'http://16watt.com/dev/pbta/api/api.php/';
+        let staticFile = "./static/dw-basic.json";    
+        let userId = 2 //$rootScope.userData.id;
+        let gameId = 1 //??? 
         
         //Debug variables
         window.bug2 = {
@@ -18,35 +21,14 @@
             rootScope: $rootScope
         }
 
-        //Static
-        vm.attributes = {
-            "18": "+3",
-            "17": "+2",
-            "16": "+2",
-            "15": "+1",
-            "14": "+1",
-            "13": "+1",
-            "12": "0",
-            "11": "0",
-            "10": "0",
-            "9": "0",
-            "8": "-1",
-            "7": "-1",
-            "6": "-1",
-            "5": "-2",
-            "4": "-2",
-            "3": "-3",
-            "2": "-3",
-            "1": "-3"
-        };
+        //Static        
         vm.static = {};
 
         //Properties        
-        vm.user = {};
         vm.class = {};
-        vm.allMoves = []; //getCharacterMoves();
-        $scope.gear = [{ id: 0 }, { id: 1 }];
-        vm.movesOpen = false;
+        vm.characterData = {};
+        vm.characters = [];
+        vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save'; 
 
         /*Models
         Static Data:
@@ -67,6 +49,8 @@
 
         //Events
         vm.selectClass = selectClass;
+        vm.saveCharacter = saveCharacter;
+        vm.loadCharacter = loadCharacter;
 
         init();
 
@@ -82,18 +66,17 @@
             // } else {
             //     $scope.characterData = getCharacterData($rootScope.userData.id);
             // }
-            getStaticCharacterData();            
+            getStaticCharacterData();
+            getCharacters();            
         }
 
-        function getStaticCharacterData(){
-            var file = "./static/dw-basic.json";                
-                $.get(file).then(staticSuccess, staticFailure);
+        function getStaticCharacterData(){                        
+                $.get(staticFile).then(staticSuccess, staticFailure);
                 function staticSuccess(response){
-                    $scope.$apply(function(){vm.static = response});
+                    vm.static = response;
                 }
                 function staticFailure(error, b, c){
-                    console.log("Fail", error, b, c);
-                    
+                    console.log("Fail", error, b, c);                    
                 }
         }
 
@@ -101,26 +84,49 @@
             vm.class = selectedClass;
         }
 
+        function getCharacters(){
+            // Grabs the list of characters from the DB
+            DWCharacterService.GetByGameId(gameId).then(function(data){
+                if(Array.isArray(data)){
+                    vm.characters = data;
+                } else {
+                    vm.characters.push(data);
+                }
+            });
+        }
+
         function saveCharacter(){
-            // Update the model            
-            vm.characterData.class = vm.class;                
+            // Update the model
+            vm.characterData.gameId = gameId;            
+            vm.characterData.class = vm.class;              
             vm.characterData.createdby = userId;
-            vm.characterData.moves = vm.characterData.moves.join(',');
+            //vm.characterData.moves = vm.characterData.moves.join(',');
             
             // New / Create
             if(typeof vm.characterData.id === 'undefined'){
-                SprawlCharacterService.Create(vm.characterData).then(function(data){
-                    loadDude('{"id":' + data + '}');
+                // Create returns id of new character row
+                DWCharacterService.Create(vm.characterData).then(function(data){
+                    loadCharacter(data);
                 });
             } else {
                 // Update
-                SprawlCharacterService.Update(vm.characterData).then(function(data){                        
+                DWCharacterService.Update(vm.characterData).then(function(data){                        
                     console.log(data);
                     // reload the dude to reset arrays/objects
-                    loadDude('{"id":' + vm.characterData.id + '}');
+                    //loadDude('{"id":' + vm.characterData.id + '}');
                 });
             }
-        }        
+        }
+        
+        function loadCharacter(characterId){            
+            // When loading a dude, make sure we get the latest from the DB.
+            DWCharacterService.GetById(characterId).then(function(data){
+                vm.characterData = data;
+                vm.class = vm.characterData.class;
+                //vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]");
+                vm.create = "Save";
+            });
+        }
 
         function getCharacterData(userId) {
             $http.get(api + 'tbl_Characters/createdby/' + userId).then(
