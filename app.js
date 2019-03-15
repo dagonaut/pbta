@@ -39,16 +39,16 @@
 						controller: 'DungeonWorld as vm'
 					},			
 					'charactersheet@auth.dw': {
-						templateUrl: 'charactersheet.html',
-						controller: 'DungeonWorld as vm'
+						templateUrl: 'dwCharactersheet.html',
+						controller: 'DungeonWorld2 as vm'
 					},
 					'reference@auth.dw': {
 						templateUrl: 'reference.html',
 						controller: 'ReferenceController as vm'
 					},
 					'log@auth.dw': {
-						templateUrl: 'dwCharactersheet.html',
-						controller: 'DungeonWorld2 as vm'
+						templateUrl: 'charactersheet.html',
+						controller: 'DungeonWorld as vm'
 					}
 				}
 			})		

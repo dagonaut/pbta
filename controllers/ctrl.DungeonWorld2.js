@@ -39,7 +39,7 @@
             "2": "-3",
             "1": "-3"
         };
-        vm.staticData = {};
+        vm.static = {};
 
         //Properties        
         vm.user = {};
@@ -82,17 +82,18 @@
             // } else {
             //     $scope.characterData = getCharacterData($rootScope.userData.id);
             // }
-            GetStaticCharacterData();            
+            getStaticCharacterData();            
         }
 
-        function GetStaticCharacterData(){
+        function getStaticCharacterData(){
             var file = "./static/dw-basic.json";                
                 $.get(file).then(staticSuccess, staticFailure);
                 function staticSuccess(response){
-                    $scope.$apply(function(){vm.staticData = response});
+                    $scope.$apply(function(){vm.static = response});
                 }
-                function staticFailure(error){
-                    console.log(error);
+                function staticFailure(error, b, c){
+                    console.log("Fail", error, b, c);
+                    
                 }
         }
 
@@ -100,67 +101,26 @@
             vm.class = selectedClass;
         }
 
-        $scope.addNewChoice = function () {
-            var newItemNo = $scope.gear.length;
-            $scope.gear.push({ 'id': newItemNo });
-        };
-
-        $scope.removeChoice = function (id) {
-
-            $scope.gear.splice(id, 1);
-        };
-
-        $scope.updateCharacter = function (characterData) {
-            //Grab the Gear array (maybe just put it in the data object below)
-            characterData.gear = JSON.stringify($scope.gear);
-            characterData.moves = $scope.characterData.moves.toString();
-            var method = 'POST';
-            //var key = 'id';
-            var url = api + 'tbl_Characters/';
-            if (characterData.id) {
-                method = 'PUT';
-                url = url + characterData.id;
+        function saveCharacter(){
+            // Update the model            
+            vm.characterData.class = vm.class;                
+            vm.characterData.createdby = userId;
+            vm.characterData.moves = vm.characterData.moves.join(',');
+            
+            // New / Create
+            if(typeof vm.characterData.id === 'undefined'){
+                SprawlCharacterService.Create(vm.characterData).then(function(data){
+                    loadDude('{"id":' + data + '}');
+                });
+            } else {
+                // Update
+                SprawlCharacterService.Update(vm.characterData).then(function(data){                        
+                    console.log(data);
+                    // reload the dude to reset arrays/objects
+                    loadDude('{"id":' + vm.characterData.id + '}');
+                });
             }
-            var config = {
-                method: method,
-                url: url,
-                data: {
-                    id: characterData.id,
-                    gameid: characterData.gameid,
-                    playername: characterData.playername,
-                    name: characterData.name,
-                    class: characterData.class,
-                    level: characterData.level,
-                    xp: characterData.xp,
-                    look: characterData.look,
-                    alignment: characterData.alignment,
-                    damage: characterData.damage,
-                    hp: characterData.hp,
-                    basehp: characterData.basehp,
-                    armor: characterData.armor,
-                    str: characterData.str,
-                    dex: characterData.dex,
-                    con: characterData.con,
-                    int: characterData.int,
-                    wis: characterData.wis,
-                    cha: characterData.cha,
-                    bonds: characterData.bonds,
-                    moves: characterData.moves,
-                    gear: characterData.gear,
-                    notes: characterData.notes,
-                    createdby: $rootScope.userData.id
-                }
-            };
-            $http(config).then(characterSuccess, characterFailure);
-
-            function characterSuccess(response) {
-                console.log(response);
-            }
-            function characterFailure(error) {
-                console.log(error);
-            }
-
-        };
+        }        
 
         function getCharacterData(userId) {
             $http.get(api + 'tbl_Characters/createdby/' + userId).then(
