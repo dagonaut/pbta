@@ -89,7 +89,7 @@
             var file = "./static/dw-basic.json";                
                 $.get(file).then(staticSuccess, staticFailure);
                 function staticSuccess(response){
-                    $scope.$apply(function(){vm.static = response});
+                    $scope.$apply(function(){vm.staticData = response});
                 }
                 function staticFailure(error){
                     console.log(error);
