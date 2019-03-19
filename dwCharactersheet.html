@@ -17,13 +17,13 @@
     <div class="row">
         <div class="col-md-5">
             <!-- Dudes -->
-            <!-- <div class="">
-                <select ng-model="vm.currentDude">                        
-                    <option ng-repeat="dude in vm.dudes" ng-if="vm.isMC ? 0 == 0 : dude.createdby === vm.userId" value="{{dude}}" ng-selected="dude.id === vm.characterData.id">{{dude.name}} -- {{dude.class}}</option>
+            <div class="">
+                <select ng-model="vm.currentCharacter">                        
+                    <option ng-repeat="character in vm.characters" value="{{character}}" ng-selected="character.id === vm.characterData.id">{{character.name}} -- {{character.class}}</option>
                 </select>
-                <div class="btn btn-sm btn-sprawl" ng-click="vm.loadDude(vm.currentDude);">Load Dude</div>
+                <div class="btn btn-sm btn-sprawl" ng-click="vm.loadCharacter(vm.currentCharacter);">Load Dude</div>
                 <div class="btn btn-sm btn-sprawl" ng-confirm-click="You sure? All progress will be lost." confirmed-click="vm.clearDude();">Reset</div>
-            </div> -->
+            </div>
             <!-- Name / Look -->
             <div class="name-look_container row">
                 <div class="col-sm-12">
@@ -139,7 +139,7 @@
                         type="checkbox" 
                         value="{{advanced1_move.key}}" 
                         ng-checked="vm.characterData.moves.indexOf(advanced1_move.key) > -1"                            
-                        ng-click="vm.updateMoves.advanced1_move.key)" />
+                        ng-click="vm.updateMoves(advanced1_move.key)" />
                         <strong>{{advanced1_move.name}}</strong> <span data-ng-bind-html="advanced1_move.description"></span>
                     </div>
                     <strong>Expert Moves (lev 6+)</strong>

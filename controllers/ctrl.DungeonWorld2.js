@@ -26,8 +26,9 @@
 
         //Properties        
         vm.class = {};
-        vm.characterData = {};
+        vm.characterData = { moves: [""]};
         vm.characters = [];
+        vm.currentCharacter = {};
         vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save'; 
 
         /*Models
@@ -51,6 +52,7 @@
         vm.selectClass = selectClass;
         vm.saveCharacter = saveCharacter;
         vm.loadCharacter = loadCharacter;
+        vm.updateMoves = updateMoves;
 
         init();
 
@@ -100,7 +102,10 @@
             vm.characterData.gameId = gameId;            
             vm.characterData.class = vm.class;              
             vm.characterData.createdby = userId;
-            //vm.characterData.moves = vm.characterData.moves.join(',');
+            vm.characterData.moves = vm.characterData.moves.join(',');
+            // Remove the empty ("") from the model
+            let i = vm.characterData.move.indexOf("");
+            if(i > -1){vm.characterData.moves.splice(i, 1);}
             
             // New / Create
             if(typeof vm.characterData.id === 'undefined'){
@@ -113,20 +118,32 @@
                 DWCharacterService.Update(vm.characterData).then(function(data){                        
                     console.log(data);
                     // reload the dude to reset arrays/objects
-                    //loadDude('{"id":' + vm.characterData.id + '}');
+                    loadCharacter(vm.characterData.id);
                 });
             }
         }
         
-        function loadCharacter(characterId){            
+        function loadCharacter(character){
+            let d = JSON.parse(character);
             // When loading a dude, make sure we get the latest from the DB.
-            DWCharacterService.GetById(characterId).then(function(data){
+            DWCharacterService.GetById(d.id).then(function(data){
                 vm.characterData = data;
                 vm.class = vm.characterData.class;
-                //vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]");
+                vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]");
                 vm.create = "Save";
             });
         }
+
+        function updateMoves(moveKey){
+            let index = vm.characterData.moves.indexOf(moveKey);
+            if( index > -1){
+                vm.characterData.moves.splice(index, 1);
+            } else {
+                if(vm.characterData.moves = ""){ vm.characterData.moves = [""];}
+                vm.characterData.moves.push(moveKey);
+            }
+        }
+
 
         function getCharacterData(userId) {
             $http.get(api + 'tbl_Characters/createdby/' + userId).then(
