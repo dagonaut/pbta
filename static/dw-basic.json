@@ -7235,29 +7235,35 @@
       "alignments": {
         "evil": {
           "description": "Sacrifice an unwilling victim to the flames.",
-          "name": "Evil"
+          "name": "Evil",
+          "key": "evil"
         },
         "chaotic": {
           "description": "Spread a dangerous new idea.",
-          "name": "Chaotic"
+          "name": "Chaotic",
+          "key": "chaotic"
         },
         "neutral": {
           "description": "Exchange a sacrifice, freely given, for a service rendered.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         }
       },
       "alignments_list": [
         {
           "description": "Sacrifice an unwilling victim to the flames.",
-          "name": "Evil"
+          "name": "Evil",
+          "key": "evil"
         },
         {
           "description": "Spread a dangerous new idea.",
-          "name": "Chaotic"
+          "name": "Chaotic",
+          "key": "chaotic"
         },
         {
           "description": "Exchange a sacrifice, freely given, for a service rendered.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         }
       ],
       "race_moves": [

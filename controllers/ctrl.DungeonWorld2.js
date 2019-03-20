@@ -26,9 +26,10 @@
 
         //Properties        
         vm.class = {};
-        vm.characterData = { moves: [""], level: 1};
+        vm.characterData = { moves: ["taco"], level: 1};
         vm.characters = [];
         vm.currentCharacter = {};
+        vm.visibility = { moves: true, races: true, alignments: true, gear: true }
         vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save'; 
 
         /*Models
@@ -102,10 +103,7 @@
             vm.characterData.gameId = gameId;            
             vm.characterData.class = vm.class;              
             vm.characterData.createdby = userId;
-            vm.characterData.moves = vm.characterData.moves.join(',');
-            // Remove the empty ("") from the model
-            let i = vm.characterData.move.indexOf("");
-            if(i > -1){vm.characterData.moves.splice(i, 1);}
+            vm.characterData.moves = vm.characterData.moves.join(',');            
             
             // New / Create
             if(typeof vm.characterData.id === 'undefined'){
@@ -118,7 +116,7 @@
                 DWCharacterService.Update(vm.characterData).then(function(data){                        
                     console.log(data);
                     // reload the dude to reset arrays/objects
-                    loadCharacter(vm.characterData.id);
+                    loadCharacter(vm.characterData);
                 });
             }
         }
@@ -129,7 +127,7 @@
             DWCharacterService.GetById(d.id).then(function(data){
                 vm.characterData = data;
                 vm.class = vm.characterData.class;
-                vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]");
+                vm.characterData.moves = vm.characterData.moves.split(",");
                 vm.create = "Save";
             });
         }
@@ -139,7 +137,6 @@
             if( index > -1){
                 vm.characterData.moves.splice(index, 1);
             } else {
-                if(vm.characterData.moves = ""){ vm.characterData.moves = [""];}
                 vm.characterData.moves.push(moveKey);
             }
         }

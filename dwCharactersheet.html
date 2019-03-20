@@ -1,39 +1,79 @@
 <style>
-    .stats{}
-    .stat label{width:33%;font-size:24px;}
-    .stat input{width:50px;height:50px;font-size:24px;border:1px black solid;}
-    .stat .modifier{display:inline-block;font-size:24px;}
-    .stat input.link{width:250px;height:20px;font-size:14px;border:none;border-bottom:1px solid black;}
-    .stat .description{color:#aaaaaa;}
-    .stat .examples{font-size:11px;font-weight:bold;color:#666666;}
+    .section {
+        font-weight: bold;
+        font-size: 12px;
+    }
 
-    .stat-name{
-        font-size:24px;
-        font-weight:bold;
+    .stats {}
+
+    .stat label {
+        width: 33%;
+        font-size: 24px;
+    }
+
+    .stat input {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        border: 1px black solid;
+    }
+
+    .stat .modifier {
+        display: inline-block;
+        font-size: 24px;
+    }
+
+    .stat input.link {
+        width: 250px;
+        height: 20px;
+        font-size: 14px;
+        border: none;
+        border-bottom: 1px solid black;
+    }
+
+    .stat .description {
+        color: #aaaaaa;
+    }
+
+    .stat .examples {
+        font-size: 11px;
+        font-weight: bold;
+        color: #666666;
+    }
+
+    .stat-name {
+        font-size: 24px;
+        font-weight: bold;
     }
 </style>
 <div class="container-fluid">
     <!-- VITALS: Name, Look, Class -->
     <div class="row">
         <div class="col-md-5">
-            <!-- Dudes -->
+            <!-- Characters -->
             <div class="">
-                <select ng-model="vm.currentCharacter">                        
-                    <option ng-repeat="character in vm.characters" value="{{character}}" ng-selected="character.id === vm.characterData.id">{{character.name}} -- {{character.class}}</option>
+                <select ng-model="vm.currentCharacter">
+                    <option ng-repeat="character in vm.characters" value="{{character}}"
+                        ng-selected="character.id === vm.characterData.id">{{character.name}} -- {{character.class}}
+                    </option>
                 </select>
                 <div class="btn btn-sm btn-sprawl" ng-click="vm.loadCharacter(vm.currentCharacter);">Load Dude</div>
-                <div class="btn btn-sm btn-sprawl" ng-confirm-click="You sure? All progress will be lost." confirmed-click="vm.clearDude();">Reset</div>
+                <div class="btn btn-sm btn-sprawl" ng-confirm-click="You sure? All progress will be lost."
+                    confirmed-click="vm.clearDude();">Reset</div>
             </div>
             <!-- Name / Look -->
             <div class="name-look_container row">
                 <div class="col-sm-12">
                     <label>Name: </label><input class="name" type="text" ng-model="vm.characterData.name" />
                     <label>Look: </label><input class="look" type="text" ng-model="vm.characterData.look" />
-                    <a id="popover-content-directives" style="display:inline-block;" tabindex="0" class="btn btn-sm btn-info" role="button" data-toggle="popover"  
-                    title="Name & Look Suggestions:" data-html="true" data-content="{{vm.nameLookHTML}}"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>                    
+                    <a id="popover-content-directives" style="display:inline-block;" tabindex="0"
+                        class="btn btn-sm btn-info" role="button" data-toggle="popover" title="Name & Look Suggestions:"
+                        data-html="true" data-content="{{vm.nameLookHTML}}"><span
+                            class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
                     <select ng-model="vm.class" ng-change="vm.selectClass(vm.class)">
-                        <option ng-repeat="class in vm.static.classes_list" value="{{class.key}}">{{class.name}}</option>
-                    </select>                                           
+                        <option ng-repeat="class in vm.static.classes_list" value="{{class.key}}">{{class.name}}
+                        </option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -41,12 +81,12 @@
             <div class="btn btn-lg btn-primary" ng-click="vm.saveCharacter();">{{vm.create}}</div>
             <a class="btn btn-lg btn-danger" ng-confirm-click="You sure?" confirmed-click="vm.deleteDude();">Delete</a>
         </div>
-    </div>    
+    </div>
     <div class="row">
         <!-- STATS / RACE / ALIGNMENT-->
         <div class="col-md-4">
             <div>
-                
+
             </div>
             <!-- Stats -->
             <div class="row stats">
@@ -58,37 +98,37 @@
                         <div class="col-sm-6">
                             <label>STR</label>
                             <input type="number" ng-model="vm.characterData.str" />
-                            <span class="modifier">{{vm.attributes[vm.characterData.str]}}</span>
-                        </div>                  
+                            <span class="modifier">{{vm.static.attribute_modifiers[vm.characterData.str]}}</span>
+                        </div>
                         <div class="col-sm-6">
                             <label>INT</label>
                             <input type="number" ng-model="vm.characterData.int" />
-                            <span class="modifier">{{vm.attributes[vm.characterData.int]}}</span>
-                        </div>                    
+                            <span class="modifier">{{vm.static.attribute_modifiers[vm.characterData.int]}}</span>
+                        </div>
                     </div>
                     <div class="row stat">
                         <div class="col-sm-6">
                             <label>DEX</label>
                             <input type="number" ng-model="vm.characterData.dex" />
-                            <span class="modifier">{{vm.attributes[vm.characterData.dex]}}</span>
-                        </div>                  
+                            <span class="modifier">{{vm.static.attribute_modifiers[vm.characterData.dex]}}</span>
+                        </div>
                         <div class="col-sm-6">
                             <label>WIS</label>
                             <input type="number" ng-model="vm.characterData.wis" />
-                            <span class="modifier">{{vm.attributes[vm.characterData.wis]}}</span>
-                        </div>                    
+                            <span class="modifier">{{vm.static.attribute_modifiers[vm.characterData.wis]}}</span>
+                        </div>
                     </div>
                     <div class="row stat">
                         <div class="col-sm-6">
                             <label>CON</label>
                             <input type="number" ng-model="vm.characterData.con" />
-                            <span class="modifier">{{vm.attributes[vm.characterData.con]}}</span>
-                        </div>                  
+                            <span class="modifier">{{vm.static.attribute_modifiers[vm.characterData.con]}}</span>
+                        </div>
                         <div class="col-sm-6">
                             <label>CHA</label>
                             <input type="number" ng-model="vm.characterData.cha" />
-                            <span class="modifier">{{vm.attributes[vm.characterData.cha]}}</span>
-                        </div>                    
+                            <span class="modifier">{{vm.static.attribute_modifiers[vm.characterData.cha]}}</span>
+                        </div>
                     </div>
                     <div class="row stat">
                         <div class="col-sm-6">
@@ -98,72 +138,48 @@
                         </div>
                         <div class="col-sm-6">
                             <label>Armor</label>
-                            <input type="number" ng-model="vm.characterData.armor" />                        
+                            <input type="number" ng-model="vm.characterData.armor" />
                         </div>
                     </div>
                     <div class="row stat">
                         <div class="col-sm-6">
                             <label>XP</label>
                             <input type="number" ng-model="vm.characterData.xp" />
-                            <span class="modifier">({{vm.characterData.nextLevel}})</span>
+                            <span class="modifier">({{vm.characterData.level + 7}})</span>
                         </div>
                         <div class="col-sm-6">
                             <label>Level</label>
-                            <input type="number" ng-model="vm.characterData.level" />                        
+                            <input type="number" ng-model="vm.characterData.level" />
                         </div>
                     </div>
-                </div>            
+                </div>
             </div>
             <!-- Race -->
             <div class="row race">
+                <div><strong>Race:</strong></div>
                 <div ng-repeat="race in vm.static.classes[vm.class].race_moves">
+                    <input id="race_move_{{race.key}}" type="checkbox" value="{{race.key}}"
+                        ng-checked="vm.characterData.moves.indexOf(race.key) > -1"
+                        ng-click="vm.updateMoves(race.key)" />
                     <span class="strong">{{race.name}}:</span> <span data-ng-bind-html="race.description"></span>
                 </div>
             </div>
             <!-- Alignment -->
             <div class="row alignment">
+                <div><strong>Alignment:</strong></div>
                 <div ng-repeat="alignment in vm.static.classes[vm.class].alignments_list">
-                    <span class="strong">{{alignment.name}}:</span> <span data-ng-bind-html="alignment.description"></span>
+                    <input id="alignment_move_{{alignment.key}}" type="checkbox" value="{{alignment.key}}"
+                        ng-checked="vm.characterData.moves.indexOf(alignment.key) > -1"
+                        ng-click="vm.updateMoves(alignment.key)" />
+                    <span class="strong">{{alignment.name}}:</span> <span
+                        data-ng-bind-html="alignment.description"></span>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <!-- Moves -->
-            <div class="row">
-                <div class="col-md-12">
-                    <strong>Starting Moves</strong>
-                    <div class="row" ng-repeat="starting_move in vm.static.classes[vm.class].starting_moves">
-                        <span class="strong">{{starting_move.name}}:</span> <span data-ng-bind-html="starting_move.description"></span>
-                    </div>
-                    <strong>Advanced Moves</strong>
-                    <div class="row" ng-repeat="advanced1_move in vm.static.classes[vm.class].advanced_moves_1">
-                        <input
-                        id="advanced1_move_{{advanced1_move.key}}"                             
-                        type="checkbox" 
-                        value="{{advanced1_move.key}}" 
-                        ng-checked="vm.characterData.moves.indexOf(advanced1_move.key) > -1"                            
-                        ng-click="vm.updateMoves(advanced1_move.key)" />
-                        <strong>{{advanced1_move.name}}</strong> <span data-ng-bind-html="advanced1_move.description"></span>
-                    </div>
-                    <strong>Expert Moves (lev 6+)</strong>
-                    <div class="row" ng-repeat="advanced2_move in vm.static.classes[vm.class].advanced_moves_2">
-                        <input
-                        id="advanced2_move_{{advanced2_move.key}}"                             
-                        type="checkbox" 
-                        value="{{advanced2_move.key}}" 
-                        ng-checked="vm.characterData.moves.indexOf(advanced2_move.key) > -1"                            
-                        ng-click="vm.updateMoves(advanced2_move.key)" />
-                        <span class="strong">{{advanced2_move.name}}</span> <span data-ng-bind-html="advanced2_move.description"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
             <!-- Gear -->
             <div class="row">
-                <div class="col-md-12"> 
-                    <strong>Gear:</strong><br />               
-                    {{vm.static.classes[vm.class].starting_gear}}                
+                <div class="col-md-12">
+                    <strong>Gear:</strong><br />
+                    {{vm.static.classes[vm.class].starting_gear}}
                 </div>
             </div>
             <div class="row">
@@ -173,7 +189,51 @@
                         {{item}}
                     </div>
                 </div>
+                <textarea type="textbox" class="gear" style="width:99%;height:300px;" ng-model="vm.characterData.gear"></textarea>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- Moves -->
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>Starting Moves</strong>
+                    <div class="row" ng-repeat="starting_move in vm.static.classes[vm.class].starting_moves">
+                        <span class="strong">{{starting_move.name}}:</span> <span
+                            data-ng-bind-html="starting_move.description"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <strong>Advanced Moves</strong>
+            <div class="row" ng-repeat="advanced1_move in vm.static.classes[vm.class].advanced_moves_1">
+                <input id="advanced1_move_{{advanced1_move.key}}" type="checkbox" value="{{advanced1_move.key}}"
+                    ng-checked="vm.characterData.moves.indexOf(advanced1_move.key) > -1"
+                    ng-click="vm.updateMoves(advanced1_move.key)" />
+                <strong>{{advanced1_move.name}}</strong> <span data-ng-bind-html="advanced1_move.description"></span>
+            </div>
+            <strong>Expert Moves (lev 6+)</strong>
+            <div class="row" ng-repeat="advanced2_move in vm.static.classes[vm.class].advanced_moves_2">
+                <input id="advanced2_move_{{advanced2_move.key}}" type="checkbox" value="{{advanced2_move.key}}"
+                    ng-checked="vm.characterData.moves.indexOf(advanced2_move.key) > -1"
+                    ng-click="vm.updateMoves(advanced2_move.key)" />
+                <span class="strong">{{advanced2_move.name}}</span> <span
+                    data-ng-bind-html="advanced2_move.description"></span>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="popover"]').each(function () {
+            $(this).popover({
+                html: true,
+                content: function () {
+                    var id = $(this).attr('id')
+                    return $('#popover-content-' + id).html();
+                }
+            });
+        });
+    });
+</script>
