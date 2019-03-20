@@ -44,13 +44,16 @@
     </div>    
     <div class="row">
         <!-- STATS / RACE / ALIGNMENT-->
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div>
                 
             </div>
             <!-- Stats -->
             <div class="row stats">
                 <div class="col-md-12">
+                    <div class="row base">
+                        <div class="base_stats">{{vm.static.base_stats}}</div>
+                    </div>
                     <div class="row stat">
                         <div class="col-sm-6">
                             <label>STR</label>
@@ -144,15 +147,22 @@
                     </div>
                     <strong>Expert Moves (lev 6+)</strong>
                     <div class="row" ng-repeat="advanced2_move in vm.static.classes[vm.class].advanced_moves_2">
+                        <input
+                        id="advanced2_move_{{advanced2_move.key}}"                             
+                        type="checkbox" 
+                        value="{{advanced2_move.key}}" 
+                        ng-checked="vm.characterData.moves.indexOf(advanced2_move.key) > -1"                            
+                        ng-click="vm.updateMoves(advanced2_move.key)" />
                         <span class="strong">{{advanced2_move.name}}</span> <span data-ng-bind-html="advanced2_move.description"></span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <!-- Gear -->
             <div class="row">
-                <div class="col-md-12">                
+                <div class="col-md-12"> 
+                    <strong>Gear:</strong><br />               
                     {{vm.static.classes[vm.class].starting_gear}}                
                 </div>
             </div>

@@ -26,7 +26,7 @@
 
         //Properties        
         vm.class = {};
-        vm.characterData = { moves: [""]};
+        vm.characterData = { moves: [""], level: 1};
         vm.characters = [];
         vm.currentCharacter = {};
         vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save'; 
