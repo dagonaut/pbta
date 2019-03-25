@@ -65,10 +65,14 @@
             <div class="name-look_container row">
                 <div class="col-sm-12">
                     <label>Name: </label><input class="name" type="text" ng-model="vm.characterData.name" />
+                    <a id="popover-content-directives" style="display:inline-block;" tabindex="0"
+                        class="btn btn-sm btn-info" role="button" data-toggle="popover" title="Name & Look Suggestions:"
+                        data-html="true" data-content="{{vm.static.classes[vm.class].htmlviews.names}}"><span
+                            class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
                     <label>Look: </label><input class="look" type="text" ng-model="vm.characterData.look" />
                     <a id="popover-content-directives" style="display:inline-block;" tabindex="0"
                         class="btn btn-sm btn-info" role="button" data-toggle="popover" title="Name & Look Suggestions:"
-                        data-html="true" data-content="{{vm.nameLookHTML}}"><span
+                        data-html="true" data-content="{{vm.static.classes[vm.class].htmlviews.looks}}"><span
                             class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
                     <select ng-model="vm.class" ng-change="vm.selectClass(vm.class)">
                         <option ng-repeat="class in vm.static.classes_list" value="{{class.key}}">{{class.name}}

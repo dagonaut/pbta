@@ -77,10 +77,42 @@
                 $.get(staticFile).then(staticSuccess, staticFailure);
                 function staticSuccess(response){
                     vm.static = response;
+                    buildHTMLviews();
                 }
                 function staticFailure(error, b, c){
                     console.log("Fail", error, b, c);                    
                 }
+        }
+
+        function buildHTMLviews(){
+            var i, j, nameHTML, looksHTML, gearHTML;            
+            var htmlviews = { names: "", looks: "", gear: ""};
+            for (i=0; i < vm.static.classes_list.length; i++){
+                nameHTML = "<div>";
+                looksHTML = "<div>";
+                if(vm.static.classes_list[i].key === 'immolator'){
+                    
+                } else {                    
+                    //Names:
+                    let races = Object.keys(vm.static.classes_list[i].names);
+                    races.forEach(function(e){
+                        nameHTML += e + ": ";
+                        vm.static.classes_list[i].names[e].forEach(function(f){
+                            nameHTML += f + ", ";
+                        });
+                    });
+                    //Looks: Eyes, Hair, Clothes, Body
+                    looksHTML += "<strong>Eyes:</strong> " + vm.static.classes_list[i].looks[0] + "<br />";
+                    looksHTML += "<strong>Hair:</strong> " + vm.static.classes_list[i].looks[1] + "<br />";
+                    looksHTML += "<strong>Clothes:</strong> " + vm.static.classes_list[i].looks[2] + "<br />";
+                    looksHTML += "<strong>Body:</strong> " + vm.static.classes_list[i].looks[3] + "<br />";
+                }
+                nameHTML += "Helen</div>"
+                looksHTML += "</div>";
+                htmlviews.looks = looksHTML;
+                htmlviews.names = nameHTML;
+                vm.static.classes[vm.static.classes_list[i].key].htmlviews = htmlviews;
+            }
         }
 
         function selectClass(selectedClass){

@@ -5594,6 +5594,7 @@
           "Thin Body"
         ]
       ],
+      "looks_html": "<div><strong>Looks:</strong> Knowing Eyes, Fiery Eyes, Joyous Eyes<br /><strong>Hair:</strong>Fancy Hair, Wild Hair, Stylish Cap<br /><strong>Clothes:</strong>Finery, Traveling Clothes, Poor Clothes<br /><strong>Body:</strong>Fit Body, Well-fed Body, Thin Body</div>",      
       "alignments": {
         "good": {
           "name": "Good",
