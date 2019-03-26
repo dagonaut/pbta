@@ -29,31 +29,15 @@
         vm.characterData = { moves: ["taco"], level: 1};
         vm.characters = [];
         vm.currentCharacter = {};
-        vm.visibility = { moves: true, races: true, alignments: true, gear: true }
+        vm.visibility = { starting: true, moves: true, races: true, alignments: true, gear: true } // true is show all; false is show selected
         vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save'; 
-
-        /*Models
-        Static Data:
-        Class Moves
-        --Starting Moves
-        --Selected Moves
-        --Separated by Advanced/Expert
-        Character Data:
-        Starting Hit Points
-        Base Damage
-        Starting Gear
-        Starting Gear (choices)
-        Alignment & Associated move
-        Races & Associated move
-        //Moves (AllMoves, ClassMoves, SelectedMoves)
-        */
         
-
         //Events
         vm.selectClass = selectClass;
         vm.saveCharacter = saveCharacter;
         vm.loadCharacter = loadCharacter;
         vm.updateMoves = updateMoves;
+        vm.filterMoves = filterMoves;
 
         init();
 
@@ -85,27 +69,35 @@
         }
 
         function buildHTMLviews(){
-            var i, j, nameHTML, looksHTML, gearHTML;            
-            var htmlviews = { names: "", looks: "", gear: ""};
+            var i, nameHTML, looksHTML;            
             for (i=0; i < vm.static.classes_list.length; i++){
+                var htmlviews = { names: "", looks: ""};
                 nameHTML = "<div>";
                 looksHTML = "<div>";
+                //Names:
+                let races = Object.keys(vm.static.classes_list[i].names);
+                races.forEach(function(race, index){
+                    nameHTML += "<strong>" + race + ":</strong> ";
+                    vm.static.classes_list[i].names[race].forEach(function(race_name){
+                        nameHTML += race_name + ", ";
+                    });
+                    nameHTML += "<br />";
+                });
                 if(vm.static.classes_list[i].key === 'immolator'){
-                    
-                } else {                    
-                    //Names:
-                    let races = Object.keys(vm.static.classes_list[i].names);
-                    races.forEach(function(e){
-                        nameHTML += e + ": ";
-                        vm.static.classes_list[i].names[e].forEach(function(f){
-                            nameHTML += f + ", ";
+                    //Applies to any collection of keyed objects: { "Eyes": ["blue", "green", "taco"] }
+                    var immolatorlooks = Object.keys(vm.static.classes_list[i].looks);
+                    immolatorlooks.forEach(function(l){
+                        looksHTML += l + ": ";
+                        vm.static.classes_list[i].looks[l].forEach(function(look_description){
+                            looksHTML += look_description + ", ";
                         });
                     });
-                    //Looks: Eyes, Hair, Clothes, Body
+                } else {                                        
+                    //Looks: Eyes, Hair, Clothes, Body *** These are in the static JSON without labels, but are consistent { "looks": ["blue eyes","green eyes"],["long hair", "shaggy hair"],[""]}
                     looksHTML += "<strong>Eyes:</strong> " + vm.static.classes_list[i].looks[0] + "<br />";
                     looksHTML += "<strong>Hair:</strong> " + vm.static.classes_list[i].looks[1] + "<br />";
                     looksHTML += "<strong>Clothes:</strong> " + vm.static.classes_list[i].looks[2] + "<br />";
-                    looksHTML += "<strong>Body:</strong> " + vm.static.classes_list[i].looks[3] + "<br />";
+                    looksHTML += "<strong>Body:</strong> " + vm.static.classes_list[i].looks[3];
                 }
                 nameHTML += "Helen</div>"
                 looksHTML += "</div>";
@@ -170,6 +162,14 @@
                 vm.characterData.moves.splice(index, 1);
             } else {
                 vm.characterData.moves.push(moveKey);
+            }
+        }
+
+        function filterMoves(key){
+            if(!vm.visibility.moves){
+                if(vm.characterData.moves.indexOf(key) > -1){ return true; }else{ return false; }
+            }else{
+                return true;
             }
         }
 

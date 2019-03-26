@@ -1,4 +1,6 @@
 <style>
+    .dw-green{color:#73C482;}
+    .bg-dw-green{background-color:#73C482;}
     .section {
         font-weight: bold;
         font-size: 12px;
@@ -89,15 +91,22 @@
     <div class="row">
         <!-- STATS / RACE / ALIGNMENT-->
         <div class="col-md-4">
-            <div>
-
+            <div class="row starting">
+                <div>
+                    <a href class="glyphicon glyphicon-plus pull-left menu-toggle"
+                        ng-click="vm.visibility.starting = !vm.visibility.starting"></a>
+                    Starting Stuff
+                </div>
+                <div ng-show="vm.visibility.starting">
+                    <div class="base_stats">{{vm.static.base_stats}}</div>
+                    <div class="col-sm-6" ng-bind-html="vm.static.classes[vm.class].htmlviews.names"></div>
+                    <div class="col-sm-6" ng-bind-html="vm.static.classes[vm.class].htmlviews.looks"></div>
+                </div>
             </div>
             <!-- Stats -->
             <div class="row stats">
                 <div class="col-md-12">
-                    <div class="row base">
-                        <div class="base_stats">{{vm.static.base_stats}}</div>
-                    </div>
+
                     <div class="row stat">
                         <div class="col-sm-6">
                             <label>STR</label>
@@ -138,7 +147,7 @@
                         <div class="col-sm-6">
                             <label>HP</label>
                             <input type="number" ng-model="vm.characterData.hp" />
-                            <span class="modifier">({{vm.characterData.maxhp}})</span>
+                            <span class="modifier">({{vm.static.classes[vm.class].base_hp + vm.characterData.con}})</span>
                         </div>
                         <div class="col-sm-6">
                             <label>Armor</label>
@@ -182,18 +191,22 @@
             <!-- Gear -->
             <div class="row">
                 <div class="col-md-12">
+                        <a href class="glyphicon glyphicon-plus pull-left menu-toggle"
+                        ng-click="vm.visibility.gear = !vm.visibility.gear"></a>
+                    Show selections
                     <strong>Gear:</strong><br />
                     {{vm.static.classes[vm.class].starting_gear}}
                 </div>
             </div>
             <div class="row">
-                <div ng-repeat="choice in vm.static.classes[vm.class].gear_choices">
+                <div ng-repeat="choice in vm.static.classes[vm.class].gear_choices" ng-show="vm.visibility.gear">
                     {{choice.label}}
                     <div ng-repeat="item in choice.list">
                         {{item}}
                     </div>
                 </div>
-                <textarea type="textbox" class="gear" style="width:99%;height:300px;" ng-model="vm.characterData.gear"></textarea>
+                <textarea type="textbox" class="gear" style="width:99%;height:300px;"
+                    ng-model="vm.characterData.gear"></textarea>
             </div>
         </div>
         <div class="col-md-4">
@@ -210,15 +223,17 @@
         </div>
         <div class="col-md-4">
 
-            <strong>Advanced Moves</strong>
-            <div class="row" ng-repeat="advanced1_move in vm.static.classes[vm.class].advanced_moves_1">
+            <strong>Advanced Moves</strong> <a href class="" ng-click="vm.visibility.moves = !vm.visibility.moves">{{vm.visibility.moves ? "Show Selected" : "Show All"}}</a>
+            <div class="row" ng-repeat="advanced1_move in vm.static.classes[vm.class].advanced_moves_1"
+                ng-show="vm.filterMoves(advanced1_move.key)">
                 <input id="advanced1_move_{{advanced1_move.key}}" type="checkbox" value="{{advanced1_move.key}}"
                     ng-checked="vm.characterData.moves.indexOf(advanced1_move.key) > -1"
                     ng-click="vm.updateMoves(advanced1_move.key)" />
                 <strong>{{advanced1_move.name}}</strong> <span data-ng-bind-html="advanced1_move.description"></span>
             </div>
             <strong>Expert Moves (lev 6+)</strong>
-            <div class="row" ng-repeat="advanced2_move in vm.static.classes[vm.class].advanced_moves_2">
+            <div class="row" ng-repeat="advanced2_move in vm.static.classes[vm.class].advanced_moves_2"
+                ng-show="vm.filterMoves(advanced2_move.key)">
                 <input id="advanced2_move_{{advanced2_move.key}}" type="checkbox" value="{{advanced2_move.key}}"
                     ng-checked="vm.characterData.moves.indexOf(advanced2_move.key) > -1"
                     ng-click="vm.updateMoves(advanced2_move.key)" />
