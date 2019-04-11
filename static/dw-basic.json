@@ -14508,5 +14508,6 @@
     },
     "key": "tags"
   },
-  "version": "0.1.0 - Modified by PS"
+  "version": "0.1.1 - Modified by PS",
+  "notes": "Added Immolator. Immolator moves not include in moves. Removed extra lists."
 }
