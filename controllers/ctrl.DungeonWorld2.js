@@ -26,33 +26,18 @@
 
         //Properties        
         vm.class = {};
-        vm.characterData = { moves: [""], level: 1};
+        vm.characterData = { moves: ["taco"], level: 1};
         vm.characters = [];
         vm.currentCharacter = {};
+        vm.visibility = { starting: true, moves: true, races: true, alignments: true, gear: true } // true is show all; false is show selected
         vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save'; 
-
-        /*Models
-        Static Data:
-        Class Moves
-        --Starting Moves
-        --Selected Moves
-        --Separated by Advanced/Expert
-        Character Data:
-        Starting Hit Points
-        Base Damage
-        Starting Gear
-        Starting Gear (choices)
-        Alignment & Associated move
-        Races & Associated move
-        //Moves (AllMoves, ClassMoves, SelectedMoves)
-        */
         
-
         //Events
         vm.selectClass = selectClass;
         vm.saveCharacter = saveCharacter;
         vm.loadCharacter = loadCharacter;
         vm.updateMoves = updateMoves;
+        vm.filterMoves = filterMoves;
 
         init();
 
@@ -76,10 +61,50 @@
                 $.get(staticFile).then(staticSuccess, staticFailure);
                 function staticSuccess(response){
                     vm.static = response;
+                    buildHTMLviews();
                 }
                 function staticFailure(error, b, c){
                     console.log("Fail", error, b, c);                    
                 }
+        }
+
+        function buildHTMLviews(){
+            var i, nameHTML, looksHTML;            
+            for (i=0; i < vm.static.classes_list.length; i++){
+                var htmlviews = { names: "", looks: ""};
+                nameHTML = "<div>";
+                looksHTML = "<div>";
+                //Names:
+                let races = Object.keys(vm.static.classes_list[i].names);
+                races.forEach(function(race, index){
+                    nameHTML += "<strong>" + race + ":</strong> ";
+                    vm.static.classes_list[i].names[race].forEach(function(race_name){
+                        nameHTML += race_name + ", ";
+                    });
+                    nameHTML += "<br />";
+                });
+                if(vm.static.classes_list[i].key === 'immolator'){
+                    //Applies to any collection of keyed objects: { "Eyes": ["blue", "green", "taco"] }
+                    var immolatorlooks = Object.keys(vm.static.classes_list[i].looks);
+                    immolatorlooks.forEach(function(l){
+                        looksHTML += l + ": ";
+                        vm.static.classes_list[i].looks[l].forEach(function(look_description){
+                            looksHTML += look_description + ", ";
+                        });
+                    });
+                } else {                                        
+                    //Looks: Eyes, Hair, Clothes, Body *** These are in the static JSON without labels, but are consistent { "looks": ["blue eyes","green eyes"],["long hair", "shaggy hair"],[""]}
+                    looksHTML += "<strong>Eyes:</strong> " + vm.static.classes_list[i].looks[0] + "<br />";
+                    looksHTML += "<strong>Hair:</strong> " + vm.static.classes_list[i].looks[1] + "<br />";
+                    looksHTML += "<strong>Clothes:</strong> " + vm.static.classes_list[i].looks[2] + "<br />";
+                    looksHTML += "<strong>Body:</strong> " + vm.static.classes_list[i].looks[3];
+                }
+                nameHTML += "Helen</div>"
+                looksHTML += "</div>";
+                htmlviews.looks = looksHTML;
+                htmlviews.names = nameHTML;
+                vm.static.classes[vm.static.classes_list[i].key].htmlviews = htmlviews;
+            }
         }
 
         function selectClass(selectedClass){
@@ -102,10 +127,7 @@
             vm.characterData.gameId = gameId;            
             vm.characterData.class = vm.class;              
             vm.characterData.createdby = userId;
-            vm.characterData.moves = vm.characterData.moves.join(',');
-            // Remove the empty ("") from the model
-            let i = vm.characterData.move.indexOf("");
-            if(i > -1){vm.characterData.moves.splice(i, 1);}
+            vm.characterData.moves = vm.characterData.moves.join(',');            
             
             // New / Create
             if(typeof vm.characterData.id === 'undefined'){
@@ -118,7 +140,7 @@
                 DWCharacterService.Update(vm.characterData).then(function(data){                        
                     console.log(data);
                     // reload the dude to reset arrays/objects
-                    loadCharacter(vm.characterData.id);
+                    loadCharacter(vm.characterData);
                 });
             }
         }
@@ -129,7 +151,7 @@
             DWCharacterService.GetById(d.id).then(function(data){
                 vm.characterData = data;
                 vm.class = vm.characterData.class;
-                vm.characterData.moves = JSON.parse("[" + vm.characterData.moves + "]");
+                vm.characterData.moves = vm.characterData.moves.split(",");
                 vm.create = "Save";
             });
         }
@@ -139,8 +161,15 @@
             if( index > -1){
                 vm.characterData.moves.splice(index, 1);
             } else {
-                if(vm.characterData.moves = ""){ vm.characterData.moves = [""];}
                 vm.characterData.moves.push(moveKey);
+            }
+        }
+
+        function filterMoves(key){
+            if(!vm.visibility.moves){
+                if(vm.characterData.moves.indexOf(key) > -1){ return true; }else{ return false; }
+            }else{
+                return true;
             }
         }
 
