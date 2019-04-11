@@ -48,7 +48,7 @@
                         Auth.SetCredentials($scope.username, $scope.passwordHash, response.data);
                         vm.userData = response.data;
                         vm.isLoggedIn = true;
-                        $location.path('/sprawl');                        
+                        $location.path('/dw');                        
                     } else {
                         $scope.error = response.message;
                         $scope.dataLoading = false;

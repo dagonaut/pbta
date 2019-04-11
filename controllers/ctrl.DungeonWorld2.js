@@ -156,7 +156,7 @@
             });
         }
 
-        function updateMoves(moveKey){
+        function updateMoves(moveKey){ // SPELLS are MOVES too
             let index = vm.characterData.moves.indexOf(moveKey);
             if( index > -1){
                 vm.characterData.moves.splice(index, 1);

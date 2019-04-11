@@ -209,6 +209,7 @@
                     ng-model="vm.characterData.gear"></textarea>
             </div>
         </div>
+        <!-- STARTING MOVES / SPELLS -->
         <div class="col-md-4">
             <!-- Moves -->
             <div class="row">
@@ -220,7 +221,20 @@
                     </div>
                 </div>
             </div>
+            <!-- Spells -->
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>Spells</strong>
+                    <div class="row" ng-repeat="spell in vm.static.classes[vm.class].spell_list">
+                        <input id="spell_move_{{spell.key}}" type="checkbox" value="{{spell.key}}"
+                            ng-checked="vm.characterData.moves.indexOf(spell.key) > -1"
+                            ng-click="vm.updateMoves(spell.key)" />
+                        <strong>{{spell.name}}:</strong> {{spell.description}}
+                    </div>                    
+                </div>
+            </div>
         </div>
+        <!-- ADVANCED MOVES -->
         <div class="col-md-4">
 
             <strong>Advanced Moves</strong> <a href class="" ng-click="vm.visibility.moves = !vm.visibility.moves">{{vm.visibility.moves ? "Show Selected" : "Show All"}}</a>
