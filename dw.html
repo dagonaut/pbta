@@ -7,7 +7,7 @@
         <uib-tab index="vm.tabs.reference.index" heading="{{::vm.tabs.reference.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="reference"></div>
         </uib-tab>       
-        <uib-tab index="vm.tabs.log.index" heading="{{::vm.tabs.log.heading}}" ng-click="vm.onTabChange()">
+        <uib-tab index="vm.tabs.log.index" heading="{{::vm.tabs.log.heading}}" ng-click="vm.onTabChange()" class="hide">
             <div ui-view="log"></div>
         </uib-tab>        
     </uib-tabset>

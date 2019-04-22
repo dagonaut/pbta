@@ -5,14 +5,15 @@
         .module('pbta_resources')
         .controller('DungeonWorld2', DungeonWorld2);
 
-    DungeonWorld2.$inject = ['$rootScope', '$scope', '$http', 'DWCharacterService'];
-    function DungeonWorld2($rootScope, $scope, $http, DWCharacterService) {
+    DungeonWorld2.$inject = ['$rootScope', '$scope', '$http', '$cookies', 'DWCharacterService'];
+    function DungeonWorld2($rootScope, $scope, $http, $cookies, DWCharacterService) {
         //Private Properties
         let vm = this;
         let api = 'http://16watt.com/dev/pbta/api/api.php/';
         let staticFile = "./static/dw-basic.json";    
-        let userId = 2 //$rootScope.userData.id;
-        let gameId = 1 //??? 
+        let userId = $cookies.getObject('id');
+        let gameId = 1;
+        let visibility = { starting: true, moves: true, races: true, alignments: true, gear: false } // true is show all; false is show selected
         
         //Debug variables
         window.bug2 = {
@@ -26,10 +27,9 @@
 
         //Properties        
         vm.class = {};
-        vm.characterData = { moves: ["taco"], level: 1};
+        vm.characterData = { moves: ["taco"], level: 1, visibility: visibility};
         vm.characters = [];
         vm.currentCharacter = {};
-        vm.visibility = { starting: true, moves: true, races: true, alignments: true, gear: true } // true is show all; false is show selected
         vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save'; 
         
         //Events
@@ -41,18 +41,7 @@
 
         init();
 
-        function init() {
-            //console.log($scope.user);
-            //console.log($rootScope.userData);
-            // if (typeof $rootScope.userData === "undefined") {
-            //     if (!Auth.checkUser()) {
-            //         $location.path('/login');
-            //     } else {
-            //         $scope.characterData = getCharacterData($cookies.getObject('id'));
-            //     }
-            // } else {
-            //     $scope.characterData = getCharacterData($rootScope.userData.id);
-            // }
+        function init() {            
             getStaticCharacterData();
             getCharacters();            
         }
@@ -127,7 +116,8 @@
             vm.characterData.gameId = gameId;            
             vm.characterData.class = vm.class;              
             vm.characterData.createdby = userId;
-            vm.characterData.moves = vm.characterData.moves.join(',');            
+            vm.characterData.moves = vm.characterData.moves.join(',');
+            vm.characterData.visibility = JSON.stringify(vm.characterData.visibility);
             
             // New / Create
             if(typeof vm.characterData.id === 'undefined'){
@@ -146,12 +136,13 @@
         }
         
         function loadCharacter(character){
-            let d = JSON.parse(character);
+            let d = (typeof character === 'string') ? JSON.parse(character) : character;
             // When loading a dude, make sure we get the latest from the DB.
             DWCharacterService.GetById(d.id).then(function(data){
                 vm.characterData = data;
                 vm.class = vm.characterData.class;
                 vm.characterData.moves = vm.characterData.moves.split(",");
+                vm.characterData.visibility = JSON.parse(vm.characterData.visibility);
                 vm.create = "Save";
             });
         }
@@ -166,35 +157,11 @@
         }
 
         function filterMoves(key){
-            if(!vm.visibility.moves){
+            if(vm.characterData.visibility.moves == false){
                 if(vm.characterData.moves.indexOf(key) > -1){ return true; }else{ return false; }
             }else{
                 return true;
             }
         }
-
-
-        function getCharacterData(userId) {
-            $http.get(api + 'tbl_Characters/createdby/' + userId).then(
-                function (response) {
-                    $scope.characterData = response.data;
-                    if ($scope.characterData.gear) {
-                        $scope.gear = JSON.parse($scope.characterData.gear);
-                    }
-                    if ($scope.characterData.moves == null) { $scope.characterData.moves = []; }
-                    getCharacterMoves();
-                    getBaseDamage();
-                    setModifiers();
-                },
-                function (error) {
-                    console.log(error);
-                }
-            )
-        }
-
-        function showMoves() {
-            $scope.movesOpen = !$scope.movesOpen;
-        }
-
     }
 })();
