@@ -59,8 +59,8 @@
                         ng-selected="character.id === vm.characterData.id">{{character.name}} -- {{character.class}}
                     </option>
                 </select>
-                <div class="btn btn-sm btn-sprawl" ng-click="vm.loadCharacter(vm.currentCharacter);">Load Dude</div>
-                <div class="btn btn-sm btn-sprawl" ng-confirm-click="You sure? All progress will be lost."
+                <div class="btn btn-sm bg-dw-green" ng-click="vm.loadCharacter(vm.currentCharacter);">Load Dude</div>
+                <div class="btn btn-sm bg-dw-green" ng-confirm-click="You sure? All progress will be lost."
                     confirmed-click="vm.clearDude();">Reset</div>
             </div>
             <!-- Name / Look -->
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="col-md-2">
-            <div class="btn btn-lg btn-primary" ng-click="vm.saveCharacter();">{{vm.create}}</div>
+            <div class="btn btn-lg bg-dw-green" ng-click="vm.saveCharacter();">{{vm.create}}</div>
             <a class="btn btn-lg btn-danger" ng-confirm-click="You sure?" confirmed-click="vm.deleteDude();">Delete</a>
         </div>
     </div>
@@ -164,6 +164,12 @@
                             <input type="number" ng-model="vm.characterData.level" />
                         </div>
                     </div>
+                    <div class="row stat">
+                        <div class="col-sm-12">
+                            <label>Damage:</label>
+                            <span class="modifier">{{vm.static.classes[vm.class].damage}}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Race -->
@@ -187,6 +193,7 @@
                         data-ng-bind-html="alignment.description"></span>
                 </div>
             </div>
+            <!-- Bonds -->
             <div class="row bonds">
                 <div><strong>Bonds:</strong></div>
                 <textarea type="textbox" class="bonds" style="width:99%;height:100px;"
