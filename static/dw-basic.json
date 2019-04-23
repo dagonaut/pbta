@@ -1894,15 +1894,18 @@
       "alignments_list": [
         {
           "name": "Good",
-          "description": "Perform your art to aid someone else."
+          "description": "Perform your art to aid someone else.",
+          "key": "good"
         },
         {
           "name": "Neutral",
-          "description": "Avoid a conflict or defuse a tense situation."
+          "description": "Avoid a conflict or defuse a tense situation.",
+          "key": "neutral"
         },
         {
           "name": "Chaotic",
-          "description": "Spur others to significant and unplanned decisive action."
+          "description": "Spur others to significant and unplanned decisive action.",
+          "key": "chaotic"
         }
       ],
       "race_moves": [
@@ -2237,15 +2240,18 @@
       "alignments_list": [
         {
           "description": "Endanger yourself to heal another.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         },
         {
           "description": "Endanger yourself following the precepts of your church or god.",
-          "name": "Lawful"
+          "name": "Lawful",
+          "key": "lawful"
         },
         {
           "description": "Harm another to prove the superiority of your church or god.",
-          "name": "Evil"
+          "name": "Evil",
+          "key": "evil"
         }
       ],
       "starting_gear": "You carry dungeon rations (ration, 5 uses, 3 coins, 1 weight) and some symbol of the divine, describe it (0 weight)",
@@ -3062,15 +3068,18 @@
       "alignments_list": [
         {
           "description": "Destroy a symbol of civilization.",
-          "name": "Chaotic"
+          "name": "Chaotic",
+          "key": "chaotic"
         },
         {
           "description": "Help something or someone grow.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         },
         {
           "description": "Eliminate an unnatural menace.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         }
       ],
       "starting_gear": "You carry some token of your land, describe it.",
@@ -3424,15 +3433,18 @@
       "alignments_list": [
         {
           "description": "Defend those weaker than you.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         },
         {
           "description": "Defeat a worthy opponent.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         },
         {
           "description": "Kill a defenseless or surrendered enemy.",
-          "name": "Evil"
+          "name": "Evil",
+          "key": "evil"
         }
       ],
       "starting_gear": "You carry your signature weapon and dungeon rations (ration, 5 uses, 3 coins, 1 weight).",
@@ -3763,15 +3775,18 @@
       "alignments_list": [
         {
           "description": "Sacrifice an unwilling victim to the flames.",
-          "name": "Evil"
+          "name": "Evil",
+          "key": "evil"
         },
         {
           "description": "Spread a dangerous new idea.",
-          "name": "Chaotic"
+          "name": "Chaotic",
+          "key": "chaotic"
         },
         {
           "description": "Exchange a sacrifice, freely given, for a service rendered.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         }
       ],
       "race_moves": [
@@ -3968,11 +3983,13 @@
       "alignments_list": [
         {
           "description": "Deny mercy to a criminal or unbeliever.",
-          "name": "Lawful"
+          "name": "Lawful",
+          "key": "lawful"
         },
         {
           "description": "Endanger yourself to protect someone weaker than you.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         }
       ],
       "starting_gear": "You start with dungeon rations (ration, 5 uses, 3 coins, 1 weight), Scale Armor (2 armor, worn, 3 weight), and some mark of faith, describe it (0 weight).",
@@ -4277,15 +4294,18 @@
       "alignments_list": [
         {
           "description": "Free someone from literal or figurative bonds.",
-          "name": "Chaotic"
+          "name": "Chaotic",
+          "key": "chaotic"
         },
         {
           "description": "Endanger yourself to combat an unnatural threat.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         },
         {
           "description": "Help an animal or spirit of the wild.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         }
       ],
       "starting_gear": "You start with dungeon rations (ration, 5 uses, 3 coins, 1 weight), Leather Armor (1 armor, worn, 10 coins, 1 weight), and a Bundle of Arrows (3 ammo, 1 coins, 1 weight).",
@@ -4601,15 +4621,18 @@
       "alignments_list": [
         {
           "description": "Leap into danger without a plan.",
-          "name": "Chaotic"
+          "name": "Chaotic",
+          "key": "chaotic"
         },
         {
           "description": "Avoid detection or infiltrate a location.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         },
         {
           "description": "Shift danger or blame from yourself to someone else.",
-          "name": "Evil"
+          "name": "Evil",
+          "key": "evil"
         }
       ],
       "starting_gear": "You start with dungeon rations (ration, 5 uses, 3 coins, 1 weight), Leather Armor (1 armor, worn, 10 coins, 1 weight), 3 uses of your chosen poison, and 10 coins.",
@@ -4921,15 +4944,18 @@
       "alignments_list": [
         {
           "description": "Use magic to directly aid another.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         },
         {
           "description": "Discover something about a magical mystery.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         },
         {
           "description": "Use magic to cause terror and fear.",
-          "name": "Evil"
+          "name": "Evil",
+          "key": "evil"
         }
       ],
       "starting_gear": "You start with your spellbook (1 weight) and dungeon rations (ration, 5 uses, 3 coins, 1 weight).",
@@ -6023,15 +6049,18 @@
       "alignments_list": [
         {
           "name": "Good",
-          "description": "Perform your art to aid someone else."
+          "description": "Perform your art to aid someone else.",
+          "key": "good"
         },
         {
           "name": "Neutral",
-          "description": "Avoid a conflict or defuse a tense situation."
+          "description": "Avoid a conflict or defuse a tense situation.",
+          "key": "neutral"
         },
         {
           "name": "Chaotic",
-          "description": "Spur others to significant and unplanned decisive action."
+          "description": "Spur others to significant and unplanned decisive action.",
+          "key": "chaotic"
         }
       ],
       "race_moves": [
@@ -6366,15 +6395,18 @@
       "alignments_list": [
         {
           "description": "Endanger yourself to heal another.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         },
         {
           "description": "Endanger yourself following the precepts of your church or god.",
-          "name": "Lawful"
+          "name": "Lawful",
+          "key": "lawful"
         },
         {
           "description": "Harm another to prove the superiority of your church or god.",
-          "name": "Evil"
+          "name": "Evil",
+          "key": "evil"
         }
       ],
       "starting_gear": "You carry dungeon rations (ration, 5 uses, 3 coins, 1 weight) and some symbol of the divine, describe it (0 weight)",
@@ -7191,15 +7223,18 @@
       "alignments_list": [
         {
           "description": "Destroy a symbol of civilization.",
-          "name": "Chaotic"
+          "name": "Chaotic",
+          "key": "chaotic"
         },
         {
           "description": "Help something or someone grow.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         },
         {
           "description": "Eliminate an unnatural menace.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         }
       ],
       "starting_gear": "You carry some token of your land, describe it.",
@@ -7553,15 +7588,18 @@
       "alignments_list": [
         {
           "description": "Defend those weaker than you.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         },
         {
           "description": "Defeat a worthy opponent.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         },
         {
           "description": "Kill a defenseless or surrendered enemy.",
-          "name": "Evil"
+          "name": "Evil",
+          "key": "evil"
         }
       ],
       "starting_gear": "You carry your signature weapon and dungeon rations (ration, 5 uses, 3 coins, 1 weight).",
@@ -8102,11 +8140,13 @@
       "alignments_list": [
         {
           "description": "Deny mercy to a criminal or unbeliever.",
-          "name": "Lawful"
+          "name": "Lawful",
+          "key": "lawful"
         },
         {
           "description": "Endanger yourself to protect someone weaker than you.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         }
       ],
       "starting_gear": "You start with dungeon rations (ration, 5 uses, 3 coins, 1 weight), Scale Armor (2 armor, worn, 3 weight), and some mark of faith, describe it (0 weight).",
@@ -8411,15 +8451,18 @@
       "alignments_list": [
         {
           "description": "Free someone from literal or figurative bonds.",
-          "name": "Chaotic"
+          "name": "Chaotic",
+          "key": "chaotic"
         },
         {
           "description": "Endanger yourself to combat an unnatural threat.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         },
         {
           "description": "Help an animal or spirit of the wild.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         }
       ],
       "starting_gear": "You start with dungeon rations (ration, 5 uses, 3 coins, 1 weight), Leather Armor (1 armor, worn, 10 coins, 1 weight), and a Bundle of Arrows (3 ammo, 1 coins, 1 weight).",
@@ -8735,15 +8778,18 @@
       "alignments_list": [
         {
           "description": "Leap into danger without a plan.",
-          "name": "Chaotic"
+          "name": "Chaotic",
+          "key": "chaotic"
         },
         {
           "description": "Avoid detection or infiltrate a location.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         },
         {
           "description": "Shift danger or blame from yourself to someone else.",
-          "name": "Evil"
+          "name": "Evil",
+          "key": "evil"
         }
       ],
       "starting_gear": "You start with dungeon rations (ration, 5 uses, 3 coins, 1 weight), Leather Armor (1 armor, worn, 10 coins, 1 weight), 3 uses of your chosen poison, and 10 coins.",
@@ -9055,15 +9101,18 @@
       "alignments_list": [
         {
           "description": "Use magic to directly aid another.",
-          "name": "Good"
+          "name": "Good",
+          "key": "good"
         },
         {
           "description": "Discover something about a magical mystery.",
-          "name": "Neutral"
+          "name": "Neutral",
+          "key": "neutral"
         },
         {
           "description": "Use magic to cause terror and fear.",
-          "name": "Evil"
+          "name": "Evil",
+          "key": "evil"
         }
       ],
       "starting_gear": "You start with your spellbook (1 weight) and dungeon rations (ration, 5 uses, 3 coins, 1 weight).",
@@ -15340,6 +15389,7 @@
   "version": "0.1.1 - Modified by PS",
   "notes": [
     {"???":"Added Immolator. Immolator moves not include in moves. Removed extra lists."},
-    {"2019-04-11": "Added spell_list arrays for Cleric and Wizard"}
+    {"2019-04-11": "Added spell_list arrays for Cleric and Wizard"},
+    {"2019-04-22": "Added keys to classes.alignment_list & classes_list.alignment_list"}
   ]
 }
