@@ -46,7 +46,7 @@
         vm.tabs = {
             charactersheet: { index: 0, heading: 'Character Sheet'},
             reference: { index: 1, heading: 'Reference'},
-            log: { index: 2, heading: 'Log'},
+            log: { index: 2, heading: 'DM'},
         };
         $scope.user = {};
         $scope.characterData = {};

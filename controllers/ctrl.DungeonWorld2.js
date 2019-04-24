@@ -16,7 +16,7 @@
         let visibility = { starting: true, moves: true, races: true, alignments: true, gear: false } // true is show all; false is show selected
         
         //Debug variables
-        window.bug2 = {
+        window.d = {
             vm: vm,
             scope: $scope,
             rootScope: $rootScope
@@ -24,6 +24,10 @@
 
         //Static        
         vm.static = {};
+
+        //Custom
+        vm.paul = {};
+        vm.brett = {};
 
         //Properties        
         vm.class = {};
@@ -41,12 +45,21 @@
 
         init();
 
-        function init() {            
+        function init() {
             getStaticCharacterData();
-            getCharacters();            
+            getCharacters();
+            // Custom -- Grabbing Barnabus(11) & Gethin(13)
+            DWCharacterService.GetById(11).then(function(data){
+                vm.paul = data;                
+                vm.paul.moves = vm.paul.moves.split(",");                
+            });            
+            DWCharacterService.GetById(13).then(function(data){
+                vm.brett = data;                
+                vm.brett.moves = vm.brett.moves.split(",");
+            });
         }
 
-        function getStaticCharacterData(){                        
+        function getStaticCharacterData(){
                 $.get(staticFile).then(staticSuccess, staticFailure);
                 function staticSuccess(response){
                     vm.static = response;

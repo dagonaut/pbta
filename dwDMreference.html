@@ -1,0 +1,186 @@
+
+    <style>
+		body{padding:5px;}
+        h1,h2,h3,h4,h5,p,div,ul,li{margin:0;padding:0;}
+        ul{margin-left:16px;}
+        h1{font-size:20px;}
+        h2{font-size:18px;border-top:1px solid #222;}
+        h3{font-size:14px;}
+        h4{font-size:12px;}
+		.move-trigger{
+			font-weight:bold;
+		}
+		h2.move{
+			font-size:16px;			
+		}
+		.move:hover{
+			cursor: pointer;
+		}
+    </style>
+	
+	<div class="fluid-container">
+		<div class="row">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-10">
+			</div>
+		</div>
+		<div class="row">
+			<!-- character -->
+			<div class="col-lg-3">
+				<h1>{{vm.paul.name}}</h1>
+				Class: {{vm.paul.class}}<br />
+				Level: {{vm.paul.level}} <br />
+				XP: {{ vm.paul.xp }} Next: ({{ paul.level + 7 }})<br />
+				<strong>STR:</strong> {{vm.paul.str}} {{ vm.static.attribute_modifiers[vm.paul.str] }}
+				<strong>DEX:</strong> {{vm.paul.dex}} {{ vm.static.attribute_modifiers[vm.paul.dex] }}<br />
+				<strong>CON:</strong> {{vm.paul.con}} {{ vm.static.attribute_modifiers[vm.paul.con] }}
+				<strong>INT:</strong> {{vm.paul.int}} {{ vm.static.attribute_modifiers[vm.paul.int] }}<br />
+				<strong>WIS:</strong> {{vm.paul.wis}} {{ vm.static.attribute_modifiers[vm.paul.wis] }}
+				<strong>CHA:</strong> {{vm.paul.cha}} {{ vm.static.attribute_modifiers[vm.paul.cha] }}<br />
+				DAMAGE: {{vm.static.classes[vm.paul.class].damage}}<br />
+				HP: {{vm.paul.hp}} ({{vm.static.classes[vm.paul.class].base_hp + vm.paul.con}})<br />
+				ARMOR: {{vm.paul.armor}}<br />
+				BONDS: {{vm.paul.bonds}}<br />
+				RACE: 
+				<div ng-repeat="move in vm.static.classes[vm.paul.class].race_moves">
+					<div ng-hide="vm.paul.moves.indexOf(move.key) === -1">
+						<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
+					</div>
+				</div> 				
+				ALIGNMENT:
+				<div ng-repeat="move in vm.static.classes[vm.paul.class].alignments_list">
+					<div ng-hide="vm.paul.moves.indexOf(move.key) === -1">
+						<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
+					</div>
+				</div> 
+				MOVES: <br />
+				<div ng-repeat="move in vm.static.classes[vm.paul.class].starting_moves">					
+					<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>					
+				</div> 
+				<div ng-repeat="move in vm.static.classes[vm.paul.class].advanced_moves_1">
+					<div ng-hide="vm.paul.moves.indexOf(move.key) === -1">
+						<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
+					</div>
+				</div> 
+				<div ng-repeat="move in vm.static.classes[vm.paul.class].advanced_moves_2">
+					<div ng-hide="vm.paul.moves.indexOf(move.key) === -1">
+						<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
+					</div>
+				</div> 
+				GEAR: {{vm.paul.gear}}
+			</div>			
+			<div class="col-lg-3">
+				<h1>{{vm.brett.name}}</h1>
+				Class: {{vm.brett.class}}<br />
+				Level: {{vm.brett.level}} <br />
+				XP: {{ vm.brett.xp }} Next: ({{ brett.level + 7 }})<br />
+				<strong>STR:</strong> {{vm.brett.str}} {{ vm.static.attribute_modifiers[vm.brett.str] }}
+				<strong>DEX:</strong> {{vm.brett.dex}} {{ vm.static.attribute_modifiers[vm.brett.dex] }}<br />
+				<strong>CON:</strong> {{vm.brett.con}} {{ vm.static.attribute_modifiers[vm.brett.con] }}
+				<strong>INT:</strong> {{vm.brett.int}} {{ vm.static.attribute_modifiers[vm.brett.int] }}<br />
+				<strong>WIS:</strong> {{vm.brett.wis}} {{ vm.static.attribute_modifiers[vm.brett.wis] }}
+				<strong>CHA:</strong> {{vm.brett.cha}} {{ vm.static.attribute_modifiers[vm.brett.cha] }}<br />
+				DAMAGE: {{vm.static.classes[vm.brett.class].damage}}<br />
+				HP: {{vm.brett.hp}} ({{vm.static.classes[vm.brett.class].base_hp + vm.brett.con}})<br />
+				ARMOR: {{vm.brett.armor}}<br />
+				BONDS: {{vm.brett.bonds}}<br />
+				RACE: 
+				<div ng-repeat="move in vm.static.classes[vm.brett.class].race_moves">
+					<div ng-hide="vm.brett.moves.indexOf(move.key) === -1">
+						<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
+					</div>
+				</div> 				
+				ALIGNMENT:
+				<div ng-repeat="move in vm.static.classes[vm.brett.class].alignments_list">
+					<div ng-hide="vm.brett.moves.indexOf(move.key) === -1">
+						<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
+					</div>
+				</div> 
+				MOVES: <br />
+				<div ng-repeat="move in vm.static.classes[vm.brett.class].starting_moves">					
+					<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>					
+				</div> 
+				<div ng-repeat="move in vm.static.classes[vm.brett.class].advanced_moves_1">
+					<div ng-hide="vm.brett.moves.indexOf(move.key) === -1">
+						<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
+					</div>
+				</div> 
+				<div ng-repeat="move in vm.static.classes[vm.brett.class].advanced_moves_2">
+					<div ng-hide="vm.brett.moves.indexOf(move.key) === -1">
+						<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
+					</div>
+				</div> 
+				GEAR: {{vm.brett.gear}}
+			</div>
+			<div class="col-lg-3" ng-controller="ReferenceController">
+					<h2>Name Generator</h2>
+					<button ng-click="getName('M');">Male</button>
+					<button ng-click="getName('F');">Female</button>
+					<span style="font-size:18px;">{{ firstName }} {{ surName }}</span>
+				<h2 style="color:blue;">Basic Moves</h2>
+				<div ng-repeat="basicMove in allMoves" ng-show="basicMove.type == 'Basic'">
+					<div>
+						<h2 class="move" ng-click="basicMove.hide = !basicMove.hide">{{basicMove.name}}</h2>
+						<div class="move-description" ng-hide="basicMove.hide">
+							<span ng-hide="basicMove.type == 'GM' || gmMove == 'Dungeon'">
+							When you <span class="move-trigger">{{basicMove.trigger}}</span>
+							</span>
+							<span ng-bind-html="basicMove.description"></span>
+						</div>
+					</div>
+				</div>
+				<h2 style="color:blue;">Special Moves</h2>
+				<div ng-repeat="specialMove in allMoves" ng-show="specialMove.type == 'Special'">
+					<div>
+						<h2 class="move" ng-click="specialMove.hide = !specialMove.hide">{{specialMove.name}}</h2>
+						<div class="move-description" ng-hide="specialMove.hide">
+							<span ng-hide="specialMove.type == 'GM' || gmMove == 'Dungeon'">
+							When you <span class="move-trigger">{{specialMove.trigger}}</span>
+							</span>
+							<span ng-bind-html="specialMove.description"></span>
+						</div>
+					</div>
+				</div>
+				<h2 style="color:blue;">GM Moves</h2>
+				<div ng-repeat="gmMove in allMoves" ng-show="gmMove.type == 'GM'">
+					<div>
+						<h2 class="move" ng-click="gmMove.hide = !gmMove.hide">{{gmMove.name}}</h2>
+						<div class="move-description" ng-hide="gmMove.hide">
+							<span ng-hide="gmMove.type == 'GM' || gmMove == 'Dungeon'">
+							When you <span class="move-trigger">{{gmMove.trigger}}</span>
+							</span>
+							<span ng-bind-html="gmMove.description"></span>
+						</div>
+					</div>
+				</div>
+				<h2 style="color:blue;">Dungeon Moves</h2>
+				<div ng-repeat="dungeonMove in allMoves" ng-show="dungeonMove.type == 'Dungeon'">
+					<div>
+						<h2 class="move" ng-click="dungeonMove.hide = !dungeonMove.hide">{{dungeonMove.name}}</h2>
+						<div class="move-description" ng-hide="dungeonMove.hide">
+							<span ng-hide="gmMove.type == 'GM' || gmMove == 'Dungeon'">
+							When you <span class="move-trigger">{{dungeonMove.trigger}}</span>
+							</span>
+							<span ng-bind-html="dungeonMove.description"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3" ng-controller="ReferenceController">
+				<div ng-repeat="tag in allTags">
+					<div>
+						<h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+						<div class="move-description" ng-hide="tag.hide">
+							<span>
+								{{tag.category}}
+							</span>
+							<span>
+								{{tag.description}}
+							</span>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>  
+

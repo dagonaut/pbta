@@ -47,8 +47,8 @@
 						controller: 'ReferenceController as vm'
 					},
 					'log@auth.dw': {
-						templateUrl: 'charactersheet.html',
-						controller: 'DungeonWorld as vm'
+						templateUrl: 'dwDMreference.html',
+						controller: 'DungeonWorld2 as vm'
 					}
 				}
 			})		
