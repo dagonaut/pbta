@@ -29,7 +29,7 @@
             init();
 
             function init(){
-                getAllCharacters();
+                //getAllCharacters();
             }
             
             function getAllCharacters(){
