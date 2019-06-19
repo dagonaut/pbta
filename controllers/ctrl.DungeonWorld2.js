@@ -53,7 +53,7 @@
                 vm.paul = data;                
                 vm.paul.moves = vm.paul.moves.split(",");                
             });            
-            DWCharacterService.GetById(13).then(function(data){
+            DWCharacterService.GetById(14).then(function(data){
                 vm.brett = data;                
                 vm.brett.moves = vm.brett.moves.split(",");
             });
