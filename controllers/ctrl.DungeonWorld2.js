@@ -48,8 +48,8 @@
         function init() {
             getStaticCharacterData();
             getCharacters();
-            // Custom -- Grabbing Barnabus(11) & Gethin(13)
-            DWCharacterService.GetById(11).then(function(data){
+            // Custom -- Grabbing the 2 of the 3 DW characters: Barnabus(11) Gethin(13) Killigan(14)
+            DWCharacterService.GetById(13).then(function(data){
                 vm.paul = data;                
                 vm.paul.moves = vm.paul.moves.split(",");                
             });            
