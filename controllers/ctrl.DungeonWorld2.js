@@ -5,8 +5,8 @@
         .module('pbta_resources')
         .controller('DungeonWorld2', DungeonWorld2);
 
-    DungeonWorld2.$inject = ['$rootScope', '$scope', '$http', '$cookies', 'DWCharacterService'];
-    function DungeonWorld2($rootScope, $scope, $http, $cookies, DWCharacterService) {
+    DungeonWorld2.$inject = ['$rootScope', '$scope', '$http', '$cookies', '$timeout', 'DWCharacterService'];
+    function DungeonWorld2($rootScope, $scope, $http, $cookies, $timeout, DWCharacterService) {
         //Private Properties
         let vm = this;
         let api = 'http://16watt.com/dev/pbta/api/api.php/';
@@ -29,7 +29,13 @@
         vm.paul = {};
         vm.brett = {};
 
-        //Properties        
+        //Properties
+        vm.tabs = {
+            charactersheet: { index: 0, heading: 'Character Sheet'},
+            reference: { index: 1, heading: 'Reference'},
+            log: { index: 2, heading: 'DM'},
+        };
+        vm.dm = '';
         vm.class = {};
         vm.characterData = { moves: ["taco"], level: 1, visibility: visibility};
         vm.characters = [];
@@ -42,21 +48,19 @@
         vm.loadCharacter = loadCharacter;
         vm.updateMoves = updateMoves;
         vm.filterMoves = filterMoves;
+        vm.getCharactersForDMTab = getCharactersForDMTab;
 
         init();
 
         function init() {
             getStaticCharacterData();
             getCharacters();
-            // Custom -- Grabbing the 2 of the 3 DW characters: Barnabus(11) Gethin(13) Killigan(14)
-            DWCharacterService.GetById(13).then(function(data){
-                vm.paul = data;                
-                vm.paul.moves = vm.paul.moves.split(",");                
-            });            
-            DWCharacterService.GetById(14).then(function(data){
-                vm.brett = data;                
-                vm.brett.moves = vm.brett.moves.split(",");
-            });
+            //poll();            
+        }
+
+        function poll() {            
+            getCharactersForDMTab();
+            $timeout(poll, 60000);
         }
 
         function getStaticCharacterData(){
@@ -121,6 +125,35 @@
                 } else {
                     vm.characters.push(data);
                 }
+            });
+        }
+
+        function getCharactersForDMTab(){
+            // Custom -- Grabbing the 2 of the 3 DW characters: Barnabus(11) Gethin(13) Killigan(14)
+            let d = { left: 13, right: 14 };
+            switch(vm.dm) {
+                case "Paul":
+                  d = {left: 13, right: 14}
+                  break;
+                case "Sean":
+                  d = {left: 11, right: 13};
+                  break;
+                case "Brett":
+                  d = {left: 11, right: 14};
+                  break;
+                default:
+                  d = {left: 13, right: 14};                  
+            }
+            console.log(vm.dm, d);
+            DWCharacterService.GetById(d.left).then(function(data){
+                console.log(data);
+                vm.paul = data;                
+                vm.paul.moves = vm.paul.moves.split(",");                
+            });            
+            DWCharacterService.GetById(d.right).then(function(data){
+                console.log(data);
+                vm.brett = data;                
+                vm.brett.moves = vm.brett.moves.split(",");
             });
         }
 

@@ -36,7 +36,7 @@
 				views: {	
 					'cs':{
 						templateUrl: 'dw.html',
-						controller: 'DungeonWorld as vm'
+						controller: 'DungeonWorld2 as vm'
 					},			
 					'charactersheet@auth.dw': {
 						templateUrl: 'dwCharactersheet.html',

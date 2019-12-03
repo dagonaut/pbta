@@ -67,7 +67,7 @@
 						<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
 					</div>
 				</div> 
-				GEAR: {{vm.paul.gear}}
+				<strong>GEAR:</strong> {{vm.paul.gear}}
 			</div>			
 			<div class="col-lg-3">
 				<h1>{{vm.brett.name}}</h1>
@@ -110,9 +110,16 @@
 						<strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
 					</div>
 				</div> 
-				GEAR: {{vm.brett.gear}}
+				<strong>GEAR:</strong> {{vm.brett.gear}}
 			</div>
 			<div class="col-lg-3" ng-controller="ReferenceController">
+				<div class="">
+					<div class="btn btn-sm btn-primary" ng-click="vm.getCharactersForDMTab()">Refresh Dudes</div>
+					Current GM: 
+					<input type="radio" ng-model="vm.dm" value="Paul" ng-change="vm.getCharactersForDMTab()">Paul
+					<input type="radio" ng-model="vm.dm" value="Sean" ng-change="vm.getCharactersForDMTab()">Sean
+					<input type="radio" ng-model="vm.dm" value="Brett" ng-change="vm.getCharactersForDMTab()">Brett
+				</div>
 					<h2>Name Generator</h2>
 					<button ng-click="getName('M');">Male</button>
 					<button ng-click="getName('F');">Female</button>
