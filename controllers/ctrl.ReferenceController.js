@@ -103,7 +103,6 @@
                         for(var i = 0; i < $scope.allMonsters.length; i++){
                             $scope.allMonsters[i]["hide"] = true;
                         }
-                        console.log($scope.allMonsters);
                     },
                     function(error){
                         console.log(error);
