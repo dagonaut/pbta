@@ -30,6 +30,7 @@
         vm.brett = {};
 
         //Properties
+        vm.userId = userId;
         vm.tabs = {
             charactersheet: { index: 0, heading: 'Character Sheet'},
             reference: { index: 1, heading: 'Reference'},
@@ -157,7 +158,7 @@
             });
         }
 
-        function saveCharacter(){
+        function saveCharacter(){            
             // Update the model
             vm.characterData.gameId = gameId;            
             vm.characterData.class = vm.class;              
@@ -166,7 +167,7 @@
             vm.characterData.visibility = JSON.stringify(vm.characterData.visibility);
             
             // New / Create
-            if(typeof vm.characterData.id === 'undefined'){
+            if(typeof vm.characterData.id === 'undefined'){                
                 // Create returns id of new character row
                 DWCharacterService.Create(vm.characterData).then(function(data){
                     loadCharacter(data);

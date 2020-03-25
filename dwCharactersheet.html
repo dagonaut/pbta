@@ -53,9 +53,9 @@
     <div class="row">
         <div class="col-md-5">
             <!-- Characters -->
-            <div class="">
+            <div class="row">
                 <select ng-model="vm.currentCharacter">
-                    <option ng-repeat="character in vm.characters" value="{{character}}"
+                    <option ng-repeat="character in vm.characters" value="{{character}}" ng-if="character.createdby === vm.userId || vm.userId === 2"
                         ng-selected="character.id === vm.characterData.id">{{character.name}} -- {{character.class}}
                     </option>
                 </select>
@@ -65,18 +65,25 @@
             </div>
             <!-- Name / Look -->
             <div class="name-look_container row">
-                <div class="col-sm-12">
-                    <label>Name: </label><input class="name" type="text" ng-model="vm.characterData.name" />
+                <div class="col-sm-4">
+                    <label>Name: </label><br />
+                    <input class="name" type="text" ng-model="vm.characterData.name" />
                     <a id="popover-content-directives" style="display:inline-block;" tabindex="0"
                         class="btn btn-sm btn-info" role="button" data-toggle="popover" title="Name & Look Suggestions:"
                         data-html="true" data-content="{{vm.static.classes[vm.class].htmlviews.names}}"><span
                             class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
-                    <label>Look: </label><input class="look" type="text" ng-model="vm.characterData.look" />
+                </div>
+                <div class="col-sm-4">                
+                    <label>Look: </label><br />
+                    <input class="look" type="text" ng-model="vm.characterData.look" />
                     <a id="popover-content-directives" style="display:inline-block;" tabindex="0"
                         class="btn btn-sm btn-info" role="button" data-toggle="popover" title="Name & Look Suggestions:"
                         data-html="true" data-content="{{vm.static.classes[vm.class].htmlviews.looks}}"><span
                             class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
-                    <select ng-model="vm.class" ng-change="vm.selectClass(vm.class)">
+                </div>
+                <div class="col-sm-4">
+                    <label>Class:</label><br />
+                    <select ng-model="vm.class" ng-change="vm.selectClass(vm.class)" style="width:100%;height:27px;">
                         <option ng-repeat="class in vm.static.classes_list" value="{{class.key}}">{{class.name}}
                         </option>
                     </select>
@@ -97,11 +104,12 @@
                         ng-click="vm.visibility.starting = !vm.visibility.starting"></a>
                     Starting Stuff
                 </div>
-                <div ng-show="vm.visibility.starting">
+            ng-show="vm.visibility.starting" -->
+                <div class="col-md-12">
                     <div class="base_stats">{{vm.static.base_stats}}</div>
                     <div class="col-sm-6" ng-bind-html="vm.static.classes[vm.class].htmlviews.names"></div>
                     <div class="col-sm-6" ng-bind-html="vm.static.classes[vm.class].htmlviews.looks"></div>
-                </div> -->
+                </div>
             </div>
             <!-- Stats -->
             <div class="row stats">
@@ -195,7 +203,13 @@
             </div>
             <!-- Bonds -->
             <div class="row bonds">
-                <div><strong>Bonds:</strong></div>
+                <div>
+                    <strong>Bonds/Flags:</strong>
+                    <a id="popover-content-directives" style="display:inline-block;" tabindex="0"
+                    class="btn btn-sm btn-info" role="button" data-toggle="popover" title="Flags:"
+                    data-html="true" data-content="{{vm.static.flags}}"><span
+                        class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+                </div>
                 <textarea type="textbox" class="bonds" style="width:99%;height:100px;"
                     ng-model="vm.characterData.bonds"></textarea>
             </div>

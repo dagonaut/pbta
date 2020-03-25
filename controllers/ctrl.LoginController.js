@@ -14,6 +14,7 @@
             vm.userData = {};
             vm.isLoggedIn = false;
             vm.taco = "PSYCH";
+            vm.showError = false;
 
             //Scope Methods
             vm.login = login;
@@ -63,6 +64,7 @@
             
             function register(user){
                 console.log("Registering");
+                vm.showError = false;
                 // Check for existing user
                 checkExisting(user);
             };
@@ -74,6 +76,8 @@
                         
                         if(typeof response.data.username !== "undefined" && response.data.username === user.username){
                             // Give feedback
+                            vm.showError = true;
+                            vm.errorMsg = "Sorry bro, that username is already taken";
                         } else {
                             createUser(user);
                             
@@ -107,6 +111,10 @@
     
                 function userSuccess(response){
                     console.log("you did it", response);
+                    $scope.username = user.username;
+                    $scope.password = user.Password;
+                    login();
+                    
                 }
                 function userFailure(error){
                     console.log(error);

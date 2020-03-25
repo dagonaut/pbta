@@ -1792,26 +1792,26 @@
     }
   },
   "game_name": "Dungeon World",
-  "base_stats" : "16 (+2), 15(+1), 13(+1), 12(0), 9(0), 8(-1)",
+  "base_stats": "16 (+2), 15(+1), 13(+1), 12(0), 9(0), 8(-1)",
   "attribute_modifiers": {
-      "18": "+3",
-      "17": "+2",
-      "16": "+2",
-      "15": "+1",
-      "14": "+1",
-      "13": "+1",
-      "12": "0",
-      "11": "0",
-      "10": "0",
-      "9": "0",
-      "8": "-1",
-      "7": "-1",
-      "6": "-1",
-      "5": "-2",
-      "4": "-2",
-      "3": "-3",
-      "2": "-3",
-      "1": "-3"
+    "18": "+3",
+    "17": "+2",
+    "16": "+2",
+    "15": "+1",
+    "14": "+1",
+    "13": "+1",
+    "12": "0",
+    "11": "0",
+    "10": "0",
+    "9": "0",
+    "8": "-1",
+    "7": "-1",
+    "6": "-1",
+    "5": "-2",
+    "4": "-2",
+    "3": "-3",
+    "2": "-3",
+    "1": "-3"
   },
   "classes_list": [
     {
@@ -2752,7 +2752,7 @@
           "description": "Name a city, town, encampment, or other place where people live. As long as this spell is active that place is beset by a plague appropriate to your deity’s domains (locusts, death of the first born, etc.) While this spell is ongoing you take -1 to cast a spell."
         },
         "key": "spells"
-      },      
+      },
       "spell_list": [
         {
           "name": "Light",
@@ -3805,7 +3805,7 @@
         {
           "name": "Burning Brand",
           "key": "burning_brand",
-          "description":"When you conjure a weapon of pure flame, roll+CON. On a 10+ choose two of the following tags, on a 7-9 choose one. You may treat your INT as your STR or DEX in regards to making attacks with this weapon. The weapon always begins with the fiery, touch, dangerous, and 3 uses tags. Each attack with the weapon consumes one use.<br/>  • hand<br/>  • thrown, near<br/>  • +1 damage<br/>  • remove the dangerous tag"
+          "description": "When you conjure a weapon of pure flame, roll+CON. On a 10+ choose two of the following tags, on a 7-9 choose one. You may treat your INT as your STR or DEX in regards to making attacks with this weapon. The weapon always begins with the fiery, touch, dangerous, and 3 uses tags. Each attack with the weapon consumes one use.<br/>  • hand<br/>  • thrown, near<br/>  • +1 damage<br/>  • remove the dangerous tag"
         },
         {
           "name": "Fighting Fire with Fire",
@@ -5582,7 +5582,7 @@
           "name": "Perfect Summons"
         },
         "key": "spells"
-      },      
+      },
       "spell_list": [
         {
           "level": "cantrip",
@@ -6031,7 +6031,7 @@
           "Thin Body"
         ]
       ],
-      "looks_html": "<div><strong>Looks:</strong> Knowing Eyes, Fiery Eyes, Joyous Eyes<br /><strong>Hair:</strong>Fancy Hair, Wild Hair, Stylish Cap<br /><strong>Clothes:</strong>Finery, Traveling Clothes, Poor Clothes<br /><strong>Body:</strong>Fit Body, Well-fed Body, Thin Body</div>",      
+      "looks_html": "<div><strong>Looks:</strong> Knowing Eyes, Fiery Eyes, Joyous Eyes<br /><strong>Hair:</strong>Fancy Hair, Wild Hair, Stylish Cap<br /><strong>Clothes:</strong>Finery, Traveling Clothes, Poor Clothes<br /><strong>Body:</strong>Fit Body, Well-fed Body, Thin Body</div>",
       "alignments": {
         "good": {
           "name": "Good",
@@ -7962,7 +7962,7 @@
         {
           "name": "Burning Brand",
           "key": "burning_brand",
-          "description":"When you conjure a weapon of pure flame, roll+CON. On a 10+ choose two of the following tags, on a 7-9 choose one. You may treat your INT as your STR or DEX in regards to making attacks with this weapon. The weapon always begins with the fiery, touch, dangerous, and 3 uses tags. Each attack with the weapon consumes one use.<br/>  • hand<br/>  • thrown, near<br/>  • +1 damage<br/>  • remove the dangerous tag"
+          "description": "When you conjure a weapon of pure flame, roll+CON. On a 10+ choose two of the following tags, on a 7-9 choose one. You may treat your INT as your STR or DEX in regards to making attacks with this weapon. The weapon always begins with the fiery, touch, dangerous, and 3 uses tags. Each attack with the weapon consumes one use.<br/>  • hand<br/>  • thrown, near<br/>  • +1 damage<br/>  • remove the dangerous tag"
         },
         {
           "name": "Fighting Fire with Fire",
@@ -15386,10 +15386,123 @@
     },
     "key": "tags"
   },
-  "version": "0.1.1 - Modified by PS",
+  "flags": {
+    "GOOD/LAWFUL": [
+      "Offer me an easier solution I must refuse on principle.",
+      "Cause/encourage me to duel somebody one on one.",
+      "Ask me to give you a weapon at a time of need or desperation.",
+      "Give me a reason to explain/demonstrate the folly of avarice.",
+      "Side with me on a course of action which does not involve bloodshed.",
+      "Put us in situations I can justly complain about.",
+      "Harm or threaten to harm an enemy that I can step in and care or show compassion for."
+    ],
+    "KNOWLEDGEABLE": [
+      "Seek my help in finding information on how to ______.",
+      "Help me to unearth hidden lore about _____.",
+      "Ask me to examine an important object. ",
+      "Ask me about the history of a place.",
+      "Ask for and take my advice on a difficult matter."
+    ],
+    "SECRETIVE": [
+      "Ask me a question that seems innocent, but is actually meant to get me to say what gender I am.",
+      "Tease out information about _____ from me.",
+      "Get me to speak of my life beyond our mission.",
+      "Call me out when I express knowledge or manners that are different from my every day behavior."
+    ],
+    "CHAOTIC": [
+      "Participate in wild and unlikely schemes with me when we’re in a pinch.",
+      "Allow me to cause undue harm for your own benefit.",
+      "Allow me to challenge your faith in a deity or an institution.",
+      "Reveal a personal weakness so I can address it.",
+      "Believe and act on a lie I’ve told you.",
+      "Give me an order so I can refuse it."
+    ],
+    "ECCENTRIC": [
+      "Interrupt me when I’m speaking with someone no one else can see.",
+      "Ask me about some sort of obscure history and then suffer through my, probably wrong, answer."
+    ],
+    "POWERFUL": [
+      "Attempt to dissuade me from solving a problem through the use of force.",
+      "Attempt to use finesse so I can barge right in/through."
+    ],
+    "VENGEFUL": [
+      "Assist me in destroying someone’s most treasured possession or in dealing the death blow to them.",
+      "Try to pull me back or rein me in so I can pursue vengeance at any cost."
+    ],
+    "CHARISMATIC/FAMOUS": [
+      "Defer to me when dealing with polite society.",
+      "Believe and act on a lie I’ve told you.",
+      "Go incognito so I can mess it up by being easily recognizable.",
+      "Tell someone else about my exploits.",
+      "Follow a plan that benefits me while believing it's your idea."
+    ],
+    "IGNORANT/GULLIBLE": [
+      "Convince me to cause undue harm for your own benefit.",
+      "Tell me a lie I believe.",
+      "Cause/encourage me to fight someone for your own gain."
+    ],
+    "OUTSIDER": [
+      "Refuse my aid because I’m different.",
+      "Offer me some civilized convention so I can refuse to use it, even if it would make my task less difficult.",
+      "Point out a great achievement or belief of the civilized world so that I may mock it.",
+      "Allow me to break a rule, law or custom of the place we are in so that I might learn more about the world through my mistakes."
+    ],
+    "LEADER": [
+      "Allow me to make a decision so you can criticize it later.",
+      "Suggest a journey to a forbidden/dangerous locale so I can lead the way.",
+      "Take my order to do something that seems stupid or reckless, regardless of whether it actually is.",
+      "Let me lead you into a battle, even if you might be the better choice to be in front.",
+      "Challenge my leadership if I make a decision that goes poorly."
+    ],
+    "DAREDEVIL": [
+      "Ask me to do something daring and acrobatic.",
+      "Make it dangerous for me to help you.",
+      "Allow me to go headfirst into danger even though the odds are against me.",
+      "Offer me a high-risk, high-reward plan that I can't resist."
+    ],
+    "COWARDLY": [
+      "Offer me an opportunity to go into danger that I can refuse.",
+      "Put us in situations I can justly complain about.",
+      "Give me something important so that I can give it away at the first sign of trouble.",
+      "Call me a coward to get me to follow you into a dangerous situation."
+    ],
+    "GREEDY": [
+      "Offer me some treasure to get me to do something I normally would not do.",
+      "Point out a treasure that is in a forbidden or dangerous place so I can try to get my hands on it."
+    ],
+    "DEVOUT/LOYAL": [
+      "Offer me an opportunity to achieve a goal by going against my comrades that I will refuse.",
+      "Offer me an easy path that would break my vow so I can refuse.",
+      "Give me a reason to explain/demonstrate the folly of one of your sins.",
+      "Ask me to listen to your sins or confession so that I might petition my deity for their forgiveness.",
+      "Trust me with a secret you would never tell anyone else.",
+      "Interrupt me when I’m ‘communing' or meditating so that I can ignore you."
+    ],
+    "PROTECTIVE": [
+      "Get into a dangerous situation that I can protect you from.",
+      "Ask my advice in making a place defensible."
+    ],
+    "NOTORIOUS/CRIMINAL": [
+      "Attempt to reassure someone so I can make it clear how dangerous I really am.",
+      "Call attention to something valuable or useful that would be missed so I can steal it.",
+      "Seek my help in finding a way into a well guarded facility.",
+      "Ask for my help in 'interrogating' someone.",
+      "Ask me for help in covering up a crime you have committed."
+    ]
+  },
+  "version": "0.1.2 - Modified by PS",
   "notes": [
-    {"???":"Added Immolator. Immolator moves not include in moves. Removed extra lists."},
-    {"2019-04-11": "Added spell_list arrays for Cleric and Wizard"},
-    {"2019-04-22": "Added keys to classes.alignment_list & classes_list.alignment_list"}
+    {
+      "???": "Added Immolator. Immolator moves not include in moves. Removed extra lists."
+    },
+    {
+      "2019-04-11": "Added spell_list arrays for Cleric and Wizard"
+    },
+    {
+      "2019-04-22": "Added keys to classes.alignment_list & classes_list.alignment_list"
+    },
+    {
+      "2020-03-25": "Added flags JSON"
+    }
   ]
 }
