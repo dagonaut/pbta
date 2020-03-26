@@ -134,7 +134,8 @@
             let d = { left: 13, right: 14 };
             switch(vm.dm) {
                 case "Paul":
-                  d = {left: 13, right: 14}
+                  //d = {left: 13, right: 14}
+                  d = {left: 23, right: 24}
                   break;
                 case "Sean":
                   d = {left: 11, right: 13};
