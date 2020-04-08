@@ -26,15 +26,9 @@
     {{vm.testText}}
     {{vm.url}}
 
-    <hr>
-    <div class="row">
-        <div class="col-md-3">
-            <div ng-repeat="(key, value) in vm.basicMoves">
-                {{key}}:
-                <pre>{{value}}</pre>
-            </div>
-        </div>
-    </div>
+    <hr />
+
+    <attribute-block hold-obj="hold" config="vm.config" on-delete="vm.getHolds();" mc="true"></attribute-block>
 
 </body>
 

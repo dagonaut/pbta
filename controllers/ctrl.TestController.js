@@ -14,6 +14,16 @@
             vm.getUser = getUser;
             vm.user = {};
 
+            vm.config = {
+                attributes: [
+                    { name: "GRIT", range: [-2, -1, 0, 1, 2, 3], modifierOnly: true},
+                    { name: "QUICK", range: [-2, -1, 0, 1, 2, 3], modifierOnly: true},
+                    { name: "SAVVY", range: [-2, -1, 0, 1, 2, 3], modifierOnly: true},
+                    { name: "CHARM", range: [-2, -1, 0, 1, 2, 3], modifierOnly: true},
+                    { name: "STRANGE", range: [-2, -1, 0, 1, 2, 3], modifierOnly: true}
+                ]
+            }
+
             init();
 
             function init(){
