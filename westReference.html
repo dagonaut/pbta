@@ -70,13 +70,58 @@
             </div>
         </div>
         <div class="col-md-3" ng-controller="ReferenceController">
-            <div class="col-sm-6" ng-repeat="tag in allTags">
-                <div>
+            <div class="col-sm-6">
+                <h2 class="orange">Weapon Tags</h2>
+                <div ng-repeat="tag in allTags" ng-if="tag.category === 'weapon'">
                     <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
-                    <div class="move-description" ng-hide="tag.hide">
+                    <div class="move-description" ng-hide="tag.hide">                        
                         <span>
-                            {{tag.category}}
-                        </span>
+                            {{tag.description}}
+                        </span>							
+                    </div>
+                </div>
+                <h2 class="orange">Armor Tags</h2>
+                <div ng-repeat="tag in allTags" ng-if="tag.category === 'armor'">
+                    <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+                    <div class="move-description" ng-hide="tag.hide">                        
+                        <span>
+                            {{tag.description}}
+                        </span>							
+                    </div>
+                </div>
+                <h2 class="orange">Size Tags</h2>
+                <div ng-repeat="tag in allTags" ng-if="tag.category === 'size'">
+                    <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+                    <div class="move-description" ng-hide="tag.hide">                        
+                        <span>
+                            {{tag.description}}
+                        </span>							
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h2 class="orange">Equipment Tags</h2>
+                <div ng-repeat="tag in allTags" ng-if="tag.category === 'equipment'">
+                    <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+                    <div class="move-description" ng-hide="tag.hide">                        
+                        <span>
+                            {{tag.description}}
+                        </span>							
+                    </div>
+                </div>
+                <h2 class="orange">Monster Tags</h2>
+                <div ng-repeat="tag in allTags" ng-if="tag.category === 'monster'">
+                    <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+                    <div class="move-description" ng-hide="tag.hide">                        
+                        <span>
+                            {{tag.description}}
+                        </span>							
+                    </div>
+                </div>
+                <h2 class="orange">Organization Tags</h2>
+                <div ng-repeat="tag in allTags" ng-if="tag.category === 'organization'">
+                    <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+                    <div class="move-description" ng-hide="tag.hide">                        
                         <span>
                             {{tag.description}}
                         </span>							
