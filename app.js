@@ -9,7 +9,7 @@
 		$urlRouterProvider.otherwise(''); //Instead of 404		
 		
 		$stateProvider
-			.state('auth.test', {
+			.state('test', {
 				url: '/test',
 				templateUrl: 'test.html',
 				controller: 'TestController',
@@ -25,6 +25,12 @@
 				url: '/register',
 				templateUrl: 'register.html',
 				controller: 'LoginController',
+				controllerAs: 'vm'
+			})			
+			.state('west', {
+				url: '/west',
+				templateUrl: 'westReference.html',
+				controller: 'WestController',
 				controllerAs: 'vm'
 			})
 			.state('auth',{

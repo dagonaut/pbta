@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Test Page</title>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            /* css-3 */
+            white-space: -moz-pre-wrap;
+            /* Mozilla, since 1999 */
+            white-space: -pre-wrap;
+            /* Opera 4-6 */
+            white-space: -o-pre-wrap;
+            /* Opera 7 */
+            word-wrap: break-word;
+            /* Internet Explorer 5.5+ */
+        }
+    </style>
 </head>
+
 <body ng-controller="TestController">
     <h3>Test Page</h3>
     <a ng-click="vm.getUser()">Get User Test</a>
     {{vm.testText}}
     {{vm.url}}
-    
-    
+
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            <div ng-repeat="(key, value) in vm.basicMoves">
+                {{key}}:
+                <pre>{{value}}</pre>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>

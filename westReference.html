@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weird West Reference Page</title>
+    <style>
+        body {
+            color:#ddd;
+            background-color: #333;
+        }
+        h2{
+            border-bottom:#d38336 1px solid;
+        }
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-break:normal;
+        }
+        .move-header{
+            font-size:16px;
+            font-weight:bold;
+        }
+        .orange{color:#d38336;}
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-3">
+            <h3>How The West Was Lost Reference</h3>
+        </div>
+        <div class="col-md-3">
+            <h3>
+                <a class="orange" href="https://docs.google.com/spreadsheets/d/1ut8EqClWaabDSa7PW_pV__cwLSX86BOGdFV5KMpKjGk/edit?usp=sharing" target="_blank">Google Sheet</a>
+            </h3>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <h3>Tags</h3>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="move-header orange">Basic Moves</h2>
+            <div ng-repeat="(key, value) in vm.moves.Basic">
+                <h2 ng-click="vm.visible.Basic[$index] = !vm.visible.Basic[$index]">{{key}}</h2>
+                <pre ng-hide="!vm.visible.Basic[$index]">{{value}}</pre>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h2 class="move-header orange">Other Moves</h2>
+            <div ng-repeat="(key, value) in vm.moves.Other">
+                <h2 ng-click="vm.visible.Other[$index] = !vm.visible.Other[$index]">{{key}}</h2>
+                <pre ng-hide="!vm.visible.Other[$index]">{{value}}</pre>
+            </div>
+            <h2 class="move-header orange">Dinero Moves</h2>
+            <div ng-repeat="(key, value) in vm.moves.Dinero">
+                <h2 ng-click="vm.visible.Dinero[$index] = !vm.visible.Dinero[$index]">{{key}}</h2>
+                <pre ng-hide="!vm.visible.Dinero[$index]">{{value}}</pre>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h2 class="move-header orange">Fight Moves</h2>
+            <div ng-repeat="(key, value) in vm.fightmoves">
+                <h2 ng-click="vm.visible.Fight[$index] = !vm.visible.Fight[$index]">{{key}}</h2>
+                <pre ng-hide="!vm.visible.Fight[$index]">{{value}}</pre>
+            </div>
+        </div>
+        <div class="col-md-3" ng-controller="ReferenceController">
+            <div class="col-sm-6" ng-repeat="tag in allTags">
+                <div>
+                    <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+                    <div class="move-description" ng-hide="tag.hide">
+                        <span>
+                            {{tag.category}}
+                        </span>
+                        <span>
+                            {{tag.description}}
+                        </span>							
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

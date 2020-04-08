@@ -1,0 +1,72 @@
+FIGHTS
+When you get in a Fight, first determine what kind of Fight it is, and establish who's on which side. *A Duel, one-on-one. *An Assault on a Defended Position *A Running Gunfight. *A Chase *A Deadly Game Of Cat and Mouse *A Bloody Free-For-All
+Once you've chosen that, figure out each side's Harm and Armor, applying Gang sizes as needed.
+Look at the specific rules for the type of Fight.  They have three core steps: rolling to spend blind, establishing consequences, and resolving the fight.
+Rolling to Spend Blind involves making a roll, and gaining Hold to spend.  You'll spend these secretly on different options based on the type of Fight.  Depending on the Fight, you might be able to take a Personal Action.  This usually means we're zooming in on your character as you do some specific thing, like attacking a specific enemy, trying to steal something, slip away, or complete some non-battle objective.
+After your roll, spend, reveal what everyone spent.  The Marshall will figure out the Harm each side takes and compare any other totals, and establish the consequences.  The Marshall will work to incorporate everyone's contributions into the narrative, and if Personal Actions need to make Moves, they'll figure out how to work those in.
+After that, there's going to be a decision point where you resolve the fight.  Are you still fighting?  Has one side or another won?  If you're still fighting, go back to rolling to spend blind, unless the fictional circumstances dictate you switch to a different kind of Fight.
+A DUEL
+For when you Duel someone, one-on-one, possibly on Main Street at High Noon.
+Look at each duelist's weapon to see what Harm they'll be inflicting.
+If weapons aren't drawn yet, each participant rolls + Quick.  On a 10+, spend 3.  On a 7-9, spend 2.  On a miss, spend 1 anyway.  If your weapon is big like a rifle, shotgun, or giant sword, spend 1 less. *You're Intimidating. *You're Stalwart. *You're Quicker on the Draw.
+For NPCs, the Marshall will spend 2.  The Marshall may spend 1 or 3 instead, but must announce that she's doing so. 1 is for NPCs who are slow, untrained, or cowardly.  3 is for NPCs who are cold-hearted killers.
+If you picked You're Intimidating, your opponent loses one hold in the next round for each time you picked that. If you picked You're Stalwart, cancel out one use of your opponent's You're Intimidating. If you picked You're Quicker on the Draw, in the next round, spend 1 more if you picked it more times than your opponent.
+Now that weapons are drawn, each participant rolls + Grit.  On a 10+, spend 3.  On a 7-9, spend 2.  On a miss, spend 1 anyway. *Aim your shot.  Add +1 to the harm you inflict. *Dodge.  Subtract 1 from the harm you take. *Position yourself for advantage.  (Win the Fight).
+The Marshall will spend the same amount as before: 2 for most NPCs, 1 for cowards and 3 for killers.  This might be modified by Intimidating/Quicker on the Draw.
+After rolling, each side deals harm, as established and modified by Aim and Dodge results.
+If both participants are still up and fighting, whoever choose Position Yourself for Advantage wins the round.  The loser chooses one: *You surrender, and are at your opponent's mercy. *You flee, terrified.  They can shoot you in the back, if they want. *This is a fight to the death.  Take +1 harm.  The battle continues another round.
+If it's a tie, if both sides want to end the fight, it does, otherwise go back to rolling + Grit.  (Don't roll + Quick again; weapons are already out.)
+AN ASSAULT
+For when a fixed, defended position, possibly the old Dutcher Homestead, is attacked, possibly by the Jackalope Gang.
+Look at each side and establish what Harm they'll be inflicting, and what armor they have, if any.
+Each player involved in the fight rolls +Grit. On a 10+, spend 3.  On a 7-9, spend 2.  On a miss, spend 1 anyway. *You provide supporting fire.  Add +1 to your side's harm. *You provide covering fire.  Add +1 to your side's armor. *Lead an Advance, or Hold Strong.  (Win the Fight.) *Take a single personal action.
+If there are NPC combatants not under the command of one of the PCs, the Marshall will spend 2 for that side.  The Marshall can choose to spend 1 or 3 instead, but must announce that she's doing so.  1 is for a gang that is weak, afraid, or lacking leadership.  3 is for a gang that is fearless, devoted, or ensorcelled.
+After rolling, each side deals harm, as established and modified by Supporting Fire and Covering Fire results.
+Whichever side spent more on Lead an Advance or Hold Strong wins the round.
+If the attackers win, the defenders choose: *We flee. *We surrender. *We dig in and keep fighting, but take +1 harm.  The battle continues another round.
+If the defenders win, the attackers choose: *We withdraw. *We dig in to wait you out. *We press the attack despite all odds, but take +1 harm.  The battle continues another round.
+If it's a tie, treat it as if the defenders won, but the attackers don't take harm for pressing the attack.
+A RUNNING GUNFIGHT
+For when you engage in a running gunfight, perhaps a shootout on horseback, or a mad shootout in town-square.
+The Marshall will establish the terrain for the Gunfight.  Look at each side and establish what Harm they'll be inflicting, and what armor they have, if any.
+The Marshall will choose at least one of these properties and describe it: *A Precipice *A Wall *An Exposed Place *An Overhand *Broken Ground *Unstable Ground
+During this round, if someone manages to describe how they take real tactical advantage of the terrain, the Marshall can choose to give them a bonus: *+1 to a roll. *-1 to an enemy's roll. *A shot where you had none. *A move where you had none. *+1 hold for one of the actions.
+Each player involved in the fight rolls +Grit. On a 10+, spend 3.  On a 7-9, spend 2.  On a miss, spend 1 anyway. *You provide supporting fire.  Add +1 to your side's harm. *You provide covering fire.  Add +1 to your side's armor. *Cover Ground.  (Win the Fight.) *Take a single personal action.
+If there are NPC combatants not under the command of one of the PCs, the Marshall will spend 2 for that side.  The Marshall can choose to spend 1 or 3 instead, but must announce that she's doing so.  1 is for a gang that is weak, afraid, or lacking leadership.  3 is for a gang that is fearless, devoted, or ensorcelled.
+Whichever side spent more on Cover Ground wins the round.  They choose: *We out pace you and get away. *We go to ground in a place of our choosing. *We corner you in a place of our choice.
+If you win by two or more, your victory is complete: you get away clean, or if you have the opposition cornered, you have the drop on them.  (If you shoot them, it's Attacking Someone, not a Fight.)
+If you only won by one, the loser can continue the fight, only now they might be pursuing a Chase or an Assault.  In any case, you spend 1 more in the next round to represent your advantage.
+If it's a tie, the gunfight continues.  The Marshall will determine if the Terrain or the nature of the Fight has changed.
+A CHASE
+For when one side is pursuing another, perhaps through a rugged canyon or across a windswept plain, highlighted by a majestic sunset.
+The Marshall will establish the terrain for the Chase, and starting position for everyone involved in the chase. Look at each side and establish what Harm they'll be inflicting, and what armor they have, if any.
+The Marshall will choose at least one of these properties and describe it: *A Precipice *A Wall *An Exposed Place *An Overhand *Broken Ground *Unstable Ground
+Whoever is furthest behind starts at position zero.  If the person being chased has only a slim lead, they start at position one.  If they have a better lead, they start at position two or three.  If they have an insurmountable lead, they start at position four.
+During the round, if someone manages to describe how they take real tactical advantage of the terrain, the Marshall can choose to give them a bonus: *+1 to a roll. *-1 to an enemy's roll. *A shot where you had none. *A move where you had none. *+1 hold for one of the actions.
+For each gang or group, the leader rolls + Quick. On a 10+, spend 3.  On a 7-9, spend 2.  On a miss, spend 1 anyway. *Create an opening for your side to attack.  (+1 harm this round) *Seek defensive terrain (+1 armor this round) *Cover ground (increase your position.)
+If you're on horseback, add a free Cover Ground for each point of Power your horse has.
+For NPCs, the Marshall will spend 2.  The Marshall can choose to spend 1 or 3 instead, but must declare she's doing so.  1 is for cowardly or disorganized NPCs.  3 is for a group with strong leadership or renowned for their ruthlessness and persistence.  Don't forget to factor in their Horse Power. 
+Start with the group in the lead.  Increase it's position for one for each point of Cover Ground the leader spent.  The leader can choose to move less distance at this time, if they want. If there's a tie for lead, move both groups simultaneously.
+See if the relative position impacts the Harm each side is capable of inflicting.  At the same position, Hand or Close weapons can be used.  At distance 1 or 2, Close Weapons can be used.  At distance 3 or 4, Far weapons can be used.
+Everyone else rolls + Grit. On a 10+, spend 3.  On a 7-9, spend 2.  On a miss, spend 1 anyway. *If you have an appropriate weapon, take a shot.  +1 Harm for your side. *If you have an appropriate weapon, provide covering fire.  +1 Armor for your side. *Protect yourself.  +1 Armor for you only. *Take a single personal action.
+If there are NPC combatants not under the command of one of the PCs, the Marshall will spend 2 for that side.  The Marshall can choose to spend 1 or 3 instead, but must announce that she's doing so.  1 is for a gang that is weak, afraid, or lacking leadership.  3 is for a gang that is fearless, devoted, or ensorcelled.
+Exchange harm, modified by people's rolls.
+If fleeing side manages to get five distance ahead of their pursuers, they manage to break away.
+If the pursuers choose to stop the pursuit, the chase ends.  Otherwise, go to another round.  The Marshall will determine if the terrain has changed.
+A DEADLY GAME OF CAT AND MOUSE
+For when two people are attempting to get the jump on one another, perhaps in a ghost town, abandoned mine, or craggy canyon.
+Look at each side and establish what Harm they'll be inflicting, and what armor they have, if any.
+Everyone involved rolls + Savvy. On a 10+, spend 3.  On a 7-9, spend 2.  On a miss, spend 1 anyway. *Listen carefully to determine your opponent's position. *Move quietly so you can't be heard. *Maneuver yourself into a better position.
+For each NPCs, the Marshall will spend 2.  The Marshall can choose to spend 1 or 3 instead, but must declare she's doing so.  1 is for clumsy, blundering, and unprepared NPCs.  3  is for NPCs distinguished by their calm under pressure and keen wits.
+If you spent at least as many on Listen Carefully as your opponent did for Move Quietly, you know where they are. They have cover (+1 armor), unless you exceeded their total (instead of just tying it).
+Whoever spends more points on Maneuver has cover (+1 armor).
+If you know where you are, and your opponent doesn't, deal your harm to them, then they choose: *Surrender, placing themselves at your mercy. *Duck back into the shadows.  Continue, but spend one fewer next round.
+If you both know where each other are, exchange harm. Whoever spent less points on maneuver chooses: *Surrender *Stand and Fight (now you're in a Duel) *Duck back into the shadows.  Continue, but spend one fewer next round. If nobody won on maneuver, either side can continue the contest.
+If neither side knows where the other is, nobody takes any harm.  Whoever spent more points on Maneuver chooses: *Break away.  By the time they realize you aren't here, you're long gone. *Continue the Fight, and you spend one more next round. On a tie, continue the Fight.
+A BLOODY FREE FOR ALL
+For when you're in a Bloody Free-For-All, like a bar brawl that's gotten entirely out of hand, or a frenzied riot.
+Treat the participants as a single gang.  Figure out harm and armor for the group as a whole.
+Everyone involved rolls + Grit.  On a 10+, spend 3, on a 7-9 spend 2, on a miss, spend 1 anyway. *Escalate things.  Everyone takes +1 harm. *Defend yourself.  You gain +1 armor. *Defend someone else.  They gain +1 armor. *Take a single, short, personal action.
+For named NPCs involved in the fight, the Marshall will spend 1.   The Marshall can choose to spend 0 or 2 instead, but must declare she's doing so.  0 is for unarmed, incompetent, or incapacitated NPCs.  2 is for NPCs distinguished by their capacity for ultra-violence and chaos.
+The gang inflicts harm on itself and everyone in it as established.
+After the exchange of harm, the violence finally stops.
