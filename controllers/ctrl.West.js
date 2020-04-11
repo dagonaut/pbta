@@ -5,10 +5,10 @@
         .module('pbta_resources')
         .controller('WestController', WestController);
 
-        WestController.$inject = ['$rootScope','$scope','$http','$location'];
-        function WestController($rootScope, $scope, $http, $location){
+        WestController.$inject = ['$rootScope','$scope','$http','$location', 'apiservice'];
+        function WestController($rootScope, $scope, $http, $location, apiservice){
             var vm = this;
-            
+        
             vm.tabs = {
                 charactersheet: { index: 0, heading: 'Character Sheet'},
                 reference: { index: 1, heading: 'Reference'},                
@@ -16,13 +16,36 @@
                 mc: { index: 3, heading: 'Marshall'}
             };
             vm.visible = { "Basic": [], "Other": [], "Dinero": [], "Fights": []};
-            vm.character = {};
+            vm.cd = {
+                id: "",
+                gameid: 5,
+                name: "",
+                playername: "",
+                class: "",
+                level: 1,
+                xp: 0,
+                look: "",
+                stats: { grit: 0, quick: 0, charm: 0, savvy: 0, strange: 0 },
+                harm: 0,
+                armor: 0,
+                history: [],
+                moves: [],
+                custom: null,
+                horse: {},
+                gear: "",
+                notes: "",
+                advancements: [],
+                visibility: {},
+                createdby: 0
+            };
 
             init();
 
             function init(){ 
-                console.log(vm.tabs);
+                console.log("west controller loaded");
                 getMoves();
+                getUsers();
+                loadCharacter(1);
             }            
 
             function getMoves(){
@@ -43,10 +66,32 @@
                     console.log(error);
                 }
             }
+
+            function getUsers(){
+                apiservice.GetAll("tbl_Users").then(y, n);
+
+                function y(r){
+                    console.log(r);                    
+                }
+
+                function n(e){
+                    console.log(e);
+                }
+            }
             
             //#region CRUD
             function getCharacters(){}
-            function loadCharacter(characterId){}
+            function loadCharacter(characterId){
+                apiservice.GetById("tbl_weirdwest_characters", 1).then(yes, no);
+
+                function yes(r){
+                    console.log(JSON.parse(r.stats));                    
+                }
+
+                function no(e){
+                    console.log(e);
+                }
+            }
             function updateCharacter(characterId){}
             function deleteCharacter(characterId){}
             //#endregion

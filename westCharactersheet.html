@@ -1,7 +1,30 @@
-
+<style>
+    #charSheet input{color:black;}
+</style>
 <form id="charSheet" name="charSheet" class="container-fluid">
     <div class="row">
-        <clock></clock>
+        Name: <input ng-model="vm.cd.name" /><br />
+        Player Name:<input ng-model="vm.cd.playername" /><br />
+        Class:  <input ng-model="vm.cd.class" /><br />
+        Level: <input ng-model="vm.cd.level" /><br />
+        XP: <input ng-model="vm.cd.xp" /><br />
+        Look: <input ng-model="vm.cd.look" /><br />
+        Grit: <input ng-model="vm.cd.stats.grit" /><br />
+        Quick: <input ng-model="vm.cd.stats.quick" /><br />
+        Charm: <input ng-model="vm.cd.stats.charm" /><br />
+        Savvy: <input ng-model="vm.cd.stats.savvy" /><br />
+        Strange: <input ng-model="vm.cd.stats.strange" /><br />
+        Harm: <input ng-model="vm.cd.harm" /><br />
+        Armor: <input ng-model="vm.cd.armor" /><br />
+        History: <input ng-model="vm.cd.history" /><br />
+        Moves: <input ng-model="vm.cd.moves" /><br />
+        Custom: <input ng-model="vm.cd.custom" /><br />
+        Horse: <input ng-model="vm.cd.horse" /><br />
+        Gear: <input ng-model="vm.cd.gear" /><br />
+        Notes: <input ng-model="vm.cd.notes" /><br />
+        Advancement: <input ng-model="vm.cd.advancements" /><br />
+        Created By: <input ng-model="vm.cd.createdby" /><br />
+        <div class="btn btn-primary" ng-click="vm.updateUser(vm.cd)">Create/Update</div>
     </div>
 </form>
 
