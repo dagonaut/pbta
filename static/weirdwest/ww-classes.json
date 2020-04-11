@@ -1,0 +1,271 @@
+{
+    "gunslinger":{
+        "look":[],
+        "stats":[
+            { "quick": 0, "grit": 2, "charm": 0, "savvy": 1, "strange": 0},
+            { "quick": 1, "grit": 2, "charm": -2, "savvy": 1, "strange": 1},
+            { "quick": 1, "grit": 2, "charm": -2, "savvy": 2, "strange": -1},
+            { "quick": 2, "grit": 2, "charm": -2, "savvy": 1, "strange": -1}
+        ],
+        "num_starting_moves": 2,
+        "moves_list":[
+            {"name": "Aim With My Eye, Shoot With My Mind", "description:": "When you follow up on answers from Sizing Up a Situation or Person, add +2 instead of +1."},
+            {"name":"Code of the Duel", "description":"When you are in a Duel, spend one more than you normally would.  Outsiders cannot interfere."},
+            {"name":"Fan the Hammer", "description":"Any Revolver you wield gains the Area keyword."},
+            {"name":"I Deal In Lead", "description":"Whenever you inflict harm, inflict +1 harm."},
+            {"name":"One Man Gang", "description":"In a Fight, you count as a small gang, inflicting harm and having armor as appropriate."},
+            {"name":"Tough Customer", "description":"While you are injured, you gain +1 Armor."},
+            {"name":"True Grit", "description":"When you Cowboy Up, roll Grit instead of Quick."}
+        ],
+        "moves": {
+            "Aim With My Eye, Shoot With My Mind":  "When you follow up on answers from Sizing Up a Situation or Person, add +2 instead of +1.",
+            "Code of the Duel":  "When you are in a Duel, spend one more than you normally would.  Outsiders cannot interfere.",
+            "Fan the Hammer":  "Any Revolver you wield gains the Area keyword.",
+            "I Deal In Lead":  "Whenever you inflict harm, inflict +1 harm.",
+            "One Man Gang": "In a Fight, you count as a small gang, inflicting harm and having armor as appropriate.",
+            "Tough Customer": "While you are injured, you gain +1 Armor.",
+            "True Grit":  "When you Cowboy Up, roll Grit instead of Quick."
+        },
+        "gear": {
+            "what_you_get": "You get two Hard Caliber Revolvers (name them), one solid weapon, and two backup weapons.  You get Armor 1 (a leather duster?), your clothes, and goods worth 1 Dinero.",
+            "gear_lists": [
+                    {
+                        "category": "Hard Caliber Revolvers", 
+                        "description": "You get two of these: Hard Caliber Revolvers (3 harm close reload loud valuable)", 
+                        "list": ["Amber Handled", "Bone Handled", "Gold Handled", "Ivory Handled", "Pearl Handled", "Sandalwood Handled", "Silver Handled"]
+                    },
+                    {
+                        "category": "Solid Weapons",
+                        "description": "",
+                        "list": [
+                            "Bow and Arrow (2 harm close/far)",
+                            "Buffalo Gun (3 harm close/far reload loud)",
+                            "Cavalry Saber (3 harm close)",
+                            "Le Mat Revolver (2 harm close reload loud, with one-shot shotgun: 3 harm close refill)",
+                            "Rifle (2 harm close/far loud)", 
+                            "Shotgun (3 harm close reload messy loud)", 
+                            "Throwing Knifes (2 harm hand/close infinite)"
+                        ]
+                    },
+                    {
+                        "category": "Backup Weapons",
+                        "description":"",
+                        "list":[
+                            "Bayonet (2 harm hand)", 
+                            "Derringer (2 harm close reload loud)", 
+                            "Knife (2 harm hand)", 
+                            "Tomahawk (2 harm hand)"
+                        ]
+                    }
+            ]
+        },
+        "starting_horse": false,
+        "history":[
+            {"question":"Who am I a sucker for?", "amount": "+1"},
+            {"question":"Who fought by my side when the chips were down?", "amount": "+2"},
+            {"question":"Who left me dying in the dirt?", "amount": "+3"},
+            {"question":"Everyone else...", "amount": "-1"}
+        ],
+        "special": "If you and another character have sex, you get +1 forward.  At your option, they also take +1 forward.",
+        "advancement":[
+            "get +1 Grit (max +3)",
+            "get +1 Quick (max +2)",
+            "get +1 Savvy (max +2)",
+            "get +1 Strange (max +2)",
+            "get another Gunslinger move",
+            "get another Gunslinger move",
+            "get another Gunslinger move",
+            "get a Gang and the Boss move",
+            "get a move from another playbook",
+            "get a move from another playbook"
+        ],
+        "custom": null
+    },
+    "lawdog":{
+        "look":[],
+        "stats":[
+            { "quick": 0, "grit": 2, "charm": 1, "savvy": 1, "strange": -2},
+            { "quick": 0, "grit": 2, "charm": 1, "savvy": 1, "strange": -1},
+            { "quick": 1, "grit": 2, "charm": -1, "savvy": 2, "strange": -2},
+            { "quick": 2, "grit": 2, "charm": 0, "savvy": 0, "strange": -2}
+        ],
+        "num_starting_moves":3,
+        "moves_list":[
+            {"name":"Always Get Your Man", "description":"When you follow the trail of someone you know is guilty of a Hangin' Crime, roll + Savvy.  On a 10+, you will inexorably track them to their destination, and choose one: \n•You catch them on even footing. \n•You catch up to them before they reach their destination. \n•You beat them to their destination, and can prepare for their arrival. On a 7-9, you track them to their destination, but the Marshall chooses one: \n•When you catch up to them, they have the advantage. \n•The journey is long and arduous. \n•To catch them, you have to ride ahead of your companions."},
+            {"name":"Hunchin'", "description":"When you Open Your Mystic Senses roll + Savvy instead of + Strange."},
+            {"name":"Judge of the Guilty", "description":"When you Size Up a Person, you have two extra questions you can ask: \n•Have you committed any Hangin' Crimes in the last year? \n•Have you ever committed (name a particular Hangin' Crime)?"},
+            {"name":"Justice Comes From the Barrel of a Gun", "description":"You do +1 Harm to those you know are guilty of a Hangin' Crime, and you get +1 Armor against their attacks."},
+            {"name":"Rally the Townsfolk", "description":"When you speak to a mob about a threat that concerns their livelihood, roll + Charm.  On a hit, they unite and will fight for you as a gang (2 harm, 0-armor, Vulnerable: Desertion, size as appropriate).  On a 10+, add +1 harm, +1 armor to the gang, or lose Vulnerable. On a miss, congrats, you're the scapegoat."},
+            {"name":"That's a Hangin' Crime in My Book", "description":"Name another crime.  Add it to the list of crimes that count as Hangin' Crimes."},
+            {"name":"Welcome Reputation", "description":"When you enter a community with your badge of office revealed, roll + Charm. On a hit, they welcome you into the community, and tell you their sorrows.  On a 10+, you take +1 forward for dealing with members of the community.  On a miss, they don't trust you, and are resentful of your presence."}
+
+        ],
+        "moves":{
+            "Always Get Your Man":  "When you follow the trail of someone you know is guilty of a Hangin' Crime, roll + Savvy.  On a 10+, you will inexorably track them to their destination, and choose one: \n•You catch them on even footing. \n•You catch up to them before they reach their destination. \n•You beat them to their destination, and can prepare for their arrival. On a 7-9, you track them to their destination, but the Marshall chooses one: \n•When you catch up to them, they have the advantage. \n•The journey is long and arduous. \n•To catch them, you have to ride ahead of your companions.",
+            "Hunchin'":  "When you Open Your Mystic Senses roll + Savvy instead of + Strange.",
+            "Judge of the Guilty": "When you Size Up a Person, you have two extra questions you can ask: \n•Have you committed any Hangin' Crimes in the last year? \n•Have you ever committed (name a particular Hangin' Crime)?",
+            "Justice Comes From the Barrel of a Gun":  "You do +1 Harm to those you know are guilty of a Hangin' Crime, and you get +1 Armor against their attacks.",
+            "Rally the Townsfolk":  "When you speak to a mob about a threat that concerns their livelihood, roll + Charm.  On a hit, they unite and will fight for you as a gang (2 harm, 0-armor, Vulnerable: Desertion, size as appropriate).  On a 10+, add +1 harm, +1 armor to the gang, or lose Vulnerable. On a miss, congrats, you're the scapegoat.",
+            "That's a Hangin' Crime in My Book":  "Name another crime.  Add it to the list of crimes that count as Hangin' Crimes.",
+            "Welcome Reputation":  "When you enter a community with your badge of office revealed, roll + Charm. On a hit, they welcome you into the community, and tell you their sorrows.  On a 10+, you take +1 forward for dealing with members of the community.  On a miss, they don't trust you, and are resentful of your presence."
+
+        },
+        "gear":{
+            "what_you_get":"You get one Big Iron, a solid weapon, and a backup weapon.  You also get a badge of office, a sturdy noose, 1 Armor (a leather duster?), a horse, your clothes, and goods worth 1 Dinero.",
+            "gear_lists":[
+                {
+                    "category": "Starting items",
+                    "description":"",
+                    "list":[
+                        "Big Iron Revolver (3 harm close reload loud)",
+                        "Sturdy Noose (3 harm ap applied)"                        
+                    ]
+                },
+                {
+                    "category": "Solid Weapons",
+                    "description":"",
+                    "list":[
+                        "Buffalo Rifle (3 harm close/far loud)",
+                        "Cavalry Saber (3 harm close)",
+                        "Shotgun (3 harm close reload messy loud)"
+                    ]
+                },
+                {
+                    "category": "Backup Weapons",
+                    "description":"",
+                    "list":[
+                        "Bayonet (2 harm close)",
+                        "Bow and Arrow (2 harm, close/far) ",
+                        "Derringer (2 harm close reload loud) ",
+                        "Knife (2 harm hand) ",
+                        "Revolver (2 harm close reload loud) ",
+                        "Throwing Knifes (2 harm hand infinite) ",
+                        "Tomahawk (2 harm hand)"
+                    ]
+                }
+            ]
+        },
+        "starting_horse": true,
+        "history":[
+            {"question":"Which of you helped me bring a fugitive to justice?", "amount":"+2"},
+            {"question":"Which of you is related to someone I punished?", "amount":"+3"},
+            {"question":"Which of you has committed a Hangin' Crime?", "amount":"+3"},
+            {"question":"Everyone Else...", "amount":"+1"}
+        ],
+        "special":"No sex move for the Law Dog :(",
+        "advancement":[
+            "+1 Grit (max +3)", 
+            "+1 Quick (max +2)",
+            "+1 Savvy (max +2)",
+            "+1 Charm (max +2)",
+            "+1 Strange (max +2",
+            "Get another Law Dog move.",
+            "Get another Law Dog move.",
+            "Get a Town and the Wealth move or a Homestead and the Bounty of the Land move.",
+            "Get a move from another playbook.",
+            "Get a move from another playbook."
+        ],
+        "custom":[
+            {
+                "name": "Hangin' Crimes",
+                "description": "A number of Law Dog moves refer to Hangin' Crimes: Crimes normally punishable by hangin' throughout the west.  The Hangin' Crimes are: murder, arson, grand theft, cattle theft, horse theft, rape, and witchcraft."            
+            }
+
+        ]
+    },    
+    "lonerider":{
+        "look":[],
+        "stats":[
+            { "quick": 0, "grit": 2, "charm": 0, "savvy": 1, "strange": 0},
+            { "quick": 1, "grit": 2, "charm": -2, "savvy": 1, "strange": 1},
+            { "quick": 1, "grit": 2, "charm": -2, "savvy": 2, "strange": -1},
+            { "quick": 2, "grit": 2, "charm": -2, "savvy": 1, "strange": -1}
+        ],
+        "num_starting_moves":3,
+        "moves_list":[
+            {"name":"Animal Friend", "description":  "When you Size Up an Animal, roll + Savvy.  On a hit, you may ask questions as if you had used the Size Up a Person move on them."},
+            {"name":"Born on Horseback", "description":  "In a Fight, spend 1 more than you normally would as long as you're on Horseback."},
+            {"name":"Horse Sense", "description":  "When you are alone with your Horse and wonder what your best course of action is, gain Insight."},
+            {"name":"Live off the Land", "description":  "When you make the Downtime move, if you've spent considerable time in the wilderness, roll + Savvy.  On a hit, you find enough food to cover basic living expenses.  If your living expenses are already zero, gain one Dinero. On a 10+, either gain 1 Dinero, or find enough food to cover basic living expenses for another person."},
+            {"name":"The Quick and the Dead", "description": "When you Attack Someone, or make a Fight move that depends on Grit, roll Quick instead."},
+            {"name":"Trackin'", "description":  "When you read tracks, roll + Savvy.  On a hit, ask 2 questions.  On a 10+, ask 3. \n•What happened here? \n•Who did these tracks belong to? \n•Where did they go? \n•Where did they come from? \n•What were they doing?"},
+            {"name":"Wander the Wastes", "description":  "When you travel into the wilderness, roll + Strange.  On a hit, you travel to any named location you've ever heard of. On a 10+, pick 4.  On a 7-9, pick 2. \n•Name a place; if it exists, you travel there. \n•The journey takes you twice as fast as you normally would. \n•The journey takes a single day, no matter how far or improbable. (Counts as 3 choices) \n•You can lead other people there (1 per person). \n•You arrive in an advantageous position, take +1 forward."}
+        ],
+        "moves":{
+            "Animal Friend":  "When you Size Up an Animal, roll + Savvy.  On a hit, you may ask questions as if you had used the Size Up a Person move on them.",
+            "Born on Horseback":  "In a Fight, spend 1 more than you normally would as long as you're on Horseback.",
+            "Horse Sense":  "When you are alone with your Horse and wonder what your best course of action is, gain Insight.",
+            "Live off the Land":  "When you make the Downtime move, if you've spent considerable time in the wilderness, roll + Savvy.  On a hit, you find enough food to cover basic living expenses.  If your living expenses are already zero, gain one Dinero. On a 10+, either gain 1 Dinero, or find enough food to cover basic living expenses for another person.",
+            "The Quick and the Dead": "When you Attack Someone, or make a Fight move that depends on Grit, roll Quick instead.",
+            "Trackin'":  "When you read tracks, roll + Savvy.  On a hit, ask 2 questions.  On a 10+, ask 3. \n•What happened here? \n•Who did these tracks belong to? \n•Where did they go? \n•Where did they come from? \n•What were they doing?",
+            "Wander the Wastes":  "When you travel into the wilderness, roll + Strange.  On a hit, you travel to any named location you've ever heard of. On a 10+, pick 4.  On a 7-9, pick 2. \n•Name a place; if it exists, you travel there. \n•The journey takes you twice as fast as you normally would. \n•The journey takes a single day, no matter how far or improbable. (Counts as 3 choices) \n•You can lead other people there (1 per person). \n•You arrive in an advantageous position, take +1 forward."
+
+        },
+        "gear":{
+            "what_you_get": "You get one trail weapon, armor 1 (a leather duster?), goods worth 1 Dinero, your clothes, and a Superior Horse.",
+            "gear_lists": [
+                    {
+                        "category": "Trail Weapons", 
+                        "description": "", 
+                        "list": [
+                            "Big Knife (2 harm close)",
+                            "Bow and Arrow (2 harm, close/far)",
+                            "Cavalry Saber (3 harm close)",
+                            "Revolver (2 harm close reload loud)",
+                            "Rifle (2 harm close/far loud)",
+                            "Shotgun (3 harm close reload messy loud)"
+                        ]
+                    }
+                ]
+        },
+        "starting_horse": true,
+        "history":[
+            {"question":"Who helped me out of a bind?", "amount": "+1"},
+            {"question":"Which of you has spent days on the trail with me?", "amount": "+2"},
+            {"question":"Who has the best horse?", "amount": "+3"},
+            {"question":"Everyone else...", "amount": "-1"}
+        ],
+        "special":"When you have sex with another character, they roll + Charm.  If it's an NPC, roll +0.  On a 10+, they inspire you, you take +1 ongoing while fighting for them the next day.  On a 7-9, it's awkward, they get +1 Hx with you, but you lose -1 Hx with them.  On a miss, you ride away while they're sleeping.",
+        "advancement":[
+            "+1 Quick (max +3)",
+            "+1 Charm (max +2)",
+            "+1 Grit (max +2)",
+            "+1 Savvy (max +2)",
+            "+1 Strange (max +2)",
+            "Get another Lone Rider move.",
+            "Get another Lone Rider move.",
+            "Get another Lone Rider move.",
+            "Get a move from another playbook.",
+            "Get a move from another playbook."
+        ],
+        "custom":null
+    },
+    "class_name":{
+        "look":[],
+        "stats":[],
+        "num_starting_moves":0,
+        "moves_list":[{"name":"", "description":""}],
+        "moves":{},
+        "starting_horse": false,
+        "history":[{"question":"","amount":"0"}],
+        "special":"",
+        "advancement":[],
+        "custom":null
+    },
+    "horse":{
+        "stats":[
+            {"Looks": 1, "Power": 1, "Weakness": 1},
+            {"Looks": 2, "Power": 1, "Weakness": 2},
+            {"Looks": 1, "Power": 2, "Weakness": 2}
+        ],
+        "superior_stats":[
+            {"Looks": 2, "Power": 1, "Weakness": 1},
+            {"Looks": 1, "Power": 2, "Weakness": 1},
+            {"Looks": 2, "Power": 2, "Weakness": 2}
+        ],
+        "strengths":["Fast", "Rugged", "Nimble", "Smart", "Loyal", "Workhorse", "Healthy", "Fierce", "Huge", "Independent", "Breeder", "Uncomplaining"],
+        "looks":["Small", "Huge", "Mangy", "Muscular", "Pretty", "Sleek", "Well-Bred", "Awe-Inspiring", "Scarred", "Thin"],
+        "weaknesses":["Deformed", "Dumb", "Filthy", "Fickle", "Gluttonous", "Horny", "Lazy", "Mean", "Nervous", "Picky", "Sickly", "Slow"],
+        "move": "When you're on Horseback, for each point of Power, gain +1 spend to Cover Ground when you're in a Running Gunfight or Chase."
+    }
+}

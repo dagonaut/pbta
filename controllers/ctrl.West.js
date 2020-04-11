@@ -9,11 +9,19 @@
         function WestController($rootScope, $scope, $http, $location){
             var vm = this;
             
+            vm.tabs = {
+                charactersheet: { index: 0, heading: 'Character Sheet'},
+                reference: { index: 1, heading: 'Reference'},                
+                log: { index: 2, heading: 'Log'},
+                mc: { index: 3, heading: 'Marshall'}
+            };
             vm.visible = { "Basic": [], "Other": [], "Dinero": [], "Fights": []};
+            vm.character = {};
 
             init();
 
-            function init(){                 
+            function init(){ 
+                console.log(vm.tabs);
                 getMoves();
             }            
 
@@ -35,7 +43,12 @@
                     console.log(error);
                 }
             }
-
             
+            //#region CRUD
+            function getCharacters(){}
+            function loadCharacter(characterId){}
+            function updateCharacter(characterId){}
+            function deleteCharacter(characterId){}
+            //#endregion
         }
 })();

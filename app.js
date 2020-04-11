@@ -27,12 +27,12 @@
 				controller: 'LoginController',
 				controllerAs: 'vm'
 			})			
-			.state('west', {
-				url: '/west',
-				templateUrl: 'westReference.html',
-				controller: 'WestController',
-				controllerAs: 'vm'
-			})
+			// .state('west', {
+			// 	url: '/west',
+			// 	templateUrl: 'westReference.html',
+			// 	controller: 'WestController',
+			// 	controllerAs: 'vm'
+			// })
 			.state('auth',{
 				templateUrl: 'wrapper.html'								
 			})			
@@ -79,6 +79,32 @@
 				controller: 'ReferenceController',
 				controllerAs: 'vm'
 			})					
+			.state('auth.west',{
+				url: '/west',	
+				stateName: 'West',			
+				views: {	
+					'west':{
+						templateUrl: 'west.html',
+						controller: 'WestController as vm'
+					},			
+					'charactersheet@auth.west': {
+						templateUrl: 'westCharactersheet.html',
+						controller: 'WestController as vm'
+					},
+					'reference@auth.west': {
+						templateUrl: 'westReference.html',
+						controller: 'WestController as vm'
+					},					
+					'log@auth.west': {
+						templateUrl: 'westLog.html',
+						controller: 'WestController as vm'
+					},
+					'mc@auth.west': {
+						templateUrl: 'westMC.html',
+						controller: 'WestController as vm'
+					}
+				}
+			})						
 			.state('auth.sprawl',{
 				url: '/sprawl',	
 				stateName: 'Sprawl',			
