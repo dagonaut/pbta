@@ -7,7 +7,10 @@
 
         WestController.$inject = ['$rootScope','$scope','$http','$location', 'apiservice'];
         function WestController($rootScope, $scope, $http, $location, apiservice){
-            var vm = this;
+            let vm = this;
+
+            let _characterTable = "tbl_weirdwest_characters";
+            let _gameid = 5 // How the West Was Lost
         
             vm.tabs = {
                 charactersheet: { index: 0, heading: 'Character Sheet'},
@@ -17,40 +20,59 @@
             };
             vm.visible = { "Basic": [], "Other": [], "Dinero": [], "Fights": []};
             vm.cd = {
-                id: "",
+                //id: "",
                 gameid: 5,
-                name: "",
-                playername: "",
-                class: "",
+                name: "Taco",
+                playername: "Paul",
+                class: "lawdog",
                 level: 1,
                 xp: 0,
-                look: "",
-                stats: { grit: 0, quick: 0, charm: 0, savvy: 0, strange: 0 },
+                look: "handsome",
+                stats: { grit: 1, quick: 2, charm: 3, savvy: -1, strange: -2 },
                 harm: 0,
                 armor: 0,
-                history: [],
-                moves: [],
+                history: [
+                    {"Dash":3},
+                    {"Bernie":-2}
+                ],
+                moves: [2,3,4],
                 custom: null,
-                horse: {},
-                gear: "",
-                notes: "",
-                advancements: [],
+                horse: {"key":"value"},
+                gear: "Guns",
+                notes: "Adventures",
+                advancements: [3,4],
                 visibility: {},
-                createdby: 0
+                createdby: 1
             };
+
+            vm.classes_list = [
+                { key: "gunslinger", value: "The Gunslinger"},
+                { key: "lawdog", value: "The Law Dog"},
+                { key: "lonerider", value: "The Lone Rider"}
+            ]
+
+            // Database Objects
+            vm.dudes = [];
+
+            // Events
+            vm.loadCharacter = loadCharacter;
+            vm.updateCharacter = updateCharacter;
+            vm.deleteCharacter = deleteCharacter;
 
             init();
 
             function init(){ 
                 console.log("west controller loaded");
                 getMoves();
-                getUsers();
-                loadCharacter(1);
+                getDudes();
+                //getUsers();
+                //loadCharacter(1);
             }            
 
             function getMoves(){
-                let _movesJSON = './static/weirdwest/ww-moves.json'
-                let _fightmovesJSON = './static/weirdwest/ww-fightsMoves.json'
+                let _movesJSON = './static/weirdwest/ww-moves.json';
+                let _fightmovesJSON = './static/weirdwest/ww-fightsMoves.json';
+                let _classJSON = './static/weirdwest/ww-classes.json';
                 $http.get(_movesJSON).then(getMovesSuccess, getMovesFail);
                 function getMovesSuccess(response){
                     vm.moves = response.data;                  
@@ -64,6 +86,26 @@
                 }
                 function getFightMovesFail(error){
                     console.log(error);
+                }
+                $http.get(_classJSON).then(getClassJSONSuccess, getClassJSONFail);
+                function getClassJSONSuccess(response){
+                    vm.static = response.data;   
+                    console.log(vm.static);               
+                }
+                function getClassJSONFail(error){
+                    console.log(error);
+                }
+            }
+
+            function getDudes(){
+                apiservice.GetAll("tbl_weirdwest_characters").then(getDudesSuccess, getDudesFail);
+
+                function getDudesSuccess(r){
+                    vm.dudes = r;
+                }
+
+                function getDudesFail(e){
+                    console.log(e);
                 }
             }
 
@@ -82,18 +124,62 @@
             //#region CRUD
             function getCharacters(){}
             function loadCharacter(characterId){
-                apiservice.GetById("tbl_weirdwest_characters", 1).then(yes, no);
+                apiservice.GetById(_characterTable, 2).then(yes, no);
 
                 function yes(r){
-                    console.log(JSON.parse(r.stats));                    
+                    vm.cd = r;
+                    // JSON / array conversion
+                    vm.cd.stats = JSON.parse(r.stats);
+                    vm.cd.horse = JSON.parse(r.horse);
+                    vm.cd.history = JSON.parse(r.history);
+                    vm.cd.visibility = JSON.parse(r.visibility);
+                    vm.cd.moves = r.moves.join(",");
+                    console.log(vm.cd);                    
                 }
 
                 function no(e){
                     console.log(e);
                 }
             }
-            function updateCharacter(characterId){}
-            function deleteCharacter(characterId){}
+            function updateCharacter(){
+                // JSON / Array conversion
+                vm.cd.stats = JSON.stringify(vm.cd.stats);
+                vm.cd.horse = JSON.stringify(vm.cd.horse);
+                vm.cd.history = JSON.stringify(vm.cd.history);
+                vm.cd.visibility = JSON.stringify(vm.cd.visibility);
+                vm.cd.moves = vm.cd.moves.split(",");
+                // New / Create
+                if(typeof vm.cd.id === 'undefined'){
+                    console.log(vm.cd);                                    
+                    // Create returns id of new character row
+                    apiservice.Create(_characterTable, vm.cd).then(function(data){                        
+                        console.log(data);
+                    },
+                    function(e){
+                        console.log(e);
+                    });
+                } else {
+                    // Update
+                    apiservice.Update(_characterTable, vm.cd).then(function(data){                        
+                        console.log(data);
+                        // reload the dude to reset arrays/objects
+                        //loadCharacter(vm.characterData);
+                    },
+                    function(e){
+                        console.log(e);
+                    });
+                }
+            }
+            function deleteCharacter(characterId){
+                apiservice.Delete(_characterTable, characterId).then(deleteSuccess, deleteFail);
+
+                function deleteSuccess(r){
+                    console.log(r);
+                }
+                function deleteFail(e){
+                    console.log(e);
+                }
+            }
             //#endregion
         }
 })();

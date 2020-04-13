@@ -1,27 +1,6 @@
 <div class="container-fluid">
     <!-- Logs -->
     <div class="row">
-        <div class="col-md-2 left_nav">
-            <div class="" ng-repeat="log in vm.logs | orderBy: '-datecreated'">
-                <a href ng-click="vm.selectLog(log.id)">{{log.datecreated.substring(0,10)}}::{{log.name}}</a>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="input_section row" style="padding-top:3px;">
-                <div class="col-md-12">
-                    <input class="pull-left" ng-model="vm.currentLog.name" ng-disabled="!vm.isMC" />
-                    <div class="btn btn-primary pull-left" style="margin:0px 5px;" ng-click="vm.updateLogEntry();" ng-if="vm.isMC">Save</div>
-                    <div class="btn btn-danger pull-left" ng-click="vm.addLogEntry();" ng-if="vm.isMC">New</div>
-                    <textarea class="terminal" ng-model="vm.currentLog.text" ng-disabled="!vm.isMC"></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <a href class="glyphicon glyphicon-plus pull-left menu-toggle" ng-click="vm.addHold();" ng-if="vm.isMC"></a>
-            <h4>Hold and Shit</h4>
-            <div ng-repeat="hold in vm.holds">
-                <hold hold-obj="hold" on-delete="vm.getHolds();" mc="vm.isMC"></hold>
-            </div>
-        </div>
+        Under Construction... 
     </div>
 </div>
