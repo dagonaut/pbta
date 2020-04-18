@@ -97,6 +97,10 @@
                 }
             }
 
+            function filterMoves(id){
+
+            }
+
             function getDudes(){
                 apiservice.GetAll("tbl_weirdwest_characters").then(getDudesSuccess, getDudesFail);
 
