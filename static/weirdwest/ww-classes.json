@@ -68,16 +68,16 @@
         ],
         "special": "If you and another character have sex, you get +1 forward.  At your option, they also take +1 forward.",
         "advancement":[
-            "get +1 Grit (max +3)",
-            "get +1 Quick (max +2)",
-            "get +1 Savvy (max +2)",
-            "get +1 Strange (max +2)",
-            "get another Gunslinger move",
-            "get another Gunslinger move",
-            "get another Gunslinger move",
-            "get a Gang and the Boss move",
-            "get a move from another playbook",
-            "get a move from another playbook"
+            {"id": 1, "description": "get +1 Grit (max +3)"},
+            {"id": 2, "description": "get +1 Quick (max +2)"},
+            {"id": 3, "description": "get +1 Savvy (max +2)"},
+            {"id": 4, "description": "get +1 Strange (max +2)"},
+            {"id": 5, "description": "get another Gunslinger move"},
+            {"id": 6, "description": "get another Gunslinger move"},
+            {"id": 7, "description": "get another Gunslinger move"},
+            {"id": 8, "description": "get a Gang and the Boss move"},
+            {"id": 9, "description": "get a move from another playbook"},
+            {"id": 10, "description": "get a move from another playbook"}
         ],
         "custom": null
     },
@@ -154,16 +154,16 @@
         ],
         "special":"No sex move for the Law Dog :(",
         "advancement":[
-            "+1 Grit (max +3)", 
-            "+1 Quick (max +2)",
-            "+1 Savvy (max +2)",
-            "+1 Charm (max +2)",
-            "+1 Strange (max +2)",
-            "Get another Law Dog move",
-            "Get another Law Dog move.",
-            "Get a Town and the Wealth move or a Homestead and the Bounty of the Land move.",
-            "Get a move from another playbook",
-            "Get a move from another playbook."
+            {"id": 1, "description": "+1 Grit (max +3)"}, 
+            {"id": 2, "description": "+1 Quick (max +2)"},
+            {"id": 3, "description": "+1 Savvy (max +2)"},
+            {"id": 4, "description": "+1 Charm (max +2)"},
+            {"id": 5, "description": "+1 Strange (max +2)"},
+            {"id": 6, "description": "Get another Law Dog move"},
+            {"id": 7, "description": "Get another Law Dog move."},
+            {"id": 8, "description": "Get a Town and the Wealth move or a Homestead and the Bounty of the Land move."},
+            {"id": 9, "description": "Get a move from another playbook"},
+            {"id": 10, "description":"Get a move from another playbook."}
         ],
         "custom":[
             {
@@ -227,16 +227,16 @@
         ],
         "special":"When you have sex with another character, they roll + Charm.  If it's an NPC, roll +0.  On a 10+, they inspire you, you take +1 ongoing while fighting for them the next day.  On a 7-9, it's awkward, they get +1 Hx with you, but you lose -1 Hx with them.  On a miss, you ride away while they're sleeping.",
         "advancement":[
-            "+1 Quick (max +3)",
-            "+1 Charm (max +2)",
-            "+1 Grit (max +2)",
-            "+1 Savvy (max +2)",
-            "+1 Strange (max +2)",
-            "Get another Lone Rider move.",
-            "Get another Lone Rider move.",
-            "Get another Lone Rider move.",
-            "Get a move from another playbook.",
-            "Get a move from another playbook."
+            {"id": 1, "description": "+1 Quick (max +3)"},
+            {"id": 2, "description": "+1 Charm (max +2)"},
+            {"id": 3, "description": "+1 Grit (max +2)"},
+            {"id": 4, "description": "+1 Savvy (max +2)"},
+            {"id": 5, "description": "+1 Strange (max +2)"},
+            {"id": 6, "description": "Get another Lone Rider move."},
+            {"id": 7, "description": "Get another Lone Rider move."},
+            {"id": 8, "description": "Get another Lone Rider move."},
+            {"id": 9, "description": "Get a move from another playbook."},
+            {"id": 10, "description":"Get a move from another playbook."}
         ],
         "custom":null
     },

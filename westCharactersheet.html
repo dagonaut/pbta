@@ -94,17 +94,30 @@
                     Level:<br /><input type="number" ng-model="vm.cd.level" />
                 </div>
             </div>
+            <!-- Advancement -->
             <div class="row">
                 <h2>Advancements</h2>
                 <div ng-repeat="adv in vm.static[vm.cd.class].advancement">
-                    <span ng-class="{'orange': vm.cd.advancements.indexOf($index) > -1}">{{$index}}-{{adv}}</span>
+                    <input
+                        id="adv_{{adv.id}}"                             
+                        type="checkbox" 
+                        value="{{adv.id}}" 
+                        ng-checked="vm.cd.advancements.indexOf(adv.id) > -1"                            
+                        ng-click="vm.updateAdvancements(adv.id)" />
+                    <span ng-class="{'orange': vm.cd.advancements.indexOf(adv.id) > -1}">{{adv.description}}</span>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
             <h2>Moves:</h2>
             <div ng-repeat="move in vm.static[vm.cd.class].moves_list">
-                <span ng-class="{'orange': vm.cd.moves.indexOf($index) > -1}">{{$index}}-{{move.name}}: <pre>{{move.description}}</pre></span>
+                <input
+                            id="move_{{move.id}}"                             
+                            type="checkbox" 
+                            value="{{move.id}}" 
+                            ng-checked="vm.cd.moves.indexOf(move.id) > -1"                            
+                            ng-click="vm.updateMoves(move.id)" />
+                <span ng-class="{'orange': vm.cd.moves.indexOf($index) > -1}">{{move.name}}: <pre>{{move.description}}</pre></span>
             </div>
         </div>
         <div class="col-md-3">
@@ -121,6 +134,11 @@
             <div>---Choose a stat block:</div>
             <div ng-repeat="stat in vm.static[vm.cd.class].stats">
                 {{stat}}
+            </div>
+            <div>---History Hx:</div>
+            <div>Ask 1 question per other player</div>
+            <div ng-repeat="hist in vm.static[vm.cd.class].history">
+                {{hist.question}} ({{hist.amount}})
             </div>
             <div>---Starting Gear:</div>
             {{vm.static[vm.cd.class].gear.what_you_get}}<br />

@@ -59,6 +59,9 @@
             vm.updateCharacter = updateCharacter;
             vm.deleteCharacter = deleteCharacter;
 
+            vm.updateAdvancements = updateAdvancements;
+            vm.updateMoves = updateMoves;
+
             init();
 
             function init(){ 
@@ -99,6 +102,23 @@
 
             function filterMoves(id){
 
+            }
+
+            function updateAdvancements(advId){
+                if(vm.cd.advancements.indexOf(advId) > -1){
+                    vm.cd.advancements.splice(advId, 1);
+                } else {
+                    vm.cd.advancements.push(advId);
+                }
+            }
+
+            function updateMoves(moveId){
+                let index = vm.cd.moves.indexOf(moveId);
+                if( index > -1){
+                    vm.cd.moves.splice(index, 1);
+                } else {
+                    vm.cd.moves.push(moveId);
+                }
             }
 
             function getDudes(){
