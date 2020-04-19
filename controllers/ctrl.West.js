@@ -35,13 +35,13 @@
                     {"Dash":3},
                     {"Bernie":-2}
                 ],
-                moves: [2,3,4],
+                moves: [],
                 custom: null,
                 horse: {"key":"value"},
                 gear: "Guns",
                 notes: "Adventures",
-                advancements: [3,4],
-                visibility: {},
+                advancements: [],
+                visibility: { moves: true },
                 createdby: 1
             };
 
@@ -61,11 +61,11 @@
 
             vm.updateAdvancements = updateAdvancements;
             vm.updateMoves = updateMoves;
+            vm.filterMoves = filterMoves;
 
             init();
 
             function init(){ 
-                console.log("west controller loaded");
                 getMoves();
                 getDudes();
                 //getUsers();
@@ -76,6 +76,7 @@
                 let _movesJSON = './static/weirdwest/ww-moves.json';
                 let _fightmovesJSON = './static/weirdwest/ww-fightsMoves.json';
                 let _classJSON = './static/weirdwest/ww-classes.json';
+                let _classMovesJSON = './static/weirdwest/ww-classmoves.json';
                 $http.get(_movesJSON).then(getMovesSuccess, getMovesFail);
                 function getMovesSuccess(response){
                     vm.moves = response.data;                  
@@ -98,14 +99,31 @@
                 function getClassJSONFail(error){
                     console.log(error);
                 }
+                $http.get(_classMovesJSON).then(getClassMovesJSONSuccess, getClassMovesJSONFail);
+                function getClassMovesJSONSuccess(response){
+                    vm.static.classmoves = response.data;   
+                    console.log(vm.static);               
+                }
+                function getClassMovesJSONFail(error){
+                    console.log(error);
+                }
             }
 
             function filterMoves(id){
-
+                if(vm.cd.visibility.moves){
+                    return true;
+                }else{
+                    if(vm.cd.moves.indexOf(id) > -1){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }
             }
-
+            
             function updateAdvancements(advId){
-                if(vm.cd.advancements.indexOf(advId) > -1){
+                let index = vm.cd.advancements.indexOf(advId);
+                if(index > -1){
                     vm.cd.advancements.splice(advId, 1);
                 } else {
                     vm.cd.advancements.push(advId);
@@ -151,14 +169,15 @@
                 apiservice.GetById(_characterTable, 2).then(yes, no);
 
                 function yes(r){
+                    console.log("response", r);
                     vm.cd = r;
                     // JSON / array conversion
                     vm.cd.stats = JSON.parse(r.stats);
                     vm.cd.horse = JSON.parse(r.horse);
                     vm.cd.history = JSON.parse(r.history);
                     vm.cd.visibility = JSON.parse(r.visibility);
-                    vm.cd.moves = r.moves.join(",");
-                    console.log(vm.cd);                    
+                    vm.cd.moves = JSON.parse("[" + r.moves + "]");
+                    vm.cd.advancements = JSON.parse("[" + r.advancements + "]");            
                 }
 
                 function no(e){
@@ -171,7 +190,8 @@
                 vm.cd.horse = JSON.stringify(vm.cd.horse);
                 vm.cd.history = JSON.stringify(vm.cd.history);
                 vm.cd.visibility = JSON.stringify(vm.cd.visibility);
-                vm.cd.moves = vm.cd.moves.split(",");
+                vm.cd.moves = vm.cd.moves.join(",");
+                vm.cd.advancements = vm.cd.advancements.join(",");
                 // New / Create
                 if(typeof vm.cd.id === 'undefined'){
                     console.log(vm.cd);                                    

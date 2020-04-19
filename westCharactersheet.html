@@ -15,7 +15,7 @@
             </select>
             <div class="btn btn-primary" ng-click="vm.updateCharacter()">Create/Update</div>
             <div class="btn btn-danger" ng-click="vm.deleteCharacter();">Delete</div>
-            <div class="btn btn-primary" ng-click="vm.loadCharacter();">Load</div>
+            <div class="btn btn-primary" ng-click="vm.loadCharacter(vm.dude.id);">Load</div>
         </div>
     </div>
     <div class="row">
@@ -109,15 +109,16 @@
             </div>
         </div>
         <div class="col-md-3">
+            <div ng-click="vm.cd.visibility.moves = !vm.cd.visibility.moves">Show {{ vm.cd.visibility.moves ? 'Selected' : 'All'}}</div>
             <h2>Moves:</h2>
-            <div ng-repeat="move in vm.static[vm.cd.class].moves_list">
+            <div ng-repeat="move in vm.static.classmoves.moves | filter: { class: vm.cd.class }" ng-show="vm.filterMoves(move.id);">
                 <input
                             id="move_{{move.id}}"                             
                             type="checkbox" 
                             value="{{move.id}}" 
                             ng-checked="vm.cd.moves.indexOf(move.id) > -1"                            
                             ng-click="vm.updateMoves(move.id)" />
-                <span ng-class="{'orange': vm.cd.moves.indexOf($index) > -1}">{{move.name}}: <pre>{{move.description}}</pre></span>
+                <span ng-class="{'orange': vm.cd.moves.indexOf(move.id) > -1}">{{move.name}}: <pre>{{move.description}}</pre></span>
             </div>
         </div>
         <div class="col-md-3">
@@ -131,6 +132,7 @@
             </div>
         </div>
         <div class="col-md-3">
+            <pre>{{vm.cd}}</pre>
             <div>---Choose a stat block:</div>
             <div ng-repeat="stat in vm.static[vm.cd.class].stats">
                 {{stat}}
