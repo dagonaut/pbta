@@ -7,7 +7,7 @@
 </style>
 <form id="charSheet" name="charSheet" class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
             Dudes:
             <select ng-model="vm.dude" style="width:150px;height:27px;">
                 <option ng-repeat="dude in vm.dudes" value="{{dude.id}}">{{dude.name}} - {{dude.class}}
@@ -16,6 +16,10 @@
             <div class="btn btn-primary" ng-click="vm.updateCharacter()">Create/Update</div>
             <div class="btn btn-danger" ng-click="vm.deleteCharacter();">Delete</div>
             <div class="btn btn-primary" ng-click="vm.loadCharacter(vm.dude.id);">Load</div>
+        </div>
+        <div class="col-md-4">
+            <div ng-click="vm.cd.visibility.model = !vm.cd.visibility.model">{{vm.cd.visibility.model ? 'Hide' : 'Show'}} Model</div>
+            <div ng-click="vm.cd.visibility.classinfo = !vm.cd.visibility.classinfo">{{vm.cd.visibility.classinfo ? 'Hide' : 'Show'}} Starting Info</div>
         </div>
     </div>
     <div class="row">
@@ -29,7 +33,7 @@
         Look: <input ng-model="vm.cd.look" />
     </div>
     <div class="row">
-        <div class="col-md-3">
+        <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
             <h2>Stats:</h2>
             <div class="row stat">
                 <div style="float:left;">
@@ -76,7 +80,8 @@
                 </div>
             </div>
             <div class="row">
-                History: <input ng-model="vm.cd.history" /><br />
+                History:<br />
+                <textarea ng-model="vm.cd.history" style="height:80px;"></textarea>
                 <!-- Hidden Fields -->
                 <div class="hidden">
                     Horse: <input ng-model="vm.cd.horse" /><br />
@@ -108,7 +113,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
             <div ng-click="vm.cd.visibility.moves = !vm.cd.visibility.moves">Show {{ vm.cd.visibility.moves ? 'Selected' : 'All'}}</div>
             <h2>Moves:</h2>
             <div ng-repeat="move in vm.static.classmoves.moves | filter: { class: vm.cd.class }" ng-show="vm.filterMoves(move.id);">
@@ -121,7 +126,7 @@
                 <span ng-class="{'orange': vm.cd.moves.indexOf(move.id) > -1}">{{move.name}}: <pre>{{move.description}}</pre></span>
             </div>
         </div>
-        <div class="col-md-3">
+        <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
             <h2>Gear:</h2>
             <div>
                 <textarea ng-model="vm.cd.gear"></textarea>
@@ -131,8 +136,8 @@
                 <textarea ng-model="vm.cd.notes"></textarea>
             </div>
         </div>
-        <div class="col-md-3">
-            <pre>{{vm.cd}}</pre>
+        <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'hidden'">
+            <pre ng-if="vm.cd.visibility.model">{{vm.cd}}</pre>            
             <div>---Choose a stat block:</div>
             <div ng-repeat="stat in vm.static[vm.cd.class].stats">
                 {{stat}}

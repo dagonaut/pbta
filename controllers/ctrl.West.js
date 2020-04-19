@@ -41,7 +41,7 @@
                 gear: "Guns",
                 notes: "Adventures",
                 advancements: [],
-                visibility: { moves: true },
+                visibility: { moves: true, callinfo: true, model: false },
                 createdby: 1
             };
 
