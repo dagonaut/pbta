@@ -5,9 +5,10 @@
         .module('pbta_resources')
         .controller('WestController', WestController);
 
-        WestController.$inject = ['$rootScope','$scope','$http','$location', 'apiservice'];
-        function WestController($rootScope, $scope, $http, $location, apiservice){
+        WestController.$inject = ['$rootScope','$scope','$http','$location', '$cookies', 'apiservice'];
+        function WestController($rootScope, $scope, $http, $location, $cookies, apiservice){
             let vm = this;
+            let userId =  $cookies.getObject('id') || 0;
 
             let _characterTable = "tbl_weirdwest_characters";
             let _gameid = 5 // How the West Was Lost
@@ -19,7 +20,7 @@
                 mc: { index: 3, heading: 'Marshall'}
             };
             vm.visible = { "Basic": [], "Other": [], "Dinero": [], "Fights": []};
-            vm.cd = {
+            vm.blankCharacter = {
                 //id: "",
                 gameid: 5,
                 name: "",
@@ -28,7 +29,7 @@
                 level: 1,
                 xp: 0,
                 look: "",
-                stats: { grit: 1, quick: 2, charm: 3, savvy: -1, strange: -2 },
+                stats: { grit: 0, quick: 0, charm: 0, savvy: 0, strange: 0 },
                 harm: 0,
                 armor: 0,
                 history: "",
@@ -38,9 +39,10 @@
                 gear: "",
                 notes: "",
                 advancements: [],
-                visibility: { moves: true, callinfo: true, model: false },
-                createdby: 1
+                visibility: { moves: true, classinfo: true, model: false },
+                createdby: userId
             };
+            vm.cd = angular.copy(vm.blankCharacter);
 
             vm.classes_list = [
                 { key: "gunslinger", value: "The Gunslinger"},
@@ -66,8 +68,6 @@
             function init(){ 
                 getMoves();
                 getDudes();
-                //getUsers();
-                //loadCharacter(1);
             }            
 
             function getMoves(){
@@ -76,35 +76,33 @@
                 let _classJSON = './static/weirdwest/ww-classes.json';
                 let _classMovesJSON = './static/weirdwest/ww-classmoves.json';
                 $http.get(_movesJSON).then(getMovesSuccess, getMovesFail);
-                function getMovesSuccess(response){
-                    vm.moves = response.data;                  
-                }
-                function getMovesFail(error){
-                    console.log(error);
-                }
+                    function getMovesSuccess(response){
+                        vm.moves = response.data;                  
+                    }
+                    function getMovesFail(error){
+                        console.log(error);
+                    }
                 $http.get(_fightmovesJSON).then(getFightMovesSuccess, getFightMovesFail);
-                function getFightMovesSuccess(response){
-                    vm.fightmoves = response.data;                  
-                }
-                function getFightMovesFail(error){
-                    console.log(error);
-                }
+                    function getFightMovesSuccess(response){
+                        vm.fightmoves = response.data;                  
+                    }
+                    function getFightMovesFail(error){
+                        console.log(error);
+                    }
                 $http.get(_classJSON).then(getClassJSONSuccess, getClassJSONFail);
-                function getClassJSONSuccess(response){
-                    vm.static = response.data;   
-                    console.log(vm.static);               
-                }
-                function getClassJSONFail(error){
-                    console.log(error);
-                }
+                    function getClassJSONSuccess(response){
+                        vm.static = response.data;   
+                    }
+                    function getClassJSONFail(error){
+                        console.log(error);
+                    }
                 $http.get(_classMovesJSON).then(getClassMovesJSONSuccess, getClassMovesJSONFail);
-                function getClassMovesJSONSuccess(response){
-                    vm.static.classmoves = response.data;   
-                    console.log(vm.static);               
-                }
-                function getClassMovesJSONFail(error){
-                    console.log(error);
-                }
+                    function getClassMovesJSONSuccess(response){
+                        vm.static.classmoves = response.data;   
+                    }
+                    function getClassMovesJSONFail(error){
+                        console.log(error);
+                    }
             }
 
             function filterMoves(id){
@@ -164,48 +162,46 @@
             //#region CRUD
             function getCharacters(){}
             function loadCharacter(characterId){
-                apiservice.GetById(_characterTable, 2).then(yes, no);
+                apiservice.GetById(_characterTable, characterId).then(yes, no);
 
                 function yes(r){
                     console.log("response", r);
                     vm.cd = r;
                     // JSON / array conversion
-                    vm.cd.stats = JSON.parse(r.stats);
-                    vm.cd.horse = JSON.parse(r.horse);
-                    vm.cd.history = JSON.parse(r.history);
-                    vm.cd.visibility = JSON.parse(r.visibility);
-                    vm.cd.moves = JSON.parse("[" + r.moves + "]");
-                    vm.cd.advancements = JSON.parse("[" + r.advancements + "]");            
+                    convert(true);
+                    // Clear the selected Dude
+                    vm.dude = vm.cd.id;          
                 }
 
                 function no(e){
                     console.log(e);
                 }
             }
-            function updateCharacter(){
-                // JSON / Array conversion
-                vm.cd.stats = JSON.stringify(vm.cd.stats);
-                vm.cd.horse = JSON.stringify(vm.cd.horse);
-                vm.cd.history = JSON.stringify(vm.cd.history);
-                vm.cd.visibility = JSON.stringify(vm.cd.visibility);
-                vm.cd.moves = vm.cd.moves.join(",");
-                vm.cd.advancements = vm.cd.advancements.join(",");
+            function updateCharacter(isCreate){
+                
                 // New / Create
-                if(typeof vm.cd.id === 'undefined'){
-                    console.log(vm.cd);                                    
+                if(isCreate){
+                    if(vm.cd.id > -1){
+                        vm.cd = angular.copy(vm.blankCharacter);
+                    }
+                    // JSON / Array conversion
+                    convert(false);
                     // Create returns id of new character row
                     apiservice.Create(_characterTable, vm.cd).then(function(data){                        
                         console.log(data);
+                        loadCharacter(data);
                     },
                     function(e){
                         console.log(e);
                     });
                 } else {
                     // Update
+                    // JSON / Array conversion
+                    convert(false);
                     apiservice.Update(_characterTable, vm.cd).then(function(data){                        
                         console.log(data);
                         // reload the dude to reset arrays/objects
-                        //loadCharacter(vm.characterData);
+                        loadCharacter(vm.cd.id);
                     },
                     function(e){
                         console.log(e);
@@ -223,5 +219,24 @@
                 }
             }
             //#endregion
+
+            function convert(isLoad){
+                // If not isLoad we're assuming it is Saving
+                if(isLoad){
+                    vm.cd.stats = JSON.parse(vm.cd.stats);
+                    vm.cd.horse = JSON.parse(vm.cd.horse);
+                    vm.cd.history = JSON.parse(vm.cd.history);
+                    vm.cd.visibility = JSON.parse(vm.cd.visibility);
+                    vm.cd.moves = JSON.parse("[" + vm.cd.moves + "]");
+                    vm.cd.advancements = JSON.parse("[" + vm.cd.advancements + "]"); 
+                } else {
+                    vm.cd.stats = JSON.stringify(vm.cd.stats);
+                    vm.cd.horse = JSON.stringify(vm.cd.horse);
+                    vm.cd.history = JSON.stringify(vm.cd.history);
+                    vm.cd.visibility = JSON.stringify(vm.cd.visibility);
+                    vm.cd.moves = vm.cd.moves.join(",");
+                    vm.cd.advancements = vm.cd.advancements.join(",");
+                }
+            }
         }
 })();

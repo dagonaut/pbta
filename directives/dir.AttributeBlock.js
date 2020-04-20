@@ -5,26 +5,21 @@
         .module('pbta_resources')
         .directive('attributeBlock', attributeBlock);
         
-        function attributeBlock(HoldService){
+        function attributeBlock(apiservice){
             return{
                 restrict: 'E',                
                 templateUrl: "./directives/dir.AttributeBlock.html",
                 scope: {
-                    holdObj: "<",
-                    onDelete: "&",
-                    mc: "="                            
+                    table: "="
                 },
                 link: link
             };
 
             function link($scope, element, attr){               
-
-                //methods
-                $scope.deleteHold = deleteHold; 
-                $scope.updateHold = updateHold; 
+                var vm = this;
                 
                 //watches
-                $scope.$on('hold-update', function(evt, holds){
+                $scope.$on('refresh-dudes', function(evt, holds){
                     let updatedHold = holds.find(object => object.id === $scope.hold.id);
                     $scope.hold = updatedHold;
                 }, true);

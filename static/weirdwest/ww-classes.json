@@ -1,5 +1,73 @@
 {
+    "gambler":{
+        "name": "The Gambler",
+        "key": "gambler",
+        "look":[],
+        "stats":[
+            { "quick": 1, "grit": 0, "charm": 1, "savvy": -1, "strange": 2},
+            { "quick": -2, "grit": 1, "charm": 1, "savvy": 1, "strange": 2},
+            { "quick": 0, "grit": -1, "charm": 1, "savvy": 1, "strange": 2},
+            { "quick": 0, "grit": -2, "charm": 0, "savvy": 2, "strange": 2}
+        ],
+        "num_starting_moves":"Start with 2 moves",
+        "moves_list":[
+            {"name":"Cardsharp", "description":"In your hands, a simple playing card is a deadly and accurate thrown weapon.  (2 harm close, infinite)"},
+            {"name":"Cardswarm", "description":"Sometimes, a Gambler needs a distraction to make a speedy exit.  All you have to do is pick up a deck of cards, and shuffle them just so.  Roll + Strange.  On a hit, a barrage of cards flies out, blanketing the whole area in cards, which flutter slowly to the ground, granting -1 ongoing to all rolls made to do things like fire into or out of the area, or +1 ongoing to rolls to take cover or escape.  On a 10+, choose either: \n•Increase the penalty to -2 forward, and the bonus to +2 ongoing. \n•The effect is particularly long lasting, enough to last for an entire Fight."},
+            {"name":"Deal with the Devil", "description":"Anytime after you roll, you can give the Marshall 1 Hold to turn a failed roll into a 7-9, or a 7-9 into a 10+.  The Marshall can spend their Hold at any time to make a Hard Move. "},
+            {"name":"Hellfire", "description":"When you call up hellfire, roll + Strange.  On a 7-9, hold 2, on a 10+, hold 4.  While you have hold, your hands blaze with hellfire (your fists do 2 harm, hand, ap, fire)  You can spend one hold to shoot a blast of fire (2 harm, close/far, ap, fire), or two hold for a burst (2 harm, close, area, ap, messy, fire)  You can let go of your hold at any time."},
+            {"name":"Satan's Little Helper", "description":"When you conjure up a spirit to do your bidding, roll + Strange.  On a hit, you order it to do a task: \n•Spy on someone, and then report back. \n•Steal something and deliver it to you. \n•Sabotage something. \n•Put a hex or curse on someone. On a 7-9, pick 1.  On a 10+, pick 2. \n•You can order the spirit to do a second task. \n•The spirit performs the task stealthily. \n•The spirit performs the task with unusual speed. \n•The spirit does not get into additional mischief. On a miss, you think the spirit's under your control, but it's not. "},
+            {"name":"Shortcut", "description":"When you tear a hole in reality to make an exit in a hurry, roll + Strange.  On a 10+, poof, you're gone.  On a 7-9, you can go or stay, but if you go, it'll cost you: you'll leave something behind or take something with you, the Marshall will tell you what.  On a miss, the rift doesn't lead where you thought it would."},
+            {"name":"The Most Dangerous Game", "description":"When you perform a ritual to summon a demonic spirit and force it to control eldritch energy, gain a Miracle.  Replace “the Mystic Wastes” with “Hell.”"}
+        ],
+        "moves":{
+            "Cardsharp": "In your hands, a simple playing card is a deadly and accurate thrown weapon.  (2 harm close, infinite)",
+            "Cardswarm": "Sometimes, a Gambler needs a distraction to make a speedy exit.  All you have to do is pick up a deck of cards, and shuffle them just so.  Roll + Strange.  On a hit, a barrage of cards flies out, blanketing the whole area in cards, which flutter slowly to the ground, granting -1 ongoing to all rolls made to do things like fire into or out of the area, or +1 ongoing to rolls to take cover or escape.  On a 10+, choose either: \n•Increase the penalty to -2 forward, and the bonus to +2 ongoing. \n•The effect is particularly long lasting, enough to last for an entire Fight.",
+            "Deal with the Devil": "Anytime after you roll, you can give the Marshall 1 Hold to turn a failed roll into a 7-9, or a 7-9 into a 10+.  The Marshall can spend their Hold at any time to make a Hard Move. ",
+            "Hellfire": "When you call up hellfire, roll + Strange.  On a 7-9, hold 2, on a 10+, hold 4.  While you have hold, your hands blaze with hellfire (your fists do 2 harm, hand, ap, fire)  You can spend one hold to shoot a blast of fire (2 harm, close/far, ap, fire), or two hold for a burst (2 harm, close, area, ap, messy, fire)  You can let go of your hold at any time.",
+            "Satan's Little Helper": "When you conjure up a spirit to do your bidding, roll + Strange.  On a hit, you order it to do a task: \n•Spy on someone, and then report back. \n•Steal something and deliver it to you. \n•Sabotage something. \n•Put a hex or curse on someone. On a 7-9, pick 1.  On a 10+, pick 2. \n•You can order the spirit to do a second task. \n•The spirit performs the task stealthily. \n•The spirit performs the task with unusual speed. \n•The spirit does not get into additional mischief. On a miss, you think the spirit's under your control, but it's not. ",
+            "Shortcut": "When you tear a hole in reality to make an exit in a hurry, roll + Strange.  On a 10+, poof, you're gone.  On a 7-9, you can go or stay, but if you go, it'll cost you: you'll leave something behind or take something with you, the Marshall will tell you what.  On a miss, the rift doesn't lead where you thought it would.",
+            "The Most Dangerous Game": "When you perform a ritual to summon a demonic spirit and force it to control eldritch energy, gain a Miracle.  Replace “the Mystic Wastes” with “Hell.”"
+        },
+        "gear":{
+            "what_you_get": "You get a cheater's weapon, a deck of cards, your clothes, and 3 Dinero.",
+            "gear_lists": [
+                    {
+                        "category": "Cheater's Weapons", 
+                        "description": "", 
+                        "list": [
+                            "Concealed Knives (2 harm hand infinite)", 
+                            "Derringer (2 harm close reload loud)",
+                            "Hatgun (2 harm close refill loud)",
+                            "Swordcane (3 harm hand valuable)"
+                        ]
+                    }
+                ]
+        },
+        "starting_horse": false,
+        "history":[
+            {"question":"“Who did I cheat out of something?","amount":"+1"},
+            {"question":"Who have I made a bargain with?","amount":"+2"},
+            {"question":"Which one of you clearly doesn't trust me?","amount":"+3"},
+            {"question":"Everyone else...","amount":"+1"}
+        ],
+        "special":"When you have sex with someone, roll + Hx.  (Or + Charm for an NPC)  On a 10+, take +1 forward.  On a miss, take -1 forward. If it's with a PC, on a hit, you gain +1 Hx with them and they lose -1 Hx with you, but on a miss, you lose -1 Hx with them, and they gain +1 Hx with you.",
+        "advancement":[
+            {"id": 1, "description": "You get +1 Strange (max +3)"},
+            {"id": 2, "description": "You get +1 Quick (max +2)"},
+            {"id": 3, "description": "You get +1 Charm (max +2)"},
+            {"id": 4, "description": "You get +1 Savvy (max +2)"},
+            {"id": 5, "description": "get a new Gambler move."},
+            {"id": 6, "description": "get a new Gambler move."},
+            {"id": 7, "description": "get a new Gambler move."},
+            {"id": 8, "description": "get a small Town and the Wealth move."},
+            {"id": 9, "description": "get a move from another playbook."},
+            {"id": 10, "description":"get a move from another playbook."}
+        ],
+        "custom":null
+    },
     "gunslinger":{
+        "name": "The Gunslinger",
+        "key": "gunslinger",
         "look":[
             {"gender": "Man, Woman, Nonconforming, Concealed"},
             {"clothes": "Blunt Face, Crooked Face, Hard Face, Narrow Face, Stern Face"},
@@ -13,7 +81,7 @@
             { "quick": 1, "grit": 2, "charm": -2, "savvy": 2, "strange": -1},
             { "quick": 2, "grit": 2, "charm": -2, "savvy": 1, "strange": -1}
         ],
-        "num_starting_moves": 2,
+        "num_starting_moves": "Start with 2 moves",
         "moves_list":[
             {"name":"Aim With My Eye, Shoot With My Mind", "description":"When you follow up on answers from Sizing Up a Situation or Person, add +2 instead of +1."},
             {"name":"Code of the Duel", "description":"When you are in a Duel, spend one more than you normally would.  Outsiders cannot interfere."},
@@ -88,6 +156,8 @@
         "custom": null
     },
     "lawdog":{
+        "name": "The Law Dog",
+        "key": "lawdog",
         "look":[
             {"gender": "Man, Woman, Nonconforming, Concealed"},
             {"clothes": "No-Nonsense Clothes, Old Uniform, Patchwork Coat, Trail Clothes, Well-Kept Clothes "},
@@ -101,7 +171,7 @@
             { "quick": 1, "grit": 2, "charm": -1, "savvy": 2, "strange": -2},
             { "quick": 2, "grit": 2, "charm": 0, "savvy": 0, "strange": -2}
         ],
-        "num_starting_moves":3,
+        "num_starting_moves":"Start with 3 moves.",
         "moves_list":[
             {"name":"Always Get Your Man", "description":"When you follow the trail of someone you know is guilty of a Hangin' Crime, roll + Savvy.  On a 10+, you will inexorably track them to their destination, and choose one: \n•You catch them on even footing. \n•You catch up to them before they reach their destination. \n•You beat them to their destination, and can prepare for their arrival. On a 7-9, you track them to their destination, but the Marshall chooses one: \n•When you catch up to them, they have the advantage. \n•The journey is long and arduous. \n•To catch them, you have to ride ahead of your companions."},
             {"name":"Hunchin'", "description":"When you Open Your Mystic Senses roll + Savvy instead of + Strange."},
@@ -186,6 +256,8 @@
         ]
     },    
     "lonerider":{
+        "name": "The Lone Rider",
+        "key": "lonerider",
         "look":[
             {"gender": "Man, Woman, Nonconforming, Concealed"},
             {"clothes": "Cowpoke Clothes, Foreign Clothes, Showy Outfit, Weatherbeaten Clothes"},
@@ -199,7 +271,7 @@
             { "quick": 1, "grit": 2, "charm": -2, "savvy": 2, "strange": -1},
             { "quick": 2, "grit": 2, "charm": -2, "savvy": 1, "strange": -1}
         ],
-        "num_starting_moves":3,
+        "num_starting_moves":"Start with 3 moves",
         "moves_list":[
             {"name":"Animal Friend", "description":  "When you Size Up an Animal, roll + Savvy.  On a hit, you may ask questions as if you had used the Size Up a Person move on them."},
             {"name":"Born on Horseback", "description":  "In a Fight, spend 1 more than you normally would as long as you're on Horseback."},
@@ -259,6 +331,8 @@
         "custom":null
     },
     "sawbones":{
+        "name": "The Saw Bones",
+        "key": "sawbones",
         "look":[
             {"gender": "Man, Woman, Nonconforming, Concealed"},
             {"clothes": "Bloodstained Clothes, Fancy Clothes, No-Nonsense Clothes, Old Clothes"},
@@ -272,7 +346,7 @@
             { "quick": 0, "grit": -1, "charm": 1, "savvy": 2, "strange": 1},
             { "quick": 1, "grit": -2, "charm": 1, "savvy": 2, "strange": 1}
         ],
-        "num_starting_moves":2,
+        "num_starting_moves":"Start with Surgery, and pick an additional move",
         "moves_list":[{"name":"", "description":""}],
         "moves":{},
         "gear":{
@@ -304,7 +378,7 @@
             ]
         },
         "starting_horse": false,
-        "history":[{"question":"","amount":"0"}],
+        "history":[{"question":"This is likely an oversight, but you ain't got no questions.","amount":"0"}],
         "special":"When you have sex with someone for the first time, they may add one to a stat that has been reduced by the Dyin' move.",
         "advancement":[
             {"id":1,"description":"+1 Savvy (max +3)"},

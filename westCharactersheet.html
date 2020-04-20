@@ -13,18 +13,19 @@
                 <option ng-repeat="dude in vm.dudes" value="{{dude.id}}">{{dude.name}} - {{dude.class}}
                 </option>
             </select>
-            <div class="btn btn-primary" ng-click="vm.updateCharacter()">Create/Update</div>
-            <div class="btn btn-danger" ng-click="vm.deleteCharacter();">Delete</div>
-            <div class="btn btn-primary" ng-click="vm.loadCharacter(vm.dude.id);">Load</div>
+            <div class="btn btn-primary" ng-click="vm.updateCharacter(true);">Create New</div>
+            <div class="btn btn-primary" ng-click="vm.updateCharacter();">Save</div>
+            <div class="btn btn-danger" ng-click="vm.deleteCharacter();" ng-disabled="true">Delete</div>
+            <div class="btn btn-primary" ng-click="vm.loadCharacter(vm.dude);">Load</div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2">{{vm.dude}}</div>
+        <div class="col-md-2">
             <div ng-click="vm.cd.visibility.model = !vm.cd.visibility.model">{{vm.cd.visibility.model ? 'Hide' : 'Show'}} Model</div>
             <div ng-click="vm.cd.visibility.classinfo = !vm.cd.visibility.classinfo">{{vm.cd.visibility.classinfo ? 'Hide' : 'Show'}} Starting Info</div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" ng-if="vm.cd.id > -1">
         Name: <input ng-model="vm.cd.name" />
-        <!-- Player Name:<input ng-model="vm.cd.playername" /> -->
         <label>Class:</label>
         <select ng-model="vm.cd.class" style="width:150px;height:27px;">
             <option ng-repeat="class in vm.classes_list" value="{{class.key}}">{{class.value}}
@@ -32,16 +33,17 @@
         </select>
         Look: <input ng-model="vm.cd.look" />
     </div>
-    <div class="row">
+    <div class="row" ng-if="vm.cd.id > -1">
         <!-- Column 1 -->
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
-            <h2>Stats:</h2>
+            <!-- Stats -->
             <div class="row stat">
-                <div style="float:left;">
-                    Grit:<br /><input type="number" ng-model="vm.cd.stats.grit" />
-                </div>
+                <h2>Stats:</h2>
                 <div style="float:left;">
                     Quick:<br /><input type="number" ng-model="vm.cd.stats.quick" />
+                </div>
+                <div style="float:left;">
+                    Grit:<br /><input type="number" ng-model="vm.cd.stats.grit" />
                 </div>
                 <div style="float:left;">
                     Charm:<br /><input type="number" ng-model="vm.cd.stats.charm" />
@@ -51,23 +53,9 @@
                 </div>
                 <div style="float:left;">
                     Strange:<br /><input type="number" ng-model="vm.cd.stats.strange" />
-                </div>
-                <div class="hidden">
-                    <div class="col-md-6">                
-                        Grit: <input ng-model="vm.cd.stats.grit" /><br />
-                        Quick: <input ng-model="vm.cd.stats.quick" /><br />
-                        Charm: <input ng-model="vm.cd.stats.charm" /><br />
-                        Savvy: <input ng-model="vm.cd.stats.savvy" /><br />
-                        Strange: <input ng-model="vm.cd.stats.strange" /><br />
-                    </div>
-                    <div class="col-md-6">
-                        Level: <input ng-model="vm.cd.level" /><br />
-                        XP: <input ng-model="vm.cd.xp" /><br />
-                        Harm: <input ng-model="vm.cd.harm" /><br />
-                        Armor: <input ng-model="vm.cd.armor" /><br />
-                    </div>
-                </div>
+                </div>                
             </div>
+            <!-- Harm / Armor / Dinero -->
             <div class="stat row">
                 <div style="float:left;">
                     Harm:<br /><input type="number" ng-model="vm.cd.harm" />
@@ -80,18 +68,12 @@
                     Dinero:<br /><input type="number" ng-model="vm.cd.dinero" />
                 </div>
             </div>
+            <!-- History  -->
             <div class="row">
                 History:<br />
-                <textarea ng-model="vm.cd.history" style="height:80px;"></textarea>
-                <!-- Hidden Fields -->
-                <div class="hidden">
-                    Horse: <input ng-model="vm.cd.horse" /><br />
-                    Moves: <input ng-model="vm.cd.moves" /><br />
-                    Custom: <input ng-model="vm.cd.custom" /><br />
-                    Advancement: <input ng-model="vm.cd.advancements" /><br />
-                    Created By: <input ng-model="vm.cd.createdby" /><br />
-                </div>
+                <textarea ng-model="vm.cd.history" style="height:80px;"></textarea>                
             </div>
+            <!-- XP / LEVEL -->
             <div class="stat row">
                 <div style="float:left;">
                     XP:<br /><input type="number" ng-model="vm.cd.xp" />
@@ -141,24 +123,30 @@
         </div>
         <!-- Column 4 -->
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'hidden'">
-            <pre ng-if="vm.cd.visibility.model">{{vm.cd}}</pre>            
-            <div>---Choose a stat block:</div>
+            <pre ng-if="vm.cd.visibility.model">{{vm.cd | json}}</pre>            
+            <h2 class="orange"><strong>{{vm.static[vm.cd.class].name}}</strong></h2>
+            <h2>Choose a stat block:</h2>
             <div ng-repeat="stat in vm.static[vm.cd.class].stats">
                 {{stat}}
             </div>
-            <div>---History Hx:</div>
-            <div>Ask 1 question per other player</div>
+            <h2>Moves</h2>
+            {{ vm.static[vm.cd.class].num_starting_moves }}
+            <h2>History (Hx):</h2>
+            <div>Ask 1 question per player (exclusive)</div>
             <div ng-repeat="hist in vm.static[vm.cd.class].history">
                 {{hist.question}} ({{hist.amount}})
             </div>
-            <div>---Starting Gear:</div>
+            <h2>Starting Gear:</h2>
             {{vm.static[vm.cd.class].gear.what_you_get}}<br />
             <div ng-repeat="type in vm.static[vm.cd.class].gear.gear_lists">
-                <div>{{ type.category }}</div>
+                <div><strong>{{ type.category }}</strong></div>
                 <div ng-if="type.description !== ''"></div>
                 <div ng-repeat="item in type.list">
-                    {{item}}
+                    <li>{{item}}</li>
                 </div>
+            </div>
+            <div ng-if="vm.static[vm.cd.class].starting_horse">
+
             </div>
 
         </div>
