@@ -1,6 +1,12 @@
 {
     "gunslinger":{
-        "look":[],
+        "look":[
+            {"gender": "Man, Woman, Nonconforming, Concealed"},
+            {"clothes": "Blunt Face, Crooked Face, Hard Face, Narrow Face, Stern Face"},
+            {"face": "Ill-Fitting Clothes, Immaculate Clothes, Once-Beautiful Clothes, Weathered Clothes "},
+            {"eyes": "Determined Eyes, Ice-Cold Eyes, Only One Eye, Sad Eyes, Steady Eyes, Squinty Eyes "},
+            {"body": "Broken Body, Crooked Body, Massive body, Sleek Body, Solid Body, Stubby Body"}
+        ],
         "stats":[
             { "quick": 0, "grit": 2, "charm": 0, "savvy": 1, "strange": 0},
             { "quick": 1, "grit": 2, "charm": -2, "savvy": 1, "strange": 1},
@@ -9,7 +15,7 @@
         ],
         "num_starting_moves": 2,
         "moves_list":[
-            {"name": "Aim With My Eye, Shoot With My Mind", "description:": "When you follow up on answers from Sizing Up a Situation or Person, add +2 instead of +1."},
+            {"name":"Aim With My Eye, Shoot With My Mind", "description":"When you follow up on answers from Sizing Up a Situation or Person, add +2 instead of +1."},
             {"name":"Code of the Duel", "description":"When you are in a Duel, spend one more than you normally would.  Outsiders cannot interfere."},
             {"name":"Fan the Hammer", "description":"Any Revolver you wield gains the Area keyword."},
             {"name":"I Deal In Lead", "description":"Whenever you inflict harm, inflict +1 harm."},
@@ -82,7 +88,13 @@
         "custom": null
     },
     "lawdog":{
-        "look":[],
+        "look":[
+            {"gender": "Man, Woman, Nonconforming, Concealed"},
+            {"clothes": "No-Nonsense Clothes, Old Uniform, Patchwork Coat, Trail Clothes, Well-Kept Clothes "},
+            {"face": "Hopeful Face, Pinched Face, Pockmarked Face, Pretty Face, Scarred Face"},
+            {"eyes": "Cold Eyes, Determined Eyes, Guilty Eyes, Judgmental Eyes, Merciless Eyes, Weary Eyes "},
+            {"body": "Gangly Body, Hard Body, Lean Body, Paunchy Body Squashed Body, Sturdy Body"}
+        ],
         "stats":[
             { "quick": 0, "grit": 2, "charm": 1, "savvy": 1, "strange": -2},
             { "quick": 0, "grit": 2, "charm": 1, "savvy": 1, "strange": -1},
@@ -174,7 +186,13 @@
         ]
     },    
     "lonerider":{
-        "look":[],
+        "look":[
+            {"gender": "Man, Woman, Nonconforming, Concealed"},
+            {"clothes": "Cowpoke Clothes, Foreign Clothes, Showy Outfit, Weatherbeaten Clothes"},
+            {"face": "Full Face, Mashed Face, Sweet Face, Troubled Face, Worn Face"},
+            {"eyes": "Cunning Eyes, Dancing Eyes, Languid Eyes, Lost Eyes, Piercing Eyes, Shadowed eyes "},
+            {"body": "Huge Body, Long-Legged Body, Petite Body, Restless Body, Sturdy Body, Wiry Body"}
+        ],
         "stats":[
             { "quick": 0, "grit": 2, "charm": 0, "savvy": 1, "strange": 0},
             { "quick": 1, "grit": 2, "charm": -2, "savvy": 1, "strange": 1},
@@ -237,6 +255,67 @@
             {"id": 8, "description": "Get another Lone Rider move."},
             {"id": 9, "description": "Get a move from another playbook."},
             {"id": 10, "description":"Get a move from another playbook."}
+        ],
+        "custom":null
+    },
+    "sawbones":{
+        "look":[
+            {"gender": "Man, Woman, Nonconforming, Concealed"},
+            {"clothes": "Bloodstained Clothes, Fancy Clothes, No-Nonsense Clothes, Old Clothes"},
+            {"face": "Angular Face, Gaunt Face, Open Face, Tempered Face, Trustworthy Face"},
+            {"eyes": "Bright Eyes, Concerned Eyes, Faraway Eyes, Flat Eyes, Rheumy Old Eyes, Tired Eyes"},
+            {"body": "Able Body, Diseased Body, Svelte Body, Tender Body, Thick Body, Tired Body"}
+        ],
+        "stats":[
+            { "quick": 1, "grit": 0, "charm": 1, "savvy": 2, "strange": -1},
+            { "quick": 1, "grit": 1, "charm": -1, "savvy": 2, "strange": 0},
+            { "quick": 0, "grit": -1, "charm": 1, "savvy": 2, "strange": 1},
+            { "quick": 1, "grit": -2, "charm": 1, "savvy": 2, "strange": 1}
+        ],
+        "num_starting_moves":2,
+        "moves_list":[{"name":"", "description":""}],
+        "moves":{},
+        "gear":{
+            "what_you_get": "a Doctor's Bag, a Handy Weapon, a Residence and 3 Dinero.",
+            "gear_lists": [
+                {
+                    "category": "Doctor's Bag", 
+                    "description": "Your Doctor's Bag contains your medical supplies- (scalpels, forceps, tourniquets, diagnostic tools, sutures, bandages, treppanning kit, leather straps, reusable syringes, various tonics and tinctures, several doses of laudanum, opiates, amd cocaine.) It starts play with 6 Supply. You can normally purchase 2 Supply for 1 Dinero, if you're in a situation where bartering is available.", 
+                    "list": []
+                },
+                {
+                    "category": "Handy Weapons", 
+                    "description": "", 
+                    "list": [
+                        "Switchblade Razor (2 harm hand)", 
+                        "Bonesaw (2 harm hand messy)", 
+                        "Revolver (2 harm close reload loud)"
+                    ] 
+                },
+                {
+
+                    "category": "Residence", 
+                    "description": "", 
+                    "list": [
+                        "A cottage or cabin, with multiple beds.",
+                        "A wagon, with two horses to pull it."
+                    ] 
+                }
+            ]
+        },
+        "starting_horse": false,
+        "history":[{"question":"","amount":"0"}],
+        "special":"When you have sex with someone for the first time, they may add one to a stat that has been reduced by the Dyin' move.",
+        "advancement":[
+            {"id":1,"description":"+1 Savvy (max +3)"},
+            {"id":2,"description":"+1 Quick (max +2)"},
+            {"id":3,"description":"+1 Grit (max +2)"},
+            {"id":4,"description":"+1 Savvy (max +2)"},
+            {"id":5,"description":"+1 Charm (max +2)"},
+            {"id":6,"description":"Get another Sawbones move."},
+            {"id":7,"description":"Get another Sawbones move."},
+            {"id":8,"description":"Get a Homestead and the Bounty of the Land move. __ Get a move from another playbook."},
+            {"id":9,"description":"Get a move from another playbook."}
         ],
         "custom":null
     },

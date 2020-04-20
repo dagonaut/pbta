@@ -33,6 +33,7 @@
         Look: <input ng-model="vm.cd.look" />
     </div>
     <div class="row">
+        <!-- Column 1 -->
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
             <h2>Stats:</h2>
             <div class="row stat">
@@ -113,6 +114,7 @@
                 </div>
             </div>
         </div>
+        <!-- Column 2 -->
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
             <div ng-click="vm.cd.visibility.moves = !vm.cd.visibility.moves">Show {{ vm.cd.visibility.moves ? 'Selected' : 'All'}}</div>
             <h2>Moves:</h2>
@@ -126,6 +128,7 @@
                 <span ng-class="{'orange': vm.cd.moves.indexOf(move.id) > -1}">{{move.name}}: <pre>{{move.description}}</pre></span>
             </div>
         </div>
+        <!-- Column 3 -->
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
             <h2>Gear:</h2>
             <div>
@@ -136,6 +139,7 @@
                 <textarea ng-model="vm.cd.notes"></textarea>
             </div>
         </div>
+        <!-- Column 4 -->
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'hidden'">
             <pre ng-if="vm.cd.visibility.model">{{vm.cd}}</pre>            
             <div>---Choose a stat block:</div>

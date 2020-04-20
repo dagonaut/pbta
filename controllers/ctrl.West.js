@@ -22,24 +22,21 @@
             vm.cd = {
                 //id: "",
                 gameid: 5,
-                name: "Taco",
-                playername: "Paul",
-                class: "lawdog",
+                name: "",
+                playername: "",
+                class: "",
                 level: 1,
                 xp: 0,
-                look: "handsome",
+                look: "",
                 stats: { grit: 1, quick: 2, charm: 3, savvy: -1, strange: -2 },
                 harm: 0,
                 armor: 0,
-                history: [
-                    {"Dash":3},
-                    {"Bernie":-2}
-                ],
+                history: "",
                 moves: [],
                 custom: null,
-                horse: {"key":"value"},
-                gear: "Guns",
-                notes: "Adventures",
+                horse: "",
+                gear: "",
+                notes: "",
                 advancements: [],
                 visibility: { moves: true, callinfo: true, model: false },
                 createdby: 1
@@ -48,7 +45,8 @@
             vm.classes_list = [
                 { key: "gunslinger", value: "The Gunslinger"},
                 { key: "lawdog", value: "The Law Dog"},
-                { key: "lonerider", value: "The Lone Rider"}
+                { key: "lonerider", value: "The Lone Rider"},
+                { key: "sawbones", value: "The Saw Bones"}
             ]
 
             // Database Objects
