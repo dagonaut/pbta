@@ -1,8 +1,8 @@
-<div class="harm_container pull-left" style="width:50%;">
-    <div class="col-md-12"> 
-        <div class="stat">
-            <label></label>
-            <input type="number" ng-model="hold.value" ng-change="updateHold();" ng-disabled="!mc" />            
-        </div>
-    </div>
+<div>
+    <select ng-model="selectedDude" style="width:150px;height:27px;" ng-change="getDude(selectedDude)">
+        <option ng-repeat="dude in dudes" value="{{dude.id}}">{{dude.name}} - {{dude.class}}
+        </option>
+    </select>
+    <h3>{{ dude.name }}</h3>
+    <pre>{{dude | json}}</pre>
 </div>

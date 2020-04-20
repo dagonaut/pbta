@@ -140,6 +140,7 @@
 
                 function getDudesSuccess(r){
                     vm.dudes = r;
+                    $scope.$broadcast("got-dudes", vm.dudes);
                 }
 
                 function getDudesFail(e){
