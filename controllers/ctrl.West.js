@@ -51,6 +51,8 @@
                 { key: "sawbones", value: "The Saw Bones"}
             ]
 
+            vm.userId = userId;
+
             // Database Objects
             vm.dudes = [];
 

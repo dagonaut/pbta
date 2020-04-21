@@ -48,7 +48,6 @@
                     $scope.dudes = dudes;
                 }, true);
                 $scope.$on('moves', function(evt, moves){
-                    console.log("moves", moves);
                     $scope.moves = moves;
                 }, true);
 

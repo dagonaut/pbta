@@ -1,6 +1,6 @@
 <style>
     #charSheet input{color:#000;}
-    #charSheet select{color:#000;}
+    #charSheet select{color:#000;width:150px;height:27px;}
     textarea{width:100%;height:275px;color:#000;}
     .stat input{border:1px solid #d38336;}
     .orange{color:#d38336;}
@@ -9,8 +9,8 @@
     <div class="row">
         <div class="col-md-8">
             Dudes:
-            <select ng-model="vm.dude" style="width:150px;height:27px;">
-                <option ng-repeat="dude in vm.dudes" value="{{dude.id}}">{{dude.name}} - {{dude.class}}
+            <select ng-model="vm.dude">
+                <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId" value="{{dude.id}}">{{dude.name}} - {{dude.class}}
                 </option>
             </select>
             <div class="btn btn-primary" ng-click="vm.updateCharacter(true);">Create New</div>
