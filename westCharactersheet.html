@@ -100,7 +100,7 @@
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
             <div ng-click="vm.cd.visibility.moves = !vm.cd.visibility.moves">Show {{ vm.cd.visibility.moves ? 'Selected' : 'All'}}</div>
             <h2>Moves:</h2>
-            <div ng-repeat="move in vm.static.classmoves.moves | filter: { class: vm.cd.class }" ng-show="vm.filterMoves(move.id);">
+            <div ng-repeat="move in vm.classmoves.moves | filter: { class: vm.cd.class }" ng-show="vm.filterMoves(move.id);">
                 <input
                             id="move_{{move.id}}"                             
                             type="checkbox" 

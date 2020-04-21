@@ -19,7 +19,7 @@
                 log: { index: 2, heading: 'Log'},
                 mc: { index: 3, heading: 'Marshall'}
             };
-            vm.visible = { "Basic": [], "Other": [], "Dinero": [], "Fights": []};
+            vm.visible = { "Basic": [], "Other": [], "Dinero": [], "Fights": []};            
             vm.blankCharacter = {
                 //id: "",
                 gameid: 5,
@@ -100,7 +100,7 @@
                     }
                 $http.get(_classMovesJSON).then(getClassMovesJSONSuccess, getClassMovesJSONFail);
                     function getClassMovesJSONSuccess(response){
-                        vm.static.classmoves = response.data;
+                        vm.classmoves = response.data;
                         $scope.$broadcast("moves", response.data.moves);   
                     }
                     function getClassMovesJSONFail(error){
