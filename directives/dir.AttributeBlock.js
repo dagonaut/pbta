@@ -50,6 +50,9 @@
                 $scope.$on('moves', function(evt, moves){
                     $scope.moves = moves;
                 }, true);
+                $scope.$on('refresh-dudes', function(evt, args){
+                    getDude($scope.dude.id);
+                }, true);
 
                 init();
 

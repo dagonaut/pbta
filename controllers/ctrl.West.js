@@ -65,7 +65,13 @@
             vm.updateMoves = updateMoves;
             vm.filterMoves = filterMoves;
 
+            vm.refreshDudes = refreshDudes;
+
             init();
+
+            function refreshDudes(){
+                $scope.$broadcast("refresh-dudes");
+            }
 
             function init(){ 
                 getMoves();
