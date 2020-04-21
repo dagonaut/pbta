@@ -5,7 +5,7 @@
         .module('pbta_resources')
         .directive('attributeBlock', attributeBlock);
         
-        function attributeBlock(apiservice, $rootScope){
+        function attributeBlock(apiservice){
             return{
                 restrict: 'E',                
                 templateUrl: "./directives/dir.AttributeBlock.html",
@@ -45,18 +45,18 @@
                 
                 //watches
                 $scope.$on('got-dudes', function(evt, dudes){
-                    console.log("scope on", dudes);
                     $scope.dudes = dudes;
+                }, true);
+                $scope.$on('moves', function(evt, moves){
+                    console.log("moves", moves);
+                    $scope.moves = moves;
                 }, true);
 
                 init();
 
                 function init(){
-                  //  console.log("dudes", dudes);
-                    console.log("scope dudes", $scope.dudes);
+
                 }
-
-
 
                 function getDude(id){
                     console.log(id);
@@ -65,23 +65,17 @@
                     function y(r){
                         console.log(r);
                         $scope.dude = r;
+                        $scope.dude.stats = JSON.parse(r.stats);
+                        $scope.dude.horse = JSON.parse(r.horse);
+                        $scope.dude.history = JSON.parse(r.history);
+                        $scope.dude.visibility = JSON.parse(r.visibility);
+                        $scope.dude.moves = JSON.parse("[" + r.moves + "]");
+                        $scope.dude.advancements = JSON.parse("[" + r.advancements + "]");
                     }
 
                     function n(e){
                         console.log(e);
                     }
-                }
-
-                function deleteHold(id){
-                    HoldService.Delete(id).then(function(data){
-                        $scope.onDelete();
-                    });                    
-                }
-                
-                function updateHold(){
-                    HoldService.Update($scope.hold).then(function(data){
-                        $scope.onDelete();
-                    });                    
                 }
             }
         }

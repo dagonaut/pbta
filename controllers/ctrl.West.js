@@ -98,7 +98,8 @@
                     }
                 $http.get(_classMovesJSON).then(getClassMovesJSONSuccess, getClassMovesJSONFail);
                     function getClassMovesJSONSuccess(response){
-                        vm.static.classmoves = response.data;   
+                        vm.static.classmoves = response.data;
+                        $scope.$broadcast("moves", response.data.moves);   
                     }
                     function getClassMovesJSONFail(error){
                         console.log(error);
