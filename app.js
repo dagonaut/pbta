@@ -6,7 +6,7 @@
 	app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		//Set the state variables
 
-		$urlRouterProvider.otherwise(''); //Instead of 404		
+		$urlRouterProvider.otherwise('/'); //Instead of 404		
 		
 		$stateProvider
 			.state('test', {
@@ -143,7 +143,7 @@
 			});	
 
 			// To remove #! from URL
-			$locationProvider.html5Mode(true);
+			$locationProvider.html5Mode({enabled:true, requireBase: false});
 			//$locationProvider.hashPrefix('');
 	});
 	
