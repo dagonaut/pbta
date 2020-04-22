@@ -346,7 +346,7 @@
             { "quick": 0, "grit": -1, "charm": 1, "savvy": 2, "strange": 1},
             { "quick": 1, "grit": -2, "charm": 1, "savvy": 2, "strange": 1}
         ],
-        "num_starting_moves":"Start with Surgery, and pick an additional move",
+        "num_starting_moves":"Start with Surgery, and pick 2 additional moves",
         "moves_list":[{"name":"", "description":""}],
         "moves":{},
         "gear":{
