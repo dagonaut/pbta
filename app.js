@@ -4,10 +4,11 @@
 
 	//States
 	app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-		//Set the state variables
+		
 
 		$urlRouterProvider.otherwise('/'); //Instead of 404		
 		
+		//Set the state variables
 		$stateProvider
 			.state('test', {
 				url: '/test',
@@ -26,13 +27,7 @@
 				templateUrl: 'register.html',
 				controller: 'LoginController',
 				controllerAs: 'vm'
-			})			
-			// .state('west', {
-			// 	url: '/west',
-			// 	templateUrl: 'westReference.html',
-			// 	controller: 'WestController',
-			// 	controllerAs: 'vm'
-			// })
+			})
 			.state('auth',{
 				templateUrl: 'wrapper.html'								
 			})			
