@@ -32,5 +32,152 @@
     {
         "ATTACK SOMEONE":"When you straight up attack someone who isn't able to defend themselves, roll + Grit.\nOn a 10+, you inflict your harm.\nOn a 7-9, they are able to mitigate the blow or you don't quite hit the mark, inflict your harm, minus 1. Either way, if they choose to fight back, you're now in a Fight with them.",
         "GET IN A FIGHT":"When you get in a Fight, see the extended rules."  
-    }
+    },
+"Marshall":
+    [
+        "Split Them Up",
+        "Put Them in a Spot",
+        "Inflict or Exchange Harm ",
+        "Announce Future Badness ",
+        "Announce Off-Screen Badness ",
+        "Reveal an Ugly Truth",
+        "Take Away Their Stuff",
+        "Make them Buy",
+        "Activate Something's Downside ",
+        "Give them a Hard Choice",
+        "Make them an Offer",
+        "Tell them the Consequences and ask. ",
+        "Turn their move back on them. ",
+        "Activate a Threat's move."
+    ],
+"Threats":
+    [
+        {
+            "category":"WARLORDS",
+            "description":"A Warlord is a person, plus their Gang of followers that make them dangerous. A Warlord acts primarily through their people and resources, rarely confronting the characters directly.",
+            "types":[
+                "Collector (Want: To Own)",
+                "Exploiter (Want: To Consume)",
+                "Prophet (Want: To Denounce and Overthrow)",
+                "Slaver (Want: To Own People)",
+                "Tyrant (Want: To Dominate)"
+            ],
+            "moves":[
+                "Attack suddenly, directly, and hard.",
+                "Attack cautiously, holding resources in reserve. ",
+                "Encircle, outflank, corner, or besiege someone. ",
+                "Make a display of coordinated force or discipline. ",
+                "Offer negotiations.",
+                "Demand concessions or obedience.",
+                "Lay claim to territory or resources.",
+                "Seize something precious.",
+                "Buy out someone's allies.",
+                "Study someone and attack where they're weak."
+            ]
+        },
+        {
+            "category":"BRUTES",
+            "description":"Brutes are groups of people, tied together by shared motives. They may or may not have a leader. They may or may not work together most of the time. But when the chips are down, they stick together and act as a whole.",
+            "types":[
+                "Cult (Want: To Victimize and Incorporate People) ",
+                "Enforcers (Want: To Victimize Anyone who Stands Out) ",
+                "Family (Want: To Close Ranks and Protect Their Own) ",
+                "Hunters (Want: To Victimize the Vulnerable)",
+                "Mob (Want: To Riot and Destroy)",
+                "Sybarites (Want: To Consume Someone's Resources)"
+            ],
+            "moves":[
+                "Attack in sudden, uncoordinated violence. ",
+                "Make a coordinated attack.",
+                "Tell stories: truth, lies, allegories, legends. ",
+                "Demand consideration or indulgences. ",
+                "Rigidly follow or defy authority.",
+                "Cling to or defy tradition.",
+                "Make a show of solidarity and power. ",
+                "Ask for help or participation."
+            ]
+        },
+        {
+            "category":"CREATURES OF DARKNESS",
+            "description":"Creatures of Darkness are monsters. Real monsters. They might have been human once, but they aren't anymore.",
+            "types":[
+                "Corrupter (Want: To Entice People into Evil Deeds) ",
+                "Defiler (Want: To spread and create more darkness) ",
+                "Fearmonger (Want: To Terrify and create Fear) ",
+                "Glutton (Want: To Sate its Endless Hunger)",
+                "Stalker (Want: To Hunt and Kill People)",
+                "Ruiner (Want: To Hasten the End of the World)",
+                "Usurper (Want: To Exalt Itself, to Master and Dominate Others)"
+            ],
+            "moves":[
+                "Attack brutally and suddenly.",
+                "Attack by stealth.",
+                "Display the contents of the ruined world. *Display the contents of itself.",
+                "Corrupt, ruin, or defile something. ",
+                "Kidnap someone.",
+                "Offer someone power, at a price. ",
+                "Spawn a lesser evil."
+            ]
+        },
+        {
+            "category":"RENEGADES",
+            "description":"Renegades might be monstrous, but they're still human. The possibility of redemption still remains, but so does damnation.",
+            "types":[
+                "Cannibal (Want: To Feast)",
+                "Killer (Want: To Hunt and Kill)",
+                "Mutie (Want: Restitution from the World) Witch (Want: Gain Power over Others)"
+            ],
+            "moves":[
+                "Attack in force with an intentional plan. ",
+                "Attack from behind or from by stealth. ",
+                "Insult, offend, or provoke someone.",
+                "Steal or take something from someone else. ",
+                "Kidnap someone.",
+                "Threaten someone or something.",
+                "Offer a deal, with strings attached."
+            ]
+        },
+        {
+            "category":"LANDSCAPES",
+            "description":"",
+            "types":[
+                "Badland (Want: To Trap and Deny Passage) ",
+                "Breeding Pit (Want: To Generate Badness) ",
+                "Fortress (Want: To Keep People Out) ",
+                "Furnace (Want: To Consume Things) ",
+                "Mirage (Want: To Entice and Betray) ",
+                "Prison (Want: To Keep People In)"
+            ],
+            "moves":[
+                "Deny passage.",
+                "Open a path.",
+                "Reveal something to someone. *Hide something.",
+                "Provide an alternate route.",
+                "Shift, move, rearrange.",
+                "Disgorge something.",
+                "Present a guardian.",
+                "Take something away and use it up."
+            ]
+        },
+        {
+            "category":"AFFLICTION",
+            "description":"",
+            "types": [
+                "Disease (Want: To spread through a population)",
+                "Condition (Want: To expose people to danger)",
+                "Custom (Want: To promote and justify violence)",
+                "Delusion (Want: To dominate people's choices and actions.) Shortage (Want: To impoverish people)",
+                "Tribute (Want: To force people to give up their resources.)"
+            ],
+            "moves": [
+                "Someone neglects their duties.",
+                "Someone flies into a rage.",
+                "Someone takes self-destructive, frantic, or hopeless action. *Someone asks for help or comfort.",
+                "Someone withdraws and isolates themselves.",
+                "Someone proclaims the Affliction a just punishment. *Someone proclaims the Affliction a blessing.",
+                "Someone fails to adapt.",
+                "The affliction spreads."
+            ]
+        }        
+    ]
 }

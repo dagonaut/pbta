@@ -1,5 +1,8 @@
 <div class="container-fluid">
     <style>
+        hr{
+            margin:0;
+        }
         .col-custom-20{
             float:left;
             width:20%;
@@ -22,7 +25,19 @@
         </div>
         <div class="col-custom-20">
             <div class="btn btn-primary" ng-click="vm.refreshDudes();">Refresh Dudes</div>
-            Other shit.
+            <h3 class="orange">MARSHALL MOVES</h3>
+            <div ng-repeat="move in vm.moves.Marshall"><h2>{{ move }}</h2></div>
+            <h3>THREATS</h3>
+            <div ng-repeat="category in vm.moves.Threats">
+                <h2 ng-click="category.hide = !category.hide">{{ category.category }}</h2>
+                <div ng-hide="!category.hide">
+                    <div>{{ category.description }}</div>
+                    <hr />
+                    <div ng-repeat="type in category.types">{{ type }}</div>
+                    <hr />
+                    <div ng-repeat="move in category.moves">{{ move }}</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
