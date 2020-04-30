@@ -73,7 +73,33 @@
 				templateUrl: 'gmreference.html',
 				controller: 'ReferenceController',
 				controllerAs: 'vm'
-			})					
+			})								
+			.state('auth.impulse',{
+				url: '/impulse',	
+				stateName: 'Impulse',			
+				views: {	
+					'impulse':{
+						templateUrl: './games/impulsedrive/impulse.html',
+						controller: 'ImpulseDriveController as vm'
+					},
+					'reference@auth.impulse': {
+						templateUrl: './games/impulsedrive/impulseRef.html',
+						controller: 'ImpulseDriveController as vm'
+					// },			
+					// 'charactersheet@auth.impulse': {
+					// 	templateUrl: './games/impulsedrive/impulseRef.html',
+					// 	controller: 'ImpulseDriveController as vm'
+					// },					
+					// 'log@auth.impulse': {
+					// 	templateUrl: './games/impulsedrive/impulseRef.html',
+					// 	controller: 'ImpulseDriveController as vm'
+					// },
+					// 'mc@auth.impulse': {
+					// 	templateUrl: './games/impulsedrive/impulseRef.html',
+					// 	controller: 'ImpulseDriveController as vm'
+					}
+				}
+			})												
 			.state('auth.west',{
 				url: '/west',	
 				stateName: 'West',			

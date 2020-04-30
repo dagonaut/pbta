@@ -36,6 +36,7 @@
         <script type="text/javascript" src="./controllers/ctrl.so77Controller.js"></script>
         <script type="text/javascript" src="./controllers/ctrl.Sprawl.js"></script>
         <script type="text/javascript" src="./controllers/ctrl.West.js"></script>
+        <script type="text/javascript" src="./games/impulsedrive/ctrl.impulse.js"></script>
         <link rel="stylesheet" type="text/css" href="inc/sprawl.css" />
 </head>
 <body ng-controller="LoginController as vm">
@@ -43,9 +44,10 @@
         <div class="container-fluid">
             <ul class="nav navbar-nav navbar-left">
                 <li class=""><a style="color:#d38336" href ui-sref="auth.west">How the West Was Lost</a></li>
+                <li class=""><a style="color:#663a82" href ui-sref="auth.impulse">Impulse Drive</a></li>
                 <li class=""><a href ui-sref="auth.dw">Dungeon World</a></li>
                 <li class=""><a href ui-sref="auth.so77">Spirit of '77</a></li>
-                <li class=""><a style="color:#0472CE;"" href ui-sref="auth.sprawl">The SPRAWL</a></li>
+                <li class=""><a style="color:#0472CE;" href ui-sref="auth.sprawl">The SPRAWL</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a ng-click="vm.logout()" style="cursor:pointer;">{{vm.isLoggedIn ? "Log Out" : "Log In"}}</a></li>

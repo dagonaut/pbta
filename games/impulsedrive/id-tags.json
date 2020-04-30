@@ -1,0 +1,47 @@
+{
+"Tier":{
+"Basic Gear":"It’s inexpensive and ubiquitous equipment, easily purchased.",
+"Advanced Gear":"It’s reasonably priced and easily purchased.",
+"Illegal":"Purchasing and possessing it is illegal in most lawful societies.",
+"Specialist Gear":"It’s expensive or high-tech, and hard to find.",
+"Rare":"It’s hard to find and requires knowing the right people to hunt one down. Unless you gain this through your Playbook, check with the SM before taking it."
+},
+"Range":{
+"Skirmish":"Cramped, chaotic exchange of physical blows & small arms fire.",
+"Firefight":"Moving from cover to cover, exchanging fire.",
+"Sniping":"Precise long distance strikes, tense games of hide and seek."
+},
+"Weapon":{
+"AP":"It ignores personal Armor on people, and the Armored tag on vehicles.",
+"Area":"It affects an area, and anyone in the area.",
+"Drain":"It blows out the target’s technology, making it useless until repaired.",
+"Forceful":"It can knock someone back a pace, maybe even off their feet.",
+"Full Auto":"You may choose to Discharge your weapon to deal your Harm to two targets.",
+"Messy":"It’s particularly destructive, ripping people and things apart. You don’t have fine control over what you hit.",
+"N Ammo":"Each time the weapon is used, reduce Ammo by 1. When you have 0 Ammo, you cannot fire it.",
+"N Damage":"It does N Damage to ships and vehicles when it hits.",
+"N Harm":"It causes N Harm to its target.",
+"Reload":"It requires reloading after each use.",
+"Silent":"The weapon can be used silently.",
+"Stun":"If you deal the killing blow with this weapon, you may choose to incapacitate your target instead of killing them."
+},
+"Other":{
+"Compact Vehicle":"It’s a vehicle that can be driven, rode, or flown. It doesn’t require a Vehicle Bay to store, you could keep it in your quarters.",
+"Concealed":"It can be hidden on your person and will not be detected through searching or sensors.",
+"Conspicuous":"It’s obvious and very hard to hide.",
+"Discharge":"If it’s a Move, it’s Discharged when it’s used. If it’s a weapon, Gear, vehicle equipment, or ship module, it’s Discharged when a Move says. If it’s Shields, it’s Discharged when it absorbs Harm.",
+"Expires":"You only have it for your next Contract. After that, it’s Expired for good.",
+"Mod":"It’s a permanent Modification to your body. You cannot unequip it, and it does not use a Gear slot.",
+"N Uses":"Each time the item is used, reduce its uses by 1. When you have 0 Uses left, it’s Expended and cannot be used.",
+"Trinket":"It doesn’t use up a Gear slot when you use it."
+},
+"Armor":{
+"Absorb N":"It can absorb up to N points of Harm or Damage from a single source and is then Discharged if it has the Discharge tag, or Damaged if it does not.",
+"Clumsy":"It’s noisy and awkward to Move around with. You have Disadvantage to any Move that requires stealth, dexterity, or finesse ongoing while using it."
+},
+"Status":{
+"Damaged":"Use a Tactical Pack and 5 minutes of peace to repair this item.",
+"Discharged":"This item/Move can be recharged as an option when you roll Recover, or at the end of a Scene.",
+"Expended":"This item can be restocked when you have access to supplies"
+}
+}
