@@ -60,7 +60,7 @@
         {
             "name": "Alpha Strike ",
             "description": "When you get into an advantageous position and attack a target that can’t retaliate, roll+Calculating. On a 10+, choose 2. On a 7-9, take what you can get. choose 1. \n•You disarm or disable them. \n•Your position isn’t exposed or compromised. \n•Deal your weapon’s Harm. If your weapon has the discharge tag, you may Discharge it to double the Harm dealt. ",
-            "notes": "Alpha Strike is most often used when the attacking character is out of immediate danger, but vulnerable to a change in situation once they act violently. Most often, this Move is used for a character sniping someone at range or from cover, or striking an unarmed or unaware target, perhaps from a hidden position or while sneaking up on them. The choices On a 7-9 are about whether your situation remains tenable or if you are going to have to adapt to a very different situation.",
+            "notes": "Alpha Strike is most often used when the attacking character is out of immediate danger, but vulnerable to a change in situation once they act violently. Most often, this Move is used for a character sniping someone at range or from cover, or striking an unarmed or unaware target, perhaps from a hidden position or while sneaking up on them. The choices On a 7-9 are about whether your situation remains tenable or if you are going to have to adapt to a very different situation."
         },
         {
             "name": "Ineffective Range ",
@@ -99,7 +99,7 @@
         }   
     ],
     "influence_investigation_exploration":[
-        
+
     ]
 
 }
