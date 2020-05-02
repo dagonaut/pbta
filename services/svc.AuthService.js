@@ -42,7 +42,7 @@
 		};
 		
 		Auth.Login = function (username, password, callback) {
-			$http.get(api + 'tbl_Users/username/"' + username + '"').then(
+			$http.get(api + 'tbl_Users/username/\'' + username + '\'').then(
 				function(response){						
 					response.success = (password === response.data.Password);
 					callback(response);
