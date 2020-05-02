@@ -164,7 +164,7 @@
 			});	
 
 			// To remove #! from URL
-			//$locationProvider.html5Mode({enabled:true, requireBase: false});
+			$locationProvider.html5Mode({enabled:true, requireBase: false}).hashPrefix('!');
 			//$locationProvider.hashPrefix('');
 	});
 	
