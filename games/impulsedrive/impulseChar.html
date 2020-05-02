@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Impulse Drive Reference Page</title>
+    <style>
+        body {
+            color:#ddd;
+            background-color: #333;
+        }
+        h2{
+            border-bottom:#663a82 1px solid;
+        }
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-break:normal;
+        }
+        .move-header{
+            font-size:16px;
+            font-weight:bold;
+        }
+
+        .purple{color:#b491c8;}
+        .purple1{color:#3c1361;}
+        .purple2{color:#52307c;}
+        .purple3{color:#663a82;}
+        .purple4{color:#7c5295;}
+        .purple5{color:#b491c8;}
+        .purple6{color:#bca0dc;}
+    </style>
+</head>
+
+<body>
+    <div ng-click="vm.save">Save</div>    
+    <input ng-model="vm.cd.name" /><br />
+    <input ng-model="vm.cd.playername" /><br />
+    <input ng-model="vm.cd.stat.str" /><br />
+    <input ng-model="vm.cd.stat.dex" /><br />
+    <input ng-model="vm.cd.stat.int" /><br />
+    <input ng-model="vm.cd.stat.wis" /><br />
+    <input ng-model="vm.cd.gear" /><br />
+    <input ng-model="vm.cd.notes" />
+</body>
+
+</html>

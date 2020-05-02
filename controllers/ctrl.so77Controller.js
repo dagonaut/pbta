@@ -9,7 +9,7 @@
         function so77Controller($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, Auth){
             //Private Properties
             var vm = this;
-            var api = 'http://16watt.com/dev/pbta/api/api.php/';
+            var api = 'http://16watt.com/dev/api/api.php/';
             
             vm.user = 1;
             vm.characterData = {};

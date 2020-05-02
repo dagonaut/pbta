@@ -7,7 +7,7 @@
 
     apiservice.$inject = ['$http', '$cookies', '$rootScope', '$timeout', '$q'];
     function apiservice($http, $cookies, $rootScope, $timeout, $q) {
-        var api = 'http://16watt.com/dev/pbta/api/api.php/';
+        var api = 'http://16watt.com/dev/api/api.php/';
 		var table = '';
 		var config = {
             method: 'GET',

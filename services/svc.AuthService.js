@@ -8,7 +8,7 @@
     Auth.$inject = ['Base64', '$http', '$cookies', '$rootScope', '$timeout', '$q'];
     function Auth(Base64, $http, $cookies, $rootScope, $timeout, $q) {
         //Private Properties
-		var api = 'http://16watt.com/dev/pbta/api/api.php/';
+		var api = 'http://16watt.com/dev/api/api.php/';
 		
 		// Set factory return object
 		var Auth = {};

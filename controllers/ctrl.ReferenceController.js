@@ -10,7 +10,7 @@
             let vm = this;
 
             //Private Properties
-            var api = 'http://16watt.com/dev/pbta/api/api.php/';
+            var api = 'http://16watt.com/dev/api/api.php/';
             
             //Scope Properties
             $scope.allMoves = getAllMoves();
@@ -29,9 +29,25 @@
             init();
 
             function init(){
+                //apiTest();
                 //getAllCharacters();
             }
             
+            function apiTest(){
+                var api = 'http://16watt.com/dev/api/api.php?table=tbl_Users&id=2';
+                var config = {
+                    
+                    url: api
+                };
+                $http.get(config).then(y, n);
+                function y(r){
+                    console.log(r);
+                }
+                function n(e){
+                    console.log(e);
+                }
+            }
+
             function getAllCharacters(){
                 var config = {
                     method: 'GET',

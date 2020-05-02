@@ -7,7 +7,7 @@
 
     HoldService.$inject = ['$http', '$cookies', '$rootScope', '$timeout', '$q'];
     function HoldService($http, $cookies, $rootScope, $timeout, $q) {
-        var api = 'http://16watt.com/dev/pbta/api/api.php/';
+        var api = 'http://16watt.com/dev/api/api.php/';
 		var table = 'tbl_Hold';
 		var config = {
             method: 'GET',

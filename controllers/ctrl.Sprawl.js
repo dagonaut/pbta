@@ -457,7 +457,7 @@
             //#region Log
             function getLogEntries(){
                 let config = {                    
-                    url: "http://16watt.com/dev/pbta/api/api.php/tbl_Log"
+                    url: "http://16watt.com/dev/api/api.php/tbl_Log"
                 }
                 $http.get(config.url).then(function(data){
                     vm.logs = data.data;
@@ -470,7 +470,7 @@
             function updateLogEntry(){
                 vm.currentLog.date                
                 let config = {
-                    url: 'http://16watt.com/dev/pbta/api/api.php/tbl_Log/' + vm.currentLog.id,
+                    url: 'http://16watt.com/dev/api/api.php/tbl_Log/' + vm.currentLog.id,
                     data: vm.currentLog,
                     method: 'PUT'
                 }
@@ -491,7 +491,7 @@
                     createdby: 1
                 }
                 let config = {
-                    url: 'http://16watt.com/dev/pbta/api/api.php/tbl_Log/',
+                    url: 'http://16watt.com/dev/api/api.php/tbl_Log/',
                     data: newEntry,
                     method: 'POST'
                 }
@@ -505,7 +505,7 @@
 
             function selectLog(logId){
                 let config = {                    
-                    url: "http://16watt.com/dev/pbta/api/api.php/tbl_Log/id/" + logId
+                    url: "http://16watt.com/dev/api/api.php/tbl_Log/id/" + logId
                 }
                 $http.get(config.url).then(function(data){
                     vm.currentLog = data.data;

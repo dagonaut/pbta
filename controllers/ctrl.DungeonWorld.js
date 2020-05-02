@@ -11,7 +11,7 @@
         
         //Private Properties
         let vm = this;
-        let api = 'http://16watt.com/dev/pbta/api/api.php/';
+        let api = 'http://16watt.com/dev/api/api.php/';
         
         //Debug variables
         window.bug = {

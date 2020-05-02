@@ -9,7 +9,7 @@
     function DungeonWorld2($rootScope, $scope, $http, $cookies, $timeout, DWCharacterService) {
         //Private Properties
         let vm = this;
-        let api = 'http://16watt.com/dev/pbta/api/api.php/';
+        let api = 'http://16watt.com/dev/api/api.php/';
         let staticFile = "./static/dw-basic.json";    
         let userId = $cookies.getObject('id');
         let gameId = 1;

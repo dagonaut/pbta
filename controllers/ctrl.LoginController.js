@@ -8,7 +8,7 @@
         LoginController.$inject = ['$scope', '$rootScope', '$cookies', '$location', '$http', '$q', 'Auth'];
         function LoginController($scope, $rootScope, $cookies, $location, $http, $q, Auth){
             var vm = this;
-            var api = 'http://16watt.com/dev/pbta/api/api.php/';
+            var api = 'http://16watt.com/dev/api/api.php/';
             
             //Scope Properties
             vm.userData = {};

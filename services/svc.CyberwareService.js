@@ -7,7 +7,7 @@
 
     CyberwareService.$inject = ['$http', '$cookies', '$rootScope', '$timeout', '$q'];
     function CyberwareService($http, $cookies, $rootScope, $timeout, $q) {
-        var api = 'http://16watt.com/dev/pbta/api/api.php/';
+        var api = 'http://16watt.com/dev/api/api.php/';
 		var table = 'tbl_Cyberware';
 		var config = {
             method: 'GET',

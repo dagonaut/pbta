@@ -17,8 +17,16 @@
                 reference: { index: 0, heading: 'Reference'},                
             };
 
+            // vm.character_model = {
+            //     id = 1,
+            //     gameid = 6,
+            //     data = "",
+            //     createdby = 1
+            // }            
+
             // Methods
             vm.getRandomNumber = getRandomNumber;
+            //vm.save = save;
 
             init();
 
@@ -50,7 +58,40 @@
                     }
             }
 
+            // function save(){
+            //     vm.character_model.data = JSON.stringify(vm.cd);                
+            //     // New / Create
+            //     if(isCreate){
+            //         if(vm.cd.id > -1){
+            //             vm.cd = angular.copy(vm.blankCharacter);
+            //         }
+            //         // JSON / Array conversion
+            //         convert(false);
+            //         // Create returns id of new character row
+            //         apiservice.Create(_characterTable, vm.cd).then(function(data){                        
+            //             console.log(data);
+            //             loadCharacter(data);
+            //         },
+            //         function(e){
+            //             console.log(e);
+            //         });
+            //     } else {
+            //         // Update
+            //         // JSON / Array conversion
+            //         convert(false);
+            //         apiservice.Update(_characterTable, vm.cd).then(function(data){                        
+            //             console.log(data);
+            //             // reload the dude to reset arrays/objects
+            //             loadCharacter(vm.cd.id);
+            //         },
+            //         function(e){
+            //             console.log(e);
+            //         });
+            //     }
+            // }
+
             // Helpers
+            
             function getRandomNumber(){
                 vm.random = Math.floor(Math.random() * 518) + 1;
                 console.log(vm.random);
