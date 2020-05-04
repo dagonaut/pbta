@@ -42,7 +42,7 @@
 		};
 		
 		Auth.Login = function (username, password, callback) {
-			$http.get(api + 'tbl_Users/username/"' + username + '"').then(
+			$http.get(api + 'tbl_Users/username/\'' + username + '\'').then(
 				function(response){						
 					response.success = (password === response.data.Password);
 					callback(response);
@@ -55,7 +55,7 @@
 		};
 
 		Auth.AutoLogin = function(userId, callback){
-            $http.get(api + 'tbl_Users/id/"' + userId + '"').then(
+            $http.get(api + 'tbl_Users/id/' + userId).then(
                 function(response){
               		$rootScope.userData = response.data;
                     Auth.setUser(response.data.id);
