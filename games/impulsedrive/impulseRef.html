@@ -48,8 +48,57 @@
             <h3>Tags</h3>
         </div>
     </div>    
-    <div class="row">
+    <div class="row">        
         <div class="col-md-3">
+            <h2 class="move-header purple">Combat/Action Moves</h2>
+            <div ng-repeat="move in vm.moves.combat_action">
+                <h2 ng-click="vm.visible.combat_action[$index] = !vm.visible.combat_action[$index]">{{move.name}}</h2>
+                <div ng-hide="!vm.visible.combat_action[$index]">                    
+                    <pre>{{move.description}}</pre>
+                    <div class="purple4 pointer" ng-if="move.notes !== ''" ng-click="vm.visible.combat_action_note[$index] = !vm.visible.combat_action_note[$index]">View Note</div>
+                    <pre ng-hide="!vm.visible.combat_action_note[$index]">{{move.notes}}</pre>
+                </div>
+            </div>
+            <h2 class="move-header purple">Influence/Investigation/Exploration Moves</h2>
+            <div ng-repeat="move in vm.moves.influence_investigation_exploration">
+                <h2 ng-click="vm.visible.influence_investigation_exploration[$index] = !vm.visible.influence_investigation_exploration[$index]">{{move.name}}</h2>
+                <div ng-hide="!vm.visible.influence_investigation_exploration[$index]">                    
+                    <pre>{{move.description}}</pre>
+                    <div ng-if="move.notes !== ''" class="purple4 pointer" ng-click="vm.visible.influence_investigation_exploration_note[$index] = !vm.visible.influence_investigation_exploration_note[$index]">View Note</div>
+                    <pre ng-hide="!vm.visible.influence_investigation_exploration_note[$index]">{{move.notes}}</pre>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h2 class="move-header purple">Other Moves</h2>
+            <div ng-repeat="move in vm.moves.other_moves">
+                <h2 ng-click="vm.visible.other_moves[$index] = !vm.visible.other_moves[$index]">{{move.name}}</h2>
+                <div ng-hide="!vm.visible.other_moves[$index]">                    
+                    <pre>{{move.description}}</pre>
+                    <div ng-if="move.notes !== ''" class="purple4 pointer" ng-click="vm.visible.other_moves_note[$index] = !vm.visible.other_moves_note[$index]">View Note</div>
+                    <pre ng-hide="!vm.visible.other_moves_note[$index]">{{move.notes}}</pre>
+                </div>
+            </div>
+            <h2 class="move-header purple">Ship Payment Moves</h2>
+            <div ng-repeat="move in vm.moves.ship_payment">
+                <h2 ng-click="vm.visible.ship_payment[$index] = !vm.visible.ship_payment[$index]">{{move.name}}</h2>
+                <div ng-hide="!vm.visible.ship_payment[$index]">                    
+                    <pre>{{move.description}}</pre>
+                    <div ng-if="move.notes !== ''" class="purple4 pointer" ng-click="vm.visible.ship_payment_note[$index] = !vm.visible.ship_payment_note[$index]">View Note</div>
+                    <pre ng-hide="!vm.visible.ship_payment_note[$index]">{{move.notes}}</pre>
+                </div>
+            </div>
+            <h2 class="move-header purple">Plot Moves</h2>
+            <div ng-repeat="move in vm.moves.plot_moves">
+                <h2 ng-click="vm.visible.plot_moves[$index] = !vm.visible.plot_moves[$index]">{{move.name}}</h2>
+                <div ng-hide="!vm.visible.plot_moves[$index]">                    
+                    <pre>{{move.description}}</pre>
+                    <div ng-if="move.notes !== ''" class="purple4 pointer" ng-click="vm.visible.plot_moves_note[$index] = !vm.visible.plot_moves_note[$index]">View Note</div>
+                    <pre ng-hide="!vm.visible.plot_moves_note[$index]">{{move.notes}}</pre>
+                </div>
+            </div>
+        </div>        
+        <!-- <div class="col-md-3">
             <h2 class="move-header purple">Basic Moves</h2>
             <div ng-repeat="(key, value) in vm.moves.basic">
                 <h2 ng-click="vm.visible.Basic[$index] = !vm.visible.Basic[$index]">{{key}}</h2>
@@ -62,7 +111,7 @@
                 <h2 ng-click="vm.visible.Other[$index] = !vm.visible.Other[$index]">{{key}}</h2>
                 <pre ng-hide="!vm.visible.Other[$index]">{{value}}</pre>
             </div>            
-        </div>
+        </div> -->
         <div class="col-md-3">            
             <ul>
                 <li><a class="purple" target="_blank" href="https://drive.google.com/open?id=1I2535GyBhpAo49ihUMD2M_aBVoVd0ZnC">Books and Resources (G-Folder)</a></li>
