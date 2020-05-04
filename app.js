@@ -85,10 +85,10 @@
 					'reference@auth.impulse': {
 						templateUrl: './games/impulsedrive/impulseRef.html',
 						controller: 'ImpulseDriveController as vm'
-					// },			
-					// 'charactersheet@auth.impulse': {
-					// 	templateUrl: './games/impulsedrive/impulseRef.html',
-					// 	controller: 'ImpulseDriveController as vm'
+					},			
+					'charactersheet@auth.impulse': {
+						templateUrl: './games/impulsedrive/impulseChar.html',
+						controller: 'ImpulseDriveController as vm'
 					// },					
 					// 'log@auth.impulse': {
 					// 	templateUrl: './games/impulsedrive/impulseRef.html',

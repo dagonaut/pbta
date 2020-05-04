@@ -1,0 +1,76 @@
+{
+    "fronts":[    
+        {
+            "id":0,
+            "type": "campaing || adventure",
+            "description":"",
+            "cast":[
+                "Character",
+                "NPC",
+                "NPC"
+            ],
+            "dangers":[
+                { 
+                    "id": 0,
+                    "name":"", 
+                    "type":"",
+                    "impulse":"", 
+                    "description":"",
+                    "custom_move":"", 
+                    "grim_portents": [
+                        {
+                            "id":0, 
+                            "description":"", 
+                            "triggered": false
+                        }
+                    ], 
+                    "doom": "" 
+                }
+            ],
+            "custom_moves":[
+                ""
+            ],
+            "stakes":[
+                "",
+                "",
+                ""
+            ]
+        },   
+        {
+            "id":1,
+            "type": "campaign",
+            "description":"",
+            "cast":[
+                "Character",
+                "NPC",
+                "NPC"
+            ],
+            "dangers":[
+                { 
+                    "id": 0,
+                    "name":"", 
+                    "type":"",
+                    "impulse":"", 
+                    "description":"",
+                    "custom_move":"", 
+                    "grim_portents": [
+                        {
+                            "id":0, 
+                            "description":"", 
+                            "triggered": false
+                        }
+                    ], 
+                    "doom": "" 
+                }
+            ],
+            "custom_moves":[
+                ""
+            ],
+            "stakes":[
+                "",
+                "",
+                ""
+            ]
+        }
+    ]
+}
