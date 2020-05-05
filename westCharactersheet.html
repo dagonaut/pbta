@@ -11,7 +11,7 @@
         <div class="col-md-10">
             Dudes:
             <select ng-model="vm.dude">
-                <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId" value="{{dude.id}}">{{dude.name}} - {{dude.class}}
+                <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId || vm.userId === 2" value="{{dude.id}}">{{dude.name}} - {{dude.class}}
                 </option>
             </select>
             <div class="btn btn-primary" ng-click="vm.updateCharacter(true);">Create New</div>
