@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Impulse Drive Reference Page</title>
+    <style>
+        body {
+            color:#ddd;
+            background-color: #333;
+        }
+        h2{
+            border-bottom:#663a82 1px solid;
+        }
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-break:normal;
+        }
+        .move-header{
+            font-size:16px;
+            font-weight:bold;
+        }
+
+        .purple{color:#b491c8;}
+        .purple1{color:#3c1361;}
+        .purple2{color:#52307c;}
+        .purple3{color:#663a82;}
+        .purple4{color:#7c5295;}
+        .purple5{color:#b491c8;}
+        .purple6{color:#bca0dc;}
+    </style>
+</head>
+
+<body>    
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="purple">Impulse Drive Moves</h3>
+        </div>
+        <div class="col-md-3">
+            <h3>
+                <a class="purple">Important Links</a>
+            </h3>
+        </div>
+        <div class="col-md-3">
+            <h3>Tags</h3>
+        </div>
+    </div>    
+    <div class="row">        
+        <div class="col-md-3">
+            <h2 class="move-header purple">Combat/Action Moves</h2>
+            <div ng-repeat="move in vm.moves.combat_action">
+                <h2 ng-click="vm.visible.combat_action[$index] = !vm.visible.combat_action[$index]">{{move.name}}</h2>
+                <div ng-hide="!vm.visible.combat_action[$index]">                    
+                    <pre>{{move.description}}</pre>
+                    <div class="purple4 pointer" ng-if="move.notes !== ''" ng-click="vm.visible.combat_action_note[$index] = !vm.visible.combat_action_note[$index]">View Note</div>
+                    <pre ng-hide="!vm.visible.combat_action_note[$index]">{{move.notes}}</pre>
+                </div>
+            </div>
+            <h2 class="move-header purple">Influence/Investigation/Exploration Moves</h2>
+            <div ng-repeat="move in vm.moves.influence_investigation_exploration">
+                <h2 ng-click="vm.visible.influence_investigation_exploration[$index] = !vm.visible.influence_investigation_exploration[$index]">{{move.name}}</h2>
+                <div ng-hide="!vm.visible.influence_investigation_exploration[$index]">                    
+                    <pre>{{move.description}}</pre>
+                    <div ng-if="move.notes !== ''" class="purple4 pointer" ng-click="vm.visible.influence_investigation_exploration_note[$index] = !vm.visible.influence_investigation_exploration_note[$index]">View Note</div>
+                    <pre ng-hide="!vm.visible.influence_investigation_exploration_note[$index]">{{move.notes}}</pre>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h2 class="move-header purple">Other Moves</h2>
+            <div ng-repeat="move in vm.moves.other_moves">
+                <h2 ng-click="vm.visible.other_moves[$index] = !vm.visible.other_moves[$index]">{{move.name}}</h2>
+                <div ng-hide="!vm.visible.other_moves[$index]">                    
+                    <pre>{{move.description}}</pre>
+                    <div ng-if="move.notes !== ''" class="purple4 pointer" ng-click="vm.visible.other_moves_note[$index] = !vm.visible.other_moves_note[$index]">View Note</div>
+                    <pre ng-hide="!vm.visible.other_moves_note[$index]">{{move.notes}}</pre>
+                </div>
+            </div>
+            <h2 class="move-header purple">Ship Payment Moves</h2>
+            <div ng-repeat="move in vm.moves.ship_payment">
+                <h2 ng-click="vm.visible.ship_payment[$index] = !vm.visible.ship_payment[$index]">{{move.name}}</h2>
+                <div ng-hide="!vm.visible.ship_payment[$index]">                    
+                    <pre>{{move.description}}</pre>
+                    <div ng-if="move.notes !== ''" class="purple4 pointer" ng-click="vm.visible.ship_payment_note[$index] = !vm.visible.ship_payment_note[$index]">View Note</div>
+                    <pre ng-hide="!vm.visible.ship_payment_note[$index]">{{move.notes}}</pre>
+                </div>
+            </div>
+            <h2 class="move-header purple">Plot Moves</h2>
+            <div ng-repeat="move in vm.moves.plot_moves">
+                <h2 ng-click="vm.visible.plot_moves[$index] = !vm.visible.plot_moves[$index]">{{move.name}}</h2>
+                <div ng-hide="!vm.visible.plot_moves[$index]">                    
+                    <pre>{{move.description}}</pre>
+                    <div ng-if="move.notes !== ''" class="purple4 pointer" ng-click="vm.visible.plot_moves_note[$index] = !vm.visible.plot_moves_note[$index]">View Note</div>
+                    <pre ng-hide="!vm.visible.plot_moves_note[$index]">{{move.notes}}</pre>
+                </div>
+            </div>
+        </div>        
+        <!-- <div class="col-md-3">
+            <h2 class="move-header purple">Basic Moves</h2>
+            <div ng-repeat="(key, value) in vm.moves.basic">
+                <h2 ng-click="vm.visible.Basic[$index] = !vm.visible.Basic[$index]">{{key}}</h2>
+                <pre ng-hide="!vm.visible.Basic[$index]">{{value}}</pre>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h2 class="move-header purple">Other Moves</h2>
+            <div ng-repeat="(key, value) in vm.moves.other">
+                <h2 ng-click="vm.visible.Other[$index] = !vm.visible.Other[$index]">{{key}}</h2>
+                <pre ng-hide="!vm.visible.Other[$index]">{{value}}</pre>
+            </div>            
+        </div> -->
+        <div class="col-md-3">            
+            <ul>
+                <li><a class="purple" target="_blank" href="https://drive.google.com/open?id=1I2535GyBhpAo49ihUMD2M_aBVoVd0ZnC">Books and Resources (G-Folder)</a></li>
+                <!-- 
+                <li><a class="purple" target="_blank" href="https://docs.google.com/document/d/17VjCxjULNnqJdzD-oR94BYQM7DK4TPIl3ipsxzUQtZA/edit">Ongoing Notes (G-Doc)</a></li>
+                <li><a class="purple" target="_blank" href="https://jamboard.google.com/d/11uCuozm4t-p0kgMshAHAWGXwMWxjHMZ7UvIXC8ADKMQ/viewer">Cowboy Shit (G-Jamboard)</a></li> 
+                -->
+            </ul>
+            <h3>Sci-Fi Name Generator</h3>
+            <div>
+                <div class="btn btn-sm btn-default" ng-click="vm.getRandomNumber();">Get Name</div> {{ vm.names[vm.random] }}
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="col-md-6">
+                <div ng-repeat="(key, value) in vm.tags" ng-if="['Tier','Range','Weapon'].indexOf(key) > -1">
+                    <h2 class="purple">{{ key }}</h2>
+                    <div ng-repeat="(name, description) in value">
+                        <h2 class="move" ng-click="vm.visibility[name].hide = !vm.visibility[name].hide">{{ name }}</h2>
+                        <div class="move-description" ng-hide="!vm.visibility[name].hide">
+                            {{ description }}
+                        </div>
+                    </div>                
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div ng-repeat="(key, value) in vm.tags" ng-if="['Other','Armor','Status'].indexOf(key) > -1">
+                    <h2 class="purple">{{ key }}</h2>
+                    <div ng-repeat="(name, description) in value">
+                        <h2 class="move" ng-click="vm.visibility[name].hide = !vm.visibility[name].hide">{{ name }}</h2>
+                        <div class="move-description" ng-hide="!vm.visibility[name].hide">
+                            {{ description }}
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

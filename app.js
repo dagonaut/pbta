@@ -157,10 +157,12 @@
 				}
 			})			
 			.state('home',{
-				url: '',
-				templateUrl: 'reference.html',
-				controller: 'ReferenceController',
-				controllerAs: 'vm'
+				url: '/',
+				templateUrl: './games/generic/gref.html',
+				controller: 'gref as vm'
+				// templateUrl: 'reference.html',
+				// controller: 'ReferenceController',
+				// controllerAs: 'vm'
 			});	
 
 			// To remove #! from URL
