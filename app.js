@@ -89,10 +89,10 @@
 					'charactersheet@auth.impulse': {
 						templateUrl: './games/impulsedrive/impulseChar.html',
 						controller: 'ImpulseDriveController as vm'
-					// },					
-					// 'log@auth.impulse': {
-					// 	templateUrl: './games/impulsedrive/impulseRef.html',
-					// 	controller: 'ImpulseDriveController as vm'
+					},					
+					'ship@auth.impulse': {
+						templateUrl: './games/impulsedrive/impulseShip.html',
+						controller: 'ImpulseDriveController as vm'
 					// },
 					// 'mc@auth.impulse': {
 					// 	templateUrl: './games/impulsedrive/impulseRef.html',

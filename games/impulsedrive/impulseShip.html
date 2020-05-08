@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Impulse Drive Ship Page</title>
+    <style>
+        body {
+            color:#ddd;
+            background-color: #333;
+        }
+        h2{
+            border-bottom:#663a82 1px solid;
+        }
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-break:normal;
+        }
+        .move-header{
+            font-size:16px;
+            font-weight:bold;
+        }
+        input{color:#000000;}
+        .purple{color:#b491c8;}
+        .purple1{color:#3c1361;}
+        .purple2{color:#52307c;}
+        .purple3{color:#663a82;}
+        .purple4{color:#7c5295;}
+        .purple5{color:#b491c8;}
+        .purple6{color:#bca0dc;}
+    </style>
+</head>
+
+<body>
+    <div>
+        <style>
+        .hideme {
+          display: none;
+        }
+        
+        .woo {
+          cursor: pointer;
+        }
+        
+        .hideme + .woo:before {
+          width: 0px;
+          height: 0px;
+          
+          border-right: 20px solid transparent;
+          border-top: 20px solid #fff;
+          background:#333;
+          position: relative;
+          display: inline-block;
+          margin-right: 1ex;
+          content: "";
+        }
+        .hideme:checked + .woo:before {
+          border-top:20px solid #7c5295;
+        }
+        </style>    
+        <input type="checkbox" class="hideme" id="myinput" /><label class="woo" for="myinput">Click me</label>
+    </div>
+    <!-- <style>
+    * {
+        box-sizing: border-box;
+      }
+      
+      input[type=checkbox] {
+        display: none;
+      }
+      
+      input[type=checkbox]+label {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: 1em;
+        background: red;
+      }
+      
+      input[type=checkbox]:checked+label {
+        background: green;
+      }
+      
+      label {
+        -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      }
+    </style>
+      <div>
+        <input type="checkbox" checked id="c1" />
+        <label for="c1"></label>
+      </div> -->
+</body> 
+
+</html>

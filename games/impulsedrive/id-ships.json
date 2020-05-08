@@ -1,0 +1,22 @@
+{
+    "ships":{
+        "model":{
+            "name":"",
+            "look":[],
+            "maintenance":{},
+            "moves":[],
+            "upgrades":[],
+            "bays":[],
+            "crew":[],
+            "class":{}
+        },
+        "common":{            
+            "maintenance":{}
+        },
+        "smuggler":{},
+        "predator":{},
+        "vangaurd":{},
+        "marauder":{}
+    }
+    
+}

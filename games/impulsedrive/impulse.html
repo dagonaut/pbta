@@ -9,6 +9,9 @@
         </uib-tab>        
         <uib-tab index="vm.tabs.charactersheet.index" heading="{{::vm.tabs.charactersheet.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="charactersheet"></div>
+        </uib-tab>      
+        <uib-tab index="vm.tabs.ship.index" heading="{{::vm.tabs.ship.heading}}" ng-click="vm.onTabChange()">
+            <div ui-view="ship"></div>
         </uib-tab>
         <!--
         <uib-tab index="vm.tabs.log.index" heading="{{::vm.tabs.log.heading}}" ng-click="vm.onTabChange()">

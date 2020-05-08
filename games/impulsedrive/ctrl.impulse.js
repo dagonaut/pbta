@@ -18,6 +18,7 @@
             vm.tabs = {
                 reference: { index: 0, heading: 'Reference'},                
                 charactersheet: { index: 1, heading: 'Character Sheet'},                
+                ship: { index: 2, heading: 'Ship'},                
             };
 
             vm.character_model = {                
