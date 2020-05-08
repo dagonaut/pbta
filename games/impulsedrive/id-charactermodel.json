@@ -1,0 +1,21 @@
+{
+    "name": "",
+    "look": [],
+    "stats":[
+        {
+            "key": "",
+            "debility": false,
+            "value": 0
+        }
+    ],    
+    "xp": 0,
+    "signature_moves": [],
+    "background_moves": [],
+    "class_moves": [],
+    "stress": [],
+    "harm":[],
+    "hooks":[""],
+    "calamity":[""],
+    "gear":"",
+    "notes":""
+}

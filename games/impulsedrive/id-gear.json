@@ -1,0 +1,136 @@
+{    
+    "weapons":[
+        {
+            "id":"f9ffb8a0-2d9c-42be-88e9-691d49a9b988",
+            "key":"melee_weapon",
+            "name":"Melee Weapon",
+            "harm":2,
+            "tags":[
+                "Skirmish", "Silent", "Basic"
+            ],
+            "description":"Melee Weapons can cover anything from knives, bludgeons, staves, axes to swords. Fictionally, the weapons can be simple lumps of metal or primitive shivs, or they may be some kind of high-tech folding blade. Melee Weapons don’t have any kind of power source or energy. If they did, they would have the discharge tag and be a bigger deal."            
+        },
+        {
+            "id":"ea3913e7-a7e2-4589-9468-eac0a6c8dbfb",
+            "key":"pistol",
+            "name":"Pistol",
+            "harm":1,
+            "tags":[
+                "Skirmish", "Firefight", "Discharge", "Stun", "Basic"
+            ],
+            "description":"Pistols can be laser or beam weapons, or they can fire projectiles either by using chemical propellants or some other means. However you describe your pistol, it still behaves the same mechanically."            
+        },
+        {
+            "id":"8257d498-54e4-4dfa-be31-ca57c4306ed9",
+            "key":"assault_rifle",
+            "name":"Assault Rifle",
+            "harm":2,
+            "tags":[
+                "Firefight", "Discharge", "Full Auto", "Advanced" 
+            ],
+            "description":"The Assault Rifle is the workhorse weapon of the galaxy. Many different styles of weapons and designs fall into the Assault Rifle range, from guns that rapidly fire a hail of bullets, to weapons that shoot plasma charges, or rifles that fire cohesive beams or bolts of light."            
+        },
+        {
+            "id":"b20ba269-4d2b-44c8-8e4d-da1e8e50f842",
+            "key":"shotgun",
+            "name":"Shotgun",
+            "harm":3,
+            "tags":[
+                "Skirmish", "Discharge", "Messy", "Advanced" 
+            ],
+            "description":"A dangerous weapon for close range fighting, the shotgun tears apart your enemies with a brutal wide spray of projectiles, or a shredding concussive blast."            
+        },
+        {
+            "id":"bbabb98c-93bd-44df-a500-c082d66e4dc4",
+            "key":"sniper_rifle",
+            "name":"Sniper Rifle",
+            "harm":3,
+            "tags":[
+                "1 Damage", "AP", "Conspicuous", "Discharge", "Illegal", "Sniping"
+            ],
+            "description":"Sniper Rifles are long range, high damage weapons designed for eliminating a target from a great distance. Their high power also make sniper rifles effective at piercing armor and damaging vehicles. Sniper rifles tend to be long, cumbersome and very conspicuous weapons. Due to their potential for destruction and assassination, sniper rifles are considered illegal firearms in most civilized cultures."            
+        },
+        {
+            "id":"07e1b38f-9f91-4ed5-ade7-51674b4e9d21",
+            "key":"nano_blade",
+            "name":"Nano Blade",
+            "harm":3,
+            "tags":[
+                "Skirmish", "Silent", "Specialist"
+            ],
+            "description":"Nano Blades are swords, daggers, or knives with edges that are only a few nanometers in width, making them incredibly sharp. The keenness of these blades make them perfect weapons for assassins, silently cutting through armor like soft butter."            
+        },
+        {
+            "id":"8093838e-706b-4ace-885c-be2591eea409",
+            "key":"mystic_weapon",
+            "name":"Mystic Weapon",
+            "harm":3,
+            "tags":[
+                "Skirmish", "Discharge", "Concealed", "Trinket", "Rare"
+            ],
+            "description":"The Mystic Weapon is a unique close combat weapon used by an order of Mystics. Only the Mystic, or someone who has taken the Mystic Weapon Master Move may use this weapon."            
+        },
+        {
+            "id":"c3c034da-748a-42f3-a65b-455bc1473cf1",
+            "key":"missle_launcher",
+            "name":"Missle Launcher",
+            "harm":4,
+            "tags":[
+                "Firefight", "AP", "2 Damage", "Area", "Messy", "Conspicuous", "2 Ammo", "Illegal"
+            ],
+            "description":"Missile launchers fire explosive projectiles. They can take the form or rocket propelled grenades, charged energy blasts, or explosive shells. Missile launchers are generally designed to assault vehicles, but can be devastating against individuals. Due to their potential for destruction, missile launchers are considered illegal firearms in most civilized cultures."            
+        },
+        {
+            "id":"a717e8f1-c43d-469a-a18e-564bc6627f2b",
+            "key":"grenade",
+            "name":"Grenade",
+            "harm":4,
+            "tags":[
+                "1 Damage", "3 Uses", "Firefight", "Area", "Forceful", "Messy", "Illegal"
+            ],
+            "description":"Grenades are small, portable explosives that can be thrown at enemies. Grenades are effective at destroying objects, flushing enemies from cover, or just blowing a bunch of people up. Due to their potential for destruction, grenades are considered illegal firearms in most civilized cultures."            
+        }
+    ],
+    "armor":[        
+        {
+            "id":"039fca56-08da-49f6-bf40-e4a6142b2d07",
+            "key":"shields",
+            "name":"Shields",
+            "harm":1,
+            "tags":[
+                "Discharge", "Advanced" 
+            ],
+            "description":"Shields have an emitter, a small and generally discrete device that attaches to the wearer either on a belt or harness. An energy or force shield is projected around the person wearing the emitter, describe whether an active shield is visible or makes a sound while being worn. Shields are able to absorb 1 point of Harm before becoming Discharged"
+        },      
+        {
+            "id":"d164e39a-b0e2-490a-a246-726622dcd7f7",
+            "key":"body_armor",
+            "name":"Body Armor",
+            "harm":2,
+            "tags":[
+                "Conspicuous", "Basic" 
+            ],
+            "description":"Body Armor is simple, light armor. It can be a tight-fitting bodysuit of nanoweave fiber, or plates of light ceramic or hardened plastics, or thick hide. Body Armor is able to take 2 points of Harm from a single source, and is then Damaged."
+        },      
+        {
+            "id":"2c6e5fe4-0bfa-4a73-87aa-f558194c0635",
+            "key":"power_armor",
+            "name":"Power Armor",
+            "harm":4,
+            "tags":[
+                "Discharge", "Clumsy", "Conspicuous", "Rare"
+            ],
+            "description":"Power Armor is a bulky suit of powered armor that enhances the users strength and protects them. Power Armor comes in many designs, but it always cuts a hulking conspicuous figure.When you use your Power Armor to perform a superhuman feat of strength or endurance, discharge this move and roll+Stalwart. On a 10+, you struggle, but manage to do it. On a 7-9, you do it, but the pressure is overwhelming. Suffer 1 Stress."            
+        },      
+        {
+            "id":"5399a496-41d1-4e37-95c3-b23ea0268ce9",
+            "key":"battleframe",
+            "name":"Battleframe",
+            "harm":0,
+            "tags":[
+                "1 Hit", "1 Crew", "Discharge", "+Armored", "+Equipped 1", "-Cramped", "-Flashy", "Compact Vehicle", "Rare"
+            ],
+            "description":"The Battleframe is a small Armature, at most twice as high as a human. The Battleframes small size means it is outmatched by larger Armatures, but its heavy armor makes it deadly against standard troops and unarmored."
+        }
+    ]
+}

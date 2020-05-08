@@ -1,0 +1,465 @@
+{
+    "stats": {
+        "abilities": {},
+        "health": {}
+    },
+    "advancement": [
+        {
+            "level": 1,
+            "name": "Level 1",
+            "effects": []
+        },
+        {
+            "level": 2,
+            "name": "Level 2",
+            "effects": []
+        },
+        {
+            "level": 3,
+            "name": "Level 3",
+            "effects": []
+        },
+        {
+            "level": 4,
+            "name": "Level 4",
+            "effects": []
+        },
+        {
+            "level": 5,
+            "name": "Level 5",
+            "effects": []
+        },
+        {
+            "level": 6,
+            "name": "Level 6",
+            "effects": []
+        },
+        {
+            "level": 7,
+            "name": "Level 7",
+            "effects": []
+        },
+        {
+            "level": 8,
+            "name": "Level 8",
+            "effects": []
+        },
+        {
+            "level": 9,
+            "name": "Level 9",
+            "effects": []
+        },
+        {
+            "level": 10,
+            "name": "Level 10",
+            "effects": []
+        }
+    ],
+    "move_groups": [
+        {
+            "move_type": {
+                "id": "751a0e7e",
+                "name": "Personal",
+                "show_type_description": false,
+                "__is_auto_added": true,
+                "__can_not_edit": false
+            },
+            "id": "bcfd6fef",
+            "description": "",
+            "moves": [
+                {
+                    "id": 1,
+                    "name": "Bounty Hunting",
+                    "min_level": 0,
+                    "max_level": 10,
+                    "effects": [
+                        {
+                            "effect_type": "roll",
+                            "id": "6409c6aa",
+                            "description": "When you dock somewhere and check a Bulletin Board for current bounties, roll+Volatile.",
+                            "low": "The only decent bounty is on a Crew Member, the SM will tell you who, and the player of that Crew member will answer the Bounty questions. Mark Experience.",
+                            "medium": "On a 7–9, take what you can get, hold 1 Lead.",
+                            "high": "On a 10+, 10+, you can find something good, hold 2 Leads.",
+                            "abilities": []
+                        },
+                        {
+                            "effect_type": "description",
+                            "id": "c39d95db",
+                            "description": "At any time during a Contract, you may spend a Lead to say someone present has a Bounty on them. Then ask the following questions. You may spend extra leads to answer the questions yourself. Otherwise, the SM will answer the questions.\n\n•Who has the Bounty on them?\n•Who put the Bounty on them?\n•What did they do?\n•Are they wanted Dead or Alive?\n•Where can I collect my reward?"
+                        },
+                        {
+                            "effect_type": "input",
+                            "id": "1a4cb6a2",
+                            "description": "When you collect your reward, you gain 1 Bounty. Spend 1 Bounty to give yourself +1 to a Hey Big Spender roll.",
+                            "items": [
+                                {
+                                    "id": "e38262e2",
+                                    "name": "Leads",
+                                    "input_type": "number",
+                                    "default_value": 0,
+                                    "ui_show_data": false,
+                                    "__ui_show_data": false
+                                },
+                                {
+                                    "id": "8248b097",
+                                    "name": "Bounty",
+                                    "input_type": "number",
+                                    "default_value": 0,
+                                    "ui_show_data": true
+                                }
+                            ],
+                            "select_type": "no_select"
+                        }
+                    ],
+                    "css_key": "bounty"
+                },
+                {
+                    "id": "7d463068",
+                    "name": "Background - Work Ethic",
+                    "min_level": 0,
+                    "max_level": 0,
+                    "effects": [
+                        {
+                            "id": "7519b30e",
+                            "effect_type": "input",
+                            "select_type": "single",
+                            "description": "At character creation, choose one of the following:",
+                            "items": [
+                                {
+                                    "id": "c215ecbc",
+                                    "name": "Lawkeeper",
+                                    "description": "You are a member of a system-spanning independent organization working to enforce law and order in a lawless galaxy. When you deal with agents of system law, you have Advantage.",
+                                    "input_type": "no_input",
+                                    "is_name_placeholder": false,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "5dff5618",
+                                    "name": "Bounty Killer",
+                                    "description": "You’re a free agent, taking any contract that pays well enough, no matter who the money comes from. When you Intimidate a criminal for information, you have Advantage.",
+                                    "input_type": "no_input",
+                                    "is_name_placeholder": false,
+                                    "default_value": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "css_key": "background"
+                },
+                {
+                    "id": "1ddaf636",
+                    "name": "Hooks",
+                    "min_level": 0,
+                    "max_level": 0,
+                    "effects": [
+                        {
+                            "id": "64df2ed8",
+                            "effect_type": "input",
+                            "select_type": "multi",
+                            "description": "At character creation, fill in at least 3 of your starting Hooks inputs and then choose your favorite 3 to be your current Hooks.",
+                            "items": [
+                                {
+                                    "id": "a6f2bda7",
+                                    "name": "PC",
+                                    "description": "is a time bomb waiting to go off. They need to be defused or pointed in the right direction",
+                                    "input_type": "text",
+                                    "is_name_placeholder": true,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "f213980d",
+                                    "name": "PC",
+                                    "description": "got between me and my target in the past. Next time, I won’t hesitate.",
+                                    "input_type": "text",
+                                    "is_name_placeholder": true,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "f12c5e0c",
+                                    "name": "PC",
+                                    "description": "knows of my vice, and they better keep quiet about it.",
+                                    "input_type": "text",
+                                    "is_name_placeholder": true,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "149b3526",
+                                    "name": "PC",
+                                    "description": "‘s criminal ways are going to see them in my cross-hairs one day.",
+                                    "input_type": "text",
+                                    "is_name_placeholder": true,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "db3e356f",
+                                    "name": "Group",
+                                    "description": "has terrorized this sector for too long, I’ll bring them all down.",
+                                    "input_type": "text",
+                                    "is_name_placeholder": true,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "d2828fae",
+                                    "name": "Vice",
+                                    "description": "I get the shakes if I go too long without this.",
+                                    "input_type": "text",
+                                    "is_name_placeholder": true,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "26d1cda9",
+                                    "name": "",
+                                    "description": "When things get tense, I always let my gun do the talking.",
+                                    "input_type": "no_input",
+                                    "is_name_placeholder": false,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "85a08d9f",
+                                    "name": "",
+                                    "description": "I always push people away when they try to open up.",
+                                    "input_type": "no_input",
+                                    "is_name_placeholder": false,
+                                    "default_value": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "css_key": "hooks"
+                },
+                {
+                    "id": "4c8e0b7e",
+                    "name": "Calamity",
+                    "min_level": 0,
+                    "max_level": 10,
+                    "effects": [
+                        {
+                            "id": "ef3cb322",
+                            "effect_type": "input",
+                            "select_type": "multi",
+                            "description": "When you mark an item in the Calamity list, describe the Fictional consequences mentioned in your choice and mark XP. If Appropriate, You may write a Hook about it.",
+                            "items": [
+                                {
+                                    "id": "7b016835",
+                                    "name": "",
+                                    "description": "A contact you have in the local criminal underground reaches out to you with some info or a lead.",
+                                    "input_type": "no_input",
+                                    "is_name_placeholder": false,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "267b835d",
+                                    "name": "",
+                                    "description": "You broaden your career options, take the other Work Ethic move.",
+                                    "input_type": "no_input",
+                                    "is_name_placeholder": false,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "b8c08f50",
+                                    "name": "",
+                                    "description": "The family or gang of someone you hunted is coming after you, hard.",
+                                    "input_type": "no_input",
+                                    "is_name_placeholder": false,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "05e1c213",
+                                    "name": "",
+                                    "description": "You get a lead on a valuable target you hunted long ago but never caught, and you’ll have to act now to follow it up.",
+                                    "input_type": "no_input",
+                                    "is_name_placeholder": false,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "94bf5a13",
+                                    "name": "",
+                                    "description": "A friend or ally you rely on is in trouble with the\nauthorities, and is asking for your help.",
+                                    "input_type": "no_input",
+                                    "is_name_placeholder": false,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "33cfbef7",
+                                    "name": "",
+                                    "description": "You suffer a terrible wound, illness, or debility. Describe what you have lost.",
+                                    "input_type": "no_input",
+                                    "is_name_placeholder": false,
+                                    "default_value": ""
+                                },
+                                {
+                                    "id": "6c185007",
+                                    "name": "",
+                                    "description": "Now or soon, you encounter a long-time nemesis with whom you have a long history of bad blood on both sides. They challenge you to a duel to settle your differences, and you must accept. When you duel your nemesis, roll+Volatile.\n\n•On a 10+, you win the duel. Describe how, and then describe the life you retire to after, and why.\n•On a 7-9, you win, but you’re severely injured and must retire, or die shortly after the duel. Describe it.\n•On a 6-, you lose, and expire shortly after.",
+                                    "input_type": "no_input",
+                                    "is_name_placeholder": false,
+                                    "default_value": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "css_key": "calamity"
+                }
+            ],
+            "data_key": "personal",
+            "are_moves_selectable": false
+        },
+        {
+            "move_type": {
+                "id": 0,
+                "name": "Archetype Moves",
+                "show_type_description": false,
+                "__can_not_edit": true,
+                "__is_auto_added": true
+            },
+            "id": "9247382b",
+            "description": "",
+            "moves": [
+                {
+                    "id": "bb048a1f",
+                    "name": "Bloodhound",
+                    "min_level": 0,
+                    "max_level": 10,
+                    "effects": [
+                        {
+                            "id": "76aa433f",
+                            "effect_type": "roll",
+                            "description": "When you hit the streets and use your shady contacts and intimidation to get leads on someone, roll+Volatile.\n\nQuestions:\n•Where were they last spotted?\n•What weakness of theirs can I exploit?\n•Who do they have connections to?\n•What is their best defense?\n•Who else is after them?",
+                            "low": "Total failure. Mark Experience.",
+                            "medium": "On a 7–9, the trail is a little cold. Ask 1 question.",
+                            "high": "On a 10+, you’re hot on their heels, gain 1 Lead and ask 2 questions.",
+                            "abilities": [
+                                {
+                                    "name": "Volatile",
+                                    "key": "vol",
+                                    "description": "•Firefight\n•Intimidate"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "4c7eeb68",
+                    "name": "Paranoid Android",
+                    "min_level": 0,
+                    "max_level": 10,
+                    "effects": [
+                        {
+                            "id": "c3f6c79f",
+                            "effect_type": "description",
+                            "description": "When you walk into a charged situation with criminals and shady people, you have Advantage to Scope It Out.\nAdditionally, you may ask questions from the following list instead of the base Scope It Out questions.\n\n•Who here is armed, openly or concealed?\n•Who here has history with a Crew Member?\n•Who here has information I want?\n•Who here is afraid of me?"
+                        }
+                    ]
+                },
+                {
+                    "id": "6b5437c9",
+                    "name": "Steely Glare",
+                    "min_level": 0,
+                    "max_level": 10,
+                    "effects": [
+                        {
+                            "id": "641c6d24",
+                            "effect_type": "roll",
+                            "description": "When you have someone backed into a corner and you fix them with a steely glare, roll+Stalwart.\n\nResponses:\n•They shut up immediately.\n•They stop moving.\n•They lower their weapons.\n•They do something stupid or reckless.\n•They hesitate, stumble, or mutter.",
+                            "low": "Total failure. Mark Experience. They can laugh in your face and do whatever they want.",
+                            "medium": "On a 7–9, they choose 1. On a 7+, if they are a Crew Member, they’re at Disadvantage to act against you going\nforward.",
+                            "high": "On a 10+, they\nchoose 2.",
+                            "abilities": [
+                                {
+                                    "name": "Stalwart",
+                                    "key": "sta",
+                                    "description": "•Recover\n•Keep Your Cool\n•Lean on Me"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "5ff32a4e",
+                    "name": "Quickdraw",
+                    "min_level": 0,
+                    "max_level": 10,
+                    "effects": [
+                        {
+                            "id": "50a9e356",
+                            "effect_type": "description",
+                            "description": "When a tense situation breaks down and violence breaks out, you get to act first, or interrupt the person who does act first. After you act, name one Crew Member besides yourself. They have Advantage going forward."
+                        }
+                    ]
+                },
+                {
+                    "id": "512bf808",
+                    "name": "Long Shot",
+                    "min_level": 0,
+                    "max_level": 10,
+                    "effects": [
+                        {
+                            "id": "a103ce3b",
+                            "effect_type": "description",
+                            "description": "You can use any ranged weapon at the Firefight and Sniping ranges."
+                        }
+                    ]
+                },
+                {
+                    "id": "b1e4dcef",
+                    "name": "Tracer",
+                    "min_level": 0,
+                    "max_level": 10,
+                    "effects": [
+                        {
+                            "id": "4e8e645d",
+                            "effect_type": "description",
+                            "description": "When an enemy or target is about to get away, you may spend 1 Use of a Grenade to secure a tracking device to them."
+                        }
+                    ]
+                },
+                {
+                    "id": "21194c18",
+                    "name": "Hunters Mark",
+                    "min_level": 0,
+                    "max_level": 10,
+                    "effects": [
+                        {
+                            "id": "1c17d505",
+                            "effect_type": "description",
+                            "description": "When you roll+Volatile against a bounty you’re hunting, you have Advantage."
+                        }
+                    ]
+                },
+                {
+                    "id": "c1cd01ec",
+                    "name": "Mark of Death",
+                    "min_level": 0,
+                    "max_level": 10,
+                    "effects": [
+                        {
+                            "id": "3f03206e",
+                            "effect_type": "description",
+                            "description": "When you deal Harm to a bounty you’re hunting, if you deal at least 1 Harm to them after Armor, they die."
+                        }
+                    ]
+                },
+                {
+                    "id": "f82a8088",
+                    "name": "Team Player",
+                    "min_level": 0,
+                    "max_level": 10,
+                    "effects": [
+                        {
+                            "id": "2f4413f8",
+                            "effect_type": "description",
+                            "description": "When your Crew rolls their Ship’s move for getting paid, you may spend 3 Bounty to give them +1 to the roll."
+                        }
+                    ]
+                }
+            ],
+            "data_key": "class_moves",
+            "are_moves_selectable": true
+        }
+    ],
+    "inventory": {
+        "generic_max": 0,
+        "items": {}
+    },
+    "companions": []
+}

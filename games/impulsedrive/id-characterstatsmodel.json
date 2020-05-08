@@ -1,0 +1,49 @@
+{
+    "name": "Approaches",
+    "description": "Assign the following scores to the 5 Approaches: +2, +1, 0, 0, -1 . When you upgrade an Approach, increase one of your Approaches by +1 to a maximum of +3. Each Approach can only be increased once.",
+    "starting_stats": "+2, +1, 0, 0, -1",
+    "stats":[
+        {
+            "name": "Volatile",
+            "key": "VOL",
+            "associated_moves": [
+                "Firefight",
+                "Intimidate"
+            ]
+        },
+        {
+            "name": "Calculating",
+            "key": "CAL",
+            "associated_moves": [
+                "Alpha Strike",
+                "Share Expertise",
+                "Scope it Out"
+            ]
+        },
+        {
+            "name": "Slick",
+            "key": "SLK",
+            "associated_moves": [
+                "Act Quick",
+                "Manipulate"
+            ]
+        },
+        {
+            "name": "Stalwart",
+            "key": "SWT",
+            "associated_moves": [
+                "Recover",
+                "Keep Your Cool",
+                "Lean on Me"
+            ]
+        },
+        {
+            "name": "Alien",
+            "key": "ALN",
+            "associated_moves": [
+                "Into the Abyss",
+                "Assaulted by the Abyss"
+            ]
+        }
+    ]
+}
