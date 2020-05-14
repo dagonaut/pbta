@@ -1,4 +1,5 @@
 {
+    "_comment":"",
     "ships":{
         "model":{
             "name":"",
@@ -8,12 +9,29 @@
             "upgrades":[],
             "bays":[],
             "crew":[],
-            "class":{}
+            "class":"",
+            "class_specific":{},
+            "harm":{}
         },
         "common":{            
             "maintenance":{}
         },
-        "smuggler":{},
+        "smuggler":{
+            "look":[""],
+            "class_specific":{
+                "name": "Debt and Your Creditor",
+                "debt":0,
+                "creditor":"",
+                "payments":0,
+                "disposition":0,
+                "moves":[]
+            },
+            "upgrades_modules":[],
+            "bays":[],
+            "people":{
+                "name": "passengers"
+            }
+        },
         "predator":{},
         "vangaurd":{},
         "marauder":{}
