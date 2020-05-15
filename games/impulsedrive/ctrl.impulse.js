@@ -32,6 +32,9 @@
             vm.save = save;
             vm.load = load;
 
+            // Testing
+            vm.test = "Tacos<br /> Nachoes\n _markdown_";
+
             init();
 
             function init(){
