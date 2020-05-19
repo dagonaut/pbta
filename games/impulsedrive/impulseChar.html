@@ -31,22 +31,58 @@
         .purple4{color:#7c5295;}
         .purple5{color:#b491c8;}
         .purple6{color:#bca0dc;}
+
+        /* Bootstrappy */
+        .d-flex{display:flex;}
+        .stats{}
+        .stats-name{}
+        
+        .stat-container{}
+        .stat-container label{width:130px;font-size:24px;}
+        .stat-container input{width:50px;height:50px;font-size:24px;border:3px double #7c5295;}
+        .stat-container input.link{width:250px;height:20px;font-size:14px;border:none;border-bottom:1px solid black;}
+        .stat-container .description{color:#aaaaaa;}
+        .stat-container .examples{font-size:11px;font-weight:bold;color:#666666;}
+
+        .stat-name{
+            font-size:24px;
+            font-weight:bold;
+        }
+        .directives_container textarea{
+            float:left;
+            width:98%;
+            height:95px;
+            padding:0px;
+        }
+
+        section{border-top:1px solid #7c5295;}
+        section h4{color:#7c5295;border-bottom:1px solid #7c5295;}
     </style>
 </head>
 
 <body>
-    <div class="btn" style="background-color:#52307c;" ng-click="vm.save()">Create</div><br />    
-    <div class="btn" style="background-color:#7c5295;" ng-click="vm.save()">Save</div><br />    
-    <div class="btn" style="background-color:#3c1361;" ng-click="vm.load()">Load</div><br />    
-    Id: <input ng-model="vm.cd.id" /><br />
-    Name: <input ng-model="vm.cd.name" /><br />
-    Playa name: <input ng-model="vm.cd.playername" /><br />
-    STR: <input ng-model="vm.cd.stat.str" /><br />
-    DEX: <input ng-model="vm.cd.stat.dex" /><br />
-    INT: <input ng-model="vm.cd.stat.int" /><br />
-    WIS: <input ng-model="vm.cd.stat.wis" /><br />
-    Gear: <input ng-model="vm.cd.gear" /><br />
-    Notes: <input ng-model="vm.cd.notes" />
+    <div class="d-flex">
+        Name: <input ng-model="vm.cd.name" />
+        <div class="btn" style="background-color:#52307c;" ng-click="vm.save()">Create</div>
+        <div class="btn" style="background-color:#7c5295;" ng-click="vm.save()">Save</div>
+        <div class="btn" style="background-color:#3c1361;" ng-click="vm.load()">Load</div>                
+    </div>    
+    <div class="d-flex">
+        <section id="stats" class="stats-section">
+            <h4 class="stats-name">{{ vm.stats.name }}</h4>
+            <div class="stat-container d-flex" ng-repeat="stat in vm.stats.stats">
+                <label class="stat-name">{{ stat.name }}</label>
+                <input class="stat-value" type="number" ng-model="vm.cd.stats[stat.key]" />
+                <div class="stat-moves d-flex">
+                    <div ng-repeat="move in stat.associated_moves">{{move}}&nbsp;</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="moves" class="moves-section">
+
+        </section>
+    </div>
 </body>
 
 </html>

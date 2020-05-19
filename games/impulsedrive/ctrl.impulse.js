@@ -12,6 +12,7 @@
             let _movesJSON = "/pbta/games/impulsedrive/id-moves.json";
             let _tagsJSON = "/pbta/games/impulsedrive/id-tags.json";
             let _namesJSON = "/pbta/games/impulsedrive/id-names.json";
+            let _statsJSON = "/pbta/games/impulsedrive/id-characterstatsmodel.json";
             let _characterTable = "tbl_char";
 
             vm.userId = 1;
@@ -61,6 +62,13 @@
                         vm.names = response.data;                  
                     }
                     function getNamesFail(error){
+                        console.log(error);
+                    }           
+                $http.get(_statsJSON).then(getStatsSuccess, getStatsFail);
+                    function getStatsSuccess(response){
+                        vm.stats = response.data;                  
+                    }
+                    function getStatsFail(error){
                         console.log(error);
                     }
             }
