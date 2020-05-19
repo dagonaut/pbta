@@ -1,175 +1,177 @@
 {
-    "key":"hound",
-    "class": "The Hound",
-    "names": ["Rally", "Nameless", "Bishop", "Spike", "Faye", "Samus", "Fett", "Dale", "Saint", "Iria", "Fairfax", "Rhoda"],
-    "descriptions": ["dusty", "worn", "haggard", "weary", "determined", "stubborn", "surly", "scorched", "narrow", "pinched", "shifty", "suspicious", "grave"],
-    "suggested_stats":{ "VOL": 2, "CAL": 0, "SLK": 0, "SWT": 1, "ALN": -1},
-    "signature_moves":[
-        {
-            "id":"f9feabd1-0a13-49d0-aa39-ec100fd37201",
-            "type":"signature",
-            "key":"bounty_hunting",
-            "name": "Bounty Hunting",
-            "description":"When you dock somewhere and check a Bulletin Board for current bounties, roll+Volatile. On a 10+, you can find something good, hold 2 Leads. On a 7-9, take what you can get, hold 1 Lead. On a 6-, the only decent bounty is on a Crew Member, the SM will tell you who, and the player of that Crew member will answer the Bounty questions.\n\nAt any time during a Contract, you may spend a Lead to say someone present has a Bounty on them. Then ask the following questions. You may spend extra leads to answer the questions yourself. Otherwise, the SM will answer the questions. \n•Who has the Bounty on them? \n•Who put the Bounty on them? \n•What did they do? \n•Are they wanted Dead or Alive? \n•Where can I collect my reward? \n\nWhen you collect your reward, you gain 1 Bounty. Spend 1 Bounty to give yourself +1 to a Hey Big Spender roll."
-        }
-    ],
-    "holds":[
-        {
-            "name": "Leads",
-            "value": 0,
-            "move": "bounty_hunting"
-        },
-        {
-            "name": "Bounty",
-            "value": 0,
-            "move": "bounty_hunting"
-        }
-    ],
-    "background":{
-        "title":"Work Ethic",
-        "description":"You hunt people, but you have a code you live by. Choose one:",
-        "background_moves":[
+    "hound":{
+        "key":"hound",
+        "class": "The Hound",
+        "names": ["Rally", "Nameless", "Bishop", "Spike", "Faye", "Samus", "Fett", "Dale", "Saint", "Iria", "Fairfax", "Rhoda"],
+        "descriptions": ["dusty", "worn", "haggard", "weary", "determined", "stubborn", "surly", "scorched", "narrow", "pinched", "shifty", "suspicious", "grave"],
+        "suggested_stats":{ "VOL": 2, "CAL": 0, "SLK": 0, "SWT": 1, "ALN": -1},
+        "signature_moves":[
             {
-                "id":"1e83408f-316f-4962-947f-f8e6e6767bcd",
-                "type":"background",
-                "key":"lawkeeper",
-                "name": "Lawkeeper",
-                "description":"You are a member of a system-spanning independent organization working to enforce law and order in a lawless galaxy. \n\nWhen you deal with agents of system law, you have Advantage."
+                "id":"f9feabd1-0a13-49d0-aa39-ec100fd37201",
+                "type":"signature",
+                "key":"bounty_hunting",
+                "name": "Bounty Hunting",
+                "description":"When you dock somewhere and check a Bulletin Board for current bounties, roll+Volatile. On a 10+, you can find something good, hold 2 Leads. On a 7-9, take what you can get, hold 1 Lead. On a 6-, the only decent bounty is on a Crew Member, the SM will tell you who, and the player of that Crew member will answer the Bounty questions.\n\nAt any time during a Contract, you may spend a Lead to say someone present has a Bounty on them. Then ask the following questions. You may spend extra leads to answer the questions yourself. Otherwise, the SM will answer the questions. \n•Who has the Bounty on them? \n•Who put the Bounty on them? \n•What did they do? \n•Are they wanted Dead or Alive? \n•Where can I collect my reward? \n\nWhen you collect your reward, you gain 1 Bounty. Spend 1 Bounty to give yourself +1 to a Hey Big Spender roll."
+            }
+        ],
+        "holds":[
+            {
+                "name": "Leads",
+                "value": 0,
+                "move": "bounty_hunting"
             },
             {
-                "id":"3f653e57-1a5d-4682-b203-356b22c4433f",
-                "type":"background",
-                "key":"bounty_killer",
-                "name": "Bounty Killer",
-                "description":"You’re a free agent, taking any contract that pays well enough, no matter who the money comes from. \n\nWhen you Intimidate a criminal for information, you have Advantage."
+                "name": "Bounty",
+                "value": 0,
+                "move": "bounty_hunting"
+            }
+        ],
+        "background":{
+            "title":"Work Ethic",
+            "description":"You hunt people, but you have a code you live by. Choose one:",
+            "background_moves":[
+                {
+                    "id":"1e83408f-316f-4962-947f-f8e6e6767bcd",
+                    "type":"background",
+                    "key":"lawkeeper",
+                    "name": "Lawkeeper",
+                    "description":"You are a member of a system-spanning independent organization working to enforce law and order in a lawless galaxy. \n\nWhen you deal with agents of system law, you have Advantage."
+                },
+                {
+                    "id":"3f653e57-1a5d-4682-b203-356b22c4433f",
+                    "type":"background",
+                    "key":"bounty_killer",
+                    "name": "Bounty Killer",
+                    "description":"You’re a free agent, taking any contract that pays well enough, no matter who the money comes from. \n\nWhen you Intimidate a criminal for information, you have Advantage."
+                }
+            ]
+        },
+        "class_moves":[    
+            {
+                "id":"b2ca7df3-34f7-41c2-95c9-18b5b374f0d0",
+                "type":"class",
+                "key":"bloodhound",
+                "name": "Bloodhound",
+                "description":"When you hit the streets and use your shady contacts and intimidation to get leads on a bounty, roll+Volatile. On a 10+ you’re hot on their heels, ask 3 questions. On a 7-9, the trail is a little cold. Ask 1 question.\n•Where were they last spotted? \n•What weakness of theirs can I exploit? \n•Who do they have connections to? \n•What is their best defense? \n•Who else is after them?"
+            },
+            
+            {
+                "id":"dd68efe1-6c4a-4536-aee8-50fc26c52c69",
+                "type":"class",
+                "key":"steely_glare",
+                "name": "Steely Glare",
+                "description":"When you silently fix someone with a steely glare with the intent of intimidating them, roll+Stalwart. On a 10+, they choose 2. On a 7-9, they choose 1. On a 7+, if they are a Crew Member, they’re at Disadvantage to act against you going forward. On a 6-, they can laugh in your face and do whatever they want.\n•They shut up immediately. \n•They stop moving. \n•They lower their weapons. \n•They do something stupid or reckless. \n•They hesitate, stumble, or mutter."
+            },
+            
+            {
+                "id":"6a7d123b-f982-494e-bca9-cbfcda687363",
+                "type":"class",
+                "key":"paranoid_android",
+                "name": "Paranoid Android",
+                "description":"When you walk into a charged situation with criminals and shady people, you have Advantage to Scope It Out. Additionally, you may ask questions from the following list instead of the base scope it out questions.\n•Who here is armed, openly or concealed? \n•Who here has history with a Crew Member? \n•Who here has information I want? \n•Who here is afraid of me?"
+            },   
+            {
+                "id":"931c1633-ff11-4f6b-94fe-2920b087f650",
+                "type":"class",
+                "key":"quickdraw",
+                "name": "Quickdraw",
+                "description":"When a tense situation breaks down and violence breaks out, you get to act first, or interrupt the person who does act first. After you act, name one Crew Member besides yourself. They have Advantage going forward. "
+            },   
+            {
+                "id":"049b9663-2785-4806-be9a-024c87eb6142",
+                "type":"class",
+                "key":"hunters_mark",
+                "name": "Hunters Mark",
+                "description":"When you roll+Volatile against a bounty you’re hunting, you have Advantage."
+            },   
+            {
+                "id":"38f0aaa8-2898-4356-9fa1-9e4333bdbd5d",
+                "type":"class",
+                "key":"mark_of_death",
+                "name": "Mark of Death",
+                "description":"Requires Hunter’s Mark When you deal Harm to a bounty you’re hunting, if you deal at least 1 Harm to them after Armor, they die."
+            },   
+            {
+                "id":"fd6f9818-3fab-4a3b-acc1-eaece6b30181",
+                "type":"class",
+                "key":"long_shot",
+                "name": "Long Shot",
+                "description":"You can use any ranged weapon at the Firefight, and Sniping ranges."
+            },   
+            {
+                "id":"7595ac2e-071e-4851-bf67-89ebdb6d2476",
+                "type":"class",
+                "key":"tracer",
+                "name": "Tracer",
+                "description":"When an enemy or target is about to get away, you may spend 1 Use of a Grenade to secure a tracking device to them."
+            }
+        ],
+        "hooks":[
+            "[___PC___] is a time bomb waiting to go off. They need to be defused or pointed in the right direction.", 
+            "[___PC___] got between me and my target in the past. Next time, I won’t hesitate.",
+            "[___PC___] knows of my vice, and they better keep quiet about it.",
+            "[___PC___] ‘s criminal ways are going to see them in my cross-hairs one day.",
+            "[___Group___] has torrorized this sector for too long, I’ll bring them all down.",
+            "I get the shakes if I go too long without [__Vice__]",
+            "When things get tense, I always let my gun do the talking.",
+            "I always push people away when they try to open up."
+        ],
+        "calamity":[
+            {
+                "id":"8fa2bf0f-5825-432c-8a2d-f102f65d09b8",
+                "description":"A contact you have in the local criminal underground reaches out to you with some info or a lead."
+            },
+            {
+                "id":"73c08ddc-2c60-4ebb-93f0-460ab4459c36",
+                "description":"You broaden your career options, take the other Work Ethic move."
+            },
+            {
+                "id":"62cb07dd-e7e7-40ea-9691-f3c5f563af8e",
+                "description":"The family or gang of someone you hunted is coming after you, hard."
+            },
+            {
+                "id":"df746b20-0bad-4aca-a2ff-4855cb3a15d1",
+                "description":"You get a lead on a valuable target you hunted long ago but got away, but you’ll have to act now to follow it up."
+            },
+            {
+                "id":"a1bacb3c-cb6e-4b63-802b-9a6fcba5cc84",
+                "description":"A friend or ally you rely on is in trouble with the authorities, and is asking for your help."
+            },
+            {
+                "id":"b45df329-2385-46e6-8f4f-871ba66869c5",
+                "description":"You suffer a terrible wound, illness, or debility. Describe what you have lost."
+            },
+            {
+                "id":"faa0edc8-a3df-463a-a509-eeb0077fe6f5",
+                "description":"Now or soon, you encounter a long-time nemesis with whom you have a long history of bad blood on both sides. They challenge you to a duel to settle your differences, and you must accept. When you duel your nemesis, roll+Volatile. \n•On a 10+, you win the duel. Describe how, and then describe the life you retire to after, and why. \n•On a 7-9, you win, but you’re severely injured and must retire, or die shortly after the duel. Describe it. \n•On a 6-, you lose, and expire shortly after."
+            }
+        ],
+        "gear":[
+            {
+                "id":"efc760ea-4167-4557-a10a-6c2bf519eaaa",
+                "name":"Pistol",
+                "tags":"1 Harm, Skirmish, Firefight, Discharge, Stun, Basic Gear"
+            },
+            {
+                "id":"110b10b1-e3d0-4aaa-b6b7-5850ba0b1821",
+                "name":"Tactical Pack",
+                "tags":"3 Uses, Advanced Gear. Mark off a use to choose 1 option from the Tactical Pack list."
+            },
+            {
+                "id":"b2d7a095-67dc-4607-b6ef-d8991dd937fe",
+                "name":"Assault Rifle",
+                "tags":"2 Harm, Firefight, Discharge, Full Auto, Advanced Gear"
+            },
+            {
+                "id":"ffa04710-9878-4f1c-a5e9-f080c4de7eee",
+                "name":"Body Armor",
+                "tags":"Absorb 2, Conspicuous, Basic Gear"
+            },
+            {
+                "id":"2a721152-f076-4804-81bc-09e8025a2ac6",
+                "name":"A symbol or badge of office",
+                "tags":"Trinket"
             }
         ]
-    },
-    "class_moves":[    
-        {
-            "id":"b2ca7df3-34f7-41c2-95c9-18b5b374f0d0",
-            "type":"class",
-            "key":"bloodhound",
-            "name": "Bloodhound",
-            "description":"When you hit the streets and use your shady contacts and intimidation to get leads on a bounty, roll+Volatile. On a 10+ you’re hot on their heels, ask 3 questions. On a 7-9, the trail is a little cold. Ask 1 question.\n•Where were they last spotted? \n•What weakness of theirs can I exploit? \n•Who do they have connections to? \n•What is their best defense? \n•Who else is after them?"
-        },
-        
-        {
-            "id":"dd68efe1-6c4a-4536-aee8-50fc26c52c69",
-            "type":"class",
-            "key":"steely_glare",
-            "name": "Steely Glare",
-            "description":"When you silently fix someone with a steely glare with the intent of intimidating them, roll+Stalwart. On a 10+, they choose 2. On a 7-9, they choose 1. On a 7+, if they are a Crew Member, they’re at Disadvantage to act against you going forward. On a 6-, they can laugh in your face and do whatever they want.\n•They shut up immediately. \n•They stop moving. \n•They lower their weapons. \n•They do something stupid or reckless. \n•They hesitate, stumble, or mutter."
-        },
-        
-        {
-            "id":"6a7d123b-f982-494e-bca9-cbfcda687363",
-            "type":"class",
-            "key":"paranoid_android",
-            "name": "Paranoid Android",
-            "description":"When you walk into a charged situation with criminals and shady people, you have Advantage to Scope It Out. Additionally, you may ask questions from the following list instead of the base scope it out questions.\n•Who here is armed, openly or concealed? \n•Who here has history with a Crew Member? \n•Who here has information I want? \n•Who here is afraid of me?"
-        },   
-        {
-            "id":"931c1633-ff11-4f6b-94fe-2920b087f650",
-            "type":"class",
-            "key":"quickdraw",
-            "name": "Quickdraw",
-            "description":"When a tense situation breaks down and violence breaks out, you get to act first, or interrupt the person who does act first. After you act, name one Crew Member besides yourself. They have Advantage going forward. "
-        },   
-        {
-            "id":"049b9663-2785-4806-be9a-024c87eb6142",
-            "type":"class",
-            "key":"hunters_mark",
-            "name": "Hunters Mark",
-            "description":"When you roll+Volatile against a bounty you’re hunting, you have Advantage."
-        },   
-        {
-            "id":"38f0aaa8-2898-4356-9fa1-9e4333bdbd5d",
-            "type":"class",
-            "key":"mark_of_death",
-            "name": "Mark of Death",
-            "description":"Requires Hunter’s Mark When you deal Harm to a bounty you’re hunting, if you deal at least 1 Harm to them after Armor, they die."
-        },   
-        {
-            "id":"fd6f9818-3fab-4a3b-acc1-eaece6b30181",
-            "type":"class",
-            "key":"long_shot",
-            "name": "Long Shot",
-            "description":"You can use any ranged weapon at the Firefight, and Sniping ranges."
-        },   
-        {
-            "id":"7595ac2e-071e-4851-bf67-89ebdb6d2476",
-            "type":"class",
-            "key":"tracer",
-            "name": "Tracer",
-            "description":"When an enemy or target is about to get away, you may spend 1 Use of a Grenade to secure a tracking device to them."
-        }
-    ],
-    "hooks":[
-        "[___PC___] is a time bomb waiting to go off. They need to be defused or pointed in the right direction.", 
-        "[___PC___] got between me and my target in the past. Next time, I won’t hesitate.",
-        "[___PC___] knows of my vice, and they better keep quiet about it.",
-        "[___PC___] ‘s criminal ways are going to see them in my cross-hairs one day.",
-        "[___Group___] has torrorized this sector for too long, I’ll bring them all down.",
-        "I get the shakes if I go too long without [__Vice__]",
-        "When things get tense, I always let my gun do the talking.",
-        "I always push people away when they try to open up."
-    ],
-    "calamity":[
-        {
-            "id":"8fa2bf0f-5825-432c-8a2d-f102f65d09b8",
-            "description":"A contact you have in the local criminal underground reaches out to you with some info or a lead."
-        },
-        {
-            "id":"73c08ddc-2c60-4ebb-93f0-460ab4459c36",
-            "description":"You broaden your career options, take the other Work Ethic move."
-        },
-        {
-            "id":"62cb07dd-e7e7-40ea-9691-f3c5f563af8e",
-            "description":"The family or gang of someone you hunted is coming after you, hard."
-        },
-        {
-            "id":"df746b20-0bad-4aca-a2ff-4855cb3a15d1",
-            "description":"You get a lead on a valuable target you hunted long ago but got away, but you’ll have to act now to follow it up."
-        },
-        {
-            "id":"a1bacb3c-cb6e-4b63-802b-9a6fcba5cc84",
-            "description":"A friend or ally you rely on is in trouble with the authorities, and is asking for your help."
-        },
-        {
-            "id":"b45df329-2385-46e6-8f4f-871ba66869c5",
-            "description":"You suffer a terrible wound, illness, or debility. Describe what you have lost."
-        },
-        {
-            "id":"faa0edc8-a3df-463a-a509-eeb0077fe6f5",
-            "description":"Now or soon, you encounter a long-time nemesis with whom you have a long history of bad blood on both sides. They challenge you to a duel to settle your differences, and you must accept. When you duel your nemesis, roll+Volatile. \n•On a 10+, you win the duel. Describe how, and then describe the life you retire to after, and why. \n•On a 7-9, you win, but you’re severely injured and must retire, or die shortly after the duel. Describe it. \n•On a 6-, you lose, and expire shortly after."
-        }
-    ],
-    "gear":[
-        {
-            "id":"efc760ea-4167-4557-a10a-6c2bf519eaaa",
-            "name":"Pistol",
-            "tags":"1 Harm, Skirmish, Firefight, Discharge, Stun, Basic Gear"
-        },
-        {
-            "id":"110b10b1-e3d0-4aaa-b6b7-5850ba0b1821",
-            "name":"Tactical Pack",
-            "tags":"3 Uses, Advanced Gear. Mark off a use to choose 1 option from the Tactical Pack list."
-        },
-        {
-            "id":"b2d7a095-67dc-4607-b6ef-d8991dd937fe",
-            "name":"Assault Rifle",
-            "tags":"2 Harm, Firefight, Discharge, Full Auto, Advanced Gear"
-        },
-        {
-            "id":"ffa04710-9878-4f1c-a5e9-f080c4de7eee",
-            "name":"Body Armor",
-            "tags":"Absorb 2, Conspicuous, Basic Gear"
-        },
-        {
-            "id":"2a721152-f076-4804-81bc-09e8025a2ac6",
-            "name":"A symbol or badge of office",
-            "tags":"Trinket"
-        }
-    ]
+    }
 }
