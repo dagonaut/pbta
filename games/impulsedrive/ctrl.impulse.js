@@ -23,6 +23,8 @@
                 ship: { index: 2, heading: 'Ship'},                
             };
 
+            vm.class = "hound"
+
             vm.character_model = {                
                 gameid: _gameid,
                 data: "",
@@ -74,7 +76,7 @@
                     }
                 $http.get(_classesJSON).then(getClassesSuccess, getClassesFail);
                     function getClassesSuccess(response){
-                        vm.classes = response.data;                  
+                        vm.classes = response.data; 
                     }
                     function getClassesFail(error){
                         console.log(error);

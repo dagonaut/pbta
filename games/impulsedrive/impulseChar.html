@@ -80,7 +80,45 @@
         </section>
 
         <section id="moves" class="moves-section">
-            
+            Signature Moves:
+            <div ng-repeat="smove in vm.classes[vm.class].signature_moves">
+                <input type="checkbox" />
+                <div class="move-name">{{smove.name}}</div>
+                <pre>{{smove.description}}</pre>
+            </div>
+            {{ vm.classes[vm.class].background.title }}
+            <div ng-repeat="bmove in vm.classes[vm.class].background.background_moves">
+                <input type="checkbox" />
+                <div class="move-name">{{bmove.name}}</div>
+                <pre>{{bmove.description}}</pre>
+            </div>
+            {{ vm.class }} Moves:
+            <div ng-repeat="cmove in vm.classes[vm.class].class_moves">
+                <input type="checkbox" />
+                <div class="move-name">{{cmove.name}}</div>
+                <pre>{{cmove.description}}</pre>
+            </div>
+        </section>
+
+        <section id="gear" class="gear-section">
+            <div ng-repeat="item in vm.classes[vm.class].gear">
+                {{ item.name }}: {{ item.tags }}
+            </div>
+        </section>
+
+        <section id="calamities" class="calamity-section">
+            Calamities
+            <div ng-repeat="cal in vm.classes[vm.class].calamity">
+                <input type="checkbox" />
+                {{ cal.description }}
+            </div>
+        </section>
+
+        <section id="hooks" class="hook-section">
+            Hooks
+            <div ng-repeat="hook in vm.classes[vm.class].hooks">                
+                {{ hook }}
+            </div>
         </section>
     </div>
 </body>
