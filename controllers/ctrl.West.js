@@ -67,6 +67,8 @@
 
             vm.refreshDudes = refreshDudes;
 
+            vm.markHarm = markHarm;
+
             init();
 
             function refreshDudes(){
@@ -247,6 +249,11 @@
                     vm.cd.moves = vm.cd.moves.join(",");
                     vm.cd.advancements = vm.cd.advancements.join(",");
                 }
+            }
+
+            function markHarm(level){
+                vm.cd.harm = level;
+
             }
         }
 })();
