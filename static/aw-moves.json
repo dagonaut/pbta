@@ -1,0 +1,83 @@
+{
+    "basic":[
+        {
+            "jid": "340275ab",
+            "name": "ACT UNDER FIRE",
+            "description": "When you do something under fire, or dig in to endure fire, roll+cool. \nOn a 10+, you do it. On a 7–9, you flinch, hesitate, or stall: the MC can offer you a worse outcome, a hard bargain, or an ugly choice. On a miss, be prepared for the worst.",
+            "notes": "You can read “under fire” to mean any kind of serious pressure at all. Call for this move whenever someone does something requiring unusual discipline, resolve, endurance or care. I often say things like “okay, roll to act under fire, and the fire is just how badly that’s going to hurt,” “…and the fire is, can you really get that close to her without her noticing?” or “…and the fire is, if you fuck it up, they’ll be ON your ass.”\nWhenever a character does something that obviously demands a roll, but you don’t quite see how to deal with it, double check first whether it counts as doing something under fire. Come here first. On a 7–9, when it comes to the worse outcome, hard bargain, or ugly choice, you’ll need to look at the circumstances and find something fun. It should be easy to find something; if there weren’t things to go wrong, nobody’d be rolling dice. It can include suffering harm or making another move. However, remember that a 7–9 is a hit, not a miss; whatever you offer should be fundamentally a success, not fundamentally a failure."
+        },
+        {
+            "jid":"7b6779b9",
+            "name":"GO AGGRO",
+            "description":"When you go aggro on someone, roll+hard. On a 10+, they have to choose 1: \n• Force your hand and suck it up. \n• Cave and do what you want. \nOn a 7–9, they can choose 1 of the above, or 1 of the following: \n• Get the hell out of your way. \n• Barricade themselves securely in. \n• Give you something they think you want, or tell you what you want to hear. \n• Back off calmly, hands where you can see. \nOn a miss, be prepared for the worst.",
+            "notes":"Going aggro on someone means threatening or attacking them when it’s not, or not yet, a fight. Use it whenever the character’s definitely the aggressor: when the target isn’t expecting the attack, isn’t prepared to fight back, doesn’t want to fight back, or can’t fight back effectively. \n\nIf the target forces the character’s hand and sucks it up, that means that the character inflicts harm upon the target as established, determined by her weapon and the target’s armor. At this point, the player can’t decide not to inflict harm, it’s gone too far for that. \n\nAt your call as MC, the details of the circumstances can give the character’s weapon ap (armor piercing). Suppose Keeler holds a gun to someone’s forehead and tells them what to do, and they force her hand and suck it up. The gun’s to their unarmored forehead, where their body armor isn’t going to help them, so you should declare the damage ap. \n\nA 7–9 is a hit, but that doesn’t mean the attack itself has to connect. You can treat it as a graze, a glancing blow, a near miss, or whatever. What’s important is the character’s got the target’s attention and has forced them to change course or give ground. \n\nOn a 7–9, the target can still choose to cave, or to force the character’s hand and suck it up. In fact, if none of the 7–9 options make sense in the circumstances, they must choose to cave or to suck it up. \n\nFor the details of taking and inflicting harm, see the harm & healing chapter, page 202."
+        },
+        {
+            "jid":"3f7196a8",
+            "name": "SUCKER SOMEONE",
+            "description": "When you attack someone unsuspecting or helpless, ask the MC if you could miss. If you could, treat it as going aggro, but your victim has no choice to cave and do what you want. If you couldn’t, you simply inflict harm as established.",
+            "notes": ""
+        },
+        {
+            "jid":"c1384e7f",
+            "name": "IN BATTLE",
+            "description": "See Battle Moves",
+            "notes": ""
+        },
+        {
+            "jid":"b0dffda3",
+            "name": "SEIZE BY FORCE",
+            "description": "To seize something by force, exchange harm, but first roll+hard. \nOn a 10+, choose 3. On a 7–9, choose 2. On a miss, choose 1: \n• You inflict terrible harm (+1harm). \n• You suffer little harm (-1harm). \n• You take de�nite and undeniable control of it. \n• You impress, dismay, or frighten your enemy.",
+            "notes": ""
+        },
+        {
+            "jid":"5de792d0",
+            "name": "SEDUCE OR MANIPULATE",
+            "description": "When you try to seduce, manipulate, bluff, fast-talk, or lie to someone, tell them what you want them to do, give them a reason, and roll+hot. \nFor NPCs: on a 10+, they’ll go along with you, unless or until some fact or action betrays the reason you gave them. On a 7–9, they’ll go along with you, but they need some concrete assurance, corroboration, or evidence first. For PCs: on a 10+, both. On a 7–9, choose 1: \n• If they go along with you, they mark experience. \n• If they refuse, erase one of their stat highlights for the remainder of the session. \nWhat they do then is up to them. \nOn a miss, for either NPCs or PCs, be prepared for the worst. ",
+            "notes": ""
+        },
+        {
+            "jid":"9eeba390",
+            "name": "READ A SITCH",
+            "description": "When you read a charged situation, roll+sharp. On a hit, you can ask the MC questions. Whenever you act on one of the MC’s answers, take +1. \nOn a 10+, ask 3. On a 7–9, ask 1: \n• Where’s my best escape route / way in / way past? \n• Which enemy is most vulnerable to me? \n• Which enemy is the biggest threat? \n• What should I be on the lookout for? \n• What’s my enemy’s true position? \n• Who’s in control here? \n\nOn a miss, ask 1 anyway, but be prepared for the worst.",
+            "notes": ""
+        },
+        {
+            "jid":"8fc01f1a",
+            "name": "READ A PERSON",
+            "description": "When you read a person in a charged interaction, roll+sharp. \nOn a 10+, hold 3. On a 7–9, hold 1. While you’re interacting with them, spend your hold to ask their player questions, 1 for 1: \n• Is your character telling the truth? \n• What’s your character really feeling? \n• What does your character intend to do? \n• What does your character wish I’d do? \n• How could I get your character to _____? \n\nOn a miss, ask 1 anyway, but be prepared for the worst.",
+            "notes": "Reading a person is an investment in time. It means studying them carefully through the whole conversation, noticing changes in their tone, the movements of their eyes and hands, their most fleeting expressions. In play, have the player roll this move only (a) when the interaction is genuinely charged, and (b) when you’re going to play the interaction through. \n\nAgain, you might already know the answers to these questions, you might not. Either way, once you’ve said them you’ve committed to them and they’re true. \n\nAlso again, a character can’t just keep reading and rereading someone. Reread someone only when there’s been some significant change in between. \n\ne player can make the roll at the very beginning of the conversation, or at any point during it. Her hold lasts until she spends it or until the conversation ends, so there’s no rush. It’s fair for her to sit on her hold until just the right opportunity for just the right question. \n\nIf it’s two players’ characters interacting, they can totally read each other at the same time. Both roll, both hold, both ask, both answer, no prob. \n\n“Dude, sorry, no way” is a legit answer to “how could I get your character to __?” \n\nAnd again: unhappy revelations, every chance you get."
+        },
+        {
+            "jid":"225fbf64",
+            "name": "OPEN YOUR BRAIN",
+            "description": "When you open your brain to the world’s psychic maelstrom, roll+weird. On a hit, the MC tells you something new and interesting about the current situation, and might ask you a question or two; answer them. \nOn a 10+, the MC gives you good detail. \nOn a 7–9, the MC gives you an impression. If you already know all there is to know, the MC will tell you that. \nOn a miss, be prepared for the worst. ",
+            "notes": ""
+        },
+        {
+            "jid":"44257347",
+            "name": "HELP OR INTERFERE",
+            "description": "When you help or interfere with someone who’s making a roll, roll+Hx. \nOn a 10+, they take +2 (help) or -2 (interfere) to their roll. \nOn a 7–9, they take +1 (help) or -1 (interfere) to their roll. \nOn a miss, be prepared for the worst.",
+            "notes": ""
+        },
+        {
+            "jid":"e2faf3ff",
+            "name": "LIFESTYLE",
+            "description": "See Playbook Lifestyle",
+            "notes": ""
+        },
+        {
+            "jid":"9455f88b",
+            "name": "WORKING GIGS",
+            "description": "See Playbook Gig",
+            "notes": ""
+        },
+        {
+            "jid":"100e039a",
+            "name": "SESSION END",
+            "description": "At the end of every session, choose a character who knows you better than they used to. If there’s more than one, choose one at your whim. Tell that player to add +1 to their Hx with you on their sheet. If this brings them to Hx+4, they reset to Hx+1 (and therefore mark experience). If no one knows you better, choose a character who doesn’t know you as well as they thought, or choose any character at your whim. Tell that player to take -1 to their Hx with you on their sheet. If this brings them to Hx -3, they reset to Hx=0 (and therefore mark experience). ",
+            "notes": ""
+        }
+    ]
+}
+
