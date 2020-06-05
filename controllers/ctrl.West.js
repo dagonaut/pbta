@@ -45,10 +45,17 @@
             vm.cd = angular.copy(vm.blankCharacter);
 
             vm.classes_list = [
+                { key: "blackhat", value: "The Blackhat"},
+                { key: "gambler", value: "The Gambler"},
                 { key: "gunslinger", value: "The Gunslinger"},
+                { key: "headhoncho", value: "The Head Honcho"},
+                { key: "homesteader", value: "The Homesteader"},
+                { key: "junker", value: "The Junker"},
                 { key: "lawdog", value: "The Law Dog"},
                 { key: "lonerider", value: "The Lone Rider"},
-                { key: "sawbones", value: "The Saw Bones"}
+                { key: "saint", value: "The Saint"},
+                { key: "sawbones", value: "The Saw Bones"},
+                { key: "siren", value: "The Siren"}
             ]
 
             vm.userId = userId;

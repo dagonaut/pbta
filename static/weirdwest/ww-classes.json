@@ -393,16 +393,515 @@
         ],
         "custom":null
     },
-    "class_name":{
-        "look":[],
-        "stats":[],
-        "num_starting_moves":0,
+    "blackhat":{
+        "name": "The Black Hat",
+        "key": "blackhat",
+        "description":"These days, all a man needs to make his mark on the world is a horse, a gun, and a gang of thugs willing to do all kinds of foulness at the slightest provocation.  Fortunately, none of those things are in short supply.",
+        "look":[
+            {"gender": "Man, Woman, Nonconforming, Concealed"},
+            {"clothes": "Dusty Clothes, Fancy Clothes, Patched Clothes, Rugged Clothes"},
+            {"hat": "Cowboy Hat, Fancy New Hat, Simple Hat, Ugly Hat"},
+            {"face": "Closely-Shaved Face, Baby Faced, Disfigured Face, Expressionless Face, Weathered Face"},
+            {"eyes": "Greedy Eyes, Laughing Eyes, Rabid Eyes, Raging Eyes, Steely Eyes, Suspicious Eyes"},
+            {"body": "Big Body, Bony Body, Fat Body, Fit Body, Slim Body, Squat Body"}
+        ],
+        "stats":[
+            { "quick": 1, "grit": 2, "charm": 1, "savvy": 0, "strange": -1},
+            { "quick": 1, "grit": 2, "charm": 0, "savvy": 1, "strange": -1},
+            { "quick": 1, "grit": 2, "charm": 1, "savvy": 1, "strange": -2},
+            { "quick": 2, "grit": 2, "charm": -1, "savvy": 0, "strange": -1}
+        ],
+        "num_starting_moves":1,
         "moves_list":[{"name":"", "description":""}],
         "moves":{},
+        "gear":{
+            "what_you_get": "You get 2 solid weapons, a horse, possibly including Armor 1 (a leather duster?), your clothes, and goods worth 1 Dinero",
+            "gear_lists": [
+                {
+                    "category": "Doctor's Bag", 
+                    "description": "Your Doctor's Bag contains your medical supplies- (scalpels, forceps, tourniquets, diagnostic tools, sutures, bandages, treppanning kit, leather straps, reusable syringes, various tonics and tinctures, several doses of laudanum, opiates, amd cocaine.) It starts play with 6 Supply. You can normally purchase 2 Supply for 1 Dinero, if you're in a situation where bartering is available.", 
+                    "list": []
+                },
+                {
+                    "category": "Solid Weapons", 
+                    "description": "", 
+                    "list": [
+                        "Big Fucking Knife (2 harm hand)" ,
+                        "Bow and Arrow (2 harm, close/far)",
+                        "Magnum Pistol (3 harm close reload loud)",
+                        "Revolver (2 harm close reload loud)",
+                        "Rifle (2 harm close/far loud)",
+                        "Shotgun (3 harm close reload messy loud)"
+                    ] 
+                }
+            ]
+        },
+        "starting_horse": true,
+        "history":[
+            {"question":"Who is in my gang, or used to ride with me?","amount":"1"},
+            {"question":"Which of you thinks you could take me in a fight?","amount":"2"},
+            {"question":"Which of you once stood up to me, gang and all?","amount":"3"},
+            {"question":"Anyone else, they're either with you or against you.","amount":"-1"}
+        ],
+        "special":"If you and another character have sex, they become smitten with you.  Tell them what you'd like them to do for you.  If they're an NPC, they'll do it to the best of their abilities.  If they're a PC, treat it as if you'd rolled Palaver and rolled a 10+.",
+        "advancement":[
+            {"id":"1", "description": "get +1 Grit (max +3)"},
+            {"id":"2", "description": "get +1 Quick (max +2)"},
+            {"id":"3", "description": "get +1 Savvy (max +2)"},
+            {"id":"4", "description": "get +1 Charm (max +2)"},
+            {"id":"5", "description": "get another Black Hat move."},
+            {"id":"6", "description": "get another option for your Gang."},
+            {"id":"7", "description": "get another option for your Gang."},
+            {"id":"8", "description": "get a small Town and the Wealth move."},
+            {"id":"9", "description": "get a move from another playbook."},
+            {"id":"10", "description": "get a move from another playbook."}
+        ],
+        "custom":{
+            "name": "Your Gang",
+            "description":"By default, your gang consists of about 15 violent thugs, murderers, and reprobates with decent armaments, no armor, horses for everyone, and no god-damned discipline at all.  (2 harm 0 armor gang small savage).",
+            "lists":[
+                {
+                    "name": "Bonuses",
+                    "description":"",
+                    "choose": 2,
+                    "choices": [                        
+                        "Your gang consists of 30 or so violent bastards.  Medium instead of small.",
+                        "Your gang is well armed.  +1 Harm.",
+                        "Your gang has solid armor.  +1 Armor.",
+                        "Your gang is disciplined.  Remove Savage.",
+                        "Your gang is self-sufficient, and does lots of raiding and scavenging.  +Rich.",
+                        "Your gang has a hideout or base of operations.  +Hideout"
+
+                    ]
+                },
+                {
+                    "name": "Flaws",
+                    "description":"",
+                    "choose": 1,
+                    "choices": [                        
+                        "Your gang is loose-knit, with members coming and going freely.  +Desertion.",
+                        "Your gang is in significant debt to someone powerful.  +Obligation.",
+                        "Your gang consists of infamous criminals, with large bounties of goods on your heads.  +Reprisals.",
+                        "Your gang is fucking filthy.  +Diseased.",
+                        "Your gang is unusually superstitious.  +Superstitious."
+                    ]
+                }
+            ]
+        }
+    },
+    "headhoncho":{
+        "name": "The Head Honcho",
+        "key": "headhoncho",
+        "look":[
+            {"gender": "Man, Woman, Nonconforming, Concealed"},
+            {"clothes": "Comfortable Clothes, Fine Clothes, Military Uniform, Unadorned Clothes"},
+            {"face": "Cruel Face, Dapper Face, Strong Face, Unblemished Face, Worn Face"},
+            {"eyes": "Bloodshot Eyes, Commanding Eyes, Kind Eyes, Generous Eyes, Merciful Eyes, Pale Eyes"},
+            {"body": "Hairy Body, Rangy Body, Soft Body, Stumpy Body, Towering Body, Well-Fed Body"}
+        ],
+        "stats":[
+            { "quick": -1, "grit": 2, "charm": 1, "savvy": 2, "strange": 0},
+            { "quick": 1, "grit": 2, "charm": 1, "savvy": 1, "strange": -2},
+            { "quick": -2, "grit": 2, "charm": 0, "savvy": 2, "strange": 0},
+            { "quick": 0, "grit": 2, "charm": 1, "savvy": -1, "strange": 1}
+        ],
+        "num_starting_moves":2,
+        "moves_list":[{"name":"", "description":""}],
+        "moves":{},
+        "gear":{
+            "what_you_get": "You have one reliable weapon and your clothes.",
+            "gear_lists": [
+                {
+                    "category": "Reliable Weapons", 
+                    "description": "", 
+                    "list": [                        
+                        "Big Knife (2 harm close)",
+                        "Bow and Arrow (2 harm, close/far)",
+                        "Cavalry Saber (3 harm close)",
+                        "Magnum Revolver (3 harm close reload loud)",
+                        "Rifle (2 harm close/far loud)",
+                        "Shotgun (3 harm close reload messy loud)"
+                    ] 
+                }
+            ]
+        },
         "starting_horse": false,
-        "history":[{"question":"","amount":"0"}],
-        "special":"",
-        "advancement":[],
+        "history":[
+            {"question":"Who has stood with me loyally since things went to Hell","amount":"1"},
+            {"question":"Who refuses to recognize my authority","amount":"2"},
+            {"question":"Who has betrayed my trust","amount":"3"},
+            {"question":"Anyone else,  You need to know what's going on.","amount":"1"}
+        ],
+        "special":"If you and another character have sex, you can give them a gift worth 1 Dinero, at no cost to you.",
+        "advancement":[            
+            {"id":1,"description":"+1 Grit (max +3)"},
+            {"id":2,"description":"+1 Quick (max +2)"},
+            {"id":3,"description":"+1 Charm (max +2)"},
+            {"id":4,"description":"+1 Savvy (max +2)"},
+            {"id":5,"description":"+1 Strange (max +2)"},
+            {"id":6,"description":"Choose a new option for your Town."},
+            {"id":7,"description":"Choose a new option for your Town."},
+            {"id":8,"description":"Remove an option from your Town."},
+            {"id":9,"description":"Get a move from another playbook."},
+            {"id":10,"description":"Get a move from another playbook."}
+        ],
+        "custom":{
+            "name":"Your Town(s)",
+            "description":"By default, your Town has: \n*75-150 people living and working in it. \n*For potential work, a mix of hunting, farming, and scavenging.  Surplus: 1 Dinero, Want: hungry. \n*Anywhere from 10 to 30 buildings of a mix of wood and stone, and a sturdy defensive compound.  \n*Your gang gets +1 armor when fighting in its defense. \n*An armory of scavenged weapons. \n*A gang of about 40 violent people (2 harm gang medium unruly 0 armor)",
+            "lists":[
+                {
+                    "name": "Bonuses",
+                    "description":"",
+                    "choose": 4,
+                    "choices": [                        
+                        "Your population is large, 200-300 souls.  Surplus: +1 Dinero, Want: disease.",
+                        "Your population is small, 50-60 souls.  Want: Anxiety instead of Hungry.",
+                        "Your Town has lucrative raiding opportunities.  Surplus: +1 Dinero, Want: Reprisals.",
+                        "Other communities owe you tribute.  Surplus: +1 Dinero, Want: Obligation",
+                        "Your Town has some sort of factory where finished goods are made, like textiles or bullets.  Surplus: +1 Dinero, Want: Idle",
+                        "Your gang is large instead of medium.  60 violent people or so.",
+                        "Your gang is well-disciplined.  Remove unruly.",
+                        "You have a well-stocked armory.  Your gang gets +1 harm.",
+                        "There is a well defined wall or palisade around your Town.  Your gang gets +1 armor when fighting in defense of the perimeter."
+                    ]
+                },
+                {
+                    "name": "Flaws",
+                    "description":"",
+                    "choose": 2,
+                    "choices": [                        
+                        "Your population is filthy and unwell.  Add Want: Disease.",
+                        "Your population is decadent and perverse.  Surplus -1 Dinero, Want: Savagery",
+                        "You owe tribute to another power.  Surplus -1 Dinero, Want: Reprisals",
+                        "Your gang is small instead of medium, only 10-20 violent individuals.",
+                        "Your gang is particularly poorly disciplined and unruly.  Want: Savagery.",
+                        "Your Town has no real armory to speak of.  Your gang gets -1 harm.",
+                        "Your Town has no secure central compound.  You and your gang get no armor bonus when fighting to defend it."
+                    ]
+                }
+            ]
+        }
+    },
+    "homesteader":{
+        "name": "The Homesteader",
+        "key": "homesteader",
+        "description":"For years, you worked this land, and made it your own.  It's a hardscrabble life, full of backbreaking labor and little reward.  But it's your life, and you'll be damned if man or monster will take it from you.",
+        "look":[
+            {"gender": "Man, Woman, Nonconforming, Concealed"},
+            {"clothes": "Mud-stained Clothes, Patchwork Clothes, Simple Clothes, Trail-hand Clothes"},
+            {"face": "Beautiful Face, Blasted Face, Dirty Face, Open Face, Rugged Face"},
+            {"eyes": "Bleary Eyes, Eager Eyes, Expressionless Eyes, Hard Eyes, Sharp Eyes, Wise Eyes"},
+            {"body": "Athletic Body, Barrel-Chested Body, Emaciated Body, Stocky Body, Stringy Body, Toned Body"}
+        ],
+        "stats":[
+            { "quick": 0, "grit": 1, "charm": 1, "savvy": 2, "strange": -1},
+            { "quick": -1, "grit": 1, "charm": 0, "savvy": 2, "strange": 1},
+            { "quick": 1, "grit": 1, "charm": 0, "savvy": 2, "strange": -1},
+            { "quick": 1, "grit": 2, "charm": -1, "savvy": 2, "strange": -2}
+        ],
+        "num_starting_moves":1,
+        "moves_list":[{"name":"", "description":""}],
+        "moves":{},
+        "gear":{
+            "what_you_get": "You get one home defense weapon, your clothes, and a horse.",
+            "gear_lists": [
+                {
+                    "category": "Doctor's Bag", 
+                    "description": "Your Doctor's Bag contains your medical supplies- (scalpels, forceps, tourniquets, diagnostic tools, sutures, bandages, treppanning kit, leather straps, reusable syringes, various tonics and tinctures, several doses of laudanum, opiates, amd cocaine.) It starts play with 6 Supply. You can normally purchase 2 Supply for 1 Dinero, if you're in a situation where bartering is available.", 
+                    "list": []
+                },
+                {
+                    "category": "Home Defense Weapons", 
+                    "description": "", 
+                    "list": [
+                        "Big Knife (2 harm close)" ,
+                        "Bow and Arrow (2 harm, close/far)",
+                        "Cavalry Saber (3 harm close)",
+                        "Revolver (2 harm close reload loud)",
+                        "Rifle (2 harm close/far loud)",
+                        "Shotgun (3 harm close reload messy loud)"
+                    ] 
+                }
+            ]
+        },
+        "starting_horse": true,
+        "history":[
+            {"question":"Who helped me defend my home from danger","amount":"2"},
+            {"question":"Who knew me from before I settled down","amount":"2"},
+            {"question":"Who abused my hospitality","amount":"3"},
+            {"question":"Everyone else...  It takes a while for you to trust someone.","amount":"0"}
+        ],
+        "special":"When you and another character have sex, you gain +1 forward for the next time you make your   Bounty of the Land move.  If they make a move at the start of the next session, they gain +1 forward for one of those moves (their choice which one.)",
+        "advancement":[            
+            {"id":1,"description":"+1 Savvy (max +3)"},
+            {"id":2,"description":"+1 Quick (max +2)"},
+            {"id":3,"description":"+1 Grit (max +2)"},
+            {"id":4,"description":"+1 Strange (max +2)"},
+            {"id":5,"description":"Get another Homesteader move."},
+            {"id":6,"description":"Get another Homesteader move."},
+            {"id":7,"description":"Choose another option for your Homestead, or remove an existing one."},
+            {"id":8,"description":"Get a Gang and the Leadership move."},
+            {"id":9,"description":"Get a move from another playbook."},
+            {"id":10,"description":"Get a move from another playbook."}
+        ],
+        "custom":{
+            "name":"Your Homestead(s)",
+            "description":"By default, your Homestead has: \n*15-20 people living and working on it. \n*For potential work, a mix of rough farming and hunting.  (Surplus 1 Dinero, Want: Hunger) \n*A wooden house large enough for you and your family to live in relative comfort, and a few wooden outbuildings for farmhands and animals. \nAny Surplus of Dinero is your share of the Homestead's profits.",
+            "lists":[
+                {
+                    "name": "Bonuses",
+                    "description":"",
+                    "choose": 2,
+                    "choices": [                                                
+                        "Your Homestead produces some manufactured crafts, like textiles.  Surplus: +1 Dinero, Want: Idle.",
+                        "Your Crops are particularly Fertile.  Surplus: +1 Dinero, Want: Locusts",
+                        "You large pastures for Cattle or other grazing animals.  Surplus: +1 Dinero, Want: Poaching.",
+                        "You have a secure and fresh water source.  Gain +1 to rolls for Bounty of the Land.",
+                        "Your House is well fortified, made of stone and well positioned.  Anyone trying to defend the house gets +1 Armor.",
+                        "Your lands have a clearly demarcated perimeter, with a sturdy fence, and your farmhands keep an eye out for suspicious activity.  If anyone trespasses on your land, you will be aware of it.",
+                        "You have a particularly large population on the Homestead, but that many mouths can be hard to feed. Surplus: +1 Dinero, Want: Famine instead of Hunger.",
+                        "Your Homestead is located on or near a functioning trade route, with frequent visits by traveling merchants.  Folk can spend use the Buyin' and Trackin' Down a Thing moves while they're at your Homestead."
+                    ]
+                },
+                {
+                    "name": "Flaws",
+                    "description":"",
+                    "choose": 2,
+                    "choices": [                        
+                        "You don't have a clean water supply.  Want: +Disease",
+                        "You have few farmhands.  Surplus -1 Dinero, change Hunger to Anxiety.",
+                        "You owe protection tribute to someone more powerful, or several warlords.  Surplus -1 Dinero.  Want: Obligation.",
+                        "There aren't any actual buildings on the land, just a bunch of tents.",
+                        "Your Homestead is in the middle of nowhere.  Want: Isolated.",
+                        "Your Homestead's borders aren't clearly defined, and wind through difficult territory, making them hard to keep an eye on.  Want: Poaching."
+                    ]
+                }
+            ]
+        }
+    },
+    "junker":{
+        "name": "The Junker",
+        "key": "junker",
+        "description":"Things aren't what they once were.  Rail lines broken, telegraph lines cut, factories burnt, locomotives scrapped, mines empty.  You take the Junk, and you turn it into something worthwhile.",
+        "look":[
+            {"gender": "Man, Woman, Nonconforming, Concealed"},
+            {"clothes": "Practical Clothes, Showy Clothes, Stained Work Clothes, Wrinkled Clothes"},
+            {"face": "Aristocratic Face, Blunt Face, Determined Face, Severe Face, Squashed Face"},
+            {"eyes": "Clear Eyes, Frank Eyes, Intelligent Eyes, Mad Eyes, Mesmerizing Eyes, Nervous Eyes"},
+            {"body": "Compact Body, Hulking Body, Hunched Body, Lanky Body, Strange Body, Tall Body"}
+        ],
+        "stats":[
+            { "quick": 1, "grit": 1, "charm": 1, "savvy": -2, "strange": 2},
+            { "quick": -2, "grit": -1, "charm": 1, "savvy": 2, "strange": 2},
+            { "quick": 1, "grit": -2, "charm": -1, "savvy": 2, "strange": 2},
+            { "quick": -1, "grit": 1, "charm": -2, "savvy": 2, "strange": 2}
+        ],
+        "num_starting_moves":2,
+        "moves_list":[{"name":"", "description":""}],
+        "moves":{},
+        "gear":{
+            "what_you_get": "You start with a Workspace, a Junker Weapon, your clothes, and goods worth 3 Dinero.",
+            "gear_lists": [
+                {
+                    "category": "Workspace", 
+                    "description": "Your workspace starts with three of the following:", 
+                    "list": [
+                        "A machine shop, a darkroom, controlled botany environment, chemical laboratory, skilled labor and assistants, a carriage with driver and team of horses, a working telegraph machine, a weapons range, a strange science artifact, extensive supplies, a large steam engine, a medical infirmary."
+                    ]
+                },
+                {
+                    "category": "Custom Weapon", 
+                    "description": "Frame (choose 1)", 
+                    "list": [
+                        "Small (2 harm close reload tech)",
+                        "Large (3 harm close reload bulky tech)"
+                    ] 
+                },
+                {
+                    "category": "Custom Weapon", 
+                    "description": "What's it shoot? (choose 1)", 
+                    "list": [
+                        "Fire (+1 harm, hand/close, messy)",
+                        "Electricity (S-Harm)",
+                        "Bullets, Lots of Them (+1 harm, close/far, loud)",
+                        "Laser Beams (-1 harm, ap, close/far)"
+                    ] 
+                },
+                {
+                    "category": "Custom Weapon", 
+                    "description": "Other Options (choose 1)", 
+                    "list": [                        
+                        "Scope (+1 harm at Far)",
+                        "Ammo Backpack (-Reload)",
+                        "High Powered (+1 harm at Close)",
+                        "Attached Bayonet (2 harm hand)",
+                        "Burst Fire (+area, +loud)",
+                        "Automated (+remote)"
+                    ] 
+                }
+            ]
+        },
+        "starting_horse": false,
+        "history":[
+            {"question":"Who does not respect my genius","amount":"2"},
+            {"question":"Who has helped me advance the cause of science","amount":"2"},
+            {"question":"Who is a perfect specimen of biology","amount":"2"},
+            {"question":"Everyone else... You're mostly focused on your experiments.","amount":"-1"}
+        ],
+        "special":"Whenever you and another character have sex, hold 1.  You can spend that hold to show up at their location, prepared for their situation, no explanation needed",
+        "advancement":[
+            
+            {"id":1,"description":"+1 Strange (Max +3)"},
+            {"id":2,"description":"+1 Quick (Max +2)"},
+            {"id":3,"description":"+1 Grit (Max +2)"},
+            {"id":4,"description":"Get another Junker move."},
+            {"id":5,"description":"Get another Junker move."},
+            {"id":6,"description":"Add two options to your Workspace."},
+            {"id":7,"description":"Build another Junker Weapon."},
+            {"id":8,"description":"Get a Homestead and the Bounty of the Land move."},
+            {"id":9,"description":"Get a move from another playbook."},
+            {"id":10,"description":"Get a move from another playbook."}
+        ],
+        "custom":null
+    },
+    "saint":{
+        "name": "The Saint",
+        "key": "saint",
+        "description":"The world might be dead, and God, or the gods, or the spirits, or what have you might have moved on.  But the Saints haven't.  The holy man who refuses to give up hope in the face of darkness, the tribal shaman, warring against strange creatures, or the retired schoolmarm, running the orphanage because someone has to look after those kids- these are the people that are looking out for you.",
+        "look":[
+            {"gender": "Man, Woman, Nonconforming, Concealed"},
+            {"clothes": "Filthy Rags, Fine Clothes, Simple Clothes, Religious Vestments"},
+            {"face": "Hollow Face, Massively-Bearded Face, Soft Face, Stone Faced, Tattooed Face"},
+            {"eyes": "Dark Eyes, Forgiving Eyes, Inquisitive Eyes, Kind Eyes, Narrow Eyes, Scorched Eyes"},
+            {"body": "Battered Body, Beaten Body, Pudgy Body, Ruined Body, Veiny Body, Young Body"}
+        ],
+        "stats":[
+            { "quick": 0, "grit": -1, "charm": 1, "savvy": 1, "strange": 2},
+            { "quick": 1, "grit": 1, "charm": -1, "savvy": 0, "strange": 2},
+            { "quick": 0, "grit": -2, "charm": 0, "savvy": 2, "strange": 2},
+            { "quick": 1, "grit": 0, "charm": -1, "savvy": 1, "strange": 2}
+        ],
+        "num_starting_moves":2,
+        "moves_list":[{"name":"", "description":""}],
+        "moves":{},
+        "gear":{
+            "what_you_get": "You get a practical weapon, two Holy Relics, your clothes, and 1 Dinero.",
+            "gear_lists": [
+                {
+                    "category": "Practical Weapons", 
+                    "description": "Choose 1", 
+                    "list": [
+                        "Big Knife (2 harm close)" ,
+                        "Cavalry Saber (3 harm close)",
+                        "Revolver (2 harm close reload loud)",
+                        "Rifle (2 harm close/far loud)",
+                        "Shotgun (3 harm close reload messy loud)"
+                    ]
+                },
+                {
+                    "category": "Holy Relics", 
+                    "description": "Choose 2", 
+                    "list": [
+                        "Consecrated Sword:  2 harm hand.  Anyone making a roll using the Consecrated Sword adds +1.  Armor-piercing against Creatures of Darkness.",
+                        "Grail:  Once per day, when someone drinks from the Grail, they choose one: *Heal all wounds to 6:00. *Heal two wound segments. *Recover from a poison, disease, or other ailment.",
+                        "Holy Symbol:  When you present your Holy Symbol to a Creature of Darkness, roll + Strange.  On a 10+, the creature can do nothing but recoil in terror until you relent or it is attacked.  On a 7-9, it can instead choose to flee, bargain, or cower.",
+                        "Prophet's Bone:  When you spend time in prayer and solitude contemplating what you should do next, gain Insight.",
+                        "Sunmote:  The Sunmote is a glass sphere, four inches in diameter.  It always emits a bright light, equivalent to sunlight.",
+                        "Talisman:  At the start of each session, roll +Strange.  On a 10+, hold 3, on a 7-9, hold 2.  At any time during the session, you can spend this hold to re-roll any failed roll."
+                    ]
+                }
+            ]
+        },
+        "starting_horse": false,
+        "history":[
+            {"question":"Who shares my faith?","amount":"2"},
+            {"question":"Who did I give sanctuary to in a time of need?","amount":"2"},
+            {"question":"Who's heart have I looked into and seen the darkness inside?","amount":"3"},
+            {"question":"Everyone else... You have a knack for judging the intentions of others.","amount":"1"}
+        ],
+        "special":"Carnal pleasure for it's own sake violates the temple of the body, and it would be a sin to bring a child into this broken world.   A Saint who has sex with another character must immediately change to another playbook.",
+        "advancement":[            
+            {"id":1,"description":"+1 Strange (max +3)"},
+            {"id":2,"description":"+1 Quick (max +2)"},
+            {"id":3,"description":"+1 Grit (max +2)"},
+            {"id":4,"description":"+1 Savvy (max +2)"},
+            {"id":5,"description":"Get another Saint move."},
+            {"id":6,"description":"Get another Saint move."},
+            {"id":7,"description":"Gain another Holy Relic."},
+            {"id":8,"description":"Get a small Town and the Wealth move, or a Homestead and the Bounty of the Land move."},
+            {"id":9,"description":"Get a move from another playbook."},
+            {"id":10,"description":"Get a move from another playbook."}
+        ],
+        "custom":null
+    },
+    "siren":{
+        "name": "The Siren",
+        "key": "siren",
+        "description":"Beauty, grace, raw sex appeal.  How many will you lead to their dooms?",
+        "look":[
+            {"gender": "Man, Woman, Nonconforming, Concealed"},
+            {"clothes": "Handmade Clothes, Luxurious Clothes, Mismatched Clothes, Practical Clothes"},
+            {"face": "Fine-Boned Face, Expressive Face, Gorgeous Face, Lively Face, Young Face"},
+            {"eyes": "Blazing Eyes, Golden Eyes, Innocent Eyes, Playful Eyes, Smoky Eyes, Sultry Eyes"},
+            {"body": "Curvy Body, Lithe Body, Sensual Body, Tattooed Body, Unusual Body, Vast Body"},
+            {"voice": "Forceful Voice, Gravely Voice, Seductive Voice, Soothing Voice, Steady Voice"}
+        ],
+        "stats":[
+            { "quick": 1, "grit": 0, "charm": 2, "savvy": 1, "strange": -1},
+            { "quick": 0, "grit": -1, "charm": 2, "savvy": 1, "strange": 1},
+            { "quick": -1, "grit": -1, "charm": 2, "savvy": 0, "strange": 2},
+            { "quick": 0, "grit": -1, "charm": 2, "savvy": 2, "strange": -1}
+        ],
+        "num_starting_moves":2,
+        "moves_list":[{"name":"", "description":""}],
+        "moves":{},
+        "gear":{
+            "what_you_get": "One sexy little weapon, two items of luxury, your clothes, and goods worth 3 Dinero.",
+            "gear_lists": [
+                {
+                    "category": "Sexy Little Weapons", 
+                    "description": "Choose 1", 
+                    "list": [                        
+                        "Derringer (2 harm close reload loud)",
+                        "Hidden Knives (2 harm close infinite)",
+                        "Ivory Handled Switchblade (2 harm hand valuable)",
+                        "Sword Cane (3 harm hand valuable)"
+                    ]
+                },
+                {
+                    "category": "Items of Luxury", 
+                    "description": "Choose 2", 
+                    "list": [                        
+                        "Expensive Jewelry (worn valuable)",
+                        "Gorgeous Clothes (worn valuable)",
+                        "Musical Instrument (valuable)",
+                        "Skin and Hair Kit (applied valuable) (using it gives you +1 Charm forward)",
+                        "Spectacular Tattoos (implanted)",
+                        "A Pet (valuable alive)",
+                        "A Horse (see horse rules)"
+                    ]
+                }
+            ]
+        },
+        "starting_horse": false,
+        "history":[
+            {"question":"Which of you is my lover?","amount":"2"},
+            {"question":"Which of you do I truly love?","amount":"-1"},
+            {"question":"Everyone else... People can't help opening themselves up around you.","amount":"1"}
+        ],
+        "special":"Whenever you and another character have sex, choose one of the following three options:\n*Turn their sex move back on them- they use their sex move, and you use their sex move. \n*Commit their sex move to memory. \n*Use any sex move you've previously learned.",
+        "advancement":[
+            {"id":1,"description":"+1 Charm (max +3)"},
+            {"id":2,"description":"+1 Quick (max +2)"},
+            {"id":3,"description":"+1 Grit (max +2)"},
+            {"id":4,"description":"+1 Savvy (max +2)"},
+            {"id":5,"description":"Get another Siren move."},
+            {"id":6,"description":"Get another Siren move."},
+            {"id":7,"description":"Get an Ally."},
+            {"id":8,"description":"Get a small Town and the Wealth move, or a Homestead and the Bounty of the Land move."},
+            {"id":9,"description":"Get a move from another playbook."},
+            {"id":10,"description":"Get a move from another playbook."}
+        ],
         "custom":null
     },
     "horse":{
