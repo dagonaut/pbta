@@ -1,0 +1,41 @@
+{
+    "basic":[
+        {
+            "name":"Act Under Pressure (reason)",
+            "description":"When you hurriedly flee, are doing something quickly and precisely, or are trying to resist something frightening, roLL+reason.\non a 10+, you do it.\non a 7–9, you flinch, hesitate, cave, or stall.\nThe Keeper will offer you a worse outcome, a hard bargain, or an ugly choice (as per p. 171).",
+        },
+        {
+            "name":"convince (affinity)",
+            "description":"When you have something someone wants, you can use your charm, wit, or wiles to get them to do something for you first, roLL+affiniTy.\nfor NPCs:\non a 10+, they ask you to promise something first, and then do what you ask once you promise.\non a 7–9, they need some concrete assurance first, otherwise they refuse.\nfor PCs:\non a 10+, the target chooses one of the following: \n• If they do it, they gain a point of Lore.\n• If they refuse, they must acT under pressure.\non a 7–9, the target chooses one of the following: \n• They can choose to do it for no gain.\n• If they refuse, they must acT under pressure.\non a 6 or Less, they lose a point of Trust with you. What they do then is up to them.",
+        },
+        {
+            "name":"Help/Hinder (trust)",
+            "description":"When you help or hinder someone making a move, roLL+trust.\non a 10+, they take a +2 (help) or -2 (hinder) to their move. on a 7-9, they take a +1 (help) or -1 (hinder) to their move, and you expose yourself to danger, retribution, or other consequences.\non a 6 or Less, they lose a point of Trust with you or the Keeper holds one to use as a hard move (your choice).",
+            "note": "How many people can help in a given situation is determined by the Keeper, and you must narratively state how you’re helping. Keep in mind, even if the person you help succeeds (gets a total of 10+), you could still suffer a consequence if you only get a partial success (7-9). Your Trust in others is used when you heLp/hinder them, so if you have TrusT +2 in Meg, and she has TrusT +1 in you, you’d roLL+2 to heLp/hinder her while she would roLL +1 to do the same for you."
+        },
+        {
+            "name":"Poke Around (luck)",
+            "description":"When you poke around a place physically looking for things, roll+luck. Additional attempts to search the same area are made at a cumulative -1 unless the Keeper informs you something substantial has changed.\non a 10+, seLect 1 of the following:\nFind 1 good item (Keeper’s choice) 1 minor item (your choice)\n1 clue (+1ongoing when acted upon) or pick one from 7-9 table.\non a 7–9, you May:\nFind hidden area/threshold (in/out) (Keeper’s Choice)\nFind minor item (Keeper’s choice)\nDetermine a physical hazard present (if none, you find that out)\non a 6 or Less, there is either nothing else in the area or the Keeper may hold 1 to use as a hard move at any time and you may attempt to search further.",
+        },
+        {
+            "name":"PuzzLe Things Out (reason)",
+            "description":"When you face an intellectual dilemma, learn a new piece of information, or discover a clue, you may roll+reason to attempt to puzzle things out. On a 7+, you get to ask one or more questions. Whenever you act on one of the Keeper’s answers, take +1ongoing.\non a 10+, ask 3 from below OR gain 1 Lore.\non a 7–9, ask 1:\n• What is this?\n• What does this mean?\n• How can I get in/out/pass?\n• Who’s in control here?\n• Which enemy before me is the most dangerous?\n• What is its weakness?\n• What should I keep an eye out for?\n• How does __________ fit into ______________?\nOf the most common questions that will arise, this is just a small sample. The Keeper should allow for some situational flexibility. Whenever the characters get new information, or seem to be stuck, you can call for one of these rolls. A character cannot attempt to puzzLe Things ouT more than once until further information is gained.\nWhen you gain Lore, you might think you are missing out on those delicious questions—and you’re right. The Keeper is free to tell you what they will, or let you ask questions, or give you some Dark Insight based upon your background (an Alienist might recall a patient talking about some relevant thing, or a Detective might remember a particularly gruesome case with eerie similarities), or tell you nothing at all. You have the choice to take Lore or ask the questions. When you gain Lore, you never know exactly what you’re going to find out—that is all up to the Keeper.",
+        },
+        {
+            "name":"Read a Person (passion)",
+            "description":"When you want to figure out what someone is thinking or feeling, roll+passion.\non a 10+, hold 3. on a 7–9, hold 1.\nWhile you’re interacting with them, spend your hold to ask questions about the character, 1 hold per question:\n• Are they telling the truth?\n• What are they really feeling?\n• What do they intend to do?\n• What do they wish I would do?\n• How could I get them to _____?"
+        },
+        {    
+            "name":"Resort to VioLence (might)",
+            "description":"When you cast aside all pretense of civility and wish to harm your enemy regardless of personal safety, then you roll+might as you resort to violence. You may wrest control of an item or situation from another in this manner, whether it be with fists or feet, or a more proper weapon, but you do so with malice in your heart. There will likely be pain, if not bloodshed, on both sides, as you attack. You will likely take damage in this exchange, regardless of the outcome. With at least a 7-9, you can opt to decrease the damage suffered by 1 point. 0 damage can still prompt a damage move in this circumstance.\non a 10+, choose 3 from 7-9 below.\non a 7–9, choose 2:\n• You take definite hold of the target item.\n• You suffer little harm (take -1 harm).\n• You inflict terrible harm (cause +1 harm).\n• You impress, dismay, or frighten your enemy.\nAn impressed, dismayed, or frightened NPC enemy absolutely must change their behavior, but it’s up to the Keeper how they do so.\nFor PCs, pressing an attack when they’re impressed, dismayed, or frightened requires them to acT under pressure."
+        },
+        {
+            "name":"Threaten (might)",
+            "description":"When you threaten someone or something, roll+might. You are physically engaging them, with the deadly promise of violence.\non a 10+, they have to choose 1:\n• Force your hand and take whatever damage you inflict, or • Back down and do what you want.\non a 7–9, they can instead choose 1:\n• Hurriedly get out of your way.\n• Barricade themselves securely in.\n• Give you something they think you want.\n• Back off calmly, hands where you can see.\n• Tell you what you want to know (or what you want to hear)."
+        },
+        {
+            "name":"Take Harm (damage)",
+            "description":"When you suffer damage,roLL+damage suffered(aftersubtractingany protections you may have). No other modifiers come into play.\non a 10+, the Keeper can choose 1:\n• You’re out of action: unconscious, trapped, incoherent, or panicked. • It’s worse than it seemed. Take an additional 1 damage.\n• Choose 2 from the 7–9 list below.\non a 7–9, the Keeper can choose 1:\n• You lose your footing.\n• You lose your grip on whatever you’re holding.\n• You lose track of someone or something you’re attending to. • You miss noticing something important.\non a 6 or Less:\nThe Keeper can still choose something from the 7–9 list above. If they do, damage suffered is reduced by 1 (to a minimum of 0)."
+        }
+    ]
+}
