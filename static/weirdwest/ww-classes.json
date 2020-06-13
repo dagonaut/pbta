@@ -416,12 +416,7 @@
         "moves":{},
         "gear":{
             "what_you_get": "You get 2 solid weapons, a horse, possibly including Armor 1 (a leather duster?), your clothes, and goods worth 1 Dinero",
-            "gear_lists": [
-                {
-                    "category": "Doctor's Bag", 
-                    "description": "Your Doctor's Bag contains your medical supplies- (scalpels, forceps, tourniquets, diagnostic tools, sutures, bandages, treppanning kit, leather straps, reusable syringes, various tonics and tinctures, several doses of laudanum, opiates, amd cocaine.) It starts play with 6 Supply. You can normally purchase 2 Supply for 1 Dinero, if you're in a situation where bartering is available.", 
-                    "list": []
-                },
+            "gear_lists": [                
                 {
                     "category": "Solid Weapons", 
                     "description": "", 
@@ -547,7 +542,7 @@
         ],
         "custom":{
             "name":"Your Town(s)",
-            "description":"By default, your Town has: \n*75-150 people living and working in it. \n*For potential work, a mix of hunting, farming, and scavenging.  Surplus: 1 Dinero, Want: hungry. \n*Anywhere from 10 to 30 buildings of a mix of wood and stone, and a sturdy defensive compound.  \n*Your gang gets +1 armor when fighting in its defense. \n*An armory of scavenged weapons. \n*A gang of about 40 violent people (2 harm gang medium unruly 0 armor)",
+            "description":"By default, your Town has: \n•75-150 people living and working in it. \n•For potential work, a mix of hunting, farming, and scavenging.  Surplus: 1 Dinero, Want: hungry. \n•Anywhere from 10 to 30 buildings of a mix of wood and stone, and a sturdy defensive compound.  \n•Your gang gets +1 armor when fighting in its defense. \n•An armory of scavenged weapons. \n•A gang of about 40 violent people (2 harm gang medium unruly 0 armor)",
             "lists":[
                 {
                     "name": "Bonuses",
@@ -604,12 +599,7 @@
         "moves":{},
         "gear":{
             "what_you_get": "You get one home defense weapon, your clothes, and a horse.",
-            "gear_lists": [
-                {
-                    "category": "Doctor's Bag", 
-                    "description": "Your Doctor's Bag contains your medical supplies- (scalpels, forceps, tourniquets, diagnostic tools, sutures, bandages, treppanning kit, leather straps, reusable syringes, various tonics and tinctures, several doses of laudanum, opiates, amd cocaine.) It starts play with 6 Supply. You can normally purchase 2 Supply for 1 Dinero, if you're in a situation where bartering is available.", 
-                    "list": []
-                },
+            "gear_lists": [                
                 {
                     "category": "Home Defense Weapons", 
                     "description": "", 

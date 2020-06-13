@@ -39,7 +39,7 @@
                 gear: "",
                 notes: "",
                 advancements: [],
-                visibility: { moves: true, classinfo: true, model: false },
+                visibility: { moves: true, classinfo: true, model: false, custom: true },
                 createdby: userId
             };
             vm.cd = angular.copy(vm.blankCharacter);
@@ -56,7 +56,16 @@
                 { key: "saint", value: "The Saint"},
                 { key: "sawbones", value: "The Saw Bones"},
                 { key: "siren", value: "The Siren"}
-            ]
+            ];
+            vm.nameOptions = { 
+                male: true,
+                female: true,
+                cowboy: true,
+                simple: true,
+                native_american: true,
+                spanish: true,
+                asian: true
+            }           
 
             vm.userId = userId;
 
@@ -261,6 +270,11 @@
             function markHarm(level){
                 vm.cd.harm = level;
 
+            }
+
+            // Name Generator
+            function getName(){
+                
             }
         }
 })();

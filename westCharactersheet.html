@@ -7,6 +7,15 @@
     .bg-orange{background-color:#d38336;}
     .pointer{cursor: pointer;}
     .d-flex{display:flex;}
+    .harm-input{
+        width:15px;
+        height:15px;
+        border:1px #cdcdcd solid;
+        cursor: pointer;
+    }
+    .harm-label{
+        margin-left:5px;
+    }
 </style>
 <form id="charSheet" name="charSheet" class="container-fluid">
     <div class="row">
@@ -25,14 +34,16 @@
             <div class="pointer" ng-click="vm.cd.visibility.classinfo = !vm.cd.visibility.classinfo">{{vm.cd.visibility.classinfo ? 'Hide' : 'Show'}} Starting Info</div>
         </div>
     </div>
-    <div class="row" ng-if="vm.cd.id > -1">
-        Name: <input ng-model="vm.cd.name" />
-        <label>Class:</label>
-        <select ng-model="vm.cd.class" style="width:150px;height:27px;">
-            <option ng-repeat="class in vm.classes_list" value="{{class.key}}">{{class.value}}
-            </option>
-        </select>
-        Look: <input ng-model="vm.cd.look" />
+    <div class="row" ng-if="vm.cd.id > -1" style="margin:5px 0px;">
+        
+            Name: <input ng-model="vm.cd.name" />
+            <label>Class:</label>
+            <select ng-model="vm.cd.class" style="width:150px;height:27px;">
+                <option ng-repeat="class in vm.classes_list" value="{{class.key}}">{{class.value}}
+                </option>
+            </select>
+            Look: <input ng-model="vm.cd.look" />
+        
     </div>
     <div class="row" ng-if="vm.cd.id > -1">
         <!-- Column 1 -->
@@ -60,24 +71,9 @@
                 </div>             
             </div>
             <!-- Harm / Armor / Dinero -->
-            <div class="stat row">
-                
-                
-                
-                
-            </div>
-            <style>
-                .harm-input{
-                    width:15px;
-                    height:15px;
-                    border:1px #cdcdcd solid;
-                    cursor: pointer;
-                }
-                .harm-label{
-                    margin-left:5px;
-                }
-            </style>
+            
             <div class="harm row">
+                <h2>Harm:</h2>
                 <div class="d-flex" style="justify-content:space-between;">
                     <div class="harm-label">Go ahead, make my day</div><div class="clear pointer" ng-click="vm.markHarm(0)">clear all</div>
                 </div>
@@ -142,7 +138,11 @@
         <!-- Column 2 -->
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
             
-            <h2>Moves: (<span style="cursor: pointer;font-size:smaller;" ng-click="vm.cd.visibility.moves = !vm.cd.visibility.moves">Show {{ vm.cd.visibility.moves ? 'Selected Only' : 'All'}}</span>)</h2>
+            <h2>
+                Moves: 
+                <span class="pull-right pointer" style="font-size:smaller;" 
+                    ng-click="vm.cd.visibility.moves = !vm.cd.visibility.moves">Show {{ vm.cd.visibility.moves ? 'Selected Only' : 'All'}}</span>
+            </h2>
             <div ng-repeat="move in vm.classmoves.moves | filter: { class: vm.cd.class }" ng-show="vm.filterMoves(move.id);">
                 <input
                             id="move_{{move.id}}"                             
@@ -155,19 +155,26 @@
         </div>
         <!-- Column 3 -->
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
-            <div ng-if="vm.static[vm.cd.class].custom !== null">
-                <h2>{{vm.static[vm.cd.class].custom.name}}</h2>
+            <h2>{{vm.static[vm.cd.class].custom.name || 'Notes'}}
+                <span style="font-size:smaller;" class="pointer pull-right" ng-if="vm.static[vm.cd.class].custom !== null" 
+                    ng-click="vm.cd.visibility.custom = !vm.cd.visibility.custom">{{ vm.cd.visibility.custom ? 'Hide' : 'Show'}} Options</span>
+            </h2>
+            <div ng-if="vm.static[vm.cd.class].custom !== null && vm.cd.visibility.custom">
                 <pre>{{vm.static[vm.cd.class].custom.description}}</pre>
-                
+                <div ng-repeat="list in vm.static[vm.cd.class].custom.lists">
+                    <div ng-if="list.description !== ''">{{list.description}}</div>
+                    <div>Choose {{list.choose}}:</div>
+                    <pre>
+                        <div ng-repeat="item in list.choices">•{{item}}</div>
+                    </pre>
+                </div>
             </div>
+            <textarea ng-model="vm.cd.notes"></textarea>            
             <h2>Gear:</h2>
             <div>
                 <textarea ng-model="vm.cd.gear"></textarea>
             </div>
-            <h2>Notes:</h2>
-            <div>
-                <textarea ng-model="vm.cd.notes"></textarea>
-            </div>
+            
         </div>
         <!-- Column 4 -->
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'hidden'">
