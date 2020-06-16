@@ -1,0 +1,1412 @@
+[
+    {
+        "id": 198,
+        "gameid": 4,
+        "type": "starting",
+        "class": "driver",
+        "name": "Second Skin",
+        "description": " When jacked in through your Neural Interface to a cyber-linked vehicle: <br />» when you act under pressure, roll Cool + your car’s power <br />» if you mix it up, roll Synth (instead of Meat) + your car’s power <br />» if you play hardball, roll Edge + your car’s looks <br />» if you help or interfere with someone, roll Links + your car’s power <br />» if someone interferes with you, add your car’s weakness to their roll (in addition to their links)  ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 199,
+        "gameid": 4,
+        "type": "starting",
+        "class": "driver",
+        "name": "Chromed",
+        "description": " Choose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did for your first piece of cyberware. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 200,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "driver",
+        "name": "Daredevil",
+        "description": " When you drive straight into danger without hedging your bets, you get +1 armour. If you take one or more harm, mark experience. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 201,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "driver",
+        "name": "Drone Jockey",
+        "description": " You start with two drones. See Drones section on back.  ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 202,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "driver",
+        "name": "Eye in the sky",
+        "description": " When helping or interfering while piloting a drone, roll Edge instead of Links. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 203,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "driver",
+        "name": "Hot shit driver",
+        "description": " When you’re driving a cyber-linked vehicle in a high-pressure situation, roll Edge. On a 10+ hold 3, one 7-9 hold 1. You may spend 1 hold to do one of the following: <br />» Avoid one external danger (a rocket, a burst of gunfire, a collision, etc). <br />» Escape one pursuing vehicle. <br />» Maintain control of the vehicle. <br />» Impress, dismay or frighten someone. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 204,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "driver",
+        "name": "Iceman",
+        "description": " When you try to fast talk someone, roll Cool. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 205,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "driver",
+        "name": "Right tool for the job",
+        "description": " You have two additional cyber-linked vehicles (build each in the same way as your custom vehicle). ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 206,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "driver",
+        "name": "Sweet Ride",
+        "description": " When you hit the street in your vehicle, roll Style + your  vehicle’s Looks.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 207,
+        "gameid": 4,
+        "type": "starting",
+        "class": "fixer",
+        "name": "Hustling",
+        "description": "See Hustling section between missions ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 208,
+        "gameid": 4,
+        "type": "starting",
+        "class": "fixer",
+        "name": "I know People",
+        "description": "Once per mission you may introduce a new Contact. Name the contact, say what they do, then roll Style. 10+: you’ve worked with the contact before; they have talent. Write them down as a Contact 7-9: you’ve never met them before, they’re an unknown quantity 6-: you know them all right. Tell the MC why they dislike you After you’ve rolled, describe how you contact them; the MC will ask some questions. Choose one more: ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 209,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "fixer",
+        "name": "Backup",
+        "description": " You have a group of “associates” who provide security. This is a small gang of 5-10 hired thugs (2-harm +small +employees 1-armour). Pick 2: <br />» Your associates are well armed: add 1 harm <br />» Your associates are well armoured: +1 armour and +obvious <br />» Your associates are ex-military: add +disciplined <br />» Your associates are more than muscle to you: replace +employees with +loyal <br />» Your associates have bikes or a couple of other vehicles: add +mobile <br />» You have a large group of associates (15-30): replace +small with +medium Gain the following job, and +1 crew: <br />» Protection: Your associates have your back  Disaster: Your associates have pissed off the wrong people.  ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 210,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "fixer",
+        "name": "Balls in the air",
+        "description": " +1 crew and choose a new job. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 211,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "fixer",
+        "name": "Chromed",
+        "description": " Choose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did your first piece of cyberware. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 212,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "fixer",
+        "name": "Deal of a lifetime",
+        "description": " When you hit the street to sell something and roll a 7-9, choose  one fewer result. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 213,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "fixer",
+        "name": "Facetime",
+        "description": " When you engage someone in face to face conversation without intervening technology, take +1 forward to fast talk them. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 214,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "fixer",
+        "name": "Hard to find",
+        "description": " You keep a low profile and actively avoid the people you owe. When you hit the street and roll a 7-9, choose one fewer result. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 215,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "fixer",
+        "name": "Reputation",
+        "description": " when you meet someone of consequence who might have heard of you, roll Edge. On a hit, say what they know about you. On a 10+, take +1 forward with them. On a miss, the MC will decide what they’ve heard about you, if anything. Either you or the MC can say whether someone is “of consequence”, but once you’ve made the reputation move on someone, they’re “of consequence” and will be a recurring part of the story. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 216,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "fixer",
+        "name": "Sales Engineer",
+        "description": " You’ve demonstrated the use of just about every piece of gear available on the street. When you produce equipment, take +1 forward with that piece of gear if you use it immediately. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 217,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "fixer",
+        "name": "Smooth",
+        "description": " when you help or interfere with someone, roll Style instead of Links. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 218,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "fixer",
+        "name": "Street kingpin",
+        "description": " +1 crew and choose a new job. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 219,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "fixer",
+        "name": "Word on the Street",
+        "description": " when you research by listening to or recalling street level gossip, take an additional [intel], even on a miss.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 220,
+        "gameid": 4,
+        "type": "starting",
+        "class": "hacker",
+        "name": "Jack in",
+        "description": " When you’re jacked into the matrix, you have access to the matrix moves in Chapter 8: The Matrix. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 221,
+        "gameid": 4,
+        "type": "starting",
+        "class": "hacker",
+        "name": "Console Cowboy",
+        "description": "When you connect to a secure system, roll Mind.  10+: gain 3 hold. 7-9: gain 1 hold While in that system, you may spend 1 hold for any of the following effects: <br />» Prevent a construct from triggering an alert <br />» Avoid an ICE routine executed against you, your deck, or your programs <br />» Increase your hold over compromised security or manipulated systems by 1 ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 222,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hacker",
+        "name": "Black ICE Vet",
+        "description": " When Black ICE executes a routine against you, the MC only chooses two options. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 223,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hacker",
+        "name": "Chromed",
+        "description": " Choose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did your first piece of cyberware. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 224,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hacker",
+        "name": "ICE Breaker",
+        "description": " You know how to disable ICE quickly and quietly. Once per Matrix run you may cancel a routine executed against you, your deck, or your programs. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 225,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hacker",
+        "name": "Neural Scars",
+        "description": " you have 1-armour against Black ICE. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 226,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hacker",
+        "name": "Programming on the Fly",
+        "description": " You can adapt your programs to the specific weaknesses of matrix constructs as you encounter them. When you successfully compromise security or manipulate systems, hold +1. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 227,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hacker",
+        "name": "Rep",
+        "description": " When you appear in the Matrix with a recognisable avatar, roll Synth instead of Style for fast talk and instead of Edge for play hardball. When your reputation gets you into trouble, mark experience. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 228,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hacker",
+        "name": "Search Optimisation",
+        "description": " When you research a topic in the Matrix, you may always ask a follow up question. On a 10+, take an additional [intel]. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 229,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hacker",
+        "name": "Tech Support",
+        "description": " When you help a team member while jacked into the matrix, roll Mind instead of Links. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 230,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hacker",
+        "name": "Zeroed",
+        "description": " Your identity is a mystery which you closely guard.  Your deck has +2 Stealth.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 231,
+        "gameid": 4,
+        "type": "starting",
+        "class": "hunter",
+        "name": "Ear to the Ground",
+        "description": " You have a knack for loosening lips and picking up information. When you circulate among a neighbourhood or a group of people, you may research to gather information. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 232,
+        "gameid": 4,
+        "type": "starting",
+        "class": "hunter",
+        "name": "It all fits together!",
+        "description": " You’re a master of making connections between seemingly unrelated events. At the start of a mission, roll Edge. 10+: gain 3 hold.  7-9: gain 1 hold. As you put everything together during the mission, spend 1 hold at any time to ask a question from the research list. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 233,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hunter",
+        "name": "Big Game Hunter",
+        "description": " When you spring a trap for a target you have investigated, roll Edge. 7+: you have them trapped, the only way out is through you.  10+: they are at your mercy; if the target attempts to escape, roll Edge instead of Meat to mix it up ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 234,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hunter",
+        "name": "Chromed",
+        "description": " Choose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did your first piece of cyberware. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 235,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hunter",
+        "name": "Deadbeat",
+        "description": " Everyone knows you only help your friends out when its convenient for you. When you hit the street, you never take the -1 penalty when you avoid your contacts’ problems. You may still select the option that your contact has a problem, and if you do that choice may have fictional effects. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 236,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hunter",
+        "name": "Enhance",
+        "description": " When you examine your gathered evidence, gain [intel] and roll research with Edge instead of Mind. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 237,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hunter",
+        "name": "Eye for detail",
+        "description": " You are a master at tailing people and staking out locations. When you perform surveillance on a person or a place, gain [intel] and roll assess. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 238,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hunter",
+        "name": "Human Terrain",
+        "description": " When you investigate a group and spend [intel], name that group as your target. You gain +1 ongoing while acting against or in pursuit of that group. You may only target one group at a time. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 239,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hunter",
+        "name": "On the Trail",
+        "description": " When you want to find someone or something, name your target. When you gain [intel], you may note that it concerns your target. When you spend three such [intel], the MC will describe where your target is; you say how the clues led you to that knowledge and how you have your target or its defenses at a disadvantage. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 240,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hunter",
+        "name": "See the Angles",
+        "description": " At the start of the Action Phase, hold [intel] and [gear]. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 241,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "hunter",
+        "name": "Sniper",
+        "description": " When you set up a covered and concealed place to hide, roll Cool. 10+: choose 3. 7-9: choose 2 <br />» Your site is well hidden <br />» Your site has excellent cover <br />» Your site has an excellent field of view <br />» You have a similarly covered and concealed backup location <br />» Your spot is well secured Then describe your hide site",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 242,
+        "gameid": 4,
+        "type": "starting",
+        "class": "infiltrator",
+        "name": "Covert Entry",
+        "description": " When you attempt to infiltrate a secure area alone, roll Cool. 10+: gain 3 hold. 7-9: gain 1 hold. As the MC describes the infiltration and the security measures you must overcome, you may spend 1 hold to describe how you overcome the obstacle and: <br />» Bypass a security system or guard. <br />» Disable a security system you have bypassed. <br />» Disable a guard. <br />» Escape notice. Choose one of these: ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 243,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "infiltrator",
+        "name": "Cat Burglar",
+        "description": "You specialise in infiltrating unconventional access points and manoeuvring through locations by unconventional routes. During your infiltration, you will have opportunity to steal incidental portable items that might be useful later. After you have spent all your Covert Entry hold infiltrating a secure area through stealth and dexterity, gain [gear]. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 244,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "infiltrator",
+        "name": "Face",
+        "description": " You specialise in infiltrating by appearing to belong in places you do not, hiding in plain sight. During your infiltration, you will have opportunity to see or overhear information which might be relevant later. After you have spent all your Covert Entry hold infiltrating a secure area through charm and social graces, gain [intel].  ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 245,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "infiltrator",
+        "name": "Assassin",
+        "description": " When you attack unexpectedly, ask one question from the assess list for free. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 246,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "infiltrator",
+        "name": "Case the Joint",
+        "description": " When you take time to examine a location for security weaknesses you can exploit, roll Edge. 10+: gain three [intel]. 7-9: gain [intel] You may spend this [intel] in the normal way, or you can spend one point of this [intel] to ask questions from the assess or research lists. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 247,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "infiltrator",
+        "name": "Chromed",
+        "description": " Choose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did your first piece of cyberware. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 248,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "infiltrator",
+        "name": "Jack in",
+        "description": " When you’re jacked into the matrix, you have access to the matrix moves.  Note: You need a neural interface and a cyberdeck to make the most of this move. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 249,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "infiltrator",
+        "name": "Master of Disguise",
+        "description": " You can sell a persona so well that you set security forces at ease. While you are in disguise and your cover has not been blown, when you roll a 12+ to fast talk you may lower the Action Clock by one segment. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 250,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "infiltrator",
+        "name": "Mother Duck",
+        "description": " When you infiltrate a location you can get your team in as well. When you spend hold to Bypass a security system or guard or Escape notice, your team may accompany you. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 251,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "infiltrator",
+        "name": "Plan B",
+        "description": " When shit hits the fan and you have to get out, name your escape route and roll Cool. 10+: sweet, you’re gone. 7–9: you can go or stay, but if you go it costs you: leave something behind, or take something with you; in either case, the MC will tell you what 6-: you’re caught in a vulnerable position, half in and half out. The MC will make a move ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 252,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "infiltrator",
+        "name": "Psychological Warfare",
+        "description": " When you attempt to influence the morale of your enemies by leaving evidence of violence while remaining undetected, roll Edge. 7+: your enemies are impressed and overly cautious, scared and demoralised, or angry and careless (MC’s choice). 10+: you choose ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 253,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "infiltrator",
+        "name": "Stealth Operative",
+        "description": " You have an intuitive sense of how to blend in with the rhythms of a secure area  and can take actions that make its security forces feel at ease. When you assess while undetected and roll a 12+, you may spend one hold to lower the Action Clock by one segment.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 254,
+        "gameid": 4,
+        "type": "starting",
+        "class": "killer",
+        "name": "Custom weapon",
+        "description": " Choose a base and two options. You may customise an implanted weapon; use the stats of the weapon as the base and add two appropriate options. Base (choose 1, any firearm can be +linked): handgun(s) (2 damage close/near loud quick) shotgun (3 damage close/near loud messy) rifle (3 damage near/far/extreme loud) blade (2 damage hand) chain or wire (1 damage close area) Options (choose 2): ornate (+valuable) antique (+valuable +reload) automatic (+autofire) silenced (-loud) hi-powered or weighted (+1 damage) big or dangerous (+1 damage) versatile (may inflict s-harm) ridiculous payload (+breach, +dangerous) subtle (+discreet, +reload) +numerous (small weapons only) When you’ve finished creating your weapon, name it. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 255,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "killer",
+        "name": "Emotionless",
+        "description": " When you play hardball, roll Synth. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 256,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "killer",
+        "name": "Hard",
+        "description": " When you make the harm move, subtract your Meat from your roll. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 257,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "killer",
+        "name": "Loaded for Bear",
+        "description": " choose another custom weapon. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 258,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "killer",
+        "name": "More machine than meat",
+        "description": " Choose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did your first piece of cyberware. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 259,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "killer",
+        "name": "Corporate Secrets",
+        "description": " You used to be a Company Man. When you research a corporation, you may always ask a follow up question. On a 10+, take an additional [intel]. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 260,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "killer",
+        "name": "Military Background",
+        "description": " You still have contacts in the military. When you hit the street for military gear and roll a 7-9, choose one fewer result.. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 261,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "killer",
+        "name": "Mil Specs",
+        "description": " When you mix it up, you count as a small gang. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 262,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "killer",
+        "name": "Serious Badass",
+        "description": " when you enter a charged situation, roll Style.  10+: gain 2 hold. 7–9: gain 1 hold.        Spend 1 hold to make eye contact with an NPC present, who freezes or flinches        and can’t act until you break it off.  6-: your enemies identify you immediately as their foremost threat ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 263,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "killer",
+        "name": "Trained Eye",
+        "description": " When you evaluate a person, vehicle, drone or gang, roll Cool. 7+: ask the target “How are you vulnerable to me?” Take +1 forward when acting on the answer. 10+: gain +1 ongoing when acting against that target ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 264,
+        "gameid": 4,
+        "type": "starting",
+        "class": "pusher",
+        "name": "Driven",
+        "description": " When you begin a mission that furthers your vision, roll Edge. 10+: gain 3 hold. 7-9: gain 1 hold. You may spend 1 hold before rolling any other move to take +1 or -2 forward to the move. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 265,
+        "gameid": 4,
+        "type": "starting",
+        "class": "pusher",
+        "name": "Vision Thing",
+        "description": " When you have time and space for an emotional connection with someone and you passionately advocate for your vision, roll Style. 10+: gain 2 hold. 7-9: gain 1 hold Spend 1 hold to have the targeted NPCs: • give you something you want • do something you ask • fight to protect you or your cause • disobey an order given by someone with authority or leverage over them When you use this move on a PC, spend your hold to help or interfere as if you had rolled a 10+ (i.e. give them +1 or -2). If you miss against a PC, they gain 2 hold against you which they can use in the same way. : ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 266,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "pusher",
+        "name": "Believers",
+        "description": " See back for options ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 267,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "pusher",
+        "name": "Bring it on Home",
+        "description": " Whenever you ask someone a question with one million points of light, you may ask a follow up question from the list. When you succeed at vision thing, gain 1 extra hold. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 268,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "pusher",
+        "name": "Chromed",
+        "description": " Choose another piece of cyberware at character creation or in downtime. Describe how you got it & paid for it the same as you did your first piece of cyberware. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 269,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "pusher",
+        "name": "Famous",
+        "description": " Your face is well known beyond the narrow scope of your people. Unless you disguise yourself, you will be recognised by many people you meet. If someone recognises you, you take +1 forward against them, but people will find out that you met them. Both you and the MC can declare that someone recognises you. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 270,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "pusher",
+        "name": "Inner Circle",
+        "description": " You have a group of loyal confidantes within your larger circle of believers. This is a small gang of 5-10 believers (2-harm small loyal 1-armour). Pick 2: <br />» Your confidantes are well armed: add +1 harm <br />» Your confidantes are well armoured: +1 armour and +obvious <br />» Your confidantes are ex-military: add +disciplined <br />» Your confidantes have bikes or a couple of other vehicles: add +mobile ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 271,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "pusher",
+        "name": "One Million Points of Light",
+        "description": " When you successfully advocate for your vision with vision thing, ask one of the following questions. You may spend 1 hold to ask one of the following questions: <br />»    What do you wish I’d do?   <br />»    How are you vulnerable? <br />»    Are you telling the truth?   <br />»    What do you intend to do? <br />»    How are you connected to the current events? <br />»    What do you most desire? ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 272,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "pusher",
+        "name": "Opportunistic",
+        "description": " When you help or interfere with someone, roll Edge. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 273,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "pusher",
+        "name": "People Person",
+        "description": " When you hit the street among people who share your vision and roll a 7-9, choose one fewer result.. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 274,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "pusher",
+        "name": "Rabble Rouser",
+        "description": " You may use vision thing to sway a potentially sympathetic crowd. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 275,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "pusher",
+        "name": "Silver Tongue",
+        "description": " When you fast talk someone and roll 7+, you get a little something extra. Take [intel].",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 276,
+        "gameid": 4,
+        "type": "starting",
+        "class": "reporter",
+        "name": "Live and On the Air",
+        "description": " When you go live from the scene and broadcast a stream to avoid harm and expose your target, roll Edge. 10+: you get the shot you want and are “escorted” to a position of safety 7-9: choose one: <br />» Your story irritates your target. (The MC will advance a relevant threat clock) <br />» Someone on your team gets hurt off camera <br />» Your story angers your employer <br />» Your rushed narrative is misinterpreted by the public with unintended consequences ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 277,
+        "gameid": 4,
+        "type": "starting",
+        "class": "reporter",
+        "name": "Nose for a Story",
+        "description": " At the start of a mission, roll Edge. 10+: gain 3 hold.  7-9: gain 1 hold During the mission, spend 1 hold to invoke one of the following effects: <br />» Ask one question from the research list <br />» Take +1 forward when monstering <br />» Find a piece of evidence that links this mission to a current story; start a Story Clock and a linked Noise Clock or roll to gather evidence ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 278,
+        "gameid": 4,
+        "type": "starting",
+        "class": "reporter",
+        "name": "Gather Evidence",
+        "description": " When you gather evidence to break a story, roll Mind. 10+: you get the evidence you need, advance that Story Clock.  7-9: you get the evidence, but tip your hand to someone implicated in your story; tell the MC which clock to advance: a relevant Corporate Clock, the linked Noise Clock or the relevant Mission Clock (Legwork or Action, depending on which phase of the current mission you’re in)  6-: the MC will advance the Noise Clock and make a move If the Story Clock reaches 0000 before the Noise Clock, the Reporter has broken the story before the implicated parties could cover up the evidence, or stop the investigation. The exact implications of this for the game will vary based on the story, but it should have a major impact on the implicated parties and will affect at least one Corporate Clock. If the Noise Clock reaches 0000 before the Story Clock, the implicated parties have tied up all the loose ends and the story is dead. Now that damage control is complete, they can deal with the Reporter permanently. Advance any relevant Corporate or Threat Clocks. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 279,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "reporter",
+        "name": "24/7 Live Feeds",
+        "description": " When you scan the feeds to research a topic, you may always ask a follow up question. On a 10+, take an additional [intel]. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 280,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "reporter",
+        "name": "Chromed",
+        "description": " Choose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did your first piece of cyberware. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 281,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "reporter",
+        "name": "Filthy Assistants",
+        "description": " When you spend [intel] and give mission advice based on your research, your team takes +1 forward to follow that advice and you mark experience. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 282,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "reporter",
+        "name": "Monstering",
+        "description": " When you corner someone and hound them with questions to get to  the bottom of a story, roll Edge. 10+: they tell you the truth, regardless of the consequences. 7-9: they give you enough to get you off their back, then when they’re safe, they choose one: <br />» they respond with fear <br />» they respond with anger <br />» they respond with clinical calm ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 283,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "reporter",
+        "name": "Press Pass",
+        "description": " If you reveal your public persona to fast talk your way in, do not roll the dice, you count as rolling a 10+. Take [intel] and advance the Legwork Clock. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 284,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "reporter",
+        "name": "Reliable Sources",
+        "description": " When you call your regular sources to research a topic, roll Style instead of Mind. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 285,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "reporter",
+        "name": "War Correspondent",
+        "description": " When acting under pressure while in physical danger, roll Edge instead of Cool. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 286,
+        "gameid": 4,
+        "type": "starting",
+        "class": "soldier",
+        "name": "Here’s the plan",
+        "description": " When you plan a Mission, everyone to whom you assign a task takes +1 ongoing while they act on that task according to the plan. Anyone who rolls a miss or goes off the plan loses their bonus for that mission. If you get paid, mark experience. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 287,
+        "gameid": 4,
+        "type": "starting",
+        "class": "soldier",
+        "name": "I Love It When a Plan Comes Together",
+        "description": " At the start of a mission, roll Edge. 10+: gain 3 hold  /  7-9: gain 1 hold During the mission, spend 1 hold for one of the following effects: <br />» You have that piece of gear that you need, right now <br />» You appear in a scene where you are needed, right now 6-: gain 1 hold anyway, but your opponent has predicted your every move; the MC will advance the Legwork Clock",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 288,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "soldier",
+        "name": "Aura of Professionalism",
+        "description": " When you get the job and try to get paid, choose one extra option, even on a miss. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 289,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "soldier",
+        "name": "Chromed",
+        "description": " Choose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did your first piece of cyberware. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 290,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "soldier",
+        "name": "Corporate Knowledge",
+        "description": " You used to be a Company Man. When you research a corporation, you may always ask a follow up question. On a 10+, take an additional [intel]. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 291,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "soldier",
+        "name": "Exit Strategy",
+        "description": " You always have an escape plan prepared. When shit hits the fan and you decide to bail out, roll Mind. 7+: You escape the situation. 10+: choose one thing to leave behind. 7-9: choose two things <br />» Your team <br />» A mission objective <br />» Identifiable evidence <br />» Your staked Cred ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 292,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "soldier",
+        "name": "Hands-on Management",
+        "description": " When you mix it up while directing a mission from the front, roll Mind instead of Meat. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 293,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "soldier",
+        "name": "Recruiter",
+        "description": " When you attempt to recruit a specialist or a team of specialists to directly assist with your mission, roll Edge. 10+: choose 2. 7-9: choose 1:  Reliable professional(s)  /  A small team (up to 5)  /  As competent as required ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 294,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "soldier",
+        "name": "Slippery",
+        "description": " At the end of a mission during which you planted or hid evidence to shift blame away from you and your team, name who you threw under the corporate bus and roll Edge. 7+: the MC will not increase corporate clocks in the retaliation phase 10+: the MC will reduce a corporate clock by one 6-: create or increase the Threat Clock of whoever you threw under the bus ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 295,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "soldier",
+        "name": "Steady Presence",
+        "description": " When you give someone a pep talk while in a stressful situation, you help them as if you had rolled 10+. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 296,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "soldier",
+        "name": "Tactical Operations",
+        "description": " When you assess while leading a mission from the front, hold +1, even if you miss.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 297,
+        "gameid": 4,
+        "type": "starting",
+        "class": "tech",
+        "name": "Expert",
+        "description": " Choose one area of expertise from list on back: ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 298,
+        "gameid": 4,
+        "type": "starting",
+        "class": "tech",
+        "name": "Storage",
+        "description": " After receiving a job you may look through your accumulated parts and supplies for equipment that might help with the current mission. Roll Mind. 10+: gain 3 [gear] relevant to your chosen area(s) of expertise. 7-9: gain 1 [gear] relevant to your chosen area(s) of expertise. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 299,
+        "gameid": 4,
+        "type": "starting",
+        "class": "tech",
+        "name": "Customiser",
+        "description": " You can identify and examine new or complicated technology related to your area of expertise, and modify technology with which you are familiar. When you try to modify a piece of tech, tell the MC what you want to do and discuss what tags or game effect that modification will have. The MC will tell you the requirements in terms of: time / tools / parts / help from contacts / more research  ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 300,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "tech",
+        "name": "Analytic",
+        "description": " When you assess, roll Mind instead of Edge. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 301,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "tech",
+        "name": "Blend In",
+        "description": " When you’re about to be caught somewhere you shouldn’t be, but look and act like you belong there, roll Cool. 10+: no one thinks twice about your presence until you do something to attract attention 7-9: you’ll be fine as long as you leave right now, but if you do anything else, your presence will arouse suspicion ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 302,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "tech",
+        "name": "Bypass",
+        "description": " When you attempt to subvert security measures (bypassing a locked door, disabling an alarm, camera or motion detector, etc), roll Cool. 7+: you successfully bypass the system without leaving a trace 10+: you gain some valuable insight into the facility’s security, gain [intel] ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 303,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "tech",
+        "name": "Chromed",
+        "description": " Choose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did your first piece of cyberware. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 304,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "tech",
+        "name": "Diverse Interests",
+        "description": " Choose one more area of expertise. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 305,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "tech",
+        "name": "Jack of All Trades",
+        "description": " Choose one more area of expertise. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 306,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "tech",
+        "name": "Obsessive",
+        "description": " When you shut yourself away with a problem or piece of cutting edge tech, make a research move. You may use one question to ask any question about the object of your contemplation and study. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 307,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "tech",
+        "name": "On it",
+        "description": " When your areas of expertise are central to helping or interfering with a teammate, roll Cool instead of Links. ",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 308,
+        "gameid": 4,
+        "type": "advanced",
+        "class": "tech",
+        "name": "Renaissance Man",
+        "description": " Choose one more area of expertise.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 309,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "ACT UNDER PRESSURE (COOL)",
+        "description": ", act while in danger or act to avoid danger, roll Cool. 10+: you do it, no problem 7-9: you stumble, hesitate, or flinch: the MC will offer you a worse outcome, hard bargain, or ugly choice If you want to do something on a mission that isn't covered by the other moves, it probably involves danger or time pressure. Act under pressure involves instinctive reaction and sheer nerve which makes it a solid choice when you know a character has made a move but the action doesn't seem to fit any other move. Act under pressure to immediately find a hiding spot, run across a plaza under the noses of a security team, or cut through the vault door before the security office notices the cameras are down. Assess and several Playbook Moves allow you to spend hold to take actions that might otherwise require you to act under pressure. In those cases, advanced planning, careful positioning, or clever manoeuvring allow you to defuse the element that would otherwise cause you trouble.",
+        "trigger": "When you race against the clock",
+        "createdby": 1
+    },
+    {
+        "id": 310,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "APPLY FIRST AID (COOL)",
+        "description": ", roll Cool. 10+: if their Harm Clock is at 2100 or less, reduce their harm by two segments. If their Harm Clock is at more than 2100, reduce their harm by one segment 7-9: reduce their harm by one segment. If their Harm Clock is still at more than 2100, they take -1 ongoing until they receive proper medical attention. Once a character has been given first aid, more first aid will not heal them further until they suffer harm again. First aid cannot heal missing body parts or damaged cyberware. To fix those problems, you'll need to make a deal with someone. Trauma Derms are appropriate medical equipment for wounds at 2100 or less, more serious wounds require an EMT kit.",
+        "trigger": "When you treat someone's wounds using appropriate medical equipment",
+        "createdby": 1
+    },
+    {
+        "id": 311,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "ASSESS (EDGE)",
+        "description": ", roll Edge. 10+: gain 3 hold 7-9: gain 1 hold In the ensuing action, you may spend 1 hold at any time to ask the MC a question from the list below if your examination could have revealed the answer. The MC may ask you questions to clarify your intent. Take +1 forward when acting on the answers. <br />» What potential complication do I need to be wary of? <br />» What do I notice despite an effort to conceal it?<br />» How is ______ vulnerable to me? <br />» How can I avoid trouble or hide here? <br />» What is my best way in/way out/way past? <br />» Where can I gain the most advantage? <br />» Who or what is my biggest threat in this situation? <br />» Who or what is in control here? <br /> Assess is the move for examining a person, place or situation for useful information. Use it to gather information in the Legwork Phase, and to gain tactical advantage in tense situations. Although it has a restricted list of questions, it is more versatile than it seems. As MC, be generous with your answers to assess. Paint a detailed picture of the scene so the players can accurately imagine and describe their characters actions within it. Remember, you are the players' window into the fiction. Because all the moves start and end in the fiction, you must provide enough detail for the game to run smoothly so they need to know what the space looks like, who is in it, where the important actors are, where their characters are and what immediate threats are there. Exactly how much information you need to give will vary depending on the situation in the game and on your players, but scene descriptions are a great opportunity for you to chrome The Sprawl, smear it in dirt, and bathe it in neon, as your agenda and principles require. If there is anything hidden in the scene that you want the players to discover, you will have to give them clues, perhaps obvious clues; assess is your best excuse to do so. Give them information, then see what they do with it. As players, remember to write down when assess gives you +1 forward.",
+        "trigger": "When you closely study a person, place or situation, or when you quickly size up an opponent or a charged situation",
+        "createdby": 1
+    },
+    {
+        "id": 312,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "PLAY HARDBALL (EDGE)",
+        "description": ", roll Edge. 10+: NPCs do what you want. PCs choose: do what you want, or suffer the established consequences 7-9: For NPCs, the MC chooses 1: <br />» they attempt to remove you as a threat, but not before suffering the established consequences <br />» they do it, but they want payback. Add them as a Threat <br />» they do it, but tell someone all about it. Advance the appropriate Mission Clock PCs choose: do what you want, or suffer the established consequences. They gain +1 forward to act against you.<br />Play hardball is the move for threatening people until they do what you want. Once you start down the path of violence, turning back will completely undermine your position, though, so you have to follow through. If you're threatening to break the security guard's fingers, but you're trying to scare him, you're blustering; that's fast talk. If you have your gun to the head of the VP and you're going to redecorate his office with his brains if he doesn't give you the codes, you're playing hardball. In The Sprawl, violence will get you what you want in the short term, but it will make enemies. Threats of violence work equally well whether you're getting information about the job in the Legwork Phase or completing mission objectives in the Action Phase, but it's a risk. If everything goes well, it can be a quiet method of getting what you want, but when it goes poorly it can escalate quickly and blow the mission all over the news tickers.",
+        "trigger": "When you get in someone's face threatening violence and you intend to carry through",
+        "createdby": 1
+    },
+    {
+        "id": 313,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "ACQUIRE AGRICULTURAL PROPERTY (MEAT)",
+        "description": ", roll Meat. 10+: you survive until the medics arrive 7-9: you survive at a cost. Pick one: +owned, substandard treatment (-1 to a stat), cyberware damage (give one piece of cyberware a negative tag) 6-: you bleed out on the street Sooner or later, your character's number will come up, and that number will be 0000. Depending on the circumstances, that may mean death, but it may also mean EMTs and hospitalisation. At that point it comes down to your character's relationship to the corporation who owns that medical facility or the local street doc. For the MC, this is an opportunity to introduce complications. Tie the character's treatment into an established corporation or faction or introduce a new player. Hook the injured character with contracts, threats, cybernetic implants, addictive drugs, or antidotes. Corporations care about leverage, not legality or morality.",
+        "trigger": "When you hit 0000 on your Harm Clock",
+        "createdby": 1
+    },
+    {
+        "id": 314,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "MIX IT UP (MEAT)",
+        "description": ", state that objective and roll Meat. 7+: you achieve your objective 7-9: choose 2: <br />» you make too much noise. Advance the relevant Mission Clock <br />» you take harm as established by the fiction <br />» an ally takes harm as established by the fiction <br />» something of value breaks Mix it up is the basic move for taking out enemies violently. Your objective when you mix it up should seldom be -kill everyone-. You're professionals on a mission, not sociopaths. -Take control of the server room and make sure the security team doesn't escape,- -escape the ambush,- and -buy the team enough time to get out of the lab- are more suitable objectives. This move is about using physical violence to impose your will upon your enemies. Dealing damage is a side effect. You can't tailor your objective so that you avoid the consequences of your choice on a 7-9 result. If doing something quietly is an explicit part of the objective you might succeed, but be discovered after or during the action for some other reason, if you choose you make too much noise. If not being detected is important to you, don't choose that option.",
+        "trigger": "When you use violence against an armed force to seize control of an objective",
+        "createdby": 1
+    },
+    {
+        "id": 315,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "RESEARCH (MIND)",
+        "description": ", ask a question from the list below and roll Mind. 10+: take [intel]; the MC will answer your question and answer a follow-up question from this list as well: <br />» Where would I find ______? <br />» How secure is ______? <br />» Who or what is related to ______? <br />» Who owned or employed ______? <br />» Who or what is ______ most valuable to? <br />» What is the relationship between ______ and ______? 7-9: take [intel]; the MC will answer your question 6-: the MC will answer your question... and make a move Research is the move for examining a collection of data for helpful information. Although it has a restricted list of questions, it is still quite versatile. As MC, be generous with your answers to research, especially on a 10+. Help the players feel comfortable planning and executing their mission when they succeed in their research. At the same time, take the opportunity to chrome-plate, dirt-smear, and neon-bathe the information and the world, as your agenda and principles require. You can be more cagey with information about the protagonists' employers, corporate motives, potential twists, and other complications, but if they ask about something and roll a hit, give them good intel! You want the characters to discover those devious corporate plots and they're good at their jobs, so give them the dirt, then see what they do with it. Be a fan of the players. As players, remember to write down when research gives you [intel].",
+        "trigger": "When you investigate a person, place, object, or service using a library, dossier or database (or combination of them)",
+        "createdby": 1
+    },
+    {
+        "id": 316,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "FAST TALK (STYLE)",
+        "description": ", roll Style. 10+: NPCs do what you want. PCs choose whether to do it or not. If they do, they mark experience. If they don't, they must act under pressure to go against your stated wishes. 7-9: NPCs do it, but someone will find out: the MC will advance the appropriate Countdown Clock. For PCs choose one: <br />» If they do what you want, they mark experience <br />» If they don't do it, they must act under pressure to go against your stated wishes Then its up to them. Fast talk is the move for convincing people to do things that might not be in their best interests. Playing hardball relies on the threat of violence and the promise of unpleasant consequences in the immediate future; fast talking relies on the power of your words. You can threaten violence with fast talk, but those threats are only words at this point. Once those words become violent actions, you're playing hardball. Note the difference between the 10+ and 7-9 results when you use Fast Talk on a PC. On a 7-9, the Fast Talking player chooses one of the carrot (mark experience) or the stick (act under pressure). On a 10+, both the carrot and the stick apply.",
+        "trigger": "When you try to convince someone to do what you want with promises, lies or bluster",
+        "createdby": 1
+    },
+    {
+        "id": 317,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "HIT THE STREET (STYLE)",
+        "description": ", roll Style. 7+: You get what you want. 10+: You get a little something extra (choose either [intel] or [gear]). 7-9: choose 2 from the list below: <br />» Your request is going to cost you extra <br />» Your request is going to take some time to put together <br />» Your request is going to attract unwanted attention, complications or consequences <br />» Your contact needs you to help them out with something. If you turn them down take -1 ongoing to this move till you make it right. While investigating, preparing and undertaking missions, your team will often need help from specialists, need a particular piece of gear or cyberware, or require a key piece of information about a target. Hit the street is the move for dealing with your contacts to get any of those things. You must have a relevant Contact to use hit the street, so declare a contact who is such a specialist or go to an existing contact to find out if they know of one. In particular, use hit the street to acquire cyberware and a street doc to install it with go under the knife. Both are discussed in Chapter 5: Cyberware. Your contacts aren't running charities. They'll charge for their services, and for any gear you need from them. Fair prices for gear are listed in Chapter 6: Assets. Their services may also take time to organise and alert curious or unfriendly attention which can complicate the mission. Their own personal and professional issues can also cause trouble. If you choose any of these options, the MC will make an appropriate move to introduce these complications.",
+        "trigger": "When you go to a Contact for help",
+        "createdby": 1
+    },
+    {
+        "id": 318,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "DECLARE A CONTACT",
+        "description": ", name and describe the Contact, then say why the Contact owes you a favour or why you owe them a favour. The MC will ask you some questions about the Contact and your relationship. Add the Contact to your list. You can only declare a contact once per mission, although certain Playbook Moves may allow you to gain more contacts in similar ways. Declaring contacts is an important part of The Sprawl. Not only does it introduce helpful NPCs into the fiction and expand your options for hit the street, it allows you to make statements about the world. Your Contacts are people with problems and you're a problem solver, so sooner or later their problems will be your problems. Your fence is involved with the Mafia? The Mafia are part of your game now. Your merc buddy from the Beanstalk Wars in Ecuador has a malfunctioning cyberarm? You added to The Sprawl's backstory and signalled that malfunctioning cyberware is a story element you'd like to see. Don't be shy about declaring a contact with a specialised skillset. It might be a large advantage now, but broad Contacts are likely more valuable in the long run. Of course, when you know a slick VTOL pilot, every mission looks like an aerial assault. And why not! If you want to run missions in a certain way, choose a focused contact and use them as often as possible.",
+        "trigger": "When you need to call in a favour from a new contact",
+        "createdby": 1
+    },
+    {
+        "id": 319,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "PRODUCE EQUIPMENT",
+        "description": ", describe how and why your professionalism and forethought told you to bring this equipment on the mission and spend [gear]. You must spend [gear] to produce equipment. Produce equipment is the move for converting equipment you've acquired during the legwork phase into a concrete advantage, either later in the Legwork phase or, more likely, during the Mission phase. When you make this move, the MC will ask questions about the equipment and how you obtained it. The answers must be appropriate to the mission, the fiction, and the tone of the game as established by the your table. You can only produce equipment that you could reasonably have in your possession or could obtain relatively easily.",
+        "trigger": "When you produce the equipment you need at the right time",
+        "createdby": 1
+    },
+    {
+        "id": 320,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "REVEAL KNOWLEDGE",
+        "description": ", describe how you discovered that information and spend [intel]. You must spend [intel] to reveal knowledge. Take +1 forward to exploit the opportunity offered by that information. Reveal Knowledge is the move for converting the information you dug up during the legwork phase into a concrete advantage, either later in the Legwork phase or, more likely, during the Mission phase.  When you make this move, the MC will ask questions about the knowledge and how you obtained it. The answers must be appropriate to the mission, the fiction, and to tone of the game as established by the your table.",
+        "trigger": "When you reveal your knowledge of the opposition's preparations, dispositions or environment",
+        "createdby": 1
+    },
+    {
+        "id": 321,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "HELP OR INTERFERE (LINKS)",
+        "description": ", roll Links with them. 7+: On a hit they take +1 or -2 forward, your choice 7-9: you are implicated in the results of the other character's move and may expose yourself to danger, retribution, or cost Help or interfere is one of the most versatile moves in The Sprawl. Any time a character wants to help or interfere with another taking action they use this move. Helping the Killer take out the security team, covering the Infiltrator's dash across a parking lot, using online security plans to guide the Soldier to an exit route with the extracted scientist are all helping. It's a gamble, though. On a weak hit (7-9), the helping character is implicated in the failure of the acting character. If the acting character succeeds with a 10+, no problem, but on a weak hit or a miss, the helping character will be in trouble too and the MC will make a move against the helping player. The flip side is that +1 can make all the difference to the mission's success. Interfering works similarly. If the interfering character rolls a 10+, they're free and clear. If they miss, then the MC will make a move as normal. If the interfering character rolls a 7-9, then they're implicated in the acting player's action. If the acting player still hits (7+) despite the -2, the MC will make a move against the interfering player that gives the acting player an advantage over the interfering player. Maybe the acting player has the interfering character at her mercy. Maybe the interfering character attempts to get away and runs into worse trouble. If you plan on helping and interfering a lot, consider taking a playbook move that substitutes a stat for Links.",
+        "trigger": "When you help or hinder another character",
+        "createdby": 1
+    },
+    {
+        "id": 322,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "GO UNDER THE KNIFE (CRED)",
+        "description": ", roll Cred spent (max +2). 10+: the operation was a complete success 7-9: the cyberware doesn't work as well as advertised, choose one: +unreliable, +substandard, +hardware decay, +damaging. +damaging: sometimes it hurts like hell and eventually it will do permanent nerve damage +hardware decay: it works now, but it's just a matter of time... +substandard: it works, but not as well as it should +unreliable: sometimes it doesn't work 6-: there have been... complications When you have new cyberware installed in accordance with a corporate contract, ignore all of that bad stuff. You're +owned. Your cyberware works exactly the way they intend it. If you want to have cyberware installed after the start of the game, use hit the street to acquire the hardware and the medical professional to install it, then use go under the knife to have it installed. Any time you have a doctor with a casual approach to legality operate on you in a seedy back alley surgery, you're taking a risk. Wouldn't it be easier to sign that corporate contract? Using go under the knife and hit the street to acquire cyberware is discussed in Chapter 5: Cyberware. Fair prices for gear (including cyberware) are listed in Chapter 6: Assets.",
+        "trigger": "When you have new cyberware installed by a street doctor",
+        "createdby": 1
+    },
+    {
+        "id": 323,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "GET THE JOB (EDGE)",
+        "description": ", roll Edge. 10+: choose 3 from the list below 7-9: choose 1 from the list below <br />» the employer provides useful information [intel] <br />» the employer provides useful assets [gear] <br />» the job pays well <br />» the meeting doesn't attract attention <br />» the employer is identifiable At the start of every mission, someone will get the job. Usually, the MC will describe how the employer contacts one of you or the whole crew to set up a meeting, where the meeting takes place, and what the employer or their representative looks like. That representative will outline the basic idea of the job (the type of mission and perhaps the target). At the point in the conversation when the characters start negotiating payment terms or asking for detailed information, whoever is taking the lead in negotiating or questioning makes this move. The first three options all give the characters advantages on the mission to come ([gear] or [intel]) or greater reward after the mission (Cred). The last option (The employer is identifiable), is potential insurance against betrayal. If the meeting attracts attention, that's an invitation for the MC to throw a complication into the mix or advance a Countdown Clock. Remember that the MC's agenda includes filling the characters lives with action, complication and intrigue! Chapter 11: Missions has more on getting the job. Missing (6-) this move means either that the employer remains in control of the flow of knowledge and payment, or when they slip and give away additional information it reveals additional complications for the characters.",
+        "trigger": "When you negotiate the terms of a job",
+        "createdby": 1
+    },
+    {
+        "id": 324,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "GETTING PAID (LEGWORK)",
+        "description": ", roll and add the number of unfilled segments on the Legwork Clock. 10+: choose 3 from the list below 7-9: choose 1 from the list below <br />» it's not a set-up or an ambush <br />» you are paid in full <br />» the meeting doesn't attract the attention of outside parties <br />» the employer is identifiable <br />» you learned something from the mission; everyone marks experience At the end of every successful mission, someone will probably try to get paid. The location, timing, and style of the meet may be set by the characters or their employer, depending on the preferences and leverage of each party and by the success of the mission. The employer will usually try to dictate terms, but, if the characters have something or someone the employer wants they'll have to be flexible. Once those details are agreed upon, the characters should describe their approach (in whatever level of detail they like). Play out the scene as you would any other. Once the action is in motion, someone will make the move. Chapter 11: Missions has more on getting paid. The MC's agenda includes filling the characters lives with action, complication and intrigue and a final betrayal at the end is part of that. The options here allow the players to set parameters on how that betrayal might play out. The options you don't choose are inspiration and invitation for the MC to throw a final set of complications into this job or set up complications for a future job. If you choose that the meet is not a set up or ambush, then the employer is not planning to eliminate the team. If you choose to be paid in full, the employer doesn't try to skimp on payment. If you choose that the meeting doesn't attract the attention of outside parties, then the meet is between the team, the employer, and any assets each brings with them. If you choose that the employer is identifiable, then some clue gives away who the employer was. This may help with broader investigations or plot elements. If you choose to learn something, then everyone marks experience. These choices give the MC opportunities for action. They do not guarantee that these things will happen. Similarly, these things may happen off screen, and result in the movement of a corporate Countdown Clock.",
+        "trigger": "When you go to a meet to get paid by your employer",
+        "createdby": 1
+    },
+    {
+        "id": 325,
+        "gameid": 4,
+        "type": "Basic",
+        "class": null,
+        "name": "HARM",
+        "description": ", fill in a number of segments on your Harm Clock equal to the remaining harm, and roll harm suffered. 10+: choose 1: <br />» You're out of action: unconscious, trapped, incoherent or panicked <br />» Take the full harm of the attack, before it was reduced by armour; if you already took the full harm of the attack, take +1-harm <br />» Lose the use of a piece of cyberware until you can get it repaired <br />» Lose a body part (arm, leg, eye) <br />7-9: the MC will choose 1: <br />» You lose your footing <br />» You lose your grip on whatever you're holding <br />» You lose track of someone or something you're attending to <br />» Someone gets the drop on you The full harm rules are in Chapter 9: Running The Sprawl. Note that the dice results for harm are reversed; low is successful and high is complicated. Some of the results of the harm move may look pretty brutal - lost body parts and broken cyberware! - but remember that these can be replaced and repaired. Does the character get a simple prosthetic replacement, a cybernetic enhancement, or adapt to and accept the loss? In The Sprawl, prosthetic replacements are as functional as the parts they replaced; they don't count as cyberware for these moves. Cosmetic cyberware is free. There are no rules in The Sprawl for time or cost of recovery of harm between sessions. Unless the fiction demands, or it's interesting to everyone, the next mission should start with everyone's Harm Clock empty.",
+        "trigger": "When you suffer harm (even 0-harm or s-harm) lower the harm suffered by the level of your armour (if any)",
+        "createdby": 1
+    },
+    {
+        "id": 326,
+        "gameid": 4,
+        "type": "GM",
+        "class": null,
+        "name": "Show them the barrel of the gun",
+        "description": "Hint at something that will cause trouble for the characters in the future.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 327,
+        "gameid": 4,
+        "type": "GM",
+        "class": null,
+        "name": "Make their lives complicated now",
+        "description": "Reveal something that will cause immediate trouble for the characters.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 328,
+        "gameid": 4,
+        "type": "GM",
+        "class": null,
+        "name": "Put someone in a spot",
+        "description": "Put someone in danger, delay someone, capture someone. Make a player make a hard choice about their character, their contacts or the mission right now.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 329,
+        "gameid": 4,
+        "type": "GM",
+        "class": null,
+        "name": "Inflict harm",
+        "description": "Inflict harm on a character as established by the circumstances of the fiction. It’s all too easy for inflicting harm to be a boring move, so make sure it’s appropriate and be sure to make it as interesting as you can. See the Inflicting Harm section below for more.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 330,
+        "gameid": 4,
+        "type": "GM",
+        "class": null,
+        "name": "Use up their resources",
+        "description": "Tech can malfunction, tires go flat, drones crash, substandard cyberware is... well... substandard, guns run out of ammo, cyberzombies break things. Inflicting harm is all well and good, but often its more interesting to take away something else and see what they can come up with to get out of the new situation.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 331,
+        "gameid": 4,
+        "type": "GM",
+        "class": null,
+        "name": "Offer an opportunity, with or without a cost",
+        "description": "Your job as MC isn’t all take, sometimes you should give. Usually you’ll attach strings to those gifts, but sometimes you won’t. The characters are professionals who can assess the costs of dangerous actions, so let the players know what those strings and costs are or might be.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 332,
+        "gameid": 4,
+        "type": "GM",
+        "class": null,
+        "name": "Tell them the requirements or consequences and ask",
+        "description": "Often the players will ask if or how they can do something. Tell them, and tell them what they have to pay or give up or what kind of trouble it might cause if they do it. Then see what they do. This is the essence of the “play to find out” approach. Presenting the players with a hard choice and seeing what they do is lot of fun. There’s a definite skill to finding choices that will be genuinely difficult, and you may need practice to get the hang of it. Don’t sweat it if they breeze past a choice you thought was going to be a tricky one. Wait for your next opportunity, and try again.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 333,
+        "gameid": 4,
+        "type": "GM",
+        "class": null,
+        "name": "Use a Corporate, Mission, or Threat move",
+        "description": "Sometimes specific groups, situations or locations will have their own particular moves. Generally these moves are more thematically specific examples of these basic MC moves. Examples of these moves are provided in Chapter 11: Missions.",
+        "trigger": null,
+        "createdby": 1
+    },
+    {
+        "id": 334,
+        "gameid": 4,
+        "type": "matrix",
+        "class": null,
+        "name": "LOGIN (SYNTH)",
+        "description": ", roll Synth. 10+: you’re in clean 7-9: you’re in, but choose one: <br />** Passive trace (+1 trace) <br />** ICE is activated <br />** An alert is triggered (advance the active Mission Clock) <br />** Your access is restricted – take -1 ongoing to matrix moves in this system while your access is restricted 6-: you’re in, but the MC chooses two.",
+        "trigger": "When you attempt to gain access to a system",
+        "createdby": 1
+    },
+    {
+        "id": 335,
+        "gameid": 4,
+        "type": "matrix",
+        "class": null,
+        "name": "MELT ICE (EDGE)",
+        "description": ", roll Edge. 7+: you evade, destroy, or temporarily disable the system, your choice 7-9: the system successfully executes a routine before you can disable it. If you’re trying to mess with the digital system itself  (other than ICE), use compromise security. If you’re trying to mess with the facility, use manipulate systems.",
+        "trigger": "When you attempt to evade, destroy or disable an activated ICE construct",
+        "createdby": 1
+    },
+    {
+        "id": 336,
+        "gameid": 4,
+        "type": "matrix",
+        "class": null,
+        "name": "COMPROMISE SECURITY (MIND)",
+        "description": ", roll Mind. 10+: gain 3 hold over the sub-system you have compromised 7-9: gain 1 hold 6-: you trigger an alert, which may have additional consequences You may spend 1 hold to activate a security measure on that sub-system.",
+        "trigger": "When you attempt to compromise a sub-system’s security",
+        "createdby": 1
+    },
+    {
+        "id": 337,
+        "gameid": 4,
+        "type": "matrix",
+        "class": null,
+        "name": "MANIPULATE SYSTEMS (SYNTH)",
+        "description": ", roll Synth. 10+: gain 3 hold over the sub-system you are manipulating 7-9: gain 1 hold You may spend 1 hold to activate routines on that sub-system.",
+        "trigger": "When you attempt to manipulate a digitally-controlled aspect of a facility",
+        "createdby": 1
+    },
+    {
+        "id": 338,
+        "gameid": 4,
+        "type": "matrix",
+        "class": null,
+        "name": "JACK OUT (COOL)",
+        "description": ", you can try to jack out. Roll Cool. 10+: you disconnect yourself from the system before any serious harm occurs 7-9: you jack out, but choose one: <br />** You lose some data <br />** You take some of the established consequences <br />** The owners of the target system trace you to your current location 6-: you take the established consequences... and you’re still connected.",
+        "trigger": "When you, your programs, or your deck are about to be damaged by ICE",
+        "createdby": 1
+    }
+]
