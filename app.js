@@ -155,11 +155,41 @@
 						controller: 'Sprawl as vm'
 					}
 				}
+			})							
+			.state('auth.sprawl2',{
+				url: '/sprawl2',	
+				stateName: 'sprawl',			
+				views: {	
+					'sprawl2':{
+						templateUrl: 'games/sprawl/sprawl2.html',
+						controller: 'sprawl2 as vm'
+					},			
+					'charactersheet@auth.sprawl2': {
+						templateUrl: 'games/sprawl/sprawlCharactersheet2.html',
+						controller: 'sprawl2 as vm'
+					},
+					'reference@auth.sprawl2': {
+						templateUrl: 'games/sprawl/sprawlReference2.html',
+						controller: 'sprawl2 as vm'
+					},
+					'threats@auth.sprawl2': {
+						templateUrl: 'games/sprawl/sprawlThreats2.html',
+						controller: 'sprawl2 as vm'
+					},
+					'log@auth.sprawl2': {
+						templateUrl: 'games/sprawl/sprawlLog2.html',
+						controller: 'sprawl2 as vm'
+					},
+					'mc@auth.sprawl2': {
+						templateUrl: 'games/sprawl/sprawlMC2.html',
+						controller: 'sprawl2 as vm'
+					}
+				}
 			})			
 			.state('home',{
 				url: '/',
-				templateUrl: './games/generic/gref.html',
-				controller: 'gref as vm'
+				templateUrl: './games/impulsedrive/impulseRef.html',
+				controller: 'ImpulseDriveController as vm'
 				// templateUrl: 'reference.html',
 				// controller: 'ReferenceController',
 				// controllerAs: 'vm'

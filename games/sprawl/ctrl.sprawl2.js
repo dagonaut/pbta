@@ -3,10 +3,10 @@
 
     angular
         .module('pbta_resources')
-        .controller('Sprawl', sprawl);
+        .controller('sprawl2', sprawl2);
         
-        sprawl.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce', '$filter','Auth','UserService','ClockService','MoveService','TagService', 'DirectiveService', 'CyberwareService', 'SprawlCharacterService', 'HoldService', 'apiservice'];
-        function sprawl($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, $filter, Auth, UserService, ClockService, MoveService, TagService, DirectiveService, CyberwareService, SprawlCharacterService, HoldService, apiservice){
+        sprawl2.$inject = ['$rootScope','$scope','$http','$q','$state','$stateParams','$location','$cookies', '$sce', '$filter','Auth','UserService','ClockService','MoveService','TagService', 'DirectiveService', 'CyberwareService', 'SprawlCharacterService', 'HoldService'];
+        function sprawl2($rootScope, $scope, $http, $q, $state, $stateParams, $location, $cookies, $sce, $filter, Auth, UserService, ClockService, MoveService, TagService, DirectiveService, CyberwareService, SprawlCharacterService, HoldService){
             //Private Properties
             let vm = this;
             let userId =  $cookies.getObject('id');
@@ -322,18 +322,11 @@
             }
 
             function getClassMoves(c){
-                apiservice.GetBy('tbl_Moves', 'class', c).then(function(data){
-                    console.log(data);
+                MoveService.GetByClass(c).then(function(data){
                     vm.classMoves = data;
                     vm.nameLookHTML = setNameLookHTML();
                     getAllDirectives();
-                })
-                // MoveService.GetByClass(c).then(function(data){
-                //     vm.classMoves = data;
-                //     console.log("class moves: ", data);
-                //     vm.nameLookHTML = setNameLookHTML();
-                //     getAllDirectives();
-                // });
+                });
             }
 
             function getSprawlMoves(id){

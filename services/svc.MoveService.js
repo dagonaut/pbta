@@ -41,7 +41,7 @@
         }
 
         function GetByClass(characterClass) {
-            return $http.get(api + table + '/class/"' + characterClass + '"').then(handleSuccess, handleError('Error getting Move by characterClass'));
+            return $http.get(api + table + '/class/' + characterClass).then(handleSuccess, handleError('Error getting Move by characterClass'));
         }
 
         function GetByType(type) {

@@ -20,6 +20,7 @@
         apiservice.GetById = GetById;
         apiservice.GetByGameId = GetByGameId;
         apiservice.GetByUserId = GetByUserId;
+        apiservice.GetBy = GetBy;
 		apiservice.Create = Create;
         apiservice.Update = Update;
 		apiservice.Delete = Delete;
@@ -41,7 +42,11 @@
         }
 
         function GetByUserId(tbl, createdby) {
-            return $http.get(api + tbl + '/createdby/' + createdby).then(handleSuccess, handleError('Error getting ' + tbl + ' by Category'));            
+            return $http.get(api + tbl + '/createdby/' + createdby).then(handleSuccess, handleError('Error getting ' + tbl + ' by userid'));            
+        }
+
+        function GetBy(tbl, col, str){
+            return $http.get(api + tbl + '/' + col + '/' + '\'' + str + '\'').then(handleSuccess, handleError('Error getting ' + tbl + ' by Category'));
         }
 		
         function Create(tbl, obj) {
