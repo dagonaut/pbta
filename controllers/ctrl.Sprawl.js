@@ -323,7 +323,6 @@
 
             function getClassMoves(c){
                 apiservice.GetBy('tbl_Moves', 'class', c).then(function(data){
-                    console.log(data);
                     vm.classMoves = data;
                     vm.nameLookHTML = setNameLookHTML();
                     getAllDirectives();
