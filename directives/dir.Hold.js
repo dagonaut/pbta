@@ -8,7 +8,7 @@
         function hold(HoldService){
             return{
                 restrict: 'E',                
-                templateUrl: "./directives/dir.hold.html",
+                templateUrl: "./directives/dir.Hold.html",
                 scope: {
                     holdObj: "<",
                     onDelete: "&",

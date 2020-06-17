@@ -326,13 +326,7 @@
                     vm.classMoves = data;
                     vm.nameLookHTML = setNameLookHTML();
                     getAllDirectives();
-                })
-                // MoveService.GetByClass(c).then(function(data){
-                //     vm.classMoves = data;
-                //     console.log("class moves: ", data);
-                //     vm.nameLookHTML = setNameLookHTML();
-                //     getAllDirectives();
-                // });
+                });                
             }
 
             function getSprawlMoves(id){
