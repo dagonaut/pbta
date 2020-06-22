@@ -4,21 +4,78 @@
             float:left;
             width:20%;
         }
+        .d-flex{
+            display:flex;
+        }
+        .stat-single{
+            float:left;
+            margin: 1px 5px;
+        }
+        .stat-label{
+            font-size:14px;
+        }
+        .stat-value{
+            font-size:24px;
+        }
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-break:normal;
+        }
     </style>
     <!-- MC Sheet -->
     <!-- Character Row-->
     <div class="row">
-        <div class="col-md-8">
-            <div class="col-custom-20">            
-                <attribute-block table="tbl_sprawl_Characters"></attribute-block>
-            </div>     
-            <div ng-repeat="position in [0,1,2,3]" style="width:25%;float:left;">
+        <div class="" style="display:flex;">             
+            <div ng-repeat="position in [0,1,2,3]" style="width:20%;padding:0px 2px;border:1px #0472CE dotted;">
                 <select ng-model="vm.mcDudes[position]" ng-change="vm.loadMCDude(position);">                        
                     <option ng-repeat="dude in vm.dudes" value="{{dude}}">{{dude.name}} -- {{dude.class}}</option>
                 </select>
                 <div>{{vm.mcDudes[position].name}} -- {{vm.mcDudes[position].class}}</div>
-                <div class="harm"></div>
-                <div class="pull-left mc-stat">
+                <div>
+                    <div class="stat-single">
+                        <div class="stat-label">MEAT:</div>
+                        <div class="stat-value">{{vm.mcDudes[position].meat}}</div>
+                    </div>
+                    <div class="stat-single">
+                        <div class="stat-label">EDGE:</div>
+                        <div class="stat-value">{{vm.mcDudes[position].edge}}</div>
+                    </div>
+                    <div class="stat-single">
+                        <div class="stat-label">COOL:</div>
+                        <div class="stat-value">{{vm.mcDudes[position].cool}}</div>
+                    </div>
+                    <div class="stat-single">
+                        <div class="stat-label">MIND:</div>
+                        <div class="stat-value">{{vm.mcDudes[position].mind}}</div>
+                    </div>
+                    <div class="stat-single">
+                        <div class="stat-label">STYLE:</div>
+                        <div class="stat-value">{{vm.mcDudes[position].style}}</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="stat-single">
+                        <div class="stat-label">SYNTH:</div>
+                        <div class="stat-value">{{vm.mcDudes[position].synth}}</div>
+                    </div>
+                    <div class="stat-single">
+                        <div class="stat-label">HARM:</div>
+                        <div class="stat-value">{{vm.mcDudes[position].harm}}</div>
+                    </div>
+                    <div class="stat-single">
+                        <div class="stat-label">ARM:</div>
+                        <div class="stat-value">{{vm.mcDudes[position].armor}}</div>
+                    </div>
+                    <div class="stat-single">
+                        <div class="stat-label">CRED:</div>
+                        <div class="stat-value">{{vm.mcDudes[position].cred}}</div>
+                    </div>
+                </div>
+
+                <!-- <div class="pull-left mc-stat">
                     <strong>MEAT: </strong> {{vm.mcDudes[position].meat}} 
                 </div>
                 <div class="pull-left mc-stat">
@@ -38,27 +95,31 @@
                 </div>
                 <div class="pull-left mc-stat">
                     <strong>CRED: </strong> {{vm.mcDudes[position].cred}}
-                </div>
-                <br />
-                <h3>Moves</h3>
-                <div class="mc-moves">
-                    <div ng-repeat="move in vm.sprawlMoves" ng-if="vm.mcDudes[position].moves.indexOf(move.id) > -1">
-                        <strong>{{move.name}}</strong> - {{move.description}}
+                </div> -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Moves</h3>
+                        <div class="mc-moves">
+                            <div ng-repeat="move in vm.sprawlMoves" ng-if="vm.mcDudes[position].moves.indexOf(move.id) > -1">
+                                <strong>{{move.name}}</strong> - <span ng-bind-html="move.description"></span>
+                            </div>
+                        </div>
+                        <h3>Cyberware</h3>
+                        <div class="mc-cyberware">
+                            <div ng-repeat="cyberware in vm.allCyberware" ng-if="vm.mcDudes[position].cyberware.indexOf(cyberware.id) > -1">
+                                <strong>{{cyberware.name}}</strong> - <span ng-bind-html="cyberware.description"></span>
+                            </div>
+                        </div>
+                        <h3>Gear</h3>
+                        <div class="mc-gear">
+                            <pre>{{vm.mcDudes[position].gear}}</pre>
+                        </div>
                     </div>
-                </div>
-                <h3>Cyberware</h3>
-                <div class="mc-cyberware">
-                    <div ng-repeat="cyberware in vm.allCyberware" ng-if="vm.mcDudes[position].cyberware.indexOf(cyberware.id) > -1">
-                        <strong>{{cyberware.name}}</strong> - {{cyberware.description}}
-                    </div>
-                </div>
-                <div class="mc-gear">
-                    {{vm.mcDudes[position].gear}}
-                </div>
+                </div>  
             </div>
         </div>        
         <!-- Clocks -->
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;">Create Clock</div>
             <h4>CLOCKS</h4>
             <form novalidate class="simple-form" ng-show="vm.showClockEdit">
@@ -71,7 +132,7 @@
             <div ng-repeat="clock in vm.clocks">
                 <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" on-save="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>
             </div>
-        </div>
+        </div> -->
     </div>
     <!-- Moves Row -->
     <div class="row">       
