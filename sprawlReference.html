@@ -45,10 +45,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <h4>TAGS</h4>
-            <div ng-repeat="tag in vm.allTags">
-                <div>
+        <div class="col-md-4">            
+            <div class="col-md-6">
+                <h4>Cyberware Tags</h4>
+                <div ng-repeat="tag in vm.allTags" ng-if="tag.category === 'cyberware'">
                     <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
                     <div class="move-description" ng-hide="tag.hide">
                         <span>
@@ -59,7 +59,21 @@
                         </span>							
                     </div>
                 </div>
-            </div>                
+            </div>
+            <div class="col-md-6">
+                <h4>Range/Weapons Tags</h4>
+                <div ng-repeat="tag in vm.allTags" ng-if="tag.category !== 'cyberware'">
+                    <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+                    <div class="move-description" ng-hide="tag.hide">
+                        <span>
+                            [{{tag.category}}]
+                        </span>
+                        <span>
+                            {{tag.description}}
+                        </span>							
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-4">                
             <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;" ng-if="vm.isMC">Create Clock</div>

@@ -17,7 +17,8 @@
                 reference: { index: 1, heading: 'Reference'},
                 threats: { index: 2, heading: 'Threats'},
                 log: { index: 3, heading: 'Log'},
-                mc: { index: 4, heading: 'MC'}
+                gear: { index: 4, heading: 'Gear'},
+                mc: { index: 5, heading: 'MC'}
             };
 
             // Static JSON Objects
@@ -36,7 +37,377 @@
                 "soldier": {"stat": "edge", "directives":[12,10,17,6], "cyberware":[1,3,9,11,12], "gear":"<strong>Choose two weapons:</strong><ul> Heavy pistol (3-harm close/near loud) <li>Assault rifle (3-harm near/far loud autofire) <li>Fragmentation Grenades (4-harm near area reload loud messy) <li>Flashbangs (s-harm near area loud reload) </ul><strong>Choose two:</strong><ul> <li>Armoured vest (1-armour) <li>Armoured clothing (armour 0, +discreet, subtract 1 when rolling the harm move) <li>Communications relay (Choose +encrypted or +jamming) <li>Goggles (Choose two: +thermographic, +light amplification, +magnification, +flare compensation) <li>Trauma Derms (allows you to apply first aid to characters at 2100 or less harm)</ul>","names": ["Alif","Armitage","Connomarah","Cortez","Grit","Mac","Sly","Turnus","Turner","a professional name","a determined name","a strange name"], "look":{ "eyes": ["hard","searching","artificial","cunning","penetrating","weary","jaded","haunted"], "face": ["rugged","scarred","weathered","tired","thin","decorated","calm"],"body": ["muscular","toned","unfit","graceful","wiry","tanned"], "wear": ["casual","utility","vintage","military","corporate","worn"],"skin":["artificial","asian or south asian","black","decorated","hispanic/latino","indigenous","middle eastern","white","________"]}},
                 "tech": {"stat": "cool and mind", "directives":[14,7,8,9], "cyberware":[1,3,4,9], "gear":"<strong>You get this:</strong><ul> <li>Toolkit and gear appropriate to your area(s) of expertise Choose two weapons: <li>Holdout pistol (2-harm hand/close discreet quick reload loud) <li>Assault rifle (3-harm near/far loud autofire) <li>Fragmentation Grenades (4-harm near area reload loud messy) <li>Gas Grenades (s-harm near area reload gas) </ul><strong>Choose two:</strong><ul> <li>Armoured jacket (1-armour) <li>Armoured clothing (0-armour, discreet, subtract 1 when rolling the harm move) <li>Goggles (Choose two: +thermographic, +light amplification, +magnification, +flare compensation, +recording) <li>Truck or van (Choose one strength: +rugged, +off-road, +huge, +workhorse; and one weakness: +slow, +cramped, +loud) <li>Trauma Derms (allows you to apply first aid to characters at 2100 or less harm) <li>Encrypted jamming communications relay</ul>","names": ["Angel.1.3","AntiK-Tera","Bobby","Cathode","Eleni Larabee","Houwayyek","Mr. Wizard","Spanner","Transitivity","a weird name","a normal name","an technofetishising name"], "look": { "eyes": ["focused","excited","artificial","squinty","impatient","calm","appraising"], "face": ["plain","friendly","nondescript","weathered","expressive"], "body": ["muscular","wiry","compact","thin","flabby","fatty"], "wear": ["utility","military","corporate","street","scrounged"],"skin":["artificial","asian or south asian","black","decorated","hispanic/latino","indigenous","middle eastern","white","________"]},"classSpecific": "<h4>AREAS OF EXPERTISE</h4><br /><strong>Mechanic:</strong> you are an expert in the construction, maintenance and operation of vehicles & drones; you have two drones created according to the Driver move drone jockey<br /><strong>Splicer:</strong> you are an expert in cybernetics and biomodification; you may begin with one extra piece of cyberware; describe how you implanted this in yourself, but you need not describe how you paid for it<br /><strong>Breadboarder:</strong> you are an expert in computers and electronics; you have a cyberdeck with 5 points of ratings (no rating may be higher than 2) and a number of programs equal to its Processor rating+1 <br /><strong>Gunsmith:</strong> you are an expert in armaments; you begin with the Killer move  custom weapon <br /><strong>Medic:</strong> you are an expert in medicine and pharmaceuticals; when you apply first aid, you heal one additional harm segment, even on a miss <br /><strong>Pyrotechnician:</strong> you are an expert in chemistry and explosives; ignore the +dangerous tag for explosives You start with workshops appropriate to your areas of expertise (e.g. surgery, electronics workshop, garage)."}
             };
-            
+            vm.gear = {
+                weapons:{
+                    "firearms":{
+                    "category":"Firearms",
+                    "description":"Any firearm can be +linked at no additional cost.",
+                    "items":[
+                    {
+                    "name":"Holdout pistol", 
+                    "tags":"2-harm hand/close discreet quick reload loud)"
+                    },
+                    {
+                    "name":"Flechette pistol",
+                    "tags":"3-harm close/near quick flechette"
+                    },
+                    {
+                    "name":"Revolver",
+                    "tags":"2-harm close/near reload loud quick"
+                    },
+                    {
+                    "name":"Semi-auto pistol",
+                    "tags":"2-harm close/near loud quick"
+                    },
+                    {
+                    "name":"Heavy revolver",
+                    "tags":"3-harm close/near reload loud"
+                    },
+                    {
+                    "name":"Heavy pistol",
+                    "tags":"3-harm close/near loud"
+                    },
+                    {
+                    "name":"Shotgun",
+                    "tags":"3-harm close/near loud messy reload"
+                    },
+                    {
+                    "name":"Automatic shotgun",
+                    "tags":"3-harm close/near loud messy autofire"
+                    },
+                    {
+                    "name":"Assault rifle",
+                    "tags":"3-harm near/far loud autofire"
+                    },
+                    {
+                    "name":"Machine pistol",
+                    "tags":"2-harm close/near loud autofire"
+                    },
+                    {
+                    "name":"SMG",
+                    "tags":"2-harm close/near loud autofire"
+                    },
+                    {
+                    "name":"LMG",
+                    "tags":"3-harm near/far loud messy autofire clumsy"
+                    },
+                    {
+                    "name":"Hunting rifle",
+                    "tags":"2-harm far/ex loud"
+                    },
+                    {
+                    "name":"Crossbow or hunting bow",
+                    "tags":"2-harm close/near/far reload"
+                    },
+                    {
+                    "name":"Sniper rifle",
+                    "tags":"3-harm far/ex loud clumsy"
+                    },
+                    {
+                    "name":"Anti-materiel rifle",
+                    "tags":"3-harm far/ex loud messy breach clumsy"
+                    },
+                    {
+                    "name":"Grenade launcher",
+                    "tags":"4-harm near/far area loud messy clumsy"
+                    },
+                    {
+                    "name":"Grenade tube",
+                    "tags":"4-harm near area reload loud messy"
+                    },
+                    {
+                    "name":"Assault cannon",
+                    "tags":"4-harm near/far area messy breach clumsy"
+                    },
+                    {
+                    "name":"Missile launcher",
+                    "tags":"5-harm far area messy breach clumsy"
+                    }
+                    ]
+                    },
+                    "grenades":{
+                        "category":"grenades",
+                        "description":"At ranges intimate/hand/close, grenades are +dangerous.",
+                        "items":[
+                            {
+                                "name":"Fragmentation grenades",
+                                "tags":"4-harm near area reload loud messy"
+                            },
+                            {
+                                "name":"Flashbangs",
+                                "tags":"s-harm near area loud reload"
+                            },
+                            {
+                                "name":"Gas grenades",
+                                "tags":"s-harm near area reload gas"
+                            }
+                        ]
+                    },
+                    "melee":{
+                        "category":"Hand Weapons",
+                        "description":"",
+                        "items":[
+                            {
+                                "name":"Knife",
+                                "tags":"2-harm hand"
+                            },
+                            {
+                                "name":"Club",
+                                "tags":"2-harm hand"
+                            },
+                            {
+                                "name":"Sword",
+                                "tags":"3-harm hand messy"
+                            },
+                            {
+                                "name":"Hand taser",
+                                "tags":"s-harm hand reload"
+                            },
+                            {
+                                "name":"Monofilament whip",
+                                "tags":"4-harm hand messy area dangerous"
+                            },
+                            {
+                                "name":"Shuriken or throwing knives",
+                                "tags":"2-harm close numerous"
+                            }
+                        ]
+                    },
+                    "armour":{
+                        "category":"Armour",
+                        "description":"",
+                        "items":[
+                            {
+                                "name":"Armoured clothing or synth leathers",
+                                "tags":"0-armour, +discreet, subtract 1 when rolling the harm move"
+                            },
+                            {
+                                "name":"Armoured vest, jacket or coat",
+                                "tags":"1-armour"
+                            },
+                            {
+                                "name":"Body Armour",
+                                "tags":"2-armour"
+                            },
+                            {
+                                "name":"Military hardsuit",
+                                "tags":"3-armour, clumsy"
+                            }
+                        ]
+                    },
+                    "ammunition":{
+                        "category":"Ammunition",
+                        "description":"The Sprawl doesn’t require you to count bullets, but some missions might require different kinds of ammo. Most of these simply add a tag to the weapon they’re loaded into.",
+                        "items":[
+                            {
+                                "name":"AP rounds penetrate armour more easily",
+                                "tags":"a weapon loaded with AP rounds adds the +AP tag"
+                            },
+                            {
+                                "name":"Airburst rounds explode in the air near a target either by proximity or as controlled by a targeting suite",
+                                "tags":"a weapon loaded with airburst rounds adds the +area and +messy tags"
+                            },
+                            {
+                                "name":"Explosive rounds explode on impact with a target",
+                                "tags":"a weapon loaded with explosive rounds adds +1 harm and cannot be silenced"
+                            },
+                            {
+                                "name":"Flechette rounds are a tightly packed bundle of synthetic plastic shards which tear through flesh, but are easily stopped by armour",
+                                "tags":"a weapon loaded with flechette rounds adds +1 harm, but the target’s armour value is doubled. Weapons with the +flechette tag already include the +1 harm"
+                            },
+                            {
+                                "name":"Gel rounds are designed to be less lethal",
+                                "tags":"a weapon loaded with gel rounds inflicts s-harm instead of its listed harm value; targets harmed by gel rounds add the original harm value (minus armour) to their roll when making the harm move"
+                            },
+                        ]
+                    }
+                },
+                weapons_list:[
+                    {
+                    "category":"Firearms",
+                    "description":"Any firearm can be +linked at no additional cost.",
+                    "items":[
+                    {
+                    "name":"Holdout pistol", 
+                    "tags":"2-harm hand/close discreet quick reload loud)"
+                    },
+                    {
+                    "name":"Flechette pistol",
+                    "tags":"3-harm close/near quick flechette"
+                    },
+                    {
+                    "name":"Revolver",
+                    "tags":"2-harm close/near reload loud quick"
+                    },
+                    {
+                    "name":"Semi-auto pistol",
+                    "tags":"2-harm close/near loud quick"
+                    },
+                    {
+                    "name":"Heavy revolver",
+                    "tags":"3-harm close/near reload loud"
+                    },
+                    {
+                    "name":"Heavy pistol",
+                    "tags":"3-harm close/near loud"
+                    },
+                    {
+                    "name":"Shotgun",
+                    "tags":"3-harm close/near loud messy reload"
+                    },
+                    {
+                    "name":"Automatic shotgun",
+                    "tags":"3-harm close/near loud messy autofire"
+                    },
+                    {
+                    "name":"Assault rifle",
+                    "tags":"3-harm near/far loud autofire"
+                    },
+                    {
+                    "name":"Machine pistol",
+                    "tags":"2-harm close/near loud autofire"
+                    },
+                    {
+                    "name":"SMG",
+                    "tags":"2-harm close/near loud autofire"
+                    },
+                    {
+                    "name":"LMG",
+                    "tags":"3-harm near/far loud messy autofire clumsy"
+                    },
+                    {
+                    "name":"Hunting rifle",
+                    "tags":"2-harm far/ex loud"
+                    },
+                    {
+                    "name":"Crossbow or hunting bow",
+                    "tags":"2-harm close/near/far reload"
+                    },
+                    {
+                    "name":"Sniper rifle",
+                    "tags":"3-harm far/ex loud clumsy"
+                    },
+                    {
+                    "name":"Anti-materiel rifle",
+                    "tags":"3-harm far/ex loud messy breach clumsy"
+                    },
+                    {
+                    "name":"Grenade launcher",
+                    "tags":"4-harm near/far area loud messy clumsy"
+                    },
+                    {
+                    "name":"Grenade tube",
+                    "tags":"4-harm near area reload loud messy"
+                    },
+                    {
+                    "name":"Assault cannon",
+                    "tags":"4-harm near/far area messy breach clumsy"
+                    },
+                    {
+                    "name":"Missile launcher",
+                    "tags":"5-harm far area messy breach clumsy"
+                    }
+                    ]
+                    },
+                    {
+                        "category":"grenades",
+                        "description":"At ranges intimate/hand/close, grenades are +dangerous.",
+                        "items":[
+                            {
+                                "name":"Fragmentation grenades",
+                                "tags":"4-harm near area reload loud messy"
+                            },
+                            {
+                                "name":"Flashbangs",
+                                "tags":"s-harm near area loud reload"
+                            },
+                            {
+                                "name":"Gas grenades",
+                                "tags":"s-harm near area reload gas"
+                            }
+                        ]
+                    },
+                    {
+                        "category":"Hand Weapons",
+                        "description":"",
+                        "items":[
+                            {
+                                "name":"Knife",
+                                "tags":"2-harm hand"
+                            },
+                            {
+                                "name":"Club",
+                                "tags":"2-harm hand"
+                            },
+                            {
+                                "name":"Sword",
+                                "tags":"3-harm hand messy"
+                            },
+                            {
+                                "name":"Hand taser",
+                                "tags":"s-harm hand reload"
+                            },
+                            {
+                                "name":"Monofilament whip",
+                                "tags":"4-harm hand messy area dangerous"
+                            },
+                            {
+                                "name":"Shuriken or throwing knives",
+                                "tags":"2-harm close numerous"
+                            }
+                        ]
+                    },
+                    {
+                        "category":"Armour",
+                        "description":"",
+                        "items":[
+                            {
+                                "name":"Armoured clothing or synth leathers",
+                                "tags":"0-armour, +discreet, subtract 1 when rolling the harm move"
+                            },
+                            {
+                                "name":"Armoured vest, jacket or coat",
+                                "tags":"1-armour"
+                            },
+                            {
+                                "name":"Body Armour",
+                                "tags":"2-armour"
+                            },
+                            {
+                                "name":"Military hardsuit",
+                                "tags":"3-armour, clumsy"
+                            }
+                        ]
+                    },
+                    {
+                        "category":"Ammunition",
+                        "description":"The Sprawl doesn’t require you to count bullets, but some missions might require different kinds of ammo. Most of these simply add a tag to the weapon they’re loaded into.",
+                        "items":[
+                            {
+                                "name":"AP rounds penetrate armour more easily",
+                                "tags":"a weapon loaded with AP rounds adds the +AP tag"
+                            },
+                            {
+                                "name":"Airburst rounds explode in the air near a target either by proximity or as controlled by a targeting suite",
+                                "tags":"a weapon loaded with airburst rounds adds the +area and +messy tags"
+                            },
+                            {
+                                "name":"Explosive rounds explode on impact with a target",
+                                "tags":"a weapon loaded with explosive rounds adds +1 harm and cannot be silenced"
+                            },
+                            {
+                                "name":"Flechette rounds are a tightly packed bundle of synthetic plastic shards which tear through flesh, but are easily stopped by armour",
+                                "tags":"a weapon loaded with flechette rounds adds +1 harm, but the target’s armour value is doubled. Weapons with the +flechette tag already include the +1 harm"
+                            },
+                            {
+                                "name":"Gel rounds are designed to be less lethal",
+                                "tags":"a weapon loaded with gel rounds inflicts s-harm instead of its listed harm value; targets harmed by gel rounds add the original harm value (minus armour) to their roll when making the harm move"
+                            },
+                        ]
+                    }
+                ]
+            } 
+            console.log(vm.gear.weapons_list);
             vm.defaultAdvancements = [
                 {"id":0,"type":"basic","description":"Choose another move from your playbook."},
                 {"id":1,"type":"basic","description":"Choose another move from your playbook."},

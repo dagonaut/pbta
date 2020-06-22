@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <style>
+        .d-flex{
+            display:flex;
+        }
+    </style>
+    <div class="gear_section d-flex">
+        <div ng-repeat="gear in vm.gear.weapons_list">
+            <h4>{{gear.category}}</h4>
+            <div>{{gear.description}}</div>
+            <div ng-repeat="item in gear.items">
+                {{item.name}} ({{item.tags}})
+            </div>
+        </div>
+    </div>         
+</div>
