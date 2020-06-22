@@ -3,14 +3,26 @@
         .d-flex{
             display:flex;
         }
+        .justify-content-space-between{
+            justify-content: space-between;
+        }
+        .gear-section{
+            width:20%;
+            padding:0 4px;
+        }
+        .gear-section ul{
+            padding-inline-start: 20px; /* Override */
+        }
     </style>
-    <div class="gear_section d-flex">
-        <div ng-repeat="gear in vm.gear.weapons_list">
+    <div class="d-flex justify-content-space-between">
+        <div class="gear-section" ng-repeat="gear in vm.staticGear.weapons_list">            
             <h4>{{gear.category}}</h4>
             <div>{{gear.description}}</div>
+            <ul>
             <div ng-repeat="item in gear.items">
-                {{item.name}} ({{item.tags}})
+                <li><strong>{{item.name}}</strong> ({{item.tags}})</li>
             </div>
+            </ul>
         </div>
     </div>         
 </div>

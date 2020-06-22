@@ -1,8 +1,17 @@
 <div class="container-fluid">
+    <style>
+        .col-custom-20{
+            float:left;
+            width:20%;
+        }
+    </style>
     <!-- MC Sheet -->
     <!-- Character Row-->
     <div class="row">
         <div class="col-md-8">
+            <div class="col-custom-20">            
+                <attribute-block table="tbl_sprawl_Characters"></attribute-block>
+            </div>     
             <div ng-repeat="position in [0,1,2,3]" style="width:25%;float:left;">
                 <select ng-model="vm.mcDudes[position]" ng-change="vm.loadMCDude(position);">                        
                     <option ng-repeat="dude in vm.dudes" value="{{dude}}">{{dude.name}} -- {{dude.class}}</option>
