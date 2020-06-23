@@ -17,8 +17,7 @@
 
             function link($scope, element, attr){               
                 let vm = this;
-                console.log($scope);
-                let table = $scope.table //"tbl_weirdwest_characters";
+                let table = "tbl_weirdwest_characters";
 
                 $scope.dude = {
                     //id: "",
