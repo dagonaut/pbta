@@ -154,6 +154,10 @@
 						templateUrl: 'sprawlGear.html',
 						controller: 'Sprawl as vm'
 					},
+					'matrix@auth.sprawl': {
+						templateUrl: 'sprawlMatrix.html',
+						controller: 'Sprawl as vm'
+					},
 					'mc@auth.sprawl': {
 						templateUrl: 'sprawlMC.html',
 						controller: 'Sprawl as vm'
