@@ -1,3 +1,6 @@
+<style>    
+    
+</style>
 <div class="container-fluid">
     <!-- Reference -->
     <div class="reference_section row">
@@ -45,10 +48,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <h4>TAGS</h4>
-            <div ng-repeat="tag in vm.allTags">
-                <div>
+        <div class="col-md-4">            
+            <div class="col-md-6">
+                <h4>Cyberware Tags</h4>
+                <div ng-repeat="tag in vm.allTags" ng-if="tag.category === 'cyberware'">
                     <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
                     <div class="move-description" ng-hide="tag.hide">
                         <span>
@@ -59,9 +62,57 @@
                         </span>							
                     </div>
                 </div>
-            </div>                
+            </div>
+            <div class="col-md-6">
+                <h4>Range/Weapons Tags</h4>
+                <div ng-repeat="tag in vm.allTags" ng-if="tag.category !== 'cyberware'">
+                    <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+                    <div class="move-description" ng-hide="tag.hide">
+                        <span>
+                            [{{tag.category}}]
+                        </span>
+                        <span>
+                            {{tag.description}}
+                        </span>							
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">                
+        <div class="col-md-4">
+            <h4>Stages</h4>
+            <div>
+                1. <strong>Get the Job (EDGE):</strong> When this is rolled, successfully or not, you have accepted the mission and mark experience.<br />
+                1a. <strong>You stake CRED on your mission.</strong> 2 is normal, more than 2 advances a clock per person per point who uses it. You get as much cred back as you stake (more if you chose job pays well in getting paid.. or other MC circumstances). CRED you have staked can not be spent during the mission. (Have 5, stake 2, 3 is available.)<br />
+                2. <strong>Legwork Phase:</strong> Hit the Street & Research for [INTEL] & [GEAR]<br />
+                3. <strong>Action Phase</strong><br />
+                4. <strong>Getting Paid (LEGWORK)</strong><br />
+                5. <strong>Retaliation</strong><br />
+                6. <strong>Lie low or fight back?</strong>
+            </div>
+            <div class="ref-clocks-section">
+                <h4>Legwork Clock</h4>
+                <ul>
+                    <li>1200 Everything’s cool</li>
+                    <li>1500 The team is making some noise, but nothing serious... yet</li>
+                    <li>1800 The target hears vague rumours</li>
+                    <li>2100 The target hears clear but unconfirmed rumours. <strong>Advance the Action Clock</strong></li>
+                    <li>2200 The target has reliable information about the time of the mission. <strong>Advance the Action Clock</strong></li>
+                    <li>2300 The target has reliable information about the team. <strong>Advance the Action Clock</strong></li>
+                    <li>0000 The team is precisely identified. <strong>Advance a relevant Corporate or Threat Clock</strong></li>
+                </ul>
+                <h4>Action Clock</h4>
+                <ul>
+                    <li>1200 Everything’s cool</li>
+                    <li>1500 The target is more alert than usual</li>
+                    <li>1800 The target is on full alert</li>
+                    <li>2100 The target fully deploys internal assets appropriate to the threat</li>
+                    <li>2200 The target calls on external assets and locks down everything over which it still has control</li>
+                    <li>2300 The target deploys external assets</li>
+                    <li>0000 The target deploys overwhelming, excessive force – <strong>Advance the target’s Corporate Clock twice</strong></li>
+                </ul>    
+            </div>
+        </div>
+        <!-- <div class="col-md-4">                
             <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;" ng-if="vm.isMC">Create Clock</div>
             <h4>CLOCKS</h4>                
             <form novalidate class="simple-form" ng-show="vm.showClockEdit">
@@ -72,6 +123,6 @@
             <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'mission'">
                 <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>                                    
             </div>                
-        </div>
+        </div> -->
     </div>        
 </div>

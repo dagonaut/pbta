@@ -54,7 +54,7 @@
                             }
                         }
                     }
-                    $scope.clockObj.position = position;
+                    $scope.clockObj.position = position;                    
                 }
 
                 function saveClock(){

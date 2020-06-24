@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <style>
+        .d-flex{
+            display:flex;
+        }
+        .justify-content-space-between{
+            justify-content: space-between;
+        }
+        .justify-content-start{
+            justify-content: flex-start;
+        }
+        .gear-section{
+            width:25%;
+            padding:0 4px;
+        }
+        .gear-section ul{
+            padding-inline-start: 20px; /* Override */
+        }
+    </style>
+    <div class="d-flex justify-content-start">
+        <div class="gear-section">            
+            <h4>Firearms</h4>
+            <div>{{vm.staticGear.weapons.firearms.description}}</div>
+            <ul>
+            <div ng-repeat="item in vm.staticGear.weapons.firearms.items">
+                <li><strong>{{item.name}}</strong> ({{item.tags}})</li>
+            </div>
+            </ul>
+        </div>
+        <div class="gear-section">            
+            <h4>Ammunition</h4>
+            <div>{{vm.staticGear.weapons.ammunition.description}}</div>
+            <ul>
+            <div ng-repeat="item in vm.staticGear.weapons.ammunition.items">
+                <li><strong>{{item.name}}</strong> - {{item.tags}}</li>
+            </div>
+            </ul>
+        </div>
+        <div class="gear-section">            
+            <h4>Amrour</h4>
+            <div>{{vm.staticGear.weapons.armour.description}}</div>
+            <ul>
+            <div ng-repeat="item in vm.staticGear.weapons.armour.items">
+                <li><strong>{{item.name}}</strong> ({{item.tags}})</li>
+            </div>
+            </ul>            
+            <h4>Hand Weapons</h4>
+            <div>{{vm.staticGear.weapons.melee.description}}</div>
+            <ul>
+            <div ng-repeat="item in vm.staticGear.weapons.melee.items">
+                <li><strong>{{item.name}}</strong> ({{item.tags}})</li>
+            </div>
+            </ul>            
+            <h4>Grenades</h4>
+            <div>{{vm.staticGear.weapons.grenades.description}}</div>
+            <ul>
+            <div ng-repeat="item in vm.staticGear.weapons.grenades.items">
+                <li><strong>{{item.name}}</strong> ({{item.tags}})</li>
+            </div>
+            </ul>
+        </div>
+        <div class="gear-section">
+            <h4>Harm Guidelines</h4>
+            <ul>
+                <li><strong>Harm 0:</strong> scratches and bruises. Run it off.</li>
+                <li><strong>Harm 1:</strong> these are relatively minor injuries. Serious bruising, minor cuts and sprains, temporary loss of breath. They might hurt, but they probably won’t require medical attention.</li>
+                <li><strong>Harm 2:</strong> these injuries require first aid. Skin has probably been broken. If not, bones are bruised or damaged. There’s probably a risk of infection.</li>
+                <li><strong>Harm 3:</strong> these are serious injuries. Major cuts, bullet wounds and bone breaks. Normal people will be in shock and waiting for EMTs. Hardened veterans will keep going.</li>
+                <li><strong>Harm 4:</strong> these injuries probably require hospitalisation. They’ll give hardened veterans pause.</li>
+                <li><strong>Harm 5+:</strong> this represents the kind of injuries that only the lucky or the exceptional survive.</li>
+            </ul>
+            <h3>NPCs</h3>
+            <ul>
+                <li>1 harm will take out a civilian unused to personal violence</li>
+                <li>2 harm will take out most security guards</li>
+                <li>3 harm will take out highly trained guards</li>
+                <li>4 harm will take out elite non-cybered warriors</li>
+            </ul>
+        </div>
+    </div>         
+</div>

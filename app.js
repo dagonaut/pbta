@@ -188,6 +188,14 @@
 						templateUrl: 'games/sprawl/sprawlLog2.html',
 						controller: 'sprawl2 as vm'
 					},
+					'gear@auth.sprawl2': {
+						templateUrl: 'games/sprawl/sprawlGear2.html',
+						controller: 'Sprawl as vm'
+					},
+					'matrix@auth.sprawl2': {
+						templateUrl: 'games/sprawl/sprawlMatrix2.html',
+						controller: 'Sprawl as vm'
+					},
 					'mc@auth.sprawl2': {
 						templateUrl: 'games/sprawl/sprawlMC2.html',
 						controller: 'sprawl2 as vm'

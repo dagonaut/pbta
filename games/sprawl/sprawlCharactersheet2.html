@@ -268,7 +268,7 @@
             <div class="advancement_container row">
                 <div class="col-md-12">
                     <h4>ADVANCEMENT</h4>
-                    <div ng-repeat="adv in vm.defaultAdvancements" ng-show="adv.type === 'basic'">
+                    <div ng-repeat="adv in vm.defaultAdvancements" ng-if="adv.type === 'basic'">
                         <input
                         id="adv_{{adv.id}}"                             
                         type="checkbox" 
@@ -278,7 +278,7 @@
                         <span>{{adv.description}}</span>
                     </div>
                     <div class="text-info" style="font-weight:bold;">/* after 5 advancements */</div>
-                    <div ng-repeat="adv in vm.defaultAdvancements" ng-show="adv.type === 'advanced'">
+                    <div ng-repeat="adv in vm.defaultAdvancements" ng-if="adv.type === 'advanced'">
                         <input
                         id="adv_{{adv.id}}"                             
                         type="checkbox" 

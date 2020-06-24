@@ -1,0 +1,167 @@
+<div class="container-fluid">
+    <style>
+        .d-flex{
+            display:flex;
+        }
+        .justify-content-space-between{
+            justify-content: space-between;
+        }
+        .justify-content-start{
+            justify-content: flex-start;
+        }
+        .subsystem-section{
+            width:25%;
+            padding:0 4px;
+        }
+        .subsystem-section ul{
+            padding-inline-start: 20px; /* Override */
+        }
+    </style>
+    <div class="d-flex justify-content-start">
+        <div class="subsystem-section">            
+            <h4>LOGIN GATES</h4>
+            <div>{{vm.matrix.subsystems.login.description}}</div>
+            <div ng-if="vm.matrix.subsystems.login.routines.length > 0">
+                <strong>Routines</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.login.routines">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>
+            <div ng-if="vm.matrix.subsystems.login.security.length > 0">
+                <strong>Security</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.login.security">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>                      
+            <h4>ROOT</h4>
+            <div>{{vm.matrix.subsystems.root.description}}</div>
+            <div ng-if="vm.matrix.subsystems.root.routines.length > 0">
+                <strong>Routines</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.root.routines">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>
+            <div ng-if="vm.matrix.subsystems.root.security.length > 0">
+                <strong>Security</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.root.security">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>                      
+            <h4>DATABASES</h4>
+            <div>{{vm.matrix.subsystems.databases.description}}</div>
+            <div ng-if="vm.matrix.subsystems.databases.routines.length > 0">
+                <strong>Routines</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.databases.routines">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>
+            <div ng-if="vm.matrix.subsystems.databases.security.length > 0">
+                <strong>Security</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.databases.security">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>            
+        </div>
+        <div class="subsystem-section">          
+            <h4>BUILDING SECURITY NODES</h4>
+            <div>{{vm.matrix.subsystems.building_security.description}}</div>
+            <div ng-if="vm.matrix.subsystems.building_security.routines.length > 0">
+                <strong>Routines</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.building_security.routines">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>
+            <div ng-if="vm.matrix.subsystems.building_security.security.length > 0">
+                <strong>Security</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.building_security.security">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>                               
+            <h4>BUILDING SERVICES NODES</h4>
+            <div>{{vm.matrix.subsystems.building_services.description}}</div>
+            <div ng-if="vm.matrix.subsystems.building_services.routines.length > 0">
+                <strong>Routines</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.building_services.routines">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>
+            <div ng-if="vm.matrix.subsystems.building_services.security.length > 0">
+                <strong>Security</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.building_services.security">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>                      
+        </div>
+        <div class="subsystem-section">           
+            <h4>PRODUCTION CONTROL CENTER</h4>
+            <div>{{vm.matrix.subsystems.production.description}}</div>
+            <div ng-if="vm.matrix.subsystems.production.routines.length > 0">
+                <strong>Example Routines</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.production.routines">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>
+            <div ng-if="vm.matrix.subsystems.production.security.length > 0">
+                <strong>Security</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.production.security">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>                               
+            <h4>BR&D CONTROL SYSTEMS</h4>
+            <div>{{vm.matrix.subsystems.research.description}}</div>
+            <div ng-if="vm.matrix.subsystems.research.routines.length > 0">
+                <strong>Example Routines</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.research.routines">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>
+            <div ng-if="vm.matrix.subsystems.research.security.length > 0">
+                <strong>Security</strong>
+                <ul>
+                    <div ng-repeat="item in vm.matrix.subsystems.research.security">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </div>                      
+        </div>
+        <div class="subsystem-section">
+            <h4>ICE</h4>
+            <div ng-repeat="ic in vm.matrix.ice_list">
+                <h3>{{ic.type}}</h3>
+                <div>{{ic.description}}</div>
+                <div>{{ic.choose}}</div>
+                <ul>
+                    <div ng-repeat="move in ic.moves">
+                        <li>{{move}}</li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>         
+</div>
