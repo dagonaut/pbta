@@ -1,78 +1,64 @@
-<style>
-    #charSheet input{color:#000;}
-    #charSheet select{color:#000;width:150px;height:27px;}
-    textarea{width:100%;height:275px;color:#000;}
-    .stat input{border:1px solid #d38336;}
-    .orange{color:#d38336;}
-    .bg-orange{background-color:#d38336;}
-    .pointer{cursor: pointer;}
-    .d-flex{display:flex;}
-    .harm-input{
-        width:15px;
-        height:15px;
-        border:1px #cdcdcd solid;
-        cursor: pointer;
-    }
-    .harm-label{
-        margin-left:5px;
-    }
-</style>
-<form id="charSheet" name="charSheet" class="container-fluid">
-    <div class="row">
-        <div class="col-md-10">
+<form id="charSheet" name="charSheet">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-start align-items-center">
             Dudes:
-            <select ng-model="vm.dude">
+            <select ng-model="vm.dude" class="mx-1">
                 <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId || vm.userId === 2" value="{{dude.id}}">{{dude.name}} - {{dude.class}}
                 </option>
             </select>
-            <div class="btn btn-primary" ng-click="vm.updateCharacter(true);">Create New</div>
-            <div class="btn btn-primary" ng-click="vm.updateCharacter();">Save</div>
-            <div class="btn btn-danger" ng-click="vm.deleteCharacter();" ng-disabled="true">Delete</div>
-            <div class="btn btn-primary" ng-click="vm.loadCharacter(vm.dude);">Load</div>
+            <div class="btn btn-primary mx-1" ng-click="vm.updateCharacter(true);">Create New</div>
+            <div class="btn btn-primary mx-1" ng-click="vm.updateCharacter();">Save</div>
+            <div class="btn btn-danger mx-1" ng-click="vm.deleteCharacter();" ng-disabled="true">Delete</div>
+            <div class="btn btn-primary mx-1" ng-click="vm.loadCharacter(vm.dude);">Load</div>
         </div>
-        <div class="col-md-2">
+        <div>
             <div class="pointer" ng-click="vm.cd.visibility.classinfo = !vm.cd.visibility.classinfo">{{vm.cd.visibility.classinfo ? 'Hide' : 'Show'}} Starting Info</div>
         </div>
     </div>
-    <div class="row" ng-if="vm.cd.id > -1" style="margin:5px 0px;">
-        
+    <div class="d-flex my-2" ng-if="vm.cd.id > -1">
+        <div class="mr-1">
             Name: <input ng-model="vm.cd.name" />
+        </div>
+        <div class="mx-1">
             <label>Class:</label>
             <select ng-model="vm.cd.class" style="width:150px;height:27px;">
                 <option ng-repeat="class in vm.classes_list" value="{{class.key}}">{{class.value}}
                 </option>
             </select>
+        </div>
+        <div class="mx-1">
             Look: <input ng-model="vm.cd.look" />
-        
+        </div>
     </div>
     <div class="row" ng-if="vm.cd.id > -1">
         <!-- Column 1 -->
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-3'">
-            <!-- Stats -->
-            <div class="row stat">
-                <h2>Stats:</h2>
-                <div style="float:left;">
-                    Quick:<br /><input type="number" ng-model="vm.cd.stats.quick" />
-                </div>
-                <div style="float:left;">
-                    Grit:<br /><input type="number" ng-model="vm.cd.stats.grit" />
-                </div>
-                <div style="float:left;">
-                    Charm:<br /><input type="number" ng-model="vm.cd.stats.charm" />
-                </div>
-                <div style="float:left;">
-                    Savvy:<br /><input type="number" ng-model="vm.cd.stats.savvy" />
-                </div>
-                <div style="float:left;">
-                    Strange:<br /><input type="number" ng-model="vm.cd.stats.strange" />
+            <!-- Stats -->            
+            <h2>Stats:</h2>
+            <div class="stat d-flex justify-content-between">
+                <div class="d-flex">
+                    <div class="mx-1">
+                        Quick:<br /><input type="number" ng-model="vm.cd.stats.quick" />
+                    </div>
+                    <div class="mx-1">
+                        Grit:<br /><input type="number" ng-model="vm.cd.stats.grit" />
+                    </div>
+                    <div class="mx-1">
+                        Charm:<br /><input type="number" ng-model="vm.cd.stats.charm" />
+                    </div>
+                    <div class="mx-1">
+                        Savvy:<br /><input type="number" ng-model="vm.cd.stats.savvy" />
+                    </div>
+                    <div class="mx-1">
+                        Strange:<br /><input type="number" ng-model="vm.cd.stats.strange" />
+                    </div>
                 </div>   
-                <div style="float:right;">
+                <div>
                     Dinero:<br /><input type="number" ng-model="vm.cd.dinero" />
                 </div>             
             </div>
-            <!-- Harm / Armor / Dinero -->
-            
-            <div class="harm row">
+            <!-- Harm / Armor / Dinero -->            
+            <div class="harm">
                 <h2>Harm:</h2>
                 <div class="d-flex" style="justify-content:space-between;">
                     <div class="harm-label">Go ahead, make my day</div><div class="clear pointer" ng-click="vm.markHarm(0)">clear all</div>
@@ -107,32 +93,28 @@
                     </div>
                 </div>
             </div>
-            <!-- History  -->
-            <div class="row">
-                History:<br />
-                <textarea ng-model="vm.cd.history" style="height:80px;"></textarea>                
-            </div>
+            <!-- History  -->        
+            <h2>History:</h2>
+            <textarea ng-model="vm.cd.history" style="height:80px;"></textarea>        
             <!-- XP / LEVEL -->
-            <div class="stat row">
-                <div style="float:left;">
+            <div class="d-flex stat">
+                <div class="mx-1">
                     XP:<br /><input type="number" ng-model="vm.cd.xp" />
                 </div>
-                <div style="float:left;">
+                <div class="mx-1">
                     Level:<br /><input type="number" ng-model="vm.cd.level" />
                 </div>
             </div>
-            <!-- Advancement -->
-            <div class="row">
-                <h2>Advancements</h2>
-                <div ng-repeat="adv in vm.static[vm.cd.class].advancement">
-                    <input
-                        id="adv_{{adv.id}}"                             
-                        type="checkbox" 
-                        value="{{adv.id}}" 
-                        ng-checked="vm.cd.advancements.indexOf(adv.id) > -1"                            
-                        ng-click="vm.updateAdvancements(adv.id)" />
-                    <span ng-class="{'orange': vm.cd.advancements.indexOf(adv.id) > -1}">{{adv.description}}</span>
-                </div>
+            <!-- Advancement -->            
+            <h2>Advancements</h2>
+            <div ng-repeat="adv in vm.static[vm.cd.class].advancement">
+                <input
+                    id="adv_{{adv.id}}"                             
+                    type="checkbox" 
+                    value="{{adv.id}}" 
+                    ng-checked="vm.cd.advancements.indexOf(adv.id) > -1"                            
+                    ng-click="vm.updateAdvancements(adv.id)" />
+                <span ng-class="{'orange': vm.cd.advancements.indexOf(adv.id) > -1}">{{adv.description}}</span>
             </div>
         </div>
         <!-- Column 2 -->

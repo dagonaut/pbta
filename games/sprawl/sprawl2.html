@@ -1,5 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/pbta/games/sprawl/sprawl2.css" />
-<div class="container-fluid  dark-mode">          
+<div class="container-fluid sprawl2"> 
+    
+    <!-- TAB VIEW -->
     <uib-tabset active="active">
         <uib-tab index="vm.tabs.charactersheet.index" heading="{{::vm.tabs.charactersheet.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="charactersheet"></div>
@@ -19,6 +21,5 @@
         <uib-tab index="vm.tabs.mc.index" heading="{{::vm.tabs.mc.heading}}" ng-if="vm.isMC" ng-click="vm.onTabChange()">
             <div ui-view="mc"></div>
         </uib-tab>
-    </uib-tabset>
+    </uib-tabset>    
 </div>
-

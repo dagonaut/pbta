@@ -1,6 +1,6 @@
 (function(){
-    'use strict';
-
+    'use strict';   
+    
     angular
         .module('pbta_resources')
         .controller('LoginController', LoginController);
@@ -11,12 +11,14 @@
             var api = 'http://16watt.com/dev/api/api.php/';
             
             //Scope Properties
+            vm.darkMode = false;
             vm.userData = {};
             vm.isLoggedIn = false;
             vm.taco = "PSYCH";
             vm.showError = false;
 
             //Scope Methods
+            vm.setDarkMode = setDarkMode;
             vm.login = login;
             vm.logout = logout;
             vm.register = register;
@@ -118,6 +120,15 @@
                 }
                 function userFailure(error){
                     console.log(error);
+                }
+            }
+
+            function setDarkMode(){
+                vm.darkMode = !vm.darkMode;
+                if(vm.darkMode){
+                    $('body').addClass('darkMode');
+                } else {
+                    $('body').removeClass('darkMode');
                 }
             }
         }

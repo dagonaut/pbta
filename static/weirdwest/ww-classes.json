@@ -388,8 +388,9 @@
             {"id":5,"description":"+1 Charm (max +2)"},
             {"id":6,"description":"Get another Sawbones move."},
             {"id":7,"description":"Get another Sawbones move."},
-            {"id":8,"description":"Get a Homestead and the Bounty of the Land move. __ Get a move from another playbook."},
-            {"id":9,"description":"Get a move from another playbook."}
+            {"id":8,"description":"Get a Homestead and the Bounty of the Land move."},
+            {"id":9,"description":"Get a move from another playbook."},
+            {"id":10,"description":"Get a move from another playbook."}
         ],
         "custom":null
     },

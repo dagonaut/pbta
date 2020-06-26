@@ -3,23 +3,16 @@
 
     angular
         .module('pbta_resources')
-        .controller('WestController', WestController);
+        .controller('WestCharacterController', WestCharacterController);
 
-        WestController.$inject = ['$rootScope','$scope','$http','$location', '$cookies', 'apiservice'];
-        function WestController($rootScope, $scope, $http, $location, $cookies, apiservice){
+        WestCharacterController.$inject = ['$rootScope','$scope','$http','$location', '$cookies', 'apiservice'];
+        function WestCharacterController($rootScope, $scope, $http, $location, $cookies, apiservice){
             let vm = this;
             let userId =  $cookies.getObject('id') || 0;
 
             let _characterTable = "tbl_weirdwest_characters";
-            let _gameid = 5 // How the West Was Lost
-        
-            vm.tabs = {
-                charactersheet: { index: 0, heading: 'Character Sheet'},
-                reference: { index: 1, heading: 'Reference'},                
-                log: { index: 2, heading: 'Log'},
-                mc: { index: 3, heading: 'Marshall'}
-            };
-            vm.visible = { "Basic": [], "Other": [], "Dinero": [], "Fights": []};            
+            let _gameid = 5 // How the West Was Lost        
+            
             vm.blankCharacter = {
                 //id: "",
                 gameid: 5,
@@ -43,7 +36,6 @@
                 createdby: userId
             };
             vm.cd = angular.copy(vm.blankCharacter);
-
             vm.classes_list = [
                 { key: "blackhat", value: "The Blackhat"},
                 { key: "gambler", value: "The Gambler"},
@@ -57,16 +49,6 @@
                 { key: "sawbones", value: "The Saw Bones"},
                 { key: "siren", value: "The Siren"}
             ];
-            vm.nameOptions = { 
-                male: true,
-                female: true,
-                cowboy: true,
-                simple: true,
-                native_american: true,
-                spanish: true,
-                asian: true
-            }           
-
             vm.userId = userId;
 
             // Database Objects
@@ -76,45 +58,23 @@
             vm.loadCharacter = loadCharacter;
             vm.updateCharacter = updateCharacter;
             vm.deleteCharacter = deleteCharacter;
-
             vm.updateAdvancements = updateAdvancements;
             vm.updateMoves = updateMoves;
             vm.filterMoves = filterMoves;
-
-            vm.refreshDudes = refreshDudes;
-
             vm.markHarm = markHarm;
 
-            init();
-
-            function refreshDudes(){
-                $scope.$broadcast("refresh-dudes");
-            }
+            init();            
 
             function init(){ 
                 getMoves();
                 getDudes();
+                // temp load Brother Logarius
+                loadCharacter(21);
             }            
 
-            function getMoves(){
-                let _movesJSON = './static/weirdwest/ww-moves.json';
-                let _fightmovesJSON = './static/weirdwest/ww-fightsMoves.json';
+            function getMoves(){                
                 let _classJSON = './static/weirdwest/ww-classes.json';
-                let _classMovesJSON = './static/weirdwest/ww-classmoves.json';
-                $http.get(_movesJSON).then(getMovesSuccess, getMovesFail);
-                    function getMovesSuccess(response){
-                        vm.moves = response.data;                  
-                    }
-                    function getMovesFail(error){
-                        console.log(error);
-                    }
-                $http.get(_fightmovesJSON).then(getFightMovesSuccess, getFightMovesFail);
-                    function getFightMovesSuccess(response){
-                        vm.fightmoves = response.data;                  
-                    }
-                    function getFightMovesFail(error){
-                        console.log(error);
-                    }
+                let _classMovesJSON = './static/weirdwest/ww-classmoves.json';                
                 $http.get(_classJSON).then(getClassJSONSuccess, getClassJSONFail);
                     function getClassJSONSuccess(response){
                         vm.static = response.data;   
@@ -167,28 +127,15 @@
 
                 function getDudesSuccess(r){
                     vm.dudes = r;
-                    $scope.$broadcast("got-dudes", vm.dudes);
+                    //$scope.$broadcast("got-dudes", vm.dudes);
                 }
 
                 function getDudesFail(e){
                     console.log(e);
                 }
-            }
-
-            function getUsers(){
-                apiservice.GetAll("tbl_Users").then(y, n);
-
-                function y(r){
-                    console.log(r);                    
-                }
-
-                function n(e){
-                    console.log(e);
-                }
-            }
+            }            
             
             //#region CRUD
-            function getCharacters(){}
             function loadCharacter(characterId){
                 apiservice.GetById(_characterTable, characterId).then(yes, no);
 
@@ -270,11 +217,6 @@
             function markHarm(level){
                 vm.cd.harm = level;
 
-            }
-
-            // Name Generator
-            function getName(){
-                
-            }
+            }           
         }
 })();

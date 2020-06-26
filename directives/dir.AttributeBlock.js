@@ -10,14 +10,14 @@
                 restrict: 'E',                
                 templateUrl: "./directives/dir.AttributeBlock.html",
                 scope: {
-                    table: "="
+                    table: "@"
                 },
                 link: link
             };
 
             function link($scope, element, attr){               
                 let vm = this;
-                let table = "tbl_weirdwest_characters";
+                let table = $scope.table; //"tbl_weirdwest_characters";
 
                 $scope.dude = {
                     //id: "",

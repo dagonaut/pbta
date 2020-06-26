@@ -1,0 +1,77 @@
+/*
+    PBTA CSS
+*/
+
+/* Bootstrap Override & Custom Base Element Style */
+h2{
+    margin:0;
+    font-size:16px;
+    border-bottom:1px solid #0472CE;
+    cursor:pointer;
+}
+h3{
+    font-size:20px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+h4{
+    font-size: 20px;
+    border-bottom: 2px #0472CE solid;
+    text-align: right;
+    font-weight: bold;
+    color: #0472CE;
+}
+h5{
+    border-bottom:1px solid #000;
+}
+pre {
+    background-color:#cccccc;
+    padding:3px;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-break:normal;
+}
+.pointer{cursor:pointer;}
+.strong{font-weight:bold;}
+
+.menu-toggle{
+    margin-top:14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover, a:focus{
+    text-decoration: none;
+}
+
+/*#region Dark Mode */
+.darkMode{
+    background-color:#333333;
+    color:#cccccc;
+}
+/*#endregion */
+
+/*#region STAT (attribute) Blocks */
+.stat{}
+.stat label{width:100px;font-size:24px;}
+.stat input{width:50px;height:50px;font-size:24px;border:3px double #0472CE;}
+.stat input.link{width:250px;height:20px;font-size:14px;border:none;border-bottom:1px solid black;}
+.stat .description{color:#aaaaaa;}
+.stat .examples{font-size:11px;font-weight:bold;color:#666666;}
+
+.stat-name{
+    font-size:24px;
+    font-weight:bold;
+}
+.directives_container textarea{
+    float:left;
+    width:98%;
+    height:95px;
+    padding:0px;
+}
+/*#endregion */
+
+
+
+

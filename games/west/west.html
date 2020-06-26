@@ -1,7 +1,5 @@
-<style>
-    a.nav-link{color:#d38336;}
-</style>
-<div class="container-fluid">          
+<link rel="stylesheet" type="text/css" href="/pbta/games/west/west.css" />
+<div class="container-fluid west">
     <uib-tabset active="active">
         <uib-tab index="vm.tabs.charactersheet.index" heading="{{::vm.tabs.charactersheet.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="charactersheet"></div>
@@ -9,9 +7,6 @@
         <uib-tab index="vm.tabs.reference.index" heading="{{::vm.tabs.reference.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="reference"></div>
         </uib-tab>        
-        <uib-tab index="vm.tabs.log.index" heading="{{::vm.tabs.log.heading}}" ng-click="vm.onTabChange()">
-            <div ui-view="log"></div>
-        </uib-tab>
         <uib-tab index="vm.tabs.mc.index" heading="{{::vm.tabs.mc.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="mc"></div>
         </uib-tab>

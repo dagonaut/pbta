@@ -1,0 +1,309 @@
+(function(){
+    'use strict';
+
+    angular
+        .module('pbta_resources')
+        .controller('sprawl_matrix', sprawl_matrix);
+        
+        sprawl_matrix.$inject = ['$rootScope','$scope','$http'];
+        function sprawl_matrix($rootScope, $scope, $http){
+            //Private Properties
+            let vm = this;
+            
+            // Properties
+            // TODO: Make this a $get
+            vm.matrix = {
+                "subsystems_list":[        
+                    {
+                        "key":"login",
+                        "name":"LOGIN GATES",
+                        "description":"Login Gates govern entry into a Matrix system. By definition, all secure systems have a login gate. This is where authorised users provide their credentials and unauthorised users fake those credentials with login. ",
+                        "routines":[],
+                        "security":[
+                            "Admit or deny a login",
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    },
+                    {
+                        "key":"root",
+                        "name":"ROOT",
+                        "description":"Root controls the entire system. This is often the first place a system operator will go to defend the system against an intruder. ",
+                        "routines":[],
+                        "security":[
+                            "Change user permissions (including removing “restricted” status from login)",
+                            "Isolate or reintegrate a sub-system",
+                            "Sever all external logins, sever all internal logins, or both",
+                            "Shut down or reboot the virtual environment; this will often have major consequences for the operation of physical systems",
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE in any sub-system"
+                        ]
+                    },
+                    {
+                        "key":"databases",
+                        "name":"DATABASES",
+                        "description":"Databases contain data. These will often be the target of intrusion attempts aiming at discovering or extracting specific data, as well as general paydata fishing attempts. Many hackers consider this a great way to make a bit of extra Cred on the side... but you have to be good at sifting out the hot, tagged or worthless data. ",
+                        "routines":[
+                            "Create, edit or delete records",
+                            "Delete backups",
+                            "Delete or edit access logs",
+                            "Search for paydata (when you search for paydata in a Database, roll Mind: On a hit you find something hot that you can sell; on a 10+, when you hit the street to sell it choose one less option on a 7-9.)"
+                        ],
+                        "security":[
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    },
+                    {
+                        "key":"building_security",
+                        "name":"BUILDING SECURITY NODES",
+                        "description":"BUILDING SECURITY NODES monitor physical security systems. Most secure systems monitor similarly secure physical sites with a full array of cameras, sensors, and cutting edge security devices. Sometimes the easiest way to get inside is to cut through matrix security and turn off all those physical defences. ",
+                        "routines":[
+                            "Activate, deactivate, monitor, record, subvert or loop a camera network",
+                            "Activate or deactivate a physical alarm",
+                            "Activate or deactivate an electronically locked door",
+                            "Activate, deactivate, override or modify the targeting priorities of automated weapon system",
+                            "Activate or cancel a lockdown of the entire physical facility",
+                            "Activate or deactivate an electronically controlled trap"
+                        ],
+                        "security":[
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    },
+                    {
+                        "key":"building_services",
+                        "name":"BUILDING SERVICES NODES",
+                        "description":"BUILDING SERVICES NODES control the various mundane operations of the physical building or compound. Most facilities have some sort of automated systems controlling lights, air conditioning, power supplies, and the like. ",
+                        "routines":[
+                            "Activate, deactivate, monitor or reprogram a building system (such as air conditioning, lights, power; note that security or life support systems will often have independent backup power controlled from a separate Matrix system)" 
+                        ],
+                        "security":[
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    },
+                    {
+                        "key":"production",
+                        "name":"PRODUCTION CONTROL SYSTEMS",
+                        "description":"PRODUCTION CONTROL SYSTEMS control the things that the facility makes. Large corporate facilities (such as the virtual environment of a giant arcology) may have many different kinds of production control system each controlling different labs, warehouses and factories. The routines that these systems control differ widely depending on the goods being manufactured: the seed germination facility of an agricorp system will have quite different routines than the testing range of a weapons division. ",
+                        "routines":[
+                            "Start or stop a production line",
+                            "Initiate a production run or delivery",
+                            "Activate or deactivate part of a production line",
+                            "Reprogram part of a production line"
+                        ],
+                        "security":[
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    },
+                    {
+                        "key":"research",
+                        "name":"R&D CONTROL SYSTEMS",
+                        "description":"R&D CONTROL SYSTEMS control laboratories and databases where cutting-edge research is performed and stored. As above, the routines that these systems control differ widely depending on the goods being researched and tested: gene-splicing, explosives development, and organ growth all require different controls and systems. ",
+                        "routines":[
+                            "Seal or unseal a hermetically controlled area",
+                            "Change test parameters",
+                            "Initiate or rescind a test process",
+                            "Issue or rescind an evacuation order",
+                            "Activate or deactivate emergency protocols"
+                        ],
+                        "security":[
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    }
+                ],
+                "subsystems":{
+                    "login": {
+                        "key":"login",
+                        "name":"LOGIN GATES",
+                        "description":"Login Gates govern entry into a Matrix system. By definition, all secure systems have a login gate. This is where authorised users provide their credentials and unauthorised users fake those credentials with login. ",
+                        "routines":[],
+                        "security":[
+                            "Admit or deny a login",
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    },
+                    "root": {
+                        "key":"root",
+                        "name":"ROOT",
+                        "description":"Root controls the entire system. This is often the first place a system operator will go to defend the system against an intruder. ",
+                        "routines":[],
+                        "security":[
+                            "Change user permissions (including removing “restricted” status from login)",
+                            "Isolate or reintegrate a sub-system",
+                            "Sever all external logins, sever all internal logins, or both",
+                            "Shut down or reboot the virtual environment; this will often have major consequences for the operation of physical systems",
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE in any sub-system"
+                        ]
+                    },
+                    "databases": {
+                        "key":"databases",
+                        "name":"DATABASES",
+                        "description":"Databases contain data. These will often be the target of intrusion attempts aiming at discovering or extracting specific data, as well as general paydata fishing attempts. Many hackers consider this a great way to make a bit of extra Cred on the side... but you have to be good at sifting out the hot, tagged or worthless data. ",
+                        "routines":[
+                            "Create, edit or delete records",
+                            "Delete backups",
+                            "Delete or edit access logs",
+                            "Search for paydata (when you search for paydata in a Database, roll Mind: On a hit you find something hot that you can sell; on a 10+, when you hit the street to sell it choose one less option on a 7-9.)"
+                        ],
+                        "security":[
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    },
+                    "building_security":{
+                        "key":"building_security",
+                        "name":"BUILDING SECURITY NODES",
+                        "description":"BUILDING SECURITY NODES monitor physical security systems. Most secure systems monitor similarly secure physical sites with a full array of cameras, sensors, and cutting edge security devices. Sometimes the easiest way to get inside is to cut through matrix security and turn off all those physical defences. ",
+                        "routines":[
+                            "Activate, deactivate, monitor, record, subvert or loop a camera network",
+                            "Activate or deactivate a physical alarm",
+                            "Activate or deactivate an electronically locked door",
+                            "Activate, deactivate, override or modify the targeting priorities of automated weapon system",
+                            "Activate or cancel a lockdown of the entire physical facility",
+                            "Activate or deactivate an electronically controlled trap"
+                        ],
+                        "security":[
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    },
+                    "building_services":{
+                        "key":"building_services",
+                        "name":"BUILDING SERVICES NODES",
+                        "description":"BUILDING SERVICES NODES control the various mundane operations of the physical building or compound. Most facilities have some sort of automated systems controlling lights, air conditioning, power supplies, and the like. ",
+                        "routines":[
+                            "Activate, deactivate, monitor or reprogram a building system (such as air conditioning, lights, power; note that security or life support systems will often have independent backup power controlled from a separate Matrix system)" 
+                        ],
+                        "security":[
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    },
+                    "production":{
+                        "key":"production",
+                        "name":"PRODUCTION CONTROL SYSTEMS",
+                        "description":"PRODUCTION CONTROL SYSTEMS control the things that the facility makes. Large corporate facilities (such as the virtual environment of a giant arcology) may have many different kinds of production control system each controlling different labs, warehouses and factories. The routines that these systems control differ widely depending on the goods being manufactured: the seed germination facility of an agricorp system will have quite different routines than the testing range of a weapons division. ",
+                        "routines":[
+                            "Start or stop a production line",
+                            "Initiate a production run or delivery",
+                            "Activate or deactivate part of a production line",
+                            "Reprogram part of a production line"
+                        ],
+                        "security":[
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    },
+                    "research":{
+                        "key":"research",
+                        "name":"R&D CONTROL SYSTEMS",
+                        "description":"R&D CONTROL SYSTEMS control laboratories and databases where cutting-edge research is performed and stored. As above, the routines that these systems control differ widely depending on the goods being researched and tested: gene-splicing, explosives development, and organ growth all require different controls and systems. ",
+                        "routines":[
+                            "Seal or unseal a hermetically controlled area",
+                            "Change test parameters",
+                            "Initiate or rescind a test process",
+                            "Issue or rescind an evacuation order",
+                            "Activate or deactivate emergency protocols"
+                        ],
+                        "security":[
+                            "Trigger or cancel an alert",
+                            "Activate or deactivate ICE"
+                        ]
+                    }
+                },
+                "ice_list":[
+                    {
+                        "type":"BLUE ICE",
+                        "description":"locates intruders, raises the alarm, traces their location allowing the system owner to alert physical response teams (either internal corporate teams or the appropriate local police authorities), then attempts to sever the intruder's connection.",
+                        "choose":"When Blue ICE executes a routine, the MC chooses 1:",
+                        "moves":[
+                            "Trigger an alarm (advance relevant Mission Clock)",
+                            "Trace an intruder's location (Trace +1)",
+                            "Identify intruder (advance Corporate Clock)",
+                            "Sever an intruder's connection",
+                            "Call for counter-hacker backup"
+                        ]
+                    },
+                    {
+                        "type":"RED ICE",
+                        "description":"locates intruders, raises the alarm, traces their location, then engages them to damage their cyberdeck with feedback algorithms.",
+                        "choose":"When Red ICE executes a routine, the MC chooses 2:",
+                        "moves":[
+                            "Trigger an alarm (advance relevant Mission Clock)",
+                            "Trace an intruder's location (Trace +2)",
+                            "Identify an intruder (advance Corporate Clock)",
+                            "Sever an intruder's connection",
+                            "Corrupt an intruder's program (Destroy an active program)",
+                            "Damage an intruder's cyberdeck (Lower one of the cyberdeck's ratings by 1)"
+                        ]
+                    },
+                    {
+                        "type":"BLACK ICE",
+                        "description":"locates intruders, raises the alarm, traces their location, then engages them to harm the intruder herself with lethal feedback algorithms, trying to trap them in the matrix until the Black ICE kills them or physical response teams can reach their location.",
+                        "choose":"When Black ICE executes a routine, the MC chooses 3:",
+                        "moves":[
+                            "Trigger an alarm (advance relevant Mission Clock)",
+                            "Trace an intruder's location (Trace +3)",
+                            "Identify an intruder (advance Corporate Clock)",
+                            "Damage an intruder's cyberdeck (Lower one of the cyberdeck's ratings by 2)",
+                            "Inflict physical harm to a jacked in intruder (1-harm +AP)",
+                            "Prevent an intruder from jacking out and trap their mind"
+                        ]
+                    }
+                ],
+                "ice":{
+                    "blue":{
+                        "type":"BLUE ICE",
+                        "description":"locates intruders, raises the alarm, traces their location allowing the system owner to alert physical response teams (either internal corporate teams or the appropriate local police authorities), then attempts to sever the intruder's connection.",
+                        "choose":"When Blue ICE executes a routine, the MC chooses 1:",
+                        "moves":[
+                            "Trigger an alarm (advance relevant Mission Clock)",
+                            "Trace an intruder's location (Trace +1)",
+                            "Identify intruder (advance Corporate Clock)",
+                            "Sever an intruder's connection",
+                            "Call for counter-hacker backup"
+                        ]
+                    },
+                    "red":{
+                        "type":"RED ICE",
+                        "description":"locates intruders, raises the alarm, traces their location, then engages them to damage their cyberdeck with feedback algorithms.",
+                        "choose":"When Red ICE executes a routine, the MC chooses 2:",
+                        "moves":[
+                            "Trigger an alarm (advance relevant Mission Clock)",
+                            "Trace an intruder's location (Trace +2)",
+                            "Identify an intruder (advance Corporate Clock)",
+                            "Sever an intruder's connection",
+                            "Corrupt an intruder's program (Destroy an active program)",
+                            "Damage an intruder's cyberdeck (Lower one of the cyberdeck's ratings by 1)"
+                        ]
+                    },
+                    "black":{
+                        "type":"BLACK ICE",
+                        "description":"locates intruders, raises the alarm, traces their location, then engages them to harm the intruder herself with lethal feedback algorithms, trying to trap them in the matrix until the Black ICE kills them or physical response teams can reach their location.",
+                        "choose":"When Black ICE executes a routine, the MC chooses 3:",
+                        "moves":[
+                            "Trigger an alarm (advance relevant Mission Clock)",
+                            "Trace an intruder's location (Trace +3)",
+                            "Identify an intruder (advance Corporate Clock)",
+                            "Damage an intruder's cyberdeck (Lower one of the cyberdeck's ratings by 2)",
+                            "Inflict physical harm to a jacked in intruder (1-harm +AP)",
+                            "Prevent an intruder from jacking out and trap their mind"
+                        ]
+                    }
+                }
+            }; 
+
+            init();
+
+            function init(){
+                console.log("Sprawl Matrix 2");
+            }            
+        }
+})();
+

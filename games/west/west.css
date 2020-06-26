@@ -1,0 +1,52 @@
+/*
+    HOW THE WEST WAS LOST (WEST) CSS
+
+*/
+
+.darkMode .west{
+    color:#ddd;
+    background-color: #333;
+}
+
+/* ELEMENT Overrides */
+.west h2{
+    border-bottom:#d38336 1px solid;
+}
+.west select{
+    width:150px;
+    height:27px;
+    color:#000;
+}
+.west textarea{
+    width:100%;
+    height:275px;
+    color:#000;
+}
+.west pre{
+    border: 1px solid #d38336;
+}
+
+/* Custom */
+.west a.nav-link{color:#d38336;}
+
+.west .move-header{
+    font-size:16px;
+    font-weight:bold;
+}
+.west .orange{
+    color:#d38336;
+}
+.west .bg-orange{
+    background-color:#d38336;
+}
+.west .stat input{border:1px solid #d38336;}
+
+.west .harm-input{
+    width:15px;
+    height:15px;
+    border:1px #cdcdcd solid;
+    cursor: pointer;
+}
+.west .harm-label{
+    margin-left:5px;
+}

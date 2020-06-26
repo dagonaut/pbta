@@ -16,17 +16,20 @@ strong{
 .ref-clocks-section strong{
     color:indianred;
 }
-.dark-mode{
+body.darkMode{
     color:#bbe1fa;
     background-color:#1b262c;
 }
-.dark-mode input, .dark-mode select, .dark-mode textarea{
+.darkMode .sprawl2{
+    color:#bbe1fa;
+    background-color:#1b262c;
+}
+.darkMode .sprawl2 input, .darkMode .sprawl2 select, .darkMode .sprawl2 textarea{
     color:#bbe1fa;
     background-color:#1b262c;
 }
 
 
-body{padding:0 5px;}
 h2{
     margin:0;
     font-size:16px;

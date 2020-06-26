@@ -105,24 +105,20 @@
 				stateName: 'West',			
 				views: {	
 					'west':{
-						templateUrl: 'west.html',
+						templateUrl: 'games/west/west.html',
 						controller: 'WestController as vm'
 					},			
 					'charactersheet@auth.west': {
-						templateUrl: 'westCharactersheet.html',
-						controller: 'WestController as vm'
+						templateUrl: 'games/west/westCharactersheet.html',
+						controller: 'WestCharacterController as vm'
 					},
 					'reference@auth.west': {
-						templateUrl: 'westReference.html',
-						controller: 'WestController as vm'
-					},					
-					'log@auth.west': {
-						templateUrl: 'westLog.html',
-						controller: 'WestController as vm'
+						templateUrl: 'games/west/westReference.html',
+						controller: 'WestReferenceController as vm'
 					},
 					'mc@auth.west': {
-						templateUrl: 'westMC.html',
-						controller: 'WestController as vm'
+						templateUrl: 'games/west/westMC.html',
+						controller: 'WestMCController as vm'
 					}
 				}
 			})						
@@ -174,31 +170,27 @@
 					},			
 					'charactersheet@auth.sprawl2': {
 						templateUrl: 'games/sprawl/sprawlCharactersheet2.html',
-						controller: 'sprawl2 as vm'
+						controller: 'sprawl_character as vm'
 					},
 					'reference@auth.sprawl2': {
 						templateUrl: 'games/sprawl/sprawlReference2.html',
-						controller: 'sprawl2 as vm'
+						controller: 'sprawl_reference as vm'
 					},
 					'threats@auth.sprawl2': {
 						templateUrl: 'games/sprawl/sprawlThreats2.html',
-						controller: 'sprawl2 as vm'
-					},
-					'log@auth.sprawl2': {
-						templateUrl: 'games/sprawl/sprawlLog2.html',
-						controller: 'sprawl2 as vm'
-					},
+						controller: 'sprawl_threats as vm'
+					},					
 					'gear@auth.sprawl2': {
 						templateUrl: 'games/sprawl/sprawlGear2.html',
-						controller: 'Sprawl as vm'
+						controller: 'sprawl_gear as vm'
 					},
 					'matrix@auth.sprawl2': {
 						templateUrl: 'games/sprawl/sprawlMatrix2.html',
-						controller: 'Sprawl as vm'
+						controller: 'sprawl_matrix as vm'
 					},
 					'mc@auth.sprawl2': {
 						templateUrl: 'games/sprawl/sprawlMC2.html',
-						controller: 'sprawl2 as vm'
+						controller: 'sprawl_mc as vm'
 					}
 				}
 			})			
