@@ -11,7 +11,7 @@
             var api = 'http://16watt.com/dev/api/api.php/';
             
             //Scope Properties
-            vm.darkMode = false;
+            vm.darkMode = true;
             vm.userData = {};
             vm.isLoggedIn = false;
             vm.taco = "PSYCH";

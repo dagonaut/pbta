@@ -47,17 +47,23 @@
             <div class="harm_container row">
                 <div class="col-sm-12">
                     <h4>HARM</h4>
-                    <div class="harm_marker lrg" ng-class="vm.harm[0]" ng-click="vm.markHarm(0)">1500</div>
-                    <div class="harm_marker lrg" ng-class="vm.harm[1]" ng-click="vm.markHarm(1)">1800</div>
-                    <div class="harm_marker lrg" ng-class="vm.harm[2]" ng-click="vm.markHarm(2)">2100</div>
-                    <div class="harm_marker sm" ng-class="vm.harm[3]" ng-click="vm.markHarm(3)">2200</div>
-                    <div class="harm_marker sm" ng-class="vm.harm[4]" ng-click="vm.markHarm(4)">2300</div>
-                    <div class="harm_marker sm" ng-class="vm.harm[5]" ng-click="vm.markHarm(5)">0000</div>
-                    <a href ng-click="vm.clearHarm()" style="margin-left:3px;">Clear</a>
+                    <div class="d-flex align-items-center">
+                        <div class="stat">
+                            <div>ARMOR:</div>
+                            <input type="number" ng-model="vm.characterData.armor" />
+                        </div>
+                        <div class="harm_marker lrg" ng-class="vm.harm[0]" ng-click="vm.markHarm(0)">1500</div>
+                        <div class="harm_marker lrg" ng-class="vm.harm[1]" ng-click="vm.markHarm(1)">1800</div>
+                        <div class="harm_marker lrg" ng-class="vm.harm[2]" ng-click="vm.markHarm(2)">2100</div>
+                        <div class="harm_marker sm" ng-class="vm.harm[3]" ng-click="vm.markHarm(3)">2200</div>
+                        <div class="harm_marker sm" ng-class="vm.harm[4]" ng-click="vm.markHarm(4)">2300</div>
+                        <div class="harm_marker sm" ng-class="vm.harm[5]" ng-click="vm.markHarm(5)">0000</div>
+                        <a href ng-click="vm.clearHarm()" style="margin-left:3px;">Clear</a>
+                    </div>
                 </div>
             </div>
             <!-- Complicated Non-reponsive HEX format -->
-            <div class="attributes_container row hide">
+            <div class="attributes_container row d-none">
                 <div class="col-sm-3">
                     <div class="attributes_left">
                         <div class="attribute_container">
