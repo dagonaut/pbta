@@ -48,8 +48,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">            
-            <div class="col-md-6">
+        <div class="col-md-4 d-flex justify-content-between">            
+            <div class="mx-auto">
                 <h4>Cyberware Tags</h4>
                 <div ng-repeat="tag in vm.allTags" ng-if="tag.category === 'cyberware'">
                     <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="mx-auto">
                 <h4>Range/Weapons Tags</h4>
                 <div ng-repeat="tag in vm.allTags" ng-if="tag.category !== 'cyberware'">
                     <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
