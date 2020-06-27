@@ -40,6 +40,29 @@
             <li class="d-none"><a class="orange" target="_blank" href="https://docs.google.com/document/d/17VjCxjULNnqJdzD-oR94BYQM7DK4TPIl3ipsxzUQtZA/edit">Ongoing Notes (G-Doc)</a></li>
             <li class="d-none"><a class="orange" target="_blank" href="https://jamboard.google.com/d/11uCuozm4t-p0kgMshAHAWGXwMWxjHMZ7UvIXC8ADKMQ/viewer">Cowboy Shit (G-Jamboard)</a></li>
         </ul>
+        <h3>Name Generator</h3>
+        <div>            
+            <div>{{ vm.nameGenerated }}</div>
+            <div class="d-flex">
+                <div class="btn btn-secondary mx-1" ng-click="vm.getName('male')">Male</div>
+                <div class="btn btn-secondary mx-1" ng-click="vm.getName('female')">Female</div>
+                <div class="btn btn-secondary mx-1" ng-click="vm.getName('either')">Either</div>                
+                <div class="btn btn-secondary mx-1" ng-click="vm.getName('horse')">Horse</div>                
+                <div class="btn btn-secondary mx-1" ng-click="vm.getName('all')">All</div>
+            </div>            
+            <div class="d-flex flex-wrap">
+                <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('cowboy')" ng-model="vm.nameOptions.cowboy" />Cowboy</div>
+                <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('simple')" ng-model="vm.nameOptions.simple" />Simple</div>
+                <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('fancy')" ng-model="vm.nameOptions.fancy" />Fancy</div>
+                <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('apache')" ng-model="vm.nameOptions.apache" />Apache</div>
+                <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('cherokee')" ng-model="vm.nameOptions.cherokee" />Cherokee</div>
+                <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('cheyenne')" ng-model="vm.nameOptions.cheyenne" />Cheyenne</div>
+                <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('lakota')" ng-model="vm.nameOptions.lakota" />Lakota</div>
+                <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('navajo')" ng-model="vm.nameOptions.navajo" />Navajo</div>
+                <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('spanish')" ng-model="vm.nameOptions.spanish" />Spanish</div>
+                <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('asian')" ng-model="vm.nameOptions.asian" />Asian</div>
+            </div>
+        </div>
         <h2 class="move-header orange">Fight Moves</h2>
         <div ng-repeat="(key, value) in vm.fightmoves">
             <h2 ng-click="vm.visible.Fight[$index] = !vm.visible.Fight[$index]">{{key}}</h2>
