@@ -32,7 +32,7 @@
     </div>
     <div class="row" ng-if="vm.cd.id > -1">
         <!-- Column 1 -->
-        <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-3'">
+        <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
             <!-- Stats -->            
             <h2>Stats:</h2>
             <div class="stat d-flex justify-content-between">
@@ -121,11 +121,14 @@
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
             
             <h2>
-                Moves: 
+                Moves:
+                
                 <span class="pull-right pointer" style="font-size:smaller;" 
-                    ng-click="vm.cd.visibility.moves = !vm.cd.visibility.moves">Show {{ vm.cd.visibility.moves ? 'Selected Only' : 'All'}}</span>
+                    ng-click="vm.cd.visibility.moves = !vm.cd.visibility.moves">Show {{ vm.cd.visibility.moves ? 'Selected Only' : 'All'}}</span> | 
+                <span class="pull-right pointer" style="font-size:smaller;" 
+                    ng-click="vm.cd.visibility.allmoves = !vm.cd.visibility.allmoves">Show {{ vm.cd.visibility.allmoves ? 'All' : 'Class'}} moves</span>
             </h2>
-            <div ng-repeat="move in vm.classmoves.moves | filter: { class: vm.cd.class }" ng-show="vm.filterMoves(move.id);">
+            <div ng-repeat="move in vm.classmoves.moves | filter: ( vm.cd.visibility.allmoves || '') && { class: vm.cd.class }" ng-show="vm.filterMoves(move.id);">
                 <input
                             id="move_{{move.id}}"                             
                             type="checkbox" 

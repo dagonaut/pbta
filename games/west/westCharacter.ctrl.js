@@ -32,7 +32,7 @@
                 gear: "",
                 notes: "",
                 advancements: [],
-                visibility: { moves: true, classinfo: true, model: false, custom: true },
+                visibility: { moves: true, classinfo: true, model: false, custom: true, allmoves: false },
                 createdby: userId
             };
             vm.cd = angular.copy(vm.blankCharacter);
