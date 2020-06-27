@@ -1,23 +1,10 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-1">
+<div class="">
+    <div class="d-flex">
+        <div class="col-md-1">
             <div class="btn btn-sm btn-info pull-left" ng-click="vm.showClockEdit = !vm.showClockEdit;" ng-if="vm.isMC">Create</div>
         </div>
-        <div class="col-xs-5">
-            <form novalidate class="row simple-form" ng-show="vm.showClockEdit">
-                <!-- <div class="col-xs-3">
-                    <strong>Name:</strong><br />
-                    <strong>Type:</strong><br />
-                    <strong>Description:</strong><br />
-                    <strong>Goal:</strong>
-                </div>
-                <div class="col-xs-9">
-                    <input type="text" ng-model="clock.name" /><br />
-                    <input type="text" ng-model="clock.type" /><br />
-                    <textarea type="text" ng-model="clock.description"></textarea><br />
-                    <textarea type="text" ng-model="clock.goal"></textarea><br />
-                    <input type="submit" ng-click="vm.createClock(clock)" value="Save Threat" />
-                </div> -->
+        <div class="col-md-5">
+            <form novalidate class="row simple-form" ng-show="vm.showClockEdit">                
                 <label>Name: <input type="text" ng-model="clock.name" /></label><br />
                 <label>Type: <input type="text" ng-model="clock.type" /></label><br />
                 <label>Description: <textarea type="text" ng-model="clock.description"></textarea></label><br />
@@ -25,15 +12,15 @@
                 <input type="submit" ng-click="vm.createClock(clock)" value="Save Threat" />
             </form>
         </div>
-        <div class="col-xs-6">
+        <div class="col-md-6">
             <!-- fill empty space -->
         </div>
     </div>
-    <div class="row">
-        <h3>MISSION</h3>
+    <h3>MISSION</h3>
+    <div class="d-flex">
         <div class="col-lg-8">
-            <div style="margin:auto;">
-                <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'mission'" class="pull-left" style="width:50%;">
+            <div class="d-flex mx-auto">
+                <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'mission'" style="width:50%;">
                     <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>
                 </div>
             </div>
@@ -41,25 +28,23 @@
         <div class="col-lg-4">
             <a href class="glyphicon glyphicon-plus pull-left menu-toggle" ng-click="vm.addHold();"></a>
             <h4>Hold</h4>
-            <div ng-repeat="hold in vm.holds">
-                <hold hold-obj="hold" on-delete="vm.getHolds();" mc="vm.isMC"></hold>
+            <div class="d-flex flex-wrap">
+                <div ng-repeat="hold in vm.holds">
+                    <hold hold-obj="hold" on-delete="vm.getHolds();" mc="vm.isMC"></hold>
+                </div>
             </div>
         </div>        
     </div>
-    <div class="row">
-        <h3>CORPORATIONS</h4>
-        <div class="col-lg-12">
-            <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'corporation'" class="pull-left" style="width:33%;">
-                <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>
-            </div>
-        </div>        
+    <h3>CORPORATIONS</h4>        
+    <div class="d-flex flex-wrap">
+        <div ng-repeat="clock in vm.clocks" ng-if="clock.type === 'corporation'"  style="width:33%;">
+            <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>
+        </div>                
     </div>
-    <div class="row">
-        <h3>THREATS</h3>
-        <div class="col-lg-12">
-            <div ng-repeat="clock in vm.clocks" ng-if="clock.type !== 'mission' && clock.type !== 'corporation'" class="pull-left" style="width:33%;">
-                <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>
-            </div>
-        </div>        
+    <h3>THREATS</h3>
+    <div class="d-flex flex-wrap">
+        <div ng-repeat="clock in vm.clocks" ng-if="clock.type !== 'mission' && clock.type !== 'corporation'"  style="width:33%;">
+            <clock clock-obj="clock" on-delete="vm.getClocksByUserId(2)" mc="vm.isMC"></clock>
+        </div>
     </div>
 </div>

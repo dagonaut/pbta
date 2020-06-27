@@ -1,28 +1,32 @@
-<div class="harm_container row" style="width:99%;">
-    <div class="col-sm-12">
-        <a href ng-click="toggleEdit()" style="position:relative;top:32px;" ng-if="mc">edit</a>
-        <a href ng-click="deleteClock(clockObj.id)" style="position:relative;top:32px;" ng-if="mc">delete</a>
-        <h4 ng-show="!edit">{{clockObj.name}}</h4>
-        <h4 ng-show="edit"><input type="text" ng-model="clockObj.name" value="{{clockObj.name}}" /></h4>
+<div class="harm_container p-1">
+    <div class="d-flex justify-content-between" style="border-bottom:2px #3282b8 solid;">
+        <div class="menu-toggle" ng-if="mc">
+            <a href ng-click="toggleEdit()" ng-if="mc">edit</a>
+            <a href ng-click="deleteClock(clockObj.id)" ng-if="mc">delete</a>
+        </div>
+        <h4 class="mb-0 border-bottom-0" ng-show="!edit">{{clockObj.name}}</h4>
+        <h4 class="mb-0 border-bottom-0" ng-show="edit"><input type="text" ng-model="clockObj.name" value="{{clockObj.name}}" /></h4>
+    </div>
+    <div>
         <p ng-show="!edit" ng-if="mc">{{clockObj.type}}</p>
         <p ng-show="edit"><input type="text" ng-model="clockObj.type" value="{{clockObj.type}}" /></p>
+    </div>
+    <div class="d-flex">
         <div class="harm_marker lrg" ng-class="clock[0]" ng-disabled="!mc" ng-click="markClock(0); saveClock()">1500</div>
-        <div class="harm_marker lrg" ng-class="clock[1]" ng-click="mc ? markClock(1) : ''">1800</div>
-        <div class="harm_marker lrg" ng-class="clock[2]" ng-click="mc ? markClock(2) : ''">2100</div>
-        <div class="harm_marker sm" ng-class="clock[3]" ng-click="mc ? markClock(3) : ''">2200</div>
-        <div class="harm_marker sm" ng-class="clock[4]" ng-click="mc ? markClock(4) : ''">2300</div>
-        <div class="harm_marker sm" ng-class="clock[5]" ng-click="mc ? markClock(5) : ''">0000</div>
-        <a href ng-click="clearClock()" style="margin-left:3px;" ng-if="mc">Clear</a>
-        <a href ng-click="saveClock()" style="margin-left:3px;" ng-if="mc">Save</a>
-        <div class="row" ng-if="type !== 'mission'">
-            <div class="col-sm-12">
-                <strong>Description:</strong><br />
-                <p ng-show="!edit">{{clockObj.description}}</p>
-                <p ng-show="edit"><textarea type="text" ng-model="clockObj.description" value="{{clockObj.description}}" style="width:95%;"></textarea></p>
-                <strong>Goal:</strong><br />
-                <p ng-show="!edit">{{clockObj.goal}}</p>
-                <p ng-show="edit"><textarea type="text" ng-model="clockObj.goal" value="{{clockObj.goal}}" style="width:95%;"></textarea></p>
-            </div>
-        </div>
+        <div class="harm_marker lrg" ng-class="clock[1]" ng-disabled="!mc" ng-click="markClock(1); saveClock()">1800</div>
+        <div class="harm_marker lrg" ng-class="clock[2]" ng-disabled="!mc" ng-click="markClock(2); saveClock()">2100</div>
+        <div class="harm_marker sm" ng-class="clock[3]" ng-disabled="!mc" ng-click="markClock(3); saveClock()">2200</div>
+        <div class="harm_marker sm" ng-class="clock[4]" ng-disabled="!mc" ng-click="markClock(4); saveClock()">2300</div>
+        <div class="harm_marker sm" ng-class="clock[5]" ng-disabled="!mc" ng-click="markClock(5); saveClock()">0000</div>
+        <a href ng-click="clearClock(); saveClock();" style="margin-left:3px;" ng-if="mc">Clear</a>
+        <!-- <a href ng-click="saveClock()" style="margin-left:3px;" ng-if="mc">Save</a> -->    
+    </div>
+    <div class="" ng-if="type !== 'mission'">
+        <strong>Description:</strong><br />
+        <p ng-show="!edit">{{clockObj.description}}</p>
+        <p ng-show="edit"><textarea type="text" ng-model="clockObj.description" value="{{clockObj.description}}" style="width:95%;"></textarea></p>
+        <strong>Goal:</strong><br />
+        <p ng-show="!edit">{{clockObj.goal}}</p>
+        <p ng-show="edit"><textarea type="text" ng-model="clockObj.goal" value="{{clockObj.goal}}" style="width:95%;"></textarea></p>
     </div>
 </div>

@@ -162,7 +162,7 @@
             
         </div>
         <!-- Column 4 -->
-        <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'hidden'">
+        <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'd-none'">
             <div class="pointer" ng-click="vm.cd.visibility.model = !vm.cd.visibility.model">{{vm.cd.visibility.model ? 'Hide' : 'Show'}} Model</div>
 
             <pre ng-if="vm.cd.visibility.model">{{vm.cd | json}}</pre>            

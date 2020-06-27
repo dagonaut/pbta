@@ -189,6 +189,7 @@ a:hover, a:focus{
 .stat label{width:100px;font-size:24px;}
 .stat input{width:50px;height:50px;font-size:24px;border:3px double #3282b8;}
 .stat input.link{width:250px;height:20px;font-size:14px;border:none;border-bottom:1px solid black;}
+.darkMode .stat input.link{width:250px;height:20px;font-size:14px;border:none;border-bottom:1px solid #bbe1fa;}
 .stat .description{color:#bbe1fa;}
 .stat .examples{font-size:11px;font-weight:bold;color:#3282b8;}
 
