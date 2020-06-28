@@ -69,7 +69,7 @@
                 getMoves();
                 getDudes();
                 // temp load Brother Logarius
-                loadCharacter(21);
+                //loadCharacter(21);
             }            
 
             function getMoves(){                

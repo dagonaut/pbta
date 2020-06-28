@@ -1,6 +1,6 @@
 <title>Weird West Reference Page</title>
 <!-- Section Headers/Titles Row -->
-<div class="d-flex">
+<div class="d-flex mt-2">
     <div class="col-md-6">
         <h3>How The West Was Lost Reference</h3>
     </div>
@@ -42,7 +42,7 @@
         </ul>
         <h3>Name Generator</h3>
         <div>            
-            <div>{{ vm.nameGenerated }}</div>
+            <div class="m-2">{{ vm.nameGenerated }}</div>
             <div class="d-flex">
                 <div class="btn btn-secondary mx-1" ng-click="vm.getName('male')">Male</div>
                 <div class="btn btn-secondary mx-1" ng-click="vm.getName('female')">Female</div>
@@ -62,12 +62,7 @@
                 <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('spanish')" ng-model="vm.nameOptions.spanish" />Spanish</div>
                 <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('asian')" ng-model="vm.nameOptions.asian" />Asian</div>
             </div>
-        </div>
-        <h2 class="move-header orange">Fight Moves</h2>
-        <div ng-repeat="(key, value) in vm.fightmoves">
-            <h2 ng-click="vm.visible.Fight[$index] = !vm.visible.Fight[$index]">{{key}}</h2>
-            <pre ng-hide="!vm.visible.Fight[$index]">{{value}}</pre>
-        </div>
+        </div>        
     </div>
     <div class="col-md-3 d-flex justify-content-between" ng-controller="ReferenceController">
         <div class="col-md-6">
