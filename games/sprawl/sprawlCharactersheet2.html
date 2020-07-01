@@ -10,13 +10,11 @@
                 <div class="btn btn-sm btn-sprawl" ng-click="vm.loadDude(vm.currentDude);">Load Dude</div>
                 <div class="btn btn-sm btn-sprawl" ng-confirm-click="You sure? All progress will be lost." confirmed-click="vm.clearDude();">Reset</div>
             </div>
-            <!-- Name / Look -->
+            <!-- Name / Look / class-->
             <div class="name-look_container row">
                 <div class="col-sm-12">
                     <label>Name: </label><input class="name" type="text" ng-model="vm.characterData.name" />
-                    <label>Look: </label><input class="look" type="text" ng-model="vm.characterData.look" />
-                    <a id="popover-content-directives" style="display:inline-block;" tabindex="0" class="btn btn-sm btn-info" role="button" data-toggle="popover"  
-                    title="Name & Look Suggestions:" data-html="true" data-content="{{vm.nameLookHTML}}"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>                    
+                    <label>Look: </label><input class="look" type="text" ng-model="vm.characterData.look" />                    
                     <select ng-model="vm.class" ng-change="vm.getClassMoves(vm.class)">
                         <option ng-repeat="class in vm.classes" value="{{class.name}}" ng-selected="{{class.name == vm.class}}">{{class.name}}</option>
                     </select>                                              
@@ -39,7 +37,42 @@
                 <input type="number" ng-model="vm.characterData.cred" />
             </div>
         </div>
+        <div class="col-md-1 pr-2">            
+            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#startingInfo" aria-expanded="false" aria-controls="startingInfo">
+                Starting Info
+            </button>            
+        </div>
     </div>
+    <div class="collapse p-2" id="startingInfo" style="border:3px double #bbe1fa; border-radius: 5px;">
+        <div style="border-bottom:1px solid #3282b8;">
+            Pick from the lists below to complete <strong>{{vm.class}}</strong>:
+        </div>
+        <div class="d-flex">
+            <div class="w-25">
+                <div class="d-flex flex-wrap">
+                    <strong class="mr-1">Name:</strong> <span class="mr-1" ng-repeat="name in vm.classData[vm.class].names">{{name}}, </span>
+                </div>
+                eyes face body wear skin
+                <div class="d-flex flex-wrap">
+                    <div><strong class="mr-1">Eyes:</strong> <span class="mr-1" ng-repeat="eye in vm.classData[vm.class].look.eyes">{{ eye }}, </span></div>
+                    <div><strong class="mr-1">Face:</strong> <span class="mr-1" ng-repeat="face in vm.classData[vm.class].look.face">{{ face }}, </span></div>
+                    <div><strong class="mr-1">Body:</strong> <span class="mr-1" ng-repeat="body in vm.classData[vm.class].look.body">{{ body }}, </span></div>
+                    <div><strong class="mr-1">Wear:</strong> <span class="mr-1" ng-repeat="wear in vm.classData[vm.class].look.wear">{{ wear }}, </span></div>
+                    <div><strong class="mr-1">Skin:</strong> <span class="mr-1" ng-repeat="skin in vm.classData[vm.class].look.skin">{{ skin }}, </span></div>
+                </div>
+            </div>
+            <div>
+                Choose 2 directives:
+                <div data-ng-bind-html="vm.directives"></div>
+            </div>
+            <div>
+                Weapons:
+                <div data-ng-bind-html="vm.classData[vm.class].gear"></div>
+            </div>
+          
+        </div>
+        
+      </div>
     <div class="character_sheet row">
         <!-- Column 1-->
         <div class="col-md-4">                
@@ -209,11 +242,7 @@
             </div>
             <!-- Directives -->
             <div class="directives_container row">
-                <div class="col-md-12">
-                    <a id="popover-content-directives" style="display:inline-block;" tabindex="0" class="btn btn-sm btn-info pull-left" 
-                    role="button" data-toggle="popover" data-placement="top" 
-                    title="Choose 2:" data-html="true" 
-                    data-content="{{vm.directives}}"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+                <div class="col-md-12">                   
                     <h4>DIRECTIVES</h4>
                     <textarea type="textbox" class="directives" ng-model="vm.characterData.directives"></textarea>                                                   
                 </div>
@@ -321,10 +350,7 @@
             </div>
             <!-- Gear -->
             <div class="gear_container row">
-                <div class="col-md-12">
-                    <a id="popover-content-directives" style="display:inline-block;" tabindex="0" class="btn btn-sm btn-info pull-left" 
-                    role="button" data-toggle="popover"  data-placement="left"
-                    title="Gear:" data-html="true" data-content="{{vm.classData[vm.class].gear}}"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>                           
+                <div class="col-md-12">                    
                     <h4>GEAR</h4>                        
                     <textarea type="textbox" class="gear" style="width:99%;height:300px;" ng-model="vm.characterData.gear"></textarea>
                 </div>
@@ -332,17 +358,3 @@
         </div>
     </div>
 </form>
-<script type="text/javascript">
-    $(function () {
-        $('[data-toggle="popover"]').each(function(){
-            $(this).popover({
-                html:true,
-                content: function() {
-                    var id = $(this).attr('id')
-                    return $('#popover-content-' + id).html();
-                }
-            });
-        });
-    });
-</script>
-
