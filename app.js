@@ -36,19 +36,19 @@
 				stateName: 'DW',			
 				views: {	
 					'cs':{
-						templateUrl: 'dw.html',
+						templateUrl: 'games/dungeonworld/dw.html',
 						controller: 'DungeonWorld2 as vm'
 					},			
 					'charactersheet@auth.dw': {
-						templateUrl: 'dwCharactersheet.html',
+						templateUrl: 'games/dungeonworld/dwCharactersheet.html',
 						controller: 'DungeonWorld2 as vm'
 					},
 					'reference@auth.dw': {
-						templateUrl: 'reference.html',
+						templateUrl: 'games/dungeonworld/reference.html',
 						controller: 'ReferenceController as vm'
 					},
 					'log@auth.dw': {
-						templateUrl: 'dwDMreference.html',
+						templateUrl: 'games/dungeonworld/dwDMreference.html',
 						controller: 'DungeonWorld2 as vm'
 					}
 				}
@@ -205,7 +205,6 @@
 
 			// To remove #! from URL
 			$locationProvider.html5Mode({enabled:true, requireBase: false}).hashPrefix('!');
-			//$locationProvider.hashPrefix('');
 	});
 	
 	//Run transitions

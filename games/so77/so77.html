@@ -1,0 +1,398 @@
+<!-- <!DOCTYPE html>
+<html ng-app="pbta_resources">
+<head>
+        <script type="text/javascript" src="./inc/angular.min.js"></script>
+        <script type="text/javascript" src="./inc/angular-ui-router.min.js"></script>
+        <script type="text/javascript" src="./inc/angular-cookies.js"></script>
+        <script type="text/javascript" src="./inc/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="./inc/md5.min.js"></script>
+        <script type="text/javascript" src="./inc/checklist-model.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+    	<script type="text/javascript" src="app.js"></script>
+    	<script type="text/javascript" src="./inc/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+        <link rel="stylesheet" type="text/css" href="inc/bootstrap-3.3.7-dist/css/bootstrap.css" />
+        <script type="text/javascript" src="./services/svc.AuthService.js"></script>
+        <script type="text/javascript" src="./services/svc.UserService.js"></script>
+        <script type="text/javascript" src="./controllers/ctrl.TestController.js"></script>
+        <script type="text/javascript" src="./controllers/ctrl.so77Controller.js"></script>
+        <script type="text/javascript" src="./controllers/ctrl.ReferenceController.js"></script>
+</head>
+<body ng-controller="so77Controller as vm"> -->
+	<style>
+		.attr{
+			width: 50px;
+		    height: 56px;
+		    border: solid black 1px;
+		    font-size: 24px;
+		    padding-left: 5px;
+		}
+		.attr-box{
+			width:80px;
+			height:80px;
+			margin-bottom:5px;
+			border:solid black 1px;
+		}
+		.attr-container{
+			padding:5px;			
+		}
+		.attr-name{
+			padding-left:3px;
+			border:solid black 1px;			
+			font-weight: bold;
+		}
+		.attr-bonus{
+			display: inline-block;
+		    padding-left: 5px;
+		    border: solid black 1px;
+		    height: 56px;
+		    width: 28px;
+		    line-height: 60px;
+		}
+		.sheet{
+			width:800px;
+		}
+		.value{
+			padding:11px;
+			font-size:24px;
+		}
+		.hp-container{
+			
+		}
+		.move-trigger{
+			font-weight: bold;
+		}
+		.gear input{
+			padding:0px;
+			border:none;
+			border-bottom:1px solid black;
+		}
+		textarea{
+			width:340px;
+
+		}
+		textarea.notes{
+			min-height:400px;
+		}
+		h1{font-size:20px;}
+        h2{font-size:18px;}
+        h3{font-size:14px;}
+        h4{font-size:12px;}
+		.move-trigger{
+			font-weight:bold;
+			color:#a52c1c; /* reddish */
+		}
+		h2.move{
+			margin:0px;
+			font-size:16px;	
+		}
+		.move:hover{
+			cursor: pointer;
+		}
+		.move-container{
+
+		}
+		.remove{
+			border:none;
+			background:none;
+		}
+		.name-container label{float:left;}
+		.name-container input{border:none;padding:0;padding-left:3px;border-bottom:1px solid black;float:left;}
+
+		.box{
+			width:50px;
+			height:50px;
+			font-size:20px;
+		}
+
+		.cursor{
+			cursor: pointer;
+		}
+		input{
+			margin:5px !important;
+		}
+		.attr-a{
+			font-size:9px;
+		}
+		.input-full{
+			width:80%;
+		}
+		label{
+			margin-right:5px;
+		}
+	</style>
+
+
+	<div class="container-fluid sheet" style="width:97%;">
+		<div class="row">
+			<div class="col-md-4">
+				<button ng-click="vm.updateCharacter(vm.characterData)">SAVE</button>
+				<div class="row">
+					<label>Name</label><input type="text" ng-model="vm.characterData.name" /><br />
+					<label>Role</label>
+					<select ng-model="vm.characterData.role" ng-change="vm.setRoleDescription()">
+						<option ng-repeat="role in vm.roles" value="{{role.name}}" ng-selected="vm.characterDate.role">{{role.name}}</option>
+					</select>
+					<label>Story</label>
+					<select ng-model="vm.characterData.story" ng-change="vm.setStoryDescription()">
+						<option ng-repeat="story in vm.stories" value="{{story.name}}" ng-selected="vm.characterDate.story">{{story.name}}</option>
+					</select><br /><br />
+				</div>
+				<div class="row">
+					<label>Level</label><input class="box" type="number" ng-model="vm.characterData.level" />
+					<label>XP</label><input class="box" type="number" ng-model="vm.characterData.xp" />
+					<label>Next:</label>{{ 5 + vm.characterData.level}}
+				</div>
+				<div class="row">
+					<label>Look</label><input class="input-full" type="text" ng-model="vm.characterData.look" /><br />
+					<label>Hooks</label><input class="input-full" type="text" ng-model="vm.characterData.hooks" /><br />
+					<label>Buzz</label><input class="input-full" type="text" ng-model="vm.characterData.buzz" /><br />
+				</div>
+				<div class="row">
+					<div class="col-xs-2">
+						<label>Might <span class="attr-a">(STR)</span></label><br /><input class="box" type="number" ng-model="vm.characterData.might" />
+					</div>
+					<div class="col-xs-2">
+						<label>Hustle <span class="attr-a">(DEX)</span></label><br /><input class="box" type="number" ng-model="vm.characterData.hustle" />
+					</div>
+					<div class="col-xs-2">
+						<label>Smooth <span class="attr-a">(CHA)</span></label><br /><input class="box" type="number" ng-model="vm.characterData.smooth" />
+					</div>
+					<div class="col-xs-2">
+						<label>Brains <span class="attr-a">(INT)</span></label><br /><input class="box" type="number" ng-model="vm.characterData.brains" />
+					</div>
+					<div class="col-xs-2">
+						<label>Soul <span class="attr-a">(WIS)</span></label><br /><input class="box" type="number" ng-model="vm.characterData.soul" />			
+					</div>
+				</div>
+				<div class="row">
+					<label>Gear & Thangs</label><br /><textarea class="text-box" type="text" ng-model="vm.characterData.gear"></textarea><br />					
+					<label>Notes</label><br /><textarea class="text-box" type="text" ng-model="vm.characterData.notes"></textarea><br />					
+				</div>
+				<div class="row">
+					<label>Harm</label><input class="box" type="number" ng-model="vm.characterData.harm" /><br />
+				</div>
+				<div>{{vm.characterData.moves}}</div>
+				<div class="cursor" ng-click="vm.setVisible('thangs')">Toggle Thangs</div>
+				<div ng-bind-html="vm.thangsDescription" ng-show="vm.visible.thangs"></div>
+					<!-- <div class="row">
+					<div>
+						<label ng-repeat="move in vm.allMoves">
+							<input
+							id="move_{{move.id}}"
+							type="checkbox"					  
+							value="{{move.id}}"
+							ng-checked="vm.characterData.moves.indexOf(move.id) > -1"
+							ng-click="vm.updateMoves(move.id)"					  
+							> {{move}}
+						</label>
+					</div>
+					<div>{{vm.characterData.moves}}</div>
+				</div> -->
+			</div>
+			<div class="col-md-3">	
+				<div class="row">
+					<h3>Role Moves:</h3>
+					<div>
+						<div ng-repeat="move in vm.allMoves" ng-show="move.class == vm.characterData.role">
+							<input
+							id="move_{{move.id}}"
+							type="checkbox"					  
+							value="{{move.id}}"
+							ng-checked="vm.characterData.moves.indexOf(move.id) > -1"
+							ng-click="vm.updateMoves(move.id)"
+													
+							><span style="font-weight:bold;margin-left:5px;">{{move.name}}:</span> <span style="font-weight:none;" ng-bind-html="move.description"></span>
+						</div>
+					</div>
+				</div>
+				<div class="cursor" ng-click="vm.setVisible('role')">Toggle Role Text</div>
+				<div ng-bind-html="vm.roleDescription" ng-show="vm.visible.role"></div>			
+			</div>
+			<div class="col-md-3">				
+				<div class="row">
+					<h3>Story Moves:</h3>
+					<div>
+						<div ng-repeat="move in vm.allMoves" ng-show="move.class == vm.characterData.story">
+							<input
+							id="move_{{move.id}}"
+							type="checkbox"					  
+							value="{{move.id}}"
+							ng-checked="vm.characterData.moves.indexOf(move.id) > -1"
+							ng-click="vm.updateMoves(move.id)"					  
+							><span style="font-weight:bold;margin-left:5px;">{{move.name}}:</span> <span style="font-weight:none;" ng-bind-html="move.description"></span>							
+						</div>
+					</div>					
+				</div>
+				<div class="cursor" ng-click="vm.setVisible('story')">Toggle Story Text</div>
+				<div ng-bind-html="vm.storyDescription" ng-show="vm.visible.story"></div>
+			</div>
+		</div>
+		
+		<script>/*
+		<div class="row">
+			<!-- Left Column -->
+			<div class="col-md-6">
+				<div class="row">
+					<label>Game: </label>
+					<select>						
+						<option value="3">Spirit of '77'</option>
+					</select>
+				</div>
+				<div class="row name-container">					
+					<label>Name: </label><input class="col-xs-5" type="text" ng-model="characterData.name" />
+					<label>Class: </label><input class="col-xs-3" type="text" ng-model="characterData.class" />
+				</div>
+				<div class="row">
+					<div class="col-sm-3">
+						<div><strong>Level: </strong></div><input class="attr" type="number" ng-model="characterData.level" />
+					</div>
+					<div class="col-sm-3">
+						<div><strong>XP: </strong></div> <input class="attr" type="number" ng-model="characterData.xp" />
+					</div>
+					<div class="col-sm-4">
+						<div><strong>Next: </strong><small> (7+ level)</small></div><div class="value">{{characterData.level + 7}}</div>
+					</div>
+				</div>
+				<div class="row">
+					<div><strong>Look:</strong></div>
+					<textarea ng-model="characterData.look"></textarea>
+				</div>
+				<div class="row">
+					<div><strong>Alignment: </strong></div>
+					<textarea ng-model="characterData.alignment"></textarea>
+					<div>Bonds: </div>
+					<textarea type="text" ng-model="characterData.bonds"></textarea>
+					<div>Moves: </div>
+					<div ng-repeat="move in allMoves" ng-show="move.type == 'starting'">
+						<div class="move-container">
+							<h2 class="move">{{move.name}}</h2>
+							<div class="move-description" ng-hide="dungeonMove.hide">						
+								<p><span class="move-trigger">{{move.trigger}}</span>{{move.description}}</p>
+							</div>
+						</div>
+					</div>
+					Advanced Moves
+					<!-- Moves List Template -->
+					<!-- <div ng-show="movesOpen">
+						<div ng-repeat="move in allMoves" ng-hide="move.type == 'starting'">
+							<input type="checkbox" id="moveid_{{move.id}}" /><span>{{move.name}}</span><br />
+						</div>
+					</div> -->
+					<div ng-repeat="move in allMoves" ng-show="move.type == 'advanced' || move.type == 'expert'">
+						<div class="move-container">
+							<h2 class="move">
+								<input type="checkbox" 
+										ng-checked="{{characterData.moves.indexOf(move.id) > -1}}"
+										checklist-model="characterData.moves"
+										checklist-value="move.id">{{move.name}}</h2>
+							<div class="move-description" ng-hide="dungeonMove.hide">						
+								<p><span class="move-trigger">{{move.trigger}}</span>{{move.description}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Right Column -->
+			<div class="col-md-6">
+				<div class="row hp-container">
+					<div class="col-sm-3">
+						<div>Damage: </div>
+						<div class="value">{{characterData.damage}}</div>
+					</div>
+					<div class="col-sm-3">
+						<div>HP: </div>
+						<input class="attr" type="number" ng-model="characterData.hp" />
+					</div>
+					<div class="col-sm-3">
+						<div>Max: </div>
+						<div class="value">{{characterData.basehp + characterData.con}}</div>
+					</div>
+					<div class="col-sm-3">
+						<div>Armor: </div>
+						<input class="attr" type="number" ng-model="characterData.armor" />
+					</div>
+				</div>
+				<!-- Attributes -->
+				<div class="attr-container">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="attr-box">
+								<div class="attr-name">STR </div>
+								<input class="attr" type="number" ng-model="characterData.str" ng-change="setModifiers();" /><div class="attr-bonus">{{attrModifiers.str}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">DEX </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.dex" /><div class="attr-bonus">{{attrModifiers.dex}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">CON </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.con" /><div class="attr-bonus">{{attrModifiers.con}}</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">INT </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.int" /><div class="attr-bonus">{{attrModifiers.int}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">WIS </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.wis" /><div class="attr-bonus">{{attrModifiers.wis}}</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="attr-box">
+							<div class="attr-name">CHA </div>
+							<input class="attr" type="number" ng-change="setModifiers();" ng-model="characterData.cha" /><div class="attr-bonus">{{attrModifiers.cha}}</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<em>16 (+2), 15(+1), 13(+1), 12(0), 9(0), 8(-1)</em>
+						</div>
+					</div>
+					<!-- Gear/Notes -->
+					<div class="row">
+						<div class="col-md-12 gear">
+							<div class="row">
+							<div class="col-xs-6">Gear: </div>
+							<div class="col-xs-6 text-right">Max load: {{(attrModifiers.str + 9)|number:0}}</div>
+
+							<div class="col-xs-8">Name</div>
+							<div class="col-xs-2">Tags</div>							
+							<div class="col-xs-2">Weight</div>
+							</div>
+							<fieldset  data-ng-repeat="g in gear track by $index">
+								<input class="col-xs-8" type="text" ng-model="g.name" />
+								<input class="col-xs-3" type="text" ng-model="g.tags" />
+								<div class="col-xs-1">
+									<input style="float:left;width:8px;border-bottom:none;" type="text" ng-model="g.weight" />
+									<button style="" class="remove" ng-click="removeChoice(g.id)">X</button>
+								</div>
+							</fieldset>
+							<button class="addfields" ng-click="addNewChoice()">Add gear</button>
+							<!-- For debug
+							<div id="choicesDisplay">
+								{{ gear }}
+							</div>
+							-->
+							<div>Notes</div>
+							<textarea class="notes" type="textarea" ng-model="characterData.notes"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		*/</script>
+	</div>
+<!-- </body>
+</html> -->
+
