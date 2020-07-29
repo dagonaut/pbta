@@ -195,9 +195,9 @@
 				}
 			})			
 			.state('home',{
-				url: '/',
-				templateUrl: './games/impulsedrive/impulseRef.html',
-				controller: 'ImpulseDriveController as vm'
+				url: '/'
+				//templateUrl: './games/impulsedrive/impulseRef.html',
+				//controller: 'ImpulseDriveController as vm'
 				// templateUrl: 'reference.html',
 				// controller: 'ReferenceController',
 				// controllerAs: 'vm'

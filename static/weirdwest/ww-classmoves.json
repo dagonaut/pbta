@@ -1,6 +1,6 @@
 {
-    "moves":[
-        {"id":0, "gameid":5, "class": "", "name": "", "description": ""},
+    "model": {"id":0, "gameid":5, "class": "", "name": "", "description": ""},
+    "moves":[        
         {"id":1, "gameid":5, "class": "blackhat", "name": "The Boss", "description": "When you impose your will on your gang to get them to do something they don't want to do, roll + Grit. On a 12+, all 4. On a 10+, choose 3. On a 7-9. choose 2. On a miss, someone in your gang will try to make a dedicated attempt to takeover as boss.\n•They do what you want.\n•They don't fight back over it.\n•You don't have to make an example of one of them.\n•You don't have to pay them extra."},
         {"id":2, "gameid":5, "class": "blackhat", "name": "Legend of the West", "description": "When you meet someone new or roll into town, roll + Charm. On a hit, they've heard of you and your deeds, and you tell the Marshall what they've heard. They'll react accordingly, either by helping you, or trying to stay the hell out of your way. On a 10+, you get +1 to rolls to interact with them.\nOn a miss, they've heard about you, and aren't too happy to be meeting you."},
         {"id":3, "gameid":5, "class": "blackhat", "name": "Liars and Thieves", "description": "When you have your gang turn out their pockets and saddlebags for something, roll + Grit. It has to be something small enough to fit, and nothing Luxe or Mystical.\nOn a 10+, one of your guys has just the thing, or close enough. On a 7-9, one of them has something pretty close. On a miss, one of them had it, but some asshole stole it."},
