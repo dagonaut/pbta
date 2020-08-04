@@ -290,7 +290,7 @@
                         <a href ng-click="vm.showMoves('all');" ng-class="vm.visibility.moves === 'all' ? 'strong' : ''">all</a>
                     </div>
                     <h4>MOVES</h4>
-                    <div ng-repeat="move in vm.classMoves" ng-show="vm.filterMoves(move.id);">
+                    <div ng-repeat="move in vm.sprawlMoves" ng-show="vm.filterMoves(move.id);">
                         <div>
                             <input
                             id="move_{{move.id}}"                             

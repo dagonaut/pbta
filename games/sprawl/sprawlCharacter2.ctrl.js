@@ -207,7 +207,6 @@
 
             function showMoves(type){
                 vm.visibility.moves = type;
-
             }
             function filterMoves(id){
                 switch(vm.visibility.moves) {
@@ -215,15 +214,15 @@
                         return true;
                         break;
                     case 'mine':
-                        if(vm.characterData.moves.indexOf(id) != -1){ 
+                        if(vm.characterData.moves.indexOf(id) !== -1){ 
                             return true; 
                         } else {
                             return false;
                         }                        
                         break;
                     case 'class':
-                        return true;
-                        if(vm.classMoves.indexOf(id) != -1){ 
+                        let move = vm.sprawlMoves.find(obj=>obj.id === id);                        
+                        if(move.class === vm.class){ 
                             return true;
                         } else {
                             return false;
