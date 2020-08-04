@@ -40,7 +40,7 @@
             vm.create = typeof vm.characterData.id === 'undefined' ? 'Create' : 'Save';
             vm.userId = userId;
             vm.dudes = [];            
-            vm.visibility = { advancement: true, cyberware: 'class' }
+            vm.visibility = { advancement: true, cyberware: 'class', moves: 'class' }
             vm.isMC = userId === 2;
 
             // Refernce properties
@@ -61,6 +61,8 @@
             vm.updateCyberware = updateCyberware;
             vm.showCyberware = showCyberware;
             vm.filterCyberware = filterCyberware;
+            vm.showMoves = showMoves;
+            vm.filterMoves = filterMoves;
             vm.addLink = addLink;
             vm.removeLink = removeLink;
                     
@@ -201,6 +203,35 @@
                     vm.sprawlMoves = data;
                     hideAll();
                 });
+            }
+
+            function showMoves(type){
+                vm.visibility.moves = type;
+
+            }
+            function filterMoves(id){
+                switch(vm.visibility.moves) {
+                    case 'all':
+                        return true;
+                        break;
+                    case 'mine':
+                        if(vm.characterData.moves.indexOf(id) != -1){ 
+                            return true; 
+                        } else {
+                            return false;
+                        }                        
+                        break;
+                    case 'class':
+                        return true;
+                        if(vm.classMoves.indexOf(id) != -1){ 
+                            return true;
+                        } else {
+                            return false;
+                        }
+                        break;
+                    default:
+                        if(vm.classData[vm.class].moves.indexOf(id) != -1){ return true; }  else { return false; }                      
+                }
             }
 
             function hideAll(){

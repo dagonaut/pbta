@@ -284,8 +284,13 @@
             <!-- Moves -->
             <div class="moves_container row">
                 <div class="col-md-12">
+                    <div class="menu-toggle pull-left">
+                        <a href ng-click="vm.showMoves('mine');" ng-class="vm.visibility.moves === 'mine' ? 'strong' : ''">mine</a> | 
+                        <a href ng-click="vm.showMoves('class');" ng-class="vm.visibility.moves === 'class' ? 'strong' : ''">{{vm.class}}</a> | 
+                        <a href ng-click="vm.showMoves('all');" ng-class="vm.visibility.moves === 'all' ? 'strong' : ''">all</a>
+                    </div>
                     <h4>MOVES</h4>
-                    <div ng-repeat="move in vm.classMoves">
+                    <div ng-repeat="move in vm.classMoves" ng-show="vm.filterMoves(move.id);">
                         <div>
                             <input
                             id="move_{{move.id}}"                             

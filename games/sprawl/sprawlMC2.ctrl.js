@@ -82,6 +82,7 @@
             // Scope Events
             vm.setIntel = setIntel;
             vm.setGear = setGear;
+            vm.refresh = refresh;
 
             // Reference Sheet methods
             vm.clocks = [];
@@ -112,6 +113,22 @@
             //#endregion
 
             //#region Dude / Character load/save/etc
+            function refresh(){
+                debugger;
+                for(let i = 0; i < 4; i++){
+                    let position = i;
+                    let d = vm.mcDudes[position];
+                    // Don't do it if there isn't a dude.
+                    if(typeof d.id !== 'undefined'){
+                        SprawlCharacterService.GetById(d.id).then(function(data){
+                            vm.mcDudes[position] = data;                        
+                            vm.mcDudes[position].moves = JSON.parse("[" + data.moves + "]");
+                            vm.mcDudes[position].cyberware = JSON.parse("[" + data.cyberware + "]");
+                        });
+                    }              
+                }
+            }
+
             function saveCharacter(){
                 // Update the model
                 console.log(vm.characterData);
