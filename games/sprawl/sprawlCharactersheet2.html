@@ -250,14 +250,14 @@
             <!-- Links -->            
             <div class="links_container row">
                 <div class="col-md-12">
-                <a href class="glyphicon glyphicon-plus pull-left menu-toggle" ng-click="vm.addLink();"></a>
+                <a href class="pull-left menu-toggle" ng-click="vm.addLink();">Add+</a>
                     <h4>LINKS</h4>
                     <div ng-repeat="link in vm.characterData.links track by $index">
                         <div class="stat">                            
                             <input type="number" ng-model="link.value" />
                             <div style="display:inline-block;">                        
                                 <input class="link" type="text" ng-model="link.name" />
-                                <a href ng-click="vm.removeLink($index);" class="glyphicon glyphicon-remove"></a>
+                                <a href ng-click="vm.removeLink($index);" class="">x</a>
                             </div>
                         </div>
                     </div>
