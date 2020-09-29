@@ -182,7 +182,8 @@
 
             function loadMCDude(position){
                 // Grab the dude from the JSON.
-                vm.mcDudes[position] = JSON.parse(vm.mcDudes[position]);                
+                vm.mcDudes[position] = JSON.parse(vm.mcDudes[position]); 
+                vm.mcDudes[position].cyberware = JSON.parse("[" + vm.mcDudes[position].cyberware + "]");
             }
 
             function deleteDude(){
