@@ -1,3 +1,4 @@
+
 <form id="charSheet" name="charSheet">
     <div class="d-flex justify-content-between">
         <div class="d-flex justify-content-start align-items-center">
@@ -120,13 +121,17 @@
             
             <h2>
                 Moves:
-                
-                <span class="pull-right pointer" style="font-size:smaller;" 
+                <span class="move-filter">Show 
+                    <a href ng-click="vm.showMoves('mine');" ng-class="vm.cd.visibility.moves === 'mine' ? 'strong' : ''">mine</a> | 
+                    <a href ng-click="vm.showMoves('class');" ng-class="vm.cd.visibility.moves === 'class' ? 'strong' : ''">{{vm.cd.class}}</a> | 
+                    <a href ng-click="vm.showMoves('all');" ng-class="vm.cd.visibility.moves === 'all' ? 'strong' : ''">all</a>
+                </span>
+                <!-- <span class="pull-right pointer" style="font-size:smaller;" 
                     ng-click="vm.cd.visibility.moves = !vm.cd.visibility.moves">Show {{ vm.cd.visibility.moves ? 'Selected Only' : 'All'}}</span> | 
                 <span class="pull-right pointer" style="font-size:smaller;" 
-                    ng-click="vm.cd.visibility.allmoves = !vm.cd.visibility.allmoves">Show {{ vm.cd.visibility.allmoves ? 'All' : 'Class'}} moves</span>
+                    ng-click="vm.cd.visibility.allmoves = !vm.cd.visibility.allmoves">Show {{ vm.cd.visibility.allmoves ? 'All' : 'Class'}} moves</span> -->
             </h2>
-            <div ng-repeat="move in vm.classmoves.moves | filter: ( vm.cd.visibility.allmoves || '') && { class: vm.cd.class }" ng-show="vm.filterMoves(move.id);">
+            <div ng-repeat="move in vm.classmoves.moves " ng-show="vm.filterMoves(move.id);"> <!-- | filter: ( vm.cd.visibility.allmoves || '') && { class: vm.cd.class } -->
                 <input
                             id="move_{{move.id}}"                             
                             type="checkbox" 

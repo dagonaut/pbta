@@ -50,3 +50,16 @@
 .west .harm-label{
     margin-left:5px;
 }
+
+.west .move-filter{
+    font-size:smaller;    
+}
+
+.west .move-filter a{
+    color:#ddd;
+}
+
+.west .strong{
+    color:#d38336 !important;
+    font-weight:bold;
+}

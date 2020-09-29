@@ -1,5 +1,5 @@
 <div class="stat">            
     <input class="link" type="text" ng-model="hold.name" ng-keydown="$event.keyCode === 13 && updateHold();" ng-blur="updateHold();" ng-disabled="!mc" style="width:65%;" />
     <input type="number" ng-model="hold.value" ng-change="updateHold();" ng-disabled="!mc" />
-    <a href ng-if="mc" ng-click="deleteHold(hold.id);" class="glyphicon glyphicon-remove">x</a>
+    <a href ng-if="mc" ng-click="deleteHold(hold.id);">x</a>
 </div>

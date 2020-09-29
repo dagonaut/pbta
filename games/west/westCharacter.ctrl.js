@@ -32,7 +32,7 @@
                 gear: "",
                 notes: "",
                 advancements: [],
-                visibility: { moves: true, classinfo: true, model: false, custom: true, allmoves: false },
+                visibility: { moves: 'class', classinfo: true, model: false, custom: true, allmoves: false },
                 createdby: userId
             };
             vm.cd = angular.copy(vm.blankCharacter);
@@ -60,6 +60,7 @@
             vm.deleteCharacter = deleteCharacter;
             vm.updateAdvancements = updateAdvancements;
             vm.updateMoves = updateMoves;
+            vm.showMoves = showMoves;
             vm.filterMoves = filterMoves;
             vm.markHarm = markHarm;
 
@@ -92,16 +93,43 @@
                     }
             }
 
+            function showMoves(type){
+                vm.cd.visibility.moves = type;
+            }
+
             function filterMoves(id){
-                if(vm.cd.visibility.moves){
-                    return true;
-                }else{
-                    if(vm.cd.moves.indexOf(id) > -1){
+                switch(vm.cd.visibility.moves) {
+                    case 'all':
                         return true;
-                    }else{
-                        return false;
-                    }
+                        break;
+                    case 'mine':
+                        if(vm.cd.moves.indexOf(id) !== -1){ 
+                            return true; 
+                        } else {
+                            return false;
+                        }                        
+                        break;
+                    case 'class':
+                        let move = vm.classmoves.moves.find(obj=>obj.id === id);
+                        if(move.class === vm.cd.class){ 
+                            return true;
+                        } else {
+                            return false;
+                        }
+                        break;
+                    default:
+                        if(vm.classData[vm.class].moves.indexOf(id) != -1){ return true; }  else { return false; }                      
                 }
+
+                // if(vm.cd.visibility.moves){
+                //     return true;
+                // }else{
+                //     if(vm.cd.moves.indexOf(id) > -1){
+                //         return true;
+                //     }else{
+                //         return false;
+                //     }
+                // }
             }
             
             function updateAdvancements(advId){
@@ -216,7 +244,6 @@
 
             function markHarm(level){
                 vm.cd.harm = level;
-
             }           
         }
 })();
