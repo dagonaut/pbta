@@ -27,12 +27,11 @@
             // Scope Events
             vm.setIntel = setIntel;
             vm.setGear = setGear;
-
-            // Reference Sheet methods
             vm.clocks = [];
             vm.createClock = createClock;
             vm.deleteClock = deleteClock;
-            vm.getClocksByUserId = getClocksByUserId;            
+            vm.getClocksByUserId = getClocksByUserId;
+            vm.refreshThreats = refreshThreats;
 
             vm.addHold = addHold;
 
@@ -101,6 +100,10 @@
                     $scope.$broadcast('clock-update', vm.clocks);
 
                 });
+            }
+            function refreshThreats(){
+                getClocksByUserId(2);
+                getHolds();
             }
 
             function setIntel(){

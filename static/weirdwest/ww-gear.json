@@ -1,0 +1,96 @@
+{
+    "gear":{
+        "common_guns" : {
+            "category": "Common Guns",
+            "cost:": "Usually cost 1 Dinero",
+            "items": [
+                "Derringer (2 harm close reload loud)",
+                "Revolver (2 harm close reload loud)",
+                "Rifle (2 harm close/far loud)",
+                "Magnum Pistol (3 harm close reload loud)",
+                "Shotgun (3 harm close reload messy loud)"
+            ]
+            
+        },
+        "unusual_guns": {
+            "category": "Unusual Guns",
+            "cost": "Usually cost 1 or 2 Dinero",
+            "items": [
+                "Buffalo Gun (3 harm close/far reload loud)",
+                "Le Mat Revolver (2 harm close reload loud, with one-shot shotgun: 3 harm close refill)",
+                "Musket (3 harm close/far reload loud)",
+                "Gatling Gun (3 harm close/far area messy loud)"
+            ]
+        },
+        "melee_weapons": {
+            "category": "Melee Weapons",
+            "cost": "Usually cost 1 Dinero",
+            "items": [
+                "Bayonet (2 harm hand)",
+                "Big Knife (2 harm hand)",
+                "Many, Many Knives ( 2 harm hand infinite)",
+                "Saber (3 harm hand)",
+                "Sword Cane (3 harm hand valuable)",
+                "Tomahawk (2 harm hand)"
+            ]
+        },
+        "other_weapons":{
+            "category": "Other Weapons",
+            "cost": "Depends on the item",
+            "items": [
+                "Bow and Arrows (2 harm, close/far)"
+            ]
+        }
+    },
+    "gear_list":[
+        {
+            "common_guns" : {
+                "category": "Common Guns",
+                "cost:": "Usually cost 1 Dinero",
+                "items": [
+                    "Derringer (2 harm close reload loud)",
+                    "Revolver (2 harm close reload loud)",
+                    "Rifle (2 harm close/far loud)",
+                    "Magnum Pistol (3 harm close reload loud)",
+                    "Shotgun (3 harm close reload messy loud)"
+                ]
+            }
+        },
+        {
+            "unusual_guns": {
+                "category": "Unusual Guns",
+                "cost": "Usually cost 1 or 2 Dinero",
+                "items": [
+                    "Buffalo Gun (3 harm close/far reload loud)",
+                    "Le Mat Revolver (2 harm close reload loud, with one-shot shotgun: 3 harm close refill)",
+                    "Musket (3 harm close/far reload loud)",
+                    "Gatling Gun (3 harm close/far area messy loud)"
+                ]
+            }
+        },
+        {
+            "melee_weapons": {
+                "category": "Melee Weapons",
+                "cost": "Usually cost 1 Dinero",
+                "items": [
+                    "Bayonet (2 harm hand)",
+                    "Big Knife (2 harm hand)",
+                    "Many, Many Knives ( 2 harm hand infinite)",
+                    "Saber (3 harm hand)",
+                    "Sword Cane (3 harm hand valuable)",
+                    "Tomahawk (2 harm hand)"
+                ]
+            }
+        },
+        {
+            "other_weapons":{
+                "category": "Other Weapons",
+                "cost": "Depends on the item",
+                "items": [
+                    "Bow and Arrows (2 harm, close/far)"
+                ]
+            }
+        }
+    ]
+    
+}

@@ -45,7 +45,7 @@
                 }
 
                 // Clock functions
-                function markClock(position){                    
+                function markClock(position, save){                    
                     clearClock();
                     if(position != null){
                         for(var i = 0; i < $scope.clock.length; i++){
@@ -54,13 +54,16 @@
                             }
                         }
                     }
-                    $scope.clockObj.position = position;                    
+                    $scope.clockObj.position = position;
+                    if(save){
+                        saveClock();
+                    }
                 }
 
                 function saveClock(){
                     ClockService.Update($scope.clockObj).then(function(data){
                         $scope.edit = false;
-                        $scope.onDelete();                 
+                        $scope.onDelete();
                     });
                 }
 

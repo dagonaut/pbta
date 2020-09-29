@@ -12,14 +12,14 @@
         <p ng-show="edit"><input type="text" ng-model="clockObj.type" value="{{clockObj.type}}" /></p>
     </div>
     <div class="d-flex">
-        <div class="harm_marker lrg" ng-class="clock[0]" ng-disabled="!mc" ng-click="markClock(0); saveClock()">1500</div>
-        <div class="harm_marker lrg" ng-class="clock[1]" ng-disabled="!mc" ng-click="markClock(1); saveClock()">1800</div>
-        <div class="harm_marker lrg" ng-class="clock[2]" ng-disabled="!mc" ng-click="markClock(2); saveClock()">2100</div>
-        <div class="harm_marker sm" ng-class="clock[3]" ng-disabled="!mc" ng-click="markClock(3); saveClock()">2200</div>
-        <div class="harm_marker sm" ng-class="clock[4]" ng-disabled="!mc" ng-click="markClock(4); saveClock()">2300</div>
-        <div class="harm_marker sm" ng-class="clock[5]" ng-disabled="!mc" ng-click="markClock(5); saveClock()">0000</div>
+        <div class="harm_marker lrg" ng-class="clock[0]" ng-disabled="!mc" ng-click="markClock(0, true);">1500</div>
+        <div class="harm_marker lrg" ng-class="clock[1]" ng-disabled="!mc" ng-click="markClock(1, true); ">1800</div>
+        <div class="harm_marker lrg" ng-class="clock[2]" ng-disabled="!mc" ng-click="markClock(2, true); ">2100</div>
+        <div class="harm_marker sm" ng-class="clock[3]" ng-disabled="!mc" ng-click="markClock(3, true);">2200</div>
+        <div class="harm_marker sm" ng-class="clock[4]" ng-disabled="!mc" ng-click="markClock(4, true);">2300</div>
+        <div class="harm_marker sm" ng-class="clock[5]" ng-disabled="!mc" ng-click="markClock(5, true);">0000</div>
         <a href ng-click="clearClock(); saveClock();" style="margin-left:3px;" ng-if="mc">Clear</a>
-        <!-- <a href ng-click="saveClock()" style="margin-left:3px;" ng-if="mc">Save</a> -->    
+        <a href ng-click="saveClock()" style="margin-left:3px;" ng-if="mc">Save</a>    
     </div>
     <div class="" ng-if="type !== 'mission'">
         <strong>Description:</strong><br />
