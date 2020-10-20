@@ -64,8 +64,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 d-flex justify-content-between">            
-            <div class="mx-auto">
+        <div class="col-md-2 d-flex justify-content-between">
+            <div class="mx-2">
                 <h4>Cyberware Tags</h4>
                 <div ng-repeat="tag in vm.allTags" ng-if="tag.category === 'cyberware'">
                     <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mx-auto">
+            <div class="mx-2">
                 <h4>Range/Weapons Tags</h4>
                 <div ng-repeat="tag in vm.allTags" ng-if="tag.category !== 'cyberware'">
                     <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
@@ -93,6 +93,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-md-2">
+            <h4>Links</h4>
+            <ul>
+                <li><a href="https://docs.google.com/document/d/1tZcCvu-RrzoYY6dfjd7z7rzZaTlsJOKMCe5YU_ZhvUI/edit#heading=h.ww52dd363bnl" target="_blank">Sprawl Notes</a></li>
+                <li><a href="https://jamboard.google.com/d/1t7Nbx9MPnQWhymleQGFfYKPBgCg-Jx7VPPI2jIL83ic/viewer" target="_blank">Sprawl Jamboard</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1Lj-kiBw2LIXM0s-MKqOTsQlotYuk4-Ma" target="_blank">Gaming G-Folder (books)</a></li>
+            </ul>
         </div>
         <div class="col-md-4">
             <h4>Stages</h4>
