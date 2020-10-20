@@ -114,7 +114,6 @@
 
             //#region Dude / Character load/save/etc
             function refresh(){
-                debugger;
                 for(let i = 0; i < 4; i++){
                     let position = i;
                     let d = vm.mcDudes[position];

@@ -13,6 +13,7 @@
             
             // Refernce properties
             vm.sprawlMoves = getSprawlMoves(4);
+            vm.jsonMoves = getSprawlJSONMoves();
             vm.allTags = getAllTags(4);            
 
             //#region Moves
@@ -21,6 +22,14 @@
                     vm.sprawlMoves = data;
                     hideAll();
                 });
+            }
+
+            function getSprawlJSONMoves(){
+                $http.get("./games/sprawl/sprawl-moves.json").then(function(moves){
+                    vm.jsonMoves = moves.data;
+                    vm.basicMoves = moves.data.filter(obj=>obj.type === "Basic");
+                    vm.matrixMoves = moves.data.filter(obj=>obj.type === "matrix");
+                })
             }
 
             function hideAll(){

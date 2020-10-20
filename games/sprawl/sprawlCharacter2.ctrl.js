@@ -372,6 +372,81 @@
                 ];                          
             }
             //#endregion
+
+            //#region Experimental
+            vm.xMoves = [
+                {
+                    "id": 309,
+                    "gameid": 4,
+                    "type": "Basic",
+                    "class": null,
+                    "name": "ACT UNDER PRESSURE (COOL)",
+                    "description": ", act while in danger or act to avoid danger, roll Cool. 10+: you do it, no problem 7-9: you stumble, hesitate, or flinch: the MC will offer you a worse outcome, hard bargain, or ugly choice If you want to do something on a mission that isn't covered by the other moves, it probably involves danger or time pressure. Act under pressure involves instinctive reaction and sheer nerve which makes it a solid choice when you know a character has made a move but the action doesn't seem to fit any other move. Act under pressure to immediately find a hiding spot, run across a plaza under the noses of a security team, or cut through the vault door before the security office notices the cameras are down. Assess and several Playbook Moves allow you to spend hold to take actions that might otherwise require you to act under pressure. In those cases, advanced planning, careful positioning, or clever manoeuvring allow you to defuse the element that would otherwise cause you trouble.",
+                    "trigger": "When you race against the clock",
+                    "createdby": 1
+                },
+                {
+                    "id": 310,
+                    "gameid": 4,
+                    "type": "Basic",
+                    "class": null,
+                    "name": "APPLY FIRST AID (COOL)",
+                    "description": ", roll Cool. 10+: if their Harm Clock is at 2100 or less, reduce their harm by two segments. If their Harm Clock is at more than 2100, reduce their harm by one segment 7-9: reduce their harm by one segment. If their Harm Clock is still at more than 2100, they take -1 ongoing until they receive proper medical attention. Once a character has been given first aid, more first aid will not heal them further until they suffer harm again. First aid cannot heal missing body parts or damaged cyberware. To fix those problems, you'll need to make a deal with someone. Trauma Derms are appropriate medical equipment for wounds at 2100 or less, more serious wounds require an EMT kit.",
+                    "trigger": "When you treat someone's wounds using appropriate medical equipment",
+                    "createdby": 1
+                },
+                {
+                    "id": 311,
+                    "gameid": 4,
+                    "type": "Basic",
+                    "class": null,
+                    "name": "ASSESS (EDGE)",
+                    "description": ", roll Edge. 10+: gain 3 hold 7-9: gain 1 hold In the ensuing action, you may spend 1 hold at any time to ask the MC a question from the list below if your examination could have revealed the answer. The MC may ask you questions to clarify your intent. Take +1 forward when acting on the answers. <br />» What potential complication do I need to be wary of? <br />» What do I notice despite an effort to conceal it?<br />» How is ______ vulnerable to me? <br />» How can I avoid trouble or hide here? <br />» What is my best way in/way out/way past? <br />» Where can I gain the most advantage? <br />» Who or what is my biggest threat in this situation? <br />» Who or what is in control here? <br /> Assess is the move for examining a person, place or situation for useful information. Use it to gather information in the Legwork Phase, and to gain tactical advantage in tense situations. Although it has a restricted list of questions, it is more versatile than it seems. As MC, be generous with your answers to assess. Paint a detailed picture of the scene so the players can accurately imagine and describe their characters actions within it. Remember, you are the players' window into the fiction. Because all the moves start and end in the fiction, you must provide enough detail for the game to run smoothly so they need to know what the space looks like, who is in it, where the important actors are, where their characters are and what immediate threats are there. Exactly how much information you need to give will vary depending on the situation in the game and on your players, but scene descriptions are a great opportunity for you to chrome The Sprawl, smear it in dirt, and bathe it in neon, as your agenda and principles require. If there is anything hidden in the scene that you want the players to discover, you will have to give them clues, perhaps obvious clues; assess is your best excuse to do so. Give them information, then see what they do with it. As players, remember to write down when assess gives you +1 forward.",
+                    "trigger": "When you closely study a person, place or situation, or when you quickly size up an opponent or a charged situation",
+                    "createdby": 1
+                },
+                {
+                    "id": 312,
+                    "gameid": 4,
+                    "type": "Basic",
+                    "class": null,
+                    "name": "PLAY HARDBALL (EDGE)",
+                    "description": ", roll Edge. 10+: NPCs do what you want. PCs choose: do what you want, or suffer the established consequences 7-9: For NPCs, the MC chooses 1: <br />» they attempt to remove you as a threat, but not before suffering the established consequences <br />» they do it, but they want payback. Add them as a Threat <br />» they do it, but tell someone all about it. Advance the appropriate Mission Clock PCs choose: do what you want, or suffer the established consequences. They gain +1 forward to act against you.<br />Play hardball is the move for threatening people until they do what you want. Once you start down the path of violence, turning back will completely undermine your position, though, so you have to follow through. If you're threatening to break the security guard's fingers, but you're trying to scare him, you're blustering; that's fast talk. If you have your gun to the head of the VP and you're going to redecorate his office with his brains if he doesn't give you the codes, you're playing hardball. In The Sprawl, violence will get you what you want in the short term, but it will make enemies. Threats of violence work equally well whether you're getting information about the job in the Legwork Phase or completing mission objectives in the Action Phase, but it's a risk. If everything goes well, it can be a quiet method of getting what you want, but when it goes poorly it can escalate quickly and blow the mission all over the news tickers.",
+                    "trigger": "When you get in someone's face threatening violence and you intend to carry through",
+                    "createdby": 1
+                },
+                {
+                    "id": 313,
+                    "gameid": 4,
+                    "type": "Basic",
+                    "class": null,
+                    "name": "ACQUIRE AGRICULTURAL PROPERTY (MEAT)",
+                    "description": ", roll Meat. 10+: you survive until the medics arrive 7-9: you survive at a cost. Pick one: +owned, substandard treatment (-1 to a stat), cyberware damage (give one piece of cyberware a negative tag) 6-: you bleed out on the street Sooner or later, your character's number will come up, and that number will be 0000. Depending on the circumstances, that may mean death, but it may also mean EMTs and hospitalisation. At that point it comes down to your character's relationship to the corporation who owns that medical facility or the local street doc. For the MC, this is an opportunity to introduce complications. Tie the character's treatment into an established corporation or faction or introduce a new player. Hook the injured character with contracts, threats, cybernetic implants, addictive drugs, or antidotes. Corporations care about leverage, not legality or morality.",
+                    "trigger": "When you hit 0000 on your Harm Clock",
+                    "createdby": 1
+                },
+                {
+                    "id": 314,
+                    "gameid": 4,
+                    "type": "Basic",
+                    "class": null,
+                    "name": "MIX IT UP (MEAT)",
+                    "description": ", state that objective and roll Meat. 7+: you achieve your objective 7-9: choose 2: <br />» you make too much noise. Advance the relevant Mission Clock <br />» you take harm as established by the fiction <br />» an ally takes harm as established by the fiction <br />» something of value breaks Mix it up is the basic move for taking out enemies violently. Your objective when you mix it up should seldom be -kill everyone-. You're professionals on a mission, not sociopaths. -Take control of the server room and make sure the security team doesn't escape,- -escape the ambush,- and -buy the team enough time to get out of the lab- are more suitable objectives. This move is about using physical violence to impose your will upon your enemies. Dealing damage is a side effect. You can't tailor your objective so that you avoid the consequences of your choice on a 7-9 result. If doing something quietly is an explicit part of the objective you might succeed, but be discovered after or during the action for some other reason, if you choose you make too much noise. If not being detected is important to you, don't choose that option.",
+                    "trigger": "When you use violence against an armed force to seize control of an objective",
+                    "createdby": 1
+                },
+                {
+                    "id": 315,
+                    "gameid": 4,
+                    "type": "Basic",
+                    "class": null,
+                    "name": "RESEARCH (MIND)",
+                    "description": ", ask a question from the list below and roll Mind. 10+: take [intel]; the MC will answer your question and answer a follow-up question from this list as well: <br />» Where would I find ______? <br />» How secure is ______? <br />» Who or what is related to ______? <br />» Who owned or employed ______? <br />» Who or what is ______ most valuable to? <br />» What is the relationship between ______ and ______? 7-9: take [intel]; the MC will answer your question 6-: the MC will answer your question... and make a move Research is the move for examining a collection of data for helpful information. Although it has a restricted list of questions, it is still quite versatile. As MC, be generous with your answers to research, especially on a 10+. Help the players feel comfortable planning and executing their mission when they succeed in their research. At the same time, take the opportunity to chrome-plate, dirt-smear, and neon-bathe the information and the world, as your agenda and principles require. You can be more cagey with information about the protagonists' employers, corporate motives, potential twists, and other complications, but if they ask about something and roll a hit, give them good intel! You want the characters to discover those devious corporate plots and they're good at their jobs, so give them the dirt, then see what they do with it. Be a fan of the players. As players, remember to write down when research gives you [intel].",
+                    "trigger": "When you investigate a person, place, object, or service using a library, dossier or database (or combination of them)",
+                    "createdby": 1
+                }
+            ]
+            //#endregion
            
             
         }

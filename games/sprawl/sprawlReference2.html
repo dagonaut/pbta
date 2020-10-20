@@ -6,7 +6,7 @@
     <div class="reference_section row">
         <div class="col-md-4">
             <div class="moves_container row">
-                <div class="col-md-12">
+                <!-- <div class="col-md-12">
                     <h4>BASIC MOVES</h4>
                     <div ng-repeat="move in vm.sprawlMoves" ng-show="move.type === 'Basic'">
                         <div>
@@ -17,17 +17,33 @@
                             </div>
                         </div>
                     </div>
+                </div> -->
+                <div class="col-md-12">
+                    <h4>BASIC MOVES</h4>
+                    <div ng-repeat="move in vm.basicMoves">
+                        <div>
+                            <h2 class="move" ng-click="move.hide = !move.hide">{{move.name}}</h2>
+                            <div class="move-description" ng-hide="!move.hide">                                    
+                                <span class="move-trigger">                                    
+                                    <pre>{{move.trigger}}{{move.description}}</pre>
+                                    <strong style="cursor:pointer" ng-click="move.shownote = !move.shownote">Note</strong>
+                                    <pre ng-hide="!move.shownote">{{move.note}}</pre>
+                                </span>                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="moves_container row">
                 <div class="col-md-12">
                     <h4>MATRIX MOVES</h4>
-                    <div ng-repeat="move in vm.sprawlMoves" ng-show="move.type === 'matrix'">
+                    <div ng-repeat="move in vm.matrixMoves">
                         <div>
                             <h2 class="move" ng-click="move.hide = !move.hide">{{move.name}}</h2>
-                            <div class="move-description" ng-hide="move.hide">                                    
-                                <span class="move-trigger"><strong>{{move.trigger}}</strong></span>
-                                <span ng-bind-html="move.description"></span>
+                            <div class="move-description" ng-hide="!move.hide">
+                                <span class="move-trigger">
+                                    <pre>{{move.trigger}}{{move.description}}</pre>
+                                </span>
                             </div>
                         </div>
                     </div>

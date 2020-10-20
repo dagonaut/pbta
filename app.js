@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	var app = angular.module('pbta_resources', ['ui.router', 'ui.bootstrap', 'ngCookies', 'ngSanitize', 'checklist-model']);
+	var app = angular.module('pbta_resources', ['ui.router', 'ui.bootstrap', 'ngCookies', 'ngSanitize', 'checklist-model', 'mdMarkdownIt']);
 
 	//States
 	app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -170,6 +170,10 @@
 					},			
 					'charactersheet@auth.sprawl2': {
 						templateUrl: 'games/sprawl/sprawlCharactersheet2.html',
+						controller: 'sprawl_character as vm'
+					},			
+					'csresponsive@auth.sprawl2': {
+						templateUrl: 'games/sprawl/sprawlCSresponsive.html',
 						controller: 'sprawl_character as vm'
 					},
 					'reference@auth.sprawl2': {

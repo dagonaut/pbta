@@ -77,6 +77,10 @@
                 </div>
                 <!-- Moves / Cyberware -->
                 <div>
+                    <h3>Directives</h3>
+                    <div class="mc-directives">
+                        <pre>{{vm.mcDudes[position].directives}}</pre>   
+                    </div>
                     <h3>Moves</h3>
                     <div class="mc-moves">
                         <div ng-repeat="move in vm.sprawlMoves" ng-if="vm.mcDudes[position].moves.indexOf(move.id) > -1">

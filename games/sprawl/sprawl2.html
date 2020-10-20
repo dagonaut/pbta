@@ -21,5 +21,8 @@
         <uib-tab index="vm.tabs.mc.index" heading="{{::vm.tabs.mc.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="mc"></div>
         </uib-tab>
+        <uib-tab index="vm.tabs.csresponsive.index" heading="{{::vm.tabs.csresponsive.heading}}" ng-click="vm.onTabChange()" ng-if="vm.IsMC">
+            <div ui-view="csresponsive"></div>
+        </uib-tab>        
     </uib-tabset>    
 </div>
