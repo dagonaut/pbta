@@ -12,6 +12,9 @@
         <uib-tab index="vm.tabs.threats.index" heading="{{::vm.tabs.threats.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="threats"></div>
         </uib-tab>
+        <uib-tab index="vm.tabs.operation.index" heading="{{::vm.tabs.operation.heading}}" ng-click="vm.onTabChange()">
+            <div ui-view="operation"></div>
+        </uib-tab>
         <uib-tab index="vm.tabs.matrix.index" heading="{{::vm.tabs.matrix.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="matrix"></div>
         </uib-tab>

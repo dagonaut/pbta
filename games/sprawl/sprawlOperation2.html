@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <style>
+        .d-flex{
+            display:flex;
+        }
+        .justify-content-space-between{
+            justify-content: space-between;
+        }
+        .justify-content-start{
+            justify-content: flex-start;
+        }
+        .operation-section{
+            width:24%;
+            margin:2px;
+            padding:0 4px;
+            border:1px solid #3282b8;
+            border-radius:4px;
+        }
+        .operation-section ul{
+            padding-inline-start: 20px; /* Override */
+        }
+    </style>
+    <div class="d-flex justify-content-start flex-wrap">
+        <div class="operation-section">            
+            <h4>{{vm.operations.move.name}} ({{vm.operations.move.stat}})</h4>
+            <div markdown-it="vm.operations.move.markdown"></div>
+        </div>
+        <div class="operation-section" style="" ng-repeat="type in vm.operations.types">          
+            <h4>{{type.name}}</h4>
+            <div>{{type.description}}, complete these tasks:</div>            
+            <ul>
+                <div ng-repeat="item in type.tasks">
+                    <li>{{item}}</li>
+                </div>
+            </ul>
+            <div>It may be <span style="color:indianred;">complicated</span> by these considerations:</div>
+            <ul>
+                <div ng-repeat="item in type.complications">
+                    <li>{{item}}</li>
+                </div>
+            </ul>
+        </div>        
+    </div>         
+</div>

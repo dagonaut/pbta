@@ -17,10 +17,11 @@
                 charactersheet: { index: 0, heading: 'Character Sheet' },
                 reference: { index: 1, heading: 'Reference' },
                 threats: { index: 2, heading: 'Threats' },
-                matrix: { index: 3, heading: 'Matrix' },
-                gear: { index: 4, heading: 'Gear' },
-                mc: { index: 5, heading: 'MC' },
-                csresponsive: { index: 6, heading: 'Character Sheet Experimental' }                          
+                operation: { index: 3, heading: 'Operation' },
+                matrix: { index: 4, heading: 'Matrix' },
+                gear: { index: 5, heading: 'Gear' },
+                mc: { index: 6, heading: 'MC' },
+                csresponsive: { index: 7, heading: 'Character Sheet Experimental' }                          
             };
 
             init();

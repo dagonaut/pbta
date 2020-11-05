@@ -192,6 +192,10 @@
 						templateUrl: 'games/sprawl/sprawlMatrix2.html',
 						controller: 'sprawl_matrix as vm'
 					},
+					'operation@auth.sprawl2': {
+						templateUrl: 'games/sprawl/sprawlOperation2.html',
+						controller: 'sprawl_operation as vm'
+					},
 					'mc@auth.sprawl2': {
 						templateUrl: 'games/sprawl/sprawlMC2.html',
 						controller: 'sprawl_mc as vm'
