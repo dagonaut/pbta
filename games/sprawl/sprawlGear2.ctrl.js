@@ -195,7 +195,7 @@
                                 "tags": "a weapon loaded with gel rounds inflicts s-harm instead of its listed harm value; targets harmed by gel rounds add the original harm value (minus armour) to their roll when making the harm move"
                             },
                         ]
-                    }
+                    }                    
                 },
                 'weapons_list': [
                     {
@@ -380,7 +380,29 @@
                             },
                         ]
                     }
-                ]
+                ],
+                'other_equipment':{
+                    "markdown_list":[
+                        "Climbing/Rappelling rig",
+                        "Communications equipment (optional tags: *+encrypted*, *+jamming*, *+satellite relay*, *+recording*)",
+                        "Disguise kit (+1 ongoing to avoid being detected while successfully maintaining a fake persona)",
+                        "EMT kit (allows you to **apply first aid** to characters at any level of harm)",
+                        "Explosives (spray explosives for breaching doors, small portable plastic explosives for destroying vehicles and weakening structures, or industrial-grade demolitions equipment. All are *+AP*, *+dangerous*, *+messy*, *+loud*, *+breach*)",
+                        "Gyroscopic exoskeleton (provides a mobile brace point for weapons which require precise stabilisation or recoil absorption)",
+                        "Microtronics workstation (you may perform field repairs on electronics and cyberware)",
+                        "Musical instruments (optional tags: *+recording*, *+satellite relay*, *+simsense*)",
+                        "Recording equipment (*+audio*, *+video*, optional tags: *+simsense*, *+discreet*, *+encrypted*)",
+                        "Scuba equipment",
+                        "Silencer or sound suppressor: A weapon equipped with a silencer or sound suppressor removes the loud tag. A *+messy* or *+breach* weapon cannot be silenced",
+                        "Stealth suit (+1 ongoing to avoid being detected while hidden and alone)",
+                        "Surgery or portable operating room (allows treatment of life-threatening injuries and implantation of cyberware)",
+                        "Specialist toolkits, survival kits, and the like. Can be used 3 times. Each use grants +1 forward to a move relevant to the specialisation of the toolkit",
+                        "Trauma derms (allows you to **apply first aid** to characters at 2100 or less harm)",
+                        "Vision enhancing devices (glasses, goggles, scopes). Basic models have one or two tags, more advanced (and expensive) models can have more. Available tags: *+thermographic*, *+light amplification*, *+magnification*, *+recording*, *+flare compensation*. The feed from vision enhancers can be sent to a remote or local display through communications gear",
+                        "Wingsuit, microlite, or other lightweight single-occupant aircraft",
+                    ]
+                }
+                
             };
 
             init();

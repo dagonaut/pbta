@@ -158,6 +158,10 @@
                     console.log(error);
                 }
             }
+
+            function showMove(id){
+
+            }
             //#endregion
 
             //#region Advancements
@@ -201,7 +205,7 @@
             function getSprawlMoves(id){
                 MoveService.GetByGameId(id).then(function(data){
                     vm.sprawlMoves = data;
-                    hideAll();
+                    hideAll();                    
                 });
             }
 
@@ -334,7 +338,7 @@
                 });
             }
             //#endregion
-            
+
             //#region Static
             function setStaticContent(){
                 // TODO: move these to an external JSON or Database
