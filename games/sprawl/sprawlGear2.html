@@ -16,6 +16,9 @@
         .gear-section ul{
             padding-inline-start: 20px; /* Override */
         }
+        .equipment_item p{
+            margin-bottom:0px; /* the markdown is adding a p tag */
+        }
     </style>
     <div class="d-flex justify-content-start">
         <div class="gear-section">            
@@ -26,8 +29,6 @@
                 <li><strong>{{item.name}}</strong> ({{item.tags}})</li>
             </div>
             </ul>
-        </div>
-        <div class="gear-section">            
             <h4>Ammunition</h4>
             <div>{{vm.staticGear.weapons.ammunition.description}}</div>
             <ul>
@@ -56,6 +57,14 @@
             <ul>
             <div ng-repeat="item in vm.staticGear.weapons.grenades.items">
                 <li><strong>{{item.name}}</strong> ({{item.tags}})</li>
+            </div>
+            </ul>
+        </div>
+        <div class="gear-section">            
+            <h4>Other Equipment</h4>            
+            <ul>
+            <div ng-repeat="item in vm.staticGear.other_equipment.markdown_list">
+                <li class="equipment_item" markdown-it="item"></li>
             </div>
             </ul>
         </div>
