@@ -4,31 +4,14 @@
 <div class="container-fluid">
     <!-- Reference -->
     <div class="reference_section row">
-        <div class="col-md-4">
-            <div class="moves_container row">
-                <!-- <div class="col-md-12">
-                    <h4>BASIC MOVES</h4>
-                    <div ng-repeat="move in vm.sprawlMoves" ng-show="move.type === 'Basic'">
-                        <div>
-                            <h2 class="move" ng-click="move.hide = !move.hide">{{move.name}}</h2>
-                            <div class="move-description" ng-hide="move.hide">                                    
-                                <span class="move-trigger"><strong>{{move.trigger}}</strong><span ng-bind-html="move.description"></span></span>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+        <div class="col-md-3">
+            <div class="moves_container row">                
                 <div class="col-md-12">
                     <h4>BASIC MOVES</h4>
                     <div ng-repeat="move in vm.basicMoves">
                         <div>
                             <h2 class="move" ng-click="move.hide = !move.hide">{{move.name}}</h2>
-                            <div class="move-description" ng-hide="!move.hide">                                    
-                                <!-- <span class="move-trigger">                                    
-                                    <pre>{{move.trigger}}{{move.description}}</pre>
-                                    <strong style="cursor:pointer" ng-click="move.shownote = !move.shownote">Note</strong>
-                                    <pre ng-hide="!move.shownote">{{move.note}}</pre>
-                                </span> -->                                
+                            <div class="move-description" ng-hide="!move.hide">                                                          
                                 <div markdown-it="move.markdown" style="padding:2px;background-color:#444d524a;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;border:1px solid #3282b8;"></div>
                                 <strong style="cursor:pointer" ng-click="move.shownote = !move.shownote">Note</strong>
                                 <pre ng-hide="!move.shownote">{{move.note}}</pre>                                
@@ -65,35 +48,27 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2 d-flex justify-content-between">
+        <div style="width:13%;">
             <div class="mx-2">
-                <h4>Cyberware Tags</h4>
-                <div ng-repeat="tag in vm.allTags" ng-if="tag.category === 'cyberware'">
-                    <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
-                    <div class="move-description" ng-hide="tag.hide">
-                        <span>
-                            [{{tag.category}}]
-                        </span>
-                        <span>
-                            {{tag.description}}
-                        </span>							
-                    </div>
-                </div>
-            </div>
-            <div class="mx-2">
-                <h4>Range/Weapons Tags</h4>
+                <h4>Weapon Tags</h4>
                 <div ng-repeat="tag in vm.allTags" ng-if="tag.category !== 'cyberware'">
                     <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
                     <div class="move-description" ng-hide="tag.hide">
                         <span>
-                            [{{tag.category}}]
-                        </span>
+                            {{tag.description}}
+                        </span>							
+                    </div>
+                </div>
+                <h4>Cyberware Tags</h4>
+                <div ng-repeat="tag in vm.allTags" ng-if="tag.category === 'cyberware'">
+                    <h2 class="move" ng-click="tag.hide = !tag.hide">{{tag.name}}</h2>
+                    <div class="move-description" ng-hide="tag.hide">                        
                         <span>
                             {{tag.description}}
                         </span>							
                     </div>
                 </div>
-            </div>
+            </div>            
         </div>
         <div class="col-md-2">
             <h4>Links</h4>

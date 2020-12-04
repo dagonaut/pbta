@@ -199,6 +199,14 @@
 					'mc@auth.sprawl2': {
 						templateUrl: 'games/sprawl/sprawlMC2.html',
 						controller: 'sprawl_mc as vm'
+					},
+					'map@auth.sprawl2': {
+						templateUrl: 'games/sprawl/sprawlMap2.html',
+						controller: 'sprawl_map as vm'
+					},
+					'contacts@auth.sprawl2': {
+						templateUrl: 'games/sprawl/sprawlContacts2.html',
+						controller: 'sprawl_contacts as vm'
 					}
 				}
 			})			

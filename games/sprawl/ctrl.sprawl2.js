@@ -17,11 +17,13 @@
                 charactersheet: { index: 0, heading: 'Character Sheet' },
                 reference: { index: 1, heading: 'Reference' },
                 threats: { index: 2, heading: 'Threats' },
-                operation: { index: 3, heading: 'Operation' },
-                matrix: { index: 4, heading: 'Matrix' },
-                gear: { index: 5, heading: 'Gear' },
-                mc: { index: 6, heading: 'MC' },
-                csresponsive: { index: 7, heading: 'Character Sheet Experimental' }                          
+                map: { index: 3, heading: 'Map' },
+                contacts: { index: 4, heading: 'Contacts' },
+                operation: { index: 5, heading: 'Operation' },
+                matrix: { index: 6, heading: 'Matrix' },
+                gear: { index: 7, heading: 'Gear' },
+                mc: { index: 8, heading: 'MC' },
+                csresponsive: { index: 9, heading: 'Experimental' }                          
             };
 
             init();

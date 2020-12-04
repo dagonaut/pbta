@@ -12,6 +12,12 @@
         <uib-tab index="vm.tabs.threats.index" heading="{{::vm.tabs.threats.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="threats"></div>
         </uib-tab>
+        <uib-tab index="vm.tabs.map.index" heading="{{::vm.tabs.map.heading}}" ng-click="vm.onTabChange()">
+            <div ui-view="map"></div>
+        </uib-tab>        
+        <uib-tab index="vm.tabs.contacts.index" heading="{{::vm.tabs.contacts.heading}}" ng-click="vm.onTabChange()">
+            <div ui-view="contacts"></div>
+        </uib-tab>
         <uib-tab index="vm.tabs.operation.index" heading="{{::vm.tabs.operation.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="operation"></div>
         </uib-tab>

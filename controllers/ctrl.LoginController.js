@@ -36,7 +36,6 @@
                     Auth.AutoLogin($cookies.getObject('id'), function(response){
                         vm.isLoggedIn = true;
                         vm.userData = $rootScope.userData;
-                        //$location.path('/sprawl');
                     });
                 } else {
                     console.log("LoginController: You don't have a cookie.")
@@ -51,7 +50,7 @@
                         Auth.SetCredentials($scope.username, $scope.passwordHash, response.data);
                         vm.userData = response.data;
                         vm.isLoggedIn = true;
-                        $location.path('/dw');                        
+                        $location.path('/');
                     } else {
                         $scope.error = response.message;
                         $scope.dataLoading = false;
@@ -72,10 +71,8 @@
             };
             
             function checkExisting(user){
-                var deferred = $q.defer();
                 $http.get(api + 'tbl_Users/username/"' + user.username + '"').then(				
-                    function(response){
-                        
+                    function(response){                        
                         if(typeof response.data.username !== "undefined" && response.data.username === user.username){
                             // Give feedback
                             vm.showError = true;
