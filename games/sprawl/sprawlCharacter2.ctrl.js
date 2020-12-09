@@ -11,17 +11,8 @@
             //Private Properties
             let vm = this;
             let userId =  $cookies.getObject('id');
-            let _classDataFile = './static/sprawl-ClassData.json';
+            let _classDataFile = './static/sprawl-ClassData.json';            
             
-            vm.tabs = {
-                charactersheet: { index: 0, heading: 'Character Sheet' },
-                reference: { index: 1, heading: 'Reference' },
-                threats: { index: 2, heading: 'Threats' },
-                matrix: { index: 3, heading: 'Matrix' },
-                gear: { index: 4, heading: 'Gear' },
-                mc: { index: 5, heading: 'MC' }
-                //log: { index: 6, heading: 'Log' }
-            };
             vm.darkMode = true;
 
             // Static JSON Objects
@@ -123,6 +114,8 @@
                     vm.characterData.cyberware = JSON.parse("[" + vm.characterData.cyberware + "]");
                     vm.characterData.links = JSON.parse(vm.characterData.links);
                     vm.create = "Save";
+                    vm.visibility.cyberware = 'mine';
+                    vm.visibility.moves = 'mine';
                 });
             }
 
@@ -146,21 +139,6 @@
                 vm.characterData = {};
                 vm.characterData = angular.copy(_characterDefaults);                
                 $scope.$apply();
-            }
-
-            function getClassData(){
-                $.get(_classDataFile).then(storySuccess, storyFailure);
-                function storySuccess(response){
-                    vm.classData = response;
-                    console.log("class data", vm.classData);
-                }
-                function storyFailure(error){
-                    console.log(error);
-                }
-            }
-
-            function showMove(id){
-
             }
             //#endregion
 
@@ -212,6 +190,7 @@
             function showMoves(type){
                 vm.visibility.moves = type;
             }
+            
             function filterMoves(id){
                 switch(vm.visibility.moves) {
                     case 'all':
