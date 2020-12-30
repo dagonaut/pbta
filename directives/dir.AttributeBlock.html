@@ -101,5 +101,6 @@
             <pre>{{dude.notes}}</pre>
         </div>
     </div>
-    <pre>{{dude | json}}</pre>
+    <div class="pointer" style="font-size:small;" ng-click="vm.hideModel = !vm.hideModel">{{ vm.hideModel ? 'Hide' : 'Show'}} Model</div>
+    <pre ng-if="vm.hideModel">{{dude | json}}</pre>
 </div>

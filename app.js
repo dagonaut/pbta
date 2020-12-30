@@ -210,6 +210,28 @@
 					}
 				}
 			})			
+			.state('auth.dino',{
+				url: '/dino',	
+				stateName: 'Dino',			
+				views: {	
+					'dino':{
+						templateUrl: 'games/dino/dino.html',
+						controller: 'DinoController as vm'
+					},			
+					// 'charactersheet@auth.west': {
+					// 	templateUrl: 'games/west/westCharactersheet.html',
+					// 	controller: 'WestCharacterController as vm'
+					// },
+					'reference@auth.dino': {
+						templateUrl: 'games/dino/dinoRef.html',
+						controller: 'DinoReferenceController as vm'
+					}
+					// 'mc@auth.west': {
+					// 	templateUrl: 'games/dino/dinoMC.html',
+					// 	controller: 'WestMCController as vm'
+					// }
+				}
+			})		
 			.state('home',{
 				url: '/'
 				//templateUrl: './games/impulsedrive/impulseRef.html',

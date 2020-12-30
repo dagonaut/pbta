@@ -1,0 +1,18 @@
+<div class="dino-reference">
+    <div class="d-flex">
+        <div>
+            Peril Moves
+            <div class="move" ng-repeat="move in vm.static.moves.peril">
+                <div class="move-name">{{move.name}}</div>
+                <div class="move-description" markdown-it="move.description"></div>
+            </div>
+        </div>
+        <div>
+            Safety Moves
+            <div class="move" ng-repeat="move in vm.static.moves.safety">
+                <div class="move-name">{{move.name}}</div>
+                <div class="move-description" markdown-it="move.description"></div>
+            </div>
+        </div>
+    </div>
+</div>

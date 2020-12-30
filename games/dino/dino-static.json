@@ -1,0 +1,179 @@
+{
+    "moves":{
+        "peril":[
+            {
+                "name":"Run!",
+                "stat":"FIT",
+                "description":"**When you run for it, roll+FIT**  \n**On a 10+**, you escape to a safe location. The DM will describe it. You know roughly where you are.  \n**On a 7-9**, choose 1:  \n* You get to a new location, but you're still being pursued. * You escape the threat... into a new perilous situation  \n**On a miss**, you get injured, and the threat is still around."
+            },
+            {
+                "name":"Hide!",
+                "stat":"CLEVER",
+                "description":"**When you hide from a predator, say where you are hiding and roll+CLEVER.**  \n**On a hit**, it either can’t find or get to you. You’re safe.  \n**On a 7–9**, someone else is exposed. If you stay hidden, you’ll be fine, but they won’t. If you’re alone, the DM will offer you a different hard choice. On a miss, surprise! It’s right on top of you."
+            },
+            {
+                "name":"Just Do It!",
+                "stat":"STEADY",
+                "description":"**When you do something you can usually do easily (for example, unlock a door, quietly cross a room, or drive a car) under pressure, say what will happen if you mess up, then roll+STEADY**.  \n**On a hit**, you pull it off.  \n**On a 7–9**, you slipped, hesitated, or cut corners. The DM will offer you a hard choice."
+            },
+            {
+                "name":"Hold On to Your Butt!",
+                "stat":"FIT",
+                "description":"**When you rely on sheer physicality to power through difficulty or ignore a debilitating injury, roll+FIT.**  \n**On a hit**, you tough it out.  \n**On a 7–9**, you succeed, but you’re exhausted—take -1 to your next roll with FIT.  \n**On a miss**, you’re seriously injured."
+            },
+            {
+                "name":"Look Over There!",
+                "stat":"CLEVER",
+                "description":"**When you create a distraction to protect a friend, say what it is and roll+CLEVER.**  \n**On a 10+**, you draw the dinosaur’s attention where you intend. Your friend is safe.  \n**On a 7–9**, the dinosaur notices you.  \n**On a miss**, the best you can do is take the hit for your friend. Will you?  \n(If you choose to draw the dinosaur’s attention to yourself, you always succeed.)"
+            },
+            {
+                "name":"Take My Hand!",
+                "stat":"ANY",
+                "description":"**When you stop what you’re doing to help someone else in trouble, roll+whatever makes the most sense.** \n  **On a hit**, they succeed, with your help.  \n**On a 7–9**, choose 1: * You two are separated from the group. * You solve their problem, but create one for yourself.  \n**On a miss**, you made it worse for both of you."
+            },
+            {
+                "name":"Fight!",
+                "stat":"NONE",
+                "description":"**When you fight for your life, roll without a bonus, or +1 if you have a weapon.**  \n**On a hit**, you buy a precious moment for someone to help you.  \n**On a 7–9**, also choose 1. **On a 10+**, both. * You aren’t injured. * You injure the enemy. The DM decides how.  \n**On a 6-**, make the **CASUALTY** Move. Sorry.  \n__The DM can always decide you can’t fight a dinosaur.__"
+            }
+        ],
+        "safety":[
+            {
+                "name":"Lay of the Land",
+                "stat":"CLEVER",
+                "description":"**When you and a companion take a quiet moment to get to a good vantage point and orient yourself, tell a story, then roll+CLEVER.**  \n**On a hit**, The DM will tell you about two landmarks—one natural, one man-made—that you can see.  \n**On a 10+**, they will also show you where you are on the map.  \n**On a miss**, you discover an imminent peril. "
+            },
+            {
+                "name":"Instruct",
+                "stat":"STEADY",
+                "description":"**When you guide another Hero through a risky task that you know how to do, but they must do (perhaps because you are communicating with walkies, are on opposite sides of a fence, or you’re injured), tell them a story and roll+STEADY.**  \n**On a hit**, you’re an able teacher. They succeed.  \n**On a 7–9**, they don’t do it quite as well as you would have. **Choose 1**:* It takes longer than expected. • It opens them up to danger.* It opens you up to danger.  \n**On a miss**, you confuse, anger, or distract them. (Their choice.) The task is botched beyond salvaging and you’ve made matters worse."
+            },
+            {
+                "name":"Scavenge",
+                "stat":"CLEVER",
+                "description":"**When you and another Hero take a quiet moment to search for useful objects or information, tell them a story and roll+CLEVER**.  \n**On a 10+**, you find something useful. Maybe even that one thing you were hoping for.  \n**On a 7–9**, you find something handy, but you make a lot of noise. You can pretend no dinosaurs heard you, if you want.  \n**On a miss**, you find something bad. "
+            },
+            {
+                "name":"The Best-Laid Plans",
+                "stat":"NONE",
+                "description":"**When you take too long to discuss your course of action**, the DM makes a move."
+            }
+        ],
+        "special":[
+            {
+                "name":"Casualty",
+                "stat":"NONE",
+                "description":"**When you are grievously hurt (or take an injury while while already injured), you’re in bad shape.** Tell someone your darkest secret or unfulfilled hope, then choose 1: * You get one final heroic act—subject to the DM’s discretion—before you die. * You’re OUT OF COMMISSION.  \nYou’re unable to do anything, but your character will survive if the others can get you off the island in time.  \nEither way, you may choose an unused playbook and create a new character. The DM will tell you when your new character appears."
+            }
+        ]
+    },
+    "setup":{
+        "situation":[
+            {
+                "name": "I. MAINLAND",
+                "sections":[
+
+                ]
+
+            }
+        ]
+    },
+    "locations":{
+        "Natural":[
+            "Beach",
+            "The Cave",
+            "Jungle",
+            "The Lake Mountains",
+            "Open Ground",
+            "The River",
+            "Swamp",
+            "The Volcanic Crater"
+        ],
+        "Artificial":[
+            "The Aviary",
+            "The Monorail",
+            "Pens",
+            "The Power Shed ",
+            "The Radio Tower ",
+            "The River Outpost ",
+            "The Smuggler’s Den"
+        ],
+        "Inside the Complex":[
+            "The Control Room Dormitories",
+            "The Foyer",
+            "The Hatchery",
+            "The Lab",
+            "The Mainframe",
+            "The Medical Facility Offices",
+            "Steam Tunnels"
+        ],
+        "Strange Places":[
+            "The Ancient Ruins ",
+            "The Native Village ",
+            "The Obelisk",
+            "The Temporal Gate"
+        ]
+    },
+    "dm_section":{
+        "agenda": {
+            "name": "Your Agenda",
+            "description": "These are your goals.",
+            "list":[
+                "Make Dino Island mysterious, dangerous, and full of dinosaurs.",
+                "Challenge the Heroes to become their true selves.",
+                "Play to find out if they’ll make it off the island, and who they’ll be if they do."
+            ]
+        },
+        "principles":{
+            "name":"Your Principles",
+            "description": "When in doubt, these guidelines will keep you on the right track.",
+            "list":[
+                "Be a fan of the characters.",
+                "Always target a specific character.",
+                "Ask questions and build on the answers.",
+                "Give every location unique and memorable details.",
+                "The environment is just as dangerous as the dinosaurs.",
+                "Give every dinosaur species a gimmick.",
+                "Juxtapose the natural and the artificial.",
+                "Force the Heroes to choose between saving themselves and helping others.",
+                "The dinosaurs are animals, not monsters—make them real: awesome, frightening, strange, familiar, or gentle as appropriate."
+            ]
+        },
+        "moves":{
+            "name": "Your Moves",
+            "descriptions": "These are the (only) things you can do.",
+            "list":[
+                "Show signs of a nearby dinosaur Footprints, evidence of grazing, a fresh kill, a roar, small dinosaurs fleeing, etc.",
+                "A dinosaur shows up! Give it a gimmick!",
+                "Injure them as established",
+                "Their injuries cause problems",
+                "Introduce a useful NPC Give them a goal!",
+                "Kill a useful NPC",
+                "Disorient them",
+                "Offer them what they need, with danger in the way (Tell them the danger.)",
+                "Tell them what they need and let them figure it out  When they get it, they succeed. Other solutions might work.",
+                "Split them up",
+                "Reveal something mysterious",
+                "Time passes Night falls; they have to rest; an opportunity expires; etc.",
+                "Use a DINOSAUR MOVE",
+                "Use a LOCATION MOVE"
+            ]
+        },
+        "names":{
+            "name": "Quick NPC Names",
+            "list":[
+                "Riley", "Alex", "Dom", "Jiar", "Dan", "Andres", "Lee", "Cameron", "Malcolm", "Chris", "Parker", "Mei", "Urvish", "Katja", "Warren", "Josh", "Dev", "Naomi"
+            ]
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

@@ -65,7 +65,7 @@
         }
 
         function getStaticCharacterData(){
-                $.get(staticFile).then(staticSuccess, staticFailure);
+                $http.get(staticFile).then(staticSuccess, staticFailure);
                 function staticSuccess(response){
                     vm.static = response;
                     buildHTMLviews();
