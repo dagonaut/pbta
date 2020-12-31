@@ -218,10 +218,10 @@
 						templateUrl: 'games/dino/dino.html',
 						controller: 'DinoController as vm'
 					},			
-					// 'charactersheet@auth.west': {
-					// 	templateUrl: 'games/west/westCharactersheet.html',
-					// 	controller: 'WestCharacterController as vm'
-					// },
+					'charactersheet@auth.dino': {
+						templateUrl: 'games/dino/dinoChar.html',
+						controller: 'DinoCharacterController as vm'
+					},
 					'reference@auth.dino': {
 						templateUrl: 'games/dino/dinoRef.html',
 						controller: 'DinoReferenceController as vm'
