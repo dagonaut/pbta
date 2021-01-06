@@ -1,0 +1,242 @@
+{
+    "basic_moves": [
+        {
+            "key": "explore_the_castle",
+            "name": "Explore the Castle",
+            "description": "**When you attempt to navigate the castle, roll +Blood**. If you choose, you may mark contamination to roll with advantage. On a hit, hold 1 and describe your insight into the ward's purpose or layout.  \n****On a 7-9****, the area you arrive at contains castle denizens or traps.  \n****on a 10+****, the area you arrive at contains relics, a place of power, or valuable insight.  \n**When you leave the area**, spend 1 hold to retreat to a safe camp, 2 to find an exit to another ward, and 3 to find the Acolyte’s sanctuary. One person rolls each time you navigate, and the group’s hold from multiple rolls is pooled together."
+        },
+        {
+            "key": "face_the_horde",
+            "name": "Face the Horde",
+            "description": "**When you assault a group of castle denizens, roll +Iron**. On a hit, you tear through them - say how. ****On a 7-9**** pick 2, ****on a 10+**** pick 1:  \n* They hit back - suffer harm.  \n* You get some on you - mark corruption.   \n* You end up in a risky position.  \n* More are coming."
+        },
+        {
+            "key": "flow_like_water",
+            "name": "Flow Like Water",
+            "description": "**When you risk danger to change your environment, or your position in it, roll +Mercury**. On a hit, pick one:  \n* You're somewhere you need to be.  \n* Another explorer has a clear path to you.   \n* A particular threat isn't a problem any longer.  \n****On a 7-9**** the GM will give your action a cost: harm, contamination or lost gear."
+        },
+        {
+            "key": "see_clear",
+            "name": "See Clear",
+            "description": "**When you try to read a dangerous situation, roll +Glass.** On a hit, you can ask the GM questions. Get fleeting advantage when you act on each answer.  \n**On a 7–9** ask 1, ****on a 10+**** ask 3:  \n* Which exit will take me to my goal?  \n* What here is valuable?  \n* What can the enemies here do?  \n* What should I be on the lookout for?  \n**On a miss**, ask 1 but prepare for the worst."
+        },
+        {
+            "key": "shelter",
+            "name": "Shelter",
+            "description": "**When you look for a safe space to recover, roll +Mercury.** On a hit, each explorer picks 1:  \n* Tend to another explorer: they heal 2 Harm, or step down their worst Wound.  \n* Encourage another explorer - they get fleeting advantage.  \n* Use your bloodline’s Shelter move.  \n* Gain aid from a contact (p. 61).  \n****On a 7-9****, advance the Regent’s clock."
+        },
+        {
+            "key": "drink_deep",
+            "name": "Drink Deep",
+            "description": "**When you draw on the power in a potent item or ritual site, roll +Sulphur.** On a hit, mark contamination and learn a spell - the GM says what it does. When you cast it, pick 1:  \n* Markcontamination.  \n* Forget the spell.  \n* Take 1 Harm.  \n_****on a 10+****, you don't need to pick an option on your first cast._"
+        }
+    ],
+    "confrontation_moves": [
+        {
+            "key": "strike",
+            "name": "Strike",
+            "description": "**When you take advantage of an Opening with...**  \n* Stealth and guile, roll +Mercury.  \n* Physical force, roll +Iron.  \n* Precise insight, roll +Glass.  \n* Sorcery or sacrifice, roll +Sulphur.  \n**On a hit**, you damage one of the foe’s qualities - if you destroy its final quality, it’s dead. The Opening’s now gone.   \n**On a 7-9**, the GM picks 1:  \n* The foe lashes out at you: take Harm appropriate to the enemy.  \n* The foe separates you from the others or puts you in a spot.  \n* The foe frenzies, dealing +1 Harm for the rest of the fight."
+        },
+        {
+            "key": "dodge",
+            "name": "Dodge",
+            "description": "**When you try to avoid incoming danger, roll +Mercury.**  \n**On a hit** pick 1, **on a 10+** pick 2:  \n* You avoid taking harm.  \n* You avoid getting seperated from the others or losing something valuable.  \n* The foe’s heedless in pursuit of you: create an Opening."
+        },
+        {
+            "key": "line_it_up",
+            "name": "Line It Up",
+            "description": "**When you size up the enemy to locate a weak spot, roll +Glass.** On a hit you find an Opening. Say where it’s coming from - the environment, a chink in their armour, a flaw in their fighting style.   \n**On a 7-9**, pick 2, **on a 10+** pick 1:  \n* The foe makes you its highest priority.  \n* The Opening only lasts a few moments.  \n* Attempts to use the Opening without one weapon perk have disadvantage."
+        },
+        {
+            "key": "confront",
+            "name": "Confront",
+            "description": "**When you confront the foe head-on, roll +Iron.** n**On a hit**, you throw them off-balance and create an Opening, but take the brunt of their attacks. ****On a 7-9**** pick 1, ****on a 10+**** pick 2:  \n* You roll with the blow: take 1 less harm.  \n* You are fearsome and commanding: the foe will focus only on you.  \n* Your mind is steel: you don’t mark contamination."
+        },
+        {
+            "key": "stand_with_me",
+            "name": "Stand With Me",
+            "description": "**When you heal, encourage or aid an ally, roll +Sulphur.**  \n**On a hit**, pick 1:  \n* You rescue them from danger: a precipice, poison, a curse, etc.  \n* They heal their lightest wound.  \n* They heal 2 harm.  \n****on a 10+**** the cameraderie shown gives your ally fleeting advantage."
+        },
+        {
+            "key": "victory",
+            "name": "Victory",
+            "description": "**When the foe is defeated**, everyone still living may raise Blood and add 1 to their Covenant with each other. The foe’s sanctum becomes a place of power, usable for Forward Base."
+        },
+        {
+            "key": "flee",
+            "name": "Flee",
+            "description": "**When you use an Opening to retreat**, any and all characters can flee the battle. Advance the regent’s clock by one."
+        }
+    ],
+    "bloodline_moves": [
+        {
+            "key": "arcane_power",
+            "name": "Arcane Power",
+            "description": "**When you use the castle’s castoffs to empower your bloodline’s actions,** spend 1 Relic and get advantage on a roll."
+        },
+        {
+            "key": "rest_and_relaxation",
+            "name": "Rest and Relaxation",
+            "description": "**When you provide aid to characters in a safe camp, roll +Chalices.**  \n**On a 7-9**, pick 2; **on a 10+** pick 3.  \n* Each explorer may heal all harm.  \n* Each explorer may heal all wounds.  \n* Each explorer can repair and resupply their weaponry.  \n* Each explorer may form a new covenant, or raise an existing covenant by a step.  \n* The regent’s clock doesn’t tick down."
+        },
+        {
+            "key": "forward_base",
+            "name": "Forward Base",
+            "description": "**When you claim a place of power as a forward base in the castle, roll +Swords.**   \n**On a hit** it’s yours, and you can use it as a safe camp for the purposes of Rest and Relaxation and Travel the Labyrinth.   \n**On a 10+** pick one bonus:  \n* There’s room for more: it counts as another Bloodline’s camp too. Get 1-pact on them.  \n* It’s well-located: explorers leaving the camp get +1 Travel the Labyrinth hold.  \n* It’s comfortable and secure: get advantage on Rest and Relaxation here.  \n_Note: The lairs of defeated Acolytes are great targets for this, but so are the mystical sites you find exploring the castle (eg **on a 10+** for Travel the Labyrinth)._"
+        },
+        {
+            "key": "lend_aid",
+            "name": "Lend aid",
+            "description": "**When you help another bloodline with a move, offer them a dice.** If they take it, they roll it with their own as if they had advantage. If your dice is the highest, say how you made the difference and gain 1-Pact on them. If it's the lowest, the GM will say how helping them hurt you."
+        },
+        {
+            "key": "resist_doom",
+            "name": "Resist Doom",
+            "description": "**When you work a grand ritual,** spend 1-3 Relics on occult resources and ceremonial paraphernalia and roll +Wands.  \n**On a hit,** choose one for each Relic spent:  \n* Reduce the Regent’s clock by 1.  \n* Bless a weapon to strike true against one Acolyte, giving it the Holy perk.  \n* Reduce a character’s Blood rating by one - they lose a Blood Advance.  \n**On a 7-9**, the Regent weaves a counter-spell; you’ll need to defeat an Acolyte before anyone can work further rituals."
+        },
+        {
+            "key": "reinforcements",
+            "name": "Reinforcements",
+            "description": "**When your Bloodline members search for rumours or resources in the mortal world,** roll +Coins.   \n**On a 7-9** choose 1, **on a 10+** choose 2.  \n* They find resources worth 1 Relic.  \n* They hear tales of a ward’s acolyte, and clues to how they’re helping the regent.  \n* They learn what the regent plans next, and which clock segment it’ll trigger on."
+        }
+    ]
+}
+
+"key":"
+"name":"
+"description":"
+
+
+
+--Generation Moves--
+gnosis
+Gnosis
+When the Regent is slain, the explorer with
+the highest Blood can choose to claim the
+Grail. If they do, they raise a bloodline stat
+by 1 but lose 1 Pact on the other bloodlines.
+They get one wish from the Grail:
+* Life Everlasting: Your character may
+return each generation, and cannot die.
+* The Resurrection of the Dead: One person
+of your choice is returned to life.
+* Insight From Beyond: Gain a new
+bloodline move.
+* Wealth of Kings: Your bloodline gains
+5 Relics.
+* Peace on Earth: Each bloodline gains 1
+Relic; you gain 1-Treaty on the others.
+* Purification: Remove a Blight infected
+by a previous Regent.
+The castle then takes them with it as it
+leaves reality behind. They will return
+as its next regent unless they chose Life
+Everlasting - in which case the next regent is
+Death Itself.
+
+Spoils of Victory
+If you leave the castle without claiming
+the grail, pick a choice unlocked by your
+Explorer’s Blood.
+BLOOD 0+
+* Your explorer loots the castle for valuable
+trinkets. Say what they spend the rest
+of their life doing with their fortune,
+and start the next generation with 1
+more Relic.
+* Your explorer devotes their life to
+preparing the next generation. Choose
+one other bloodline - say how you
+helped train their next explorer, and get
+1 Pact on them.
+* Your bloodline works to heal the wounds
+left in this community by the castle.
+Name an alliance you've made, and
+get advantage when you call on it
+for Reinforcements.
+BLOOD 2+
+* Your explorer instils their skills into a piece
+of gear. Pick one of your moves: when
+your descendants use the gear they can
+access that move, but the gear gains the
+heirloom tag.
+* Your explorer forces permanent order on
+the castle. One ward will remain in its
+current form for the rest of time; your
+bloodline gets advantage Travelling the
+Labyrinth there.
+* You invest in your resources. Sacrifice 3
+Relics to raise a bloodline stat by 1.
+BLOOD 4+
+* You let the corruption sink deep into your
+bloodline, controlled but ever-present.
+Your future characters start at Blood 1,
+with a Blood Advance to match.
+* You form a bond with the castle.
+Your explorer can always mark
+contamination to get a vision of the
+regent, and ask one follow-up question
+the GM must answer truthfully
+Darkness Falls
+When the regent’s clock fills, they blight the
+mortal world. The GM marks one:
+p A section of the region’s population is
+cursed and made monstrous.
+p Day is short and nights are starless.
+p Monsters walk the world every
+full moon.
+p Weather becomes unnatural
+and devastating.
+p Plagues strike a section of
+the population.
+If all are marked, the castle claims the
+mortal world and all is lost.
+Each player picks how their bloodline
+responds to the blight, and adjusts
+their stats:
+* You stayed safe, at the cost of withdrawing
+from the world. Say which of your
+connections suffered in your absence. +1
+Chalices,
+-1 Coins.
+* You fought to push it back, but your best
+mystics lost their lives. Say what their
+sacrifice achieved. +1 Swords,
+-1 Wands.
+* You took some of the taint into your
+family. Say what lingering malady the
+blight has left you with. +1 Wands,
+-1 Chalice.
+* You waged a shadow war keeping society
+safe at great cost to your warriors. Say
+which settlement still stands thanks to
+you. +1 Coins,
+-1 Swords.
+The New Generation
+Once the group has resolved these moves,
+you skip forward to the next time the blood
+moon rises. Follow these steps: 1) WHERE DOES THE CASTLE EMERGE?
+Is it somewhere it’s haunted before, or
+a new location? Each bloodline picks a
+refuge option from their playbook to flesh
+out the surrounding area and define their
+starting safe camps.
+2) HOW HAS THE EVIL MANIFESTED?
+Blood calls out to blood, and each
+bloodline is drawn to the castle by
+misfortune or curse. Each bloodline picks
+a drive that brought them here, and says
+what they suspect the drive says about the
+regent’s plans.
+3) HOW DO YOU BREAK IN?
+You’re ready to break into a ward of the
+castle. Each bloodline picks a breach
+option and says what they’ve seen of the
+ward they’re preparing to assault.
+4) MAKE EXPLORERS
+Each player picks an explorer playbook
+and builds them up, picking stats, looks,
+motivation, covenants, moves and gear.
+Start with the first explorer breaking in,
+with the other explorers assisting them as
+wraiths or in the flesh.

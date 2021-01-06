@@ -74,8 +74,13 @@
                 apiservice.GetByGameId(_characterTable, _gameid).then(getDudesSuccess, getDudesFail);
 
                 function getDudesSuccess(r){
-                    vm.dudes = r;
-                    console.log(r);
+                    // Unpack the JSON data
+                    r.forEach(function(char){
+                        let model = char;
+                        model.data = JSON.parse(char.data);
+                        vm.dudes.push(model);
+                    });
+                    console.log(vm.dudes);
                 }
 
                 function getDudesFail(e){
@@ -147,7 +152,7 @@
 
                 function yes(r){
                     //console.log("response", r);
-                    
+                    vm.dudeid = r.id;
                     // Pull & parse the JSON
                     vm.cd = JSON.parse(r.data);
                     // Clear the selected Dude
@@ -184,11 +189,14 @@
                 } else {
                     // Update
                     // JSON / Array conversion
-                    convert(false);
-                    apiservice.Update(_characterTable, vm.cd).then(function(data){                        
+                    let model = { 
+                        id: vm.dudeid,     
+                        data: JSON.stringify(vm.cd)                        
+                    }
+                    apiservice.Update(_characterTable, model).then(function(data){                        
                         console.log(data);
                         // reload the dude to reset arrays/objects
-                        loadCharacter(vm.cd.id);
+                        loadCharacter(vm.dudeid);
                     },
                     function(e){
                         console.log(e);

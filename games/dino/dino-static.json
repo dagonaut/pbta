@@ -175,7 +175,7 @@
         { "key": "soldier", "value": "Soldier"},
         { "key": "survivor", "value": "Survivor"}
     ],
-    "classes":[
+    "classes_list":[
         {
             "key":"doctor",
             "class_name":"The Doctor",
@@ -508,7 +508,341 @@
                 "look":["Gaunt & sunburnt", "Out of Time", "Meticulously Groomed"]
             }
         }        
-    ]
+    ],
+    "classes":{
+        "doctor": {
+            "key":"doctor",
+            "class_name":"The Doctor",
+            "description":"You save lives. It’s your blessing when you succeed and your curse when you fail.",
+            "special_rules":"As the Doctor, you can generally do the kinds of things doctors do without a roll (unless you must **JUST DO IT!**), though what happens next is up to the DM.",
+            "starting_moves":[
+                {
+                    "key":"treat_wounds",
+                    "name":"Treat Wounds",
+                    "description":"When you take a quiet moment to tend to someone else’s injury and have the right equipment, **tell them a story** (yes, even if they’re unconscious... a particularly good moment for honesty!). Then, **cross off the injury.**  \nWhen the conditions aren’t ideal, still tell a story, then... * In a perilous situation, roll+STEADY. * Without the proper equipment, roll+CLEVER.  \n_(If it’s both, roll without any bonus.)_  \n**On a 10+**, you treat their wound. If it’s a Hero, cross the injury off their playsheet.  \n**On a 7–9**, you could do it... if conditions were right. The DM will tell you what you need. When you get it, cross off the injury.  \n**On a miss**, the DM will tell you how you’ve made things worse."
+                }
+            ],
+            "advance_moves":[                
+                {
+                    "key":"back_from_the_brink",
+                    "name":"Back from the Brink",
+                    "description":"You can treat a character who is **Out Of Commission** to revive them. They retain their previous injury."
+                },                
+                {
+                    "key":"heal_thyself",
+                    "name":"Treat Yo' Self",
+                    "description":"You can use the **TREAT WOUNDS** Move on yourself."
+                },
+                {
+                    "key":"veterinarian",
+                    "name":"Veterinarian",
+                    "description":"You can treat dinosaurs’ and animals’ wounds"
+                }
+            ],
+            "stories":[
+                "Why you became a doctor",
+                "A time you were terrified",
+                "A nearly fatal mistake",
+                "When someone miraculously pulled through",
+                "How you blow off steam"
+            ],
+            "starting_gear":[
+                "First aid kit",
+                "Penlight",
+                "Container of pain pills"
+            ],
+            "starters":{
+                "suggested_stat":"STEADY",
+                "names":["Juliet", "Sara", "Kishori", "Jack", "Teddy", "Val", "Amine"],
+                "personality":["Controlled", "Authoritative", "Exhausted"],
+                "look":["Dashing", "Still in scrubs", "Designer Clothes"]
+            }
+        },
+        "engineer":{
+            "key":"engineer",
+            "class_name":"The Engineer",
+            "description":"There’s no problem humans can’t solve with ingenuity and a bit of elbow grease. Even this one.",
+            "special_rules":"",
+            "starting_moves":[
+                {
+                    "key":"jury_rig",
+                    "name":"Jury-Rig",
+                    "description":"**Whenever you whip up a makeshift solution to a problem, roll+CLEVER.**  \n**On a 10+**, it’ll do the trick.  \n**On a 7–9**, it’ll work, but choose 1:* You’ll have to take apart something else* It won’t last long* It’ll take a while  \n**On a miss**, your messing around damages something or someone."
+                }
+            ],
+            "advance_moves":[                
+                {
+                    "key":"construct",
+                    "name":"Construct",
+                    "description":"**When you lead a team to construct something substantial (a raft, bridge, shelter, etc.), assign one person to take point on construction. You make the design. Roll+CLEVER.**  \n**On a 10+**, it’s excellent engineering. On a 7–9, choose 1:* You need something you don’t have. The DM will tell you what, and where you might find it.* It’s a good plan, but it has one unavoidable flaw. The DM will tell you what it is.  \n**On a miss**, there’s a flaw you didn’t notice. When it comes up, the DM will tell you.  \n**Whoever leads construction:** Roll+the number of people helping you (max 3).  \n**On a 10+**, you build it quickly and expertly. \n**On a 7–9**, it’s hard work. All the builders have -1 to their next FIT roll. \n**On a miss**, someone is injured on the job."
+                },
+                {
+                    "key":"the_nuclear_option",
+                    "name":"The Nuclear Option",
+                    "description":"You know how to craft a powerful bomb. When you build one, tell the group just how powerful it is and how it’s triggered. The DM will tell you how long it will take to build, and what you need. **When the bomb is triggered, roll+CLEVER.**  \n**On a 10+**, it goes off without a hitch. BOOM.  \n**On a 7–9**, choose 1:* The bomb must be triggered manually by someone next to it.* The bomb is more or less powerful than planned, DM’s choice.  \n**On a miss**, the bomb goes off at the wrong time—the worst possible time."
+                }
+            ],
+            "stories":[
+                "Something inefficient that infuriates you",
+                "Something that’s perfectly designed",
+                "The thing you dream of building",
+                "A moment of simple pleasure",
+                "A time you were forced to cut corners"
+            ],
+            "starting_gear":[
+                "Toolkit (Screwdriver, duct tape, etc.)",
+                "Tablet w/durable case",
+                "Headlamp"
+            ],
+            "starters":{
+                "suggested_stat":"CLEVER",
+                "names":["Arnold", "Khomyuk", "Terence", "Dave", "Chiara", "Callie"],
+                "personality":["Precise", "Crotchety", "Easygoing"],
+                "look":["Sturdily Built", "Polo shirt & khakis", "Nebbish"]
+            }
+        },
+        "hunter":{
+            "key":"hunter",
+            "class_name":"The Hunter",
+            "description":"You've hunted most things that can you hunt you, but the way these things move...",
+            "special_rules":"",
+            "starting_moves":[
+                {
+                    "key":"tracker",
+                    "name":"Tracker",
+                    "description":"**When you study your immediate environment for spoor, roll+CLEVER.**  \n**On a hit**, you know what animals have been here recently (though you may not know exact dinosaurs species), and the size of their group(s).  \nIn addition, **on a 10+**, ask 3; **on a 7–9**, ask 1. * Where did the animal(s) come from? * Where are the animal(s) headed? * How can I catch them unaware? * What else nearby should I know about that might not be obvious?  \nThe answers should be substantial. _For example, “Where did the animal(s) come from?” should not merely be “That way!” but instead “A body of water to the east.”_  \n**On a miss**, you notice a predator preparing to strike."
+                }
+            ],
+            "advance_moves":[
+                {
+                    "key":"trapper",
+                    "name":"Trapper",
+                    "description":"With the right equipment, you can lay a trap for a dinosaur or other animal and capture it. Describe your plan. **When you put it into action, roll +CLEVER.**  \n**On a 10+**, you capture the dinosaur safely and securely.  \n**On a 7–9**, choose 1:* The dinosaur is captured uninjured.                    * The dinosaur is captured securely, and won’t break free.* No one was injured while capturing the dinosaur.  \n**On a miss**, you weren’t able to capture the dinosaur, you’ve exposed yourself or a friend to danger, and the dinosaur’s mad, too. "
+                },
+                {
+                    "key":"its_too_quiet",
+                    "name":"It's Too Quiet",
+                    "description":"You always know when you’re being hunted and you cannot be ambushed. To warn the others without tipping your enemy off, you must **JUST DO IT!**"
+                }
+            ],
+            "stories":[
+                "Your most impressive catch",
+                "A time you were lost in the wilderness",
+                "One way animals outclass people",
+                "The strangest food you’ve eaten",
+                "Something an idiot did that got them killed"
+            ],
+            "starting_gear":[
+                "Tranquilizer rifle (5 darts) OR Hunting bow (10 arrows)",
+                "Camouflaged clothing",
+                "Hunting knife",
+                "A bag of jerky"
+            ],
+            "starters":{
+                "suggested_stat":"CLEVER",
+                "names":["Owen", "Locke", "Irwin", "Quint", "Eliza", "Hanna", "Turok"],
+                "personality":["Controlled", "Arrogant", "Snarky"],
+                "look":["Tattooed", "Performance-wear", "Sharp"]
+            }
+        },
+        "kid":{
+            "key":"kid",
+            "class_name":"The Kid",
+            "description":"You're just a kid!",
+            "special_rules":"",
+            "starting_moves":[
+                {
+                    "key":"i_know_this",
+                    "name":"I Know This!",
+                    "description":"**When nobody else has a crucial skill, you may reveal that you, in fact, have that skill because you’re a precocious kid.** Using the skill always requires you to **just do it!**"
+                },
+                {
+                    "key":"ahhhhhhh",
+                    "name":"Ahhhhhhh!",
+                    "description":"**Whenever you cry out to another Hero for help**, they must answer your call. "
+                }
+            ],
+            "advance_moves":[
+                {
+                    "key":"inspire_heroism",
+                    "name":"Inspire Heroism",
+                    "description":"**When another Hero puts your needs above their own safety (including in response to AHHHHHH!)**, any rolls they make are improved by one level. A miss becomes a 7–9, a 7–9 becomes a 10+."
+                },
+                {
+                    "key":"good_listener",
+                    "name":"Good Listener",
+                    "description":"**When you volunteer for a difficult job and someone else INSTRUCTs you**, they treat a miss as if they rolled a 7–9."
+                }
+            ],
+            "stories":[
+                "A time you were really brave",
+                "The most annoying thing your parent does",
+                "An explanation of something baffling to adults",
+                "Something cool a friend taught you",
+                "What you’re secretly scared of"
+            ],
+            "starting_gear":[
+                "Toy dinosaur",
+                "Swiss army knife",
+                "A candy bar + can of soda"
+            ],
+            "starters":{
+                "suggested_stat":"NONE",
+                "names":["Tim", "Liam", "Walt", "Lila", "Ava", "Deedee", "Ji Yeon"],
+                "personality":["Curious", "Timid", "Rambunctious"],
+                "look":["Sporty", "Alternative", "Geeky"]
+            }
+        },
+        "palenontologist":{
+            "key":"palenontologist",
+            "class_name":"The Palenontologist",
+            "description":"You’ve studied dinosaurs by their fossil traces—will that knowledge keep you safe from the real thing?",
+            "special_rules":"",
+            "starting_moves":[
+                {
+                    "key":"dinosaur_expert",
+                    "name":"Dinosaur Expert",
+                    "description":"**When you draw on your knowledge to deal with a real-life dinosaur, roll+CLEVER.**  \n**On a hit**, you’re able to identify its species, sex, and whether it’s a herbivore or carnivore. \nIn addition, **on a 10+**, you may ask 3 questions from the list below.  \n**On a 7–9**, you may ask 1. * What is its drive? * What are its moves? * What size pack does it travel in? * What is its weakness?  \n**On a miss**, it turns out living dinosaurs are different than you thought, for the worse.  \n_You can only use this move once per species, unless you have the opportunity to study a living specimen more closely._"
+                }
+            ],
+            "advance_moves":[
+                {
+                    "key":"lizard_brain",
+                    "name":"Lizard Brain",
+                    "description":"**When you roll a hit with DINOSAUR EXPERT**, instead of asking one of your questions, you may instill a simple emotion (fear, apathy, anger, etc.) in a dinosaur using body language and sound. "
+                },
+                {
+                    "key":"curiosity_killed_the_quetzalcoatlus",
+                    "name":"Curiosity Killed the Quetzalcoatlus",
+                    "description":"**When you put yourself in danger in pursuit of knowledge or to investigate a mystery**, take +1 to your roll. "
+                },
+                {
+                    "key":"polymath",
+                    "name":"Polymath",
+                    "description":"Your deductive and inductive abilities extend beyond fossils and prehistoric life. **When you spend time examining something solidly mysterious, tell a story then roll+CLEVER.**  \n**On a 10+**, the DM will tell you something interesting and useful you’re able to deduce about the subject.  \n**On a 7–9**, the DM will tell you what you need—a tool, specific knowledge, etc.—to figure it out, and a guess as to where you might find it.  \n**On a miss**, you discover something horrible."
+                }
+            ],
+            "stories":[
+                "How you fell in love with dinosaurs",
+                "Why your arch-rival is a hack",
+                "A thing you’ve never understood about people",
+                "A life lesson your mentor taught you",
+                "The story behind the fossil you carry"
+            ],
+            "starting_gear":[
+                "Basic excavation tools",
+                "Bandana",
+                "Canteen",
+                "Small fossil with sentimental value"
+            ],
+            "starters":{
+                "suggested_stat":"CLEVER",
+                "names":["Dr. Anning", "Dr. Colbert", "Dr. Sattler", "Dr. Horner", "Dr. Long"],
+                "personality":["Adventerous", "Thoughtful", "Scatterbrained"],
+                "look":["Dusty",  "Fresh from the Academy", "Rugged"]
+            }
+        },
+        "soldier":{
+            "key":"soldier",
+            "class_name":"The Soldier",
+            "description":"You are a warrior by profession, but is your training enough to best a foe honed by 179 million years of evolution?",
+            "special_rules":"",
+            "starting_moves":[
+                {
+                    "key":"kill_or_be_killed",
+                    "name":"Kill of Be Killed",
+                    "description":"**When you open fire on a dinosaur or group of dinosaurs, roll+STEADY**.  \n**On a hit**, you gun them down.  \n**On a 7–9**, you use too much ammo—you’re empty.  \n**On a miss**, you get mauled and immediately make the CASUALTY move. _(Don’t miss.)_"
+                }
+            ],
+            "advance_moves":[
+                {
+                    "key":"leave_no_one+behind",
+                    "name":"Leave No One Behind",
+                    "description":"**When a nearby ally is about to be hurt, killed, or separated from the group**, you may take +1 to rolls to help them."
+                },
+                {
+                    "key":"gun_to_your_head",
+                    "name":"Gun to Your Head",
+                    "description":"**When you threaten a human with physical violence**, they must do what you say or take an injury of your choice."
+                },
+                {
+                    "key":"close_quarters_expert",
+                    "name":"Close Quarters Expert",
+                    "description":"**When you FIGHT!, your roll is improved by one level.** A miss becomes a 7–9, a 7–9 becomes a 10+"
+                }
+            ],
+            "stories":[
+                "The time you cheated death",
+                "Why you enlisted",
+                "An inside joke you shared with your squad",
+                "Something that haunts you",
+                "A superstition that keeps you alive"
+            ],
+            "starting_gear":[
+                "Assault Rifle",
+                "Handgun",
+                "Flashlight",
+                "Combat knife",
+                "One extra clip "
+            ],
+            "starters":{
+                "suggested_stat":"STEADY",
+                "names":["Regina", "Snake", "Sayid", "Jiar", "Lyttle", "Hicks"],
+                "personality":["Commanding", "Aggro", "Ice cold"],
+                "look":["Hulking", "Wiry", "Scarred"]
+            }
+        },
+        "survivor":{
+            "key":"survivor",
+            "class_name":"The Survivor",
+            "description":"You are not from here, but you’ve survived alone on the island for a long time.",
+            "special_rules":"You have a hovel, place it somewhere on the map.",
+            "starting_moves":[
+                {
+                    "key":"been_around_the_block",
+                    "name":"Been Around the Block",
+                    "description":"**When someone mentions a specific location on the island for the first time, roll+CLEVER if you’ve been there.**  \n**On a 10+**, you know exactly where it is. Mark it on the map and gain +1 to all rolls while traveling there.   \n**On a 7–9**, you remember where it is, and the reason it’s challenging to get there. Say what it is.  \n**On a miss**, the DM will tell you the reason you swore you’d never go back.  \nRegardless of your roll, **tell them about the last time you were there.**"
+                },
+                {
+                    "key":"homeward_bound",
+                    "name":"Homeward Bound",
+                    "description":"**When you trek to your hovel, roll+CLEVER.**  \n**On a 10+**, you arrive after a safe journey.   \n**On a 7–9**, you still make it there, but choose 1: * You’re forced to take an indirect route and arrive hours later than planned. * There is a threat waiting for you.  \n**On a miss**, you can’t get there. Te DM will tell you why, and offer you a choice of where to go instead."
+                }
+            ],
+            "advance_moves":[
+                {
+                    "key":"hoarder",
+                    "name":"Hoarder",
+                    "description":"You’ve scavenged many useful things on the island—key cards, mechanical parts, bottles of tyrannosaurus urine, etc. **When you might have just the right thing, roll+CLEVER.**  \n**On a 10+**, you do, or something similar enough.  \n**On a 7–9**, choose 1: * You’ve got something similar, though not as good. * You have the thing, but it’s in your hovel.  \n**On a miss**, your search comes up short and costs you valuable time. "
+                },
+                {
+                    "key":"fade_away",
+                    "name":"Fade Away",
+                    "description":"**As long as you are in the wilderness, whenever you HIDE!, treat your roll as a 10+, even if your enemy has eyes on you.** Your friends are on their own."
+                }
+            ],
+            "stories":[
+                "A useful survival skill you learned here",
+                "The person you hope to be reunited with",
+                "The mundane comfort you miss most",
+                "What you’ll do differently if you get off the island",
+                "The thing about the island you actually like"
+            ],
+            "starting_gear":[
+                "Spear",
+                "Camouflaged rags",
+                "Edible plants",
+                "Old backpack",
+                "A terrible stench"
+            ],
+            "starters":{
+                "suggested_stat":"CLEVER",
+                "names":["Danielle", "Amelia", "Wilson", "Hank", "Watney"],
+                "personality":["Reserved", "Gregarious", "Feral"],
+                "look":["Gaunt & sunburnt", "Out of Time", "Meticulously Groomed"]
+            }
+        }        
+    }
 }
 
 

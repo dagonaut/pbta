@@ -1,10 +1,21 @@
-
+<style>
+    .dino .stats input{
+        height:50px;
+        width:50px;
+        border: 1px #1ca709 solid;
+    }
+    .dino .move_header{
+        font-weight:bold;
+        color:#1ca709;
+        border-bottom: 1px #1ca709 solid;
+    }
+</style>
 <form id="charSheet" name="charSheet">
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between dino">
         <div class="d-flex justify-content-start align-items-center">
             Dudes:
             <select ng-model="vm.dude" class="mx-1">
-                <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId || vm.userId === 2" value="{{dude.id}}">{{dude.name}} - {{dude.class}}
+                <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId || vm.userId === 2" value="{{dude.id}}">{{dude.data.name}} - {{dude.data.class}}
                 </option>
             </select>
             <div class="btn btn-primary mx-1" ng-click="vm.updateCharacter(true);">Create New</div>
@@ -13,16 +24,71 @@
             <div class="btn btn-primary mx-1" ng-click="vm.loadCharacter(vm.dude);">Load</div>
         </div>
         <div>
+            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#startingInfo" aria-expanded="false" aria-controls="startingInfo">
+                Starting Info
+            </button>  
             <div class="pointer" ng-click="vm.cd.visibility.classinfo = !vm.cd.visibility.classinfo">{{vm.cd.visibility.classinfo ? 'Hide' : 'Show'}} Starting Info</div>
         </div>
     </div>
+    <div class="collapse p-2" id="startingInfo" style="border:3px double #bbe1fa; border-radius: 5px;">
+        Choose from the following for your <strong>{{vm.class}}</strong>
+        <div class="d-flex">
+            <div class="">
+                <div class="names">
+                    Choose a name: <span ng-repeat="name in vm.static.classes[vm.class].starters.names">{{ name }}, </span>
+                </div>
+                <div class="look">
+                    Choose a look: <span ng-repeat="look in vm.static.classes[vm.class].starters.look">{{ look }}, </span>
+                </div>
+                <div class="personality">
+                    Choose a personality: <span ng-repeat="personality in vm.static.classes[vm.class].starters.personality">{{ personality }}, </span>
+                </div>
+            </div>
+            <div class="">
+
+            </div>
+        </div>        
+    </div>
     <div class="d-flex my-2">
-        <div>
-            Stats:
+        <div>Name: <input ng-model="vm.cd.name" /></div>
+        <div>Player Name: <input ng-model="vm.cd.playername" /></div>
+        <div>Class: 
+            <select ng-model="vm.class" ng-change="vm.getClassMoves(vm.class)">
+                <option ng-repeat="class in vm.classes_list" value="{{class.key}}" ng-selected="{{class.key == vm.class}}">{{class.value}}</option>
+            </select>
+        </div>
+        <div>Look: <input ng-model="vm.cd.look" /></div>
+        <div>Personality: <input ng-model="vm.cd.personality" /></div>
+    </div>
+    <div class="d-flex my-2">        
+        <div class="stats" style="width:10%;">
+            Stats:<br />
             <input type="number" ng-model="vm.cd.stat.clever" />CLEVER<br />
             <input type="number" ng-model="vm.cd.stat.fit" />FIT<br />
             <input type="number" ng-model="vm.cd.stat.steady" />STEADY<br />
+            <div>
+                Stories:
+                <div ng-repeat="story in vm.static.classes[vm.cd.class].stories">{{ story }}</div>
+            </div>
         </div>
+        <div class="col-md-3">
+            <div ng-repeat="s_move in vm.static.classes[vm.cd.class].starting_moves">
+                <div class="move_header">{{ s_move.name }}</div>
+                <div markdown-it="s_move.description"></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div ng-repeat="s_move in vm.static.classes[vm.cd.class].advance_moves">
+                <div class="move_header">{{ s_move.name }}</div>
+                <div markdown-it="s_move.description"></div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            Dino Damage:
+            Gear: <textarea ng-model="vm.cd.gear"></textarea><br />
+            Notes: <textarea ng-model="vm.cd.notes"></textarea>
+        </div>
+        
     </div>    
 </form>
 
