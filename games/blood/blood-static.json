@@ -261,7 +261,7 @@
                 "shelter_move":""
                 
             },
-            "the_legenary_heroes":{
+            "the_legendary_heroes":{
                 "name": "The Legendary Heroes",
                 "stats":[
                     {"chalices":1, "swords": 1, "coins": 0, "wands": -1},
@@ -835,7 +835,7 @@
                 "name":"The Packrat",
                 "stats":{ "iron": -1, "glass": 0, "sulphur": 1, "mercury": 0},
                 "looks":[
-                    ["Ambiguous", "Concealed", "Feminine", "Masculine". "Burly", "bent", "stocky", "weasally"],
+                    ["Ambiguous", "Concealed", "Feminine", "Masculine", "Burly", "bent", "stocky", "weasally"],
                     ["Yasmin", "Vyasa", "Cathaoir", "Aleksander", "Cecilia", "Angela", "Clement", "Krister", "Orinth", "Elizabeta"]
                 ],
                 "gear":{

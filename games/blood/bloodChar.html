@@ -1,0 +1,147 @@
+<style>
+    .blood .stats input{
+        height:50px;
+        width:50px;
+        border: 1px #c82000 solid;
+    }
+    .blood .move_header{
+        font-weight:bold;
+        color:#1ca709;
+        border-bottom: 1px #c82000 solid;
+    }
+</style>
+<form id="charSheet" name="charSheet">
+    <div class="d-flex justify-content-between blood">
+        <div class="d-flex justify-content-start align-items-center">
+            Dudes:
+            <select ng-model="vm.dude" class="mx-1">
+                <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId || vm.userId === 2" value="{{dude.id}}">{{dude.data.name}} - {{dude.data.class}}
+                </option>
+            </select>
+            <div class="btn btn-primary mx-1" ng-click="vm.updateCharacter(true);">Create New</div>
+            <div class="btn btn-primary mx-1" ng-click="vm.updateCharacter();">Save</div>
+            <div class="btn btn-danger mx-1" ng-click="vm.deleteCharacter();" ng-disabled="true">Delete</div>
+            <div class="btn btn-primary mx-1" ng-click="vm.loadCharacter(vm.dude);">Load</div>
+        </div>
+        <div>
+            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#startingInfo" aria-expanded="false" aria-controls="startingInfo">
+                Starting Info
+            </button>  
+            <div class="pointer" ng-click="vm.cd.visibility.classinfo = !vm.cd.visibility.classinfo">{{vm.cd.visibility.classinfo ? 'Hide' : 'Show'}} Starting Info</div>
+        </div>
+    </div>
+    <div class="collapse p-2" id="startingInfo" style="border:3px double #bbe1fa; border-radius: 5px;">
+        Choose from the following for your <strong>{{vm.class}}</strong>
+        <div class="d-flex">
+            <div class="">
+                <div class="names">
+                    Choose a name: <span ng-repeat="name in vm.static.classes[vm.class].starters.names">{{ name }}, </span>
+                </div>
+                <div class="look">
+                    Choose a look: <span ng-repeat="look in vm.static.classes[vm.class].starters.look">{{ look }}, </span>
+                </div>
+                <div class="personality">
+                    Choose a personality: <span ng-repeat="personality in vm.static.classes[vm.class].starters.personality">{{ personality }}, </span>
+                </div>
+            </div>
+            <div class="">
+
+            </div>
+        </div>        
+    </div>
+    <div class="d-flex my-2">
+        <div>Name: <input ng-model="vm.cd.name" /></div>
+        <div>Player Name: <input ng-model="vm.cd.playername" /></div>
+        <div>Bloodline: 
+            <select ng-model="vm.bloodline">
+                <option ng-repeat="bloodline in vm.bloodlines" value="{{bloodline.key}}" ng-selected="{{bloodline.key == vm.bloodline}}">{{bloodline.value}}</option>
+            </select>
+        </div>  
+        <div>Explorer: 
+            <select ng-model="vm.explorer">
+                <option ng-repeat="explorer in vm.explorers" value="{{explorer.key}}" ng-selected="{{explorer.key == vm.explorer}}">{{explorer.value}}</option>
+            </select>
+        </div>        
+    </div>
+    <div class="d-flex">
+        <!-- Bloodline -->
+        <div class="bloodline">
+            <div class="stats">
+                Stats:<br />
+                <input type="number" ng-model="vm.cd.stat.chalices" />CHALICES<br />
+                <input type="number" ng-model="vm.cd.stat.swords" />SWORDS<br />
+                <input type="number" ng-model="vm.cd.stat.wands" />WANDS<br />
+                <input type="number" ng-model="vm.cd.stat.coins" />COINS<br />
+                <input type="number" ng-model="vm.cd.stat.relics" />RELICS<br />            
+            </div>
+            <div>
+                <div ng-repeat="b_move in vm.static.characters.bloodlines[vm.bloodline].moves">
+                    <div class="move_header">{{ b_move.name }}</div>
+                    <div markdown-it="b_move.description"></div>
+                </div>
+                <div>
+                    <div class="move_header">Shelter Move</div>
+                    <div markdown-it="vm.static.characters.bloodlines[vm.bloodline].shelter_move"></div>
+                </div>
+            </div>
+            <div>
+                Pact: {{vm.static.bloodlines[vm.cd.bloodline].pact.name}}
+                <div markdown-it="vm.static.characters.bloodlines[vm.bloodline].pact.description"></div>
+            </div>
+            <div>
+                Traditions:
+                
+            </div>
+        </div>
+        <!-- Explorer -->
+        <div class="explorer">
+            <div class="stats">
+                Stats:<br />
+                <input type="number" ng-model="iron" />IRON<br />
+                <input type="number" ng-model="glass" />GLASS<br />
+                <input type="number" ng-model="sulphur" />SULPHUR<br />
+                <input type="number" ng-model="mercury" />MERCURY<br />
+            </div>
+            <div>
+                Moves:<br />
+                <div ng-repeat="b_move in vm.static.characters.explorers[vm.explorer].moves">
+                    <div class="move_header">{{ b_move.name }}</div>
+                    <div markdown-it="b_move.description"></div>
+                </div>                
+            </div>
+            <div>
+                <input type="number" ng-model="blood" />BLOOD<br />
+                Blood Advances:
+                <!-- 
+                <input
+                    id="adv_{{adv.id}}"                             
+                    type="checkbox" 
+                    value="{{adv.id}}" 
+                    ng-checked="vm.cd.advancements.indexOf(adv.id) > -1"                            
+                    ng-click="vm.updateAdvancements(adv.id)" />
+                <span ng-class="{'orange': vm.cd.advancements.indexOf(adv.id) > -1}">{{adv.description}}</span>
+                 -->                  
+                <input                
+                type="checkbox" />
+                <span ng-class="{'orange': vm.cd.advancements.indexOf(adv.id) > -1}">Get +1 Stat</span>
+                Blood Gifts:<br />
+                <div ng-repeat="b_move in vm.static.characters.explorers[vm.explorer].gifts">
+                    <div class="move_header">{{ b_move.name }}</div>
+                    <div markdown-it="b_move.description"></div>
+                </div>
+                <div>
+                    HARM:
+                    [][][][][]
+                    wounds: [] minor, [] major, [] mortal
+                    armor: [] []
+                </div>
+                <div>
+                    <div class="move_header">Death Move</div>
+                    <div markdown-it="vm.static.characters.explorers[vm.explorer].death_move"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+

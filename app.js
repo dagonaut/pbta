@@ -240,10 +240,10 @@
 						templateUrl: 'games/blood/blood.html',
 						controller: 'BloodController as vm'
 					},			
-					// 'charactersheet@auth.blood': {
-					// 	templateUrl: 'games/blood/bloodChar.html',
-					// 	controller: 'BloodCharacterController as vm'
-					// },
+					'charactersheet@auth.blood': {
+						templateUrl: 'games/blood/bloodChar.html',
+						controller: 'BloodCharacterController as vm'
+					},
 					'reference@auth.blood': {
 						templateUrl: 'games/blood/bloodRef.html',
 						controller: 'BloodReferenceController as vm'
