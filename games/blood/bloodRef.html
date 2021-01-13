@@ -1,0 +1,47 @@
+<style>
+    strong{
+        color:#c82000;
+    }
+    .move-category{
+        font-size:larger;
+        color:#c82000;
+        font-weight:bold;
+        border-bottom:#c82000 1px solid;
+    }
+    .move-name{
+        color:#c82000;
+        font-weight:bold;
+    }
+</style>
+<div class="blood-reference">
+    <div class="d-flex">
+        <div class="p-2">
+            <div class="move-category">Basic Moves</div>
+            <div class="move" ng-repeat="move in vm.static.moves.basic">
+                <div class="move-name">{{move.name}}</div>
+                <div class="move-description" markdown-it="move.description"></div>
+            </div>
+        </div>
+        <div class="p-2">
+            <div class="move-category">Confrontation Moves</div>
+            <div class="move" ng-repeat="move in vm.static.moves.confrontation">
+                <div class="move-name">{{move.name}}</div>
+                <div class="move-description" markdown-it="move.description"></div>
+            </div>
+        </div>
+        <div class="p-2">
+            <div class="move-category">Bloodline Moves</div>
+            <div class="move" ng-repeat="move in vm.static.moves.bloodline">
+                <div class="move-name">{{move.name}}</div>
+                <div class="move-description" markdown-it="move.description"></div>
+            </div>
+        </div>
+        <div class="p-2">
+            <div class="move-category">Generation Moves</div>
+            <div class="move" ng-repeat="move in vm.static.moves.generation">
+                <div class="move-name">{{move.name}}</div>
+                <div class="move-description" markdown-it="move.description"></div>
+            </div>
+        </div>
+    </div>
+</div>

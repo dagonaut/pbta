@@ -1,242 +1,900 @@
 {
-    "basic_moves": [
-        {
-            "key": "explore_the_castle",
-            "name": "Explore the Castle",
-            "description": "**When you attempt to navigate the castle, roll +Blood**. If you choose, you may mark contamination to roll with advantage. On a hit, hold 1 and describe your insight into the ward's purpose or layout.  \n****On a 7-9****, the area you arrive at contains castle denizens or traps.  \n****on a 10+****, the area you arrive at contains relics, a place of power, or valuable insight.  \n**When you leave the area**, spend 1 hold to retreat to a safe camp, 2 to find an exit to another ward, and 3 to find the Acolyte’s sanctuary. One person rolls each time you navigate, and the group’s hold from multiple rolls is pooled together."
+    "moves":{
+        "basic": [
+            {
+                "key": "explore_the_castle",
+                "name": "Explore the Castle",
+                "description": "**When you attempt to navigate the castle, roll +Blood**. If you choose, you may mark contamination to roll with advantage. On a hit, hold 1 and describe your insight into the ward's purpose or layout.  \n****On a 7-9****, the area you arrive at contains castle denizens or traps.  \n****on a 10+****, the area you arrive at contains relics, a place of power, or valuable insight.  \n**When you leave the area**, spend 1 hold to retreat to a safe camp, 2 to find an exit to another ward, and 3 to find the Acolyte’s sanctuary. One person rolls each time you navigate, and the group’s hold from multiple rolls is pooled together."
+            },
+            {
+                "key": "face_the_horde",
+                "name": "Face the Horde",
+                "description": "**When you assault a group of castle denizens, roll +Iron**. On a hit, you tear through them - say how. ****On a 7-9**** pick 2, ****on a 10+**** pick 1:  \n* They hit back - suffer harm.  \n* You get some on you - mark corruption.   \n* You end up in a risky position.  \n* More are coming."
+            },
+            {
+                "key": "flow_like_water",
+                "name": "Flow Like Water",
+                "description": "**When you risk danger to change your environment, or your position in it, roll +Mercury**. On a hit, pick one:  \n* You're somewhere you need to be.  \n* Another explorer has a clear path to you.   \n* A particular threat isn't a problem any longer.  \n****On a 7-9**** the GM will give your action a cost: harm, contamination or lost gear."
+            },
+            {
+                "key": "see_clear",
+                "name": "See Clear",
+                "description": "**When you try to read a dangerous situation, roll +Glass.** On a hit, you can ask the GM questions. Get fleeting advantage when you act on each answer.  \n**On a 7–9** ask 1, ****on a 10+**** ask 3:  \n* Which exit will take me to my goal?  \n* What here is valuable?  \n* What can the enemies here do?  \n* What should I be on the lookout for?  \n**On a miss**, ask 1 but prepare for the worst."
+            },
+            {
+                "key": "shelter",
+                "name": "Shelter",
+                "description": "**When you look for a safe space to recover, roll +Mercury.** On a hit, each explorer picks 1:  \n* Tend to another explorer: they heal 2 Harm, or step down their worst Wound.  \n* Encourage another explorer - they get fleeting advantage.  \n* Use your bloodline’s Shelter move.  \n* Gain aid from a contact (p. 61).  \n****On a 7-9****, advance the Regent’s clock."
+            },
+            {
+                "key": "drink_deep",
+                "name": "Drink Deep",
+                "description": "**When you draw on the power in a potent item or ritual site, roll +Sulphur.** On a hit, mark contamination and learn a spell - the GM says what it does. When you cast it, pick 1:  \n* Markcontamination.  \n* Forget the spell.  \n* Take 1 Harm.  \n_**on a 10+**, you don't need to pick an option on your first cast._"
+            }
+        ],
+        "confrontation": [
+            {
+                "key": "strike",
+                "name": "Strike",
+                "description": "**When you take advantage of an Opening with...**  \n* Stealth and guile, roll +Mercury.  \n* Physical force, roll +Iron.  \n* Precise insight, roll +Glass.  \n* Sorcery or sacrifice, roll +Sulphur.  \n**On a hit**, you damage one of the foe’s qualities - if you destroy its final quality, it’s dead. The Opening’s now gone.   \n**On a 7-9**, the GM picks 1:  \n* The foe lashes out at you: take Harm appropriate to the enemy.  \n* The foe separates you from the others or puts you in a spot.  \n* The foe frenzies, dealing +1 Harm for the rest of the fight."
+            },
+            {
+                "key": "dodge",
+                "name": "Dodge",
+                "description": "**When you try to avoid incoming danger, roll +Mercury.**  \n**On a hit** pick 1, **on a 10+** pick 2:  \n* You avoid taking harm.  \n* You avoid getting seperated from the others or losing something valuable.  \n* The foe’s heedless in pursuit of you: create an Opening."
+            },
+            {
+                "key": "line_it_up",
+                "name": "Line It Up",
+                "description": "**When you size up the enemy to locate a weak spot, roll +Glass.** On a hit you find an Opening. Say where it’s coming from - the environment, a chink in their armour, a flaw in their fighting style.   \n**On a 7-9**, pick 2, **on a 10+** pick 1:  \n* The foe makes you its highest priority.  \n* The Opening only lasts a few moments.  \n* Attempts to use the Opening without one weapon perk have disadvantage."
+            },
+            {
+                "key": "confront",
+                "name": "Confront",
+                "description": "**When you confront the foe head-on, roll +Iron.** n**On a hit**, you throw them off-balance and create an Opening, but take the brunt of their attacks. ****On a 7-9**** pick 1, ****on a 10+**** pick 2:  \n* You roll with the blow: take 1 less harm.  \n* You are fearsome and commanding: the foe will focus only on you.  \n* Your mind is steel: you don’t mark contamination."
+            },
+            {
+                "key": "stand_with_me",
+                "name": "Stand With Me",
+                "description": "**When you heal, encourage or aid an ally, roll +Sulphur.**  \n**On a hit**, pick 1:  \n* You rescue them from danger: a precipice, poison, a curse, etc.  \n* They heal their lightest wound.  \n* They heal 2 harm.  \n****on a 10+**** the cameraderie shown gives your ally fleeting advantage."
+            },
+            {
+                "key": "victory",
+                "name": "Victory",
+                "description": "**When the foe is defeated**, everyone still living may raise Blood and add 1 to their Covenant with each other. The foe’s sanctum becomes a place of power, usable for Forward Base."
+            },
+            {
+                "key": "flee",
+                "name": "Flee",
+                "description": "**When you use an Opening to retreat**, any and all characters can flee the battle. Advance the regent’s clock by one."
+            }
+        ],
+        "bloodline": [
+            {
+                "key": "arcane_power",
+                "name": "Arcane Power",
+                "description": "**When you use the castle’s castoffs to empower your bloodline’s actions,** spend 1 Relic and get advantage on a roll."
+            },
+            {
+                "key": "rest_and_relaxation",
+                "name": "Rest and Relaxation",
+                "description": "**When you provide aid to characters in a safe camp, roll +Chalices.**  \n**On a 7-9**, pick 2; **on a 10+** pick 3.  \n* Each explorer may heal all harm.  \n* Each explorer may heal all wounds.  \n* Each explorer can repair and resupply their weaponry.  \n* Each explorer may form a new covenant, or raise an existing covenant by a step.  \n* The regent’s clock doesn’t tick down."
+            },
+            {
+                "key": "forward_base",
+                "name": "Forward Base",
+                "description": "**When you claim a place of power as a forward base in the castle, roll +Swords.**   \n**On a hit** it’s yours, and you can use it as a safe camp for the purposes of Rest and Relaxation and Travel the Labyrinth.   \n**On a 10+** pick one bonus:  \n* There’s room for more: it counts as another Bloodline’s camp too. Get 1-pact on them.  \n* It’s well-located: explorers leaving the camp get +1 Travel the Labyrinth hold.  \n* It’s comfortable and secure: get advantage on Rest and Relaxation here.  \n_Note: The lairs of defeated Acolytes are great targets for this, but so are the mystical sites you find exploring the castle (eg **on a 10+** for Travel the Labyrinth)._"
+            },
+            {
+                "key": "lend_aid",
+                "name": "Lend aid",
+                "description": "**When you help another bloodline with a move, offer them a dice.** If they take it, they roll it with their own as if they had advantage. If your dice is the highest, say how you made the difference and gain 1-Pact on them. If it's the lowest, the GM will say how helping them hurt you."
+            },
+            {
+                "key": "resist_doom",
+                "name": "Resist Doom",
+                "description": "**When you work a grand ritual,** spend 1-3 Relics on occult resources and ceremonial paraphernalia and roll +Wands.  \n**On a hit,** choose one for each Relic spent:  \n* Reduce the Regent’s clock by 1.  \n* Bless a weapon to strike true against one Acolyte, giving it the Holy perk.  \n* Reduce a character’s Blood rating by one - they lose a Blood Advance.  \n**On a 7-9**, the Regent weaves a counter-spell; you’ll need to defeat an Acolyte before anyone can work further rituals."
+            },
+            {
+                "key": "reinforcements",
+                "name": "Reinforcements",
+                "description": "**When your Bloodline members search for rumours or resources in the mortal world,** roll +Coins.   \n**On a 7-9** choose 1, **on a 10+** choose 2.  \n* They find resources worth 1 Relic.  \n* They hear tales of a ward’s acolyte, and clues to how they’re helping the regent.  \n* They learn what the regent plans next, and which clock segment it’ll trigger on."
+            }
+        ],
+        "generation": [
+            {
+                "key": "gnosis",
+                "name": "Gnosis",
+                "description": "**When the Regent is slain,** the explorer with the highest Blood can choose to claim the Grail. If they do, they raise a bloodline stat by 1 but lose 1 Pact on the other bloodlines. They get one wish from the Grail:  \n* Life Everlasting: Your character may return each generation, and cannot die.  \n* The Resurrection of the Dead: One person of your choice is returned to life.  \n* Insight From Beyond: Gain a new bloodline move.  \n* Wealth of Kings: Your bloodline gains 5 Relics.  \n* Peace on Earth: Each bloodline gains 1 Relic; you gain 1-Treaty on the others.  \n* Purification: Remove a Blight infected by a previous Regent.  \nThe castle then takes them with it as it leaves reality behind. They will return as its next regent unless they chose Life Everlasting - in which case the next regent is Death Itself."
+            },
+            {
+                "key": "spoils_of_victory",
+                "name": "Spoils of Victory",
+                "description": "If you leave the castle without claiming the grail, pick a choice unlocked by your Explorer’s Blood.  \nBLOOD 0+  \n* **Your explorer loots the castle for valuable trinkets.** Say what they spend the rest of their life doing with their fortune, and start the next generation with 1 more Relic.  \n* **Your explorer devotes their life to preparing the next generation.** Choose one other bloodline - say how you helped train their next explorer, and get 1 Pact on them.  \n* **Your bloodline works to heal the wounds left in this community by the castle.** Name an alliance you've made, and get advantage when you call on it for Reinforcements.  \nBLOOD 2+  \n* **Your explorer instils their skills into a piece of gear.** Pick one of your moves: when your descendants use the gear they can access that move, but the gear gains the heirloom tag.  \n* **Your explorer forces permanent order on the castle.** One ward will remain in its current form for the rest of time; your bloodline gets advantage ***Travelling the Labyrinth*** there.  \n* **You invest in your resources.** Sacrifice 3 Relics to raise a bloodline stat by 1.  \nBLOOD 4+  \n* **You let the corruption sink deep into your bloodline**, controlled but ever-present. Your future characters start at Blood 1, with a Blood Advance to match.  \n* **You form a bond with the castle.** Your explorer can always mark **contamination** to get a vision of the regent, and ask one follow-up question the GM must answer truthfully"
+            },
+            {
+                "key": "darkness_falls",
+                "name": "Darkness Falls",
+                "description": "**When the regent’s clock fills**, they blight the mortal world. The GM marks one:  \n* A section of the region’s population is cursed and made monstrous.  \n* Day is short and nights are starless.  \n* Monsters walk the world every full moon.  \n* Weather becomes unnatural and devastating.  \n* Plagues strike a section of the population.  \nIf all are marked, the castle claims the mortal world and all is lost.  \nEach player picks how their bloodline responds to the blight, and adjusts their stats:  \n* **You stayed safe, at the cost of withdrawing from the world.** Say which of your connections suffered in your absence. +1 Chalices, -1 Coins.  \n* **You fought to push it back, but your best mystics lost their lives.** Say what their sacrifice achieved. +1 Swords, -1 Wands.  \n* **You took some of the taint into your family.** Say what lingering malady the blight has left you with. +1 Wands, -1 Chalice.  \n* **You waged a shadow war keeping society safe at great cost to your warriors.** Say which settlement still stands thanks to you. +1 Coins, -1 Swords."
+            },
+            {
+                "key": "the_new_generation",
+                "name": "The New Generation",
+                "description": "Once the group has resolved these moves, you skip forward to the next time the blood moon rises. Follow these steps:   \n#1 WHERE DOES THE CASTLE EMERGE?  \nIs it somewhere it’s haunted before, or a new location? Each bloodline picks a ***refuge*** option from their playbook to flesh out the surrounding area and define their starting safe camps.  \n#2 HOW HAS THE EVIL MANIFESTED?  \nBlood calls out to blood, and each bloodline is drawn to the castle by misfortune or curse. Each bloodline picks a ***drive*** that brought them here, and says what they suspect the drive says about the regent’s plans.  \n#3 HOW DO YOU BREAK IN?  \nYou’re ready to break into a ward of the castle. Each bloodline picks a ***breach*** option and says what they’ve seen of the ward they’re preparing to assault.  \n#4 MAKE EXPLORERS  \nEach player picks an explorer playbook and builds them up, picking stats, looks, motivation, covenants, moves and gear. Start with the first explorer breaking in, with the other explorers assisting them as wraiths or in the flesh."
+            }
+        ]
+    },
+    "weapon_tags":{
+        "perks":[
+            {"name":"Cleave", "description":"Can slice through many foes in a single swing."},
+            {"name":"Flexible", "description":"It wraps around defences and can be redirected mid-swing."},
+            {"name":"Hefty", "description":"Knocks an enemy back on a hit."},
+            {"name":"Holy", "description":"Causes intense pain against a particular foe. This tag is only accessible via moves."},
+            {"name":"Lingering", "description":"It causes ongoing pain: if you hit someone with it they'll try to stay away from you."},
+            {"name":"Piercing", "description":"Can penetrate armour and thick hide."},
+            {"name":"Ranged", "description":"Can attack any foe in eyesight."},
+            {"name":"Stun", "description":"Makes enemies slow and sluggish on a hit."},
+            {"name":"Tether", "description":"After you hit, you can easily hold onto/keep pace with the foe."}
+        ],
+        "flaws":[
+            {"name":"Ammo or Fragile", "description":"If any dice on an attack come up 1, the weapon’s useless until you Shelter or get Rest and Relaxation."},
+            {"name":"Brace", "description":"You need to stand on steady ground to use it."},
+            {"name":"Close", "description":"You need the enemy to be within arm’s reach to use it."},
+            {"name":"Grazing", "description":"It only deals surface harm, not deep wounds."},
+            {"name":"Heirloom", "description":"If you lose it, get Disadvantage on bloodline moves until you get it back."},
+            {"name":"Painful", "description":"If any dice on an attack come up 6, take 1 Harm"},
+            {"name":"Reload", "description":"You need to take some action to attack again after using it."},
+            {"name":"Thrown", "description":"Once you attack with it, you need to recover it."},
+            {"name":"Unstable", "description":"You’re vulnerable and unable to move after using it."}
+        ]
+    },
+    "characters":{
+        "founders":{
+            "template":{
+                "explorer":"",
+                "bloodline":"",
+                "stats":{"iron": 2, "glass": 0, "sulpher": 1, "mercury": 0},
+                "weapons":[
+                    {"name":"", "tags":["", ""]},
+                    {"name":"", "tags":["", ""]}
+                ],
+                "history":"",
+                "description":"",
+                "looks":[],
+                "names":[]
+            },
+            "paladin":{
+                "explorer":"The Paladin",
+                "bloodline":"Founder of the Legendary Heroes",
+                "stats":{"iron": 2, "glass": 0, "sulpher": 1, "mercury": 0},
+                "weapons":[
+                    {"name":"Fists", "tags":["stun", "close"]},
+                    {"name":"Greatsword", "tags":["cleave", "unstable"]}
+                ],
+                "history":"**One of the other founders risked great danger to save your life.** Say what they did and give their bloodline 2-pact on you. They say how you’re still wounded.",
+                "description":"You’re brave and bold, and where your fellows faltered you inspired them to press on. Now the regent stands before you, and they will answer for the evils they have brought to the land.",
+                "looks":["Gleaming chivalric plate; basic peasant garb; rugged travelling gear"],
+                "names":["Joseph", "Gerda", "Ambrose", "Faysal", "Fatima", "Katerina", "Zlatomir"]
+            },
+            "tainted":{
+                "explorer":"THE TAINTED",
+                "bloodline":"FOUNDER OF THE HALF-DAMNED",
+                "stats":{"iron": 1, "glass": -1, "sulpher": 2, "mercury": 0},
+                "weapons":[
+                    {"name":"Claws", "tags":["tether", "close"]},
+                    {"name":"A rapier", "tags":["piercing", "grazing"]}
+                ],
+                "history":"**One of the other founders is helping you keep control.** Give their bloodline 2-pact on you. You say how they’re keeping you sane, they say what will happen if they stop.",
+                "description":"Maybe the castle almost claimed you, and it was only thanks to your fellows that you remained human. Maybe the darkness was always inside you, and your struggle to stay in control is even harder now the castle has given it physical form. Either way, it’s time to put these gifts to use.",
+                "looks":["Half-human, half-beast; undead pallor; grotesque chaos"],
+                "names":["Willem", "Annah", "Petra", "Mico", "Amelia", "Lyko", "Tali", "Haruto"]
+            },
+            "saint":{
+                "explorer":"THE SAINT",
+                "bloodline":"FOUNDER OF THE HOLY CHURCH",
+                "stats":{"iron": 1, "glass": 2, "sulpher": -1, "mercury": 0},
+                "weapons":[
+                    {"name":"Ceremonial staff", "tags":["holy", "brace"]},
+                    {"name":"A Sling", "tags":["ranged", "ammo"]}
+                ],
+                "history":"**One of the other founders joined your flock and helped spread your healing truth.** Give their bloodline 2-pact on you. You say how you blessed them, they say what doubts remain.",
+                "description":"You may not be trained in occult lore, or mortal combat. But you know evil, and you know good. And so long as good people stand against evil, you will be there with them to keep them safe.",
+                "looks":["Ancient and venerable; young and naive; grizzled survivor"],
+                "names":["Irene", "Timothy", "Marija", "Dobroslav", "Zhang", "Costin", "Malina"]
+            },
+            "mastermind":{
+                "explorer":"The Mastermind",
+                "bloodline":"FOUNDER OF THE HIDDEN HAND",
+                "stats":{"iron": 0, "glass": 1, "sulpher": -1, "mercury": 2},
+                "weapons":[
+                    {"name":"Sharp dagger", "tags":["piercing", "close"]},
+                    {"name":"A crossbow", "tags":["ranged", "reload"]}
+                ],
+                "history":"**One of the other founders helped you find a wondrous treasure.** Give their bloodline 2-pact on you. They say what form the treasure took, you say how it’s liable to taint its owner. ",
+                "description":"You’re not here out of the goodness of your heart, but raw pragmatism. Frankly, hordes of monsters are liable to ruin your plans for wealth, prestige and power. At least your talent for command has come in useful managing this ragtag band of ‘heroes’.",
+                "looks":["Young and ambitious; portly and arrogant; spindly and scheming"],
+                "names":["Sigismund", "Mohana", "Livonia", "Ciannait", "Vígi", "Kwame", "Halim"]
+            },
+            "ritualist":{
+                "explorer":"The Ritualist",
+                "bloodline":"FOUNDER OF THE MAGI",
+                "stats":{"iron": -1, "glass": 1, "sulpher": 2, "mercury": 0},
+                "weapons":[
+                    {"name":"Blood whip", "tags":["flexible", "painful"]},
+                    {"name":"Pyromancy", "tags":["ranged", "reload"]}
+                ],
+                "history":"**One of the other founders is a lynchpin in your ritual to keep the Regent’s power contained.** Give their bloodline 2-pact on you. You say what they had to sacrifice to empower the ritual, they say what insight it’s given them into the Regent.",
+                "description":"Ancient lore and improvised cantrips have got you this far, but you can feel the power rolling off the Regent in the next chamber. You’ll set your soul alight if that’s what it takes to burn this place down",
+                "looks":["Robes covered in sigils; a bandoleer of charms; tattooed with occult sigils"],
+                "names":["Morgan", "Imar", "Jabir", "Vyasa", "Virgil", "Albertus", "Ramon", "Pietro", "Ursula", "Isobel"]
+            }
         },
-        {
-            "key": "face_the_horde",
-            "name": "Face the Horde",
-            "description": "**When you assault a group of castle denizens, roll +Iron**. On a hit, you tear through them - say how. ****On a 7-9**** pick 2, ****on a 10+**** pick 1:  \n* They hit back - suffer harm.  \n* You get some on you - mark corruption.   \n* You end up in a risky position.  \n* More are coming."
+        "bloodlines":{
+            "template":{
+                "stats":[
+                    {"chalices":1, "swords": 1, "coins": 0, "wands": 0},
+                    {"chalices":1, "swords": 1, "coins": 0, "wands": 0},
+                    {"chalices":1, "swords": 1, "coins": 0, "wands": 0}
+                ],
+                "traditions":{
+                    "style":"",
+                    "lore":"",
+                    "name":""
+                },
+                "history":"",
+                "context":{
+                    "refuge":[],
+                    "drive":[],
+                    "breach":[]
+                },
+                "pact":{
+                    "name":"",
+                    "description":""
+                },
+                "moves":[
+                    {
+                        "key":"",
+                        "name":"",
+                        "description":""
+                    }
+                ],
+                "shelter_move":""
+                
+            },
+            "the_legenary_heroes":{
+                "name": "The Legendary Heroes",
+                "stats":[
+                    {"chalices":1, "swords": 1, "coins": 0, "wands": -1},
+                    {"chalices":0, "swords": 1, "coins": -1, "wands": 1},
+                    {"chalices":0, "swords": 1, "coins": 0, "wands": -1}
+                ],
+                "traditions":{
+                    "style":"Stylish contemporary fashion; family crests and heirlooms; rustic or simple clothing.",
+                    "lore":"Picking it up as they go along; ancestor’s crumbling journals; oral history passed from parent to child.",
+                    "name":"A noble title; an inherited naming convention; bearers of the ________."
+                },
+                "context":{
+                    "refuge":[
+                        "A inn or cafe where your sister plays music.",
+                        "A general shop run by your grandfather.",
+                        "A club, park or alley where friendly gangs lurk."
+                    ],
+                    "drive":[
+                        "Your love, kidnapped by the Regent.",
+                        "Your parent, cursed to waste away",
+                        "A neighbourhood, devastated by monsters."
+                    ],
+                    "breach":[
+                        "A grand door and a sturdy boot.",
+                        "A great stained glass window and a hefted brick.",
+                        "A high wall and a knotted rope."
+                    ]
+                },
+                "pact":{
+                    "name":"The Way of Gold",
+                    "description":"**One bloodline’s legends taught you how to be heroes.** Set your pact with them to 1. You say what legend you’ve heard, they say what secret failure the legend left out.  \n**You prize heroism and valour.** At the end of each play session, pick the explorer whose heroism most impressed you and raise their pact with your bloodline by 1.  \n**While at one of your camps**, members of other bloodlines can spend 1-pact to gain a weapon from your stores. Give it two perks and a flaw, and describe its history. "
+                },  
+                "moves":[
+                    {
+                        "key":"audacious",
+                        "name":"Audacious†",
+                        "description":"**When your explorer confronts the Regent or an Acolyte**, roll +Swords. On a 7-9 pick 1, on a 10+ pick 2:  \n* They’ll talk before attacking or leaving.  \n* They let slip a weakness of their plans.  \n* They ignore the other explorers."
+                        },
+                        {
+                        "key":"defeat_means_friendship",
+                        "name":"Defeat Means Friendship†",
+                        "description":"When your explorer would inflict the killing blow on an Acolyte, they may stay their hand. If you do, roll +Chalices. On a 7-9, before they retreat they get enough control to tell you one of:  \n* How the Regent’s ritual can be set back.  \n* How the Acolyte can be saved.  \n* A secret weakness of another Acolyte.  \nOn a 10+ they gain enough control to change sides and work alongside you."
+                        },
+                        {
+                        "key":"our_town",
+                        "name":"Our Town",
+                        "description":"When you ask for aid in a community that knows your legend, roll +Chalices on Reinforcements instead of +Coins."
+                        },
+                        {
+                        "key":"secret_technique",
+                        "name":"Secret Technique†",
+                        "description":"There’s a fighting style passed down your bloodline through training, genetics, or mystical empowerment. Pick one:  \n* Cheating Death: The first time your explorer triggers their Death Move, they take a mortal wound instead of dying.  \n* Consecrated Blood: Any monster that tastes your blood feels agonising pain. Your explorer can take 1 Harm to give one Strike the Holy perk.  \n* Accelerate Perceptions: Can take 1 Harm to move incredibly fast for a few seconds, at the cost of being exhausted and unable to move for a few seconds after."
+                        },
+                        {
+                        "key":"the_will_to_fight",
+                        "name":"The Will to Fight†",
+                        "description":"Your bloodline has a tenacity that lets them cheat death so long as they have something to fight for. All of your explorers start with +1 Armour. Whenever they take a blow for another explorer, they can refresh the Armour box."
+                        }
+                ],
+                "shelter_move":"When your explorer finds ***Shelter*** in the castle, they can inspire the others with tales of selfless heroism. The next time their allies would mark contamination while trying to aid or protect another explorer, they ignore it."
+            },
+            "the_half_damned":{
+                "name":"The Half-Damned",
+                "stats":[
+                    {"chalices":1, "swords": 1, "coins": 0, "wands": 0},
+                    {"chalices":1, "swords": 1, "coins": 0, "wands": 0},
+                    {"chalices":1, "swords": 1, "coins": 0, "wands": 0}
+                ],
+                "traditions":{
+                    "style":"ragged fabrics and skins; fastidiously clean and modern; anonymous and drab.",
+                    "lore":"Immortals with flawed memories; whispers in your nightmares; religious texts that damn you but hold wisdom.",
+                    "name":"A shared mark or feature; after your progenitor; what zealots and bigots call you."
+                },
+                "context":{
+                    "refuge":[
+                        "A graveyard where your peers shelter.",
+                        "An aerie overlooking the land.",
+                        "Underground tunnels forgotten by man."
+                    ],
+                    "drive":[
+                        "The beast that turned you, serving the Regent.",
+                        "Your sibling, called to the castle by an irresistible compulsion.",
+                        "A mob whipped into a frenzy by fear of the Regent."
+                    ],
+                    "breach":[
+                        "The regent's menagerie, using yourself as bait for the game wardens.",
+                        "The servant's quarters, and a stolen uniform.",
+                        "The barracks, and notes on the patrol schedule."
+                    ]
+                },
+                "pact":{
+                    "name":"The Way of Red",
+                    "description":"**One bloodline hunted you as monsters before you forged a treaty.** Set your pact each other to 1. You say how you proved your humanity, they say how they made amends.  \n**You prize integrity and humanity.** At the end of each play session, pick the explorer whose mercy most impressed you and raise their bloodline's pact with you by 1.  \n**While at one of your camps**, other explorers can spend 1-pact to transfer a point of contamination to a member of your bloodline. ***Say how the recipient is further twisted.***"
+                },
+                "moves":[
+                    {
+                        "key":"dark_legacy",
+                        "name":"Dark Legacy†",
+                        "description":"All your explorers are cursed by the castle, but have learned to resist its corruption. Each explorer starts with a Blood Gift; when using it, you may choose to take 1 harm instead of marking contamination."
+                        },
+                        {
+                        "key":"shadows_of_humanity",
+                        "name":"Shadows of Humanity",
+                        "description":"Human society may recoil from you, but that doesn't mean you're powerless. **If you intimidate people into helping you or appeal to their baser urges**, roll +Swords on **Reinforcements** instead of +Coins."
+                        },
+                        {
+                        "key":"more_than_human",
+                        "name":"More Than Human",
+                        "description":"**When you make an explorer**, choose one:  \n* They have natural weapons: claws, spines, etc. Give them a perk and a flaw.  \n* They have resistance to harm: fur, chitin, thick skin etc. Get 1 Armour.  \n* They have unnatural agility. They can climb walls, run on water or leap dozens of metres, and get advantage on Dodge."
+                        },
+                        {
+                        "key":"one_of_the_horder",
+                        "name":"One of the Horde",
+                        "description":"**When you send your family members to blend in with the castle's denizens, roll +Wands.**  \nOn a 7-9 hold one, on a 10+ hold three.  \nSpend the hold 1-for-1 to get them to:  \n* Strike from within a group of castle denizens, sending them into disarray.  \n* Help you navigate, giving you 1 Travel the Labyrinth hold.  \n* Smuggle you a useful item."
+                        },
+                        {
+                        "key":"voice_of_the_regent",
+                        "name":"Voice of the Regent",
+                        "description":"Add the following option to **Resist Doom**:  \n* Give your explorer a one-time ability to command the castle's denizens.  \n**When they use this**, the denizens become their loyal servants. When they fight alongside you, your attacks gain the cleave tag. When you send them to act independently of you, the GM will decide how well they do. When you take Harm, you can choose to have the denizens be destroyed instead."
+                        }
+                ],
+                "shelter_move":"When your explorer finds Shelter in the castle, they can use the power of the blood to push back death. Anyone in the party can **mark contamination** to heal 1d6 Harm."
+                
+            },
+            "the_holy_church":{
+                "name":"The Holy Church",
+                "stats":[
+                    {"chalices":1, "swords": 0, "coins": -1, "wands": 1},
+                    {"chalices":1, "swords": 0, "coins": 1, "wands": -1},
+                    {"chalices":1, "swords": 1, "coins": -1, "wands": 0}
+                ],
+                "traditions":{
+                    "style":"A simple symbol of faith, fastidious clerical robes, joyous flowing colours.",
+                    "lore":"Dreams of whispering martyrs, a holy book filled with ecstatic visions, accumulated folklore from your flock.",
+                    "name":"The virtue you follow, the mark you wear, your hope for the future."
+                },
+                "context":{
+                    "refuge":[
+                        "An old church warded against malign influences.",
+"A memorial remembering the dead of the last great war.",
+"The home of a believer, where the faithful are waiting out the horrors."
+                    ],
+                    "drive":[
+                        "A saint's relics stolen from a desecrated grave.",
+"A great demon only vulnerable to the righteous.",
+"A sin that only martyrdom can wash clean."
+                    ],
+                    "breach":[
+                        "The tainted chapel, and the supply wagons that bring in sacraments.",
+"The burial catacombs, and a crevasse that's opened them to the world.",
+"A marble-floored museum, and its skylights."
+                    ]
+                },
+                "pact":{
+                    "name":"The Way of White",
+                    "description":"**You saved another bloodline from falling to darkness.** Get 1 pact on them. They say what dark temptation was twisting them; you say what you did to redeem them.  \n**You prize self-sacrifice.** At the end of each play session, pick the explorer who risked the most to help others and raise their bloodline's pact with you by 1.  \n**While at one of your camps**, other bloodlines can spend 1-pact on you to take a Relic from your stores. Describe it, and suggest how it came to be owned by your order."
+                },
+                "moves":[
+                    {
+                        "key":"holy_vanguard",
+                        "name":"Holy Vanguard†",
+                        "description":"You are vigilant protectors of the mundane. **When an Acolyte ventures out to attack the mortal world**, your explorer can spend 1 Travel the Labyrinth hold to immediately intervene and confront them."
+                        },
+                        {
+                        "key":"shield_of_faith",
+                        "name":"Shield of Faith†",
+                        "description":"**So long as your camps maintain a constant vigil of prayer**, they will not come under attack.  \n**When your explorer attempts to manifest this shield**, roll +Sulphur. On a hit, radiant light prevents creatures of the castle from coming within a few metres of you. On a 7-9 pick two, on a 10+ pick one:  \n* Moving breaks the shield.  \n* Attacking breaks the shield.  \n* No-one else can shelter under the shield."
+                        },
+                        {
+                        "key":"stoke_the_flame",
+                        "name":"Stoke The Flame",
+                        "description":"**When an explorer on the verge of death is brought back to one of your camps*, roll +Chalices. **On a 7-9** the deadly wound is stepped down to a major wound; **on a 10+** it's gone entirely. **On a 6-** their soul gutters out entirely, replaced by something dark: they'll die and become an undead Acolyte, unless 1 Relic is sacrificed to stop it."
+                        },
+                        {
+                        "key":"martyrdom",
+                        "name":"Martyrdom",
+                        "description":"**When you Resist Doom**, your character can sacrifice some of their lifespan to channel greater power. You may substitute a minor wound for 1 relic, a major wound for 2 relics, or a deadly wound for 3 relics."
+                        },
+                        {
+                        "key":"the_flesh_is_weak",
+                        "name":"The Flesh is Weak†",
+                        "description":"You can concentrate the castle's corruption in one part of an explorer's body. Actions using the body part have advantage, but the explorer marks an additional point every time they **mark contamination.** Amputating the node of corruption deals the explorer a major wound, and they lose a point of Blood and a Blood Gift. The removed body part counts as 1 relic. "
+                        }
+                ],
+                "shelter_move":"When your explorer finds ***Shelter*** in the castle, they may lead the group in prayer. They each hold 1: spend it to miraculously avoid a curse, spell or mystical attack."
+                
+            },
+            "the_hidden_hand":{
+                "name":"The Hidden Hand",
+                "stats":[
+                    {"chalices":1, "swords": 0, "coins": 1, "wands": -1},
+                    {"chalices":-1, "swords": 1, "coins": 1, "wands": 0},
+                    {"chalices":0, "swords": -1, "coins": 1, "wands": 1}
+                ],
+                "traditions":{
+                    "style":"Formal wear and subtle marks of membership, opulent clothes and jewelry, state-of-the-art arms and armour.",
+                    "lore":"Reports from farflung agents, ruling the rare book market, a private research institute.",
+                    "name":"a mythical creature, an alchemical process, a feudal role."
+                },
+                "context":{
+                    "refuge":[
+                        "A mansion filled with helpful servants.",
+"A watch station, barricaded up against the darkness.",
+"A scholar's laboratory, fizzing with strange chemicals."
+                    ],
+                    "drive":[
+                        "A treasure rumoured to bring eternal life.",
+"Your political rival, empowered by the regent's corruption.",
+"Rare reagents created by abhorrent rites."
+                    ],
+                    "breach":[
+                        "The deeper vaults, and a brace of explosives.",
+"A grand soiree, and a forged invitation.",
+"The clock tower, and a zip line from great height."
+                    ]
+                },
+                "pact":{
+                    "name":"The Way of Silver",
+                    "description":"**You split the fabulous wealth you found with another bloodline.** Gain 1 pact on them. They say what they used the wealth for; you say how misfortune robbed them of it.  \n**You prize entrepreneurship.** At the end of each play session, pick the explorer who most increased their wealth or power and raise their bloodline's pact with you by 1.  \n**While at one of your camps** other bloodlines can spend 1-pact on you to get access to more luxurious supplies. They get advantage on Shelter until they return to a safe camp."
+                },
+                "moves":[
+                    {
+                        "key":"avarice",
+                        "name":"Avarice",
+                        "description":"The strange byproducts of the castle's intrusion into our reality retain their power, if you let them feed from you. **When you would spend a relic**, you may **mark contamination** to keep it in your bloodline's stocks."
+                        },
+                        {
+                        "key":"experimental_weaponry",
+                        "name":"Experimental Weaponry",
+                        "description":"Your family's resources are devoted to the creation of new weapons to be used against darkness. Once a generation, you can gain one of these weapons for your struggle.  \n**When your scholars bring their most recent creation to your camp**, roll +Coins.  \nOn a 7-9 pick one, on a 10+ pick two:  \n* You can sacrifice it to Strike without needing an Opening.  \n* If you sacrifice a relic to it, it gains the holy tag for the rest of the fight.  \n* It has three perks and a flaw, or two perks and no flaw."
+                        },
+                        {
+                        "key":"bodyguard",
+                        "name":"Bodyguard†",
+                        "description":"Your explorer has a skilled companion to back them up in the castle. Pick one when you make your explorer:  \n* Your companion fights beside you, giving your attacks the cleave tag.  \n* Your companion protects you, giving you advantage on Confront.  \n* Your companion heals you: whenever you Shelter, heal 4 Harm."
+                        },
+                        {
+                        "key":"opulence",
+                        "name":"Opulence",
+                        "description":"**When you shower luxury on a party of explorers**, you may roll +Coins to give them **Rest & Relaxation.**"
+                        },
+                        {
+                        "key":"a_web_of_influence",
+                        "name":"A Web of Influence",
+                        "description":"Your contacts stand ready to support your war against evil. **When you roll a 7+ on Reinforcements**, you may pick one extra option."
+                        }
+                ],
+                "shelter_move":"When your explorer finds Shelter in the castle, they may upgrade and reinforce their party's gear. They each hold 1: spend it to get fleeting advantage on ***Strike*** or ***Confront***."
+                
+            },
+            "the_magi":{
+                "name":"The Magi",
+                "stats":[
+                    {"chalices":0, "swords": -1, "coins": 0, "wands": 0},
+                    {"chalices":0, "swords": 1, "coins": -1, "wands": 1},
+                    {"chalices":1, "swords": 0, "coins": -1, "wands": 1}
+                ],
+                "traditions":{
+                    "style":"Skin covered in arcane glyphs, thick robes of strange fabrics, bags and bandoleers loaded with reagents.",
+                    "lore":"A bag full of texts, a chorus of spirits bound to your gear, drilled-in mnemonics.",
+                    "name":"The name of your school, The ____ Way, The Path of ______ ."
+                },
+                "history":"",
+                "context":{
+                    "refuge":[
+                        "A caravan on the city's outskirts selling charms and occult paraphenalia.",
+"A visionary doctor's surgery-laboratory.",
+"A cafe where the intelligentsia gather and debate."
+                    ],
+                    "drive":[
+                        "A celestial conjunction promising great change.",
+"A chance to fix a mistake made in your training.",
+"An unnatural plague infesting the city's slums."
+                    ],
+                    "breach":[
+                        "A garden of perfect geometric statuary, and a hole in its iron fence.",
+"A pocket dimension outside reality, and a ritual to transport you there.",
+"An alchemical storage vault, and the combination for the vault door."
+                    ]
+                },
+                "pact":{
+                    "name":"The Way of Blue",
+                    "description":"**You taught another bloodline how to use the castle's power safely.** Gain 1 pact on them. They say what the ritual lets them do; you say what it costs them instead of their souls.  \n**You prize arcane insight.** At the end of each session, pick the explorer who wielded the most supernatural power and raise their pact with your bloodline by 1.  \n**While at one of your camps**, other bloodlines can spend 1 pact on you to get an item of power from your stores. They can destroy it to cast a spell as per Drink Deep."
+                },
+                "moves":[
+                    {
+                        "key":"dimensional_relocation",
+                        "name":"Dimensional Relocation",
+                        "description":"**When you warp space to move explorers between two safe camps**, roll +Wands. On a hit, they make the journey successfully; on a 7-9, pick one:  \n* They leave something important behind.  \n* They bring something nasty with them."
+                        },
+                        {
+                        "key":"arcane_library",
+                        "name":"Arcane Library†",
+                        "description":"While at your safe camps, any explorer can archive a spell (learned via Drink Deep) and receive a Relic in return. At any later point anyone can spend a Relic to learn a spell from the archive. Choose two spells to have in your archive already:  \n* See your foes with perfect clarity.  \n* Charge your weapon with lightning (add perk: stun).  \n* Float gently down instead of falling."
+                        },
+                        {
+                        "key":"empowered_wards",
+                        "name":"Empowered Wards",
+                        "description":"**When you roll 10+ on Resist Doom**, your ritual lingers providing active opposition to the Regent. The next time their clock would tick down, it's stopped from doing so."
+                        },
+                        {
+                        "key":"eldritch_insight",
+                        "name":"Eldritch Insight",
+                        "description":"You have learned how to turn the castle's burgeoning power towards your own ends.  \n**Whenever the Regent's clock ticks down**, gain a Relic."
+                        },
+                        {
+                        "key":"a_miracle_of_sciene",
+                        "name":"A Miracle of Science†",
+                        "description":"**When your explorer dissects a defeated Acolyte**, gain 1-organ. With a few minutes of preperation, they may spend 1-organ to:  \n* Craft a healing salve and remove a minor or major wound.  \n* Merge it with a weapon and give the weapon a new perk.  \n* Graft it on and raise Blood by 1.  \n* Inspire those around them, restoring 4 harm to all explorers nearby or rejuvenating any wraiths. "
+                        }
+                ],
+                "shelter_move":"When your explorer finds Shelter in the castle, they may lead the group in a ritual of controlled corruption. Each explorer may transfer 1 point of contamination to another explorer, with that explorer's consent."
+                
+            }
         },
-        {
-            "key": "flow_like_water",
-            "name": "Flow Like Water",
-            "description": "**When you risk danger to change your environment, or your position in it, roll +Mercury**. On a hit, pick one:  \n* You're somewhere you need to be.  \n* Another explorer has a clear path to you.   \n* A particular threat isn't a problem any longer.  \n****On a 7-9**** the GM will give your action a cost: harm, contamination or lost gear."
-        },
-        {
-            "key": "see_clear",
-            "name": "See Clear",
-            "description": "**When you try to read a dangerous situation, roll +Glass.** On a hit, you can ask the GM questions. Get fleeting advantage when you act on each answer.  \n**On a 7–9** ask 1, ****on a 10+**** ask 3:  \n* Which exit will take me to my goal?  \n* What here is valuable?  \n* What can the enemies here do?  \n* What should I be on the lookout for?  \n**On a miss**, ask 1 but prepare for the worst."
-        },
-        {
-            "key": "shelter",
-            "name": "Shelter",
-            "description": "**When you look for a safe space to recover, roll +Mercury.** On a hit, each explorer picks 1:  \n* Tend to another explorer: they heal 2 Harm, or step down their worst Wound.  \n* Encourage another explorer - they get fleeting advantage.  \n* Use your bloodline’s Shelter move.  \n* Gain aid from a contact (p. 61).  \n****On a 7-9****, advance the Regent’s clock."
-        },
-        {
-            "key": "drink_deep",
-            "name": "Drink Deep",
-            "description": "**When you draw on the power in a potent item or ritual site, roll +Sulphur.** On a hit, mark contamination and learn a spell - the GM says what it does. When you cast it, pick 1:  \n* Markcontamination.  \n* Forget the spell.  \n* Take 1 Harm.  \n_****on a 10+****, you don't need to pick an option on your first cast._"
+        "explorers":{
+            "template":{
+                "name":"",
+                "stats":{ "iron": 0, "glass": 0, "sulphur": 0, "mercury": 0},
+                "looks":[],
+                "gear":{
+                    "weapons":[],
+                    "utility":[]
+                },
+                "moves":[
+                    {
+                        "key":"",
+                        "name":"",
+                        "description":""
+                    }
+                ],
+                "gifts":[
+                    {                        
+                        "name":"",
+                        "description":""
+                    }
+                ],
+                "death_move":""
+            },
+            "slayer":{
+                "name":"The Slayer",
+                "stats":{ "iron": 1, "glass": 0, "sulphur": 0, "mercury": -1},
+                "looks":[
+                    ["Ambiguous", "Concealed", "Feminine", "Masculine", "Maimed", "lithe", "muscular", "stout"],
+                    ["Asian", "South Asian", "Black", "Caucasian", "Hispanic", "Latino", "Indigenous", "Middle Eastern"],
+                    ["Lilianna", "Isidor", "Ayako", "Farhana", "Laura", "Peter", "Simon", "Julian", "Laurens", "Jiddu"]
+                ],
+                "gear":{
+                    "weapons":[
+                        {"name":"A backup pistol", "tags":["ranged", "reload"]},
+                        {"name":"Breastplate or mail shirt", "tags":["1 Armour"]},
+                        {"name":"A shield", "tags":["advantage on Confront, disadvantage on Dodge"]}
+                    ],
+                    "utility":"Torches and fire lighting kit; bandages and healing salves; anti-venoms and stimulants; as many rations as you need."
+                },
+                "moves":[
+                    {
+                        "key":"lightning_swift",
+                        "name":"Lightning Swift",
+                        "description":"You're incredibly fast. Your attacks alwayshave the cleave tag, and you have advantage on **Dodge.**"
+                        },
+                        {
+                        "key":"regain_momentum",
+                        "name":"Regain Momentum",
+                        "description":"Flesh and blood is less important that confidence. When you land a successful **Strike**, heal the last Harm you took."
+                        },
+                        {
+                        "key":"trick_weapon",
+                        "name":"Trick Weapon",
+                        "description":"Your weapon is versatile, enchanted or a marvel of engineering. Pick two perk/flaw sets for it: you can switch between the two at a moment’s notice."
+                        },
+                        {
+                        "key":"blood_trail",
+                        "name":"Blood Trail",
+                        "description":"You're merciless in pressing your advantage.  \nOnce you’ve landed a **Strike** on a target, get advantage on future **Strikes**."
+                        },
+                        {
+                        "key":"trophy",
+                        "name":"Trophy",
+                        "description":"You know secret rituals to preserve an enemy's power in a severed part of their body. When you draw on the power of a trophy carved from an Acolyte, roll +Iron on Drink Deep instead of +Sulphur."
+                        }
+                ],
+                "gifts":[
+                    {
+                        "name":"Frenzy",
+                        "description":"When you roll a miss on Strike, you can ***mark contamination*** to immediately make another Strike."
+                        },
+                        {
+                        "name":"Lupine",
+                        "description":"Your teeth and fingernails gain a keen edge. You always have access to them, as a weapon with Piercing/Close."
+                        },
+                        {
+                        "name":"Burning Blood",
+                        "description":"Your blood burns as it leaves your body.  \nYou may ***mark contamination*** to create a wall of fire most monsters won’t willingly cross."
+                        },
+                        {
+                        "name":"Voice of Command",
+                        "description":"When an Adversary is bearing down on an ally, you can ***mark contamination*** to force them to target you instead."
+                        }
+                ],
+                "death_move":"As the final blow comes down you choose not to defend yourself, instead using your attacker’s momentum to drive your weapon home. Now it’s lodged in them, slowing them down and creating a weakness your allies can use to take revenge. Until the embedded weapon is used as an Opening, your allies take advantage on Dodge and Confront."
+            },
+            "mystic":{
+                "name":"The Mystic",
+                "stats":{ "iron": -1, "glass": 0, "sulphur": 0, "mercury": 1},
+                "looks":["Reuben", "Harland", "Maria", "Ume", "Emilio", "Mercurio", "Abaris", "Julia", "Hugh", "Miles"],
+                "gear":{
+                    "weapons":[
+                        {"name":"An amulet", "tags":["destroy to lose 1 contamination"]},
+                        {"name":"Purified salt", "tags":["1 armour when you stand within a circle of it"]},
+                        {"name":"A last-ditch ice burst","tags":["stun", "painful"]}
+                    ],
+                    "utility":"Crystals that glow like candles; bandages and healing salves; a pouch of alchemical samples; as many rations as you need."
+                },
+                "moves":[
+                    {
+                        "key":"arcanist",
+                        "name":"Arcanist",
+                        "description":"**When you use a spell learnt via Drink Deep**, pick one:  \n• The spell’s effects last as long as you like.  \n• The spell affects more or fewer targets.  \n• The spell doesn’t take effect now, but when a condition you set out is met."
+                        },
+                        {
+                        "key":"soul_vessel",
+                        "name":"Soul Vessel",
+                        "description":"**When you try to catch the spirit of a defeated minion**, roll +Sulphur.  \nOn a hit, you catch it; on a 7-9, it taints you and you ***mark contamination***. So long as a spirit is contained, you can freely use one of its moves. When you ***mark contamination*** you can shift it onto the vessel, destroying the spirit. You may have one spirit at a time."
+                        },
+                        {
+                        "key":"binding",
+                        "name":"Binding",
+                        "description":"**When you land a Strike on an adversary**, choose one:  \n* It must not cross a specified boundary.  \n* A specified explorer gets advantage to Dodge its attacks.  \n* You can use the wound as a sympathetic weapon: _ranged, piercing, painful_."
+                        },
+                        {
+                        "key":"blood_reinforcement",
+                        "name":"Blood Reinforcement",
+                        "description":"**When you perform rites to manipulate the castle’s power**, roll +Relics sacrificed.  \nOn a 7-9 pick one, on a 10+ pick two:  \n* Add a perk to a weapon.  \n* Remove a flaw from a weapon.  \n* Make an outfit give 1 Armour.  \n* Crystallise the power in a fragile gem: consume it to heal all harm."
+                        }
+                ],
+                "gifts":[
+                    {
+                        "name":"Eyes on the Inside",
+                        "description":"You can ***mark contamination*** to perceive the intangible and immaterial. When you Line it Up or See Clear with this sight, you can roll +Mercury instead of +Glass."
+                        },
+                        {
+                        "name":"Ghost Eater",
+                        "description":"You can consume the spirits trapped in your Soul Vessel. When you do, ***mark contamination*** but heal your last wound."
+                        },
+                        {
+                        "name":"The Unquiet Flesh",
+                        "description":"Your body is shifting to become something ancient. You may ***mark contamination*** to grow an organ or limb - arms, tentacles, wings, eyes, mouths or similar."
+                        },
+                        {
+                        "name":"The Blood is Life",
+                        "description":"**When you shed your blood to create a body for a spirit**, roll +Harm taken. On a 7-9 pick 1, on a 10+ pick 2: they follow your orders, they remember useful information, you can banish them at will."
+                        }
+                ],
+                "death_move":"As death takes hold, you perform a final work of soul alchemy. Each explorer may transfer one point of Blood to you, losing a Blood Advance of their choice but keeping the stat advance/blood gift. For each, one part of your body becomes a Relic."
+            },
+            "bonded":{
+                "name":"The Bonded",
+                "stats":{ "iron": 0, "glass": 0, "sulphur": 1, "mercury": -1},
+                "looks":[],
+                "gear":{
+                    "weapons":[
+                        {"name":"Martial arts training", "tags":["tether","close"]},
+                        {"name":"Reinforced coat", "tags":["1 Armour"]},
+                        {"name":"Spiritual aura", "tags":["advantage on attacks against intangible foes"]}
+                    ],
+                    "utility":"Survivalist gear; old journals from past explorers; a hip flask, wineskin or tobacco pouch; as many rations as you need."
+                },
+                "moves":[
+                    {
+                        "key":"soul_blade",
+                        "name":"Soul Blade",
+                        "description":"Your spirit has its own weapon: give it a perk and a flaw. **When the spirit fights**, roll +Sulphur to **Strike** and **Face the Horde**. If you have **Astral Projection**, the spirit can fight while you take independent action."
+                        },
+                        {
+                        "key":"bloody_insight",
+                        "name":"Bloody Insight",
+                        "description":"**When you take harm from an adversary**, hold 1. Spend 1 to reveal a weakness in their fighting style and give an ally advantage against them. Spend 3 to create an Opening."
+                        },
+                        {
+                        "key":"spiritual_fusion",
+                        "name":"Spiritual Fusion",
+                        "description":"**When you fuse with your spirit**, roll +Sulphur. On a 7-9 hold 2, on a 10+ hold 3. On a 6- hold 1 but ***mark contamination***.  \nSpend a hold to use the spirit's power; work it out with the GM, but it should be about the level of a spell from Drink Deep. This power is draining: to use it again, you must use Shelter or Rest and Recreation."
+                        },
+                        {
+                        "key":"spectral_knowledge",
+                        "name":"Spectral Knowledge",
+                        "description":"**When you ask your spirit for advice**, roll +Glass.  \nOn a hit, ask a question and the GM will answer honestly... for the most part. On a 7-9 pick two, on a 10+ pick one:  \n* The spirit confuses its past and the present.  \n* The spirit misses one significant detail.  \n* The spirit will ask you to agree to something before it answers."
+                        }
+                ],
+                "gifts":[
+                    {
+                        "name":"Blink",
+                        "description":"When your spirit is away from you thanks to **Astral Projection**, you may ***mark contamination*** to swap places with it."
+                        },
+                        {
+                        "name":"Apotheosis",
+                        "description":"Your spirit's true, terrifying form guides your blows. ***Mark contamination*** to give an attack advantage and a tag of your choice."
+                        },
+                        {
+                        "name":"Half-Dead",
+                        "description":"You're losing your mortality. Gain 1 Armour against physical attacks, but take 1 more harm from magical/spiritual attacks."
+                        },
+                        {
+                        "name":"Medium",
+                        "description":"You can ***mark contamination*** to summon a lesser version of your spirit. They won’t be hostile - at least, at first."
+                        }
+                ],
+                "death_move":"As your life fades, the spirit and the castle fight for your soul. Pick one:  \n* You come back to life: you're immune to harm, but die at the end of the fight.  \n* The spirit vows to continue your mission, aiding the other explorers.  \n* Heal fully, but be damned. From then on, mark contamination instead of taking harm."
+            },
+            "reckoner":{
+                "name":"",
+                "stats":{ "iron": -1, "glass": 1, "sulphur": 0, "mercury": 0},
+                "looks":["Hector", "Taniqua", "Lamia", "Oscar", "Arsene", "Richter", "Sypha", "Kasi", "Joseph", "Grant"],
+                "gear":{
+                    "weapons":[
+                        {"name":"A crossbow", "tags":["ranged","reload"]},
+                        {"name":"Bulky protective gear", "tags":["+1 armour"]},
+                        {"name":"An old map", "tags":["sacrifice to get 2 Travel the Labyrinth hold"]}
+                    ],
+                    "utility":"Long-burning glow sticks; chalk, paints and dyes to mark the corridors; a theodelite and a spirit level; as many rations as you need."
+                },
+                "moves":[
+                    {
+                        "key":"true_sight",
+                        "name":"True Sight",
+                        "description":"You can always recognise an illusion or supernatural deception as what it truly is. In addition, you get advantage on **See Clear**."
+                        },
+                        {
+                        "key":"reshape_chaos",
+                        "name":"Reshape Chaos",
+                        "description":"**You may spend Travel the Labyrinth** hold, 1-for-1, to uncover one of these details in your environment:  \n* A mechanism to close off a passage.  \n* A secret place to shelter from harm.  \n* An environmental hazard (caustic vat, rockslide, etc) ready to be unleashed."
+                        },
+                        {
+                        "key":"bend_time",
+                        "name":"Bend Time",
+                        "description":"**When you roll 10+ on Dodge**, time slows for everyone but you. If you can do an action within a few seconds, it'll have advantage."
+                        },
+                        {
+                        "key":"and_next_youll_say",
+                        "name":"And next you'll say...",
+                        "description":"**When you tell an opponent what they'll do next**, roll +Glass. On a hit, they pick one:  \n* They do exactly what you predicted.  \n* They stumble, hesitate or flinch.  \nOn a 10+, reveal a trap you set up to take advantage of your prediction. If they do what you predicted, the trap creates an immediate Opening or takes out a minion."
+                        },
+                        {
+                        "key":"pinning_fire",
+                        "name":"Pinning Fire",
+                        "description":"Your shots are precise and lethal. When you attack a foe with a ranged weapon, the foe must choose: remain where they are, or be taken out (if they're a minion) or provide an Opening (if they're an adversary)."
+                        }
+                ],
+                "gifts":[
+                    {
+                        "name":"Just You and Me",
+                        "description":"If you're within arm's reach of a foe, you can ***mark contamination*** to reshape the castle and trap you both within an empty room. The previous state is restored when you will it, or when you take a major wound."
+                        },
+                        {
+                        "name":"Worlds Away",
+                        "description":"If a foe's within arm's reach of you, you can ***mark contamination*** to reshape the castle such that you are seperated by a deep chasm, a barricade or a surging river (of what?)."
+                        },
+                        {
+                        "name":"Chaos Eyes",
+                        "description":"The shifting chaos of the castle bleeds out of your mind and into those that meet your gaze. Your eyes are a weapon with ranged, piercing, unstable."
+                        },
+                        {
+                        "name":"Psychopomp",
+                        "description":"You can ***mark contamination*** and spend 1 **Travel the Labyrinth** hold to take your group to or from: an individual's psyche, the land of the dead, where the castle comes from."
+                        }
+                ],
+                "death_move":"As you die, you work one final effort of will to enforce order on the castle. Choose one:  \n* Give your fellows advantage on all future Travel the Labyrinth rolls.  \n* Prevent the Regent and their Acolytes leaving their respective wards."
+            },
+            "packrat":{
+                "name":"The Packrat",
+                "stats":{ "iron": -1, "glass": 0, "sulphur": 1, "mercury": 0},
+                "looks":[
+                    ["Ambiguous", "Concealed", "Feminine", "Masculine". "Burly", "bent", "stocky", "weasally"],
+                    ["Yasmin", "Vyasa", "Cathaoir", "Aleksander", "Cecilia", "Angela", "Clement", "Krister", "Orinth", "Elizabeta"]
+                ],
+                "gear":{
+                    "weapons":[
+                        {"name":"Homemade Explosives", "tags":["lingering","ammo"]},
+                        {"name":"Enchanted shirt", "tags":["+1 Armour"]},
+                        {"name":"Extraordinary wine", "tags":["when you find Shelter, sacrifice to pick an extra option"]}
+                    ],
+                    "utility":"A musical instrument; antitoxins and miracle cures; shiny metal coins, in hundreds of denominations; as many rations as you need."
+                },
+                "moves":[
+                    {
+                        "key":"cornucopia",
+                        "name":"Cornucopia",
+                        "description":"You carry endless satchels, packs, pouches and bandoleers. Within them is anything your party might need as they explore the castle. You start with 5-stock; reset to 5 every time you return to a safe camp. Spend 1-stock to pull out a useful item: matches, rations, rope, a mirror, pitons, chalk, etc."
+                        },
+                        {
+                        "key":"hirelings",
+                        "name":"Hirelings",
+                        "description":"You have servants helping you carry gear. Your maximum stock is 8 instead of 5, and your staff can perform useful duties: lift something heavy, barricade a door, etc. When they fight alongside you, get advantage on **Strike** and **Face the Horde**."
+                        },
+                        {
+                        "key":"walking_armoury",
+                        "name":"Walking Armoury",
+                        "description":"Your bags are bristling with weaponry and armour. Spend 1-stock to:  \n* Pull out a basic weapon (1 perk, 1 flaw)  \n* Ready a weapon with fragile/ammo.  \n* Give someone 1-armour that can take 1 hit."
+                        },
+                        {
+                        "key":"apothecary",
+                        "name":"Apothecary",
+                        "description":"You can spend 1-stock to create a poultice that can heal a minor wound, or a draught that will heal 3 Harm. In the field, you can conver a Relic into 1-stock."
+                        },
+                        {
+                        "key":"luck_cigarette_case",
+                        "name":"Lucky Cigarette Case",
+                        "description":"**When your pack intercepts a blow**, roll +stock spent (minimum 1). On a hit, the harm is negated; on a 7-9, the GM will name one other piece of gear you have that is destroyed in the process."
+                        }
+                ],
+                "gifts":[
+                    {
+                        "name":"Titan's Might",
+                        "description":"You can ***mark contamination*** to augment your strength, letting you carry any weight. Leverage may still present issues."
+                        },
+                        {
+                        "name":"Paradox Bag",
+                        "description":"When you reach into your sack, you can ***mark contamination*** to pull out something impossible: something too big, or too dangerous, or on the other side of the world, or in your antagonist's hands."
+                        },
+                        {
+                        "name":"Maw of the Void",
+                        "description":"If you get something in your bag, it cannot escape without your say-so. You can ***mark contamination*** to turn the void inside the bag into a powerful vacuum (tether, close)."
+                        },
+                        {
+                        "name":"Junk Homonculus",
+                        "description":"When you assemble the odds and ends in your pack into a rough human form, you can ***mark contamination*** to give it life. It will follow your commands to the best of its ability, but cannot leave the castle."
+                        }
+                ],
+                "death_move":"As you die, you reveal a final pouch - one packed with explosives. Pick one: the explosion destroys a Quality, or the smoke gives your allies advantage on **Dodge** ane **Stand With Me** for the rest of the fight."
+            }
         }
-    ],
-    "confrontation_moves": [
-        {
-            "key": "strike",
-            "name": "Strike",
-            "description": "**When you take advantage of an Opening with...**  \n* Stealth and guile, roll +Mercury.  \n* Physical force, roll +Iron.  \n* Precise insight, roll +Glass.  \n* Sorcery or sacrifice, roll +Sulphur.  \n**On a hit**, you damage one of the foe’s qualities - if you destroy its final quality, it’s dead. The Opening’s now gone.   \n**On a 7-9**, the GM picks 1:  \n* The foe lashes out at you: take Harm appropriate to the enemy.  \n* The foe separates you from the others or puts you in a spot.  \n* The foe frenzies, dealing +1 Harm for the rest of the fight."
-        },
-        {
-            "key": "dodge",
-            "name": "Dodge",
-            "description": "**When you try to avoid incoming danger, roll +Mercury.**  \n**On a hit** pick 1, **on a 10+** pick 2:  \n* You avoid taking harm.  \n* You avoid getting seperated from the others or losing something valuable.  \n* The foe’s heedless in pursuit of you: create an Opening."
-        },
-        {
-            "key": "line_it_up",
-            "name": "Line It Up",
-            "description": "**When you size up the enemy to locate a weak spot, roll +Glass.** On a hit you find an Opening. Say where it’s coming from - the environment, a chink in their armour, a flaw in their fighting style.   \n**On a 7-9**, pick 2, **on a 10+** pick 1:  \n* The foe makes you its highest priority.  \n* The Opening only lasts a few moments.  \n* Attempts to use the Opening without one weapon perk have disadvantage."
-        },
-        {
-            "key": "confront",
-            "name": "Confront",
-            "description": "**When you confront the foe head-on, roll +Iron.** n**On a hit**, you throw them off-balance and create an Opening, but take the brunt of their attacks. ****On a 7-9**** pick 1, ****on a 10+**** pick 2:  \n* You roll with the blow: take 1 less harm.  \n* You are fearsome and commanding: the foe will focus only on you.  \n* Your mind is steel: you don’t mark contamination."
-        },
-        {
-            "key": "stand_with_me",
-            "name": "Stand With Me",
-            "description": "**When you heal, encourage or aid an ally, roll +Sulphur.**  \n**On a hit**, pick 1:  \n* You rescue them from danger: a precipice, poison, a curse, etc.  \n* They heal their lightest wound.  \n* They heal 2 harm.  \n****on a 10+**** the cameraderie shown gives your ally fleeting advantage."
-        },
-        {
-            "key": "victory",
-            "name": "Victory",
-            "description": "**When the foe is defeated**, everyone still living may raise Blood and add 1 to their Covenant with each other. The foe’s sanctum becomes a place of power, usable for Forward Base."
-        },
-        {
-            "key": "flee",
-            "name": "Flee",
-            "description": "**When you use an Opening to retreat**, any and all characters can flee the battle. Advance the regent’s clock by one."
-        }
-    ],
-    "bloodline_moves": [
-        {
-            "key": "arcane_power",
-            "name": "Arcane Power",
-            "description": "**When you use the castle’s castoffs to empower your bloodline’s actions,** spend 1 Relic and get advantage on a roll."
-        },
-        {
-            "key": "rest_and_relaxation",
-            "name": "Rest and Relaxation",
-            "description": "**When you provide aid to characters in a safe camp, roll +Chalices.**  \n**On a 7-9**, pick 2; **on a 10+** pick 3.  \n* Each explorer may heal all harm.  \n* Each explorer may heal all wounds.  \n* Each explorer can repair and resupply their weaponry.  \n* Each explorer may form a new covenant, or raise an existing covenant by a step.  \n* The regent’s clock doesn’t tick down."
-        },
-        {
-            "key": "forward_base",
-            "name": "Forward Base",
-            "description": "**When you claim a place of power as a forward base in the castle, roll +Swords.**   \n**On a hit** it’s yours, and you can use it as a safe camp for the purposes of Rest and Relaxation and Travel the Labyrinth.   \n**On a 10+** pick one bonus:  \n* There’s room for more: it counts as another Bloodline’s camp too. Get 1-pact on them.  \n* It’s well-located: explorers leaving the camp get +1 Travel the Labyrinth hold.  \n* It’s comfortable and secure: get advantage on Rest and Relaxation here.  \n_Note: The lairs of defeated Acolytes are great targets for this, but so are the mystical sites you find exploring the castle (eg **on a 10+** for Travel the Labyrinth)._"
-        },
-        {
-            "key": "lend_aid",
-            "name": "Lend aid",
-            "description": "**When you help another bloodline with a move, offer them a dice.** If they take it, they roll it with their own as if they had advantage. If your dice is the highest, say how you made the difference and gain 1-Pact on them. If it's the lowest, the GM will say how helping them hurt you."
-        },
-        {
-            "key": "resist_doom",
-            "name": "Resist Doom",
-            "description": "**When you work a grand ritual,** spend 1-3 Relics on occult resources and ceremonial paraphernalia and roll +Wands.  \n**On a hit,** choose one for each Relic spent:  \n* Reduce the Regent’s clock by 1.  \n* Bless a weapon to strike true against one Acolyte, giving it the Holy perk.  \n* Reduce a character’s Blood rating by one - they lose a Blood Advance.  \n**On a 7-9**, the Regent weaves a counter-spell; you’ll need to defeat an Acolyte before anyone can work further rituals."
-        },
-        {
-            "key": "reinforcements",
-            "name": "Reinforcements",
-            "description": "**When your Bloodline members search for rumours or resources in the mortal world,** roll +Coins.   \n**On a 7-9** choose 1, **on a 10+** choose 2.  \n* They find resources worth 1 Relic.  \n* They hear tales of a ward’s acolyte, and clues to how they’re helping the regent.  \n* They learn what the regent plans next, and which clock segment it’ll trigger on."
-        }
-    ]
+    }
 }
 
-"key":"
-"name":"
-"description":"
 
-
-
---Generation Moves--
-gnosis
-Gnosis
-When the Regent is slain, the explorer with
-the highest Blood can choose to claim the
-Grail. If they do, they raise a bloodline stat
-by 1 but lose 1 Pact on the other bloodlines.
-They get one wish from the Grail:
-* Life Everlasting: Your character may
-return each generation, and cannot die.
-* The Resurrection of the Dead: One person
-of your choice is returned to life.
-* Insight From Beyond: Gain a new
-bloodline move.
-* Wealth of Kings: Your bloodline gains
-5 Relics.
-* Peace on Earth: Each bloodline gains 1
-Relic; you gain 1-Treaty on the others.
-* Purification: Remove a Blight infected
-by a previous Regent.
-The castle then takes them with it as it
-leaves reality behind. They will return
-as its next regent unless they chose Life
-Everlasting - in which case the next regent is
-Death Itself.
-
-Spoils of Victory
-If you leave the castle without claiming
-the grail, pick a choice unlocked by your
-Explorer’s Blood.
-BLOOD 0+
-* Your explorer loots the castle for valuable
-trinkets. Say what they spend the rest
-of their life doing with their fortune,
-and start the next generation with 1
-more Relic.
-* Your explorer devotes their life to
-preparing the next generation. Choose
-one other bloodline - say how you
-helped train their next explorer, and get
-1 Pact on them.
-* Your bloodline works to heal the wounds
-left in this community by the castle.
-Name an alliance you've made, and
-get advantage when you call on it
-for Reinforcements.
-BLOOD 2+
-* Your explorer instils their skills into a piece
-of gear. Pick one of your moves: when
-your descendants use the gear they can
-access that move, but the gear gains the
-heirloom tag.
-* Your explorer forces permanent order on
-the castle. One ward will remain in its
-current form for the rest of time; your
-bloodline gets advantage Travelling the
-Labyrinth there.
-* You invest in your resources. Sacrifice 3
-Relics to raise a bloodline stat by 1.
-BLOOD 4+
-* You let the corruption sink deep into your
-bloodline, controlled but ever-present.
-Your future characters start at Blood 1,
-with a Blood Advance to match.
-* You form a bond with the castle.
-Your explorer can always mark
-contamination to get a vision of the
-regent, and ask one follow-up question
-the GM must answer truthfully
-Darkness Falls
-When the regent’s clock fills, they blight the
-mortal world. The GM marks one:
-p A section of the region’s population is
-cursed and made monstrous.
-p Day is short and nights are starless.
-p Monsters walk the world every
-full moon.
-p Weather becomes unnatural
-and devastating.
-p Plagues strike a section of
-the population.
-If all are marked, the castle claims the
-mortal world and all is lost.
-Each player picks how their bloodline
-responds to the blight, and adjusts
-their stats:
-* You stayed safe, at the cost of withdrawing
-from the world. Say which of your
-connections suffered in your absence. +1
-Chalices,
--1 Coins.
-* You fought to push it back, but your best
-mystics lost their lives. Say what their
-sacrifice achieved. +1 Swords,
--1 Wands.
-* You took some of the taint into your
-family. Say what lingering malady the
-blight has left you with. +1 Wands,
--1 Chalice.
-* You waged a shadow war keeping society
-safe at great cost to your warriors. Say
-which settlement still stands thanks to
-you. +1 Coins,
--1 Swords.
-The New Generation
-Once the group has resolved these moves,
-you skip forward to the next time the blood
-moon rises. Follow these steps: 1) WHERE DOES THE CASTLE EMERGE?
-Is it somewhere it’s haunted before, or
-a new location? Each bloodline picks a
-refuge option from their playbook to flesh
-out the surrounding area and define their
-starting safe camps.
-2) HOW HAS THE EVIL MANIFESTED?
-Blood calls out to blood, and each
-bloodline is drawn to the castle by
-misfortune or curse. Each bloodline picks
-a drive that brought them here, and says
-what they suspect the drive says about the
-regent’s plans.
-3) HOW DO YOU BREAK IN?
-You’re ready to break into a ward of the
-castle. Each bloodline picks a breach
-option and says what they’ve seen of the
-ward they’re preparing to assault.
-4) MAKE EXPLORERS
-Each player picks an explorer playbook
-and builds them up, picking stats, looks,
-motivation, covenants, moves and gear.
-Start with the first explorer breaking in,
-with the other explorers assisting them as
-wraiths or in the flesh.

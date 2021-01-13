@@ -231,6 +231,28 @@
 					// 	controller: 'WestMCController as vm'
 					// }
 				}
+			})			
+			.state('auth.blood',{
+				url: '/blood',	
+				stateName: 'Blood',			
+				views: {	
+					'blood':{
+						templateUrl: 'games/blood/blood.html',
+						controller: 'BloodController as vm'
+					},			
+					// 'charactersheet@auth.blood': {
+					// 	templateUrl: 'games/blood/bloodChar.html',
+					// 	controller: 'BloodCharacterController as vm'
+					// },
+					'reference@auth.blood': {
+						templateUrl: 'games/blood/bloodRef.html',
+						controller: 'BloodReferenceController as vm'
+					}
+					// 'mc@auth.west': {
+					// 	templateUrl: 'games/blood/bloodMC.html',
+					// 	controller: 'WestMCController as vm'
+					// }
+				}
 			})		
 			.state('home',{
 				url: '/'
