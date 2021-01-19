@@ -31,7 +31,6 @@
                 $http.get(_JSON).then(getStaticContentSuccess, getStaticContentFail);
                     function getStaticContentSuccess(response){
                         vm.static = response.data; 
-                        console.log(response.data);                 
                     }
                     function getStaticContentFail(error){
                         console.log(error);

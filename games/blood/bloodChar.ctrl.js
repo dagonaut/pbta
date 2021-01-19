@@ -138,7 +138,6 @@
                         model.data = JSON.parse(char.data);
                         vm.dudes.push(model);
                     });
-                    console.log(vm.dudes);
                 }
 
                 function getDudesFail(e){

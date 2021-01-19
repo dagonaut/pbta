@@ -13,6 +13,10 @@
                 charactersheet: { index: 0, heading: 'Character Sheet'},
                 reference: { index: 1, heading: 'Reference'}             
                 //mc: { index: 2, heading: 'Marshall'}
-            };            
+            }; 
+            
+            vm.redirectToGfolder = function(){
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1MnvwEb_8sIEr3wqZw-29PcYIvMG0fsge";
+            }
         }
 })();

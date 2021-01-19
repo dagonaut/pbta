@@ -6,7 +6,10 @@
         </uib-tab>
         <uib-tab index="vm.tabs.reference.index" heading="{{::vm.tabs.reference.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="reference"></div>
-        </uib-tab>        
+        </uib-tab>
+        <uib-tab index="2" heading="Google Folder" ng-click="vm.redirectToGfolder()">
+            <div ui-view="reference"></div>
+        </uib-tab>
         <!-- <uib-tab index="vm.tabs.mc.index" heading="{{::vm.tabs.mc.heading}}" ng-click="vm.onTabChange()">
             <div ui-view="mc"></div>
         </uib-tab> -->

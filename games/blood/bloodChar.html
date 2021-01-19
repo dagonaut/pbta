@@ -70,9 +70,9 @@
                 <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId || vm.userId === 2" value="{{dude.id}}">{{dude.data.name}} - {{dude.data.bloodline}}
                 </option>
             </select>
-            <div class="btn btn-primary mx-1" ng-click="vm.updateCharacter(true);">Create New</div>
+            <button class="btn btn-primary mx-1" ng-click="vm.updateCharacter(true);" ng-disabled="vm.userId !== 2">Create New</button>
             <div class="btn btn-primary mx-1" ng-click="vm.updateCharacter();">Save</div>
-            <div class="btn btn-danger mx-1" ng-click="vm.deleteCharacter();" ng-disabled="true">Delete</div>
+            <button class="btn btn-danger mx-1" ng-click="vm.deleteCharacter();" ng-disabled="true">Delete</button>
             <div class="btn btn-primary mx-1" ng-click="vm.loadCharacter(vm.dude);">Load</div>
         </div>
         <div>
