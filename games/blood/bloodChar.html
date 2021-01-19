@@ -117,11 +117,13 @@
                 </div>
             </div>
             <div>
-                Pact: {{vm.static.bloodlines[vm.cd.bloodline].pact.name}}
+                <div class="move_header">Pact: {{vm.static.bloodlines[vm.cd.bloodline].pact.name}}</div>
                 <div markdown-it="vm.static.characters.bloodlines[vm.bloodline].pact.description"></div>
             </div>
             <div>
-                Traditions:
+                <div class="move_header">
+                    Traditions:
+                </div>
                 Style:
                 <textarea ng-model="vm.cd.traditions.style"></textarea>
                 Lore:
@@ -132,11 +134,40 @@
         </div>
         <!-- Explorer -->
         <div class="explorer col-md-6">
-            <div class="stats d-flex">                
-                <input class="my-1" type="number" ng-model="vm.cd.explorers[0].stats.iron" />IRON<br />
-                <input class="my-1" type="number" ng-model="vm.cd.explorers[0].stats.glass" />GLASS<br />
-                <input class="my-1" type="number" ng-model="vm.cd.explorers[0].stats.sulphur" />SULPHUR<br />
-                <input class="my-1" type="number" ng-model="vm.cd.explorers[0].stats.mercury" />MERCURY<br />
+            <div class="d-flex">
+                <div class="stats">                
+                    <input class="my-1" type="number" ng-model="vm.cd.explorers[0].stats.iron" />IRON<br />
+                    <input class="my-1" type="number" ng-model="vm.cd.explorers[0].stats.glass" />GLASS<br />
+                </div>
+                <div class="stats">
+                    <input class="my-1" type="number" ng-model="vm.cd.explorers[0].stats.sulphur" />SULPHUR<br />
+                    <input class="my-1" type="number" ng-model="vm.cd.explorers[0].stats.mercury" />MERCURY<br />
+                </div>
+                <div>
+                    <div class="d-flex my-1">
+                        <div>Harm: </div>
+                        <div class="harm-input" ng-class="vm.cd.explorers[0].health.harm > 0 ? 'bg-red' : ''" ng-click="vm.markHarm(1)"></div>
+                        <div class="harm-input" ng-class="vm.cd.explorers[0].health.harm > 1 ? 'bg-red' : ''" ng-click="vm.markHarm(2)"></div>
+                        <div class="harm-input" ng-class="vm.cd.explorers[0].health.harm > 2 ? 'bg-red' : ''" ng-click="vm.markHarm(3)"></div>
+                        <div class="harm-input" ng-class="vm.cd.explorers[0].health.harm > 3 ? 'bg-red' : ''" ng-click="vm.markHarm(4)"></div>
+                        <div class="harm-input" ng-class="vm.cd.explorers[0].health.harm > 4 ? 'bg-red' : ''" ng-click="vm.markHarm(5)"></div>
+                        <div class="clear pointer" ng-click="vm.markHarm(0)">clear all</div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="stat">
+                            Armor:<br /><input type="number" ng-model="vm.cd.armor" />
+                        </div>
+                        <div class="d-flex">
+                            <div class="harm-input" ng-class="vm.cd.explorers[0].health.wounds.minor ? 'bg-red' : ''" ng-click="vm.markHarm('minor')"></div><div class="harm-label">Minor</div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="harm-input" ng-class="vm.cd.explorers[0].health.wounds.major ? 'bg-red' : ''" ng-click="vm.markHarm('major')"></div><div class="harm-label">Major</div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="harm-input" ng-class="vm.cd.explorers[0].health.wounds.mortal ? 'bg-red' : ''" ng-click="vm.markHarm('mortal')"></div><div class="harm-label">Oh FUCK!</div>
+                        </div>
+                    </div>                        
+                </div>
             </div>
             <div>
                 <h2>
@@ -158,24 +189,20 @@
                     
                 </div>             
             </div>
+            <div class="d-flex">
+                <div class="stats">
+                    <input type="number" ng-model="vm.cd.explorers[0].blood" />BLOOD
+                </div>
+                <div>
+                Blood Advances:                              
+                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.stat1" /><span>Get +1 Stat</span>
+                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.stat2" /><span>Get +1 Stat</span>
+                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.gift1" /><span>Get a gift</span>
+                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.gift2" /><span>Get a gift</span>
+                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.retire" /><span>Retire</span>
+                </div>
+            </div>
             <div>
-                <input type="number" ng-model="vm.cd.explorers[0].blood" />BLOOD<br />
-                Blood Advances:
-                <!-- 
-                <input
-                    id="adv_{{adv.id}}"                             
-                    type="checkbox" 
-                    value="{{adv.id}}" 
-                    ng-checked="vm.cd.advancements.indexOf(adv.id) > -1"                            
-                    ng-click="vm.updateAdvancements(adv.id)" />
-                <span ng-class="{'orange': vm.cd.advancements.indexOf(adv.id) > -1}">{{adv.description}}</span>
-                 -->                  
-                <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.stat1" /><span>Get +1 Stat</span>
-                <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.stat2" /><span>Get +1 Stat</span>
-                <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.gift1" /><span>Get a gift</span>
-                <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.gift2" /><span>Get a gift</span>
-                <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.retire" /><span>Retire</span>
-
                 <h2>
                     Blood Gifts:
                     <span class="move-filter">Show 
@@ -198,58 +225,8 @@
                         <span markdown-it="blood.description"></span>
                     
                 </div>
-                <!-- <div ng-repeat="b_move in vm.static.characters.explorers[vm.explorer].gifts">
-                    <div class="move_header">{{ b_move.name }}</div>
-                    <div markdown-it="b_move.description"></div>
-                </div> -->
-                <div>
-                    
-                    <!-- Harm / Armor / Dinero -->            
-                    <div class="harm my-2">
-                        <h2>Harm:</h2>
-                        <div class="d-flex" style="justify-content:space-between;">
-                            <div>
-                                <div class="clear pointer" ng-click="vm.markHarm(0)">clear all</div>
-                                <div class="stat">
-                                    Armor:<br /><input type="number" ng-model="vm.cd.armor" />
-                                </div>
-                            </div>
-                            <div class="my-3">
-                                <div class="d-flex">
-                                    <div class="harm-input" ng-class="vm.cd.explorers[0].health.harm > 0 ? 'bg-red' : ''" ng-click="vm.markHarm(1)"></div><div class="harm-label">I Ain't Yella (1)</div>
-                                </div>                    
-                                <div class="d-flex">
-                                    <div class="harm-input" ng-class="vm.cd.explorers[0].health.harm > 1 ? 'bg-red' : ''" ng-click="vm.markHarm(2)"></div><div class="harm-label">Just a Scratch (2)</div>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="harm-input" ng-class="vm.cd.explorers[0].health.harm > 2 ? 'bg-red' : ''" ng-click="vm.markHarm(3)"></div><div class="harm-label">Sheeeeiiiiitt (3)</div>
-                                </div>
-                            </div>
-                            <div class="my-3">
-                                <div class="d-flex">
-                                    <div class="harm-input" ng-class="vm.cd.explorers[0].health.harm > 3 ? 'bg-red' : ''" ng-click="vm.markHarm(4)"></div><div class="harm-label">I just need a minute (4)</div>
-                                </div>                    
-                                <div class="d-flex">
-                                    <div class="harm-input" ng-class="vm.cd.explorers[0].health.harm > 4 ? 'bg-red' : ''" ng-click="vm.markHarm(5)"></div><div class="harm-label">I'm Comin' Elizabeth (5)</div>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="harm-input" ng-class="vm.cd.explorers[0].health.harm > 5 ? 'bg-red' : ''" ng-click="vm.markHarm(6)"></div><div class="harm-label">High Noon (6)</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="d-flex">
-                            <div class="harm-input" ng-class="vm.cd.explorers[0].health.wounds.minor ? 'bg-red' : ''" ng-click="vm.markHarm('minor')"></div><div class="harm-label">Minor</div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="harm-input" ng-class="vm.cd.explorers[0].health.wounds.major ? 'bg-red' : ''" ng-click="vm.markHarm('major')"></div><div class="harm-label">Major</div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="harm-input" ng-class="vm.cd.explorers[0].health.wounds.mortal ? 'bg-red' : ''" ng-click="vm.markHarm('mortal')"></div><div class="harm-label">Oh FUCK!</div>
-                        </div>
-                    </div>
-                </div>
+                
+                
                 <div>
                     <div class="move_header">Death Move</div>
                     <div markdown-it="vm.static.characters.explorers[vm.explorer].death_move"></div>

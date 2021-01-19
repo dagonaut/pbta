@@ -304,7 +304,6 @@
             }
 
             function markHarm(level){
-                debugger;
                 switch(level) {
                     case 'minor':
                         vm.cd.explorers[0].health.wounds.minor = !vm.cd.explorers[0].health.wounds.minor; 
