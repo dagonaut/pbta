@@ -190,15 +190,18 @@
                 </div>             
             </div>
             <div class="d-flex">
-                <div class="stats">
-                    <input type="number" ng-model="vm.cd.explorers[0].blood" />BLOOD
+                <div class="stats mx-2">
+                    BLOOD: <input type="number" ng-model="vm.cd.explorers[0].blood" />
+                </div>
+                <div class="mx-2">
+                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.stat1" /><span>Get +1 Stat</span><br />
+                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.stat2" /><span>Get +1 Stat</span>
+                </div>
+                <div class="mx-2">
+                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.gift1" /><span>Get a gift</span><br />
+                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.gift2" /><span>Get a gift</span>
                 </div>
                 <div>
-                Blood Advances:                              
-                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.stat1" /><span>Get +1 Stat</span>
-                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.stat2" /><span>Get +1 Stat</span>
-                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.gift1" /><span>Get a gift</span>
-                    <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.gift2" /><span>Get a gift</span>
                     <input type="checkbox" ng-model="vm.cd.explorers[0].blood_advancements.retire" /><span>Retire</span>
                 </div>
             </div>
