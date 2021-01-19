@@ -40,10 +40,37 @@
                 stats: { chalices: 0, swords: 0, wands: 0, coins: 0, relics: 0},
                 traditions: { style: "", lore: "", name: ""},
                 moves: ["none"],
-                pacts: [
+                pacts:"",
+                pact: [
                     { bloodline: "", description: ""}
                 ],
-                explorers:[],
+                visibility: { moves: 'class', classinfo: true, model: false, custom: true, allmoves: false },
+                explorers:[
+                    {
+                        name: "",
+                        class: "",                
+                        look: "",                
+                        stats: { iron: 0, glass: 0, sulphur: 0, mercury: 0},
+                        health: {
+                            harm: 0,
+                            armor: 0,
+                            wounds: {minor: false, major: false, mortal: false}
+                        },
+                        moves: ["none"],
+                        gifts: ["none"],
+                        blood: 0,
+                        blood_advancements: { stat1: false, stat2: false, gift1: false, gift2: false, retire: false },
+                        covenants:"",
+                        covenant: [
+                            { explorer: "", strength: "", weak: "", rating: 0}
+                        ],
+                        gear: "",
+                        notes: "",
+                        retired: false,
+                        fate: "",                
+                        visibility: { moves: 'class', classinfo: true, model: false, custom: true, allmoves: false }                
+                    }
+                ],
                 playername: ""
             };
             vm.cd = angular.copy(vm.blankBloodline);
@@ -75,6 +102,8 @@
             vm.deleteCharacter = deleteCharacter;
             vm.updateAdvancements = updateAdvancements;
             vm.updateMoves = updateMoves;
+            vm.updateExplorerMoves = updateExplorerMoves;
+            vm.updateBloodGifts = updateBloodGifts;            
             vm.showMoves = showMoves;
             vm.filterMoves = filterMoves;
             vm.markHarm = markHarm;
@@ -83,7 +112,7 @@
 
             function init(){ 
                 getStatic();
-                //getDudes();
+                getDudes();
             }            
 
             function getStatic(){                
@@ -120,6 +149,7 @@
             }
 
             function filterMoves(id){
+                return true;
                 switch(vm.cd.visibility.moves) {
                     case 'all':
                         return true;
@@ -171,6 +201,24 @@
                     vm.cd.moves.push(moveId);
                 }
             }
+
+            function updateExplorerMoves(moveId){
+                let index = vm.cd.explorers[0].moves.indexOf(moveId);
+                if( index > -1){
+                    vm.cd.explorers[0].moves.splice(index, 1);
+                } else {
+                    vm.cd.explorers[0].moves.push(moveId);
+                }
+            }
+
+            function updateBloodGifts(moveId){
+                let index = vm.cd.explorers[0].gifts.indexOf(moveId);
+                if( index > -1){
+                    vm.cd.explorers[0].gifts.splice(index, 1);
+                } else {
+                    vm.cd.explorers[0].gifts.push(moveId);
+                }
+            }
           
             
             //#region CRUD
@@ -195,7 +243,7 @@
                 // New / Create
                 if(isCreate){
                     if(vm.cd.id > -1){
-                        vm.cd = angular.copy(vm.blankCharacter);
+                        vm.cd = angular.copy(vm.blankBloodline);
                     }
                     // JSON / Array conversion
                     //convert(false);
@@ -256,7 +304,20 @@
             }
 
             function markHarm(level){
-                vm.cd.harm = level;
+                debugger;
+                switch(level) {
+                    case 'minor':
+                        vm.cd.explorers[0].health.wounds.minor = !vm.cd.explorers[0].health.wounds.minor; 
+                        break;
+                    case 'major':
+                        vm.cd.explorers[0].health.wounds.major = !vm.cd.explorers[0].health.wounds.major;                        
+                        break;
+                    case 'mortal':
+                        vm.cd.explorers[0].health.wounds.mortal = !vm.cd.explorers[0].health.wounds.mortal; 
+                        break;
+                    default:
+                        vm.cd.explorers[0].health.harm = level;
+                    }
             }           
         }
 })();

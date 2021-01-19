@@ -646,18 +646,22 @@
                 ],
                 "gifts":[
                     {
+                        "key":"frenzy",
                         "name":"Frenzy",
                         "description":"When you roll a miss on Strike, you can ***mark contamination*** to immediately make another Strike."
                         },
                         {
+                        "key":"lupine",
                         "name":"Lupine",
                         "description":"Your teeth and fingernails gain a keen edge. You always have access to them, as a weapon with Piercing/Close."
                         },
                         {
+                        "key":"burning_blood",
                         "name":"Burning Blood",
                         "description":"Your blood burns as it leaves your body.  \nYou may ***mark contamination*** to create a wall of fire most monsters won’t willingly cross."
                         },
                         {
+                        "key":"voice_of_command",
                         "name":"Voice of Command",
                         "description":"When an Adversary is bearing down on an ally, you can ***mark contamination*** to force them to target you instead."
                         }
@@ -700,18 +704,22 @@
                 ],
                 "gifts":[
                     {
+                        "key":"eyes_on_the_inside",
                         "name":"Eyes on the Inside",
                         "description":"You can ***mark contamination*** to perceive the intangible and immaterial. When you Line it Up or See Clear with this sight, you can roll +Mercury instead of +Glass."
                         },
                         {
+                        "key":"ghost_eater",
                         "name":"Ghost Eater",
                         "description":"You can consume the spirits trapped in your Soul Vessel. When you do, ***mark contamination*** but heal your last wound."
                         },
                         {
+                        "key":"the_unquiet_flesh",
                         "name":"The Unquiet Flesh",
                         "description":"Your body is shifting to become something ancient. You may ***mark contamination*** to grow an organ or limb - arms, tentacles, wings, eyes, mouths or similar."
                         },
                         {
+                        "key":"the_blood_is_life",
                         "name":"The Blood is Life",
                         "description":"**When you shed your blood to create a body for a spirit**, roll +Harm taken. On a 7-9 pick 1, on a 10+ pick 2: they follow your orders, they remember useful information, you can banish them at will."
                         }
@@ -754,18 +762,22 @@
                 ],
                 "gifts":[
                     {
+                        "key":"blink",
                         "name":"Blink",
                         "description":"When your spirit is away from you thanks to **Astral Projection**, you may ***mark contamination*** to swap places with it."
                         },
                         {
+                        "key":"apotheosis",
                         "name":"Apotheosis",
                         "description":"Your spirit's true, terrifying form guides your blows. ***Mark contamination*** to give an attack advantage and a tag of your choice."
                         },
                         {
+                        "key":"half_dead",
                         "name":"Half-Dead",
                         "description":"You're losing your mortality. Gain 1 Armour against physical attacks, but take 1 more harm from magical/spiritual attacks."
                         },
                         {
+                        "key":"medium",
                         "name":"Medium",
                         "description":"You can ***mark contamination*** to summon a lesser version of your spirit. They won’t be hostile - at least, at first."
                         }
@@ -813,18 +825,22 @@
                 ],
                 "gifts":[
                     {
+                        "key":"just_you_and_me",
                         "name":"Just You and Me",
                         "description":"If you're within arm's reach of a foe, you can ***mark contamination*** to reshape the castle and trap you both within an empty room. The previous state is restored when you will it, or when you take a major wound."
                         },
                         {
+                        "key":"worlds_away",
                         "name":"Worlds Away",
                         "description":"If a foe's within arm's reach of you, you can ***mark contamination*** to reshape the castle such that you are seperated by a deep chasm, a barricade or a surging river (of what?)."
                         },
                         {
+                        "key":"chaos_eyes",
                         "name":"Chaos Eyes",
                         "description":"The shifting chaos of the castle bleeds out of your mind and into those that meet your gaze. Your eyes are a weapon with ranged, piercing, unstable."
                         },
                         {
+                        "key":"psychopomp",
                         "name":"Psychopomp",
                         "description":"You can ***mark contamination*** and spend 1 **Travel the Labyrinth** hold to take your group to or from: an individual's psyche, the land of the dead, where the castle comes from."
                         }
@@ -875,18 +891,22 @@
                 ],
                 "gifts":[
                     {
+                        "key":"titans_might",
                         "name":"Titan's Might",
                         "description":"You can ***mark contamination*** to augment your strength, letting you carry any weight. Leverage may still present issues."
                         },
                         {
+                        "key":"paradox_bag",
                         "name":"Paradox Bag",
                         "description":"When you reach into your sack, you can ***mark contamination*** to pull out something impossible: something too big, or too dangerous, or on the other side of the world, or in your antagonist's hands."
                         },
                         {
+                        "key":"maw_of_the_void",
                         "name":"Maw of the Void",
                         "description":"If you get something in your bag, it cannot escape without your say-so. You can ***mark contamination*** to turn the void inside the bag into a powerful vacuum (tether, close)."
                         },
                         {
+                        "key":"junk_homonculus",
                         "name":"Junk Homonculus",
                         "description":"When you assemble the odds and ends in your pack into a rough human form, you can ***mark contamination*** to give it life. It will follow your commands to the best of its ability, but cannot leave the castle."
                         }
