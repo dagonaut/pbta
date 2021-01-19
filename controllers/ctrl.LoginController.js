@@ -5,8 +5,8 @@
         .module('pbta_resources')
         .controller('LoginController', LoginController);
 
-        LoginController.$inject = ['$scope', '$rootScope', '$cookies', '$location', '$http', '$q', 'Auth'];
-        function LoginController($scope, $rootScope, $cookies, $location, $http, $q, Auth){
+        LoginController.$inject = ['$scope', '$rootScope', '$cookies', '$location', '$http', '$q', 'Auth', '$state'];
+        function LoginController($scope, $rootScope, $cookies, $location, $http, $q, Auth, $state){
             var vm = this;
             var api = 'http://16watt.com/dev/api/api.php/';
             
@@ -16,6 +16,7 @@
             vm.isLoggedIn = false;
             vm.taco = "PSYCH";
             vm.showError = false;
+            vm.showSelect = $state.current.name === "";
 
             //Scope Methods
             vm.setDarkMode = setDarkMode;

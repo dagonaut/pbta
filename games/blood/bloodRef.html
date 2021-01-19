@@ -1,46 +1,66 @@
 <style>
+/*
+f87858
+    f83800
+    a81000
+    a80020
+
+    move background: #444d524a
+*/
     strong{
-        color:#c82000;
+        color:#f83800;
     }
     .move-category{
-        font-size:larger;
+        font-size:20px;
         color:#c82000;
+        text-align:right;
         font-weight:bold;
-        border-bottom:#c82000 1px solid;
+        border-bottom:#c82000 2px solid;
     }
     .move-name{
-        color:#c82000;
-        font-weight:bold;
+        color:#f83800;
+        font-weight:500;
+        font-size:16px;
+        cursor:pointer;
+        text-transform: uppercase;
+        border-bottom:#c82000 1px solid;
+    }
+    .move-description{
+        padding:2px;
+        background-color:#444d524a;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border:1px solid #c82000;
     }
 </style>
 <div class="blood-reference">
     <div class="d-flex">
-        <div class="p-2">
-            <div class="move-category">Basic Moves</div>
+        <div class="col-md-3 p-2">
+            <div class="move-category">BASIC MOVES</div>
             <div class="move" ng-repeat="move in vm.static.moves.basic">
-                <div class="move-name">{{move.name}}</div>
-                <div class="move-description" markdown-it="move.description"></div>
+                <div class="move-name" ng-click="move.hide = !move.hide">{{move.name}}</div>
+                <div class="move-description" markdown-it="move.description" ng-hide="!move.hide"></div>
             </div>
         </div>
-        <div class="p-2">
-            <div class="move-category">Confrontation Moves</div>
+        <div class="col-md-3 p-2">
+            <div class="move-category">CONFRONTATION MOVES</div>
             <div class="move" ng-repeat="move in vm.static.moves.confrontation">
-                <div class="move-name">{{move.name}}</div>
-                <div class="move-description" markdown-it="move.description"></div>
+                <div class="move-name" ng-click="move.hide = !move.hide">{{move.name}}</div>
+                <div class="move-description" markdown-it="move.description" ng-hide="!move.hide"></div>
             </div>
         </div>
-        <div class="p-2">
-            <div class="move-category">Bloodline Moves</div>
+        <div class="col-md-3 p-2">
+            <div class="move-category">BLOODLINE MOVES</div>
             <div class="move" ng-repeat="move in vm.static.moves.bloodline">
-                <div class="move-name">{{move.name}}</div>
-                <div class="move-description" markdown-it="move.description"></div>
+                <div class="move-name" ng-click="move.hide = !move.hide">{{move.name}}</div>
+                <div class="move-description" markdown-it="move.description" ng-hide="!move.hide"></div>
             </div>
         </div>
-        <div class="p-2">
-            <div class="move-category">Generation Moves</div>
+        <div class="col-md-3 p-2">
+            <div class="move-category">GENERATION MOVES</div>
             <div class="move" ng-repeat="move in vm.static.moves.generation">
-                <div class="move-name">{{move.name}}</div>
-                <div class="move-description" markdown-it="move.description"></div>
+                <div class="move-name" ng-click="move.hide = !move.hide">{{move.name}}</div>
+                <div class="move-description" markdown-it="move.description" ng-hide="!move.hide"></div>
             </div>
         </div>
     </div>

@@ -44,7 +44,7 @@
                 pact: [
                     { bloodline: "", description: ""}
                 ],
-                visibility: { moves: 'class', classinfo: true, model: false, custom: true, allmoves: false },
+                visibility: { moves: 'class', classinfo: true, model: false, custom: true, all_moves: true },
                 explorers:[
                     {
                         name: "",
@@ -68,7 +68,7 @@
                         notes: "",
                         retired: false,
                         fate: "",                
-                        visibility: { moves: 'class', classinfo: true, model: false, custom: true, allmoves: false }                
+                        visibility: { all_moves: true, classinfo: true, model: false, custom: true, all_gifts: true }                
                     }
                 ],
                 playername: ""
@@ -113,6 +113,7 @@
             function init(){ 
                 getStatic();
                 getDudes();
+                loadCharacter(13)
             }            
 
             function getStatic(){                
@@ -148,25 +149,39 @@
                 vm.cd.visibility.moves = type;
             }
 
-            function filterMoves(id){
-                return true;
-                switch(vm.cd.visibility.moves) {
-                    case 'all':
-                        return true;
-                        break;
-                    case 'mine':
-                        if(vm.cd.moves.indexOf(id) !== -1){ 
-                            return true; 
+            function filterMoves(id, type){
+                switch(type) {
+                    case 'bloodline':
+                        if(!vm.cd.visibility.all_moves){
+                            if(vm.cd.moves.indexOf(id) !== -1){ 
+                                return true; 
+                            } else {
+                                return false;
+                            }                        
                         } else {
-                            return false;
-                        }                        
-                        break;
-                    case 'class':
-                        let move = vm.classmoves.moves.find(obj=>obj.id === id);
-                        if(move.class === vm.cd.class){ 
                             return true;
+                        }
+                        break;
+                    case 'explorer':
+                        if(!vm.cd.explorers[0].visibility.all_moves){
+                            if(vm.cd.explorers[0].moves.indexOf(id) !== -1){ 
+                                return true; 
+                            } else {
+                                return false;
+                            }                        
                         } else {
-                            return false;
+                            return true;
+                        }
+                        break;
+                    case 'blood':
+                        if(!vm.cd.explorers[0].visibility.all_gifts){
+                            if(vm.cd.explorers[0].gifts.indexOf(id) !== -1){ 
+                                return true; 
+                            } else {
+                                return false;
+                            }                        
+                        } else {
+                            return true;
                         }
                         break;
                     default:
