@@ -291,6 +291,7 @@
                     ]
                 },
                 "pact":{
+                    "color":"gold",
                     "name":"The Way of Gold",
                     "description":"**One bloodline’s legends taught you how to be heroes.** Set your pact with them to 1. You say what legend you’ve heard, they say what secret failure the legend left out.  \n**You prize heroism and valour.** At the end of each play session, pick the explorer whose heroism most impressed you and raise their pact with your bloodline by 1.  \n**While at one of your camps**, members of other bloodlines can spend 1-pact to gain a weapon from your stores. Give it two perks and a flaw, and describe its history. "
                 },  
@@ -353,6 +354,7 @@
                     ]
                 },
                 "pact":{
+                    "color":"red",
                     "name":"The Way of Red",
                     "description":"**One bloodline hunted you as monsters before you forged a treaty.** Set your pact each other to 1. You say how you proved your humanity, they say how they made amends.  \n**You prize integrity and humanity.** At the end of each play session, pick the explorer whose mercy most impressed you and raise their bloodline's pact with you by 1.  \n**While at one of your camps**, other explorers can spend 1-pact to transfer a point of contamination to a member of your bloodline. ***Say how the recipient is further twisted.***"
                 },
@@ -416,6 +418,7 @@
                     ]
                 },
                 "pact":{
+                    "color":"white",
                     "name":"The Way of White",
                     "description":"**You saved another bloodline from falling to darkness.** Get 1 pact on them. They say what dark temptation was twisting them; you say what you did to redeem them.  \n**You prize self-sacrifice.** At the end of each play session, pick the explorer who risked the most to help others and raise their bloodline's pact with you by 1.  \n**While at one of your camps**, other bloodlines can spend 1-pact on you to take a Relic from your stores. Describe it, and suggest how it came to be owned by your order."
                 },
@@ -479,6 +482,7 @@
                     ]
                 },
                 "pact":{
+                    "color":"silver",
                     "name":"The Way of Silver",
                     "description":"**You split the fabulous wealth you found with another bloodline.** Gain 1 pact on them. They say what they used the wealth for; you say how misfortune robbed them of it.  \n**You prize entrepreneurship.** At the end of each play session, pick the explorer who most increased their wealth or power and raise their bloodline's pact with you by 1.  \n**While at one of your camps** other bloodlines can spend 1-pact on you to get access to more luxurious supplies. They get advantage on Shelter until they return to a safe camp."
                 },
@@ -543,6 +547,7 @@
                     ]
                 },
                 "pact":{
+                    "color":"blue",
                     "name":"The Way of Blue",
                     "description":"**You taught another bloodline how to use the castle's power safely.** Gain 1 pact on them. They say what the ritual lets them do; you say what it costs them instead of their souls.  \n**You prize arcane insight.** At the end of each session, pick the explorer who wielded the most supernatural power and raise their pact with your bloodline by 1.  \n**While at one of your camps**, other bloodlines can spend 1 pact on you to get an item of power from your stores. They can destroy it to cast a spell as per Drink Deep."
                 },
@@ -611,7 +616,7 @@
                 ],
                 "gear":{
                     "weapons":[
-                        {"name":"A backup pistol", "tags":["ranged", "reload"]},
+                        {"name":"A backup pistol", "tags":["ranged/reload"]},
                         {"name":"Breastplate or mail shirt", "tags":["1 Armour"]},
                         {"name":"A shield", "tags":["advantage on Confront, disadvantage on Dodge"]}
                     ],
@@ -676,7 +681,7 @@
                     "weapons":[
                         {"name":"An amulet", "tags":["destroy to lose 1 contamination"]},
                         {"name":"Purified salt", "tags":["1 armour when you stand within a circle of it"]},
-                        {"name":"A last-ditch ice burst","tags":["stun", "painful"]}
+                        {"name":"A last-ditch ice burst","tags":["stun/painful"]}
                     ],
                     "utility":"Crystals that glow like candles; bandages and healing salves; a pouch of alchemical samples; as many rations as you need."
                 },
@@ -732,7 +737,7 @@
                 "looks":[],
                 "gear":{
                     "weapons":[
-                        {"name":"Martial arts training", "tags":["tether","close"]},
+                        {"name":"Martial arts training", "tags":["tether/close"]},
                         {"name":"Reinforced coat", "tags":["1 Armour"]},
                         {"name":"Spiritual aura", "tags":["advantage on attacks against intangible foes"]}
                     ],
@@ -790,7 +795,7 @@
                 "looks":["Hector", "Taniqua", "Lamia", "Oscar", "Arsene", "Richter", "Sypha", "Kasi", "Joseph", "Grant"],
                 "gear":{
                     "weapons":[
-                        {"name":"A crossbow", "tags":["ranged","reload"]},
+                        {"name":"A crossbow", "tags":["ranged/reload"]},
                         {"name":"Bulky protective gear", "tags":["+1 armour"]},
                         {"name":"An old map", "tags":["sacrifice to get 2 Travel the Labyrinth hold"]}
                     ],
@@ -856,7 +861,7 @@
                 ],
                 "gear":{
                     "weapons":[
-                        {"name":"Homemade Explosives", "tags":["lingering","ammo"]},
+                        {"name":"Homemade Explosives", "tags":["lingering/ammo"]},
                         {"name":"Enchanted shirt", "tags":["+1 Armour"]},
                         {"name":"Extraordinary wine", "tags":["when you find Shelter, sacrifice to pick an extra option"]}
                     ],

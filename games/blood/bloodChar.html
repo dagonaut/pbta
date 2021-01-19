@@ -10,6 +10,11 @@
     .blood .stats{
 
     }
+    .white{color:#ffffff !important;}    
+    .gold{color:gold !important;}
+    .silver{color:silver !important;}
+    .blue{color:blue !important;}
+
     .blood .stats input{
         height:50px;
         width:50px;
@@ -46,6 +51,15 @@
         border: 1px solid #c82000;
         border-radius: 4px;
     }
+
+    .blood .character_move{
+        border-bottom:1px solid #c82000;
+    }
+
+    .blood .explorer textarea{
+        width: 99%;
+        height:200px;
+    }
 </style>
 <form id="charSheet" name="charSheet">
     <!-- CRUD -->
@@ -53,7 +67,7 @@
         <div class="d-flex justify-content-start align-items-center">
             Dudes:
             <select ng-model="vm.dude" class="mx-1">
-                <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId || vm.userId === 2" value="{{dude.id}}">{{dude.data.traditions.name}} - {{dude.data.bloodline}}
+                <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId || vm.userId === 2" value="{{dude.id}}">{{dude.data.name}} - {{dude.data.bloodline}}
                 </option>
             </select>
             <div class="btn btn-primary mx-1" ng-click="vm.updateCharacter(true);">Create New</div>
@@ -69,27 +83,77 @@
     </div>
     <!-- Starting Info -->
     <div class="collapse p-2" id="startingInfo" style="border:3px double #bbe1fa; border-radius: 5px;">
-        Choose from the following for your <strong>{{vm.class}}</strong>
         <div class="d-flex">
             <div class="">
+                Choose from the following for your <strong>{{vm.cd.bloodline}}</strong>
+                <div class="">
+                    <strong>Choose a stat block:</strong>
+                    <div ng-repeat="block in vm.static.characters.bloodlines[vm.cd.bloodline].stats">
+                        CHALICES: {{ block.chalices}}, SWORDS: {{ block.swords}}, WANDS: {{ block.wands}}, COINS: {{ block.coins}}
+                    </div>
+
+                </div>
                 <div class="names">
-                    Choose a name: <span ng-repeat="name in vm.static.classes[vm.class].starters.names">{{ name }}, </span>
+                    <strong>Choose your bloodline's name:</strong> <span>{{ vm.static.characters.bloodlines[vm.cd.bloodline].traditions.name }}</span>
                 </div>
-                <div class="look">
-                    Choose a look: <span ng-repeat="look in vm.static.classes[vm.class].starters.look">{{ look }}, </span>
+                <div class="style">
+                    <strong>Choose a style:</strong> <span>{{ vm.static.characters.bloodlines[vm.cd.bloodline].traditions.style }}, </span>
                 </div>
-                <div class="personality">
-                    Choose a personality: <span ng-repeat="personality in vm.static.classes[vm.class].starters.personality">{{ personality }}, </span>
+                <div class="lore">
+                    <strong>Choose lore:</strong> <span>{{vm.static.characters.bloodlines[vm.cd.bloodline].traditions.lore}}</span>
+                </div>
+                <div class="context">
+                    <strong>Contexts:</strong>
+                    
+                        <div>
+                            <strong>Refuge:</strong>
+                            <div ng-repeat="refuge in vm.static.characters.bloodlines[vm.cd.bloodline].context.refuge">{{refuge}}</div>
+                        </div>
+                        <div>
+                            <strong>Drive:</strong>
+                            <div ng-repeat="drive in vm.static.characters.bloodlines[vm.cd.bloodline].context.drive">{{drive}}</div>
+                        </div>
+                        <div>
+                            <strong>Breach:</strong>
+                            <div ng-repeat="breach in vm.static.characters.bloodlines[vm.cd.bloodline].context.breach">{{breach}}</div>
+                        </div>
+                    
                 </div>
             </div>
             <div class="">
-
+                Choose from the following for your <strong>{{vm.cd.explorers[0].class}}</strong>
+                <div>
+                    <strong>Starting stats:</strong> 
+                    IRON: {{vm.static.characters.explorers[vm.cd.explorers[0].class].stats.iron}}, 
+                    GLASS: {{vm.static.characters.explorers[vm.cd.explorers[0].class].stats.glass}}, 
+                    SULPHUR: {{vm.static.characters.explorers[vm.cd.explorers[0].class].stats.sulphur}}, 
+                    MERCURY: {{vm.static.characters.explorers[vm.cd.explorers[0].class].stats.mercury}} <br />
+                    <i><strong>Additionally: add +1 to any stat</strong></i>
+                </div>
+                <div>
+                    <strong>Gear:</strong><br />                    
+                    Start with a weapon (1 perk, 1 flaw), plus 1:<br />
+                    <div ng-repeat="gear in vm.static.characters.explorers[vm.cd.explorers[0].class].gear.weapons">• {{gear.name}} ({{gear.tags[0]}})</div>
+                    <strong>Pick 2 utility items:</strong> {{vm.static.characters.explorers[vm.cd.explorers[0].class].gear.utility}}
+                </div>
+                <div>
+                    <strong style="text-decoration: underline;">Perks</strong>
+                    <div class="d-flex" ng-repeat="perk in vm.static.weapon_tags.perks">
+                        <div><i><strong>{{perk.name}}:</strong></i> </div>
+                        <div>{{perk.description}}</div>
+                    </div>
+                    <strong style="text-decoration: underline;">Flaws</strong>
+                    <div class="d-flex" ng-repeat="flaw in vm.static.weapon_tags.flaws">
+                        <div><i><strong>{{flaw.name}}:</strong></i> </div>
+                        <div class="ml-1">{{flaw.description}}</div>
+                    </div>
+                </div>
             </div>
         </div>        
     </div>
     <!-- Name / Classes -->
     <div class="d-flex my-2">
-        <div>Name: <input ng-model="vm.cd.name" /></div>
+        <div>Bloodline Name: <input ng-model="vm.cd.name" /></div>
         <div>Player Name: <input ng-model="vm.cd.playername" /></div>
         <div>Bloodline: 
             <select ng-model="vm.cd.bloodline">
@@ -100,7 +164,8 @@
             <select ng-model="vm.cd.explorers[0].class">
                 <option ng-repeat="explorer in vm.explorers" value="{{explorer.key}}" ng-selected="{{explorer.key == vm.explorer}}">{{explorer.value}}</option>
             </select>
-        </div>        
+        </div>
+        <div>Explorer Name: <input ng-model="vm.cd.explorer[0].name" /></div>        
     </div>
     <div class="d-flex">
         <!-- Bloodline -->
@@ -128,13 +193,13 @@
                 </div>
             </div>
             <div>
-                <h2>
-                    Moves:
+                <div>
+                    <div class="move-category">Moves</div>
                     <span class="move-filter">Show 
                         <a href ng-click="vm.cd.visibility.all_moves = !vm.cd.visibility.all_moves">{{ vm.cd.visibility.all_moves ? ' only selected' : 'all' }}</a>
                     </span>
-                </h2>
-                <div class="move" ng-repeat="move in vm.static.characters.bloodlines[vm.cd.bloodline].moves " ng-show="vm.filterMoves(move.key, 'bloodline');"> 
+                </div>
+                <div class="character_move" ng-repeat="move in vm.static.characters.bloodlines[vm.cd.bloodline].moves " ng-show="vm.filterMoves(move.key, 'bloodline');"> 
                     <input
                                 id="move_{{move.key}}"                             
                                 type="checkbox" 
@@ -148,26 +213,35 @@
             </div>
             <div>
                 <div>
-                    <div class="move_header">Shelter Move</div>
-                    <div markdown-it="vm.static.characters.bloodlines[vm.bloodline].shelter_move"></div>
+                    <div class="move-category">Shelter Move</div>
+                    <div markdown-it="vm.static.characters.bloodlines[vm.cd.bloodline].shelter_move"></div>
                 </div>
             </div>
             <div>
-                <div class="move_header">Pact: {{vm.static.bloodlines[vm.cd.bloodline].pact.name}}</div>
-                <div markdown-it="vm.static.characters.bloodlines[vm.bloodline].pact.description"></div>
-                Pacts:
-                <textarea ng-model="vm.cd.pacts"></textarea>
+                <div class="move-category">Pact: <span class="{{vm.static.characters.bloodlines[vm.cd.bloodline].pact.color}}">{{vm.static.characters.bloodlines[vm.cd.bloodline].pact.name}}</span></div>
+                <div markdown-it="vm.static.characters.bloodlines[vm.cd.bloodline].pact.description"></div>
+                Pacts:<br />
+                <textarea ng-model="vm.cd.pacts" style="width:99%;height:100px;"></textarea>
             </div>
             <div>
-                <div class="move_header">
+                <div class="move-category">
                     Traditions:
                 </div>
-                Style:
-                <textarea ng-model="vm.cd.traditions.style"></textarea>
-                Lore:
-                <textarea ng-model="vm.cd.traditions.lore"></textarea>
-                
+                <div class="d-flex">
+                    <div class="col-md-6">
+                        Style:<br />
+                        <textarea style="width:99%;height:50px;" ng-model="vm.cd.traditions.style"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        Lore:<br />
+                        <textarea style="width:99%;height:50px;" ng-model="vm.cd.traditions.lore"></textarea>                
+                    </div>
+                </div>
             </div>
+            <div class="move-category">
+                Notes:
+            </div>
+            <textarea style="width:99%;height:200px;" ng-model="vm.cd.notes"></textarea>
         </div>
         <!-- Explorer -->
         <div class="explorer col-md-6">
@@ -215,7 +289,16 @@
                         </div>
                     </div>                        
                 </div>
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center">                    
+                    <div class="mx-2 stat-enclosure p-1">
+                        <div>Contamination:</div>
+                        <div class="d-flex">
+                            <div class="harm-input" ng-class="vm.cd.explorers[0].health.contamination > 0 ? 'bg-red' : ''" ng-click="vm.markContamination(1)"></div>
+                            <div class="harm-input" ng-class="vm.cd.explorers[0].health.contamination > 1 ? 'bg-red' : ''" ng-click="vm.markContamination(2)"></div>
+                            <div class="harm-input" ng-class="vm.cd.explorers[0].health.contamination > 2 ? 'bg-red' : ''" ng-click="vm.markContamination(3)"></div>
+                            <div class="clear pointer ml-2" ng-click="vm.markContamination(0)">clear</div>
+                        </div>
+                    </div>
                     <div class="stats stat-enclosure m-2 p-1">
                         BLOOD: <input type="number" ng-model="vm.cd.explorers[0].blood" />
                     </div>
@@ -233,34 +316,33 @@
                 </div>
             </div>
             <div>
-                <h2>
-                    Moves:
+                <div>
+                    <div class="move-category">Moves</div>
                     <span class="move-filter">Show 
-                        <a href ng-click="vm.cd.explorers[0].visibility.all_moves = !vm.cd.explorers[0].visibility.all_moves">{{ vm.cd.explorers[0].visibility.all_moves ? ' only selected' : 'all' }}</a>
-                        
+                        <a href ng-click="vm.cd.explorers[0].visibility.all_moves = !vm.cd.explorers[0].visibility.all_moves">{{ vm.cd.explorers[0].visibility.all_moves ? ' only selected' : 'all' }}</a>                        
                     </span>
-                </h2>
-                <div class="move" ng-repeat="move in vm.static.characters.explorers[vm.cd.explorers[0].class].moves " ng-show="vm.filterMoves(move.key, 'explorer');">
+                </div>
+                <div class="character_move" ng-repeat="move in vm.static.characters.explorers[vm.cd.explorers[0].class].moves " ng-show="vm.filterMoves(move.key, 'explorer');">
                     <input
                                 id="move_{{move.key}}"                             
                                 type="checkbox" 
                                 value="{{move.key}}" 
                                 ng-checked="vm.cd.explorers[0].moves.indexOf(move.key) > -1"                            
                                 ng-click="vm.updateExplorerMoves(move.key)" />
-                    <span ng-class="{'red': vm.cd.explorers[0].moves.indexOf(move.key) > -1}">{{move.name}}: </span>
+                    <span ng-class="{'red': vm.cd.explorers[0].moves.indexOf(move.key) > -1}"><strong>{{move.name}}:</strong></span>
                         <span markdown-it="move.description"></span>
                     
                 </div>             
             </div>
             
             <div>
-                <h2>
-                    Blood Gifts:
+                <div>
+                    <div class="move-category">Blood Gifts</div>
                     <span class="move-filter">Show 
                         <a href ng-click="vm.cd.explorers[0].visibility.all_gifts = !vm.cd.explorers[0].visibility.all_gifts">{{ vm.cd.explorers[0].visibility.all_gifts ? ' only selected' : 'all' }}</a>
                     </span>                   
-                </h2>
-                <div class="move" ng-repeat="blood in vm.static.characters.explorers[vm.cd.explorers[0].class].gifts" 
+                </div>
+                <div class="character_move" ng-repeat="blood in vm.static.characters.explorers[vm.cd.explorers[0].class].gifts" 
                     ng-show="vm.filterMoves(blood.key, 'blood')"> 
                     <input
                                 id="blood_{{blood.key}}"                             
@@ -274,13 +356,23 @@
                 </div>
                 <div>
                     <div class="move-category">Death Move</div>
-                    <div markdown-it="vm.static.characters.explorers[vm.explorer].death_move"></div>
+                    <div markdown-it="vm.static.characters.explorers[vm.cd.explorers[0].class].death_move"></div>
                 </div>
-                <div>
+                <div class="move-category">
                     Covenants:
-                    <textarea ng-model="vm.cd.explorers[0].covenants"></textarea>
                 </div>
+                <textarea ng-model="vm.cd.explorers[0].covenants"></textarea>
+            </div>            
+            
+            <div class="move-category">
+                Gear:
             </div>
+            <textarea ng-model="vm.cd.explorers[0].gear"></textarea>
+            
+            <div class="move-category">
+                Notes:
+            </div>
+            <textarea ng-model="vm.cd.explorers[0].notes"></textarea>
         </div>
     </div>
 </form>

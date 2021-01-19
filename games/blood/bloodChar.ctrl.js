@@ -107,13 +107,14 @@
             vm.showMoves = showMoves;
             vm.filterMoves = filterMoves;
             vm.markHarm = markHarm;
+            vm.markContamination = markContamination;
 
             init();            
 
             function init(){ 
                 getStatic();
                 getDudes();
-                loadCharacter(13)
+                //loadCharacter(13)
             }            
 
             function getStatic(){                
@@ -332,6 +333,10 @@
                     default:
                         vm.cd.explorers[0].health.harm = level;
                     }
-            }           
+            }
+            
+            function markContamination(level){
+                vm.cd.explorers[0].health.contamination = level;
+            }
         }
 })();
