@@ -247,11 +247,11 @@
 					'reference@auth.blood': {
 						templateUrl: 'games/blood/bloodRef.html',
 						controller: 'BloodReferenceController as vm'
+					},
+					'mc@auth.blood': {
+						templateUrl: 'games/blood/bloodMC.html',
+						controller: 'BloodMCController as vm'
 					}
-					// 'mc@auth.west': {
-					// 	templateUrl: 'games/blood/bloodMC.html',
-					// 	controller: 'WestMCController as vm'
-					// }
 				}
 			})		
 			.state('home',{

@@ -10,6 +10,9 @@ f87858
     strong{
         color:#f83800;
     }
+    hr{
+        background-color:#c82000;
+    }
     .move-category{
         font-size:20px;
         color:#c82000;
@@ -34,7 +37,7 @@ f87858
     }
 </style>
 <div class="blood-reference">
-    <div class="d-flex">
+    <div class="moves-section d-flex">
         <div class="col-md-3 p-2">
             <div class="move-category">BASIC MOVES</div>
             <div class="move" ng-repeat="move in vm.static.moves.basic">
@@ -61,6 +64,25 @@ f87858
             <div class="move" ng-repeat="move in vm.static.moves.generation">
                 <div class="move-name" ng-click="move.hide = !move.hide">{{move.name}}</div>
                 <div class="move-description" markdown-it="move.description" ng-hide="!move.hide"></div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="tags-section d-flex">        
+        <div class="d-flex">
+            <div class="perks px-2" style="border-right:solid 1px #c82000;">
+                <strong style="text-decoration: underline;">Perks</strong>
+                <div class="d-flex" ng-repeat="perk in vm.static.weapon_tags.perks">
+                    <div><i><strong>{{perk.name}}:</strong></i> </div>
+                    <div class="ml-1">{{perk.description}}</div>
+                </div>
+            </div>
+            <div class="flaws px-2">                
+                <strong style="text-decoration: underline;">Flaws</strong>
+                <div class="d-flex" ng-repeat="flaw in vm.static.weapon_tags.flaws">
+                    <div><i><strong>{{flaw.name}}:</strong></i> </div>
+                    <div class="ml-1">{{flaw.description}}</div>
+                </div>
             </div>
         </div>
     </div>

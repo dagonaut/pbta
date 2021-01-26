@@ -11,8 +11,8 @@
         
             vm.tabs = {
                 charactersheet: { index: 0, heading: 'Character Sheet'},
-                reference: { index: 1, heading: 'Reference'}             
-                //mc: { index: 2, heading: 'Marshall'}
+                reference: { index: 1, heading: 'Reference'},             
+                mc: { index: 2, heading: 'MC'}
             }; 
             
             vm.redirectToGfolder = function(){

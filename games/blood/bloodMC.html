@@ -1,0 +1,108 @@
+<style>
+/*
+f87858
+    f83800
+    a81000
+    a80020
+
+    move background: #444d524a
+*/
+    strong{
+        color:#f83800;
+    }
+    .isBold{
+        color:#c82000;
+        font-weight: bold;
+    }
+    .move-category{
+        font-size:20px;
+        color:#c82000;
+        text-align:right;
+        font-weight:bold;
+        border-bottom:#c82000 2px solid;
+    }
+    .move-name{
+        color:#f83800;
+        font-weight:500;
+        font-size:16px;
+        cursor:pointer;
+        text-transform: uppercase;
+        border-bottom:#c82000 1px solid;
+    }
+    .move-description{
+        padding:2px;
+        background-color:#444d524a;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border:1px solid #c82000;
+    }
+</style>
+<div class="blood-reference">
+    <div class="d-flex" ng-repeat="d in vm.dudes" style="border:1px #c82000 solid; padding:2px;margin:2px;">        
+        <div class="bloodline w-50">
+            <div class="d-flex">
+                <div class="name">{{d.data.name}}</div>
+                <div class="name">{{d.data.playername}}</div>
+                <div class="name">{{d.data.bloodline}}</div>
+            </div>
+            <div class="d-flex">                
+                <div class="mc-stats" style="width:100px;">
+                    <div>C: <span>{{d.data.stat.chalices}}</span></div>
+                    <div>S: <span>{{d.data.stat.swords}}</span></div>
+                    <div>W: <span>{{d.data.stat.wands}}</span></div>
+                    <div>$: <span>{{d.data.stat.coins}}</span></div>
+                    <div>R: <span>{{d.data.stat.relics}}</span></div>
+                </div>
+                <div class="mc-moves">
+                    <div ng-repeat="bm in vm.static.characters.bloodlines[d.data.bloodline].moves" ng-show="d.data.moves.indexOf(bm.key) > -1">
+                        <strong>{{bm.name}}</strong> - <span markdown-it="bm.description"></span>
+                    </div> 
+                    <div><strong>Shelter move:</strong>{{vm.static.characters.bloodlines[d.data.bloodline].shelter_move}}</div>               
+                </div>
+            </div>
+        </div>
+        <div class="explorer w-50">            
+            <div class="d-flex">
+                <div class="mr-2">{{d.data.explorers[0].name}}</div>
+                <div class="m-2">{{d.data.explorers[0].class}}</div>                
+                <div class="m-2">Blood: {{d.data.explorers[0].contamination}}</div>
+                <div class="m-2">Contamination: {{d.data.explorers[0].blood}}</div>
+            </div>
+            <div class="d-flex">
+                <div class="m-1">Armor: {{d.data.explorers[0].health.armor}}</div>
+                <div class="m-1">Harm: {{d.data.explorers[0].health.harm}}</div>
+                <div class="m-1"> 
+                    <span class="m-1" ng-class="{ 'isBold' : d.data.explorers[0].health.wounds.minor}">Minor</span>
+                    <span class="m-1" ng-class="{ 'isBold' : d.data.explorers[0].health.wounds.major}">Major</span>
+                    <span class="m-1" ng-class="{ 'isBold' : d.data.explorers[0].health.wounds.mortal}">Mortal</span>
+                </div>
+                
+            </div>
+            <div class="d-flex">                
+                <div class="mc-stats" style="width:100px;">
+                    <div>I: <span>{{d.data.explorers[0].stats.iron}}</span></div>
+                    <div>G: <span>{{d.data.explorers[0].stats.glass}}</span></div>
+                    <div>S: <span>{{d.data.explorers[0].stats.sulphur}}</span></div>
+                    <div>M: <span>{{d.data.explorers[0].stats.mercury}}</span></div>                
+                </div>            
+                <div class="mc-moves">
+                    <div ng-repeat="em in vm.static.characters.explorers[d.data.explorers[0].class].moves" ng-show="d.data.explorers[0].moves.indexOf(em.key) > -1">
+                        <strong>{{em.name}}</strong> - <span markdown-it="em.description"></span>
+                    </div>
+                    <div><strong>Death move:</strong><span markdown-it="vm.static.characters.bloodlines[d.data.bloodline].death_move"></span></div>
+                    <hr />                
+                    <div ng-repeat="bg in vm.static.characters.explorers[d.data.explorers[0].class].gifts" ng-show="d.data.explorers[0].gifts.indexOf(bg.key) > -1">
+                        <strong>{{bg.name}}</strong> - <span markdown-it="bg.description"></span>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="mx-gear">
+            <pre>{{d.data.explorers[0].gear}}</pre>
+            <div>
+                {{d.data.explorers[0].pacts}}
+            </div>
+        </div>
+        
+    </div>    
+</div>

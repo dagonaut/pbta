@@ -51,7 +51,7 @@
             {
                 "key": "confront",
                 "name": "Confront",
-                "description": "**When you confront the foe head-on, roll +Iron.** n**On a hit**, you throw them off-balance and create an Opening, but take the brunt of their attacks. ****On a 7-9**** pick 1, ****on a 10+**** pick 2:  \n* You roll with the blow: take 1 less harm.  \n* You are fearsome and commanding: the foe will focus only on you.  \n* Your mind is steel: you don’t mark contamination."
+                "description": "**When you confront the foe head-on, roll +Iron.**  \n**On a hit**, you throw them off-balance and create an Opening, but take the brunt of their attacks. ****On a 7-9**** pick 1, ****on a 10+**** pick 2:  \n* You roll with the blow: take 1 less harm.  \n* You are fearsome and commanding: the foe will focus only on you.  \n* Your mind is steel: you don’t mark contamination."
             },
             {
                 "key": "stand_with_me",
@@ -649,6 +649,33 @@
                         "description":"You know secret rituals to preserve an enemy's power in a severed part of their body. When you draw on the power of a trophy carved from an Acolyte, roll +Iron on Drink Deep instead of +Sulphur."
                         }
                 ],
+                "moves_key":
+                    {
+                        "lightning_swift": {
+                            "name":"Lightning Swift",
+                            "description":"You're incredibly fast. Your attacks alwayshave the cleave tag, and you have advantage on **Dodge.**"
+                        },
+                        
+                        "regain_momentum": {
+                            "name":"Regain Momentum",
+                            "description":"Flesh and blood is less important that confidence. When you land a successful **Strike**, heal the last Harm you took."
+                        },
+                        
+                        "trick_weapon":{
+                            "name":"Trick Weapon",
+                            "description":"Your weapon is versatile, enchanted or a marvel of engineering. Pick two perk/flaw sets for it: you can switch between the two at a moment’s notice."
+                        },
+                        
+                        "blood_trail":{
+                            "name":"Blood Trail",
+                            "description":"You're merciless in pressing your advantage.  \nOnce you’ve landed a **Strike** on a target, get advantage on future **Strikes**."
+                        },
+                        
+                        "trophy":{
+                            "name":"Trophy",
+                            "description":"You know secret rituals to preserve an enemy's power in a severed part of their body. When you draw on the power of a trophy carved from an Acolyte, roll +Iron on Drink Deep instead of +Sulphur."
+                        }
+                    },
                 "gifts":[
                     {
                         "key":"frenzy",
@@ -687,6 +714,12 @@
                 },
                 "moves":[
                     {
+                        "key":"cast_the_runes",
+                        "name":"Cast the Runes",
+                        "description":"**When you scry into the future**, describe your ritual and ask the GM a question that can be answered with yes or no. Then roll +Mercury.  \nOn a hit, they’ll answer truthfully; get feeting advantage acting on the answer. On a 10+ you may ask a follow-up question"
+                    },
+                    {
+
                         "key":"arcanist",
                         "name":"Arcanist",
                         "description":"**When you use a spell learnt via Drink Deep**, pick one:  \n• The spell’s effects last as long as you like.  \n• The spell affects more or fewer targets.  \n• The spell doesn’t take effect now, but when a condition you set out is met."
