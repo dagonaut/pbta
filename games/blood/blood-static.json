@@ -840,6 +840,11 @@
                         "description":"Your spirit has its own weapon: give it a perk and a flaw. **When the spirit fights**, roll +Sulphur to **Strike** and **Face the Horde**. If you have **Astral Projection**, the spirit can fight while you take independent action."
                         },
                         {
+                            "key":"astral_projection",
+                            "name":"Astral Projection",
+                            "description":"**So long as you concentrate**, you can project your spirit away from you, see through its eyes, and - with effort - pull switches, open doors, move small objects, etc."
+                        }
+                        {
                         "key":"bloody_insight",
                         "name":"Bloody Insight",
                         "description":"**When you take harm from an adversary**, hold 1. Spend 1 to reveal a weakness in their fighting style and give an ally advantage against them. Spend 3 to create an Opening."
