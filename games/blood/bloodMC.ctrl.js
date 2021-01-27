@@ -17,6 +17,7 @@
             vm.dudes = [];
 
             // Methods
+            vm.refreshDudes = getDudes;
 
             // Events
 
@@ -44,6 +45,7 @@
                 apiservice.GetByGameId(_characterTable, _gameid).then(getDudesSuccess, getDudesFail);
 
                 function getDudesSuccess(r){
+                    vm.dudes = [];
                     // Unpack the JSON data
                     r.forEach(function(char){
                         let model = char;

@@ -43,6 +43,9 @@ f87858
     .border-bottom{ border-bottom:1px #c82000 dotted;}
 </style>
 <div class="blood-reference">
+    <div>
+        <button class="btn btn-primary" ng-click="vm.refreshDudes()">Refresh Dudes</button>
+    </div>
     <div class="d-flex" ng-repeat="d in vm.dudes" style="border:1px #c82000 solid; padding:2px;margin:2px;">        
         <div class="bloodline w-50">
             <div class="d-flex">
