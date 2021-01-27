@@ -148,6 +148,63 @@
             {"name":"Unstable", "description":"You’re vulnerable and unable to move after using it."}
         ]
     },
+    "covenants":[
+        {
+            "name":"One of you nursed the other back to health.",
+            "benefit":"When one of you protects the other from harm, strengthen the covenant.",
+            "negative":"When one of you recklessly puts the other in danger, betray the covenant."
+            },
+            {
+            "name":"One of you is teaching the other to fight.",
+            "benefit":"When the trainee gets a killing blow, strengthen the covenant.",
+            "negative":"When one of you shows concerning brutality, betray the covenant."
+            },
+            {
+            "name":"You're hunting down a lost treasure together.",
+            "benefit":"When you find a clue to the treasure's location, stregthen the covenant.",
+            "negative":"When you lie to or mislead the other, betray the covenant."
+            },
+            {
+            "name":"You used to be close friends or lovers.",
+            "benefit":"When you share stories of the good times, strengthen the covenant.",
+            "negative":"When you act as you did when you broke up, betray the covenant."
+            },
+            {
+            "name":"You're afflicted with the same curse.",
+            "benefit":"When you help the other manage the curse, strengthen the covenant.",
+            "negative":"When you willingly embrace the curse's benefits, betray the covenant."
+            },
+            {
+            "name":"You're long-time monster hunter partners.",
+            "benefit":"When one of you saves the other from danger, strengthen the covenant.",
+            "negative":"When one of you embraces the Castle's corruption, betray the covenant."
+            },
+            {
+            "name":"One of you has strange dreams the other is studying.",
+            "benefit":"When one of you benefits from an insight gained from the dreams, strengthen the covenant.",
+            "negative":"When one of you is hurt because they followed the dreams, betray the covenant."
+            },
+            {
+            "name":"There's a grudge or rivalry between you.",
+            "benefit":"When one of you risks danger or cost to aid the other, strengthen the covenant.",
+            "negative":"When one of you shows off their superiority over the other, betray the covenant."
+            },
+            {
+            "name":"You grew up together.",
+            "benefit":"When you take time out to catch up, strengthen the covenant.",
+            "negative":"When you turn your back on the ways of your youth, betray the covenant"
+            },
+            {
+            "name":"You follow different faiths.",
+            "benefit":"When one makes sure the other has time for their observances, strengthen the covenant.",
+            "negative":"When you preach the superiority of your faith's teachings, betray the covenant."
+            },
+            {
+            "name":"One of you is heavily in debt to the other.",
+            "benefit":"When one of you forgives or pays back the debt, strengthen the covenant.",
+            "negative":"When you take the other's gear without permission, betray the covenant."
+            }
+    ],
     "characters":{
         "founders":{
             "template":{
@@ -954,5 +1011,3 @@
         }
     }
 }
-
-
