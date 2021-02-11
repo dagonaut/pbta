@@ -14,6 +14,7 @@
             vm.visible = { "Basic": [], "Other": [], "Dinero": [], "Fights": []};
             vm.moves = [];
             vm.fightmoves = [];
+            vm.gear = [];
             
             vm.nameOptions = { 
                 all: false,               
@@ -532,6 +533,50 @@
                     {"id":"424", "gender": "horse", "type": "horse", "name":"Velvet"},
                     {"id":"425", "gender": "horse", "type": "horse", "name":"Whirlwind"}
                 ]
+                vm.gear = [
+                    {
+                        "category": "Common Guns",
+                        "description": "Usually cost 1 dinero",
+                        "list": [
+                            "Derringer (2 harm close reload loud)",
+                            "Revolver (2 harm close reload loud)",
+                            "Rifle (2 harm close/far loud)",
+                            "Magnum Pistol (3 harm close reload loud)",
+                            "Shotgun (3 harm close reload messy loud)"
+                        ]
+                    },
+                    {
+                        "category": "Unusual Guns",
+                        "description": "Usually cost 1 or 2 dinero",
+                        "list": [
+                            "Buffalo Gun (3 harm close/far reload loud)",
+                            "Le Mat Revolver (2 harm close reload loud, with one-shot shotgun: 3 harm close refill)",
+                            "Musket (3 harm close/far reload loud)",
+                            "Gatling Gun (3 harm close/far area messy loud)"
+                        ]
+                    },
+                    {
+                        "category": "Melee Weapons",
+                        "description": "Usually costs 1 dineo",
+                        "list": [
+                            "Bayonet (2 harm hand)",
+                            "Big Knife (2 harm hand)",
+                            "Many, Many Knives ( 2 harm hand infinite)",
+                            "Saber (3 harm hand)",
+                            "Sword Cane (3 harm hand valuable)",
+                            "Tomahawk (2 harm hand)"
+                        ]
+                    },
+                    {
+                        "category": "Other",
+                        "description": "Costs... best guess",
+                        "list": [                    
+                            "Bow and Arrows (2 harm, close/far)",
+                            "Medket (3 uses, heal 1 harm per use) Cost: 1 dinero"
+                        ]
+                    }
+                ]
             }
+        
         }
 })();

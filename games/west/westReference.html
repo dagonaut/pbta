@@ -66,7 +66,13 @@
                 <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('spanish')" ng-model="vm.nameOptions.spanish" />Spanish</div>
                 <div class="mx-1"><input type="checkbox" ng-click="vm.updateOptions('asian')" ng-model="vm.nameOptions.asian" />Asian</div>
             </div>
-        </div>        
+        </div>
+        <h3 class="mt-2">Weapons / Gear</h3>
+        <div ng-repeat="cat in vm.gear">
+            <h2 class="orange">{{ cat.category }}</h2>
+            <div class="strong">{{ cat.description }}</div>
+            <div ng-repeat="item in cat.list">{{ item }}</div>
+        </div>
     </div>
     <div class="col-md-3 d-flex justify-content-between" ng-controller="ReferenceController">
         <div class="col-md-6">
