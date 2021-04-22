@@ -266,10 +266,10 @@
             {"body": "Huge Body, Long-Legged Body, Petite Body, Restless Body, Sturdy Body, Wiry Body"}
         ],
         "stats":[
-            { "quick": 0, "grit": 2, "charm": 0, "savvy": 1, "strange": 0},
-            { "quick": 1, "grit": 2, "charm": -2, "savvy": 1, "strange": 1},
-            { "quick": 1, "grit": 2, "charm": -2, "savvy": 2, "strange": -1},
-            { "quick": 2, "grit": 2, "charm": -2, "savvy": 1, "strange": -1}
+            { "quick": 2, "grit": 1, "charm": -2, "savvy": 1, "strange": 1},
+            { "quick": 2, "grit": -1, "charm": -1, "savvy": 0, "strange": 2},
+            { "quick": 2, "grit": 2, "charm": -2, "savvy": 1, "strange": -1},
+            { "quick": 2, "grit": -1, "charm": 0, "savvy": 1, "strange": 1}
         ],
         "num_starting_moves":"Start with 3 moves",
         "moves_list":[
