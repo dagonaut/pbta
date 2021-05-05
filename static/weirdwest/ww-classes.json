@@ -274,19 +274,19 @@
         "num_starting_moves":"Start with 3 moves",
         "moves_list":[
             {"name":"Animal Friend", "description":  "When you Size Up an Animal, roll + Savvy.  On a hit, you may ask questions as if you had used the Size Up a Person move on them."},
-            {"name":"Born on Horseback", "description":  "In a Fight, spend 1 more than you normally would as long as you're on Horseback."},
-            {"name":"Horse Sense", "description":  "When you are alone with your Horse and wonder what your best course of action is, gain Insight."},
+            {"name":"Born on Horseback", "description":  "Get +1 Forward when FIGHTIN' while on horseback"},
+            {"name":"Horse Sense", "description":  "When you are alone with your Horse and wonder what your best course of action is roll + Strange to gain Insight."},
             {"name":"Live off the Land", "description":  "When you make the Downtime move, if you've spent considerable time in the wilderness, roll + Savvy.  On a hit, you find enough food to cover basic living expenses.  If your living expenses are already zero, gain one Dinero. On a 10+, either gain 1 Dinero, or find enough food to cover basic living expenses for another person."},
-            {"name":"The Quick and the Dead", "description": "When you Attack Someone, or make a Fight move that depends on Grit, roll Quick instead."},
+            {"name":"The Quick and the Dead", "description": "When you are FIGHTIN' or SUCKER PUNCHING use QUICK instead of GRIT."},
             {"name":"Trackin'", "description":  "When you read tracks, roll + Savvy.  On a hit, ask 2 questions.  On a 10+, ask 3. \n•What happened here? \n•Who did these tracks belong to? \n•Where did they go? \n•Where did they come from? \n•What were they doing?"},
             {"name":"Wander the Wastes", "description":  "When you travel into the wilderness, roll + Strange.  On a hit, you travel to any named location you've ever heard of. On a 10+, pick 4.  On a 7-9, pick 2. \n•Name a place; if it exists, you travel there. \n•The journey takes you twice as fast as you normally would. \n•The journey takes a single day, no matter how far or improbable. (Counts as 3 choices) \n•You can lead other people there (1 per person). \n•You arrive in an advantageous position, take +1 forward."}
         ],
         "moves":{
             "Animal Friend":  "When you Size Up an Animal, roll + Savvy.  On a hit, you may ask questions as if you had used the Size Up a Person move on them.",
-            "Born on Horseback":  "In a Fight, spend 1 more than you normally would as long as you're on Horseback.",
-            "Horse Sense":  "When you are alone with your Horse and wonder what your best course of action is, gain Insight.",
+            "Born on Horseback":  "Get +1 Forward when FIGHTIN' while on horseback.",
+            "Horse Sense":  "When you are alone with your Horse and wonder what your best course of action is roll + Strange to gain Insight.",
             "Live off the Land":  "When you make the Downtime move, if you've spent considerable time in the wilderness, roll + Savvy.  On a hit, you find enough food to cover basic living expenses.  If your living expenses are already zero, gain one Dinero. On a 10+, either gain 1 Dinero, or find enough food to cover basic living expenses for another person.",
-            "The Quick and the Dead": "When you Attack Someone, or make a Fight move that depends on Grit, roll Quick instead.",
+            "The Quick and the Dead": "When you are FIGHTIN' or SUCKER PUNCHING use QUICK instead of GRIT.",
             "Trackin'":  "When you read tracks, roll + Savvy.  On a hit, ask 2 questions.  On a 10+, ask 3. \n•What happened here? \n•Who did these tracks belong to? \n•Where did they go? \n•Where did they come from? \n•What were they doing?",
             "Wander the Wastes":  "When you travel into the wilderness, roll + Strange.  On a hit, you travel to any named location you've ever heard of. On a 10+, pick 4.  On a 7-9, pick 2. \n•Name a place; if it exists, you travel there. \n•The journey takes you twice as fast as you normally would. \n•The journey takes a single day, no matter how far or improbable. (Counts as 3 choices) \n•You can lead other people there (1 per person). \n•You arrive in an advantageous position, take +1 forward."
 
