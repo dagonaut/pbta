@@ -1,0 +1,72 @@
+[
+{
+"key":"perform_under_pressure",
+"name":"Perform Under Pressure",
+"description":"When you Perform Under Pressure to keep your concentration or composure, **roll+Poise**. \n**On a 10+**, you do it. \n**On a 7–9**, you flinch, hesitate, or slip up; the MC can offer you a worse outcome, a hard bargain, or an ugly choice."
+},
+{
+"key":"assert_authority",
+"name":"Assert Your Authority",
+"description":"When you Assert Your Authority with an implied or explicit threat, **roll+Vigor**. __Applicable Influence may affect the roll, if the MC chooses__. \n**On a 10+**, they are in awe have to choose: acquiesce and do what you want, or endure the consequences of defying you. \n**On a 7–9**, choose 1 action they perform before running off or fighting back:\n* obey the command, but poorly and with a nasty grudge\n* give you something they think you want\n* back off calmly, hands where you can see\n* tell you something you want to know (or you want to hear)"
+},
+{
+"key":"smack_some_sense",
+"name":"Smack Some Sense",
+"description":"When you Smack Some Sense into someone with physical violence, exchange blows and **roll+Vigor**. \n**On a 10+**, do your harm as established and choose 3. \n**On a 7–9**, do your harm and choose 2, but you leave yourself open to retaliation:\n* you protect yourself from loss of Spirit\n* you inflict terrible harm upon your target(s)\n* your enemy is stunned and awed by your force and skill\n* you end up where you want, ready for whatever comes next\n* you seize what you want from the enemy or environment"
+},
+{
+"key":"convince",
+"name":"Convince",
+"description":"When you Entice, Negotiate, or Convince, tell them what you want, a good reason they should accept, and **roll+Charm** (the value of a “good reason” is relative to the character, and up to the MC). __Applicable Influence may affect the roll, if the MC chooses__. \n**On a 10+**, your reasoning is good enough for them, and they do their best to accommodate your desires. \n**On a 7–9**, they present a counter-offer or their suspicions before accepting - if you can meet them halfway, they’ll cooperate."
+},
+{
+"key":"examine_a_scene",
+"name":"Examine A Scene",
+"description":"When you Examine a Scene, take a moment to closely observe and **roll+Logic**. \n**On a hit**, you can ask the MC questions. Whenever you act on one of the MC’s answers, **take +1Forward**. \n**On a 10+**, ask 3. \n**On a 7–9**, ask 1:\n* where’s my best escape route / way in / way past?\n* what danger is here or was recently here?\n* what should I be on the lookout for?\n* who’s in charge here?\n* why is this place important?"
+},
+{
+"key":"judge_a_person",
+"name":"Judge A Person",
+"description":"When you Judge a Person over the course of a conversation or interaction, **roll+Logic**. \n**On a 10+**, hold 3. \n**On a 7–9**, hold 1. \nWhile you’re interacting with them, spend your hold the learn the answer to the questions, 1 for 1:\n* are you telling the truth?\n* what are you really feeling?\n* what do you intend to do?\n* what do you wish I’d do?\n* how could I get you to _____?"
+},
+{
+"key":"dream",
+"name":"Submit to the Impossible Dream",
+"description":"When you Submit to the Impossible Dream for inspiration, **roll+Dream**. \n**On a hit**, you submit to the collective unconscious, gaining insight or inspiration on the current situation. In turn, the Dream may demand inspiration from you. \n**On a 10+**, your answer to the Dream’s inquiry will manifest in the world in some way, shape, or form. \n**On a 7-9**, the insight you receive is muted, short-lived, or partial at best. \n**On a miss**, you’re lost in reverie. Random thoughts and questions assault your mind, revealing your innermost fears, and you’re vulnerable to getting lost in the collective unconscious."
+}
+]
+Advanced Moves - After five Advancements, you may choose to advance some of the basic moves. On a 12+ roll for an advanced move, fill your resilience (instead of simply marking it), as well as an additional effect depending on the move.
+Perform Under Pressure: you attain a moment of superhuman grace and clarity
+Assert Your Authority: your target surrenders to your command, with no chance of refusal
+Smack Some Sense: you apply a flaw of your choice to the enemy, and one move option applies double the effect
+Entice, Negotiate, or Convince: you gain an ally, confidante, partner, informant, lover, or friend.
+Examine a Scene: you may ask all available questions, and get +1Ongoing using the scene in moves
+Judge a Person: you may ask any 3 questions, and get +1Ongoing with this person this scene
+Submit to the Impossible Dream: you take inspiration from or plant inspiration into a specific consciousness, or else connect to an enlightened one
+
+Peripheral Moves
+
+When you protect someone or something from harm, either stand steady in defiant defence and roll+Vigor, or keep moving to draw the danger with you and roll+Poise. On a hit, apply the appropriate effect according to the stat used, and choose 1 result from the appropriate stat choices. On a 10+, you also negate half the attack’s effect or damage.
+Vigor: You redirect the enemy attack to yourself
+-Negate half the attack’s effect or damage
+-Get +1Forward against the attacker
+-Get -2 on the next “Endure a Blow” roll
+Poise: You focus the enemy attention on yourself
+-Negate half the attack’s effect or damage
+-Open up the attacker to an ally, giving that ally +1 forward against the attacker
+-Inflict minor harm on the attacker
+
+When you endure a blow, roll+Spirit lost. On a miss, the MC can choose something from the 7–9 list below. If she does though, it only increases your resolve, and you regain 1 Spirit or 1 Moxie (your choice).
+On a 7–9, the MC can choose 1. Or, you may lose 1 additional Spirit or 1-Moxie to snap to your senses and negate the chosen effect instead:
+-You lose your footing or position.
+-You lose your grip on whatever you’re holding.
+-You are stunned or confused, unable to tell for sure what just happened.
+-You miss your mark or noticing something important.
+-You’re a bloody, bruised, or sweaty mess.
+On a 10-12, the MC can choose 1, which you can negate by losing an additional 2-Spirit or 2-Moxie:
+-You’re out of action: unconscious, trapped, incoherent or panicked.
+-It’s worse than it seemed. Mark a flaw.
+-Something is broken: your resolve, your bones, or your equipment.
+-Choose 2 from the 7–9 list above.
+On a 13+, it’s light out, bucko. Only Deus ex Machina can save you now.
+Once per session, when you go amongst those of your ideology preaching revolution, roll+Moxie. On a 10+, your message spreads with those who share your beliefs, hold 2. On a 7-9, hold 1. You may spend your hold 1-for-1 to reroll one move roll while among members of your Ideology. On a miss, your message is warped and twisted, and only feeds the opposition.
