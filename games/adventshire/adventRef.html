@@ -1,0 +1,49 @@
+<style>
+/*
+f87858
+    f83800
+    a81000
+    a80020
+
+    move background: #444d524a
+*/
+    strong{
+        color:#f83800;
+    }
+    hr{
+        background-color:#c82000;
+    }
+    .move-category{
+        font-size:20px;
+        color:#c82000;
+        text-align:right;
+        font-weight:bold;
+        border-bottom:#c82000 2px solid;
+    }
+    .move-name{
+        color:#f83800;
+        font-weight:500;
+        font-size:16px;
+        cursor:pointer;
+        text-transform: uppercase;
+        border-bottom:#c82000 1px solid;
+    }
+    .move-description{
+        padding:2px;
+        background-color:#444d524a;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border:1px solid #c82000;
+    }
+</style>
+<div class="advent-reference">
+    <div class="moves-section d-flex">
+        <div class="col-md-3 p-2">
+            <div class="move-category">BASIC MOVES</div>
+            <div class="move" ng-repeat="move in vm.static.basic_moves">
+                <div class="move-name" ng-click="move.hide = !move.hide">{{move.name}}</div>
+                <div class="move-description" markdown-it="move.description" ng-hide="!move.hide"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -253,6 +253,24 @@
 						controller: 'BloodMCController as vm'
 					}
 				}
+			})			
+			.state('auth.advent',{
+				url: '/advent',	
+				stateName: 'Advent',			
+				views: {	
+					'advent':{
+						templateUrl: 'games/adventshire/advent.html',
+						controller: 'AdventController as vm'
+					},			
+					'charactersheet@auth.advent': {
+						templateUrl: 'games/adventshire/adventChar.html',
+						controller: 'AdventCharacterController as vm'
+					},
+					'reference@auth.advent': {
+						templateUrl: 'games/adventshire/adventRef.html',
+						controller: 'AdventReferenceController as vm'
+					}
+				}
 			})		
 			.state('home',{
 				url: '/'

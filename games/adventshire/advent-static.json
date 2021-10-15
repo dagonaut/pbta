@@ -62,5 +62,20 @@
         "game_name": "Adventshire",
         "game_description": "Steampunk, unfinished, like How the West Was Lost",
         "changelog": []
+    },
+    "temp":{
+        "key": "magician",
+        "name": "The Magician",
+        "description":"There are many things to be amazed by in Adventshire. So to really dazzle the masses, you’ve got to have something special. Something flashy and unique. Distract them well enough and they won’t even think to look at what you’re hiding behind your smile.",
+        "starting_stats":[
+            {"poise":-1, "charm": 2, "vigor": -1, "logic": 1, "dream": 1},
+            {"poise":1, "charm": 2, "vigor": -2, "logic": -1, "dream": 2},
+            {"poise":1, "charm": 2, "vigor": 0, "logic": -1, "dream": 1},
+            {"poise":-1, "charm": 2, "vigor": 1, "logic": 1, "dream": 0}
+        ],
+        "starting_gear":[],
+        "moves":[],
+        "advancements":[]
     }
 }
+
