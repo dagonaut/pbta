@@ -28,6 +28,7 @@
                     "enlightenment":0,
                     "resilience": 0
                 },
+                "armor": 0,
                 "moxie": 0,
                 "influence": 0,
                 "advancements": [],
