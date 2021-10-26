@@ -285,6 +285,31 @@
             </div>
             <textarea ng-model="vm.cd.notes"></textarea>
         </div>
+        <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
+            
+            <h2>
+                Moves:
+                <span class="move-filter">Show 
+                    <a href ng-click="vm.showMoves('mine');" ng-class="vm.cd.visibility.moves === 'mine' ? 'strong' : ''">mine</a> | 
+                    <a href ng-click="vm.showMoves('class');" ng-class="vm.cd.visibility.moves === 'class' ? 'strong' : ''">{{vm.cd.class}}</a> | 
+                    <a href ng-click="vm.showMoves('all');" ng-class="vm.cd.visibility.moves === 'all' ? 'strong' : ''">all</a>
+                </span>
+                <!-- <span class="pull-right pointer" style="font-size:smaller;" 
+                    ng-click="vm.cd.visibility.moves = !vm.cd.visibility.moves">Show {{ vm.cd.visibility.moves ? 'Selected Only' : 'All'}}</span> | 
+                <span class="pull-right pointer" style="font-size:smaller;" 
+                    ng-click="vm.cd.visibility.allmoves = !vm.cd.visibility.allmoves">Show {{ vm.cd.visibility.allmoves ? 'All' : 'Class'}} moves</span> -->
+            </h2>
+            <div ng-repeat="move in vm.static.characters[vm.cd.class].moves " ng-show="vm.filterMoves(move.key);"> <!-- | filter: ( vm.cd.visibility.allmoves || '') && { class: vm.cd.class } -->
+                <input
+                                id="move_{{move.key}}"                             
+                                type="checkbox" 
+                                value="{{move.key}}" 
+                                ng-checked="vm.cd.moves.indexOf(move.key) > -1"                            
+                                ng-click="vm.updateMoves(move.key)" />
+                    <span ng-class="{'red': vm.cd.moves.indexOf(move.key) > -1}"><strong>{{move.name}}:</strong></span>
+                        <span markdown-it="move.description"></span>
+            </div>
+        </div>
     </div>
 </form>
 

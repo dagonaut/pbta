@@ -5,16 +5,15 @@
         .module('pbta_resources')
         .controller('AdventCharacterController', AdventCharacterController);
 
-        AdventCharacterController.$inject = [];
-        function AdventCharacterController(){
+        AdventCharacterController.$inject = ['$http', 'apiservice'];
+        function AdventCharacterController($http, apiservice){
             let vm = this;
-            let _gameid = 8;           
+            let _gameid = 8;
+            let _characterTable = "tbl_char";
+            vm.userId = 2;           
         
             // Properties
             vm.model = {
-                "id": 0,
-                "userId": 0,
-                "gameId": 6,
                 "name": "",
                 "class": "",
                 "stats": {
@@ -33,11 +32,19 @@
                 "influence": 0,
                 "advancements": [],
                 "moves":[],
-                "harm":0
-            }
+                "harm":0,
+                "visibility": { moves: 'class', classinfo: true, model: false, custom: true, allmoves: false },
+            };
+            vm.classes = [
+                {"key":"magician", "value":"Street Magician"},
+                {"key":"alchemist", "value":"Alchemist"}
+            ]
+            vm.cd = angular.copy(vm.model);
+            vm.dudes = [];
+            vm.static = {};
 
             // tbl_char database model for reference
-            char_model = {
+            let char_model = {
                 id: 0,
                 gameid: 0,
                 data: {},
@@ -45,6 +52,10 @@
             }
 
             // Methods
+            vm.updateCharacter = updateCharacter;
+            vm.loadCharacter = loadCharacter;
+            vm.showMoves = showMoves;
+            vm.filterMoves = filterMoves;
 
             // Events
 
@@ -53,19 +64,46 @@
             init();
 
             function init(){
+                getStatic();
                 getDudes();
+            }
+
+            function getStatic(){                
+                let _classJSON = './games/adventshire/advent-static.json';
+                $http.get(_classJSON).then(getClassJSONSuccess, getClassJSONFail);
+                    function getClassJSONSuccess(response){
+                        vm.static = response.data;  
+                        console.log(vm.static);                        
+                    }
+                    function getClassJSONFail(error){
+                        console.log(error);
+                    }
             }
 
             function getDudes(){
                 apiservice.GetByGameId(_characterTable, _gameid).then(getDudesSuccess, getDudesFail);
 
                 function getDudesSuccess(r){
-                    // Unpack the JSON data
-                    r.forEach(function(char){
-                        let model = char;
-                        model.data = JSON.parse(char.data);
-                        vm.dudes.push(model);
-                    });
+                    console.log(r.id);
+                    // Make sure you got some dudes...
+                    if(typeof r === 'object'){
+                        // Make sure the response data is an array 
+                        // (if only 1 row is returned, it is an object not in an array)
+                        let rArray = [];
+                        if(Array.isArray(r)){
+                            rArray = r;
+                        } else {
+                            rArray.push(r);
+                        } 
+                        // Unpack the JSON data
+                        rArray.forEach(function(char){
+                            let model = char;
+                            model.data = JSON.parse(char.data);
+                            vm.dudes.push(model);
+                        });
+                    } else {
+                        console.log("Sorry... no dudes.")
+                    }
                 }
 
                 function getDudesFail(e){
@@ -94,7 +132,7 @@
                 // New / Create
                 if(isCreate){
                     if(vm.cd.id > -1){
-                        vm.cd = angular.copy(vm.blankBloodline);
+                        vm.cd = angular.copy(vm.model);
                     }
                     // JSON / Array conversion
                     //convert(false);
@@ -102,7 +140,7 @@
                     let model = {
                         gameid: _gameid,
                         data: JSON.stringify(vm.cd),
-                        createdby: userId
+                        createdby: vm.userId
                     }
                     // Create returns id of new character row
                     apiservice.Create(_characterTable, model).then(function(data){                        
@@ -140,6 +178,64 @@
                 }
             }
             //#endregion 
+
+
+            function showMoves(type){
+                vm.cd.visibility.moves = type;
+            }
+
+            function filterMoves(id){
+                switch(vm.cd.visibility.moves) {
+                    case 'all':
+                        return true;
+                        break;
+                    case 'mine':
+                        if(vm.cd.moves.indexOf(id) !== -1){ 
+                            return true; 
+                        } else {
+                            return false;
+                        }                        
+                        break;
+                    case 'class':
+                        let move = vm.classmoves.moves.find(obj=>obj.id === id);
+                        if(move.class === vm.cd.class){ 
+                            return true;
+                        } else {
+                            return false;
+                        }
+                        break;
+                    default:
+                        if(vm.classData[vm.class].moves.indexOf(id) != -1){ return true; }  else { return false; }                      
+                }
+
+                // if(vm.cd.visibility.moves){
+                //     return true;
+                // }else{
+                //     if(vm.cd.moves.indexOf(id) > -1){
+                //         return true;
+                //     }else{
+                //         return false;
+                //     }
+                // }
+            }
+            
+            function updateAdvancements(advId){
+                let index = vm.cd.advancements.indexOf(advId);
+                if(index > -1){
+                    vm.cd.advancements.splice(advId, 1);
+                } else {
+                    vm.cd.advancements.push(advId);
+                }
+            }
+
+            function updateMoves(moveId){
+                let index = vm.cd.moves.indexOf(moveId);
+                if( index > -1){
+                    vm.cd.moves.splice(index, 1);
+                } else {
+                    vm.cd.moves.push(moveId);
+                }
+            }
             
         }
 })();

@@ -63,8 +63,8 @@
         "game_description": "Steampunk, unfinished, like How the West Was Lost",
         "changelog": []
     },
-    "characters":[
-        {
+    "characters":{
+        "magician": {
             "key": "magician",
             "name": "The Magician",
             "description":"There are many things to be amazed by in Adventshire. So to really dazzle the masses, you’ve got to have something special. Something flashy and unique. Distract them well enough and they won’t even think to look at what you’re hiding behind your smile.",
@@ -105,7 +105,7 @@
             ],
             "advancements":[]
         },
-        {
+        "alchemist": {
             "key": "alchemist",
             "name": "The Alchemist",
             "description":"",
@@ -151,7 +151,8 @@
             ],
             "advancements":[]
         }
-    ]
+    }
+    
 }
 
 

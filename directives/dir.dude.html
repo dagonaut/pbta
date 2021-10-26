@@ -1,0 +1,106 @@
+<div class="character-directive">
+    <style>
+        .character-directive pre{
+            padding:5px;
+        }
+        .character-directive{
+            padding:2px;
+            border:1px dashed #d38336;
+        }
+        .stat-single{
+            float:left;
+            margin: 1px 5px;
+        }
+        .stat-label{
+            font-size:14px;
+        }
+        .stat-value{
+            font-size:24px;
+        }
+    </style>
+    <div class="row">
+        <div class="col-md-12">    
+            <select ng-model="selectedDude" style="width:100%;height:27px;color:black;" ng-change="getDude(selectedDude)">
+                <option ng-repeat="dude in dudes" value="{{dude.id}}">{{dude.name}} - {{dude.class}}
+                </option>
+            </select>
+            <h3>{{ dude.name }}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="stat-single">
+                <div class="stat-label">QUK:</div>
+                <div class="stat-value">{{dude.stats.quick}}</div>
+            </div>
+            <div class="stat-single">
+                <div class="stat-label">GRT:</div>
+                <div class="stat-value">{{dude.stats.grit}}</div>
+            </div>
+            <div class="stat-single">
+                <div class="stat-label">CHA:</div>
+                <div class="stat-value">{{dude.stats.charm}}</div>
+            </div>
+            <div class="stat-single">
+                <div class="stat-label">SAV:</div>
+                <div class="stat-value">{{dude.stats.savvy}}</div>
+            </div>
+            <div class="stat-single">
+                <div class="stat-label">STR:</div>
+                <div class="stat-value">{{dude.stats.strange}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="stat-single">
+                <div class="stat-label">HRM:</div>
+                <div class="stat-value">{{dude.harm}}</div>
+            </div>
+            <div class="stat-single">
+                <div class="stat-label">ARM:</div>
+                <div class="stat-value">{{dude.armor}}</div>
+            </div>
+            <div class="stat-single">
+                <div class="stat-label">XP:</div>
+                <div class="stat-value">{{dude.xp}}</div>
+            </div>
+            <div class="stat-single">
+                <div class="stat-label">LEV:</div>
+                <div class="stat-value">{{dude.level}}</div>
+            </div>
+            <div class="stat-single">
+                <div class="stat-label">DIN:</div>
+                <div class="stat-value">{{dude.dinero}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div ng-repeat="move in moves" ng-if="dude.moves.indexOf(move.id) > -1">
+                <div class="orange">{{move.name}}</div>
+                <pre>{{move.description}}</pre>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="orange">Hx</div>
+            <pre>{{dude.history}}</pre>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="orange">Gear</div>
+            <pre>{{dude.gear}}</pre>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="orange">Notes</div>
+            <pre>{{dude.notes}}</pre>
+        </div>
+    </div>
+    <div class="pointer" style="font-size:small;" ng-click="vm.hideModel = !vm.hideModel">{{ vm.hideModel ? 'Hide' : 'Show'}} Model</div>
+    <pre ng-if="vm.hideModel">{{dude | json}}</pre>
+</div>
