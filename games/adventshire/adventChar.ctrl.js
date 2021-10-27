@@ -33,7 +33,7 @@
                 "advancements": [],
                 "moves":[],
                 "harm":0,
-                "visibility": { moves: 'class', classinfo: true, model: false, custom: true, allmoves: false },
+                "visibility": { "moves": 'class', "classinfo": true, "model": false, "custom": true, "allmoves": false },
             };
             vm.classes = [
                 {"key":"magician", "value":"Street Magician"},
@@ -56,6 +56,8 @@
             vm.loadCharacter = loadCharacter;
             vm.showMoves = showMoves;
             vm.filterMoves = filterMoves;
+            vm.updateMoves = updateMoves;
+            vm.updateAdvancements = updateAdvancements;
 
             // Events
 
