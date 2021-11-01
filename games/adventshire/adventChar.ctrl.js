@@ -58,6 +58,9 @@
             vm.filterMoves = filterMoves;
             vm.updateMoves = updateMoves;
             vm.updateAdvancements = updateAdvancements;
+            vm.markEnlightenment = markEnlightenment;
+            vm.markResilience = markResilience;
+            vm.markHarm = markHarm;
 
             // Events
 
@@ -183,10 +186,14 @@
 
 
             function showMoves(type){
+                // Make sure you have the visibility section (or else this whole thing don't work)
+                if(typeof vm.cd.visibility === 'undefined'){
+                    vm.cd.visibility = vm.model.visibility;
+                }
                 vm.cd.visibility.moves = type;
             }
 
-            function filterMoves(id){
+            function filterMoves(id){                
                 switch(vm.cd.visibility.moves) {
                     case 'all':
                         return true;
@@ -238,6 +245,18 @@
                     vm.cd.moves.push(moveId);
                 }
             }
+
+            function markEnlightenment(level){
+                vm.cd.xp.enlightenment = level;
+            }
+
+            function markHarm(level){
+                vm.cd.harm = level;
+            }
+
+            function markResilience(level){
+                vm.cd.xp.resilience = level;
+            }           
             
         }
 })();

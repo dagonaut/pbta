@@ -166,14 +166,14 @@
                             <div class="harm-input" ng-class="vm.cd.xp.enlightenment > 2 ? 'bg-red' : ''" ng-click="vm.markEnlightenment(3)"></div>
                             <div class="harm-input" ng-class="vm.cd.xp.enlightenment > 3 ? 'bg-red' : ''" ng-click="vm.markEnlightenment(4)"></div>
                             <div class="harm-input" ng-class="vm.cd.xp.enlightenment > 4 ? 'bg-red' : ''" ng-click="vm.markEnlightenment(5)"></div>
-                            <div class="clear pointer ml-2" ng-click="vm.markContamination(0)">clear</div>
+                            <div class="clear pointer ml-2" ng-click="vm.markEnlightenment(0)">clear</div>
                         </div>
                         <div>Resilience:</div>
                         <div class="d-flex">
                             <div class="harm-input" ng-class="vm.cd.xp.resilience > 0 ? 'bg-red' : ''" ng-click="vm.markResilience(1)"></div>
                             <div class="harm-input" ng-class="vm.cd.xp.resilience > 1 ? 'bg-red' : ''" ng-click="vm.markResilience(2)"></div>
                             <div class="harm-input" ng-class="vm.cd.xp.resilience > 2 ? 'bg-red' : ''" ng-click="vm.markResilience(3)"></div>
-                            <div class="clear pointer ml-2" ng-click="vm.markContamination(0)">clear</div>
+                            <div class="clear pointer ml-2" ng-click="vm.markResilience(0)">clear</div>
                         </div>
                     </div>
                     <div class="stats stat-enclosure m-2 p-1">
@@ -240,10 +240,10 @@
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">            
             <h2>
                 Moves:
-                <span class="move-filter">Show 
-                    <a href ng-click="vm.showMoves('mine');" ng-class="vm.cd.visibility.moves === 'mine' ? 'strong' : ''">mine</a> | 
-                    <a href ng-click="vm.showMoves('class');" ng-class="vm.cd.visibility.moves === 'class' ? 'strong' : ''">{{vm.cd.class}}</a> | 
-                    <a href ng-click="vm.showMoves('all');" ng-class="vm.cd.visibility.moves === 'all' ? 'strong' : ''">all</a>
+                <span class="pull-right move-filter" style="margin-left:90px;">Show 
+                    <a href ng-click="vm.showMoves('mine');" ng-class="vm.cd.visibility.moves === 'mine' ? 'strong' : ''">selected</a> | 
+                    <!-- <a href ng-click="vm.showMoves('class');" ng-class="vm.cd.visibility.moves === 'class' ? 'strong' : ''">{{vm.cd.class}}</a> |  -->
+                    <a href ng-click="vm.showMoves('all');" ng-class="vm.cd.visibility.moves === 'all' ? 'strong' : ''">all {{vm.cd.class}}</a>
                 </span>
                 <!-- <span class="pull-right pointer" style="font-size:smaller;" 
                     ng-click="vm.cd.visibility.moves = !vm.cd.visibility.moves">Show {{ vm.cd.visibility.moves ? 'Selected Only' : 'All'}}</span> | 
