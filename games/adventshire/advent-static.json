@@ -74,9 +74,19 @@
                 {"poise":1, "charm": 2, "vigor": 0, "logic": -1, "dream": 1},
                 {"poise":-1, "charm": 2, "vigor": 1, "logic": 1, "dream": 0}
             ],
-            "starting_gear":"**Clothing suitable to your look**: formal wear, fashionable casual wear, gothic chic, flowing ornate robes, eccentric haute couture. \n**One flashy weapon**: cane sword (2-harm hand hidden), antique revolver (2-harm close reload valuable), ornate saber (3-harm hand valuable), throwing knives (2-harm hand/close), volt pistol (2-harm close shock). \n**Magic wand, it is (choose 2)**: heirloom, fancy, impressive, crooked, retractable, golden, homemade. _When performing Magician moves without your wand, your **Charm and Dream = 0**._",        
-            
+            "starting_gear":"**Clothing suitable to your look**: formal wear, fashionable casual wear, gothic chic, flowing ornate robes, eccentric haute couture.  \n**One flashy weapon**: cane sword (2-harm hand hidden), antique revolver (2-harm close reload valuable), ornate saber (3-harm hand valuable), throwing knives (2-harm hand/close), volt pistol (2-harm close shock).  \n**Magic wand, it is (choose 2)**: heirloom, fancy, impressive, crooked, retractable, golden, homemade. _When performing Magician moves without your wand, your **Charm and Dream = 0**._",
+            "starting_moves": "**Choose one Performance Aid move**: _Bag of Tricks_ or _Lovely Assistant_ and **1** additional **Magician Moves**",
             "moves":[
+                {
+                    "key":"bag_of_tricks",
+                    "name":"Bag of Tricks (Performance Aid)",
+                    "description": "**_+1 Dream while in your possession_**. Whenever you reach into your bag, you may **spend a Moxie Point** and **Roll+Dream**.  \n**On a 10+**, produce just the right tool or object for the current situation (such as an item worth 1-Influence, a hypotincture or other medical implement worth 2-stock, a small weapon that can fit up your sleeve, etc.).  \n**7-9**, same effect, only the item disappears after a single use.  \n**On a Miss**, you pull out the exact wrong object for the situation, whether you know it or not."
+                },
+                {
+                    "key":"lovely_assistant",
+                    "name": "Lovely Assistant (Performance Aid)",
+                    "description": "**_+1Charm while in your presence_**. You gain a lovely assistant, loyal to you but not fanatical, who knows your magician’s secrets. Whether or not s/he is employed, a sidekick, indentured, a trusted friend, or otherwise is up to you. Detail your assistant’s clothing equipment: suitable fashion up to 1-armor, various trinkets and belongings up to 2-Influence, and one ornate weapon.  \nWhenever you have an audience, you may **Roll+Charm**.  \n**On a 10+**, your assistant discreetly surveys the audience and signals or otherwise tells you the answer to three of the following, and you get +1 when acting on any of the answers.  \n**On a 7-9**, one of the following.  \n**On a miss**, ask one anyways, but someone definitely sees through your subterfuge.  \n* Who is the most vulnerable person here?  \n* What can I do to blow them away?  \n* What strong emotions are being felt here, and by whom?  \n* How can I walk out of this situation unscathed?  \n* Is there something about this audience or venue that I’m missing?"
+                },
                 {
                     "key":"sleight_of_hand",
                     "name":"Sleight of Hand",
@@ -85,7 +95,7 @@
                 {
                     "key":"walking_the_room",
                     "name":"Walking the Room",
-                    "description": "When examining a scene or judging a person, **ask one additional question**, including from the list below: \n*Who here doesn’t believe in me? \n*What can I do to blow them away? \n*What strong emotions are being felt here, and by whom? \n*How can I walk out of this situation unscathed? \n*Is there something about this audience or venue that I’m missing? \n_When being examined or judged, you may lie to one question (but still must answer)._"
+                    "description": "When examining a scene or judging a person, **ask one additional question**, including from the list below: \n* Who here doesn’t believe in me? \n* What can I do to blow them away? \n* What strong emotions are being felt here, and by whom? \n* How can I walk out of this situation unscathed? \n* Is there something about this audience or venue that I’m missing?  \n_When being examined or judged, you may lie to one question (but still must answer)._"
                 },
                 {
                     "key":"misdirection",
@@ -130,8 +140,8 @@
                 },
                 {
                     "key":"laboratory",
-                    "name":"Laboratory",
-                    "description":"You have a private laboratory full of specialty equipment, in which you can perform basic experiments on people or potion crafting. When you do so, **roll+Dream.**  \n**On a hit**, you succeed in whatever you set out to do, but the potion or procedure may have additional side effects.  \n**On a 10+**, you’ve had a happy accident and the intended result is supremely effective.  \n**On a miss**, something blows up in your face."
+                    "name":"MacGuyver’s Laboratory",
+                    "description":"You can improvise a lab, in which you can perform basic experiments on people or potion crafting. When you do so, **roll+Dream.**  \n**On a hit**, you succeed in whatever you set out to do, but the potion or procedure may have additional side effects.  \n**On a 10+**, you’ve had a happy accident and the intended result is supremely effective.  \n**On a miss**, something blows up in your face."
                 },
                 {
                     "key":"waiter",
@@ -156,7 +166,11 @@
             ],
             "advancements":[]
         }
-    }
+    },
+    "classes":[
+        { "key": "magician", "name": "The Magician"},
+        { "key": "alchemist", "name": "The Alchemist"}
+    ]
     
 }
 

@@ -36,7 +36,7 @@
                 "visibility": { "moves": 'class', "classinfo": true, "model": false, "custom": true, "allmoves": false },
             };
             vm.classes = [
-                {"key":"magician", "value":"Street Magician"},
+                {"key":"magician", "value":"Magician"},
                 {"key":"alchemist", "value":"Alchemist"}
             ]
             vm.cd = angular.copy(vm.model);
