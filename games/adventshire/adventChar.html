@@ -88,65 +88,16 @@
                 Choose from the following for your <strong>{{vm.cd.bloodline}}</strong>
                 <div class="">
                     <strong>Choose a stat block:</strong>
-                    <div ng-repeat="block in vm.static.characters.bloodlines[vm.cd.bloodline].stats">
-                        CHALICES: {{ block.chalices}}, SWORDS: {{ block.swords}}, WANDS: {{ block.wands}}, COINS: {{ block.coins}}
+                    <div ng-repeat="block in vm.static.characters[vm.cd.class].starting_stats">
+                        POISE: {{ block.poise}}, CHARM: {{ block.charm}}, VIGOR: {{ block.vigor}}, LOGIC: {{ block.logic}}, DREAM: {{ block.dream }}
                     </div>
 
                 </div>
                 <div class="names">
-                    <strong>Choose your bloodline's name:</strong> <span>{{ vm.static.characters.bloodlines[vm.cd.bloodline].traditions.name }}</span>
+                    <strong>Choose your starting gear:</strong> <div markdown-it="vm.static.characters[vm.cd.class].starting_gear"></div>
                 </div>
-                <div class="style">
-                    <strong>Choose a style:</strong> <span>{{ vm.static.characters.bloodlines[vm.cd.bloodline].traditions.style }}, </span>
-                </div>
-                <div class="lore">
-                    <strong>Choose lore:</strong> <span>{{vm.static.characters.bloodlines[vm.cd.bloodline].traditions.lore}}</span>
-                </div>
-                <div class="context">
-                    <strong>Contexts:</strong>
-                    
-                        <div>
-                            <strong>Refuge:</strong>
-                            <div ng-repeat="refuge in vm.static.characters.bloodlines[vm.cd.bloodline].context.refuge">{{refuge}}</div>
-                        </div>
-                        <div>
-                            <strong>Drive:</strong>
-                            <div ng-repeat="drive in vm.static.characters.bloodlines[vm.cd.bloodline].context.drive">{{drive}}</div>
-                        </div>
-                        <div>
-                            <strong>Breach:</strong>
-                            <div ng-repeat="breach in vm.static.characters.bloodlines[vm.cd.bloodline].context.breach">{{breach}}</div>
-                        </div>
-                    
-                </div>
-            </div>
-            <div class="">
-                Choose from the following for your <strong>{{vm.cd.explorers[0].class}}</strong>
-                <div>
-                    <strong>Starting stats:</strong> 
-                    IRON: {{vm.static.characters.explorers[vm.cd.explorers[0].class].stats.iron}}, 
-                    GLASS: {{vm.static.characters.explorers[vm.cd.explorers[0].class].stats.glass}}, 
-                    SULPHUR: {{vm.static.characters.explorers[vm.cd.explorers[0].class].stats.sulphur}}, 
-                    MERCURY: {{vm.static.characters.explorers[vm.cd.explorers[0].class].stats.mercury}} <br />
-                    <i><strong>Additionally: add +1 to any stat</strong></i>
-                </div>
-                <div>
-                    <strong>Gear:</strong><br />                    
-                    Start with a weapon (1 perk, 1 flaw), plus 1:<br />
-                    <div ng-repeat="gear in vm.static.characters.explorers[vm.cd.explorers[0].class].gear.weapons">• {{gear.name}} ({{gear.tags[0]}})</div>
-                    <strong>Pick 2 utility items:</strong> {{vm.static.characters.explorers[vm.cd.explorers[0].class].gear.utility}}
-                </div>
-                <div>
-                    <strong style="text-decoration: underline;">Perks</strong>
-                    <div class="d-flex" ng-repeat="perk in vm.static.weapon_tags.perks">
-                        <div><i><strong>{{perk.name}}:</strong></i> </div>
-                        <div>{{perk.description}}</div>
-                    </div>
-                    <strong style="text-decoration: underline;">Flaws</strong>
-                    <div class="d-flex" ng-repeat="flaw in vm.static.weapon_tags.flaws">
-                        <div><i><strong>{{flaw.name}}:</strong></i> </div>
-                        <div class="ml-1">{{flaw.description}}</div>
-                    </div>
+                <div class="names">
+                    <strong>Moves:</strong> <div markdown-it="vm.static.characters[vm.cd.class].starting_moves"></div>
                 </div>
             </div>
         </div>        
@@ -162,7 +113,7 @@
         </div>        
     </div>
     <div class="d-flex">        
-        <!-- Explorer -->
+        <!-- Character Stats / Gear / Notes -->
         <div class="explorer col-md-6">
             <div>
                 <div class="stats my-2 d-flex">                
@@ -285,8 +236,8 @@
             </div>
             <textarea ng-model="vm.cd.notes"></textarea>
         </div>
-        <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">
-            
+        <!-- Moves -->
+        <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">            
             <h2>
                 Moves:
                 <span class="move-filter">Show 

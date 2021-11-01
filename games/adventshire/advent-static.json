@@ -115,9 +115,14 @@
                 {"poise":1, "charm": -1, "vigor": 1, "logic": 2, "dream": 0},
                 {"poise":-1, "charm": 1, "vigor": 0, "logic": 2, "dream": 1}
             ],
-            "starting_gear":"**Clothing suitable to your look:** laboratory gear, casual wear and doctor’s coat, disheveled business wear \n**One handy weapon:** cane sword (2-harm hand hidden), revolver (2-harm close reload force), saber (3-harm hand messy), throwing knives (2-harm hand/close), prism pistol (3-harm close heat), tranq syringe (1-harm intimate stun) \n**Alchemist Special - Field Experimentation:** When you throw an unlabeled flask of mysterious liquid from your Alchemy Kit, **spend a Moxie Point and roll+Logic**.  \nOn a hit, you remember what it does a moment before the container breaks open.  \n**On a 10+**, choose 3.  \n**On a 7-9**, choose 1 and the MC chooses 1.  \n**On a miss**, the MC chooses 2.  \nThe fluid inside: \nExplodes. \nFreezes. \nIgnites. \nDisables one sense (smells horrible, flashes and blinds, deafening pop, etc.) \nIs hallucinatory. \nHeals everyone it touches for 1-Spirit. \nHits only the intended targets. \nSpreads widely.",
+            "starting_gear":"**Clothing suitable to your look:** laboratory gear, casual wear and doctor’s coat, disheveled business wear  \n**One handy weapon:** cane sword (2-harm hand hidden), revolver (2-harm close reload force), saber (3-harm hand messy), throwing knives (2-harm hand/close), prism pistol (3-harm close heat), tranq syringe (1-harm intimate stun)  \n**Alchemist Special - Field Experimentation:** When you throw an unlabeled flask of mysterious liquid from your Alchemy Kit, **spend a Moxie Point and roll+Logic**.  \nOn a hit, you remember what it does a moment before the container breaks open.  \n**On a 10+**, choose 3.  \n**On a 7-9**, choose 1 and the MC chooses 1.  \n**On a miss**, the MC chooses 2.  \nThe fluid inside:  \nExplodes.  \nFreezes.  \nIgnites.  \nDisables one sense (smells horrible, flashes and blinds, deafening pop, etc.)  \nIs hallucinatory.  \nHeals everyone it touches for 1-Spirit.  \nHits only the intended targets.  \nSpreads widely.",
             "starting_moves": "Start with **Alchemy Bag** and **1** additional **Alchemist** move.",
             "moves":[
+                {
+                    "key":"alchemist_special",
+                    "name": "Field Experimentation",
+                    "description": "When you throw an unlabeled flask of mysterious liquid from your Alchemy Kit, **spend a Moxie Point and roll+Logic**.  \nOn a hit, you remember what it does a moment before the container breaks open.  \n**On a 10+**, choose 3.  \n**On a 7-9**, choose 1 and the MC chooses 1.  \n**On a miss**, the MC chooses 2.  \nThe fluid inside:  \nExplodes.  \nFreezes.  \nIgnites.  \nDisables one sense (smells horrible, flashes and blinds, deafening pop, etc.)  \nIs hallucinatory.  \nHeals everyone it touches for 1-Spirit.  \nHits only the intended targets.  \nSpreads widely."
+                },
                 {
                     "key":"alchemy_bag",
                     "name":"Alchemy Bag",
