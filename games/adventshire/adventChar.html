@@ -119,30 +119,30 @@
                 <div class="stats my-2 d-flex">                
                     <div class="stat-enclosure mx-2 p-1">
                         <span>POISE:</span>
-                        <input class="my-1" type="number" ng-model="vm.cd.stats.poise" />
+                        <input class="my-1" type="number" ng-model="vm.cd.stats.poise" ng-change="vm.updateCharacter(false);" />
                     </div>
                     <div class="stat-enclosure mx-2 p-1">
                         <span>CHARM:</span>
-                        <input class="my-1" type="number" ng-model="vm.cd.stats.charm" />
+                        <input class="my-1" type="number" ng-model="vm.cd.stats.charm" ng-change="vm.updateCharacter(false);" />
                     </div>
                     <div class="stat-enclosure mx-2 p-1">
                         <span>VIGOR:</span>
-                        <input class="my-1" type="number" ng-model="vm.cd.stats.vigor" />
+                        <input class="my-1" type="number" ng-model="vm.cd.stats.vigor" ng-change="vm.updateCharacter(false);" />
                     </div>
                     <div class="stat-enclosure mx-2 p-1">
                         <span>LOGIC:</span>
-                        <input class="my-1" type="number" ng-model="vm.cd.stats.logic" />
+                        <input class="my-1" type="number" ng-model="vm.cd.stats.logic" ng-change="vm.updateCharacter(false);" />
                     </div>
                     <div class="stat-enclosure mx-2 p-1">
                         <span>DREAM:</span>
-                        <input class="my-1" type="number" ng-model="vm.cd.stats.dream" />
+                        <input class="my-1" type="number" ng-model="vm.cd.stats.dream" ng-change="vm.updateCharacter(false);" />
                     </div>
                 </div>
                 <div>                    
                     <div class="d-flex">
                         <div class="stats stat-enclosure mx-2 p-1">
                             <span>ARMOR:</span>
-                            <input type="number" ng-model="vm.cd.armor" />
+                            <input type="number" ng-model="vm.cd.armor" ng-change="vm.updateCharacter(false);" />
                         </div>
                         <div>
                             <div class="d-flex my-1 harm">
@@ -177,10 +177,10 @@
                         </div>
                     </div>
                     <div class="stats stat-enclosure m-2 p-1">
-                        MOXIE: <input type="number" ng-model="vm.cd.moxie" />
+                        MOXIE: <input type="number" ng-model="vm.cd.moxie" ng-change="vm.updateCharacter(false);" />
                     </div>
                     <div class="stats stat-enclosure m-2 p-1">
-                        INFLUENCE: <input type="number" ng-model="vm.cd.influence" />
+                        INFLUENCE: <input type="number" ng-model="vm.cd.influence" ng-change="vm.updateCharacter(false);" />
                     </div>                    
                 </div>
             </div>
@@ -229,12 +229,12 @@
             <div class="move-category">
                 Gear:
             </div>
-            <textarea ng-model="vm.cd.gear"></textarea>
+            <textarea ng-model="vm.cd.gear" ng-blur="vm.onBlur(this);"></textarea>
             
             <div class="move-category">
                 Notes:
             </div>
-            <textarea ng-model="vm.cd.notes"></textarea>
+            <textarea ng-model="vm.cd.notes" ng-blur="vm.onBlur(this);"></textarea>
         </div>
         <!-- Moves -->
         <div ng-class="vm.cd.visibility.classinfo ? 'col-md-3' : 'col-md-4'">            

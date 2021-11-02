@@ -5,8 +5,8 @@
         .module('pbta_resources')
         .controller('AdventCharacterController', AdventCharacterController);
 
-        AdventCharacterController.$inject = ['$http', 'apiservice'];
-        function AdventCharacterController($http, apiservice){
+        AdventCharacterController.$inject = ['$scope', '$http', 'apiservice'];
+        function AdventCharacterController($scope, $http, apiservice){
             let vm = this;
             let _gameid = 8;
             let _characterTable = "tbl_char";
@@ -61,16 +61,21 @@
             vm.markEnlightenment = markEnlightenment;
             vm.markResilience = markResilience;
             vm.markHarm = markHarm;
+            vm.onBlur = onBlur;
 
             // Events
 
-            // Watches
+            // Watches            
 
             init();
 
             function init(){
                 getStatic();
                 getDudes();
+            }
+
+            function onBlur(){
+                updateCharacter(false);
             }
 
             function getStatic(){                
@@ -89,7 +94,6 @@
                 apiservice.GetByGameId(_characterTable, _gameid).then(getDudesSuccess, getDudesFail);
 
                 function getDudesSuccess(r){
-                    console.log(r.id);
                     // Make sure you got some dudes...
                     if(typeof r === 'object'){
                         // Make sure the response data is an array 
@@ -115,6 +119,7 @@
                     console.log(e);
                 }
             }
+            
             //#region CRUD
             function loadCharacter(characterId){
                 apiservice.GetById(_characterTable, characterId).then(yes, no);
@@ -163,7 +168,7 @@
                         data: JSON.stringify(vm.cd)                        
                     }
                     apiservice.Update(_characterTable, model).then(function(data){                        
-                        console.log(data);
+                        console.log("Saved! with exit code: ", data);
                         // reload the dude to reset arrays/objects
                         loadCharacter(vm.dudeid);
                     },
@@ -235,6 +240,7 @@
                 } else {
                     vm.cd.advancements.push(advId);
                 }
+                updateCharacter(false);
             }
 
             function updateMoves(moveId){
@@ -244,18 +250,22 @@
                 } else {
                     vm.cd.moves.push(moveId);
                 }
+                updateCharacter(false);
             }
 
             function markEnlightenment(level){
                 vm.cd.xp.enlightenment = level;
+                updateCharacter(false);
             }
 
             function markHarm(level){
                 vm.cd.harm = level;
+                updateCharacter(false);
             }
 
             function markResilience(level){
                 vm.cd.xp.resilience = level;
+                updateCharacter(false);
             }           
             
         }

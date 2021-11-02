@@ -41,73 +41,76 @@ f87858
 </style>
 <div class="advent-reference">
     <div class="moves-section d-flex">
-        <div class="col-md-3 p-2">
+        <div class="col-md-4 p-2">
             <div class="move-category">BASIC MOVES</div>
             <div class="move" ng-repeat="move in vm.static.basic_moves">
                 <div class="move-name" ng-click="move.hide = !move.hide">{{move.name}}</div>
                 <div class="move-description" markdown-it="move.description" ng-hide="!move.hide"></div>
             </div>
         </div>
-        <div class="col-md-3 p-2">
-            <div class="mini-dude" style="border:#00c8a7 1px solid;">
+        <div class="col-md-8 p-2 d-flex">            
+            <div ng-repeat="dude in vm.dudes" class="col-md-6 mini-dude" style="border:#00c8a7 1px solid;">
+                <div style="font-size:24px;">
+                    {{dude.data.name}} -- {{dude.data.class}}
+                </div>
                 <div class="d-flex justify-content-between">
                     <div class="stat">
                         <div class="stat-name">Poise: </div>
-                        <div class="stat-value">{{vm.dudes[0].data.stats.poise}}</div>
+                        <div class="stat-value">{{dude.data.stats.poise}}</div>
                     </div>
                     <div class="stat">
                         <div class="stat-name">Charm: </div>
-                        <div class="stat-value">{{vm.dudes[0].data.stats.charm}}</div>
+                        <div class="stat-value">{{dude.data.stats.charm}}</div>
                     </div>
                     <div class="stat">
                         <div class="stat-name">Vigor: </div>
-                        <div class="stat-value">{{vm.dudes[0].data.stats.vigor}}</div>
+                        <div class="stat-value">{{dude.data.stats.vigor}}</div>
                     </div>
                     <div class="stat">
                         <div class="stat-name">Logic: </div>
-                        <div class="stat-value">{{vm.dudes[0].data.stats.logic}}</div>
+                        <div class="stat-value">{{dude.data.stats.logic}}</div>
                     </div>
                     <div class="stat">
                         <div class="stat-name">Dream: </div>
-                        <div class="stat-value">{{vm.dudes[0].data.stats.dream}}</div>
+                        <div class="stat-value">{{dude.data.stats.dream}}</div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="stat">
                         <div class="stat-name">Moxie: </div>
-                        <div class="stat-value">{{vm.dudes[0].data.moxie}}</div>
+                        <div class="stat-value">{{dude.data.moxie}}</div>
                     </div>
                     <div class="stat">
                         <div class="stat-name">Influence: </div>
-                        <div class="stat-value">{{vm.dudes[0].data.stats.influence}}</div>
+                        <div class="stat-value">{{dude.data.influence}}</div>
                     </div>
                     <div class="stat">
                         <div class="stat-name">Enlightenment: </div>
-                        <div class="stat-value">{{vm.dudes[0].data.xp.enlightenment}} / 5</div>
+                        <div class="stat-value">{{dude.data.xp.enlightenment}} / 5</div>
                     </div>
                     <div class="stat">
                         <div class="stat-name">Resilience: </div>
-                        <div class="stat-value">{{vm.dudes[0].data.xp.resilience}} / 3</div>
+                        <div class="stat-value">{{dude.data.xp.resilience}} / 3</div>
                     </div>
                 </div>
                 <div class="d-flex">
                     <div class="stat">
                         <div class="stat-name">Armor: </div>
-                        <div class="stat-value">{{vm.dudes[0].data.armor}}</div>
+                        <div class="stat-value">{{dude.data.armor}}</div>
                     </div>
                     <div class="stat">
                         <div class="stat-name">Spirit (Harm): </div>
-                        <div class="stat-value">{{vm.dudes[0].data.harm}} / 6</div>
+                        <div class="stat-value">{{dude.data.harm}} / 6</div>
                     </div>                    
                 </div>
                 <div>Moves</div>
-                <div ng-repeat="move in vm.static.characters[vm.dudes[0].data.class].moves" ng-if="vm.dudes[0].data.moves.join().indexOf(move.key) > -1">
-                    <div class="orange">{{move.name}}</div>
-                    <div markdown-it="move.description"></div>
+                <div class="move" ng-repeat="move in vm.static.characters[dude.data.class].moves" ng-if="dude.data.moves.join().indexOf(move.key) > -1">
+                    <div class="move-name" ng-click="move.hide = !move.hide">{{move.name}}</div>
+                    <div class="move-description" markdown-it="move.description" ng-hide="!move.hide"></div>
                 </div>
                 <div>Gear:</div>
-                <pre>{{vm.dudes[0].data.gear}}</pre>
-            </div>
+                <pre>{{dude.data.gear}}</pre>
+            </div>            
         </div>
     </div>
 </div>

@@ -5,8 +5,8 @@
         .module('pbta_resources')
         .controller('AdventReferenceController', AdventReferenceController);
         
-        AdventReferenceController.$inject = ['$rootScope','$scope','$http', 'apiservice'];
-        function AdventReferenceController($rootScope, $scope, $http ,apiservice){
+        AdventReferenceController.$inject = ['$rootScope','$scope','$http', '$timeout', 'apiservice'];
+        function AdventReferenceController($rootScope, $scope, $http, $timeout, apiservice){
             console.log("Advent Ref");
 
             //Private Properties
@@ -19,6 +19,8 @@
             // Scope Properties
             vm.static = {}
             vm.dudes = [];
+            vm.isPolling = true;
+            vm.pollInterval = 60;
 
             // Scope Methods
 
@@ -29,6 +31,14 @@
             function init(){
                 getStaticContent();
                 getDudes();
+                poll();
+            }
+
+            function poll(){
+                if(vm.isPolling){
+                    getDudes();
+                }
+                $timeout(poll, vm.pollInterval * 1000);
             }
 
             function getStaticContent(){
@@ -45,7 +55,7 @@
                 apiservice.GetByGameId(_characterTable, _gameid).then(getDudesSuccess, getDudesFail);
 
                 function getDudesSuccess(r){
-                    console.log(r.id);
+                    vm.dudes.length = 0;
                     // Make sure you got some dudes...
                     if(typeof r === 'object'){
                         // Make sure the response data is an array 
@@ -62,7 +72,7 @@
                             model.data = JSON.parse(char.data);
                             vm.dudes.push(model);
                         });
-                        console.log(vm.dudes);
+                        //console.log(vm.dudes);
                     } else {
                         console.log("Sorry... no dudes.")
                     }
