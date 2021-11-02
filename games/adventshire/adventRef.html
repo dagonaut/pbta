@@ -40,6 +40,17 @@ f87858
     .mini-dude .stat-value{ font-size:24px;}
 </style>
 <div class="advent-reference">
+    <div class="d-flex flex-row-reverse">
+        <div class="btn btn-secondary mx-2" ng-click="vm.getDudes">
+            Manually Refresh
+        </div>
+        <div class="mx-2">
+            <input type="checkbox" ng-model="vm.isPolling"> <span>Polling</span> 
+        </div>
+        <div class="mx-2">
+            <select ng-model="vm.pollInterval" ng-options="x for x in vm.pollingIntervals"></select> secs.
+        </div>
+    </div>
     <div class="moves-section d-flex">
         <div class="col-md-4 p-2">
             <div class="move-category">BASIC MOVES</div>

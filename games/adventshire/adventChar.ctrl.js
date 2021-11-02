@@ -161,6 +161,10 @@
                         console.log(e);
                     });
                 } else {
+                    if(typeof vm.dudeid === 'undefined'){
+                        alert("You can't save a dude that is unloaded. You should try loading or creating a dude.");
+                        return;
+                    }
                     // Update
                     // JSON / Array conversion
                     let model = { 

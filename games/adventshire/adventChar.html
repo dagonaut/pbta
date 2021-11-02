@@ -67,7 +67,7 @@
         <div class="d-flex justify-content-start align-items-center">
             Dudes:
             <select ng-model="vm.dude" class="mx-1">
-                <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId || vm.userId === 2" value="{{dude.id}}">{{dude.data.name}} - {{dude.data.bloodline}}
+                <option ng-repeat="dude in vm.dudes" ng-if="dude.createdby === vm.userId || vm.userId === 2" value="{{dude.id}}">{{dude.data.name}} - {{dude.data.class}}
                 </option>
             </select>
             <button class="btn btn-primary mx-1" ng-click="vm.updateCharacter(true);" ng-disabled="vm.userId !== 2">Create New</button>

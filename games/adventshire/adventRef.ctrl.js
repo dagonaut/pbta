@@ -21,8 +21,10 @@
             vm.dudes = [];
             vm.isPolling = true;
             vm.pollInterval = 60;
+            vm.pollingIntervals = [30, 60, 120, 300];
 
             // Scope Methods
+            vm.getDudes = getDudes;
 
             // Watches
 
@@ -36,7 +38,10 @@
 
             function poll(){
                 if(vm.isPolling){
+                    console.log("Refreshing at " + vm.pollInterval + " seconds.");
                     getDudes();
+                } else {
+                    console.log("Polling stopped");
                 }
                 $timeout(poll, vm.pollInterval * 1000);
             }
