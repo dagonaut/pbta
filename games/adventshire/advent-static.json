@@ -100,7 +100,7 @@
                 {
                     "key":"sleight_of_hand",
                     "name":"Sleight of Hand",
-                    "description":"When attempting to secretly palm a small item, or disarm an opponent in hand-to-hand, **Roll+Charm**.  \n**On a hit**, you do it.  \n**On 7-9**, pick one: \n* The primary onlooker notices: **-1 forward**. \n* You drop something you’re holding or hiding. \n**On a miss**, you fail, everyone watching notices, and/or you are disarmed."
+                    "description":"When attempting to secretly palm a small item, or disarm an opponent in hand-to-hand, **Roll+Charm**.  \n**On a hit**, you do it.  \n**On 7-9**, pick one: \n* The primary onlooker notices: **-1 forward**. \n* You drop something you’re holding or hiding.  \n**On a miss**, you fail, everyone watching notices, and/or you are disarmed."
                 },
                 {
                     "key":"walking_the_room",
