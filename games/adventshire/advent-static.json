@@ -120,7 +120,7 @@
                 {
                     "key":"jinx",
                     "name":"Jinx",
-                    "description":"When you use a distraction to alter someone else’s luck, **roll+Dream**.  \n**On a hit**, you’re able to nudge chance in a different direction, and the player must re-roll their last move roll and use the new result.  \n**On a 10+**, choose one: \n* One player rolls 3d6 for their next move and uses the two highest results. \n* One player rolls 3d6 for their next move and uses the two lowest results.  \n**On a miss**, you’ve jinxed yourself. The next time you roll, roll 3d6 and use the two lowest results."
+                    "description":"When you use a distraction to alter someone else’s luck, **roll+Dream**.  \n**On a hit**, you’re able to nudge chance in a different direction, and the player must re-roll their last move roll and use the new result.  \n**On a 10+**, choose one: \n* One player rolls 3d6 for their next move and uses the two highest results. \n* One player rolls 3d6 for their next move and uses the two lowest results.  \n  \n**On a miss**, you’ve jinxed yourself. The next time you roll, roll 3d6 and use the two lowest results."
                 }
             ],
             "advancements":[]
@@ -166,7 +166,7 @@
                 {
                     "key":"transmutation",
                     "name":"Transmutation",
-                    "description":"When you have some assorted items, raw materials, or scrap, along with time and concentration, **roll+Dream.**  \n**On a hit**, you methodically transform the base components of the materials into something more useful.  \n**On a 10+**, pick 2.  \n**On a 7-9**, pick one.  \n**On a miss**, you use up whatever material you were working with to no benefit. \n*You gain 2-Influence. \n*You add +valuable to an item. \n*You safely reduce a dangerous item to its weight in useful raw materials. \n*The MC picks an attribute to add to an item of your choice."
+                    "description":"When you have some assorted items, raw materials, or scrap, along with time and concentration, **roll+Dream.**  \n**On a hit**, you methodically transform the base components of the materials into something more useful.  \n**On a 10+**, pick 2.  \n**On a 7-9**, pick one.  \n**On a miss**, you use up whatever material you were working with to no benefit.  \n* You gain 2-Influence.  \n* You add +valuable to an item. \n*You safely reduce a dangerous item to its weight in useful raw materials.  \n* The MC picks an attribute to add to an item of your choice."
                 },
                 {
                     "key":"fundamental_disconnect",
