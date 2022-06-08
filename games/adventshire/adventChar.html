@@ -88,10 +88,12 @@
                 Choose from the following for your <strong>{{vm.cd.bloodline}}</strong>
                 <div class="">
                     <strong>Choose a stat block:</strong>
-                    <div ng-repeat="block in vm.static.characters[vm.cd.class].starting_stats">
+                    <div ng-if="!vm.static.characters[vm.cd.class].starting_stats_alt" ng-repeat="block in vm.static.characters[vm.cd.class].starting_stats">
                         POISE: {{ block.poise}}, CHARM: {{ block.charm}}, VIGOR: {{ block.vigor}}, LOGIC: {{ block.logic}}, DREAM: {{ block.dream }}
                     </div>
-
+                    <div ng-if="vm.static.characters[vm.cd.class].starting_stats_alt">
+                        <div markdown-it="vm.static.characters[vm.cd.class].starting_stats_alt"></div>
+                    </div>
                 </div>
                 <div class="names">
                     <strong>Choose your starting gear:</strong> <div markdown-it="vm.static.characters[vm.cd.class].starting_gear"></div>

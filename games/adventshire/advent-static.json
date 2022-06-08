@@ -175,9 +175,114 @@
                 }
             ],
             "advancements":[]
+        },
+        "pugilist": {
+            "key": "pugilist",
+            "name": "The Pugilist",
+            "description":"",
+            "starting_stats":[
+                {"poise":-1, "charm": 1, "vigor": 2, "logic": 1, "dream": 0},
+                {"poise":0, "charm": 2, "vigor": 2, "logic": 0, "dream": -2},
+                {"poise":-1, "charm": 1, "vigor": 2, "logic": 0, "dream": 1},
+                {"poise":1, "charm": 1, "vigor": 2, "logic": -1, "dream": -1}
+            ],
+            "starting_gear":"**Clothing suitable to your look:** laboratory gear, casual wear and doctor’s coat, disheveled business wear  \n**One handy weapon:** cane sword (2-harm hand hidden), revolver (2-harm close reload force), saber (3-harm hand messy), throwing knives (2-harm hand/close), prism pistol (3-harm close heat), tranq syringe (1-harm intimate stun)  \n**Alchemist Special - Field Experimentation:** When you throw an unlabeled flask of mysterious liquid from your Alchemy Kit, **spend a Moxie Point and roll+Logic**.  \nOn a hit, you remember what it does a moment before the container breaks open.  \n**On a 10+**, choose 3.  \n**On a 7-9**, choose 1 and the MC chooses 1.  \n**On a miss**, the MC chooses 2.  \nThe fluid inside:  \nExplodes.  \nFreezes.  \nIgnites.  \nDisables one sense (smells horrible, flashes and blinds, deafening pop, etc.)  \nIs hallucinatory.  \nHeals everyone it touches for 1-Spirit.  \nHits only the intended targets.  \nSpreads widely.",
+            "starting_moves": "Start with **Alchemy Bag** and **1** additional **Alchemist** move.",
+            "moves":[
+                {
+                    "key":"alchemist_special",
+                    "name": "Field Experimentation",
+                    "description": "When you throw an unlabeled flask of mysterious liquid from your Alchemy Kit, **spend a Moxie Point and roll+Logic**.  \nOn a hit, you remember what it does a moment before the container breaks open.  \n**On a 10+**, choose 3.  \n**On a 7-9**, choose 1 and the MC chooses 1.  \n**On a miss**, the MC chooses 2.  \nThe fluid inside:  \nExplodes.  \nFreezes.  \nIgnites.  \nDisables one sense (smells horrible, flashes and blinds, deafening pop, etc.)  \nIs hallucinatory.  \nHeals everyone it touches for 1-Spirit.  \nHits only the intended targets.  \nSpreads widely."
+                },
+                {
+                    "key":"alchemy_bag",
+                    "name":"Alchemy Bag",
+                    "description":"Your Alchemy Kit has all sorts of useful tools in it: powders, rags, tape, needles, bottles, gloves, heating coils, wipes, alcohol, solvents, acids, bloodslowers, test tubes, bonepins, tinctures, potions, ether patches in quantity, and a roll of Tesla jumpshock probes for when it comes to that.  \nWhen you use it, **spend its stock**; you can spend 0–3 of its stock per use.  \nYou can resupply it for **1-Influence per 2-stock**, if your circumstances let you purchase alchemical supplies. It begins play holding **6-stock.** \nWhen you use your bag and perform science to fortify someone's spirit, **roll+Stock spent**.  \n**On a 10+**, they regain either 1-Spirit or 1-Moxie (your choice), and fill their Resilience.  \n**On a 7-9**, they regain 1-Spirit and mark Resilience, but the potion has one side effect: \n* They mark a temporary flaw of their choice. \n* They take -1forward. \n* The next time they take harm, they take +1harm. \n* They are dazed, and must perform under pressure to act. \n**On a miss**, they empty their Resilience and the potion has an unexpected effect."
+                },
+                {
+                    "key":"laboratory",
+                    "name":"MacGyver’s Laboratory",
+                    "description":"You can improvise a lab, in which you can perform basic experiments on people or potion crafting. When you do so, **roll+Dream.**  \n**On a hit**, you succeed in whatever you set out to do, but the potion or procedure may have additional side effects.  \n**On a 10+**, you’ve had a happy accident and the intended result is supremely effective.  \n**On a miss**, something blows up in your face."
+                },
+                {
+                    "key":"waiter",
+                    "name":"I’ll Be Your Waiter This Evening",
+                    "description":"When serving someone with food or drink, you may slip a concoction of your own devising into the item and **roll+Logic**.  \n**On a hit**, pick 1. \n* The subject adores you. \n* The subject becomes violently ill (2-harm loud messy). \n* The subject becomes compliant and will truthfully answer any questions asked. \n* The subject quickly falls asleep. \n* The subject flies into an uncontrollable rage. \n**On a 10+**, the subject eats/drinks it, is none the wiser, and the potion takes effect exactly when you want it to.  \n**On a 7-9**, the subject eats/drinks it but you’ve flubbed the dosage, and the potion’s intended effect and duration are unpredictable.  \n**On a miss**, you’ve accidentally exposed yourself and/or an unintended target, with who-knows-what."
+                },
+                {
+                    "key":"periodic_sense",
+                    "name":"Periodic Sense",
+                    "description":"When you come across a scientific oddity and take a sample, **roll+Logic**.  \n**On a hit**, tell the MC what you think it means, using the proper high academic language required for such a discovery.  \n**On a 10+**, your theory is more or less correct.  \n**On a 7-9**, your theory has a flaw, or the sample you’ve taken is in some way tainted.  \n**On a miss**, your mad science and wild theories have put someone in danger."
+                },
+                {
+                    "key":"transmutation",
+                    "name":"Transmutation",
+                    "description":"When you have some assorted items, raw materials, or scrap, along with time and concentration, **roll+Dream.**  \n**On a hit**, you methodically transform the base components of the materials into something more useful.  \n**On a 10+**, pick 2.  \n**On a 7-9**, pick one.  \n**On a miss**, you use up whatever material you were working with to no benefit.  \n* You gain 2-Influence.  \n* You add +valuable to an item. \n*You safely reduce a dangerous item to its weight in useful raw materials.  \n* The MC picks an attribute to add to an item of your choice."
+                },
+                {
+                    "key":"fundamental_disconnect",
+                    "name":"Fundamental Disconnect",
+                    "description":"When someone in your care dies, **gain +1 Vigor (max +3)**."
+                }
+            ],
+            "advancements":[]
+        },
+        "automaton": {
+            "key": "automaton",
+            "name": "The Automaton",
+            "description":"",
+            "starting_stats":[
+                {"poise":1, "charm": 0, "vigor": -1, "logic": 2, "dream": 1},
+                {"poise":-2, "charm": -1, "vigor": 1, "logic": 2, "dream": 2},
+                {"poise":1, "charm": -1, "vigor": 1, "logic": 2, "dream": 0},
+                {"poise":-1, "charm": 1, "vigor": 0, "logic": 2, "dream": 1}
+            ],
+            "starting_stats_alt":"Instead of stat blocks you choose using the following rules:  \n**Your mechanical body was built for...**  \n* Precision (+2Poise)  \n* Interaction (+2Charm)  \n* Industry (+2Vigor)  \n* Calculations (+2Logic)  \n**And has been modified with a(n)...**  \n* Exceptional A.I. (+1Logic, -1Charm)  \n* High-torque gear ratio (+1Vigor, -1Poise)  \n* Body language analyzer (+1Charm, -1Logic)  \n* Finely tuned clockwork (+1Poise, -1Vigor)  \nAs an artificial construct, you do not have a **Dream** stat and cannot connect to the Impossible Dream. If a move or circumstance would force you to **roll+Dream**, you malfunction and go into system shutdown. The MC may tell you what strange and fantastic data your positronic brain absorbs while disabled.  \nAnd choose 2 **hardware modifications:**  \n* Reinforced endoskeleton (+1 armor)  \n* High-density alloys (+1 armor)  \n* Ornate and detailed metalwork (+1Influence)  \n* Hydraulic Upper Body Servos (increased strength, +1harm in melee)  \n* Mysterious power source (no need to recharge)  \n* Psychic barometer (can interpret ambient data from the Impossible Dream)  \n* Non-traditional programming (choose one more or one less prime directive)  \n* Integrated and concealed grenade launcher (4-harm close area force messy). Begins play with limited ammunition capacity (3 explosive grenades), replenished at 1-Influence each.",
+            "starting_gear":"**Clothing suitable to your look:** laboratory gear, casual wear and doctor’s coat, disheveled business wear  \n**One handy weapon:** cane sword (2-harm hand hidden), revolver (2-harm close reload force), saber (3-harm hand messy), throwing knives (2-harm hand/close), prism pistol (3-harm close heat), tranq syringe (1-harm intimate stun)  \n**Alchemist Special - Field Experimentation:** When you throw an unlabeled flask of mysterious liquid from your Alchemy Kit, **spend a Moxie Point and roll+Logic**.  \nOn a hit, you remember what it does a moment before the container breaks open.  \n**On a 10+**, choose 3.  \n**On a 7-9**, choose 1 and the MC chooses 1.  \n**On a miss**, the MC chooses 2.  \nThe fluid inside:  \nExplodes.  \nFreezes.  \nIgnites.  \nDisables one sense (smells horrible, flashes and blinds, deafening pop, etc.)  \nIs hallucinatory.  \nHeals everyone it touches for 1-Spirit.  \nHits only the intended targets.  \nSpreads widely.",
+            "starting_moves": "Start with **Alchemy Bag** and **1** additional **Alchemist** move.",
+            "moves":[
+                {
+                    "key":"alchemist_special",
+                    "name": "Field Experimentation",
+                    "description": "When you throw an unlabeled flask of mysterious liquid from your Alchemy Kit, **spend a Moxie Point and roll+Logic**.  \nOn a hit, you remember what it does a moment before the container breaks open.  \n**On a 10+**, choose 3.  \n**On a 7-9**, choose 1 and the MC chooses 1.  \n**On a miss**, the MC chooses 2.  \nThe fluid inside:  \nExplodes.  \nFreezes.  \nIgnites.  \nDisables one sense (smells horrible, flashes and blinds, deafening pop, etc.)  \nIs hallucinatory.  \nHeals everyone it touches for 1-Spirit.  \nHits only the intended targets.  \nSpreads widely."
+                },
+                {
+                    "key":"alchemy_bag",
+                    "name":"Alchemy Bag",
+                    "description":"Your Alchemy Kit has all sorts of useful tools in it: powders, rags, tape, needles, bottles, gloves, heating coils, wipes, alcohol, solvents, acids, bloodslowers, test tubes, bonepins, tinctures, potions, ether patches in quantity, and a roll of Tesla jumpshock probes for when it comes to that.  \nWhen you use it, **spend its stock**; you can spend 0–3 of its stock per use.  \nYou can resupply it for **1-Influence per 2-stock**, if your circumstances let you purchase alchemical supplies. It begins play holding **6-stock.** \nWhen you use your bag and perform science to fortify someone's spirit, **roll+Stock spent**.  \n**On a 10+**, they regain either 1-Spirit or 1-Moxie (your choice), and fill their Resilience.  \n**On a 7-9**, they regain 1-Spirit and mark Resilience, but the potion has one side effect: \n* They mark a temporary flaw of their choice. \n* They take -1forward. \n* The next time they take harm, they take +1harm. \n* They are dazed, and must perform under pressure to act. \n**On a miss**, they empty their Resilience and the potion has an unexpected effect."
+                },
+                {
+                    "key":"laboratory",
+                    "name":"MacGyver’s Laboratory",
+                    "description":"You can improvise a lab, in which you can perform basic experiments on people or potion crafting. When you do so, **roll+Dream.**  \n**On a hit**, you succeed in whatever you set out to do, but the potion or procedure may have additional side effects.  \n**On a 10+**, you’ve had a happy accident and the intended result is supremely effective.  \n**On a miss**, something blows up in your face."
+                },
+                {
+                    "key":"waiter",
+                    "name":"I’ll Be Your Waiter This Evening",
+                    "description":"When serving someone with food or drink, you may slip a concoction of your own devising into the item and **roll+Logic**.  \n**On a hit**, pick 1. \n* The subject adores you. \n* The subject becomes violently ill (2-harm loud messy). \n* The subject becomes compliant and will truthfully answer any questions asked. \n* The subject quickly falls asleep. \n* The subject flies into an uncontrollable rage. \n**On a 10+**, the subject eats/drinks it, is none the wiser, and the potion takes effect exactly when you want it to.  \n**On a 7-9**, the subject eats/drinks it but you’ve flubbed the dosage, and the potion’s intended effect and duration are unpredictable.  \n**On a miss**, you’ve accidentally exposed yourself and/or an unintended target, with who-knows-what."
+                },
+                {
+                    "key":"periodic_sense",
+                    "name":"Periodic Sense",
+                    "description":"When you come across a scientific oddity and take a sample, **roll+Logic**.  \n**On a hit**, tell the MC what you think it means, using the proper high academic language required for such a discovery.  \n**On a 10+**, your theory is more or less correct.  \n**On a 7-9**, your theory has a flaw, or the sample you’ve taken is in some way tainted.  \n**On a miss**, your mad science and wild theories have put someone in danger."
+                },
+                {
+                    "key":"transmutation",
+                    "name":"Transmutation",
+                    "description":"When you have some assorted items, raw materials, or scrap, along with time and concentration, **roll+Dream.**  \n**On a hit**, you methodically transform the base components of the materials into something more useful.  \n**On a 10+**, pick 2.  \n**On a 7-9**, pick one.  \n**On a miss**, you use up whatever material you were working with to no benefit.  \n* You gain 2-Influence.  \n* You add +valuable to an item. \n*You safely reduce a dangerous item to its weight in useful raw materials.  \n* The MC picks an attribute to add to an item of your choice."
+                },
+                {
+                    "key":"fundamental_disconnect",
+                    "name":"Fundamental Disconnect",
+                    "description":"When someone in your care dies, **gain +1 Vigor (max +3)**."
+                }
+            ],
+            "advancements":[]
         }
     },
     "classes":[
+        { "key": "automaton", "name": "The Automaton"},
+        { "key": "pugilist", "name": "The Pugilist"},
         { "key": "magician", "name": "The Magician"},
         { "key": "alchemist", "name": "The Alchemist"}
     ]
