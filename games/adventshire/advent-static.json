@@ -43,12 +43,17 @@
             {
                 "key": "endure_a_blow",
                 "name": "Endure a Blow",
-                "description": "When you endure a blow, **roll+Spirit lost**.  \n**On a miss**, the MC can choose something from the 7–9 list below. If she does though, it only increases your resolve, and you regain 1 Spirit or 1 Moxie (your choice). \n**On a 7–9**, the MC can choose 1. Or, you may lose 1 additional Spirit or 1-Moxie to snap to your senses and negate the chosen effect instead: \n* You lose your footing or position. \n* You lose your grip on whatever you’re holding. \n* You are stunned or confused, unable to tell for sure what just happened. \n* You miss your mark or noticing something important. \n* You’re a bloody, bruised, or sweaty mess. \n**On a 10-12**, the MC can choose 1, which you can negate by losing an additional 2-Spirit or 2-Moxie: \n* You’re out of action: unconscious, trapped, incoherent or panicked. \n* It’s worse than it seemed. Mark a flaw. \n* Something is broken: your resolve, your bones, or your equipment. \n* Choose 2 from the 7–9 list above. \n**On a 13+**, it’s light out, bucko. Only Deus ex Machina can save you now."
+                "description": "When you endure a blow, **roll+Spirit lost**.  \n**On a miss**, the MC can choose something from the 7–9 list below. If she does though, it only increases your resolve, and you regain 1 Spirit or 1 Moxie (your choice).  \n**On a 7–9**, the MC can choose 1. Or, you may lose 1 additional Spirit or 1-Moxie to snap to your senses and negate the chosen effect instead: \n* You lose your footing or position. \n* You lose your grip on whatever you’re holding. \n* You are stunned or confused, unable to tell for sure what just happened. \n* You miss your mark or noticing something important. \n* You’re a bloody, bruised, or sweaty mess.  \n**On a 10-12**, the MC can choose 1, which you can negate by losing an additional 2-Spirit or 2-Moxie: \n* You’re out of action: unconscious, trapped, incoherent or panicked. \n* It’s worse than it seemed. Mark a flaw. \n* Something is broken: your resolve, your bones, or your equipment. \n* Choose 2 from the 7–9 list above.  \n**On a 13+**, it’s light out, bucko. Only Deus ex Machina can save you now."
             },
             {
                 "key": "preach_revolution",
                 "name": "Preach Revolution",
                 "description": "**Once per session**, when you go amongst those of your ideology preaching revolution, **roll+Moxie**.  \n**On a 10+**, your message spreads with those who share your beliefs, hold 2.  \n**On a 7-9**, hold 1. You may spend your hold 1-for-1 to reroll one move roll while among members of your Ideology.  \n**On a miss**, your message is warped and twisted, and only feeds the opposition."
+            },
+            {
+                "key":"englightment_resilience",
+                "name":"Enlightenment & Resilience",
+                "description":"There are 8 boxes that represent your Resilience (bottom 3 boxes) and your Enlightenment (top 5 boxes). Collectively, they track your Advancement.  \n**When you roll a 6-** on a move, mark **Enlightenment.** You learn from your failures.  \n**When you roll a 10+** on a move, mark **Resilience.** You’re inspired by your successes.  \n**When you have all three boxes of your Resilience marked**, you may erase **all three** at any time to immediately either heal 1 Spirit or gain 1 Moxie. You may still empty your Resilience while there are Enlightenment marks in the top 5 boxes.  \n**When all 8 of the Resilience and Enlightenment Boxes are filled**, erase the top group of 5 Enlightenment, keeping your Resilience, and mark an Advancement. You only empty your Resilience Pool by trading it in for Spirit or Moxie, or when a move tells you to do so - you do not lose it by Advancing. Neither Enlightenment nor Resilience are lost between sessions, but again, you need all 8 to be full before Advancing."
             },
             {
                 "key": "moxie",
@@ -58,7 +63,7 @@
             {
                 "key":"advanced_moves",
                 "name": "Advanced Moves",
-                "description":"After five Advancements, you may choose to advance some of the basic moves.  \n**On a 12+ roll for an advanced move**, fill your resilience (instead of simply marking it), as well as an additional effect depending on the move. \n**Perform Under Pressure:** you attain a moment of superhuman grace and clarity \n**Assert Your Authority:** your target surrenders to your command, with no chance of refusal \n**Smack Some Sense:** you apply a flaw of your choice to the enemy, and one move option applies double the effect \n**Entice, Negotiate, or Convince:** you gain an ally, confidante, partner, informant, lover, or friend. \n**Examine a Scene:** you may ask all available questions, and get +1Ongoing using the scene in moves \n**Judge a Person:** you may ask any 3 questions, and get +1Ongoing with this person this scene \n**Submit to the Impossible Dream:** you take inspiration from or plant inspiration into a specific consciousness, or else connect to an enlightened one"    
+                "description":"After five Advancements, you may choose to advance some of the basic moves.  \n**On a 12+ roll for an advanced move**, fill your resilience (instead of simply marking it), as well as an additional effect depending on the move.  \n**Perform Under Pressure:** you attain a moment of superhuman grace and clarity  \n**Assert Your Authority:** your target surrenders to your command, with no chance of refusal  \n**Smack Some Sense:** you apply a flaw of your choice to the enemy, and one move option applies double the effect  \n**Entice, Negotiate, or Convince:** you gain an ally, confidante, partner, informant, lover, or friend.  \n**Examine a Scene:** you may ask all available questions, and get +1Ongoing using the scene in moves  \n**Judge a Person:** you may ask any 3 questions, and get +1Ongoing with this person this scene  \n**Submit to the Impossible Dream:** you take inspiration from or plant inspiration into a specific consciousness, or else connect to an enlightened one"    
             },
             {
                 "key":"ideology",
@@ -332,10 +337,11 @@
         }
     },
     "classes":[
+        { "key": "alchemist", "name": "The Alchemist"},
         { "key": "automaton", "name": "The Automaton"},
-        { "key": "pugilist", "name": "The Pugilist"},
+        { "key": "engineer", "name": "The Engineer"},
         { "key": "magician", "name": "The Magician"},
-        { "key": "alchemist", "name": "The Alchemist"}
+        { "key": "pugilist", "name": "The Pugilist"}
     ]
     
 }
