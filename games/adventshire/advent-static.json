@@ -248,37 +248,37 @@
                 {
                     "key":"engineer_special",
                     "name": "Anything You Can Do (Engineer Special)",
-                    "description": "**When you watch and make note of another character using Moxie (rolling+Moxie or spending Moxie)**, hold 1. You may spend that hold to perform the noted move with a 12+ result. You may only have 1 hold and noted move at a time; if you watch and note a new move, it replaces the previous."                    
+                    "description": "When you watch and make note of another character using **Moxie (rolling+Moxie or spending Moxie), hold 1**. You may spend that hold to perform the noted move with a 12+ result. You may only have 1 hold and noted move at a time; if you watch and note a new move, it replaces the previous."                    
                 },
                 {
                     "key":"unstoppable",
                     "name":"Unstoppable",
-                    "description":"**When you push your locomotive to smash through an object or to endure a heavy blow, roll+Steam**.  \n**On a 10+**, both are true.  \n**On a 7-9**, pick one. \n* The locomotive continues safely on course. \n* The locomotive suffers little damage from the stress.  \n**On a miss** your locomotive barely endures, but you’ve lost control until some major downtime for repairs."
+                    "description":"When you push your locomotive to smash through an object or to endure a heavy blow, **roll+Steam**.  \n**On a 10+**, both are true.  \n**On a 7-9**, pick one. \n* The locomotive continues safely on course. \n* The locomotive suffers little damage from the stress.  \n**On a miss** your locomotive barely endures, but you’ve lost control until some major downtime for repairs."
                 },
                 {
                     "key":"reverse_engineering",
                     "name":"Reverse Engineering",
-                    "description":"**When you mentally deconstruct a scene or an object**, Roll+Dream.  \n**On a hit**, ask a question and get +1Logic forward.  \n**On a 10+**, ask two more. \n* What might have inspired the creation of this? \n* How can I recreate this in a controlled setting? \n* What strong emotions are poured into this? \n* What has been done most recently with this, or to this? \n* What’s wrong with this, and how might I fix it?  \n**On a miss**, you are lost in thought in the Impossible Dream."
+                    "description":"When you mentally deconstruct a scene or an object, **Roll+Dream**.  \n**On a hit**, ask a question and get +1Logic forward.  \n**On a 10+**, ask two more. \n* What might have inspired the creation of this? \n* How can I recreate this in a controlled setting? \n* What strong emotions are poured into this? \n* What has been done most recently with this, or to this? \n* What’s wrong with this, and how might I fix it?  \n**On a miss**, you are lost in thought in the Impossible Dream."
                 },
                 {
                     "key":"hood",
                     "name":"They’re All the Same Under the Hood",
-                    "description":"**When you take control of a new vehicle**, Roll+Logic.  \n**On a 10+**, the construction and engineering are intuitive, and you may Roll+Logic instead of +Poise to perform under pressure while using the vehicle.  \n**On a 7-9**, the construction is familiar but its engineering is inefficient, you get +1forward to figuring out the trouble and refill your Resilience Pool when you do so.  \n**On a miss**, the engineering is above your level. Take -1Logic until you prove you’re not inept."
+                    "description":"When you take control of a new vehicle, **Roll+Logic**.  \n**On a 10+**, the construction and engineering are intuitive, and you may Roll+Logic instead of +Poise to perform under pressure while using the vehicle.  \n**On a 7-9**, the construction is familiar but its engineering is inefficient, you get +1forward to figuring out the trouble and refill your Resilience Pool when you do so.  \n**On a miss**, the engineering is above your level. Take -1Logic until you prove you’re not inept."
                 },
                 {
                     "key":"merchant",
                     "name":"Merchant of Adventshire",
-                    "description":"**When you arrive in a new station**, Roll+Logic.  \n**On a 10+**, your arrival is expected and welcome, and the locals greet you with open arms, gifts, and favors worth 1-Influence.  \n**On a 7-9**, your presence is welcome, and you have +1ongoing to finding an exotic item of your choice.  \n**On a miss**, you’re a completely unwanted eyesore, and it’s not long before you’re run out of town."
+                    "description":"When you arrive in a new station, **Roll+Logic**.  \n**On a 10+**, your arrival is expected and welcome, and the locals greet you with open arms, gifts, and favors worth 1-Influence.  \n**On a 7-9**, your presence is welcome, and you have +1ongoing to finding an exotic item of your choice.  \n**On a miss**, you’re a completely unwanted eyesore, and it’s not long before you’re run out of town."
                 },
                 {
                     "key":"i_told_you_so",
                     "name":"Hate To Say I Told You So",
-                    "description":"**When interjecting with your unsolicited advice**, share your honest opinion on the proper course of action with those you interrupted. If they do it, they get +1Moxie. If they don’t, you get +1Moxie."
+                    "description":"When interjecting with your unsolicited advice, share your honest opinion on the proper course of action with those you interrupted. If they do it, they get +1Moxie. If they don’t, you get +1Moxie."
                 },
                 {
                     "key":"clockwork_precision",
                     "name":"Clockwork Precision",
-                    "description":"**When it appears that you’ve made a miscalculation and will be tardy for an appointment**, roll+Dream.  \n**On a 10+**, it only appears that way, and you’ve made previous arrangements to expedite your arrival to the precise best moment. Describe them.  \n**On a 7-9**, describe your plans, but the MC will introduce a hitch, possibly preventing your timely arrival.  \n**On a miss**, you’ve been waylaid."
+                    "description":"When it appears that you’ve made a miscalculation and will be tardy for an appointment, **roll+Dream**.  \n**On a 10+**, it only appears that way, and you’ve made previous arrangements to expedite your arrival to the precise best moment. Describe them.  \n**On a 7-9**, describe your plans, but the MC will introduce a hitch, possibly preventing your timely arrival.  \n**On a miss**, you’ve been waylaid."
                 }
             ],
             "advancements":[]
