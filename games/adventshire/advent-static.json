@@ -69,14 +69,21 @@
                 "key":"ideology",
                 "name": "Ideology",
                 "description":"Each character chooses and follows a pair of **ideologies**: **pro-establishment** or **anti-establishment**, and **honorable** or **dishonorable**. At the end of each session, if you have acted in accordance with one of your Ideologies, **mark Resilience**. If you acted in accordance with both your Ideologies, **mark Resilience twice**.  \n**At the beginning of each session**, a player may choose to change one of their ideologies. That player marks their new ideology on their sheet, and loses one expression of Trust with each other character from their old Ideology. The player may discuss with the MC any possible new opportunities with the new one.  \n**Pro-establishment**: The news of your deeds spreads throughout the community. To uphold the establishment, amongst other things (MC discretion), you can:  \n   _Uphold the letter of the law over the spirit_  \n   _Bring someone to the establishment’s justice_  \n   _Aid or empower someone in charge_  \n   _Refuse power or riches in service of the establishment_  \n_Convince someone to change their ideology to the majority_  \n**Anti-establishment**: The rumors of your actions spread throughout the underground. To subvert the establishment, amongst other things, you can:  \n   _Reveal corruption or hypocrisy in the establishment_  \n   _Break a law to benefit another_  \n   _Inspire another to seize their freedom or rights_  \n   _Cause or endure chaos in the name of change_  \n   _Destroy a symbol of the establishment_  \n**Honorable**: To **display your honor**, amongst other things, you can:  \n   _Return something valuable to its rightful owner_  \n   _Ignore danger to aid another_  \n   _Fulfill a promise_  \n   _Give an opponent +1Forward or an equivalent advantage_  \n   _Offer an opponent an opportunity to surrender_  \n**Dishonorable**: To **display your dishonor**, amongst other things, you can:  \n   _Take advantage of someone’s trust_  \n   _Put an innocent in harm’s way_  \n   _Spread a dangerous lie_  \n   _Attack or betray someone unexpectedly_  \n   _Press the attack when the opponent has already withdrawn or surrendered_  \nIf a character performs a definitive action that goes against his Ideology, he cannot mark experience for previously or later following that chosen Ideology, for the rest of the session. If you betray your morals, even for a moment, you reap no benefit."
+            },
+            {
+                "key":"influence",
+                "name":"Influence",
+                "description":"Each character can gain and lose Influence in the world, in the form of wealth, connections, fame, authority, favors owed, unique knowledge, or some other asset. Influence can be general, or a character can have it with a specific individual or group. The higher the Influence, the more the character is able to reach out into the world and affect it.  \nInfluence can be gained and spent in the fiction, both prescriptively and descriptively: most characters roll a number of dice for their starting Influence at creation, and simply have that much Influence - it’s up to the player exactly what form that Influence takes in the world. However, if the character develops strong trade relations between his airship manufacturing corporation and the Floating Indigo Islands in the Cumulonimbus Territories to the south, the MC may decide to award them more Influence in that part of the world, or non-specific Influence for becoming a renowned trade negotiator."
             }
     ],
     "notes":{
-        "version": 0.1,
+        "version": 0.2,
         "gameid": 6,
         "game_name": "Adventshire",
         "game_description": "Steampunk, unfinished, like How the West Was Lost",
-        "changelog": []
+        "changelog": [
+            {"Date": "2022-06-15", "Notes": "Filling in classes, tags, weapons."}
+        ]
     },
     "characters":{
         "magician": {
@@ -404,6 +411,56 @@
         { "key": "engineer", "name": "The Engineer"},
         { "key": "magician", "name": "The Magician"},
         { "key": "pugilist", "name": "The Pugilist"}
+    ],
+    "tags":[
+        { "name": "Shock", "description": "implies stun and AP (electricity)"},
+        { "name": "Force", "description": "implies loud and/or stun (knockdown)"},
+        { "name": "Heat", "description": "implies AP and reload (overheat)"},
+        { "name": "Messy", "description": "implies loud (victim)"},
+        { "name": "AP", "description": "(armor piercing) ignores armor"},
+        { "name": "Hidden", "description": "implies obscured from sight and brief inspection, and in some cases, displaying dishonor"},
+        { "name": "Infinite", "description": " does not actually mean “infinite”, but rather the character is never found without some type of that item stashed in some secret pocket"},
+        { "name": "Area", "description": "can hit multiple enemies or allies, depending on a perform under pressure roll"},
+        { "name": "Quick", "description": "implies a +1 when wielding the weapon, when speed matters"},
+        { "name": "S-harm", "description": "implies non-lethal (no loss of Spirit) stun"},
+        { "name": "S-armor", "description": "implies protection against stun, and/or stunning the attacker when hit within hand range"},
+        { "name": "Intimate", "description": "close enough to whisper"},
+        { "name": "Hand", "description": "close enough to lunge and punch"},
+        { "name": "Close", "description": "close enough to be heard clearly without shouting"},
+        { "name": "Far", "description": "shouting distance and farther"}
+    ],
+    "weapons":[
+        { "name": "prism pistol", "harm": "3", "tags": ["close","heat"]},
+        { "name": "prism rifle", "harm": "3", "tags": ["far","heat"]},
+        { "name": "volt pistol", "harm": "2", "tags": ["close","shock"]},
+        { "name": "brass knuckles", "harm": "2", "tags": ["hand","hidden","force"]},
+        { "name": "cane sword", "harm": "2", "tags": ["hand","hidden"]},
+        { "name": "umbrella blade", "harm": "2", "tags": ["hand","quick"]},
+        { "name": "sleeve pistol", "harm": "2", "tags": ["hand/close","reload","loud","hidden"]},
+        { "name": "hidden knives", "harm": "2", "tags": ["hidden", "infinite"]},
+        { "name": "bowie knife", "harm": "3", "tags": ["hand","throw"]},
+        { "name": "blunderbuss", "harm": "3", "tags": ["close","force","reload"]},
+        { "name": "cane rifle", "harm": "2", "tags": ["close","reload","hidden"]},
+        { "name": "stun sword", "harm": "2", "tags": ["hand","shock"]},
+        { "name": "volt grenade", "harm": "2", "tags": ["area","shock"]},
+        { "name": "revolver", "harm": "2", "tags": ["close","reload","hidden"]},
+        { "name": "thompson rifle", "harm": "3", "tags": ["close","area","reload"]},
+        { "name": "dynamite", "harm": "4", "tags": ["area","loud"]},
+        { "name": "volt glove", "harm": "2", "tags": ["intimate","hidden","shock"]},
+        { "name": "pneumatic fist", "harm": "3", "tags": ["hand","force"]},
+        { "name": "van der graaf belt", "harm": "n/a", "tags": ["s-armor"]},
+        { "name": "saber", "harm": "3", "tags": ["hand","messt"]},
+        { "name": "rapier", "harm": "2", "tags": ["hand","quick"]},
+        { "name": "zap thrower", "harm": "3", "tags": ["area","hand","reload","shock"]},
+        { "name": "monkey wrench", "harm": "2", "tags": ["hand","force"]},
+        { "name": "hunting rifle", "harm": "3", "tags": ["far","reload","loud"]},
+        { "name": "railhammer", "harm": "3", "tags": ["hand","force"]},
+        { "name": "blackjack", "harm": "1", "tags": ["hand","force","knockout"]},
+        { "name": "shoe-blade", "harm": "2", "tags": ["foot","hidden"]},
+        { "name": "sniper rifle", "harm": "4", "tags": ["far","loud"]},
+        { "name": "hand cannon", "harm": "3", "tags": ["close","messy","reload"]},
+        { "name": "dual pistols", "harm": "3", "tags": ["area","close","quick","reload"]},
+        { "name": "throwing knives", "harm": "2", "tags": ["hand/close"]}
     ]
     
 }
