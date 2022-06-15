@@ -265,7 +265,7 @@
                 {
                     "key":"reverse_engineering",
                     "name":"Reverse Engineering",
-                    "description":"When you mentally deconstruct a scene or an object, **Roll+Dream**.  \n**On a hit**, ask a question and get +1Logic forward.  \n**On a 10+**, ask two more. \n* What might have inspired the creation of this? \n* How can I recreate this in a controlled setting? \n* What strong emotions are poured into this? \n* What has been done most recently with this, or to this? \n* What’s wrong with this, and how might I fix it?  \n**On a miss**, you are lost in thought in the Impossible Dream."
+                    "description":"When you mentally deconstruct a scene or an object, **Roll+Dream**.  \n**On a hit**, ask a question and get +1Logic forward.  \n**On a 10+**, ask two more. \n* What might have inspired the creation of this? \n* How can I recreate this in a controlled setting? \n* What strong emotions are poured into this? \n* What has been done most recently with this, or to this? \n* What’s wrong with this, and how might I fix it?  \n  \n**On a miss**, you are lost in thought in the Impossible Dream."
                 },
                 {
                     "key":"hood",
