@@ -74,10 +74,11 @@
                         // Unpack the JSON data
                         rArray.forEach(function(char){
                             // Set to show only specific character ids
-                            if(char.id == '84' || char.id == '85');
-                            let model = char;
-                            model.data = JSON.parse(char.data);
-                            vm.dudes.push(model);
+                            if(char.id == '84' || char.id == '85'){
+                                let model = char;
+                                model.data = JSON.parse(char.data);
+                                vm.dudes.push(model);
+                            };
                         });
                         //console.log(vm.dudes);
                     } else {
