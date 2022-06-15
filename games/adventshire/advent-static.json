@@ -400,6 +400,7 @@
     "classes":[
         { "key": "alchemist", "name": "The Alchemist"},
         { "key": "automaton", "name": "The Automaton"},
+        { "key": "duelist", "name": "The Duelist"},
         { "key": "engineer", "name": "The Engineer"},
         { "key": "magician", "name": "The Magician"},
         { "key": "pugilist", "name": "The Pugilist"}
