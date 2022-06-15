@@ -334,7 +334,7 @@
                 {
                     "key":"scoundrel",
                     "name":"Scoundrel",
-                    "description":"When you fight with dishonor, **fill your Resilience and gain the flaw Scoundrel**.  \n**While a Scoundrel**, when you smack some sense, assert your authority, or act under pressure, take +1 on the roll, and lose 1-Resilience. When your Resilience is empty, lose Scoundrel. _Fighting with dishonor while already a Scoundrel does not re-activate this move._"
+                    "description":"When you fight with dishonor, **fill your Resilience and gain the flaw Scoundrel**.  \n**While a Scoundrel**, when **you smack some sense**, **assert your authority**, or **act under pressure**, take +1 on the roll, and lose 1-Resilience. When your **Resilience is empty**, lose Scoundrel.  \n_Fighting with dishonor while already a Scoundrel does not re-activate this move._"
                 },
                 {
                     "key":"ambidextrous",
