@@ -283,6 +283,67 @@
             ],
             "advancements":[]
         },
+        "duelist": {
+            "key": "duelist",
+            "name": "The Duelist",
+            "description":"",
+            "starting_stats":[
+                {"poise":1, "charm": -2, "vigor": 1, "logic": 2, "dream": -1},
+                {"poise":1, "charm": 1, "vigor": 1, "logic": -2, "dream": 1},
+                {"poise":1, "charm":0, "vigor": 1, "logic": 0, "dream": 0},
+                {"poise":1, "charm": 2, "vigor": 1, "logic": -1, "dream": -2}
+            ],
+            "starting_gear":"One **custom dueling weapon** and **one secondary weapon**:  \n++Custom sword base (choose 1)++: short sword (2-harm hand messy), saber (2-harm hand sturdy), rapier (2-harm hand quick), cane sword (1-harm hand hidden), chainsword (3-harm hand loud messy, counts as one modification)  \n++Modifications (choose 2, *counts as 2)++: ornate (+1Influence), heirloom (+1Influence), *long blade (+2harm), *serrated blade (+2harm), heavy (+1harm), diamond-edged, (+1harm), perfectly balanced (+quick), weighted pommel (can deal s-harm), parrying hilt (+1armor)  \n++Custom gun base (choose 1)++: flintlock pistol (2-harm close reload loud), blunderbuss (3-harm close reload force), hunting rifle (3-harm far loud), sleeve pistol (1-harm close hidden), laser pistol (2-harm close hi-tech heat), crossbow (2-harm close reload silent)  \n++Modifications (choose 2)++: ornate (+1Influence), heirloom (+1Influence), ap ammo, perfectly aligned (+1harm), high-powered (+1harm), Farraday stunner (can deal s-harm in melee), silencer (-loud), spring-loaded ammunition magazines (-reload), monoscope (+far, or +1harm at far)  \n++Secondary Weapons++: small pistol (2-harm close reload loud), machete (3-harm hand messy), many knives (2-harm close hidden infinite), Bowie knife (3-harm hand throw), garrote wire (2-harm intimate hidden ap)  \nAs a 6th and beyond enlightenment choice, the Duelist can choose either Fencer or Marksman (whichever was not chosen at character creation), their weapon becomes a gunsword, and they detail the new modifications to the MC, according to the creation rules.",
+            "starting_moves": "Start with **Anything You Can Do**, **Unstoppable**, and **1** additional **Engineer** move.",
+            "moves":[
+                {
+                    "key":"duelist_special",
+                    "name": "A Higher Standard (Duelist Special)",
+                    "description": "Your Ideology is Honorable by default. When you show honor in battle, **gain a temporary Moxie Point for that battle.**"                    
+                },
+                {
+                    "key":"fencer",
+                    "name":"Fencer",
+                    "description":"You get **+1Vigor**. While wielding a blade, you get **+1armor** against the Challenged and anyone who stands between you and them."
+                },
+                {
+                    "key":"marksman",
+                    "name":"Marksman",
+                    "description":"You get **+1Poise**. While wielding a ranged weapon, you get **2-armor** against everyone but the Challenged."
+                },
+                {
+                    "key":"mortal_combat",
+                    "name":"Mortal Combat",
+                    "description":"When going into battle, **challenge a specific foe and Roll+Vigor (Fencer) or +Poise (Marksman)**.  \n**On a hit**, the foe accepts and will fight no one but you.  \n**On a 10+**, your challenge has shaken them, and you take +1forward against the Challenged.  \n**On a 7-9**, they accept on equal grounds, but are energized by your call.  \n**On a miss**, they aren’t threatened by you and they deny your challenge, take -1ongoing against them.  \n_You cannot name a new Challenged until you or the Challenged has been defeated, or one of you escapes the scene_."
+                },
+                {
+                    "key":"social_predator",
+                    "name":"Social Predator",
+                    "description":"When talking to someone alone and face-to-face, **roll+Poise**.  \n**On 10+** hold 3.  \n**On a 7-9**, hold 1.  \n**Miss**, you take -1Ongoing and must perform under pressure to ignore their raw animal charisma for the remainder of the conversation.  \nOver the course of the conversation, you may spend hold one-for-one to: \n* Bring the person you are talking to over to your point of view \n* Humiliate them with your wit and gain +1ongoing with them for this interaction \n* Convince them to do you a favor worth 1-Influence \n* Have them bring a message directly to a person of your choosing \n* Challenge them to a duel at a time and place of your choosing, and they must accept."
+                },
+                {
+                    "key":"gun_show",
+                    "name":"The Gun Show",
+                    "description":"While you have a pistol in hand, **roll+Poise** instead of +Charm when you entice, negotiate, or convince."
+                },
+                {
+                    "key":"sword_is_mightier",
+                    "name":"The Sword Is Mightier",
+                    "description":"While you have a sword in hand, **roll+Vigor** instead of +Charm when you entice, negotiate, or convince."
+                },
+                {
+                    "key":"scoundrel",
+                    "name":"Scoundrel",
+                    "description":"When you fight with dishonor, **fill your Resilience and gain the flaw Scoundrel**.  \n**While a Scoundrel**, when you smack some sense, assert your authority, or act under pressure, take +1 on the roll, and lose 1-Resilience. When your Resilience is empty, lose Scoundrel. _Fighting with dishonor while already a Scoundrel does not re-activate this move._"
+                },
+                {
+                    "key":"ambidextrous",
+                    "name":"Ambidextrous",
+                    "description":"Gain a new custom weapon of your chosen Duelist type to wield in your off-hand. Whenever you **smack some sense** or **assert your authority**, roll twice and use either result. Or, you may roll twice and apply each of the rolls to smack some sense and/or assert your authority to two separate characters on the scene, if it makes sense and is possible. Choose which option you are using before you roll."
+                }
+            ],
+            "advancements":[]
+        },
         "automaton": {
             "key": "automaton",
             "name": "The Automaton",
