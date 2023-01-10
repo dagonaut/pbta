@@ -355,50 +355,101 @@
             "key": "automaton",
             "name": "The Automaton",
             "description":"",
-            "starting_stats":[
-                {"poise":1, "charm": 0, "vigor": -1, "logic": 2, "dream": 1},
-                {"poise":-2, "charm": -1, "vigor": 1, "logic": 2, "dream": 2},
-                {"poise":1, "charm": -1, "vigor": 1, "logic": 2, "dream": 0},
-                {"poise":-1, "charm": 1, "vigor": 0, "logic": 2, "dream": 1}
-            ],
-            "starting_stats_alt":"Instead of stat blocks you choose using the following rules:  \n**Your mechanical body was built for...**  \n* Precision (+2Poise)  \n* Interaction (+2Charm)  \n* Industry (+2Vigor)  \n* Calculations (+2Logic)  \n**And has been modified with a(n)...**  \n* Exceptional A.I. (+1Logic, -1Charm)  \n* High-torque gear ratio (+1Vigor, -1Poise)  \n* Body language analyzer (+1Charm, -1Logic)  \n* Finely tuned clockwork (+1Poise, -1Vigor)  \nAs an artificial construct, you do not have a **Dream** stat and cannot connect to the Impossible Dream. If a move or circumstance would force you to **roll+Dream**, you malfunction and go into system shutdown. The MC may tell you what strange and fantastic data your positronic brain absorbs while disabled.  \nAnd choose 2 **hardware modifications:**  \n* Reinforced endoskeleton (+1 armor)  \n* High-density alloys (+1 armor)  \n* Ornate and detailed metalwork (+1Influence)  \n* Hydraulic Upper Body Servos (increased strength, +1harm in melee)  \n* Mysterious power source (no need to recharge)  \n* Psychic barometer (can interpret ambient data from the Impossible Dream)  \n* Non-traditional programming (choose one more or one less prime directive)  \n* Integrated and concealed grenade launcher (4-harm close area force messy). Begins play with limited ammunition capacity (3 explosive grenades), replenished at 1-Influence each.  \nAt character creation, choose 2 prime directives. The MC then chooses one more. The MC also may or may not secretly assign you hidden directives. Conflicting directives can be fun, but think about it real hard first. Possible directives: \n* To kill another character. \n* To protect another character. \n* To serve and obey another character. \n* To build or create something. \n* To catalogue or observe something. \n* To destroy or dispose of something. \n* To find and retrieve something. \n* To ascend in power and influence. \n* To serve the status quo, protect the innocent, and uphold the law. \n* To destroy the status quo, punish the guilty, and spread chaos.  \nWhenever you act against your prime directives, you are performing under pressure. If you fail, take -1ongoing with whatever action you tried to perform until you gain new insight on yourself.",
-            "starting_gear":"**Clothing suitable to your fashion**  \nBy default, your **mechanical fists** are 2-harm hand force and your **metal chassis** protects your integral systems for 1-armor.  \nYou may also choose one extra weapon: prism pistol (3-harm close heat), prism rifle (3-harm far heat), thompson rifle (3-harm close area reload), pneumatic fist (3-harm hand force), hand cannon (3-harm close messy reload).",
-            "starting_moves": "Start with **I'm a Real Boy (automaton special)**, **Like Tears in Rain**, and **1** additional **Automaton** move.",
+            "starting_stats":[],
+            "starting_stats_alt":"Instead of stat blocks you choose using the following rules:  \n**Your mechanical body was built for...**  \n* Precision (+2Poise)  \n* Interaction (+2Charm)  \n* Industry (+2Vigor)  \n* Calculations (+2Logic)  \n**And has been modified with a(n)...**  \n* Exceptional A.I. (+1Logic, -1Charm)  \n* High-torque gear ratio (+1Vigor, -1Poise)  \n* Body language analyzer (+1Charm, -1Logic)  \n* Finely tuned clockwork (+1Poise, -1Vigor)  \nAs an artificial construct, you do not have a **Dream** stat and cannot connect to the Impossible Dream. If a move or circumstance would force you to **roll+Dream**, you malfunction and go into system shutdown. The MC may tell you what strange and fantastic data your positronic brain absorbs while disabled.  \nAnd choose 2 **hardware modifications:**  \n* Reinforced endoskeleton (+1 armor)  \n* High-density alloys (+1 armor)  \n* Ornate and detailed metalwork (+1Influence)  \n* Hydraulic Upper Body Servos (increased strength, +1harm in melee)  \n* Mysterious power source (no need to recharge)  \n* Psychic barometer (can interpret ambient data from the Impossible Dream)  \n* Non-traditional programming (choose one more or one less prime directive)  \n* Integrated and concealed grenade launcher (4-harm close area force messy). Begins play with limited ammunition capacity (3 explosive grenades), replenished at 1-Influence each.",
+            "starting_gear":"**Clothing suitable to your look:** laboratory gear, casual wear and doctor’s coat, disheveled business wear  \n**One handy weapon:** cane sword (2-harm hand hidden), revolver (2-harm close reload force), saber (3-harm hand messy), throwing knives (2-harm hand/close), prism pistol (3-harm close heat), tranq syringe (1-harm intimate stun)  \n**Alchemist Special - Field Experimentation:** When you throw an unlabeled flask of mysterious liquid from your Alchemy Kit, **spend a Moxie Point and roll+Logic**.  \nOn a hit, you remember what it does a moment before the container breaks open.  \n**On a 10+**, choose 3.  \n**On a 7-9**, choose 1 and the MC chooses 1.  \n**On a miss**, the MC chooses 2.  \nThe fluid inside:  \nExplodes.  \nFreezes.  \nIgnites.  \nDisables one sense (smells horrible, flashes and blinds, deafening pop, etc.)  \nIs hallucinatory.  \nHeals everyone it touches for 1-Spirit.  \nHits only the intended targets.  \nSpreads widely.",
+            "starting_moves": "Start with **Alchemy Bag** and **1** additional **Alchemist** move.",
             "moves":[
                 {
-                    "key":"im_a_real_boy",
-                    "name": "I'm a Real Boy (Automaton Special)",
-                    "description": "You do not gain Moxie. Whenever you would gain Moxie, gain an equal amount of Humanity instead. Whenever you would roll+Moxie, roll+Humanity instead. When your Humanity equals 1 or less, you may not advance. You may reveal your clockwork heart and spend your Humanity, 1-for-1 to: \n* Change the result of your basic move roll to a 12 \n* Ignore all harm from one attack \n* Kill, disarm, or disable (MC’s choice) a target within arm’s reach."            
+                    "key":"",
+                    "name": "",
+                    "description": ""
                 },
                 {
-                    "key":"tears_in_rain",
-                    "name":"Like Tears in Rain",
-                    "description":"When you do harm to a human, roll+Humanity. **On a hit**, do your harm as established.  \n**On a 10+**, the MC chooses one.  \n**On a miss**, you choose two: \n* Your mechanical precision is extra effective. You do +1harm. \n* Your pity for weak flesh lessens. You get +1forward against humans. \n* Your violence has moved you further from humanity. You take -1Humanity. \n* Your actions have violated a hidden directive. You take 1 harm. \n* You struggle to process the consequences of your actions. You take -1forward."
+                    "key":"alchemy_bag",
+                    "name":"Alchemy Bag",
+                    "description":"Your Alchemy Kit has all sorts of useful tools in it: powders, rags, tape, needles, bottles, gloves, heating coils, wipes, alcohol, solvents, acids, bloodslowers, test tubes, bonepins, tinctures, potions, ether patches in quantity, and a roll of Tesla jumpshock probes for when it comes to that.  \nWhen you use it, **spend its stock**; you can spend 0–3 of its stock per use.  \nYou can resupply it for **1-Influence per 2-stock**, if your circumstances let you purchase alchemical supplies. It begins play holding **6-stock.** \nWhen you use your bag and perform science to fortify someone's spirit, **roll+Stock spent**.  \n**On a 10+**, they regain either 1-Spirit or 1-Moxie (your choice), and fill their Resilience.  \n**On a 7-9**, they regain 1-Spirit and mark Resilience, but the potion has one side effect: \n* They mark a temporary flaw of their choice. \n* They take -1forward. \n* The next time they take harm, they take +1harm. \n* They are dazed, and must perform under pressure to act. \n**On a miss**, they empty their Resilience and the potion has an unexpected effect."
                 },
                 {
-                    "key":"integrated_circuits",
-                    "name":"Integrated Circuits",
-                    "description":"**When you help a stranger in need**, shake their hand and Roll+Humanity.  \n**On a hit**, you’ve gained a friend, and hold 1 to call upon them for help in a time of need.  \n**On a 10+** your deed will be repaid in full, right when you need it.  \n**On a 7-9** the aid may not come immediately, or may not be in the form you imagined.  \n**On a miss**, no good deed goes unpunished, and you lose 1-Humanity."
+                    "key":"laboratory",
+                    "name":"MacGyver’s Laboratory",
+                    "description":"You can improvise a lab, in which you can perform basic experiments on people or potion crafting. When you do so, **roll+Dream.**  \n**On a hit**, you succeed in whatever you set out to do, but the potion or procedure may have additional side effects.  \n**On a 10+**, you’ve had a happy accident and the intended result is supremely effective.  \n**On a miss**, something blows up in your face."
                 },
                 {
-                    "key":"uncanny_valley",
-                    "name":"Uncanny Valley",
-                    "description":"When you experiment on a human in solitude, consider your respective places in the universe and roll+Humanity. On a 10+, you gain new insight, mark Resilience and pick one from the list. On a 7-9, mark Resilience or pick one. On a miss, lose 1-Humanity and pick one. \n  Choose a move or ability they have, you can use it once this session. \n* You calibrate your perception with theirs, you both get +1forward. \n* They regain 2Spirit. \n* They take 2harm. \n* You induce in them a flaw or a phobia."
+                    "key":"waiter",
+                    "name":"I’ll Be Your Waiter This Evening",
+                    "description":"When serving someone with food or drink, you may slip a concoction of your own devising into the item and **roll+Logic**.  \n**On a hit**, pick 1. \n* The subject adores you. \n* The subject becomes violently ill (2-harm loud messy). \n* The subject becomes compliant and will truthfully answer any questions asked. \n* The subject quickly falls asleep. \n* The subject flies into an uncontrollable rage. \n**On a 10+**, the subject eats/drinks it, is none the wiser, and the potion takes effect exactly when you want it to.  \n**On a 7-9**, the subject eats/drinks it but you’ve flubbed the dosage, and the potion’s intended effect and duration are unpredictable.  \n**On a miss**, you’ve accidentally exposed yourself and/or an unintended target, with who-knows-what."
                 },
                 {
-                    "key":"cold_dead_hands",
-                    "name":"Cold, Dead Hands",
-                    "description":"You embrace your soulless and mechanical heart. When you have shed all semblance of human nature, you get +1armor. When your Humanity equals 1 or less, you do not need to roll for the Endure a Blow move when you take harm."
+                    "key":"periodic_sense",
+                    "name":"Periodic Sense",
+                    "description":"When you come across a scientific oddity and take a sample, **roll+Logic**.  \n**On a hit**, tell the MC what you think it means, using the proper high academic language required for such a discovery.  \n**On a 10+**, your theory is more or less correct.  \n**On a 7-9**, your theory has a flaw, or the sample you’ve taken is in some way tainted.  \n**On a miss**, your mad science and wild theories have put someone in danger."
                 },
                 {
-                    "key":"other_body",
-                    "name":"My Other Body is a Tank",
-                    "description":"You can transfer your programming, brain, and/or processor to a formidable new chassis with 3-armor (detail to MC). You may also add (choose 2): shoulder-mounted repeating minirifles (3-harm close/far messy), zapcannons (4-harm far shock), arm-mounted steamthrowers (3-harm hand/close area heat), electro-conductive gauntlets (s-harm hand area shock), or jetboots (gain the Rocketeer move Up, Up, and Away)."
+                    "key":"transmutation",
+                    "name":"Transmutation",
+                    "description":"When you have some assorted items, raw materials, or scrap, along with time and concentration, **roll+Dream.**  \n**On a hit**, you methodically transform the base components of the materials into something more useful.  \n**On a 10+**, pick 2.  \n**On a 7-9**, pick one.  \n**On a miss**, you use up whatever material you were working with to no benefit.  \n* You gain 2-Influence.  \n* You add +valuable to an item. \n*You safely reduce a dangerous item to its weight in useful raw materials.  \n* The MC picks an attribute to add to an item of your choice."
                 },
                 {
-                    "key":"walk_with_animals",
-                    "name":"Walk With the Animals",
-                    "description":"You have a masterfully engineered external layer of bio-tissue, and appear to anyone but the scrutinizing eye of a medical professional to be human. Gain +1Humanity."
+                    "key":"fundamental_disconnect",
+                    "name":"Fundamental Disconnect",
+                    "description":"When someone in your care dies, **gain +1 Vigor (max +3)**."
+                }
+            ],
+            "advancements":[]
+        },
+        "professor": {
+            "key": "professor",
+            "name": "The Professor",
+            "description":"",
+            "starting_stats":[
+                {"poise":1, "charm": -1, "vigor": 0, "logic": 2, "dream": 1},
+                {"poise":-1, "charm": 1, "vigor": 1, "logic": 2, "dream": 0},
+                {"poise":0, "charm": 0, "vigor": -2, "logic": 2, "dream": 2},
+                {"poise":0, "charm": 1, "vigor": -1, "logic": 2, "dream": 1}
+            ],
+            "starting_gear":"**Clothing suitable to your look.**  \n**One trusty weapon:** bowie knife (2-harm hand messy), revolver (2-harm close loud reload), bullwhip (1-harm hand area bind), hunting rifle (3-harm far loud reload)  \n**Professor Special - Hero Protagonist: When you apply a story from history to your current situation, describe the tale and **roll+Dream**.  \n**On a 10+**, you inspire everyone listening, they all get **+1forward**, and you gain **1 Moxie**.  \n**On a 7-9**, one person listening gains **+1forward** and you mark **Resilience**. If your Resilience is already full, you also get **+1forward**.  \n**On a miss**, the story ends badly and you bum everyone out. You and everyone listening get -1forward.",
+            "starting_moves": "You start with either the move **Library of Knowledge** or **Adventurer’s Log**, plus **2** other Professor moves.",
+            "moves":[
+                {
+                    "key":"",
+                    "name": "",
+                    "description": ""
+                },
+                {
+                    "key":"library_of_knowledge",
+                    "name":"Library of Knowledge",
+                    "description":"At the beginning of each session or during a stretch of downtime in-game, you may consult your books and **Roll+Logic**. \n**On a 10+**, hold 3.  \n**On a 7-9**, hold 1.  \n**On a miss**, you can’t concentrate, and you’ve simply wasted your time.  \nYou may spend the hold, 1-for-1 at any time during the session to: \n* Apply your studies to your current situation. Get +1forward. \n* Reveal a relevant piece of information about one person, place, or thing (you and the MC will detail). \n* Offer one character a bit of advice. They mark Enlightenment. \n* Give someone some information they need. They owe you one favor, worth 1-Influence."
+                },
+                {
+                    "key":"adventure_log",
+                    "name":"Adventurer's Log",
+                    "description":"You record a detailed log of all your experiences. After spending some time poring through your notes, **Roll+Dream**.  \n**On a 10+**, you gain new insight from past experiences and get +1ongoing with one person, place, or thing you have previously encountered.  \n**On a 7-9**, you learn a little something and get +1forward with that person, place, or thing.  \n**On a miss**, you just confuse yourself, get -1ongoing with that person, place, or thing until you learn something new about it."
+                },
+                {
+                    "key":"museum",
+                    "name":"It Should Be in a Museum",
+                    "description":"When you eschew wealth or fame for knowledge, mark Enlightenment."
+                },
+                {
+                    "key":"half_the_battle",
+                    "name":"Learning is Half the Battle",
+                    "description":"When fighting or battling for possession of a piece of history or knowledge, gain 1 temporary Moxie Point for that fight or battle."
+                },
+                {
+                    "key":"pen",
+                    "name":"The Pen is Mightier",
+                    "description":"When enticing, negotiating, convincing or protecting someone with a writing implement, **Roll+Logic** instead of the usual stat."
+                },
+                {
+                    "key":"teaching_moment",
+                    "name":"Teaching Moment",
+                    "description":"When someone asks you for advice, give them your honest opinion. If they follow your advice, they take +1 to any rolls to do so. If they follow your advice but fail at their goal, they mark Enlightenment (in addition to any missed rolls they make). If they succeed, you both mark enlightenment."
+                },
+                {
+                    "key":"plot_armor",
+                    "name":"Plot Armor",
+                    "description":"When you find yourself truly cornered, make a worried face, consider whether this could be the end, and **roll+Logic**.  \n**On a hit**, an unlikely sequence of previous events has given you a chance - a secret ally, a hidden parachute, a lucky malfunction, etc. Describe to the MC the fortuitous narrative.  \n**On a 7-9**, the MC will add a complication, price, or consequence.  \n**On a miss**, your goose may truly be cooked, and an enemy reveals himself to gloat."
                 }
             ],
             "advancements":[]
@@ -410,6 +461,8 @@
         { "key": "duelist", "name": "The Duelist"},
         { "key": "engineer", "name": "The Engineer"},
         { "key": "magician", "name": "The Magician"},
+        { "key": "alchemist", "name": "The Alchemist"},
+        { "key": "professor", "name": "The Professor"},
         { "key": "pugilist", "name": "The Pugilist"}
     ],
     "tags":[
