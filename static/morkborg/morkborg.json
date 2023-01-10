@@ -1,0 +1,120 @@
+{    
+    "notes":{
+        "version": 0.1,
+        "gameid": "n/a",
+        "game_name": "Mork Borg",
+        "game_description": "Dark Souls-ish; Not PBTA",
+        "changelog": [
+            {"Date": "2023-01-05", "Notes": "Initial create."}
+        ]
+    },
+    "names": {
+        "dice": "d6, d8",
+        "names": [
+            "Aerg-Tval",
+            "Agn",
+            "Arvant",
+            "Belsum",
+            "Belum",
+            "Brint",
+            "Börda",
+            "Daeru",
+            "Eldar",
+            "Felban",
+            "Gotven",
+            "Graft",
+            "Grin",
+            "Grittr",
+            "Haerü",
+            "Hargha",
+            "Harmug",
+            "Jotna",
+            "Karg",
+            "Karva",
+            "Katla",
+            "Keftar",
+            "Klort",
+            "Kratar",
+            "Kutz",
+            "Kvetin",
+            "Lygan",
+            "Margar",
+            "Merkari",
+            "Nagl",
+            "Niduk",
+            "Nifehl",
+            "Prügl",
+            "Qillnach",
+            "Risten",
+            "Svind",
+            "Theras",
+            "Therg",
+            "Torvul",
+            "Törn",
+            "Urm",
+            "Urvarg",
+            "Vagal",
+            "Vatan",
+            "Von",
+            "Vrakh",
+            "Vresi",
+            "Wemut"
+        ]
+    },
+    "traps":[
+        "Well dressed corpse, booby trapped",
+        "Wall-holes shoot poisonous arrows",
+        "Bells and marbles on the floor",
+        "Scorpion-filled basket poised to fall",
+        "Fish hooks hanging at eye level",
+        "Chest marked with explosive runes",
+        "Lock trapped with vial of poison gas",
+        "Jewel removal leads to roof collapse",
+        "Slanted floor, translucent oil, pit",
+        "Snake-cages on collapsing ceiling tiles",
+        "Evil urns release cold ghosts",
+        "Coins coated in grime and poison"
+    ],
+    "weather": [
+        "Lifeless grey",
+        "Hammering rain",
+        "Piercing wind",
+        "Deafening storm",
+        "Black as night",
+        "Dead quiet",
+        "Cloudburst",
+        "Soup-thick mist",
+        "Crackling frost",
+        "Irritating drizzle",
+        "Roaring thunder",
+        "Gravelike cold"
+    ]
+}
+
+
+11–16 The remains of something worthless crumbles in your
+21 Pot filled with extremely potent itching ointment.
+22 Necklace of human teeth.
+23 Bag of angry, venomous moths. Test Toughness dr6 or die.
+24 Pocket full of broken glass, pc takes d2 damage.
+25 Mad manifesto. If read, test Presence dr12 or lose 1 Presence permanently from confusion.
+26 Key to nearby locked door. Stolen.
+31 Map to a weak but wealthy family’s house.
+32 A hopeless amount of spiders.
+33 Metal cylinder with gun powder and fuse. Roll a d6. 1–2 you lose a hand. 3–6 3d10 damage wherever it lands.
+34 Known and liked/despised witch-hunter’s face. Flayed.
+35 Note with pc’s names. One is crossed out.
+36 Tortured pixie with torn-off wings and gouged out eyes.
+41 Map t o a place that cannot possibly exist.
+42 U nmarked bottle with a liquid that shifts between red and green.
+43 B ond. A local potentate owes the holder a sizable amount.
+44 Death mask of one of the pcs.
+45 The ‘W ater of Life.’ Heals d8. Test Toughness dr10 or go blind. Highly alcoholic.
+46 Ther e was something very wrong with this one. Hands covered with something lukewarm, brown and acidic. Take d2+1 damage and smell terrible for d4 days.
+51 Bl ack Kergüs dagger. 2d4 damage.
+52 La belled poison bottle. Test Toughness dr12 or lower random ability by d4. The ability can be increased when your character is improved.
+53 Sca lp with long black hair.
+54 Go lden ball with an invisible seam, twists open.
+55 Bloodstained knuckle-duster.
+56 T wo weighted dice.
+61–66 The result in silver.

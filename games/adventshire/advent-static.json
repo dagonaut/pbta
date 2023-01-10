@@ -43,7 +43,7 @@
             {
                 "key": "endure_a_blow",
                 "name": "Endure a Blow",
-                "description": "When you endure a blow, **roll+Spirit lost**.  \n**On a miss**, the MC can choose something from the 7–9 list below. If she does though, it only increases your resolve, and you regain 1 Spirit or 1 Moxie (your choice). \n**On a 7–9**, the MC can choose 1. Or, you may lose 1 additional Spirit or 1-Moxie to snap to your senses and negate the chosen effect instead: \n* You lose your footing or position. \n* You lose your grip on whatever you’re holding. \n* You are stunned or confused, unable to tell for sure what just happened. \n* You miss your mark or noticing something important. \n* You’re a bloody, bruised, or sweaty mess. \n**On a 10-12**, the MC can choose 1, which you can negate by losing an additional 2-Spirit or 2-Moxie: \n* You’re out of action: unconscious, trapped, incoherent or panicked. \n* It’s worse than it seemed. Mark a flaw. \n* Something is broken: your resolve, your bones, or your equipment. \n* Choose 2 from the 7–9 list above. \n**On a 13+**, it’s light out, bucko. Only Deus ex Machina can save you now."
+                "description": "When you endure a blow, **roll+Spirit lost**.  \n**On a miss**, the MC can choose something from the 7–9 list below. If she does though, it only increases your resolve, and you regain 1 Spirit or 1 Moxie (your choice).  \n**On a 7–9**, the MC can choose 1. Or, you may lose 1 additional Spirit or 1-Moxie to snap to your senses and negate the chosen effect instead: \n* You lose your footing or position. \n* You lose your grip on whatever you’re holding. \n* You are stunned or confused, unable to tell for sure what just happened. \n* You miss your mark or noticing something important. \n* You’re a bloody, bruised, or sweaty mess.  \n**On a 10-12**, the MC can choose 1, which you can negate by losing an additional 2-Spirit or 2-Moxie: \n* You’re out of action: unconscious, trapped, incoherent or panicked. \n* It’s worse than it seemed. Mark a flaw. \n* Something is broken: your resolve, your bones, or your equipment. \n* Choose 2 from the 7–9 list above.  \n**On a 13+**, it’s light out, bucko. Only Deus ex Machina can save you now."
             },
             {
                 "key": "preach_revolution",
@@ -51,27 +51,39 @@
                 "description": "**Once per session**, when you go amongst those of your ideology preaching revolution, **roll+Moxie**.  \n**On a 10+**, your message spreads with those who share your beliefs, hold 2.  \n**On a 7-9**, hold 1. You may spend your hold 1-for-1 to reroll one move roll while among members of your Ideology.  \n**On a miss**, your message is warped and twisted, and only feeds the opposition."
             },
             {
+                "key":"englightment_resilience",
+                "name":"Enlightenment & Resilience",
+                "description":"There are 8 boxes that represent your Resilience (bottom 3 boxes) and your Enlightenment (top 5 boxes). Collectively, they track your Advancement.  \n**When you roll a 6-** on a move, mark **Enlightenment.** You learn from your failures.  \n**When you roll a 10+** on a move, mark **Resilience.** You’re inspired by your successes.  \n**When you have all three boxes of your Resilience marked**, you may erase **all three** at any time to immediately either heal 1 Spirit or gain 1 Moxie. You may still empty your Resilience while there are Enlightenment marks in the top 5 boxes.  \n**When all 8 of the Resilience and Enlightenment Boxes are filled**, erase the top group of 5 Enlightenment, keeping your Resilience, and mark an Advancement. You only empty your Resilience Pool by trading it in for Spirit or Moxie, or when a move tells you to do so - you do not lose it by Advancing. Neither Enlightenment nor Resilience are lost between sessions, but again, you need all 8 to be full before Advancing."
+            },
+            {
                 "key": "moxie",
                 "name": "Moxie",
-                "description": "**At the beginning of each session or during long stretches of in-game time**, describe how you steel yourself for what’s to come and roll. If you do it by...  \n* ...by facing yourself in the mirror or some other form of self-reflection, **roll+Poise**.  \n* ...by nostalgically reliving past social conquests, **roll+Charm**.  \n* ...by invigorating your muscles or spirit with exercise, **roll+Vigor**.  \n* ...by carefully plotting out a path to success, **roll+Logic**.  \n* ...by limbering your imagination through natural or artificial means, **roll+Dream**.  \n  \n**On a hit**, gain 1-Moxie and mark Resilience.  \n**On a 10+**, you’re completely invigorated, and gain an additional 1-Moxie.  \n**On a miss**, you lose your adventuring spirit, empty your Resilience to no benefit, and you’re stuck in a tricky bind relating to your method."
+                "description": "Each character can accrue points of Moxie, depending on moves, their Profession, and certain items. When you receive Moxie from an item (+xMoxie), your current Moxie increases by that amount, and that Moxie is available for you to spend, once per session, as long as the item is in your possession. At any time, you may empty all three points of your Resilience to gain 1-Moxie.  \nSpending a Moxie represents the character doing something swashbuckling, debonair, awe-inspiring or amazing - swinging down on the chandelier rope and dropping the lights on the guards, performing silent gymnastics across rooftops at night, intimidating the pub’s bodyguard to let you through with nothing but a cold stare, or just being really damn booksmart. Something highly impressive, above and beyond a normal action. When you spend a Moxie, make sure to describe how it’s being applied.  \nYou may spend Moxie at any time, 1-for-1 to:  \n* Add or subtract 3 to a roll, yours or someone else’s present in the scene  \n* Do +3harm with an attack  \n* Ignore up to 3-harm when suffering harm (plot armor)  \nEach profession also has a unique Moxie Special, through which they can spend Moxie for certain effects. By default, a character’s natural Moxie (Moxie obtained or provided strictly through the narrative, not Moxie provided by possessions) does not carry over between play sessions, and between sessions resets to 0.  \n**At the beginning of each session or during long stretches of in-game time**, describe how you steel yourself for what’s to come and roll. If you do it by...  \n* ...by facing yourself in the mirror or some other form of self-reflection, **roll+Poise**.  \n* ...by nostalgically reliving past social conquests, **roll+Charm**.  \n* ...by invigorating your muscles or spirit with exercise, **roll+Vigor**.  \n* ...by carefully plotting out a path to success, **roll+Logic**.  \n* ...by limbering your imagination through natural or artificial means, **roll+Dream**.  \n  \n**On a hit**, gain 1-Moxie and mark Resilience.  \n**On a 10+**, you’re completely invigorated, and gain an additional 1-Moxie.  \n**On a miss**, you lose your adventuring spirit, empty your Resilience to no benefit, and you’re stuck in a tricky bind relating to your method."
             },
             {
                 "key":"advanced_moves",
                 "name": "Advanced Moves",
-                "description":"After five Advancements, you may choose to advance some of the basic moves.  \n**On a 12+ roll for an advanced move**, fill your resilience (instead of simply marking it), as well as an additional effect depending on the move. \n**Perform Under Pressure:** you attain a moment of superhuman grace and clarity \n**Assert Your Authority:** your target surrenders to your command, with no chance of refusal \n**Smack Some Sense:** you apply a flaw of your choice to the enemy, and one move option applies double the effect \n**Entice, Negotiate, or Convince:** you gain an ally, confidante, partner, informant, lover, or friend. \n**Examine a Scene:** you may ask all available questions, and get +1Ongoing using the scene in moves \n**Judge a Person:** you may ask any 3 questions, and get +1Ongoing with this person this scene \n**Submit to the Impossible Dream:** you take inspiration from or plant inspiration into a specific consciousness, or else connect to an enlightened one"    
+                "description":"After five Advancements, you may choose to advance some of the basic moves.  \n**On a 12+ roll for an advanced move**, fill your resilience (instead of simply marking it), as well as an additional effect depending on the move.  \n**Perform Under Pressure:** you attain a moment of superhuman grace and clarity  \n**Assert Your Authority:** your target surrenders to your command, with no chance of refusal  \n**Smack Some Sense:** you apply a flaw of your choice to the enemy, and one move option applies double the effect  \n**Entice, Negotiate, or Convince:** you gain an ally, confidante, partner, informant, lover, or friend.  \n**Examine a Scene:** you may ask all available questions, and get +1Ongoing using the scene in moves  \n**Judge a Person:** you may ask any 3 questions, and get +1Ongoing with this person this scene  \n**Submit to the Impossible Dream:** you take inspiration from or plant inspiration into a specific consciousness, or else connect to an enlightened one"    
             },
             {
                 "key":"ideology",
                 "name": "Ideology",
                 "description":"Each character chooses and follows a pair of **ideologies**: **pro-establishment** or **anti-establishment**, and **honorable** or **dishonorable**. At the end of each session, if you have acted in accordance with one of your Ideologies, **mark Resilience**. If you acted in accordance with both your Ideologies, **mark Resilience twice**.  \n**At the beginning of each session**, a player may choose to change one of their ideologies. That player marks their new ideology on their sheet, and loses one expression of Trust with each other character from their old Ideology. The player may discuss with the MC any possible new opportunities with the new one.  \n**Pro-establishment**: The news of your deeds spreads throughout the community. To uphold the establishment, amongst other things (MC discretion), you can:  \n   _Uphold the letter of the law over the spirit_  \n   _Bring someone to the establishment’s justice_  \n   _Aid or empower someone in charge_  \n   _Refuse power or riches in service of the establishment_  \n_Convince someone to change their ideology to the majority_  \n**Anti-establishment**: The rumors of your actions spread throughout the underground. To subvert the establishment, amongst other things, you can:  \n   _Reveal corruption or hypocrisy in the establishment_  \n   _Break a law to benefit another_  \n   _Inspire another to seize their freedom or rights_  \n   _Cause or endure chaos in the name of change_  \n   _Destroy a symbol of the establishment_  \n**Honorable**: To **display your honor**, amongst other things, you can:  \n   _Return something valuable to its rightful owner_  \n   _Ignore danger to aid another_  \n   _Fulfill a promise_  \n   _Give an opponent +1Forward or an equivalent advantage_  \n   _Offer an opponent an opportunity to surrender_  \n**Dishonorable**: To **display your dishonor**, amongst other things, you can:  \n   _Take advantage of someone’s trust_  \n   _Put an innocent in harm’s way_  \n   _Spread a dangerous lie_  \n   _Attack or betray someone unexpectedly_  \n   _Press the attack when the opponent has already withdrawn or surrendered_  \nIf a character performs a definitive action that goes against his Ideology, he cannot mark experience for previously or later following that chosen Ideology, for the rest of the session. If you betray your morals, even for a moment, you reap no benefit."
+            },
+            {
+                "key":"influence",
+                "name":"Influence",
+                "description":"Each character can gain and lose Influence in the world, in the form of wealth, connections, fame, authority, favors owed, unique knowledge, or some other asset. Influence can be general, or a character can have it with a specific individual or group. The higher the Influence, the more the character is able to reach out into the world and affect it.  \nInfluence can be gained and spent in the fiction, both prescriptively and descriptively: most characters roll a number of dice for their starting Influence at creation, and simply have that much Influence - it’s up to the player exactly what form that Influence takes in the world. However, if the character develops strong trade relations between his airship manufacturing corporation and the Floating Indigo Islands in the Cumulonimbus Territories to the south, the MC may decide to award them more Influence in that part of the world, or non-specific Influence for becoming a renowned trade negotiator."
             }
     ],
     "notes":{
-        "version": 0.1,
+        "version": 0.2,
         "gameid": 6,
         "game_name": "Adventshire",
         "game_description": "Steampunk, unfinished, like How the West Was Lost",
-        "changelog": []
+        "changelog": [
+            {"Date": "2022-06-15", "Notes": "Filling in classes, tags, weapons."}
+        ]
     },
     "characters":{
         "magician": {
@@ -227,6 +239,118 @@
             ],
             "advancements":[]
         },
+        "engineer": {
+            "key": "engineer",
+            "name": "The Engineer",
+            "description":"",
+            "starting_stats":[
+                {"poise":1, "charm": -1, "vigor": 0, "logic": 2, "dream": 1},
+                {"poise":-1, "charm": 1, "vigor": 1, "logic": 2, "dream": -1},
+                {"poise":-1, "charm":0, "vigor": -1, "logic": 2, "dream": 1},
+                {"poise":1, "charm": 1, "vigor": -1, "logic": 2, "dream": 0}
+            ],
+            "starting_gear":"You are the engineer and operator or a steam locomotive, registered and able to travel throughout the many lands of this world. It is of your own custom design and specifications, and by default has 2-Armor, 1-Steam, and is worth 2-Influence.  \n**Choose 3 traits** for your transport: \n* Military (+mounted volt guns, 2-harm close area shock) \n* Academic (Professor’s library and teaching assistants aboard) \n* Scientific (Alchemist’s laboratory and assistants aboard) \n* Commercial (+storage, +1Influence) \n* Armored (+1Armor) \n* Magnetic levitation (+fast) \n* State of the art (+high-tech) \n* Renowned (+1Moxie) \n* Automated high-pressure valves (+1Steam) \n* Secondary boilers (+1Steam)  \nIf your locomotive receives damage, temporarily cross out one trait you’ve chosen for it, until it’s repaired. If there are no more traits remaining to cross out, the train is vulnerable and at the mercy of the MC.",
+            "starting_moves": "Start with **Anything You Can Do**, **Unstoppable**, and **1** additional **Engineer** move.",
+            "moves":[
+                {
+                    "key":"engineer_special",
+                    "name": "Anything You Can Do (Engineer Special)",
+                    "description": "When you watch and make note of another character using **Moxie (rolling+Moxie or spending Moxie), hold 1**. You may spend that hold to perform the noted move with a 12+ result. You may only have 1 hold and noted move at a time; if you watch and note a new move, it replaces the previous."                    
+                },
+                {
+                    "key":"unstoppable",
+                    "name":"Unstoppable",
+                    "description":"When you push your locomotive to smash through an object or to endure a heavy blow, **roll+Steam**.  \n**On a 10+**, both are true.  \n**On a 7-9**, pick one. \n* The locomotive continues safely on course. \n* The locomotive suffers little damage from the stress.  \n**On a miss** your locomotive barely endures, but you’ve lost control until some major downtime for repairs."
+                },
+                {
+                    "key":"reverse_engineering",
+                    "name":"Reverse Engineering",
+                    "description":"When you mentally deconstruct a scene or an object, **Roll+Dream**.  \n**On a hit**, ask a question and get +1Logic forward.  \n**On a 10+**, ask two more. \n* What might have inspired the creation of this? \n* How can I recreate this in a controlled setting? \n* What strong emotions are poured into this? \n* What has been done most recently with this, or to this? \n* What’s wrong with this, and how might I fix it?  \n  \n**On a miss**, you are lost in thought in the Impossible Dream."
+                },
+                {
+                    "key":"hood",
+                    "name":"They’re All the Same Under the Hood",
+                    "description":"When you take control of a new vehicle, **Roll+Logic**.  \n**On a 10+**, the construction and engineering are intuitive, and you may Roll+Logic instead of +Poise to perform under pressure while using the vehicle.  \n**On a 7-9**, the construction is familiar but its engineering is inefficient, you get +1forward to figuring out the trouble and refill your Resilience Pool when you do so.  \n**On a miss**, the engineering is above your level. Take -1Logic until you prove you’re not inept."
+                },
+                {
+                    "key":"merchant",
+                    "name":"Merchant of Adventshire",
+                    "description":"When you arrive in a new station, **Roll+Logic**.  \n**On a 10+**, your arrival is expected and welcome, and the locals greet you with open arms, gifts, and favors worth 1-Influence.  \n**On a 7-9**, your presence is welcome, and you have +1ongoing to finding an exotic item of your choice.  \n**On a miss**, you’re a completely unwanted eyesore, and it’s not long before you’re run out of town."
+                },
+                {
+                    "key":"i_told_you_so",
+                    "name":"Hate To Say I Told You So",
+                    "description":"When interjecting with your unsolicited advice, share your honest opinion on the proper course of action with those you interrupted. If they do it, they get +1Moxie. If they don’t, you get +1Moxie."
+                },
+                {
+                    "key":"clockwork_precision",
+                    "name":"Clockwork Precision",
+                    "description":"When it appears that you’ve made a miscalculation and will be tardy for an appointment, **roll+Dream**.  \n**On a 10+**, it only appears that way, and you’ve made previous arrangements to expedite your arrival to the precise best moment. Describe them.  \n**On a 7-9**, describe your plans, but the MC will introduce a hitch, possibly preventing your timely arrival.  \n**On a miss**, you’ve been waylaid."
+                }
+            ],
+            "advancements":[]
+        },
+        "duelist": {
+            "key": "duelist",
+            "name": "The Duelist",
+            "description":"",
+            "starting_stats":[
+                {"poise":1, "charm": -2, "vigor": 1, "logic": 2, "dream": -1},
+                {"poise":1, "charm": 1, "vigor": 1, "logic": -2, "dream": 1},
+                {"poise":1, "charm":0, "vigor": 1, "logic": 0, "dream": 0},
+                {"poise":1, "charm": 2, "vigor": 1, "logic": -1, "dream": -2}
+            ],
+            "starting_gear":"One **custom dueling weapon** and **one secondary weapon**:  \n**Custom sword base (choose 1)**: short sword (2-harm hand messy), saber (2-harm hand sturdy), rapier (2-harm hand quick), cane sword (1-harm hand hidden), chainsword (3-harm hand loud messy, counts as one modification)  \n**Modifications (choose 2, *counts as 2)**: ornate (+1Influence), heirloom (+1Influence), *long blade (+2harm), *serrated blade (+2harm), heavy (+1harm), diamond-edged, (+1harm), perfectly balanced (+quick), weighted pommel (can deal s-harm), parrying hilt (+1armor)  \n**Custom gun base (choose 1)**: flintlock pistol (2-harm close reload loud), blunderbuss (3-harm close reload force), hunting rifle (3-harm far loud), sleeve pistol (1-harm close hidden), laser pistol (2-harm close hi-tech heat), crossbow (2-harm close reload silent)  \n**Modifications (choose 2)**: ornate (+1Influence), heirloom (+1Influence), ap ammo, perfectly aligned (+1harm), high-powered (+1harm), Farraday stunner (can deal s-harm in melee), silencer (-loud), spring-loaded ammunition magazines (-reload), monoscope (+far, or +1harm at far)  \n**Secondary Weapons**: small pistol (2-harm close reload loud), machete (3-harm hand messy), many knives (2-harm close hidden infinite), Bowie knife (3-harm hand throw), garrote wire (2-harm intimate hidden ap)  \nAs a 6th and beyond enlightenment choice, the Duelist can choose either Fencer or Marksman (whichever was not chosen at character creation), their weapon becomes a gunsword, and they detail the new modifications to the MC, according to the creation rules.",
+            "starting_moves": "You start with either **Fencer** or **Marksman**, and **Mortal Combat**.",
+            "moves":[
+                {
+                    "key":"duelist_special",
+                    "name": "A Higher Standard (Duelist Special)",
+                    "description": "Your Ideology is Honorable by default. When you show honor in battle, **gain a temporary Moxie Point for that battle.**"                    
+                },
+                {
+                    "key":"fencer",
+                    "name":"Fencer",
+                    "description":"You get **+1Vigor**. While wielding a blade, you get **+1armor** against the Challenged and anyone who stands between you and them."
+                },
+                {
+                    "key":"marksman",
+                    "name":"Marksman",
+                    "description":"You get **+1Poise**. While wielding a ranged weapon, you get **2-armor** against everyone but the Challenged."
+                },
+                {
+                    "key":"mortal_combat",
+                    "name":"Mortal Combat",
+                    "description":"When going into battle, **challenge a specific foe and Roll+Vigor (Fencer) or +Poise (Marksman)**.  \n**On a hit**, the foe accepts and will fight no one but you.  \n**On a 10+**, your challenge has shaken them, and you take +1forward against the Challenged.  \n**On a 7-9**, they accept on equal grounds, but are energized by your call.  \n**On a miss**, they aren’t threatened by you and they deny your challenge, take -1ongoing against them.  \n_You cannot name a new Challenged until you or the Challenged has been defeated, or one of you escapes the scene_."
+                },
+                {
+                    "key":"social_predator",
+                    "name":"Social Predator",
+                    "description":"When talking to someone alone and face-to-face, **roll+Poise**.  \n**On 10+** hold 3.  \n**On a 7-9**, hold 1.  \n**Miss**, you take -1Ongoing and must perform under pressure to ignore their raw animal charisma for the remainder of the conversation.  \nOver the course of the conversation, you may spend hold one-for-one to: \n* Bring the person you are talking to over to your point of view \n* Humiliate them with your wit and gain +1ongoing with them for this interaction \n* Convince them to do you a favor worth 1-Influence \n* Have them bring a message directly to a person of your choosing \n* Challenge them to a duel at a time and place of your choosing, and they must accept."
+                },
+                {
+                    "key":"gun_show",
+                    "name":"The Gun Show",
+                    "description":"While you have a pistol in hand, **roll+Poise** instead of +Charm when you entice, negotiate, or convince."
+                },
+                {
+                    "key":"sword_is_mightier",
+                    "name":"The Sword Is Mightier",
+                    "description":"While you have a sword in hand, **roll+Vigor** instead of +Charm when you entice, negotiate, or convince."
+                },
+                {
+                    "key":"scoundrel",
+                    "name":"Scoundrel",
+                    "description":"When you fight with dishonor, **fill your Resilience and gain the flaw Scoundrel**.  \n**While a Scoundrel**, when **you smack some sense**, **assert your authority**, or **act under pressure**, take +1 on the roll, and lose 1-Resilience. When your **Resilience is empty**, lose Scoundrel.  \n_Fighting with dishonor while already a Scoundrel does not re-activate this move._"
+                },
+                {
+                    "key":"ambidextrous",
+                    "name":"Ambidextrous",
+                    "description":"Gain a new custom weapon of your chosen Duelist type to wield in your off-hand. Whenever you **smack some sense** or **assert your authority**, roll twice and use either result. Or, you may roll twice and apply each of the rolls to smack some sense and/or assert your authority to two separate characters on the scene, if it makes sense and is possible. Choose which option you are using before you roll."
+                }
+            ],
+            "advancements":[]
+        },
         "automaton": {
             "key": "automaton",
             "name": "The Automaton",
@@ -332,11 +456,64 @@
         }
     },
     "classes":[
+        { "key": "alchemist", "name": "The Alchemist"},
         { "key": "automaton", "name": "The Automaton"},
-        { "key": "pugilist", "name": "The Pugilist"},
+        { "key": "duelist", "name": "The Duelist"},
+        { "key": "engineer", "name": "The Engineer"},
         { "key": "magician", "name": "The Magician"},
         { "key": "alchemist", "name": "The Alchemist"},
-        { "key": "professor", "name": "The Professor"}
+        { "key": "professor", "name": "The Professor"},
+        { "key": "pugilist", "name": "The Pugilist"}
+    ],
+    "tags":[
+        { "name": "Shock", "description": "implies stun and AP (electricity)"},
+        { "name": "Force", "description": "implies loud and/or stun (knockdown)"},
+        { "name": "Heat", "description": "implies AP and reload (overheat)"},
+        { "name": "Messy", "description": "implies loud (victim)"},
+        { "name": "AP", "description": "(armor piercing) ignores armor"},
+        { "name": "Hidden", "description": "implies obscured from sight and brief inspection, and in some cases, displaying dishonor"},
+        { "name": "Infinite", "description": " does not actually mean “infinite”, but rather the character is never found without some type of that item stashed in some secret pocket"},
+        { "name": "Area", "description": "can hit multiple enemies or allies, depending on a perform under pressure roll"},
+        { "name": "Quick", "description": "implies a +1 when wielding the weapon, when speed matters"},
+        { "name": "S-harm", "description": "implies non-lethal (no loss of Spirit) stun"},
+        { "name": "S-armor", "description": "implies protection against stun, and/or stunning the attacker when hit within hand range"},
+        { "name": "Intimate", "description": "close enough to whisper"},
+        { "name": "Hand", "description": "close enough to lunge and punch"},
+        { "name": "Close", "description": "close enough to be heard clearly without shouting"},
+        { "name": "Far", "description": "shouting distance and farther"}
+    ],
+    "weapons":[
+        { "name": "prism pistol", "harm": "3", "tags": ["close","heat"]},
+        { "name": "prism rifle", "harm": "3", "tags": ["far","heat"]},
+        { "name": "volt pistol", "harm": "2", "tags": ["close","shock"]},
+        { "name": "brass knuckles", "harm": "2", "tags": ["hand","hidden","force"]},
+        { "name": "cane sword", "harm": "2", "tags": ["hand","hidden"]},
+        { "name": "umbrella blade", "harm": "2", "tags": ["hand","quick"]},
+        { "name": "sleeve pistol", "harm": "2", "tags": ["hand/close","reload","loud","hidden"]},
+        { "name": "hidden knives", "harm": "2", "tags": ["hidden", "infinite"]},
+        { "name": "bowie knife", "harm": "3", "tags": ["hand","throw"]},
+        { "name": "blunderbuss", "harm": "3", "tags": ["close","force","reload"]},
+        { "name": "cane rifle", "harm": "2", "tags": ["close","reload","hidden"]},
+        { "name": "stun sword", "harm": "2", "tags": ["hand","shock"]},
+        { "name": "volt grenade", "harm": "2", "tags": ["area","shock"]},
+        { "name": "revolver", "harm": "2", "tags": ["close","reload","hidden"]},
+        { "name": "thompson rifle", "harm": "3", "tags": ["close","area","reload"]},
+        { "name": "dynamite", "harm": "4", "tags": ["area","loud"]},
+        { "name": "volt glove", "harm": "2", "tags": ["intimate","hidden","shock"]},
+        { "name": "pneumatic fist", "harm": "3", "tags": ["hand","force"]},
+        { "name": "van der graaf belt", "harm": "n/a", "tags": ["s-armor"]},
+        { "name": "saber", "harm": "3", "tags": ["hand","messt"]},
+        { "name": "rapier", "harm": "2", "tags": ["hand","quick"]},
+        { "name": "zap thrower", "harm": "3", "tags": ["area","hand","reload","shock"]},
+        { "name": "monkey wrench", "harm": "2", "tags": ["hand","force"]},
+        { "name": "hunting rifle", "harm": "3", "tags": ["far","reload","loud"]},
+        { "name": "railhammer", "harm": "3", "tags": ["hand","force"]},
+        { "name": "blackjack", "harm": "1", "tags": ["hand","force","knockout"]},
+        { "name": "shoe-blade", "harm": "2", "tags": ["foot","hidden"]},
+        { "name": "sniper rifle", "harm": "4", "tags": ["far","loud"]},
+        { "name": "hand cannon", "harm": "3", "tags": ["close","messy","reload"]},
+        { "name": "dual pistols", "harm": "3", "tags": ["area","close","quick","reload"]},
+        { "name": "throwing knives", "harm": "2", "tags": ["hand/close"]}
     ]
     
 }
