@@ -408,13 +408,13 @@
                 {"poise":0, "charm": 0, "vigor": -2, "logic": 2, "dream": 2},
                 {"poise":0, "charm": 1, "vigor": -1, "logic": 2, "dream": 1}
             ],
-            "starting_gear":"**Clothing suitable to your look.**  \n**One trusty weapon:** bowie knife (2-harm hand messy), revolver (2-harm close loud reload), bullwhip (1-harm hand area bind), hunting rifle (3-harm far loud reload)  \n**Professor Special - Hero Protagonist: When you apply a story from history to your current situation, describe the tale and **roll+Dream**.  \n**On a 10+**, you inspire everyone listening, they all get **+1forward**, and you gain **1 Moxie**.  \n**On a 7-9**, one person listening gains **+1forward** and you mark **Resilience**. If your Resilience is already full, you also get **+1forward**.  \n**On a miss**, the story ends badly and you bum everyone out. You and everyone listening get -1forward.",
+            "starting_gear":"**Clothing suitable to your look.**  \n**One trusty weapon:** bowie knife (2-harm hand messy), revolver (2-harm close loud reload), bullwhip (1-harm hand area bind), hunting rifle (3-harm far loud reload)  \n**Professor Special** - Hero Protagonist: When you apply a story from history to your current situation, describe the tale and **roll+Dream**.  \n**On a 10+**, you inspire everyone listening, they all get **+1forward**, and you gain **1 Moxie**.  \n**On a 7-9**, one person listening gains **+1forward** and you mark **Resilience**. If your Resilience is already full, you also get **+1forward**.  \n**On a miss**, the story ends badly and you bum everyone out. You and everyone listening get -1forward.",
             "starting_moves": "You start with either the move **Library of Knowledge** or **Adventurer’s Log**, plus **2** other Professor moves.",
             "moves":[
                 {
-                    "key":"",
-                    "name": "",
-                    "description": ""
+                    "key":"hero_protagonist",
+                    "name": "Hero Protagonist",
+                    "description": "When you apply a story from history to your current situation, describe the tale and **roll+Dream**.  \n**On a 10+**, you inspire everyone listening, they all get **+1forward**, and you gain **1 Moxie**.  \n**On a 7-9**, one person listening gains **+1forward** and you mark **Resilience**. If your Resilience is already full, you also get **+1forward**.  \n**On a miss**, the story ends badly and you bum everyone out. You and everyone listening get -1forward."
                 },
                 {
                     "key":"library_of_knowledge",
