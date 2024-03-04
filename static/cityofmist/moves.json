@@ -1,0 +1,79 @@
+{
+    "basic_moves":[
+            {
+                "key":"investigate",
+                "name":"INVESTIGATE",
+                "description":"When you use your abilities to seek answers to burning questions, roll+Power. On a hit, you get Clues=Power. Spend your Clues one-to-one to ask the MC a question about the subject of your investigation or ask another player a relevant question about their character. They must give you either a straight answer or a solid lead. On a 7-9, they can also choose 1: \n* Your investigation exposes you to danger. \n* The clues you get are fuzzy, incomplete, or parttrue part-false. \n* Whoever or whatever you are asking the question(s) can ask you one question as well. You answer on the same terms."
+            },
+            {
+                "key":"hit_with_all_youve_got",
+                "name":"HIT WITH ALL YOU'VE GOT",
+                "description":"When you have a clear shot and you use your abilities to hit someone or something with all you've got, roll+Power. On a hit, you give the target an appropriate status of your choice with tier=Power. On a 10+, choose 2. On a 7-9, choose 1: \n* You take cover or secure a superior position. If you don't choose this, they can impose a status on you. If they are a PC, its tier=their Power. \n* You get them good or get many of them (+1 tier). \n* You control the collateral damage. \n* You hold the target's attention, if possible. \n* You gain the upper hand. Take 1 Juice."
+            },
+            {
+                "key":"go_toe_to_toe",
+                "name":"GO TOE TO TOE",
+                "description":"When you use your abilities to overcome someone or something in a struggle for control, state what your goal is. Your opponent can describe how they respond, at their option. Roll+Power. On a 7-9, choose 1. On a 10+, choose 2: \n* You manage to achieve your goal, e.g., take something they hold. \n* You get them good, giving your opponent a status with tier=Power. \n* You block, dodge, or counter their best attempts. If you don't choose this, they can impose a status on you. If they are a PC, its tier=their Power."
+            },
+            {
+                "key":"face_danger",
+                "name":"FACE DANGER",
+                "description":"When you use your abilities to avoid an incoming hit, endure harm, resist a malign influence, or hold it together, the MC (or player) will name a status with its tag and tier. Roll+Power. On a 10+, you fend off the effect and take no status at all. On a 7-9, you take the status, but with -1 tier. On a miss, you take the full status."
+            },
+            {
+                "key":"change_the_game",
+                "name":"CHANGE THE GAME",
+                "description":"When you use your abilities to give yourself or your allies an advantage, roll+Power. On a hit, you get Juice=Power. Spend your Juice to gain the following effects, one-to-one: \n* Create a story tag \n* Burn a power tag or a story tag \n* Give or reduce a status (one tier per point of Juice)  \nOn a 10+, you get a minimum of 2 Juice, and you can also use your Juice to choose: \n* Scale up the effect (greater area or more targets) \n* Prolong the effect (make it ongoing) \n* Hide the effect \n* Any other improvement you and the MC agree on"
+            },
+            {
+                "key":"convince",
+                "name":"CONVINCE",
+                "description":"When you use your abilities to talk, threaten, or seduce someone into doing something, roll+Power. On a hit, choose a relevant status with tier=Power. Your target can choose either to take the status or: \n* on a 7-9, to give in a little, but protect their own agenda. \n* on a 10+, to change their agenda to include yours, at least for the time being."
+            },
+            {
+                "key":"take_the_risk",
+                "name":"TAKE THE RISK",
+                "description":"When you perform a daring, risky, or outright stupid feat, roll+Power. On a 10+, you do it, somehow. On a 7-9, things get messy. The MC will offer you a hard bargain or an ugly choice."
+            },
+            {
+                "key":"sneak_around",
+                "name":"SNEAK AROUND",
+                "description":"When you use your abilities to act secretly or deceptively, roll+Power. On a hit, everyone that should fall for it falls for it. On a 7-9, it's complicated. The MC chooses 1: \n* Someone unimportant noticed you, but that just made them important, right? \n* You are perceived only by a secondary sense (someone picks up your scent while you're stalking them; you're seen whispering a message but the message is not heard). \n* You must leave something important behind - or be discovered."
+            },
+            {
+                "key":"montage",
+                "name":"MONTAGE ( DOWNTIME )",
+                "description":"Whenever your character has some downtime, choose one way to spend it: \n* Give attention to one of your Logos (or extra) themes. Tell everyone at the table how you do it and mark Attention on that theme. \n* Work the case. Tell everyone at the table how you do it, and gain 3 Clues with a method and a source based on your description. \n* Explore your Mythos. Tell everyone at the table which Mystery you explore and how you do it. You gain 1 Clue with a method and a source based on your description. Mark Attention on that Mystery's theme. \n* Prepare for your next activity. Tell everyone at the table how you prepare and choose one: recover all your burnt power tags OR gain 3 Juice with a method based on your description. You can choose from the effect improvements under Change the Game. \n* Recover from you last activity. For each ongoing status still affecting you, the MC will tell you if and how it can be reduced during your downtime and by how many tiers. Alternatively, the MC can allow you to reduce any or some of your statuses by one tier for each relevant tag you have.  \nThe MC can cue into any of the montage events and continue them as scenes."
+            },
+            {
+                "key":"geek_out_during_credits_",
+                "name":"GEEK OUT DURING CREDITS ",
+                "description":"At the end of the session, when the credits roll, go around the table. Each player can answer one or more of the following questions: \n* How has the crew grown this session?  \nRecover a burnt crew power tag or mark Attention on a crew theme. \n* Which character had the most meaningful interaction with your character this session?  \nAdd one Help point or one Hurt point next to their name on your character card. \n* Which of your themes is under the most strain? If it collapses, what new aspect will show up in its place?  \nWrite down the answer under FLIPSIDE on that theme's card."
+            },
+            {
+                "key":"finally_some_answers",
+                "name":"FINALLY, SOME ANSWERS",
+                "description":"When you find answers to your Mystery, choose one, two, or all three:  \nYou gain a deeper understanding of your Mythos, of the subject of your Mystery, or of the link between your Mystery and your Mythos. Mark Attention on the theme to which this Mystery belongs.  \nYou are shocked by the discovery to the point of rejecting your Mythos or an aspect of your ordinary life. Mark Fade or Crack on any theme.  \nYour questions are answered. Choose a new Mystery for this theme."
+            },
+            {
+                "key":"stop_holding_back.",
+                "name":"STOP. HOLDING. BACK.",
+                "description":"When you use your powers in a new and never-before-seen way or scale, tell the MC what you hope to achieve. The MC will tell you the sacrifice it will take from you. Then roll+Logos. On a hit, you achieve exactly what you wanted to achieve and pay the price:  \nSignificant: On a 7-9, mark Fade/Crack and burn all the power tags on one theme. On a 10+, mark Fade/Crack on one theme.   \nNo Return: On a 7-9, replace one theme. On a 10+, mark Fade/Crack and burn all the power tags on one theme.   \nUltimate: On a 7-9, you are killed, destroyed, or transformed forever (for now). Take a tier-6 status. You cannot Face Danger. On a 10+, replace one theme  \nOn a 6 or less, you pay the price given for 7-9, but you also lose control over your powers or fail to use them as planned. The MC will decide how, and what the consequences are."
+            },
+            {
+                "key":"end_of_the_road",
+                "name":"END OF THE ROAD",
+                "description":"If your Identity ever becomes resolved, rephrase it in the same spirit to describe a new goal, a greater scope, a new angle, etc. Alternatively, if this aspect of your life truly ended, you may replace this Identity's theme."
+            },
+            {
+                "key":"flashback",
+                "name":"FLASHBACK",
+                "description":"Once per session, when you have the spotlight, choose 1:  \nDescribe an action carried out by your character in the past and make a move for that action. The outcome of the move affects the current scene.   \nDescribe events from your character's backstory that become relevant now. The MC can award you with 1 Juice or 1 Clue based on your description."
+            },
+            {
+                "key":"make_a_hard_choice",
+                "name":"MAKE A HARD CHOICE",
+                "description":"When answers to your Mystery are within reach, but you forego them, mark Fade on that Mystery's theme.  \nWhen your Identity demands you act or speak in a given way and you don't, mark Crack on that Identity's theme.  \nWhen you sacrifice something you truly want in order to abide by your Identity, mark Attention on that Identity's theme. © 2019 Son of Oak Game Studio / Amít Moshe"
+            }
+        ]
+}
